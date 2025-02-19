@@ -1,5 +1,6 @@
 ﻿using Code.Gameplay.Common.Visuals;
 using DG.Tweening;
+using Entitas;
 using UnityEngine;
 
 namespace Code.Gameplay.Features.Hero.Behaviours
