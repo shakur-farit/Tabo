@@ -99,8 +99,10 @@ GameObject:
   - component: {fileID: 5699183126129725434}
   - component: {fileID: 1188426232748251830}
   - component: {fileID: 5140249517435548092}
+  - component: {fileID: 8861762141121223457}
+  - component: {fileID: 3715392036331435934}
   m_Layer: 10
-  m_Name: Player
+  m_Name: Hero
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -337,6 +339,33 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8861762141121223457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2429853594752003799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d7310d8cce844a7b673c1a4fb574341, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 5140249517435548092}
+  _spriteRenderer: {fileID: 1380547483300312}
+--- !u!114 &3715392036331435934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2429853594752003799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c067be1c17b491d4c9c39c7e9a1f75a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HeroAnimator: {fileID: 8861762141121223457}
 --- !u!1 &2793051193500568816
 GameObject:
   m_ObjectHideFlags: 0

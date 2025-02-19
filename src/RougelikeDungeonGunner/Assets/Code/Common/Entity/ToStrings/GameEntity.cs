@@ -26,17 +26,17 @@ public sealed partial class GameEntity : INamedEntity
       if (components.Length == 1)
         return components[0].GetType().Name;
 
-      foreach (IComponent component in components)
-      {
-        switch (component.GetType().Name)
-        {
-          // case nameof(Hero):
-          //   return PrintHero();
+      //foreach (IComponent component in components)
+      //{
+      //  switch (component.GetType().Name)
+      //  {
+      //    case nameof(Hero):
+      //      return PrintHero();
 
-          // case nameof(Enemy):
-          //   return PrintEnemy();
-        }
-      }
+      //    case nameof(Enemy):
+      //      return PrintEnemy();
+      //  }
+      //}
     }
     catch (Exception exception)
     {
