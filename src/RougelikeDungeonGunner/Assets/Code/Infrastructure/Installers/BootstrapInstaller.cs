@@ -9,6 +9,10 @@ using Code.Gameplay.StaticData;
 using Code.Infrastructure.AssetManagement;
 using Code.Infrastructure.Identifiers;
 using Code.Infrastructure.Loading;
+using Code.Infrastructure.States.Factory;
+using Code.Infrastructure.States.StateInfrastructure;
+using Code.Infrastructure.States.StateMachine;
+using Code.Progress.Provider;
 using Zenject;
 
 namespace Code.Infrastructure.Installers
@@ -17,6 +21,9 @@ namespace Code.Infrastructure.Installers
   {
     public override void InstallBindings()
     {
+	    BindStateMachine();
+      BindStateFactory();
+      BindGameStates();
       BindInputService();
       BindInfrastructureServices();
       BindAssetManagementServices();
@@ -24,9 +31,31 @@ namespace Code.Infrastructure.Installers
       BindContexts();
       BindGameplayServices();
       BindCameraProvider();
+      BindProgressServices();
     }
 
-    private void BindContexts()
+    private void BindStateMachine()
+    {
+	    Container.BindInterfacesAndSelfTo<GameStateMachine>().AsSingle();
+    }
+
+    private void BindStateFactory()
+    {
+	    Container.BindInterfacesAndSelfTo<StateFactory>().AsSingle();
+    }
+
+    private void BindGameStates()
+    {
+	    Container.BindInterfacesAndSelfTo<BootstrapState>().AsSingle();
+	    Container.BindInterfacesAndSelfTo<InitializeProgressState>().AsSingle();
+	    Container.BindInterfacesAndSelfTo<LoadingHomeScreenState>().AsSingle();
+	    Container.BindInterfacesAndSelfTo<HomeScreenState>().AsSingle();
+	    Container.BindInterfacesAndSelfTo<LoadingBattleState>().AsSingle();
+	    Container.BindInterfacesAndSelfTo<BattleEnterState>().AsSingle();
+	    Container.BindInterfacesAndSelfTo<BattleLoopState>().AsSingle();
+    }
+
+		private void BindContexts()
     {
       Container.Bind<Contexts>().FromInstance(Contexts.sharedInstance).AsSingle();
       
@@ -38,7 +67,12 @@ namespace Code.Infrastructure.Installers
       Container.BindInterfacesAndSelfTo<CameraProvider>().AsSingle();
     }
 
-    private void BindGameplayServices()
+    private void BindProgressServices()
+    {
+	    Container.Bind<IProgressProvider>().To<ProgressProvider>().AsSingle();
+    }
+
+		private void BindGameplayServices()
     {
       Container.Bind<IStaticDataService>().To<StaticDataService>().AsSingle();
       Container.Bind<ILevelDataProvider>().To<LevelDataProvider>().AsSingle();
@@ -71,8 +105,7 @@ namespace Code.Infrastructure.Installers
     
     public void Initialize()
     {
-      Container.Resolve<IStaticDataService>().LoadAll();
-      Container.Resolve<ISceneLoader>().LoadScene(Scenes.Gameplay);
-    }
+			Container.Resolve<IGameStateMachine>().Enter<BootstrapState>();
+		}
   }
 }
