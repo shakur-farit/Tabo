@@ -1,7 +1,10 @@
-﻿namespace Code.Gameplay.StaticData
+﻿using Cysharp.Threading.Tasks;
+
+namespace Code.Gameplay.StaticData
 {
   public interface IStaticDataService
   {
-    void LoadAll();
+    UniTask Load();
+    UniTask Preload();
   }
 }

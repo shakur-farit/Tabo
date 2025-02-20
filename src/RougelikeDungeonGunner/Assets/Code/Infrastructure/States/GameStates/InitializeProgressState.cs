@@ -1,9 +1,9 @@
-using Code.Infrastructure.Loading;
+using Code.Infrastructure.States.StateInfrastructure;
 using Code.Infrastructure.States.StateMachine;
 using Code.Progress.Data;
 using Code.Progress.Provider;
 
-namespace Code.Infrastructure.States.StateInfrastructure
+namespace Code.Infrastructure.States.GameStates
 {
 	public class InitializeProgressState : IState
 	{
@@ -22,7 +22,7 @@ namespace Code.Infrastructure.States.StateInfrastructure
 		{
 			InitializeProgress();
 
-			_stateMachine.Enter<LoadingBattleState, string>(Scenes.Gameplay);
+			_stateMachine.Enter<LoadStaticDataState>();
 		}
 
 		private void InitializeProgress()

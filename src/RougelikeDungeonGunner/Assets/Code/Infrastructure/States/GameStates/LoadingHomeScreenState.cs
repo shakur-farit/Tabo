@@ -1,7 +1,8 @@
 using Code.Infrastructure.Loading;
+using Code.Infrastructure.States.StateInfrastructure;
 using Code.Infrastructure.States.StateMachine;
 
-namespace Code.Infrastructure.States.StateInfrastructure
+namespace Code.Infrastructure.States.GameStates
 {
 	public class LoadingHomeScreenState : IState
 	{

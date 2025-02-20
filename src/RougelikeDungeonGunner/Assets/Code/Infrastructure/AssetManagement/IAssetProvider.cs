@@ -1,10 +1,14 @@
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 
 namespace Code.Infrastructure.AssetManagement
 {
   public interface IAssetProvider
   {
-    GameObject LoadAsset(string path);
-    T LoadAsset<T>(string path) where T : Component;
+	  UniTask Initialize();
+	  UniTask<T> Load<T>(string addressReference) where T : class;
+	  void Preload<T>(string addressReference) where T : class;
+	  void Release(string addressReference);
+	  void CleanUp();
   }
 }

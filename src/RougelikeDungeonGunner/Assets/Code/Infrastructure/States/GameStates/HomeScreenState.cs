@@ -1,4 +1,6 @@
-namespace Code.Infrastructure.States.StateInfrastructure
+using Code.Infrastructure.States.StateInfrastructure;
+
+namespace Code.Infrastructure.States.GameStates
 {
 	public class HomeScreenState : IState, IUpdateable
 	{

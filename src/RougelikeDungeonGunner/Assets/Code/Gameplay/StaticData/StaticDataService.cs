@@ -1,9 +1,25 @@
-﻿namespace Code.Gameplay.StaticData
+﻿using Code.Infrastructure.AssetManagement;
+using Cysharp.Threading.Tasks;
+using UnityEngine;
+
+namespace Code.Gameplay.StaticData
 {
   public class StaticDataService : IStaticDataService
   {
-    public void LoadAll()
-    {
-    }
+
+	  private readonly IAssetProvider _assetProvider;
+
+	  public StaticDataService(IAssetProvider assetProvider) => 
+      _assetProvider = assetProvider;
+
+	  public async UniTask Load()
+	  {
+
+	  }
+
+	  public async UniTask Preload()
+	  {
+
+	  }
   }
 }

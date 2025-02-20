@@ -1,6 +1,6 @@
 ﻿using Code.Gameplay.Common.Visuals;
+using Code.Gameplay.StaticData;
 using DG.Tweening;
-using Entitas;
 using UnityEngine;
 
 namespace Code.Gameplay.Features.Hero.Behaviours

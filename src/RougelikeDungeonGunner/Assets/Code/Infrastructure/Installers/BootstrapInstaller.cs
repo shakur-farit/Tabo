@@ -3,6 +3,7 @@ using Code.Gameplay.Common.Collisions;
 using Code.Gameplay.Common.Physics;
 using Code.Gameplay.Common.Random;
 using Code.Gameplay.Common.Time;
+using Code.Gameplay.Features.Hero.Behaviours;
 using Code.Gameplay.Input.Service;
 using Code.Gameplay.Levels;
 using Code.Gameplay.StaticData;
@@ -10,6 +11,7 @@ using Code.Infrastructure.AssetManagement;
 using Code.Infrastructure.Identifiers;
 using Code.Infrastructure.Loading;
 using Code.Infrastructure.States.Factory;
+using Code.Infrastructure.States.GameStates;
 using Code.Infrastructure.States.StateInfrastructure;
 using Code.Infrastructure.States.StateMachine;
 using Code.Progress.Provider;
@@ -30,6 +32,7 @@ namespace Code.Infrastructure.Installers
       BindCommonServices();
       BindContexts();
       BindGameplayServices();
+      BindGameplayFactories();
       BindCameraProvider();
       BindProgressServices();
     }
@@ -48,6 +51,7 @@ namespace Code.Infrastructure.Installers
     {
 	    Container.BindInterfacesAndSelfTo<BootstrapState>().AsSingle();
 	    Container.BindInterfacesAndSelfTo<InitializeProgressState>().AsSingle();
+	    Container.BindInterfacesAndSelfTo<LoadStaticDataState>().AsSingle();
 	    Container.BindInterfacesAndSelfTo<LoadingHomeScreenState>().AsSingle();
 	    Container.BindInterfacesAndSelfTo<HomeScreenState>().AsSingle();
 	    Container.BindInterfacesAndSelfTo<LoadingBattleState>().AsSingle();
@@ -77,6 +81,11 @@ namespace Code.Infrastructure.Installers
       Container.Bind<IStaticDataService>().To<StaticDataService>().AsSingle();
       Container.Bind<ILevelDataProvider>().To<LevelDataProvider>().AsSingle();
     }
+
+		private void BindGameplayFactories()
+		{
+      Container.Bind<IHeroFactory>().To<HeroFactory>().AsSingle();
+		}
 
     private void BindInfrastructureServices()
     {
