@@ -1,4 +1,5 @@
 using Code.Gameplay.Features.Hero.Behaviours;
+using Code.Gameplay.Features.Hero.Factory;
 using Code.Gameplay.Levels;
 using Code.Infrastructure.States.StateInfrastructure;
 using Code.Infrastructure.States.StateMachine;

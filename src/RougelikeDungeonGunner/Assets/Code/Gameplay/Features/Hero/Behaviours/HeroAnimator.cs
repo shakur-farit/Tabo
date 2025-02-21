@@ -1,5 +1,4 @@
 ﻿using Code.Gameplay.Common.Visuals;
-using Code.Gameplay.StaticData;
 using DG.Tweening;
 using UnityEngine;
 
@@ -9,8 +8,6 @@ namespace Code.Gameplay.Features.Hero.Behaviours
   {
     private static readonly int OverlayIntensityProperty = Shader.PropertyToID("_OverlayIntensity");
     
-    //private readonly int _isMovingHash = Animator.StringToHash("isMoving");
-    //private readonly int _attackHash = Animator.StringToHash("attack");
     //private readonly int _diedHash = Animator.StringToHash("died");
 
     [SerializeField] private Animator _animator;
@@ -28,17 +25,14 @@ namespace Code.Gameplay.Features.Hero.Behaviours
 
 		private Material Material => _spriteRenderer.material;
 
-		//public void PlayMove() => Animator.SetBool(_isMovingHash, true);
-		//public void PlayIdle() => Animator.SetBool(_isMovingHash, false);
-
-		//public void PlayAttack() => Animator.SetTrigger(_attackHash);
-
 		//public void PlayDied() => Animator.SetTrigger(_diedHash);
 
 		public void StartIdling() => _animator.SetBool(_isIdling, true);
+
 		public void StopIdling() => _animator.SetBool(_isIdling, false);
 
 		public void StartMoving() => _animator.SetBool(_isMoving, true);
+
 		public void StopMoving() => _animator.SetBool(_isMoving, false);
 
 		public void StartAimUp() => _animator.SetBool(_aimUp, true);
@@ -72,11 +66,17 @@ namespace Code.Gameplay.Features.Hero.Behaviours
             Material.DOFloat(0, OverlayIntensityProperty, 0.15f);
         });
     }
-    
-    //public void ResetAll()
-    //{
-    //  Animator.ResetTrigger(_attackHash);
-    //  Animator.ResetTrigger(_diedHash);
-    //}
+
+    public void ResetAll()
+    {
+      _animator.ResetTrigger(_isIdling);
+      _animator.ResetTrigger(_isIdling);
+      _animator.ResetTrigger(_aimDown);
+      _animator.ResetTrigger(_aimLeft);
+      _animator.ResetTrigger(_aimRight);
+      _animator.ResetTrigger(_aimUp);
+      _animator.ResetTrigger(_aimUpLeft);
+      _animator.ResetTrigger(_aimUpRight);
+    }
   }
 }

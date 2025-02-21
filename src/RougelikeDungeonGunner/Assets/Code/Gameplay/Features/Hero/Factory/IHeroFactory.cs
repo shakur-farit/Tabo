@@ -1,4 +1,4 @@
-﻿namespace Code.Gameplay.Features.Hero.Behaviours
+﻿namespace Code.Gameplay.Features.Hero.Factory
 {
 	public interface IHeroFactory
 	{

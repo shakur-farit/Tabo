@@ -4,6 +4,7 @@ using Code.Gameplay.Common.Physics;
 using Code.Gameplay.Common.Random;
 using Code.Gameplay.Common.Time;
 using Code.Gameplay.Features.Hero.Behaviours;
+using Code.Gameplay.Features.Hero.Factory;
 using Code.Gameplay.Input.Service;
 using Code.Gameplay.Levels;
 using Code.Gameplay.StaticData;
@@ -27,6 +28,7 @@ namespace Code.Infrastructure.Installers
       BindStateFactory();
       BindGameStates();
       BindInputService();
+      BindSystemFactory();
       BindInfrastructureServices();
       BindAssetManagementServices();
       BindCommonServices();
@@ -85,6 +87,11 @@ namespace Code.Infrastructure.Installers
 		private void BindGameplayFactories()
 		{
       Container.Bind<IHeroFactory>().To<HeroFactory>().AsSingle();
+		}
+
+		private void BindSystemFactory()
+		{
+			Container.Bind<ISystemsFactory>().To<SystemsFactory>().AsSingle();
 		}
 
     private void BindInfrastructureServices()

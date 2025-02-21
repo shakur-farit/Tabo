@@ -2,7 +2,7 @@
 using UnityEngine;
 using Zenject;
 
-namespace Code.Gameplay.Features.Hero.Behaviours
+namespace Code.Gameplay.Features.Hero.Factory
 {
 	public class HeroFactory : IHeroFactory
 	{

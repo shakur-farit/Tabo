@@ -3,11 +3,11 @@ using Zenject;
 
 namespace Code.Infrastructure
 {
-	public class SystemFactory : ISystemFactory
+	public class SystemsFactory : ISystemsFactory
 	{
 		private readonly DiContainer _container;
 
-		public SystemFactory(DiContainer container) =>
+		public SystemsFactory(DiContainer container) =>
 			_container = container;
 
 		public T Create<T>() where T : ISystem =>
