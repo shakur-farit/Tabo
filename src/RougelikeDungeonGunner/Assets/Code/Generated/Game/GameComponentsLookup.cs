@@ -8,20 +8,26 @@
 //------------------------------------------------------------------------------
 public static class GameComponentsLookup {
 
-    public const int Id = 0;
-    public const int Transform = 1;
-    public const int WorldPosition = 2;
-    public const int Hero = 3;
-    public const int HeroAnimator = 4;
-    public const int Direction = 5;
-    public const int Moving = 6;
-    public const int Speed = 7;
-    public const int AxisInput = 8;
-    public const int Input = 9;
+    public const int Destructed = 0;
+    public const int SelfDestructedTimer = 1;
+    public const int View = 2;
+    public const int Id = 3;
+    public const int Transform = 4;
+    public const int WorldPosition = 5;
+    public const int Hero = 6;
+    public const int HeroAnimator = 7;
+    public const int Direction = 8;
+    public const int Moving = 9;
+    public const int Speed = 10;
+    public const int AxisInput = 11;
+    public const int Input = 12;
 
-    public const int TotalComponents = 10;
+    public const int TotalComponents = 13;
 
     public static readonly string[] componentNames = {
+        "Destructed",
+        "SelfDestructedTimer",
+        "View",
         "Id",
         "Transform",
         "WorldPosition",
@@ -35,6 +41,9 @@ public static class GameComponentsLookup {
     };
 
     public static readonly System.Type[] componentTypes = {
+        typeof(Code.Common.Destructed),
+        typeof(Code.Common.SelfDestructedTimer),
+        typeof(Code.Common.View),
         typeof(Code.Gameplay.Common.Id),
         typeof(Code.Gameplay.Common.TransformComponent),
         typeof(Code.Gameplay.Common.WorldPosition),
