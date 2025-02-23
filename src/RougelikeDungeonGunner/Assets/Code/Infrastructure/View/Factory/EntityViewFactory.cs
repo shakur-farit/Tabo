@@ -1,0 +1,64 @@
+using Code.Infrastructure.AssetManagement;
+using Cysharp.Threading.Tasks;
+using System.Collections.Generic;
+using UnityEngine;
+using Zenject;
+
+namespace Code.Infrastructure.View
+{
+	public class EntityViewFactory : IEntityViewFactory
+	{
+		private readonly Dictionary<GameEntity, bool> _loadingInProgress = new();
+		private readonly Vector3 _farAway = new(-999, 999, 0);
+
+		private readonly IAssetProvider _assetProvider;
+		private readonly IInstantiator _instantiator;
+
+		public EntityViewFactory(IAssetProvider assetProvider, IInstantiator instantiator)
+		{
+			_assetProvider = assetProvider;
+			_instantiator = instantiator;
+		}
+
+		public async UniTask<EntityBehaviour> CreateViewForEntity(GameEntity entity)
+		{
+			if (_loadingInProgress.ContainsKey(entity) && _loadingInProgress[entity])
+				return null;
+
+			try
+			{
+				_loadingInProgress[entity] = true;
+
+				GameObject prefab = await _assetProvider.Load<GameObject>(entity.ViewPath);
+				EntityBehaviour viewPrefab = prefab.GetComponent<EntityBehaviour>();
+
+				EntityBehaviour view = _instantiator.InstantiatePrefabForComponent<EntityBehaviour>(
+					viewPrefab,
+					position: _farAway,
+					Quaternion.identity,
+					parentTransform: null);
+
+				view.SetEntity(entity);
+
+				return view;
+			}
+			finally
+			{
+				_loadingInProgress[entity] = false;
+			}
+		}
+
+		public EntityBehaviour CreateViewForEntityFromPrefab(GameEntity entity)
+		{
+			EntityBehaviour view = _instantiator.InstantiatePrefabForComponent<EntityBehaviour>(
+				entity.ViewPrefab,
+				position: _farAway,
+				Quaternion.identity,
+				parentTransform: null);
+
+			view.SetEntity(entity);
+
+			return view;
+		}
+	}
+}

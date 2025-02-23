@@ -1,7 +1,11 @@
-﻿namespace Code.Gameplay.Features.Hero.Factory
+﻿using Cysharp.Threading.Tasks;
+using UnityEngine;
+
+namespace Code.Gameplay.Features.Hero.Factory
 {
 	public interface IHeroFactory
 	{
-		void Create();
+		GameEntity Create(Vector3 at);
+		void CreatePrefab();
 	}
 }

@@ -10,5 +10,6 @@ namespace Code.Infrastructure.AssetManagement
 	  void Preload<T>(string addressReference) where T : class;
 	  void Release(string addressReference);
 	  void CleanUp();
+	  T LoadAsset<T>(string path) where T : Component;
   }
 }

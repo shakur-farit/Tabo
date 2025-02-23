@@ -14,6 +14,11 @@ namespace Code.Infrastructure.AssetManagement
 
 		public async UniTask Initialize() => await Addressables.InitializeAsync().ToUniTask();
 
+		public T LoadAsset<T>(string path) where T : Component
+		{
+			return Resources.Load<T>(path);
+		}
+
 		public async UniTask<T> Load<T>(string addressReference) where T : class
 		{
 			if (_completedCache.TryGetValue(addressReference, out AsyncOperationHandle cachedHandle))

@@ -11,24 +11,30 @@ public static class GameComponentsLookup {
     public const int Destructed = 0;
     public const int SelfDestructedTimer = 1;
     public const int View = 2;
-    public const int Id = 3;
-    public const int Transform = 4;
-    public const int WorldPosition = 5;
-    public const int Hero = 6;
-    public const int HeroAnimator = 7;
-    public const int Direction = 8;
-    public const int Moving = 9;
-    public const int Speed = 10;
-    public const int AxisInput = 11;
-    public const int Input = 12;
+    public const int ViewPath = 3;
+    public const int ViewPrefab = 4;
+    public const int Id = 5;
+    public const int SpriteRenderer = 6;
+    public const int Transform = 7;
+    public const int WorldPosition = 8;
+    public const int Hero = 9;
+    public const int HeroAnimator = 10;
+    public const int Direction = 11;
+    public const int Moving = 12;
+    public const int Speed = 13;
+    public const int AxisInput = 14;
+    public const int Input = 15;
 
-    public const int TotalComponents = 13;
+    public const int TotalComponents = 16;
 
     public static readonly string[] componentNames = {
         "Destructed",
         "SelfDestructedTimer",
         "View",
+        "ViewPath",
+        "ViewPrefab",
         "Id",
+        "SpriteRenderer",
         "Transform",
         "WorldPosition",
         "Hero",
@@ -44,7 +50,10 @@ public static class GameComponentsLookup {
         typeof(Code.Common.Destructed),
         typeof(Code.Common.SelfDestructedTimer),
         typeof(Code.Common.View),
+        typeof(Code.Common.ViewPath),
+        typeof(Code.Common.ViewPrefab),
         typeof(Code.Gameplay.Common.Id),
+        typeof(Code.Gameplay.Common.SpriteRendererComponent),
         typeof(Code.Gameplay.Common.TransformComponent),
         typeof(Code.Gameplay.Common.WorldPosition),
         typeof(Code.Gameplay.Features.Hero.Behaviours.Hero),

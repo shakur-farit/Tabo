@@ -1,9 +1,7 @@
 ﻿using Code.Common.Entity;
 using Code.Common.Extensions;
-using Code.Gameplay.Features.Hero.Behaviours;
 using Code.Infrastructure.AssetManagement;
 using Code.Infrastructure.Identifiers;
-using Code.Infrastructure.View;
 using UnityEngine;
 using Zenject;
 
@@ -11,42 +9,36 @@ namespace Code.Gameplay.Features.Hero.Factory
 {
 	public class HeroFactory : IHeroFactory
 	{
-		private readonly IInstantiator _instantiator;
-		private readonly IAssetProvider _assetProvider;
-		private readonly IIdentifierService _identifier;
+		private const string HeroViewPath = "TheGeneral";
 
-		public HeroFactory(
-			IInstantiator instantiator, 
-			IAssetProvider assetProvider,
-			IIdentifierService identifier)
+		private readonly IIdentifierService _identifier;
+		private readonly IAssetProvider _assetProvider;
+		private readonly IInstantiator _instantiator;
+
+		public HeroFactory(IIdentifierService identifier, IAssetProvider assetProvider, IInstantiator instantiator)
 		{
-			_instantiator = instantiator;
-			_assetProvider = assetProvider;
 			_identifier = identifier;
+			_assetProvider = assetProvider;
+			_instantiator = instantiator;
 		}
 
-		public async void Create()
+		public GameEntity Create(Vector3 at)
 		{
-			GameObject prefab = await _assetProvider.Load<GameObject>("TheGeneral");
+			  return CreateEntity.Empty()
+				.AddId(_identifier.Next())
+				.AddWorldPosition(at)
+				.AddDirection(Vector2.zero)
+				.AddSpeed(2)
+				.AddViewPath(HeroViewPath)
+				.With(x => x.isHero = true)
+				;
+		}
+
+		public async void CreatePrefab()
+		{
+			var prefab = await _assetProvider.Load<GameObject>(HeroViewPath);
 
 			_instantiator.InstantiatePrefab(prefab);
-
-			EntityBehaviour entityBehaviour = prefab.GetComponent<EntityBehaviour>();
-			HeroAnimator animator = prefab.GetComponent<HeroAnimator>();
-
-			GameEntity entity = CreateEntity.Empty();
-
-			entity
-				.AddId(_identifier.Next())
-				.AddView(entityBehaviour)
-				.AddTransform(prefab.transform)
-				.AddWorldPosition(prefab.transform.position)
-				.AddSpeed(2)
-				.AddDirection(Vector2.zero)
-				.AddHeroAnimator(animator)
-				.With(x => x.isHero = true);
-
-			entityBehaviour.SetEntity(entity);
 		}
 	}
 }

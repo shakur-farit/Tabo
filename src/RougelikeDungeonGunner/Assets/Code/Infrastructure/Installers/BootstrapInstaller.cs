@@ -15,6 +15,7 @@ using Code.Infrastructure.States.Factory;
 using Code.Infrastructure.States.GameStates;
 using Code.Infrastructure.States.StateInfrastructure;
 using Code.Infrastructure.States.StateMachine;
+using Code.Infrastructure.View;
 using Code.Progress.Provider;
 using Zenject;
 
@@ -86,7 +87,8 @@ namespace Code.Infrastructure.Installers
 
 		private void BindGameplayFactories()
 		{
-      Container.Bind<IHeroFactory>().To<HeroFactory>().AsSingle();
+			Container.Bind<IEntityViewFactory>().To<EntityViewFactory>().AsSingle();
+			Container.Bind<IHeroFactory>().To<HeroFactory>().AsSingle();
 		}
 
 		private void BindSystemFactory()
