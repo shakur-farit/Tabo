@@ -14,9 +14,14 @@ namespace Code.Infrastructure.AssetManagement
 
 		public async UniTask Initialize() => await Addressables.InitializeAsync().ToUniTask();
 
-		public T LoadAsset<T>(string path) where T : Component
+		public async UniTask<T> LoadComponent<T>(string addressReference) where T : Component
 		{
-			return Resources.Load<T>(path);
+			GameObject prefab = await Load<GameObject>(addressReference);
+
+			if (prefab.TryGetComponent(out T component) == false)
+				throw new Exception($"Prefab {addressReference} does not have a {typeof(T).Name} component!");
+
+			return component;
 		}
 
 		public async UniTask<T> Load<T>(string addressReference) where T : class

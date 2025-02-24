@@ -1,9 +1,7 @@
 ﻿using Code.Common.Entity;
 using Code.Common.Extensions;
-using Code.Infrastructure.AssetManagement;
 using Code.Infrastructure.Identifiers;
 using UnityEngine;
-using Zenject;
 
 namespace Code.Gameplay.Features.Hero.Factory
 {
@@ -12,15 +10,10 @@ namespace Code.Gameplay.Features.Hero.Factory
 		private const string HeroViewPath = "TheGeneral";
 
 		private readonly IIdentifierService _identifier;
-		private readonly IAssetProvider _assetProvider;
-		private readonly IInstantiator _instantiator;
 
-		public HeroFactory(IIdentifierService identifier, IAssetProvider assetProvider, IInstantiator instantiator)
-		{
+
+		public HeroFactory(IIdentifierService identifier) => 
 			_identifier = identifier;
-			_assetProvider = assetProvider;
-			_instantiator = instantiator;
-		}
 
 		public GameEntity Create(Vector3 at)
 		{
@@ -32,13 +25,6 @@ namespace Code.Gameplay.Features.Hero.Factory
 				.AddViewPath(HeroViewPath)
 				.With(x => x.isHero = true)
 				;
-		}
-
-		public async void CreatePrefab()
-		{
-			var prefab = await _assetProvider.Load<GameObject>(HeroViewPath);
-
-			_instantiator.InstantiatePrefab(prefab);
 		}
 	}
 }

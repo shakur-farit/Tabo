@@ -29,8 +29,7 @@ namespace Code.Infrastructure.View
 			{
 				_loadingInProgress[entity] = true;
 
-				GameObject prefab = await _assetProvider.Load<GameObject>(entity.ViewPath);
-				EntityBehaviour viewPrefab = prefab.GetComponent<EntityBehaviour>();
+				EntityBehaviour viewPrefab = await _assetProvider.LoadComponent<EntityBehaviour>(entity.ViewPath);
 
 				EntityBehaviour view = _instantiator.InstantiatePrefabForComponent<EntityBehaviour>(
 					viewPrefab,
