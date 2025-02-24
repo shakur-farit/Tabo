@@ -1,3 +1,4 @@
+using Code.Gameplay.Features.Enemies;
 using Code.Gameplay.Features.Hero.Factory;
 using Code.Gameplay.Levels;
 using Code.Infrastructure.States.StateInfrastructure;
@@ -11,29 +12,32 @@ namespace Code.Infrastructure.States.GameStates
 		private readonly IGameStateMachine _stateMachine;
 		private readonly ILevelDataProvider _levelDataProvider;
 		private readonly IHeroFactory _heroFactory;
+		private readonly IEnemyFactory _enemyFactory;
 
 		public BattleEnterState(
 			IGameStateMachine stateMachine,
 			ILevelDataProvider levelDataProvider,
-			IHeroFactory heroFactory)
+			IHeroFactory heroFactory,
+			IEnemyFactory enemyFactory)
 		{
 			_stateMachine = stateMachine;
 			_levelDataProvider = levelDataProvider;
 			_heroFactory = heroFactory;
+			_enemyFactory = enemyFactory;
 		}
 
 		public void Enter()
 		{
 			PlaceHero();
 
+			_enemyFactory.Create(_levelDataProvider.StartPoint + Vector3.one);
+
+
 			_stateMachine.Enter<BattleLoopState>();
 		}
 
-		private void PlaceHero()
-		{
+		private void PlaceHero() => 
 			_heroFactory.Create(_levelDataProvider.StartPoint);
-			//_heroFactory.CreatePrefab();
-		}
 
 		public void Exit()
 		{

@@ -7,7 +7,7 @@ namespace Code.Gameplay.Features.Hero.Factory
 {
 	public class HeroFactory : IHeroFactory
 	{
-		private const string HeroViewPath = "TheGeneral";
+		private const string HeroViewPath = "Hero";
 
 		private readonly IIdentifierService _identifier;
 

@@ -17,8 +17,13 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: f40428f047dc54a46b8184ab91599836
   m_SerializeEntries:
-  - m_GUID: 23f829c977fdfe14cb3964f19db790d2
-    m_Address: TheGeneral
+  - m_GUID: 8ce004de107d0ba4eba3d92948a32f93
+    m_Address: Hero
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9dc33cf00c86b7440a425de8b022c28a
+    m_Address: Enemy
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

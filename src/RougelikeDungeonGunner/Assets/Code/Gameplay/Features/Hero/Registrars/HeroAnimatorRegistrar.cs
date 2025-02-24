@@ -1,16 +1,15 @@
 ﻿using Code.Infrastructure.View.Registrars;
+using UnityEngine;
 
 namespace Code.Gameplay.Features.Hero.Behaviours
 {
 	public class HeroAnimatorRegistrar : EntityComponentRegistrar
 	{
-		public HeroAnimator HeroAnimator;
+		[SerializeField] public HeroAnimator _heroAnimator;
 
-		public override void RegisterComponents()
-		{
+		public override void RegisterComponents() =>
 			Entity
-				.AddHeroAnimator(HeroAnimator);
-		}
+				.AddHeroAnimator(_heroAnimator);
 
 		public override void UnregisterComponents()
 		{

@@ -3,6 +3,7 @@
   public enum EnemyTypeId
   {
     Unknown = 0,
-    Goblin = 1,
+    Hedusa = 1,
+    Orc = 2,
   }
 }
