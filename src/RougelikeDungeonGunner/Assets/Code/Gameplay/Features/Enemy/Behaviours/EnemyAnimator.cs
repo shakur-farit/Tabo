@@ -1,15 +1,12 @@
 ﻿using Code.Gameplay.Common.Visuals;
-using Code.Gameplay.Features.Hero.Behaviours;
 using DG.Tweening;
-using Entitas;
 using UnityEngine;
 
-namespace Code.Gameplay.Features.Enemies.Behaviours
+namespace Code.Gameplay.Features.Enemy.Behaviours
 {
 	public class EnemyAnimator : MonoBehaviour, IDamageTakenAnimator
 	{
 		private static readonly int OverlayIntensityProperty = Shader.PropertyToID("_OverlayIntensity");
-
 
 		[SerializeField] private Animator _animator;
 		[SerializeField] private SpriteRenderer _spriteRenderer;

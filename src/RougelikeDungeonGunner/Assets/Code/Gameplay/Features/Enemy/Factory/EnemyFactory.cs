@@ -1,9 +1,10 @@
-﻿using Code.Common.Entity;
+﻿using System.Collections.Generic;
+using Code.Common.Entity;
 using Code.Common.Extensions;
 using Code.Infrastructure.Identifiers;
 using UnityEngine;
 
-namespace Code.Gameplay.Features.Enemies
+namespace Code.Gameplay.Features.Enemy.Factory
 {
 	public class EnemyFactory : IEnemyFactory
 	{
@@ -19,9 +20,18 @@ namespace Code.Gameplay.Features.Enemies
 		{
 			return CreateEntity.Empty()
 					.AddId(_identifier.Next())
+					.AddEnemyTypeId(EnemyTypeId.Orc)
 					.AddWorldPosition(at)
 					.AddDirection(Vector2.zero)
-					.AddSpeed(2)
+					.AddCurrentHp(20)
+					.AddMaxHp(20)
+					.AddDamage(1)
+					.AddSpeed(1)
+					.AddTargetsBuffer(new List<int>(1))
+					.AddRadius(0.5f)
+					.AddCollectTargetsInterval(0.5f)
+					.AddCollectTargetsTimer(0)
+					.AddLayerMask(CollisionLayer.Hero.AsMask())
 					.AddViewPath(EnemyViewPath)
 					.With(x => x.isEnemy = true)
 				;

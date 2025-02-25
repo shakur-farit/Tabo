@@ -1,4 +1,4 @@
-using Code.Gameplay.Features.Enemies;
+using Code.Gameplay.Features.Enemy.Factory;
 using Code.Gameplay.Features.Hero.Factory;
 using Code.Gameplay.Levels;
 using Code.Infrastructure.States.StateInfrastructure;

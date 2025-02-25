@@ -1,6 +1,6 @@
 ﻿using Entitas;
 
-namespace Code.Gameplay.Features.Hero.Behaviours
+namespace Code.Gameplay.Features.Hero.Systems
 {
 	public class SetHeroDirectionByInputSystem : IExecuteSystem
 	{

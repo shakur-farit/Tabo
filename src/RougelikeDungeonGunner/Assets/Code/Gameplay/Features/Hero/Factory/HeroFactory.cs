@@ -21,6 +21,8 @@ namespace Code.Gameplay.Features.Hero.Factory
 				.AddId(_identifier.Next())
 				.AddWorldPosition(at)
 				.AddDirection(Vector2.zero)
+				.AddCurrentHp(100)
+				.AddMaxHp(100)
 				.AddSpeed(2)
 				.AddViewPath(HeroViewPath)
 				.With(x => x.isHero = true)

@@ -7,10 +7,8 @@ namespace Code.Gameplay.Common
 	{
 		public SpriteRenderer SpriteRenderer;
 
-		public override void RegisterComponents()
-		{
+		public override void RegisterComponents() => 
 			Entity.AddSpriteRenderer(SpriteRenderer);
-		}
 
 		public override void UnregisterComponents()
 		{

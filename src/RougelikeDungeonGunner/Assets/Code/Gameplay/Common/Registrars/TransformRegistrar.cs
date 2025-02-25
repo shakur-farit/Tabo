@@ -4,10 +4,8 @@ namespace Code.Gameplay.Common
 {
 	public class TransformRegistrar : EntityComponentRegistrar
 	{
-		public override void RegisterComponents()
-		{
+		public override void RegisterComponents() => 
 			Entity.AddTransform(transform);
-		}
 
 		public override void UnregisterComponents()
 		{

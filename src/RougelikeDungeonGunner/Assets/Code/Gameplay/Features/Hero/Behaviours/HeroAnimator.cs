@@ -28,11 +28,9 @@ namespace Code.Gameplay.Features.Hero.Behaviours
 		//public void PlayDied() => Animator.SetTrigger(_diedHash);
 
 		public void StartIdling() => _animator.SetBool(_isIdling, true);
-
 		public void StopIdling() => _animator.SetBool(_isIdling, false);
 
 		public void StartMoving() => _animator.SetBool(_isMoving, true);
-
 		public void StopMoving() => _animator.SetBool(_isMoving, false);
 
 		public void StartAimUp() => _animator.SetBool(_aimUp, true);
