@@ -8,7 +8,6 @@ namespace Code.Gameplay.Features.DamageApplication
 		public DamageApplicationFeature(ISystemsFactory systems)
 		{
 			Add(systems.Create<ApplyDamageOnTargetsSystem>());
-			Add(systems.Create<DestructOnZeroHpSystem>());
 		}
 	}
 }

@@ -8,17 +8,17 @@
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherEnemy;
+    static Entitas.IMatcher<GameEntity> _matcherMovementAvailable;
 
-    public static Entitas.IMatcher<GameEntity> Enemy {
+    public static Entitas.IMatcher<GameEntity> MovementAvailable {
         get {
-            if (_matcherEnemy == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.Enemy);
+            if (_matcherMovementAvailable == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.MovementAvailable);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherEnemy = matcher;
+                _matcherMovementAvailable = matcher;
             }
 
-            return _matcherEnemy;
+            return _matcherMovementAvailable;
         }
     }
 }
@@ -33,18 +33,18 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Enemy.Enemy enemyComponent = new Code.Gameplay.Features.Enemy.Enemy();
+    static readonly Code.Gameplay.Features.Movement.MovementAvailable movementAvailableComponent = new Code.Gameplay.Features.Movement.MovementAvailable();
 
-    public bool isEnemy {
-        get { return HasComponent(GameComponentsLookup.Enemy); }
+    public bool isMovementAvailable {
+        get { return HasComponent(GameComponentsLookup.MovementAvailable); }
         set {
-            if (value != isEnemy) {
-                var index = GameComponentsLookup.Enemy;
+            if (value != isMovementAvailable) {
+                var index = GameComponentsLookup.MovementAvailable;
                 if (value) {
                     var componentPool = GetComponentPool(index);
                     var component = componentPool.Count > 0
                             ? componentPool.Pop()
-                            : enemyComponent;
+                            : movementAvailableComponent;
 
                     AddComponent(index, component);
                 } else {

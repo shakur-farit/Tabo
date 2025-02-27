@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Code.Gameplay.Features.Enemy;
-
 public static class GameComponentsLookup {
 
     public const int Destructed = 0;
@@ -28,20 +25,23 @@ public static class GameComponentsLookup {
     public const int Hero = 14;
     public const int HeroAnimator = 15;
     public const int CurrentHp = 16;
-    public const int MaxHp = 17;
-    public const int Direction = 18;
-    public const int Moving = 19;
-    public const int Speed = 20;
-    public const int CollectTargetsInterval = 21;
-    public const int CollectTargetsTimer = 22;
-    public const int LayerMask = 23;
-    public const int Radius = 24;
-    public const int ReadyToCollectTargets = 25;
-    public const int TargetsBuffer = 26;
-    public const int AxisInput = 27;
-    public const int Input = 28;
+    public const int Dead = 17;
+    public const int MaxHp = 18;
+    public const int ProcessingDeath = 19;
+    public const int Direction = 20;
+    public const int MovementAvailable = 21;
+    public const int Moving = 22;
+    public const int Speed = 23;
+    public const int CollectTargetsInterval = 24;
+    public const int CollectTargetsTimer = 25;
+    public const int LayerMask = 26;
+    public const int Radius = 27;
+    public const int ReadyToCollectTargets = 28;
+    public const int TargetsBuffer = 29;
+    public const int AxisInput = 30;
+    public const int Input = 31;
 
-    public const int TotalComponents = 29;
+    public const int TotalComponents = 32;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -61,8 +61,11 @@ public static class GameComponentsLookup {
         "Hero",
         "HeroAnimator",
         "CurrentHp",
+        "Dead",
         "MaxHp",
+        "ProcessingDeath",
         "Direction",
+        "MovementAvailable",
         "Moving",
         "Speed",
         "CollectTargetsInterval",
@@ -87,14 +90,17 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Common.SpriteRendererComponent),
         typeof(Code.Gameplay.Common.TransformComponent),
         typeof(Code.Gameplay.Common.WorldPosition),
-        typeof(Enemy),
-        typeof(EnemyAnimatorComponent),
-        typeof(EnemyTypeIdComponent),
+        typeof(Code.Gameplay.Features.Enemy.Enemy),
+        typeof(Code.Gameplay.Features.Enemy.EnemyAnimatorComponent),
+        typeof(Code.Gameplay.Features.Enemy.EnemyTypeIdComponent),
         typeof(Code.Gameplay.Features.Hero.Hero),
         typeof(Code.Gameplay.Features.Hero.HeroAnimatorComponent),
         typeof(Code.Gameplay.Features.Lifetime.CurrentHp),
+        typeof(Code.Gameplay.Features.Lifetime.Dead),
         typeof(Code.Gameplay.Features.Lifetime.MaxHp),
+        typeof(Code.Gameplay.Features.Lifetime.ProcessingDeath),
         typeof(Code.Gameplay.Features.Movement.Direction),
+        typeof(Code.Gameplay.Features.Movement.MovementAvailable),
         typeof(Code.Gameplay.Features.Movement.Moving),
         typeof(Code.Gameplay.Features.Movement.Speed),
         typeof(Code.Gameplay.Features.TargetCollection.CollectTargetsInterval),

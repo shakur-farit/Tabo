@@ -8,17 +8,17 @@
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherEnemy;
+    static Entitas.IMatcher<GameEntity> _matcherDead;
 
-    public static Entitas.IMatcher<GameEntity> Enemy {
+    public static Entitas.IMatcher<GameEntity> Dead {
         get {
-            if (_matcherEnemy == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.Enemy);
+            if (_matcherDead == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.Dead);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherEnemy = matcher;
+                _matcherDead = matcher;
             }
 
-            return _matcherEnemy;
+            return _matcherDead;
         }
     }
 }
@@ -33,18 +33,18 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Enemy.Enemy enemyComponent = new Code.Gameplay.Features.Enemy.Enemy();
+    static readonly Code.Gameplay.Features.Lifetime.Dead deadComponent = new Code.Gameplay.Features.Lifetime.Dead();
 
-    public bool isEnemy {
-        get { return HasComponent(GameComponentsLookup.Enemy); }
+    public bool isDead {
+        get { return HasComponent(GameComponentsLookup.Dead); }
         set {
-            if (value != isEnemy) {
-                var index = GameComponentsLookup.Enemy;
+            if (value != isDead) {
+                var index = GameComponentsLookup.Dead;
                 if (value) {
                     var componentPool = GetComponentPool(index);
                     var component = componentPool.Count > 0
                             ? componentPool.Pop()
-                            : enemyComponent;
+                            : deadComponent;
 
                     AddComponent(index, component);
                 } else {

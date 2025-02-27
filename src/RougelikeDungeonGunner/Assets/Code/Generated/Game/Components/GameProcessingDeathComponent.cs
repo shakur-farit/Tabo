@@ -8,17 +8,17 @@
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherEnemy;
+    static Entitas.IMatcher<GameEntity> _matcherProcessingDeath;
 
-    public static Entitas.IMatcher<GameEntity> Enemy {
+    public static Entitas.IMatcher<GameEntity> ProcessingDeath {
         get {
-            if (_matcherEnemy == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.Enemy);
+            if (_matcherProcessingDeath == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.ProcessingDeath);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherEnemy = matcher;
+                _matcherProcessingDeath = matcher;
             }
 
-            return _matcherEnemy;
+            return _matcherProcessingDeath;
         }
     }
 }
@@ -33,18 +33,18 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Enemy.Enemy enemyComponent = new Code.Gameplay.Features.Enemy.Enemy();
+    static readonly Code.Gameplay.Features.Lifetime.ProcessingDeath processingDeathComponent = new Code.Gameplay.Features.Lifetime.ProcessingDeath();
 
-    public bool isEnemy {
-        get { return HasComponent(GameComponentsLookup.Enemy); }
+    public bool isProcessingDeath {
+        get { return HasComponent(GameComponentsLookup.ProcessingDeath); }
         set {
-            if (value != isEnemy) {
-                var index = GameComponentsLookup.Enemy;
+            if (value != isProcessingDeath) {
+                var index = GameComponentsLookup.ProcessingDeath;
                 if (value) {
                     var componentPool = GetComponentPool(index);
                     var component = componentPool.Count > 0
                             ? componentPool.Pop()
-                            : enemyComponent;
+                            : processingDeathComponent;
 
                     AddComponent(index, component);
                 } else {

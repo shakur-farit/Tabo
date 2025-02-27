@@ -34,6 +34,7 @@ namespace Code.Gameplay.Features.Enemy.Factory
 					.AddLayerMask(CollisionLayer.Hero.AsMask())
 					.AddViewPath(EnemyViewPath)
 					.With(x => x.isEnemy = true)
+					.With(x => x.isMovementAvailable = true)
 				;
 		}
 	}

@@ -1,10 +1,13 @@
-﻿using Code.Gameplay.Common.Time;
+﻿using System.Collections.Generic;
+using Code.Gameplay.Common.Time;
 using Entitas;
 
 namespace Code.Gameplay.Features.TargetCollection.Systems
 {
 	public class CollectTargetsIntervalSystem : IExecuteSystem
 	{
+		private readonly List<GameEntity> _buffer = new(128);
+
 		private readonly ITimeService _time;
 		private readonly IGroup<GameEntity> _entities;
 
@@ -20,7 +23,7 @@ namespace Code.Gameplay.Features.TargetCollection.Systems
 
 		public void Execute()
 		{
-			foreach (GameEntity entity in _entities)
+			foreach (GameEntity entity in _entities.GetEntities(_buffer))
 			{
 				entity.ReplaceCollectTargetsTimer(entity.CollectTargetsTimer - _time.DeltaTime);
 

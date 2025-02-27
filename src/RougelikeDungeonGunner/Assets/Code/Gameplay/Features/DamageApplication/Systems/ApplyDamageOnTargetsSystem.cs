@@ -14,7 +14,9 @@ namespace Code.Gameplay.Features.DamageApplication.Systems
 			_damageDealers = game.GetGroup(GameMatcher
 				.AllOf(
 					GameMatcher.Damage,
-					GameMatcher.TargetsBuffer));
+					GameMatcher.TargetsBuffer,
+					GameMatcher.CurrentHp,
+					GameMatcher.DamageTakenAnimator));
 		}
 
 		public void Execute()
@@ -24,13 +26,9 @@ namespace Code.Gameplay.Features.DamageApplication.Systems
 			{
 				GameEntity target = _game.GetEntityWithId(targetId);
 
-				if (target.hasCurrentHp)
-				{
-					target.ReplaceCurrentHp(target.CurrentHp - damageDealer.Damage);
+				target.ReplaceCurrentHp(target.CurrentHp - damageDealer.Damage);
 
-					if(target.hasDamageTakenAnimator)
-						target.DamageTakenAnimator.PlayDamageTaken();
-				}
+				target.DamageTakenAnimator.PlayDamageTaken();
 			}
 		}
 	}

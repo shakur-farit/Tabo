@@ -12,7 +12,6 @@ namespace Code.Gameplay.Cameras.Provider
     public void SetMainCamera(Camera camera)
     {
       MainCamera = camera;
-
       RefreshBoundaries();
     }
 

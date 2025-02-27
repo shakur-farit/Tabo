@@ -11,7 +11,8 @@ namespace Code.Gameplay.Features.Enemy.Systems
 			_enemies = game.GetGroup(GameMatcher
 				.AllOf(
 					GameMatcher.Enemy,
-					GameMatcher.EnemyAnimator));
+					GameMatcher.EnemyAnimator,
+					GameMatcher.Moving));
 		}
 
 		public void Execute()
@@ -20,13 +21,11 @@ namespace Code.Gameplay.Features.Enemy.Systems
 			{
 				if (enemy.isMoving)
 				{
-					enemy.EnemyAnimator.StopIdling();
 					enemy.EnemyAnimator.StartMoving();
 					enemy.EnemyAnimator.StartAimDown();
 				}
 				else
 				{
-					enemy.EnemyAnimator.StopMoving();
 					enemy.EnemyAnimator.StartIdling();
 				}
 			}

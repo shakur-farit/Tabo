@@ -6,8 +6,6 @@ namespace Code.Gameplay.Features.Enemy.Behaviours
 {
 	public class EnemyAnimator : MonoBehaviour, IDamageTakenAnimator
 	{
-		private static readonly int OverlayIntensityProperty = Shader.PropertyToID("_OverlayIntensity");
-
 		[SerializeField] private Animator _animator;
 		[SerializeField] private SpriteRenderer _spriteRenderer;
 
@@ -23,13 +21,9 @@ namespace Code.Gameplay.Features.Enemy.Behaviours
 
 		private readonly int _diedHash = Animator.StringToHash("died");
 
-		private Material Material => _spriteRenderer.material;
-
-		public void StartIdling() => _animator.SetBool(_isIdling, true);
-		public void StopIdling() => _animator.SetBool(_isIdling, false);
+		public void StartIdling() => _animator.SetBool(_isMoving, false);
 
 		public void StartMoving() => _animator.SetBool(_isMoving, true);
-		public void StopMoving() => _animator.SetBool(_isMoving, false);
 
 		public void StartAimUp() => _animator.SetBool(_aimUp, true);
 		public void StopAimUp() => _animator.SetBool(_aimUp, false);
@@ -49,19 +43,18 @@ namespace Code.Gameplay.Features.Enemy.Behaviours
 		public void StartAimDown() => _animator.SetBool(_aimDown, true);
 		public void StopAimDown() => _animator.SetBool(_aimDown, false);
 
-		public void PlayDied() => _animator.SetTrigger(_diedHash);
+		public void PlayDied()
+		{
+			Debug.Log("Enemy death animation");
+			//_animator.SetTrigger(_diedHash);
+		}
 
 		public void PlayDamageTaken()
 		{
-			if (DOTween.IsTweening(Material))
-				return;
-
-			Material.DOFloat(0.4f, OverlayIntensityProperty, 0.15f)
-				.OnComplete(() =>
-				{
-					if (_spriteRenderer)
-						Material.DOFloat(0, OverlayIntensityProperty, 0.15f);
-				});
+			_spriteRenderer.DOColor(Color.red, 0.1f).OnComplete(() =>
+			{
+				_spriteRenderer.DOColor(Color.white, 0.1f);
+			});
 		}
 
 		public void ResetAll()

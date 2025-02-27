@@ -6,32 +6,30 @@ namespace Code.Gameplay.Features.Hero.Behaviours
 {
   public class HeroAnimator : MonoBehaviour, IDamageTakenAnimator
   {
-    private static readonly int OverlayIntensityProperty = Shader.PropertyToID("_OverlayIntensity");
-    
-    //private readonly int _diedHash = Animator.StringToHash("died");
+	  [SerializeField] private Animator _animator;
+	  [SerializeField] private SpriteRenderer _spriteRenderer;
 
-    [SerializeField] private Animator _animator;
-    [SerializeField] private SpriteRenderer _spriteRenderer;
+	  private readonly int _isIdling = Animator.StringToHash("isIdling");
+	  private readonly int _isMoving = Animator.StringToHash("isMoving");
 
-    private readonly int _isIdling = Animator.StringToHash("isIdling");
-    private readonly int _isMoving = Animator.StringToHash("isMoving");
+	  private readonly int _aimUp = Animator.StringToHash("aimUp");
+	  private readonly int _aimUpRight = Animator.StringToHash("aimUpRight");
+	  private readonly int _aimUpLeft = Animator.StringToHash("aimUpLeft");
+	  private readonly int _aimRight = Animator.StringToHash("aimRight");
+	  private readonly int _aimLeft = Animator.StringToHash("aimLeft");
+	  private readonly int _aimDown = Animator.StringToHash("aimDown");
 
-    private readonly int _aimUp = Animator.StringToHash("aimUp");
-    private readonly int _aimUpRight = Animator.StringToHash("aimUpRight");
-    private readonly int _aimUpLeft = Animator.StringToHash("aimUpLeft");
-    private readonly int _aimRight = Animator.StringToHash("aimRight");
-    private readonly int _aimLeft = Animator.StringToHash("aimLeft");
-    private readonly int _aimDown = Animator.StringToHash("aimDown");
+	  private readonly int _diedHash = Animator.StringToHash("died");
 
-		private Material Material => _spriteRenderer.material;
+	  public void PlayDied()
+		{
+			Debug.Log("Death animation");
+			//_animator.SetTrigger(_diedHash);
+		}
 
-		//public void PlayDied() => Animator.SetTrigger(_diedHash);
-
-		public void StartIdling() => _animator.SetBool(_isIdling, true);
-		public void StopIdling() => _animator.SetBool(_isIdling, false);
+		public void StartIdling() => _animator.SetBool(_isMoving, false);
 
 		public void StartMoving() => _animator.SetBool(_isMoving, true);
-		public void StopMoving() => _animator.SetBool(_isMoving, false);
 
 		public void StartAimUp() => _animator.SetBool(_aimUp, true);
 		public void StopAimUp() => _animator.SetBool(_aimUp, false);
@@ -54,16 +52,11 @@ namespace Code.Gameplay.Features.Hero.Behaviours
 
 		public void PlayDamageTaken()
     {
-      if (DOTween.IsTweening(Material))
-        return;
-      
-      Material.DOFloat(0.5f, OverlayIntensityProperty, 0.15f)
-        .OnComplete(() =>
-        {
-          if (_spriteRenderer)
-            Material.DOFloat(0, OverlayIntensityProperty, 0.15f);
-        });
-    }
+			_spriteRenderer.DOColor(Color.red, 0.1f).OnComplete(() =>
+			{
+				_spriteRenderer.DOColor(Color.white, 0.1f);
+			});
+		}
 
     public void ResetAll()
     {

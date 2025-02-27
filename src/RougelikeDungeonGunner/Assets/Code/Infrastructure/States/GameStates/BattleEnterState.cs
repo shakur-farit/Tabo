@@ -29,7 +29,6 @@ namespace Code.Infrastructure.States.GameStates
 		public void Enter()
 		{
 			PlaceHero();
-
 			_enemyFactory.Create(_levelDataProvider.StartPoint + Vector3.one);
 
 

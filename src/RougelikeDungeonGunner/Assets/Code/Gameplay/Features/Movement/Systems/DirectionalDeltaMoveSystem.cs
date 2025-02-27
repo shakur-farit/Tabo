@@ -17,6 +17,7 @@ namespace Code.Gameplay.Features.Movement.Systems
 					GameMatcher.Speed,
 					GameMatcher.WorldPosition,
 					GameMatcher.Direction,
+					GameMatcher.MovementAvailable,
 					GameMatcher.Moving));
 		}
 

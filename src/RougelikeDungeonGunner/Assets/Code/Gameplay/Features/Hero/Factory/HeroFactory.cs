@@ -26,6 +26,7 @@ namespace Code.Gameplay.Features.Hero.Factory
 				.AddSpeed(2)
 				.AddViewPath(HeroViewPath)
 				.With(x => x.isHero = true)
+				.With(x => x.isMovementAvailable = true)
 				;
 		}
 	}

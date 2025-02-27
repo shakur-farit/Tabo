@@ -2,15 +2,17 @@
 
 namespace Code.Gameplay.Features.Hero.Systems
 {
-	public class AnimateHeroMovementSystem : IExecuteSystem
+	public class HeroDeathSystem : IExecuteSystem
 	{
 		private readonly IGroup<GameEntity> _heroes;
 
-		public AnimateHeroMovementSystem(GameContext game)
+		public HeroDeathSystem(GameContext game)
 		{
 			_heroes = game.GetGroup(GameMatcher
 				.AllOf(
 					GameMatcher.Hero,
+					GameMatcher.Dead,
+					GameMatcher.ProcessingDeath,
 					GameMatcher.HeroAnimator));
 		}
 
@@ -18,15 +20,9 @@ namespace Code.Gameplay.Features.Hero.Systems
 		{
 			foreach (GameEntity hero in _heroes)
 			{
-				if (hero.isMoving)
-				{
-					hero.HeroAnimator.StartMoving();
-					hero.HeroAnimator.StartAimDown();
-				}
-				else
-				{
-					hero.HeroAnimator.StartIdling();
-				}
+				hero.isMovementAvailable = false;
+
+				hero.HeroAnimator.PlayDied();
 			}
 		}
 	}
