@@ -15,7 +15,7 @@ namespace Code.Gameplay.Features.Hero.Factory
 		public HeroFactory(IIdentifierService identifier) => 
 			_identifier = identifier;
 
-		public GameEntity Create(Vector3 at)
+		public GameEntity CreateHero(Vector3 at)
 		{
 			  return CreateEntity.Empty()
 				.AddId(_identifier.Next())

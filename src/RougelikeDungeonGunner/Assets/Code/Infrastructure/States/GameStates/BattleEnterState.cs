@@ -1,3 +1,4 @@
+using Code.Gameplay.Features.Enemy;
 using Code.Gameplay.Features.Enemy.Factory;
 using Code.Gameplay.Features.Hero.Factory;
 using Code.Gameplay.Levels;
@@ -29,14 +30,14 @@ namespace Code.Infrastructure.States.GameStates
 		public void Enter()
 		{
 			PlaceHero();
-			_enemyFactory.Create(_levelDataProvider.StartPoint + Vector3.one);
+			_enemyFactory.CreateEnemy(_levelDataProvider.StartPoint + Vector3.one, EnemyTypeId.Orc);
 
 
 			_stateMachine.Enter<BattleLoopState>();
 		}
 
 		private void PlaceHero() => 
-			_heroFactory.Create(_levelDataProvider.StartPoint);
+			_heroFactory.CreateHero(_levelDataProvider.StartPoint);
 
 		public void Exit()
 		{

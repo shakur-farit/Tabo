@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Code.Common.Entity;
 using Code.Common.Extensions;
 using Code.Infrastructure.Identifiers;
@@ -16,7 +17,18 @@ namespace Code.Gameplay.Features.Enemy.Factory
 		public EnemyFactory(IIdentifierService identifier) =>
 			_identifier = identifier;
 
-		public GameEntity Create(Vector3 at)
+		public GameEntity CreateEnemy(Vector3 at, EnemyTypeId typeId)
+		{
+			switch (typeId)
+			{
+				case EnemyTypeId.Orc:
+					return CreateOrc(at);
+			}
+
+			throw new Exception($"Enemy with type id {typeId} does not exist");
+		}
+
+		private GameEntity CreateOrc(Vector3 at)
 		{
 			return CreateEntity.Empty()
 					.AddId(_identifier.Next())
