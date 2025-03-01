@@ -30,8 +30,6 @@ namespace Code.Infrastructure.States.GameStates
 		public void Enter()
 		{
 			PlaceHero();
-			_enemyFactory.CreateEnemy(_levelDataProvider.StartPoint + Vector3.one, EnemyTypeId.Orc);
-
 
 			_stateMachine.Enter<BattleLoopState>();
 		}
