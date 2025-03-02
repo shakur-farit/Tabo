@@ -25,8 +25,6 @@ namespace Code.Infrastructure.States.GameStates
 		{
 			await _assetProvider.Initialize();
 
-			await _staticDataService.Preload();
-
 			_stateMachine.Enter<InitializeProgressState>();
 		}
 

@@ -27,6 +27,12 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5802e3c5436790f4084542f8f877fee9
+    m_Address: PistolBulletConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AbilityConfig
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 7128017d563554245a79368046c75e1a, type: 2}
   m_SchemaSet:

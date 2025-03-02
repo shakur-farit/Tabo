@@ -1,10 +1,12 @@
-﻿using Cysharp.Threading.Tasks;
+﻿using Code.Gameplay.Features.Abilities;
+using Cysharp.Threading.Tasks;
 
 namespace Code.Gameplay.StaticData
 {
   public interface IStaticDataService
   {
     UniTask Load();
-    UniTask Preload();
+    AbilityConfig GetAbilityConfig(AbilityId abilityId);
+    AbilityLevel GetAbilityLevel(AbilityId abilityId, int level);
   }
 }

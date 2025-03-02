@@ -48,54 +48,55 @@ namespace Code.Infrastructure.AssetManagement
 			}
 		}
 
-		public void Preload<T>(string addressReference) where T : class
+		public async UniTask<List<T>> LoadAll<T>(string label) where T : class
 		{
-			if (_completedCache.ContainsKey(addressReference))
-				return;
+			if (_completedCache.TryGetValue(label, out AsyncOperationHandle cachedHandle))
+				return new List<T>((IList<T>)cachedHandle.Result);
 
-			AsyncOperationHandle<T> handle = Addressables.LoadAssetAsync<T>(addressReference);
-			_completedCache[addressReference] = handle;
+			AsyncOperationHandle<IList<T>> handle = Addressables.LoadAssetsAsync<T>(label, null);
 
-			AddHandle(addressReference, handle);
+			AddHandle(label, handle);
 
-			handle.Completed += h =>
+			try
 			{
-				if (h.Status == AsyncOperationStatus.Succeeded)
-				{
-					_completedCache[addressReference] = h;
-				}
-				else
-				{
-					Debug.LogError($"Preloading asset {addressReference} failed.");
-					_completedCache.Remove(addressReference);
-					_handles[addressReference].Remove(h);
-					Addressables.Release(h);
-				}
-			};
+				IList<T> result = await handle.ToUniTask();
+				_completedCache[label] = handle;
+				return new List<T>(result);
+			}
+			catch (Exception e)
+			{
+				Debug.LogError($"Failed to load assets with label {label}: {e.Message}");
+				_handles[label].Remove(handle);
+				Addressables.Release(handle);
+				throw;
+			}
 		}
 
-		public void Release(string addressReference)
+		public void Release(string key)
 		{
-			if (_completedCache.TryGetValue(addressReference, out AsyncOperationHandle handle))
+			if (_completedCache.TryGetValue(key, out AsyncOperationHandle handle))
 			{
 				Addressables.Release(handle);
-				_completedCache.Remove(addressReference);
+				_completedCache.Remove(key);
 			}
 
-			if (_handles.TryGetValue(addressReference, out List<AsyncOperationHandle> resourceHandles))
+			if (_handles.TryGetValue(key, out List<AsyncOperationHandle> resourceHandles))
 			{
 				foreach (AsyncOperationHandle h in resourceHandles)
 					Addressables.Release(h);
 
-				_handles.Remove(addressReference);
+				_handles.Remove(key);
 			}
 		}
 
 		public void CleanUp()
 		{
-			foreach (List<AsyncOperationHandle> resourcesHandles in _handles.Values)
-				foreach (AsyncOperationHandle handle in resourcesHandles)
-					Addressables.Release(handle);
+			foreach (AsyncOperationHandle handle in _completedCache.Values)
+				Addressables.Release(handle);
+
+			foreach (List<AsyncOperationHandle> resourceHandles in _handles.Values)
+			foreach (AsyncOperationHandle handle in resourceHandles)
+				Addressables.Release(handle);
 
 			_completedCache.Clear();
 			_handles.Clear();

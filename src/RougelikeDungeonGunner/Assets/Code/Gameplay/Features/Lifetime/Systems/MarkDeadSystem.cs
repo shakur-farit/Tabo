@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Entitas;
 
-namespace Code.Gameplay.Features.Lifetime
+namespace Code.Gameplay.Features.Lifetime.Systems
 {
 	public class MarkDeadSystem : IExecuteSystem
 	{
