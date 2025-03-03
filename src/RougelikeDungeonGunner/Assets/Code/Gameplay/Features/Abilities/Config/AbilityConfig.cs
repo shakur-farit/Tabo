@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace Code.Gameplay.Features.Abilities
+namespace Code.Gameplay.Features.Abilities.Config
 {
-	[CreateAssetMenu(menuName = "Dungeon Gunner/Ability Configs", fileName = "AbilityConfig")]
+	[CreateAssetMenu(menuName = "Dungeon Gunner/Ability Config", fileName = "AbilityConfig")]
 	public class AbilityConfig : ScriptableObject
 	{
 		public AbilityId AbilityId;

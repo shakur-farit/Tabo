@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Code.Gameplay.Features.Abilities;
+using Code.Gameplay.Features.Abilities.Config;
 using Code.Infrastructure.AssetManagement;
 using Cysharp.Threading.Tasks;
 

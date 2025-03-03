@@ -1,3 +1,4 @@
+using Code.Gameplay.Features.Abilities.Factory;
 using Code.Gameplay.Features.Enemy;
 using Code.Gameplay.Features.Enemy.Factory;
 using Code.Gameplay.Features.Hero.Factory;
@@ -13,18 +14,18 @@ namespace Code.Infrastructure.States.GameStates
 		private readonly IGameStateMachine _stateMachine;
 		private readonly ILevelDataProvider _levelDataProvider;
 		private readonly IHeroFactory _heroFactory;
-		private readonly IEnemyFactory _enemyFactory;
+		private readonly IAbilityFactory _abilityFactory;
 
 		public BattleEnterState(
 			IGameStateMachine stateMachine,
 			ILevelDataProvider levelDataProvider,
 			IHeroFactory heroFactory,
-			IEnemyFactory enemyFactory)
+			IAbilityFactory abilityFactory)
 		{
 			_stateMachine = stateMachine;
 			_levelDataProvider = levelDataProvider;
 			_heroFactory = heroFactory;
-			_enemyFactory = enemyFactory;
+			_abilityFactory = abilityFactory;
 		}
 
 		public void Enter()
@@ -34,8 +35,11 @@ namespace Code.Infrastructure.States.GameStates
 			_stateMachine.Enter<BattleLoopState>();
 		}
 
-		private void PlaceHero() => 
+		private void PlaceHero()
+		{
 			_heroFactory.CreateHero(_levelDataProvider.StartPoint);
+			_abilityFactory.CreatePistolBulletAbility(1);
+		}
 
 		public void Exit()
 		{

@@ -1,4 +1,5 @@
 ﻿using Code.Gameplay.Features.Abilities;
+using Code.Gameplay.Features.Abilities.Config;
 using Cysharp.Threading.Tasks;
 
 namespace Code.Gameplay.StaticData

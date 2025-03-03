@@ -3,8 +3,9 @@ using Code.Gameplay.Common.Collisions;
 using Code.Gameplay.Common.Physics;
 using Code.Gameplay.Common.Random;
 using Code.Gameplay.Common.Time;
+using Code.Gameplay.Features.Abilities.Factory;
+using Code.Gameplay.Features.Armaments;
 using Code.Gameplay.Features.Enemy.Factory;
-using Code.Gameplay.Features.Hero.Behaviours;
 using Code.Gameplay.Features.Hero.Factory;
 using Code.Gameplay.Input.Service;
 using Code.Gameplay.Levels;
@@ -14,7 +15,6 @@ using Code.Infrastructure.Identifiers;
 using Code.Infrastructure.Loading;
 using Code.Infrastructure.States.Factory;
 using Code.Infrastructure.States.GameStates;
-using Code.Infrastructure.States.StateInfrastructure;
 using Code.Infrastructure.States.StateMachine;
 using Code.Infrastructure.View;
 using Code.Progress.Provider;
@@ -91,6 +91,8 @@ namespace Code.Infrastructure.Installers
 			Container.Bind<IEntityViewFactory>().To<EntityViewFactory>().AsSingle();
 			Container.Bind<IHeroFactory>().To<HeroFactory>().AsSingle();
 			Container.Bind<IEnemyFactory>().To<EnemyFactory>().AsSingle();
+			Container.Bind<IArmamentFactory>().To<ArmamentFactory>().AsSingle();
+			Container.Bind<IAbilityFactory>().To<AbilityFactory>().AsSingle();
 		}
 
 		private void BindSystemFactory()

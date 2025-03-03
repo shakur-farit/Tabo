@@ -6,7 +6,7 @@ namespace Code.Gameplay.Features.Abilities
 	public class ProjectileSetup
 	{
 		public float Speed;
-		public float Pierce = 1;
+		public int Pierce = 1;
 		public float ContactRadius;
 	}
 }

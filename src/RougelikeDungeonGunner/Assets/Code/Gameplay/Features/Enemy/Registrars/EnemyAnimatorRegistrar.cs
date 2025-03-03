@@ -6,7 +6,7 @@ namespace Code.Gameplay.Features.Enemy.Registrars
 {
 	public class EnemyAnimatorRegistrar : EntityComponentRegistrar
 	{
-		[SerializeField] public EnemyAnimator _enemyAnimator;
+		[SerializeField] private EnemyAnimator _enemyAnimator;
 
 		public override void RegisterComponents() =>
 			Entity

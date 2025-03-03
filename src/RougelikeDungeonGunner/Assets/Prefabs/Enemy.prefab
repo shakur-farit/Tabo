@@ -271,7 +271,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EntityView: {fileID: 8166552356577901019}
-  SpriteRenderer: {fileID: 5241945053856362886}
+  _spriteRenderer: {fileID: 5241945053856362886}
 --- !u!114 &7506000045583834391
 MonoBehaviour:
   m_ObjectHideFlags: 0

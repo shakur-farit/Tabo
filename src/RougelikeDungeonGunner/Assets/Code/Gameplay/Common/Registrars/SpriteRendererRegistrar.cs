@@ -5,10 +5,10 @@ namespace Code.Gameplay.Common
 {
 	public class SpriteRendererRegistrar : EntityComponentRegistrar
 	{
-		public SpriteRenderer SpriteRenderer;
+		[SerializeField] private SpriteRenderer _spriteRenderer;
 
 		public override void RegisterComponents() => 
-			Entity.AddSpriteRenderer(SpriteRenderer);
+			Entity.AddSpriteRenderer(_spriteRenderer);
 
 		public override void UnregisterComponents()
 		{

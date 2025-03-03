@@ -20,34 +20,38 @@ public static class GameComponentsLookup {
     public const int Transform = 9;
     public const int WorldPosition = 10;
     public const int AbilityId = 11;
-    public const int Armament = 12;
-    public const int TargetLimit = 13;
-    public const int Cooldown = 14;
-    public const int CooldownLeft = 15;
-    public const int CooldownUp = 16;
-    public const int Enemy = 17;
-    public const int EnemyAnimator = 18;
-    public const int EnemyTypeId = 19;
-    public const int Hero = 20;
-    public const int HeroAnimator = 21;
-    public const int CurrentHp = 22;
-    public const int Dead = 23;
-    public const int MaxHp = 24;
-    public const int ProcessingDeath = 25;
-    public const int Direction = 26;
-    public const int MovementAvailable = 27;
-    public const int Moving = 28;
-    public const int Speed = 29;
-    public const int CollectTargetsInterval = 30;
-    public const int CollectTargetsTimer = 31;
-    public const int LayerMask = 32;
-    public const int Radius = 33;
-    public const int ReadyToCollectTargets = 34;
-    public const int TargetsBuffer = 35;
-    public const int AxisInput = 36;
-    public const int Input = 37;
+    public const int PistolBullet = 12;
+    public const int Armament = 13;
+    public const int TargetLimit = 14;
+    public const int Cooldown = 15;
+    public const int CooldownLeft = 16;
+    public const int CooldownUp = 17;
+    public const int Enemy = 18;
+    public const int EnemyAnimator = 19;
+    public const int EnemyTypeId = 20;
+    public const int Hero = 21;
+    public const int HeroAnimator = 22;
+    public const int CurrentHp = 23;
+    public const int Dead = 24;
+    public const int MaxHp = 25;
+    public const int ProcessingDeath = 26;
+    public const int Direction = 27;
+    public const int MovementAvailable = 28;
+    public const int Moving = 29;
+    public const int Speed = 30;
+    public const int CollectTargetsContinuously = 31;
+    public const int CollectTargetsInterval = 32;
+    public const int CollectTargetsTimer = 33;
+    public const int LayerMask = 34;
+    public const int Radius = 35;
+    public const int ReadyToCollectTargets = 36;
+    public const int TargetsBuffer = 37;
+    public const int FirePosition = 38;
+    public const int WeaponSprite = 39;
+    public const int AxisInput = 40;
+    public const int Input = 41;
 
-    public const int TotalComponents = 38;
+    public const int TotalComponents = 42;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -62,6 +66,7 @@ public static class GameComponentsLookup {
         "Transform",
         "WorldPosition",
         "AbilityId",
+        "PistolBullet",
         "Armament",
         "TargetLimit",
         "Cooldown",
@@ -80,12 +85,15 @@ public static class GameComponentsLookup {
         "MovementAvailable",
         "Moving",
         "Speed",
+        "CollectTargetsContinuously",
         "CollectTargetsInterval",
         "CollectTargetsTimer",
         "LayerMask",
         "Radius",
         "ReadyToCollectTargets",
         "TargetsBuffer",
+        "FirePosition",
+        "WeaponSprite",
         "AxisInput",
         "Input"
     };
@@ -103,6 +111,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Common.TransformComponent),
         typeof(Code.Gameplay.Common.WorldPosition),
         typeof(Code.Gameplay.Features.Abilities.AbilityIdComponent),
+        typeof(Code.Gameplay.Features.Abilities.PistolBullet),
         typeof(Code.Gameplay.Features.Armaments.Armament),
         typeof(Code.Gameplay.Features.Armaments.TargetLimit),
         typeof(Code.Gameplay.Features.Cooldowns.Cooldown),
@@ -121,12 +130,15 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Movement.MovementAvailable),
         typeof(Code.Gameplay.Features.Movement.Moving),
         typeof(Code.Gameplay.Features.Movement.Speed),
+        typeof(Code.Gameplay.Features.TargetCollection.CollectTargetsContinuously),
         typeof(Code.Gameplay.Features.TargetCollection.CollectTargetsInterval),
         typeof(Code.Gameplay.Features.TargetCollection.CollectTargetsTimer),
         typeof(Code.Gameplay.Features.TargetCollection.LayerMask),
         typeof(Code.Gameplay.Features.TargetCollection.Radius),
         typeof(Code.Gameplay.Features.TargetCollection.ReadyToCollectTargets),
         typeof(Code.Gameplay.Features.TargetCollection.TargetsBuffer),
+        typeof(Code.Gameplay.Features.Weapon.FirePosition),
+        typeof(Code.Gameplay.Features.Weapon.WeaponSprite),
         typeof(Code.Gameplay.Input.AxisInput),
         typeof(Code.Gameplay.Input.Input)
     };
