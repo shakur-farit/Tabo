@@ -1,4 +1,5 @@
-﻿using Code.Gameplay.Common.Visuals;
+﻿using System;
+using Code.Gameplay.Common.Visuals;
 using DG.Tweening;
 using UnityEngine;
 
@@ -9,7 +10,6 @@ namespace Code.Gameplay.Features.Enemy.Behaviours
 		[SerializeField] private Animator _animator;
 		[SerializeField] private SpriteRenderer _spriteRenderer;
 
-		private readonly int _isIdling = Animator.StringToHash("isIdling");
 		private readonly int _isMoving = Animator.StringToHash("isMoving");
 
 		private readonly int _aimUp = Animator.StringToHash("aimUp");
@@ -20,6 +20,9 @@ namespace Code.Gameplay.Features.Enemy.Behaviours
 		private readonly int _aimDown = Animator.StringToHash("aimDown");
 
 		private readonly int _diedHash = Animator.StringToHash("died");
+
+		private void OnDestroy() => 
+			DOTween.Kill(transform);
 
 		public void StartIdling() => _animator.SetBool(_isMoving, false);
 

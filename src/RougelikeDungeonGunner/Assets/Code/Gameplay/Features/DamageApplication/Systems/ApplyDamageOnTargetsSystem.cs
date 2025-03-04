@@ -14,9 +14,7 @@ namespace Code.Gameplay.Features.DamageApplication.Systems
 			_damageDealers = game.GetGroup(GameMatcher
 				.AllOf(
 					GameMatcher.Damage,
-					GameMatcher.TargetsBuffer,
-					GameMatcher.CurrentHp,
-					GameMatcher.DamageTakenAnimator));
+					GameMatcher.TargetsBuffer));
 		}
 
 		public void Execute()

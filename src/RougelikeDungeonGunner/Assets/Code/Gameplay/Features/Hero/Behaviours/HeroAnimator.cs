@@ -21,7 +21,10 @@ namespace Code.Gameplay.Features.Hero.Behaviours
 
 	  private readonly int _diedHash = Animator.StringToHash("died");
 
-	  public void PlayDied()
+	  private void OnDestroy() =>
+		  _spriteRenderer.DOKill();
+
+		public void PlayDied()
 		{
 			Debug.Log("Death animation");
 			//_animator.SetTrigger(_diedHash);
@@ -52,11 +55,10 @@ namespace Code.Gameplay.Features.Hero.Behaviours
 
 		public void PlayDamageTaken()
     {
-			_spriteRenderer.DOColor(Color.red, 0.1f).OnComplete(() =>
-			{
-				_spriteRenderer.DOColor(Color.white, 0.1f);
-			});
-		}
+	    if (_spriteRenderer != null)
+		    _spriteRenderer.DOColor(Color.red, 0.1f).OnComplete(() => 
+			    _spriteRenderer.DOColor(Color.white, 0.1f));
+    }
 
     public void ResetAll()
     {
