@@ -3,8 +3,10 @@ using System.Linq;
 using Code.Common.Extensions;
 using Code.Gameplay.Features.Armaments;
 using Code.Gameplay.Features.Cooldowns;
+using Code.Gameplay.Features.Weapon;
 using Code.Gameplay.StaticData;
 using Entitas;
+using UnityEngine;
 
 namespace Code.Gameplay.Features.Abilities.Systems
 {
@@ -15,8 +17,8 @@ namespace Code.Gameplay.Features.Abilities.Systems
 		private readonly IStaticDataService _staticDataService;
 		private readonly IArmamentFactory _armamentFactory;
 		private readonly IGroup<GameEntity> _abilities;
-		private readonly IGroup<GameEntity> _heroes;
 		private readonly IGroup<GameEntity> _enemies;
+		private readonly IGroup<GameEntity> _firePositions;
 
 		public PistolBulletAbilitySystem(
 			GameContext game,
@@ -25,16 +27,15 @@ namespace Code.Gameplay.Features.Abilities.Systems
 		{
 			_staticDataService = staticDataService;
 			_armamentFactory = armamentFactory;
+
 			_abilities = game.GetGroup(GameMatcher
 				.AllOf(
 					GameMatcher.PistolBullet,
 					GameMatcher.CooldownUp));
 
-			_heroes = game.GetGroup(GameMatcher
+			_firePositions = game.GetGroup(GameMatcher
 				.AllOf(
-					GameMatcher.Hero,
-					GameMatcher.WorldPosition));
-
+					GameMatcher.FirePositionTransform));
 
 			_enemies = game.GetGroup(GameMatcher
 				.AllOf(
@@ -45,17 +46,19 @@ namespace Code.Gameplay.Features.Abilities.Systems
 		public void Execute()
 		{
 			foreach (GameEntity ability in _abilities.GetEntities(_buffer))
-			foreach (GameEntity hero in _heroes)
+			foreach (GameEntity firePosition in _firePositions)
 			{
 				if (_enemies.count <= 0)
 					continue;
 
-				_armamentFactory.CreatePistolBullet(1, hero.WorldPosition)
-					.ReplaceDirection((FirstAvailableTarget().WorldPosition - hero.WorldPosition).normalized)
+				var localPosition = firePosition.FirePositionTransform.localPosition;
+
+				_armamentFactory.CreatePistolBullet(1, localPosition)
+					.ReplaceDirection((FirstAvailableTarget().WorldPosition - localPosition).normalized)
 					.With(x => x.isMoving = true);
 
 				ability
-					.PutOnCooldown(_staticDataService.GetAbilityLevel(AbilityId.PistolBullet, 1)
+					.PutOnCooldown(_staticDataService.GetWeaponLevel(WeaponId.Pistol, 1)
 						.Cooldown);
 			}
 		}

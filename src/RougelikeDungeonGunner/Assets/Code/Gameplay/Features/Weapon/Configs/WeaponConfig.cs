@@ -8,7 +8,8 @@ namespace Code.Gameplay.Features.Weapon
 	public class WeaponConfig : ScriptableObject
 	{
 		public WeaponId WeaponId;
-		public AbilityId AbilityId;
+		public Sprite WeaponSprite;
+		public AbilityId AmmoId;
 		public Vector2 FirePosition;
 
 		public List<WeaponLevel> Levels;

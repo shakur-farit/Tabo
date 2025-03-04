@@ -46,12 +46,18 @@ public static class GameComponentsLookup {
     public const int Radius = 35;
     public const int ReadyToCollectTargets = 36;
     public const int TargetsBuffer = 37;
-    public const int FirePosition = 38;
-    public const int WeaponSprite = 39;
-    public const int AxisInput = 40;
-    public const int Input = 41;
+    public const int AmmoId = 38;
+    public const int FirePositionTransform = 39;
+    public const int FireRange = 40;
+    public const int MagazineSize = 41;
+    public const int Pistol = 42;
+    public const int ReloadTime = 43;
+    public const int WeaponId = 44;
+    public const int WeaponSpriteRenderer = 45;
+    public const int AxisInput = 46;
+    public const int Input = 47;
 
-    public const int TotalComponents = 42;
+    public const int TotalComponents = 48;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -92,8 +98,14 @@ public static class GameComponentsLookup {
         "Radius",
         "ReadyToCollectTargets",
         "TargetsBuffer",
-        "FirePosition",
-        "WeaponSprite",
+        "AmmoId",
+        "FirePositionTransform",
+        "FireRange",
+        "MagazineSize",
+        "Pistol",
+        "ReloadTime",
+        "WeaponId",
+        "WeaponSpriteRenderer",
         "AxisInput",
         "Input"
     };
@@ -137,8 +149,14 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.TargetCollection.Radius),
         typeof(Code.Gameplay.Features.TargetCollection.ReadyToCollectTargets),
         typeof(Code.Gameplay.Features.TargetCollection.TargetsBuffer),
-        typeof(Code.Gameplay.Features.Weapon.FirePosition),
-        typeof(Code.Gameplay.Features.Weapon.WeaponSprite),
+        typeof(Code.Gameplay.Features.Weapon.AmmoIdComponent),
+        typeof(Code.Gameplay.Features.Weapon.FirePositionTransform),
+        typeof(Code.Gameplay.Features.Weapon.FireRange),
+        typeof(Code.Gameplay.Features.Weapon.MagazineSize),
+        typeof(Code.Gameplay.Features.Weapon.Pistol),
+        typeof(Code.Gameplay.Features.Weapon.ReloadTime),
+        typeof(Code.Gameplay.Features.Weapon.WeaponIdComponent),
+        typeof(Code.Gameplay.Features.Weapon.WeaponSpriteRenderer),
         typeof(Code.Gameplay.Input.AxisInput),
         typeof(Code.Gameplay.Input.Input)
     };

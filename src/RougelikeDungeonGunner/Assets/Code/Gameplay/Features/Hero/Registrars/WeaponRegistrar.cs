@@ -12,8 +12,10 @@ namespace Code.Gameplay.Features.Hero.Registrars
 		public override void RegisterComponents()
 		{
 			CreateEntity.Empty()
-				.AddFirePosition(_firePosiotionTransform.position)
-				.AddWeaponSprite(_spriteRenderer.sprite);
+				.AddFirePositionTransform(_firePosiotionTransform)
+				.AddWeaponSpriteRenderer(_spriteRenderer)
+				;
+
 		}
 
 		public override void UnregisterComponents()

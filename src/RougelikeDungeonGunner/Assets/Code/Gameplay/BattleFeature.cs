@@ -6,6 +6,7 @@ using Code.Gameplay.Features.Hero;
 using Code.Gameplay.Features.Lifetime;
 using Code.Gameplay.Features.Movement;
 using Code.Gameplay.Features.TargetCollection;
+using Code.Gameplay.Features.Weapon;
 using Code.Gameplay.Input;
 using Code.Infrastructure;
 using Code.Infrastructure.View;
@@ -24,6 +25,7 @@ namespace Code.Gameplay
 			Add(systems.Create<DeathFeature>());
 
 			Add(systems.Create<MovementFeature>());
+			Add(systems.Create<WeaponFeature>());
 			Add(systems.Create<AbilityFeature>());
 
 			Add(systems.Create<CollectTargetsFeature>());
