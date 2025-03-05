@@ -31,7 +31,7 @@ MonoBehaviour:
     m_Address: PistolBulletConfig
     m_ReadOnly: 0
     m_SerializedLabels:
-    - AbilityConfig
+    - AmmoConfig
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 0b48c2f69e921be4ba7e0738e79f1ec6
     m_Address: PistolConfig

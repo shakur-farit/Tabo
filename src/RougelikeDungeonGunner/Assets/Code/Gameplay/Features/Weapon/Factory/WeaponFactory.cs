@@ -1,7 +1,11 @@
 ﻿using Code.Common.Entity;
 using Code.Common.Extensions;
+using Code.Gameplay.Features.Ammo;
+using Code.Gameplay.Features.Cooldowns;
 using Code.Gameplay.StaticData;
 using Code.Infrastructure.Identifiers;
+using System;
+using Code.Gameplay.Features.Weapon.Configs;
 
 namespace Code.Gameplay.Features.Weapon.Factory
 {
@@ -16,19 +20,37 @@ namespace Code.Gameplay.Features.Weapon.Factory
 			_staticDataService = staticDataService;
 		}
 
-		public GameEntity CreatePistol()
+		public GameEntity CreateWeapon(WeaponId weaponId, int level)
 		{
-			WeaponConfig weaponConfig = _staticDataService.GetWeaponConfig(WeaponId.Pistol);
-			WeaponLevel level = _staticDataService.GetWeaponLevel(WeaponId.Pistol, 1);
+			switch (weaponId)
+			{
+				case WeaponId.Pistol:
+					return CreatePistol(level);
+			}
+
+			throw new Exception($"Weapon for {weaponId} was not found");
+		}
+
+		public GameEntity CreatePistol(int level)
+		{
+			return CreateWeaponEntity(WeaponId.Pistol, level)
+				.With(x => x.isPistol = true);
+		}
+
+		private GameEntity CreateWeaponEntity(WeaponId weaponId, int level)
+		{
+			WeaponConfig weaponConfig = _staticDataService.GetWeaponConfig(weaponId);
+			WeaponLevel weaponLevel = _staticDataService.GetWeaponLevel(weaponId, level);
 
 			return CreateEntity.Empty()
 					.AddId(_identifier.Next())
 					.AddAmmoId(weaponConfig.AmmoId)
-					.AddFireRange(level.FireRange)
-					.AddReloadTime(level.ReloadTime)
-					.AddMagazineSize(level.MagazineSize)
-					.AddCooldown(level.Cooldown)
-					.With(x => x.isPistol = true)
+					.AddFireRange(weaponLevel.FireRange)
+					.AddReloadTime(weaponLevel.ReloadTime)
+					.AddMagazineSize(weaponLevel.MagazineSize)
+					.AddCooldown(weaponLevel.Cooldown)
+					.With(x => x.isWeapon = true)
+					.PutOnCooldown()
 				;
 		}
 	}

@@ -19,45 +19,47 @@ public static class GameComponentsLookup {
     public const int SpriteRenderer = 8;
     public const int Transform = 9;
     public const int WorldPosition = 10;
-    public const int AbilityId = 11;
-    public const int PistolBullet = 12;
-    public const int Armament = 13;
-    public const int TargetLimit = 14;
-    public const int Cooldown = 15;
-    public const int CooldownLeft = 16;
-    public const int CooldownUp = 17;
-    public const int Enemy = 18;
-    public const int EnemyAnimator = 19;
-    public const int EnemyTypeId = 20;
-    public const int Hero = 21;
-    public const int HeroAnimator = 22;
-    public const int CurrentHp = 23;
-    public const int Dead = 24;
-    public const int MaxHp = 25;
-    public const int ProcessingDeath = 26;
-    public const int Direction = 27;
-    public const int MovementAvailable = 28;
-    public const int Moving = 29;
-    public const int Speed = 30;
-    public const int CollectTargetsContinuously = 31;
-    public const int CollectTargetsInterval = 32;
-    public const int CollectTargetsTimer = 33;
-    public const int LayerMask = 34;
-    public const int Radius = 35;
-    public const int ReadyToCollectTargets = 36;
-    public const int TargetsBuffer = 37;
-    public const int AmmoId = 38;
-    public const int FirePositionTransform = 39;
-    public const int FireRange = 40;
-    public const int MagazineSize = 41;
-    public const int Pistol = 42;
-    public const int ReloadTime = 43;
-    public const int WeaponId = 44;
-    public const int WeaponSpriteRenderer = 45;
-    public const int AxisInput = 46;
-    public const int Input = 47;
+    public const int Ammo = 11;
+    public const int AmmoId = 12;
+    public const int PistolBullet = 13;
+    public const int Processed = 14;
+    public const int TargetLimit = 15;
+    public const int Cooldown = 16;
+    public const int CooldownLeft = 17;
+    public const int CooldownUp = 18;
+    public const int Enemy = 19;
+    public const int EnemyAnimator = 20;
+    public const int EnemyTypeId = 21;
+    public const int Hero = 22;
+    public const int HeroAnimator = 23;
+    public const int CurrentHp = 24;
+    public const int Dead = 25;
+    public const int MaxHp = 26;
+    public const int ProcessingDeath = 27;
+    public const int Direction = 28;
+    public const int MovementAvailable = 29;
+    public const int Moving = 30;
+    public const int Speed = 31;
+    public const int CollectTargetsContinuously = 32;
+    public const int CollectTargetsInterval = 33;
+    public const int CollectTargetsTimer = 34;
+    public const int LayerMask = 35;
+    public const int ProcessedTargets = 36;
+    public const int Radius = 37;
+    public const int ReadyToCollectTargets = 38;
+    public const int TargetsBuffer = 39;
+    public const int FirePositionTransform = 40;
+    public const int FireRange = 41;
+    public const int MagazineSize = 42;
+    public const int Pistol = 43;
+    public const int ReloadTime = 44;
+    public const int Weapon = 45;
+    public const int WeaponId = 46;
+    public const int WeaponSpriteRenderer = 47;
+    public const int AxisInput = 48;
+    public const int Input = 49;
 
-    public const int TotalComponents = 48;
+    public const int TotalComponents = 50;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -71,9 +73,10 @@ public static class GameComponentsLookup {
         "SpriteRenderer",
         "Transform",
         "WorldPosition",
-        "AbilityId",
+        "Ammo",
+        "AmmoId",
         "PistolBullet",
-        "Armament",
+        "Processed",
         "TargetLimit",
         "Cooldown",
         "CooldownLeft",
@@ -95,15 +98,16 @@ public static class GameComponentsLookup {
         "CollectTargetsInterval",
         "CollectTargetsTimer",
         "LayerMask",
+        "ProcessedTargets",
         "Radius",
         "ReadyToCollectTargets",
         "TargetsBuffer",
-        "AmmoId",
         "FirePositionTransform",
         "FireRange",
         "MagazineSize",
         "Pistol",
         "ReloadTime",
+        "Weapon",
         "WeaponId",
         "WeaponSpriteRenderer",
         "AxisInput",
@@ -122,10 +126,11 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Common.SpriteRendererComponent),
         typeof(Code.Gameplay.Common.TransformComponent),
         typeof(Code.Gameplay.Common.WorldPosition),
-        typeof(Code.Gameplay.Features.Abilities.AbilityIdComponent),
-        typeof(Code.Gameplay.Features.Abilities.PistolBullet),
-        typeof(Code.Gameplay.Features.Armaments.Armament),
-        typeof(Code.Gameplay.Features.Armaments.TargetLimit),
+        typeof(Code.Gameplay.Features.Ammo.Ammo),
+        typeof(Code.Gameplay.Features.Ammo.AmmoIdComponent),
+        typeof(Code.Gameplay.Features.Ammo.PistolBullet),
+        typeof(Code.Gameplay.Features.Ammo.Processed),
+        typeof(Code.Gameplay.Features.Ammo.TargetLimit),
         typeof(Code.Gameplay.Features.Cooldowns.Cooldown),
         typeof(Code.Gameplay.Features.Cooldowns.CooldownLeft),
         typeof(Code.Gameplay.Features.Cooldowns.CooldownUp),
@@ -146,15 +151,16 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.TargetCollection.CollectTargetsInterval),
         typeof(Code.Gameplay.Features.TargetCollection.CollectTargetsTimer),
         typeof(Code.Gameplay.Features.TargetCollection.LayerMask),
+        typeof(Code.Gameplay.Features.TargetCollection.ProcessedTargets),
         typeof(Code.Gameplay.Features.TargetCollection.Radius),
         typeof(Code.Gameplay.Features.TargetCollection.ReadyToCollectTargets),
         typeof(Code.Gameplay.Features.TargetCollection.TargetsBuffer),
-        typeof(Code.Gameplay.Features.Weapon.AmmoIdComponent),
         typeof(Code.Gameplay.Features.Weapon.FirePositionTransform),
         typeof(Code.Gameplay.Features.Weapon.FireRange),
         typeof(Code.Gameplay.Features.Weapon.MagazineSize),
         typeof(Code.Gameplay.Features.Weapon.Pistol),
         typeof(Code.Gameplay.Features.Weapon.ReloadTime),
+        typeof(Code.Gameplay.Features.Weapon.Weapon),
         typeof(Code.Gameplay.Features.Weapon.WeaponIdComponent),
         typeof(Code.Gameplay.Features.Weapon.WeaponSpriteRenderer),
         typeof(Code.Gameplay.Input.AxisInput),

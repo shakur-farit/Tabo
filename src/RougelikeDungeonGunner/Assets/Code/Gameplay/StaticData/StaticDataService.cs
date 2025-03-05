@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Code.Gameplay.Features.Abilities;
-using Code.Gameplay.Features.Abilities.Config;
+using Code.Gameplay.Features.Ammo;
+using Code.Gameplay.Features.Ammo.Config;
 using Code.Gameplay.Features.Weapon;
+using Code.Gameplay.Features.Weapon.Configs;
 using Code.Infrastructure.AssetManagement;
 using Cysharp.Threading.Tasks;
 
@@ -11,10 +12,10 @@ namespace Code.Gameplay.StaticData
 {
 	public class StaticDataService : IStaticDataService
 	{
-		private const string AbilityConfig = "AbilityConfig";
+		private const string AmmoConfig = "AmmoConfig";
 		private const string WeaponConfigLabel = "WeaponConfig";
 
-		private Dictionary<AbilityId, AbilityConfig> _abilityById;
+		private Dictionary<AmmoId, AmmoConfig> _ammoById;
 		private Dictionary<WeaponId, WeaponConfig> _weaponById;
 
 		private readonly IAssetProvider _assetProvider;
@@ -28,17 +29,17 @@ namespace Code.Gameplay.StaticData
 			await LoadWeapons();
 		}
 
-		public AbilityConfig GetAbilityConfig(AbilityId abilityId)
+		public AmmoConfig GetAmmoConfig(AmmoId ammoId)
 		{
-			if (_abilityById.TryGetValue(abilityId, out AbilityConfig config))
+			if (_ammoById.TryGetValue(ammoId, out AmmoConfig config))
 				return config;
 
-			throw new Exception($"Ability config for {abilityId} was not found");
+			throw new Exception($"Ammo config for {ammoId} was not found");
 		}
 
-		public AbilityLevel GetAbilityLevel(AbilityId abilityId, int level)
+		public AmmoLevel GetAbilityLevel(AmmoId ammoId, int level)
 		{
-			AbilityConfig config = GetAbilityConfig(abilityId);
+			AmmoConfig config = GetAmmoConfig(ammoId);
 
 			if (level > config.Levels.Count)
 				level = config.Levels.Count;
@@ -65,8 +66,8 @@ namespace Code.Gameplay.StaticData
 		}
 
 		private async UniTask LoadAbilities() =>
-			_abilityById = (await _assetProvider.LoadAll<AbilityConfig>(AbilityConfig))
-				.ToDictionary(x => x.AbilityId, x => x);
+			_ammoById = (await _assetProvider.LoadAll<AmmoConfig>(AmmoConfig))
+				.ToDictionary(x => x.AmmoId, x => x);
 
 		private async UniTask LoadWeapons() =>
 			_weaponById = (await _assetProvider.LoadAll<WeaponConfig>(WeaponConfigLabel))

@@ -26,8 +26,9 @@ namespace Code.Gameplay.Features.Enemy.Systems
 			{
 				enemy.isMovementAvailable = false;
 				enemy.RemoveTargetCollectionComponents();
-				enemy.EnemyAnimator.PlayDied();
-				enemy.ReplaceSelfDestructedTimer(2);
+				//enemy.EnemyAnimator.PlayDied();
+				//enemy.ReplaceSelfDestructedTimer(2);
+				enemy.isDestructed = true;
 			}
 		}
 	}

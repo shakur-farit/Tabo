@@ -33,21 +33,21 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Features.Weapon.AmmoIdComponent ammoId { get { return (Code.Gameplay.Features.Weapon.AmmoIdComponent)GetComponent(GameComponentsLookup.AmmoId); } }
-    public Code.Gameplay.Features.Abilities.AbilityId AmmoId { get { return ammoId.Value; } }
+    public Code.Gameplay.Features.Ammo.AmmoIdComponent ammoId { get { return (Code.Gameplay.Features.Ammo.AmmoIdComponent)GetComponent(GameComponentsLookup.AmmoId); } }
+    public Code.Gameplay.Features.Ammo.AmmoId AmmoId { get { return ammoId.Value; } }
     public bool hasAmmoId { get { return HasComponent(GameComponentsLookup.AmmoId); } }
 
-    public GameEntity AddAmmoId(Code.Gameplay.Features.Abilities.AbilityId newValue) {
+    public GameEntity AddAmmoId(Code.Gameplay.Features.Ammo.AmmoId newValue) {
         var index = GameComponentsLookup.AmmoId;
-        var component = (Code.Gameplay.Features.Weapon.AmmoIdComponent)CreateComponent(index, typeof(Code.Gameplay.Features.Weapon.AmmoIdComponent));
+        var component = (Code.Gameplay.Features.Ammo.AmmoIdComponent)CreateComponent(index, typeof(Code.Gameplay.Features.Ammo.AmmoIdComponent));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
     }
 
-    public GameEntity ReplaceAmmoId(Code.Gameplay.Features.Abilities.AbilityId newValue) {
+    public GameEntity ReplaceAmmoId(Code.Gameplay.Features.Ammo.AmmoId newValue) {
         var index = GameComponentsLookup.AmmoId;
-        var component = (Code.Gameplay.Features.Weapon.AmmoIdComponent)CreateComponent(index, typeof(Code.Gameplay.Features.Weapon.AmmoIdComponent));
+        var component = (Code.Gameplay.Features.Ammo.AmmoIdComponent)CreateComponent(index, typeof(Code.Gameplay.Features.Ammo.AmmoIdComponent));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

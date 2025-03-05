@@ -2,6 +2,6 @@
 {
 	public interface IWeaponFactory
 	{
-		GameEntity CreatePistol();
+		GameEntity CreateWeapon(WeaponId weaponId, int level);
 	}
 }

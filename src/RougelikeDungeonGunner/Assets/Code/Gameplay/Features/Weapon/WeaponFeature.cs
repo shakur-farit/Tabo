@@ -1,4 +1,5 @@
-﻿using Code.Infrastructure;
+﻿using Code.Gameplay.Features.Weapon.Systems;
+using Code.Infrastructure;
 
 namespace Code.Gameplay.Features.Weapon
 {
