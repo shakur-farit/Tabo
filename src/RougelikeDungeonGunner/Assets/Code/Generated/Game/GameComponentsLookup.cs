@@ -55,11 +55,12 @@ public static class GameComponentsLookup {
     public const int ReloadTime = 44;
     public const int Weapon = 45;
     public const int WeaponId = 46;
-    public const int WeaponSpriteRenderer = 47;
-    public const int AxisInput = 48;
-    public const int Input = 49;
+    public const int WeaponRotationPointTransform = 47;
+    public const int WeaponSpriteRenderer = 48;
+    public const int AxisInput = 49;
+    public const int Input = 50;
 
-    public const int TotalComponents = 50;
+    public const int TotalComponents = 51;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -109,6 +110,7 @@ public static class GameComponentsLookup {
         "ReloadTime",
         "Weapon",
         "WeaponId",
+        "WeaponRotationPointTransform",
         "WeaponSpriteRenderer",
         "AxisInput",
         "Input"
@@ -162,6 +164,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Weapon.ReloadTime),
         typeof(Code.Gameplay.Features.Weapon.Weapon),
         typeof(Code.Gameplay.Features.Weapon.WeaponIdComponent),
+        typeof(Code.Gameplay.Features.Weapon.WeaponRotationPointTransform),
         typeof(Code.Gameplay.Features.Weapon.WeaponSpriteRenderer),
         typeof(Code.Gameplay.Input.AxisInput),
         typeof(Code.Gameplay.Input.Input)
