@@ -1,6 +1,5 @@
 ﻿using Code.Common.Entity;
 using Code.Common.Extensions;
-using Code.Gameplay.Features.Ammo;
 using Code.Gameplay.Features.Cooldowns;
 using Code.Gameplay.StaticData;
 using Code.Infrastructure.Identifiers;
@@ -45,7 +44,7 @@ namespace Code.Gameplay.Features.Weapon.Factory
 			return CreateEntity.Empty()
 					.AddId(_identifier.Next())
 					.AddAmmoId(weaponConfig.AmmoId)
-					.AddFireRange(weaponLevel.FireRange)
+					.AddRadius(weaponLevel.FireRange)
 					.AddReloadTime(weaponLevel.ReloadTime)
 					.AddMagazineSize(weaponLevel.MagazineSize)
 					.AddCooldown(weaponLevel.Cooldown)

@@ -1,5 +1,4 @@
-﻿using Code.Common.Entity;
-using Code.Infrastructure.View.Registrars;
+﻿using Code.Infrastructure.View.Registrars;
 using UnityEngine;
 
 namespace Code.Gameplay.Features.Weapon.Registrars
@@ -8,11 +7,8 @@ namespace Code.Gameplay.Features.Weapon.Registrars
 	{
 		[SerializeField] private SpriteRenderer _spriteRenderer;
 
-		public override void RegisterComponents()
-		{
-			CreateEntity.Empty()
-				.AddWeaponSpriteRenderer(_spriteRenderer);
-		}
+		public override void RegisterComponents() => 
+			Entity.AddWeaponSpriteRenderer(_spriteRenderer);
 
 		public override void UnregisterComponents()
 		{

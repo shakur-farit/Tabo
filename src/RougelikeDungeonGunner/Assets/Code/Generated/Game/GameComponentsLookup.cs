@@ -49,18 +49,17 @@ public static class GameComponentsLookup {
     public const int ReadyToCollectTargets = 38;
     public const int TargetsBuffer = 39;
     public const int FirePositionTransform = 40;
-    public const int FireRange = 41;
-    public const int MagazineSize = 42;
-    public const int Pistol = 43;
-    public const int ReloadTime = 44;
-    public const int Weapon = 45;
-    public const int WeaponId = 46;
-    public const int WeaponRotationPointTransform = 47;
-    public const int WeaponSpriteRenderer = 48;
-    public const int AxisInput = 49;
-    public const int Input = 50;
+    public const int MagazineSize = 41;
+    public const int Pistol = 42;
+    public const int ReloadTime = 43;
+    public const int Weapon = 44;
+    public const int WeaponId = 45;
+    public const int WeaponRotationPointTransform = 46;
+    public const int WeaponSpriteRenderer = 47;
+    public const int AxisInput = 48;
+    public const int Input = 49;
 
-    public const int TotalComponents = 51;
+    public const int TotalComponents = 50;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -104,7 +103,6 @@ public static class GameComponentsLookup {
         "ReadyToCollectTargets",
         "TargetsBuffer",
         "FirePositionTransform",
-        "FireRange",
         "MagazineSize",
         "Pistol",
         "ReloadTime",
@@ -158,7 +156,6 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.TargetCollection.ReadyToCollectTargets),
         typeof(Code.Gameplay.Features.TargetCollection.TargetsBuffer),
         typeof(Code.Gameplay.Features.Weapon.FirePositionTransform),
-        typeof(Code.Gameplay.Features.Weapon.FireRange),
         typeof(Code.Gameplay.Features.Weapon.MagazineSize),
         typeof(Code.Gameplay.Features.Weapon.Pistol),
         typeof(Code.Gameplay.Features.Weapon.ReloadTime),

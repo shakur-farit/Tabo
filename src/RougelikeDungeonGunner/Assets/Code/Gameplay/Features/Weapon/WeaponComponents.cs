@@ -13,7 +13,6 @@ namespace Code.Gameplay.Features.Weapon
 	[Game] public class WeaponRotationPointTransform : IComponent { public Transform Value; }
 	[Game] public class WeaponSpriteRenderer : IComponent { public SpriteRenderer Value; }
 
-	[Game] public class FireRange : IComponent { public float Value; }
 	[Game] public class ReloadTime : IComponent { public float Value; }
 	[Game] public class MagazineSize : IComponent { public int Value; }
 }

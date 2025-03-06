@@ -8,11 +8,8 @@ namespace Code.Gameplay.Features.Weapon.Registrars
 	{
 		[SerializeField] private Transform _weaponRotationPoint;
 
-		public override void RegisterComponents()
-		{
-			CreateEntity.Empty()
-				.AddWeaponRotationPointTransform(_weaponRotationPoint);
-		}
+		public override void RegisterComponents() => 
+			Entity.AddWeaponRotationPointTransform(_weaponRotationPoint);
 
 		public override void UnregisterComponents()
 		{

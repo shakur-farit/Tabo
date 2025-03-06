@@ -25,7 +25,7 @@ namespace Code.Gameplay.Features.Ammo.Systems
 			_weapons = game.GetGroup(GameMatcher
 				.AllOf(
 					GameMatcher.Weapon,
-					GameMatcher.FireRange));
+					GameMatcher.Radius));
 		}
 
 		public void Execute()
@@ -36,7 +36,7 @@ namespace Code.Gameplay.Features.Ammo.Systems
 			{
 				float distance = (ammo.WorldPosition - firePositionTransform.FirePositionTransform.position).magnitude;
 
-				if (distance > weapon.FireRange)
+				if (distance > weapon.Radius)
 					ammo.isDestructed = true;
 			}
 		}

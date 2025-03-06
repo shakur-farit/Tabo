@@ -24,7 +24,7 @@ namespace Code.Gameplay.Features.Weapon.Systems
 			_weapons = game.GetGroup(GameMatcher
 				.AllOf(
 					GameMatcher.Weapon,
-					GameMatcher.FireRange));
+					GameMatcher.Radius));
 		}
 
 		public void Execute()
@@ -51,7 +51,7 @@ namespace Code.Gameplay.Features.Weapon.Systems
 		private GameEntity ClosestEnemy(GameEntity rotationPoint, GameEntity weapon)
 		{
 			Vector3 weaponPosition = rotationPoint.WeaponRotationPointTransform.position;
-			float weaponRange = weapon.FireRange;
+			float weaponRange = weapon.Radius;
 
 			return _enemies.GetEntities()
 				.Where(enemy => Vector3.Distance(enemy.WorldPosition, weaponPosition) <= weaponRange)

@@ -8,11 +8,8 @@ namespace Code.Gameplay.Features.Weapon.Registrars
 	{
 		[SerializeField] private Transform _firePosiotionTransform;
 
-		public override void RegisterComponents()
-		{
-			CreateEntity.Empty()
-				.AddFirePositionTransform(_firePosiotionTransform);
-		}
+		public override void RegisterComponents() => 
+			Entity.AddFirePositionTransform(_firePosiotionTransform);
 
 		public override void UnregisterComponents()
 		{
