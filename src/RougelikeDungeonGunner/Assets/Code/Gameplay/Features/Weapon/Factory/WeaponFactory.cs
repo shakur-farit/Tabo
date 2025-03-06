@@ -5,6 +5,7 @@ using Code.Gameplay.StaticData;
 using Code.Infrastructure.Identifiers;
 using System;
 using Code.Gameplay.Features.Weapon.Configs;
+using UnityEngine;
 
 namespace Code.Gameplay.Features.Weapon.Factory
 {
@@ -19,30 +20,33 @@ namespace Code.Gameplay.Features.Weapon.Factory
 			_staticDataService = staticDataService;
 		}
 
-		public GameEntity CreateWeapon(WeaponId weaponId, int level)
+		public GameEntity CreateWeapon(WeaponId weaponId, int level, GameEntity entity, Vector2 at)
 		{
 			switch (weaponId)
 			{
 				case WeaponId.Pistol:
-					return CreatePistol(level);
+					return CreatePistol(level, entity, at);
 			}
 
 			throw new Exception($"Weapon for {weaponId} was not found");
 		}
 
-		public GameEntity CreatePistol(int level)
+		public GameEntity CreatePistol(int level, GameEntity entity, Vector2 at)
 		{
-			return CreateWeaponEntity(WeaponId.Pistol, level)
+			return CreateWeaponEntity(WeaponId.Pistol, level, entity, at)
 				.With(x => x.isPistol = true);
 		}
 
-		private GameEntity CreateWeaponEntity(WeaponId weaponId, int level)
+		private GameEntity CreateWeaponEntity(WeaponId weaponId, int level, GameEntity entity, Vector2 at)
 		{
 			WeaponConfig weaponConfig = _staticDataService.GetWeaponConfig(weaponId);
 			WeaponLevel weaponLevel = _staticDataService.GetWeaponLevel(weaponId, level);
 
 			return CreateEntity.Empty()
 					.AddId(_identifier.Next())
+					.AddViewPath("WeaponAnchorPosition")
+					.AddViewParent(entity)
+					.AddWorldPosition(at)
 					.AddAmmoId(weaponConfig.AmmoId)
 					.AddRadius(weaponLevel.FireRange)
 					.AddReloadTime(weaponLevel.ReloadTime)

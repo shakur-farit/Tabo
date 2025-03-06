@@ -5,6 +5,7 @@ using Code.Gameplay.Features.Weapon.Factory;
 using Code.Gameplay.Levels;
 using Code.Infrastructure.States.StateInfrastructure;
 using Code.Infrastructure.States.StateMachine;
+using UnityEngine;
 
 namespace Code.Infrastructure.States.GameStates
 {
@@ -19,7 +20,6 @@ namespace Code.Infrastructure.States.GameStates
 			IGameStateMachine stateMachine,
 			ILevelDataProvider levelDataProvider,
 			IHeroFactory heroFactory,
-			IAmmoFactory ammoFactory,
 			IWeaponFactory weaponFactory)
 		{
 			_stateMachine = stateMachine;
@@ -35,12 +35,8 @@ namespace Code.Infrastructure.States.GameStates
 			_stateMachine.Enter<BattleLoopState>();
 		}
 
-		private void PlaceHero()
-		{
+		private void PlaceHero() => 
 			_heroFactory.CreateHero(_levelDataProvider.StartPoint);
-
-			_weaponFactory.CreateWeapon(WeaponId.Pistol, 1);
-		}
 
 		public void Exit()
 		{

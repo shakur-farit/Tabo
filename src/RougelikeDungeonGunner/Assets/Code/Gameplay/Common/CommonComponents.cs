@@ -10,6 +10,7 @@ namespace Code.Gameplay.Common
 	[Game] public class Damage : IComponent { public float Value; }
 
 	[Game] public class TransformComponent : IComponent { public Transform Value; }
+	[Game] public class ParentTransform : IComponent { public Transform Value; }
 	[Game] public class SpriteRendererComponent : IComponent { public SpriteRenderer Value; }
 	[Game] public class DamageTakenAnimatorComponent : IComponent { public IDamageTakenAnimator Value; }
 }

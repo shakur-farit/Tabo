@@ -1,6 +1,7 @@
 ﻿using Code.Gameplay.Features.Hero.Behaviours;
 using Code.Infrastructure.View.Registrars;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Code.Gameplay.Features.Hero.Registrars
 {
