@@ -39,8 +39,8 @@ MonoBehaviour:
     m_SerializedLabels:
     - WeaponConfig
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 1e30e53a273ed7c429214ee02d382b67
-    m_Address: WeaponAnchorPosition
+  - m_GUID: 69172fbde18e101418b3b1f7089f9a29
+    m_Address: WeaponRotationPoint
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
