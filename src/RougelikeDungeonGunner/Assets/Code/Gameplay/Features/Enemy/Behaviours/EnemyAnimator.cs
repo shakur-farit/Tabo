@@ -22,7 +22,7 @@ namespace Code.Gameplay.Features.Enemy.Behaviours
 		private readonly int _diedHash = Animator.StringToHash("died");
 
 		private void OnDestroy() => 
-			DOTween.Kill(transform);
+			DOTween.Kill(_spriteRenderer);
 
 		public void StartIdling() => _animator.SetBool(_isMoving, false);
 

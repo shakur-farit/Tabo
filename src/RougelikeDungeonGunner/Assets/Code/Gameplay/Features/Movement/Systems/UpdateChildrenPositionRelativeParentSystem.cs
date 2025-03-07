@@ -1,4 +1,5 @@
 using Entitas;
+using UnityEngine;
 
 namespace Code.Gameplay.Features.Movement.Systems
 {
@@ -19,6 +20,7 @@ namespace Code.Gameplay.Features.Movement.Systems
 			foreach (GameEntity child in _children)
 			{
 				child.ReplaceWorldPosition(child.ViewParent.WorldPosition);
+				child.Transform.localPosition = Vector2.zero;
 			}
 		}
 	}
