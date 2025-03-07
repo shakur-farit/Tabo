@@ -1,35 +1,28 @@
+using System.Collections.Generic;
 using Entitas;
-using UnityEngine;
 
 namespace Code.Infrastructure.View
 {
 	public class SetParentForEntityViewSystem : IExecuteSystem
 	{
 		private readonly IGroup<GameEntity> _children;
-		private readonly IGroup<GameEntity> _parents;
+		private readonly List<GameEntity> _buffer = new(32);
 
 		public SetParentForEntityViewSystem(GameContext game)
 		{
 			_children = game.GetGroup(GameMatcher
 				.AllOf(
 					GameMatcher.ViewParent,
-					GameMatcher.Transform));
-
-			_parents = game.GetGroup(GameMatcher
-				.AllOf(
-					GameMatcher.ParentTransform));
+					GameMatcher.Transform)
+				.NoneOf(GameMatcher.Parented));
 		}
 
 		public void Execute()
 		{
-			foreach (GameEntity child in _children)
-			foreach (GameEntity parent in _parents)
+			foreach (GameEntity child in _children.GetEntities(_buffer))
 			{
-				child.Transform.SetParent(parent.ParentTransform, false);
-				child.Transform.position = Vector3.zero;
-				child.Transform.localPosition= Vector3.zero;
-				Debug.Log(child.Transform.position);
-				Debug.Log(child.Transform.localPosition);
+				child.Transform.SetParent(child.ViewParent.ParentTransform);
+				child.isParented = true;
 			}
 		}
 	}

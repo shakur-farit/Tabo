@@ -9,62 +9,64 @@
 public static class GameComponentsLookup {
 
     public const int Destructed = 0;
-    public const int SelfDestructedTimer = 1;
-    public const int View = 2;
-    public const int ViewParent = 3;
-    public const int ViewPath = 4;
-    public const int ViewPrefab = 5;
-    public const int Damage = 6;
-    public const int DamageTakenAnimator = 7;
-    public const int Id = 8;
-    public const int ParentTransform = 9;
-    public const int SpriteRenderer = 10;
-    public const int Transform = 11;
-    public const int WorldPosition = 12;
-    public const int Ammo = 13;
-    public const int AmmoId = 14;
-    public const int PistolBullet = 15;
-    public const int Processed = 16;
-    public const int TargetLimit = 17;
-    public const int Cooldown = 18;
-    public const int CooldownLeft = 19;
-    public const int CooldownUp = 20;
-    public const int Enemy = 21;
-    public const int EnemyAnimator = 22;
-    public const int EnemyTypeId = 23;
-    public const int Hero = 24;
-    public const int HeroAnimator = 25;
-    public const int CurrentHp = 26;
-    public const int Dead = 27;
-    public const int MaxHp = 28;
-    public const int ProcessingDeath = 29;
-    public const int Direction = 30;
-    public const int MovementAvailable = 31;
-    public const int Moving = 32;
-    public const int Speed = 33;
-    public const int CollectTargetsContinuously = 34;
-    public const int CollectTargetsInterval = 35;
-    public const int CollectTargetsTimer = 36;
-    public const int LayerMask = 37;
-    public const int ProcessedTargets = 38;
-    public const int Radius = 39;
-    public const int ReadyToCollectTargets = 40;
-    public const int TargetsBuffer = 41;
-    public const int FirePositionTransform = 42;
-    public const int MagazineSize = 43;
-    public const int Pistol = 44;
-    public const int ReloadTime = 45;
-    public const int Weapon = 46;
-    public const int WeaponId = 47;
-    public const int WeaponRotationPointTransform = 48;
-    public const int WeaponSpriteRenderer = 49;
-    public const int AxisInput = 50;
-    public const int Input = 51;
+    public const int Parented = 1;
+    public const int SelfDestructedTimer = 2;
+    public const int View = 3;
+    public const int ViewParent = 4;
+    public const int ViewPath = 5;
+    public const int ViewPrefab = 6;
+    public const int Damage = 7;
+    public const int DamageTakenAnimator = 8;
+    public const int Id = 9;
+    public const int ParentTransform = 10;
+    public const int SpriteRenderer = 11;
+    public const int Transform = 12;
+    public const int WorldPosition = 13;
+    public const int Ammo = 14;
+    public const int AmmoId = 15;
+    public const int PistolBullet = 16;
+    public const int Processed = 17;
+    public const int TargetLimit = 18;
+    public const int Cooldown = 19;
+    public const int CooldownLeft = 20;
+    public const int CooldownUp = 21;
+    public const int Enemy = 22;
+    public const int EnemyAnimator = 23;
+    public const int EnemyTypeId = 24;
+    public const int Hero = 25;
+    public const int HeroAnimator = 26;
+    public const int CurrentHp = 27;
+    public const int Dead = 28;
+    public const int MaxHp = 29;
+    public const int ProcessingDeath = 30;
+    public const int Direction = 31;
+    public const int MovementAvailable = 32;
+    public const int Moving = 33;
+    public const int Speed = 34;
+    public const int CollectTargetsContinuously = 35;
+    public const int CollectTargetsInterval = 36;
+    public const int CollectTargetsTimer = 37;
+    public const int LayerMask = 38;
+    public const int ProcessedTargets = 39;
+    public const int Radius = 40;
+    public const int ReadyToCollectTargets = 41;
+    public const int TargetsBuffer = 42;
+    public const int FirePositionTransform = 43;
+    public const int MagazineSize = 44;
+    public const int Pistol = 45;
+    public const int ReloadTime = 46;
+    public const int Weapon = 47;
+    public const int WeaponId = 48;
+    public const int WeaponRotationPointTransform = 49;
+    public const int WeaponSpriteRenderer = 50;
+    public const int AxisInput = 51;
+    public const int Input = 52;
 
-    public const int TotalComponents = 52;
+    public const int TotalComponents = 53;
 
     public static readonly string[] componentNames = {
         "Destructed",
+        "Parented",
         "SelfDestructedTimer",
         "View",
         "ViewParent",
@@ -120,6 +122,7 @@ public static class GameComponentsLookup {
 
     public static readonly System.Type[] componentTypes = {
         typeof(Code.Common.Destructed),
+        typeof(Code.Common.Parented),
         typeof(Code.Common.SelfDestructedTimer),
         typeof(Code.Common.View),
         typeof(Code.Common.ViewParent),

@@ -44,7 +44,7 @@ namespace Code.Gameplay.Features.Weapon.Factory
 
 			return CreateEntity.Empty()
 					.AddId(_identifier.Next())
-					.AddViewPath("WeaponAnchorPosition")
+					.AddViewPath("WeaponRotationPoint")
 					.AddViewParent(entity)
 					.AddWorldPosition(at)
 					.AddAmmoId(weaponConfig.AmmoId)
