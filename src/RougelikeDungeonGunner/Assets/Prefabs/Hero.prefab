@@ -300,7 +300,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EntityView: {fileID: 8254426112849521288}
-  _weaponParent: {fileID: 6415936365622873015}
+  _weaponParent: {fileID: 6737803480724137076}
 --- !u!1 &5736893014964504900
 GameObject:
   m_ObjectHideFlags: 0
@@ -394,11 +394,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6737803480724137076}
-  - component: {fileID: 7061434509168496842}
-  - component: {fileID: 6720139462830704157}
-  - component: {fileID: 8573282334989234856}
-  - component: {fileID: 7366898750445343562}
-  - component: {fileID: 1147230001327156472}
   m_Layer: 6
   m_Name: WeaponAnchorPosition
   m_TagString: Untagged
@@ -421,70 +416,3 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6415936365622873015}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7061434509168496842
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7746484824023871013}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f995b7c574ebe654d91168f1183f0916, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &6720139462830704157
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7746484824023871013}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b8a654e6cfe0df4183acf3af6618ebe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EntityView: {fileID: 7061434509168496842}
---- !u!114 &8573282334989234856
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7746484824023871013}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4eee636bc49e97940b7239e9da120b4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EntityView: {fileID: 7061434509168496842}
-  _spriteRenderer: {fileID: 0}
---- !u!114 &7366898750445343562
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7746484824023871013}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91dfa1bd1c924aa45a2dc311cfc305a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EntityView: {fileID: 7061434509168496842}
-  _firePosiotionTransform: {fileID: 0}
---- !u!114 &1147230001327156472
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7746484824023871013}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9940e32f61f8de4397fcd95b3caa199, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EntityView: {fileID: 7061434509168496842}
-  _weaponRotationPoint: {fileID: 0}
