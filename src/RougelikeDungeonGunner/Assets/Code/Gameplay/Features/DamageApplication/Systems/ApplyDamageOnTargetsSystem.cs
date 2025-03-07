@@ -1,4 +1,5 @@
 ﻿using Entitas;
+using UnityEngine;
 
 namespace Code.Gameplay.Features.DamageApplication.Systems
 {
@@ -25,7 +26,8 @@ namespace Code.Gameplay.Features.DamageApplication.Systems
 
 				target.ReplaceCurrentHp(target.CurrentHp - damageDealer.Damage);
 
-				if(target.hasDamageTakenAnimator)
+
+				if (target.hasDamageTakenAnimator)
 					target.DamageTakenAnimator.PlayDamageTaken();
 			}
 		}

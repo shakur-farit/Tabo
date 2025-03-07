@@ -13,7 +13,8 @@ namespace Code.Gameplay.Features.Weapon.Systems
 			_staticDataService = staticDataService;
 			_weapons = game.GetGroup(GameMatcher
 				.AllOf(
-					GameMatcher.FirePositionTransform));
+					GameMatcher.FirePositionTransform,
+					GameMatcher.Weapon));
 		}
 
 		public void Execute()

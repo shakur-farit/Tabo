@@ -3,6 +3,7 @@ using Code.Common.Extensions;
 using Code.Gameplay.Features.Ammo.Factory;
 using Code.Gameplay.Features.Cooldowns;
 using Entitas;
+using UnityEngine;
 
 namespace Code.Gameplay.Features.Ammo.Systems
 {
@@ -13,7 +14,6 @@ namespace Code.Gameplay.Features.Ammo.Systems
 		private readonly IAmmoFactory _ammoFactory;
 		private readonly IGroup<GameEntity> _weapons;
 		private readonly IGroup<GameEntity> _enemies;
-		private readonly IGroup<GameEntity> _firePositionTransforms;
 
 		public PistolBulletSystem(
 			GameContext game,
@@ -24,27 +24,29 @@ namespace Code.Gameplay.Features.Ammo.Systems
 			_weapons = game.GetGroup(GameMatcher
 				.AllOf(
 					GameMatcher.Pistol,
-					GameMatcher.CooldownUp));
-
-			_firePositionTransforms = game.GetGroup(GameMatcher
-				.AllOf(
-					GameMatcher.FirePositionTransform));
+					GameMatcher.CooldownUp,
+					GameMatcher.FirePositionTransform,
+					GameMatcher.WorldPosition,
+					GameMatcher.Radius));
 
 			_enemies = game.GetGroup(GameMatcher
 				.AllOf(
-					GameMatcher.Enemy));
+					GameMatcher.Enemy,
+					GameMatcher.Radius));
 		}
 
 		public void Execute()
 		{
 			foreach (GameEntity weapon in _weapons.GetEntities(_buffer))
-			foreach (GameEntity firePosition in _firePositionTransforms)
+			foreach (GameEntity enemy in _enemies)
 			{
-				if (_enemies.count <= 0)
+				float distance = (enemy.WorldPosition - weapon.WorldPosition).magnitude;
+
+				if (distance > weapon.Radius)
 					continue;
 
-				_ammoFactory.CreatePistolBullet(1, firePosition.FirePositionTransform.position)
-					.ReplaceDirection(firePosition.FirePositionTransform.right)
+				_ammoFactory.CreatePistolBullet(1, weapon.FirePositionTransform.position)
+					.ReplaceDirection(weapon.FirePositionTransform.right)
 					.With(x => x.isMoving = true);
 
 				weapon

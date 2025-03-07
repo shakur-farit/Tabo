@@ -1,20 +1,18 @@
-﻿using Entitas;
-using System.Linq;
+﻿using System.Collections.Generic;
+using Entitas;
 using UnityEngine;
 
 namespace Code.Gameplay.Features.Weapon.Systems
 {
 	public class RotateWeaponAlongClosestEnemySystem : IExecuteSystem
 	{
-		private readonly IGroup<GameEntity> _rotationPoints;
+		private readonly List<GameEntity> _buffer = new(32);
+
 		private readonly IGroup<GameEntity> _enemies;
 		private readonly IGroup<GameEntity> _weapons;
 
 		public RotateWeaponAlongClosestEnemySystem(GameContext game)
 		{
-			_rotationPoints = game.GetGroup(GameMatcher
-				.AllOf(
-					GameMatcher.WeaponRotationPointTransform));
 
 			_enemies = game.GetGroup(GameMatcher
 				.AllOf(
@@ -24,39 +22,48 @@ namespace Code.Gameplay.Features.Weapon.Systems
 			_weapons = game.GetGroup(GameMatcher
 				.AllOf(
 					GameMatcher.Weapon,
-					GameMatcher.Radius));
+					GameMatcher.Radius,
+					GameMatcher.WeaponRotationPointTransform));
 		}
 
 		public void Execute()
 		{
-			foreach (GameEntity rotationPoint in _rotationPoints)
 			foreach (GameEntity weapon in _weapons)
 			{
-				GameEntity closestEnemy = ClosestEnemy(rotationPoint, weapon);
+				GameEntity closestEnemy = ClosestEnemy(weapon);
 
 				if (closestEnemy != null)
 				{
-					Vector3 direction = (closestEnemy.WorldPosition - rotationPoint.WeaponRotationPointTransform.position)
+					Vector3 direction = (closestEnemy.WorldPosition - weapon.WeaponRotationPointTransform.position)
 						.normalized;
 					float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-					rotationPoint.WeaponRotationPointTransform.rotation = Quaternion.Euler(0, 0, angle);
+					weapon.WeaponRotationPointTransform.rotation = Quaternion.Euler(0, 0, angle);
 				}
 				else
 				{
-					rotationPoint.WeaponRotationPointTransform.rotation = Quaternion.Euler(0, 0, 0);
+					weapon.WeaponRotationPointTransform.rotation = Quaternion.Euler(0, 0, 0);
 				}
 			}
 		}
 
-		private GameEntity ClosestEnemy(GameEntity rotationPoint, GameEntity weapon)
+		private GameEntity ClosestEnemy(GameEntity weapon)
 		{
-			Vector3 weaponPosition = rotationPoint.WeaponRotationPointTransform.position;
+			GameEntity closestEnemy = null;
+			float closestDistance = float.MaxValue;
+			Vector3 weaponPosition = weapon.WeaponRotationPointTransform.position;
 			float weaponRange = weapon.Radius;
 
-			return _enemies.GetEntities()
-				.Where(enemy => Vector3.Distance(enemy.WorldPosition, weaponPosition) <= weaponRange)
-				.OrderBy(enemy => Vector3.Distance(enemy.WorldPosition, weaponPosition))
-				.FirstOrDefault();
+			foreach (GameEntity enemy in _enemies.GetEntities(_buffer))
+			{
+				float distance = (enemy.WorldPosition - weaponPosition).magnitude;
+				if (distance <= weaponRange && distance < closestDistance)
+				{
+					closestDistance = distance;
+					closestEnemy = enemy;
+				}
+			}
+
+			return closestEnemy;
 		}
 	}
 }

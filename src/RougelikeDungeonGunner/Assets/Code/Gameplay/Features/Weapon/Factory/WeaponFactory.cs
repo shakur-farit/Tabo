@@ -4,6 +4,7 @@ using Code.Gameplay.Features.Cooldowns;
 using Code.Gameplay.StaticData;
 using Code.Infrastructure.Identifiers;
 using System;
+using System.Collections.Generic;
 using Code.Gameplay.Features.Weapon.Configs;
 using UnityEngine;
 
@@ -49,6 +50,7 @@ namespace Code.Gameplay.Features.Weapon.Factory
 					.AddWorldPosition(at)
 					.AddAmmoId(weaponConfig.AmmoId)
 					.AddRadius(weaponLevel.FireRange)
+					.AddLayerMask(CollisionLayer.Enemy.AsMask())
 					.AddReloadTime(weaponLevel.ReloadTime)
 					.AddMagazineSize(weaponLevel.MagazineSize)
 					.AddCooldown(weaponLevel.Cooldown)
