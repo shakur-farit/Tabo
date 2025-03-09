@@ -19,14 +19,9 @@ namespace Code.Gameplay.Features.Hero.Systems
 			foreach (GameEntity hero in _heroes)
 			{
 				if (hero.isMoving)
-				{
 					hero.HeroAnimator.StartMoving();
-					hero.HeroAnimator.StartAimDown();
-				}
 				else
-				{
 					hero.HeroAnimator.StartIdling();
-				}
 			}
 		}
 	}

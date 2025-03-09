@@ -1,3 +1,5 @@
+using Code.Gameplay.Features.Hero;
+using Code.Gameplay.Features.Hero.States;
 using Code.Infrastructure.States.StateInfrastructure;
 using Zenject;
 
@@ -10,7 +12,10 @@ namespace Code.Infrastructure.States.Factory
 		public StateFactory(DiContainer container) => 
 			_container = container;
 
-		public T GetState<T>() where T : class, IExitableState => 
+		public T GetGameState<T>() where T : class, IExitableState => 
+			_container.Resolve<T>();
+
+		public T GetHeroAnimationState<T>() where T : class, IHeroAnimationState =>
 			_container.Resolve<T>();
 	}
 }

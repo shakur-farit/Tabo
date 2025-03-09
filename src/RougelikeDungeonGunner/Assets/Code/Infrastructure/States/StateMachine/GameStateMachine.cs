@@ -34,7 +34,7 @@ namespace Code.Infrastructure.States.StateMachine
 		{
 			_activeState?.Exit();
 
-			TState state = _stateFactory.GetState<TState>();
+			TState state = _stateFactory.GetGameState<TState>();
 			_activeState = state;
 
 			return state;

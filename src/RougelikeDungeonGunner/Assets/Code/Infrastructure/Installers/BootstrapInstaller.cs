@@ -6,6 +6,8 @@ using Code.Gameplay.Common.Time;
 using Code.Gameplay.Features.Ammo.Factory;
 using Code.Gameplay.Features.Enemy.Factory;
 using Code.Gameplay.Features.Hero.Factory;
+using Code.Gameplay.Features.Hero.States;
+using Code.Gameplay.Features.Hero.States.StateMachine;
 using Code.Gameplay.Features.Weapon.Factory;
 using Code.Gameplay.Input.Service;
 using Code.Gameplay.Levels;
@@ -22,69 +24,81 @@ using Zenject;
 
 namespace Code.Infrastructure.Installers
 {
-  public class BootstrapInstaller : MonoInstaller, ICoroutineRunner, IInitializable
-  {
-    public override void InstallBindings()
-    {
-	    BindStateMachine();
-      BindStateFactory();
-      BindGameStates();
-      BindInputService();
-      BindSystemFactory();
-      BindInfrastructureServices();
-      BindAssetManagementServices();
-      BindCommonServices();
-      BindContexts();
-      BindGameplayServices();
-      BindGameplayFactories();
-      BindCameraProvider();
-      BindProgressServices();
-    }
+	public class BootstrapInstaller : MonoInstaller, ICoroutineRunner, IInitializable
+	{
+		public override void InstallBindings()
+		{
+			BindStateMachine();
+			BindStateFactory();
+			BindGameStates();
+			BindHeroAnimationStates();
+			BindInputService();
+			BindSystemFactory();
+			BindInfrastructureServices();
+			BindAssetManagementServices();
+			BindCommonServices();
+			BindContexts();
+			BindGameplayServices();
+			BindGameplayFactories();
+			BindCameraProvider();
+			BindProgressServices();
+		}
 
-    private void BindStateMachine()
-    {
-	    Container.BindInterfacesAndSelfTo<GameStateMachine>().AsSingle();
-    }
+		private void BindStateMachine()
+		{
+			Container.BindInterfacesAndSelfTo<GameStateMachine>().AsSingle();
+			Container.BindInterfacesAndSelfTo<HeroAnimationStateMachine>().AsSingle();
+		}
 
-    private void BindStateFactory()
-    {
-	    Container.BindInterfacesAndSelfTo<StateFactory>().AsSingle();
-    }
+		private void BindStateFactory()
+		{
+			Container.BindInterfacesAndSelfTo<StateFactory>().AsSingle();
+		}
 
-    private void BindGameStates()
-    {
-	    Container.BindInterfacesAndSelfTo<BootstrapState>().AsSingle();
-	    Container.BindInterfacesAndSelfTo<InitializeProgressState>().AsSingle();
-	    Container.BindInterfacesAndSelfTo<LoadStaticDataState>().AsSingle();
-	    Container.BindInterfacesAndSelfTo<LoadingHomeScreenState>().AsSingle();
-	    Container.BindInterfacesAndSelfTo<HomeScreenState>().AsSingle();
-	    Container.BindInterfacesAndSelfTo<LoadingBattleState>().AsSingle();
-	    Container.BindInterfacesAndSelfTo<BattleEnterState>().AsSingle();
-	    Container.BindInterfacesAndSelfTo<BattleLoopState>().AsSingle();
-    }
+		private void BindGameStates()
+		{
+			Container.BindInterfacesAndSelfTo<BootstrapState>().AsSingle();
+			Container.BindInterfacesAndSelfTo<InitializeProgressState>().AsSingle();
+			Container.BindInterfacesAndSelfTo<LoadStaticDataState>().AsSingle();
+			Container.BindInterfacesAndSelfTo<LoadingHomeScreenState>().AsSingle();
+			Container.BindInterfacesAndSelfTo<HomeScreenState>().AsSingle();
+			Container.BindInterfacesAndSelfTo<LoadingBattleState>().AsSingle();
+			Container.BindInterfacesAndSelfTo<BattleEnterState>().AsSingle();
+			Container.BindInterfacesAndSelfTo<BattleLoopState>().AsSingle();
+		}
+
+		private void BindHeroAnimationStates()
+		{
+			Container.BindInterfacesAndSelfTo<AimDownAnimationState>().AsSingle();
+			Container.BindInterfacesAndSelfTo<AimUpAnimationState>().AsSingle();
+			Container.BindInterfacesAndSelfTo<AimRightAnimationState>().AsSingle();
+			Container.BindInterfacesAndSelfTo<AimLeftAnimationState>().AsSingle();
+			Container.BindInterfacesAndSelfTo<AimUpRightAnimationState>().AsSingle();
+			Container.BindInterfacesAndSelfTo<AimUpLeftAnimationState>().AsSingle();
+		}
 
 		private void BindContexts()
-    {
-      Container.Bind<Contexts>().FromInstance(Contexts.sharedInstance).AsSingle();
-      
-      Container.Bind<GameContext>().FromInstance(Contexts.sharedInstance.game).AsSingle();
-    }
+		{
+			Container.Bind<Contexts>().FromInstance(Contexts.sharedInstance).AsSingle();
 
-    private void BindCameraProvider()
-    {
-      Container.BindInterfacesAndSelfTo<CameraProvider>().AsSingle();
-    }
+			Container.Bind<GameContext>().FromInstance(Contexts.sharedInstance.game).AsSingle();
+		}
 
-    private void BindProgressServices()
-    {
-	    Container.Bind<IProgressProvider>().To<ProgressProvider>().AsSingle();
-    }
+		private void BindCameraProvider()
+		{
+			Container.BindInterfacesAndSelfTo<CameraProvider>().AsSingle();
+		}
+
+		private void BindProgressServices()
+		{
+			Container.Bind<IProgressProvider>().To<ProgressProvider>().AsSingle();
+		}
 
 		private void BindGameplayServices()
-    {
-      Container.Bind<IStaticDataService>().To<StaticDataService>().AsSingle();
-      Container.Bind<ILevelDataProvider>().To<LevelDataProvider>().AsSingle();
-    }
+		{
+			Container.Bind<IStaticDataService>().To<StaticDataService>().AsSingle();
+			Container.Bind<ILevelDataProvider>().To<LevelDataProvider>().AsSingle();
+		}
 
 		private void BindGameplayFactories()
 		{
@@ -100,34 +114,34 @@ namespace Code.Infrastructure.Installers
 			Container.Bind<ISystemsFactory>().To<SystemsFactory>().AsSingle();
 		}
 
-    private void BindInfrastructureServices()
-    {
-      Container.BindInterfacesTo<BootstrapInstaller>().FromInstance(this).AsSingle();
-      Container.Bind<IIdentifierService>().To<IdentifierService>().AsSingle();
-    }
+		private void BindInfrastructureServices()
+		{
+			Container.BindInterfacesTo<BootstrapInstaller>().FromInstance(this).AsSingle();
+			Container.Bind<IIdentifierService>().To<IdentifierService>().AsSingle();
+		}
 
-    private void BindAssetManagementServices()
-    {
-      Container.Bind<IAssetProvider>().To<AssetProvider>().AsSingle();
-    }
+		private void BindAssetManagementServices()
+		{
+			Container.Bind<IAssetProvider>().To<AssetProvider>().AsSingle();
+		}
 
-    private void BindCommonServices()
-    {
-      Container.Bind<IRandomService>().To<UnityRandomService>().AsSingle();
-      Container.Bind<ICollisionRegistry>().To<CollisionRegistry>().AsSingle();
-      Container.Bind<IPhysicsService>().To<PhysicsService>().AsSingle();
-      Container.Bind<ITimeService>().To<UnityTimeService>().AsSingle();
-      Container.Bind<ISceneLoader>().To<SceneLoader>().AsSingle();
-    }
+		private void BindCommonServices()
+		{
+			Container.Bind<IRandomService>().To<UnityRandomService>().AsSingle();
+			Container.Bind<ICollisionRegistry>().To<CollisionRegistry>().AsSingle();
+			Container.Bind<IPhysicsService>().To<PhysicsService>().AsSingle();
+			Container.Bind<ITimeService>().To<UnityTimeService>().AsSingle();
+			Container.Bind<ISceneLoader>().To<SceneLoader>().AsSingle();
+		}
 
-    private void BindInputService()
-    {
-      Container.Bind<IInputService>().To<StandaloneInputService>().AsSingle();
-    }
-    
-    public void Initialize()
-    {
+		private void BindInputService()
+		{
+			Container.Bind<IInputService>().To<StandaloneInputService>().AsSingle();
+		}
+
+		public void Initialize()
+		{
 			Container.Resolve<IGameStateMachine>().Enter<BootstrapState>();
 		}
-  }
+	}
 }
