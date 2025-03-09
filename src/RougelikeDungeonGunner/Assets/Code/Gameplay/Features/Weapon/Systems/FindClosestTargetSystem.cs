@@ -28,9 +28,6 @@ namespace Code.Gameplay.Features.Weapon.Systems
 		{
 			foreach (GameEntity weapon in _weapons)
 			{
-				if (weapon.hasClosestTarget)
-					weapon.RemoveClosestTarget();
-
 				float closestDistance = float.MaxValue;
 
 				foreach (GameEntity target in _targets.GetEntities(_buffer))

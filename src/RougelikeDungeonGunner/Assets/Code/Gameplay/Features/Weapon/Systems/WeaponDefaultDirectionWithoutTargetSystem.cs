@@ -19,8 +19,12 @@ namespace Code.Gameplay.Features.Weapon.Systems
 
 		public void Execute()
 		{
-			foreach (GameEntity weapon in _weapons) 
+			foreach (GameEntity weapon in _weapons)
+			{
 				weapon.WeaponRotationPointTransform.rotation = Quaternion.Euler(0, 0, 0);
+
+				weapon.ReplaceWeaponRotationAngle(0);
+			}
 		}
 	}
 }

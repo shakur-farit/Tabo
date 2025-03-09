@@ -1,10 +1,12 @@
 ﻿using Entitas;
+using UnityEngine;
 
 namespace Code.Gameplay.Features.Hero.Systems
 {
 	public class AnimateHeroRotationSystem : IExecuteSystem
 	{
 		private readonly IGroup<GameEntity> _heroes;
+		private readonly IGroup<GameEntity> _weapons;
 
 		public AnimateHeroRotationSystem(GameContext game)
 		{
@@ -12,10 +14,23 @@ namespace Code.Gameplay.Features.Hero.Systems
 				.AllOf(
 					GameMatcher.Hero,
 					GameMatcher.HeroAnimator));
+
+			_weapons = game.GetGroup(GameMatcher
+				.AllOf(
+					GameMatcher.Weapon,
+					GameMatcher.WeaponRotationAngle));
 		}
 
 		public void Execute()
 		{
+			foreach (GameEntity hero in _heroes)
+			{
+				foreach (GameEntity weapon in _weapons)
+				{
+					Debug.Log(weapon.WeaponRotationAngle);
+				}
+			}
+
 			//if (angleDegree >= 22f && angleDegree <= 67f)
 			//	aimDirection = AimDirection.UpRight;
 			//else if (angleDegree > 67f && angleDegree <= 112f)

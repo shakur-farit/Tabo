@@ -26,11 +26,18 @@ namespace Code.Gameplay.Features.Weapon.Systems
 			{
 				GameEntity closestTarget = weapon.ClosestTarget;
 
-				Vector3 direction = (closestTarget.WorldPosition - weapon.WeaponRotationPointTransform.position)
-					.normalized;
-				float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-				weapon.WeaponRotationPointTransform.rotation = Quaternion.Euler(0, 0, angle);
+				RotateWeapon(closestTarget, weapon);
 			}
+		}
+
+		private void RotateWeapon(GameEntity closestTarget, GameEntity weapon)
+		{
+			Vector3 direction = (closestTarget.WorldPosition - weapon.WeaponRotationPointTransform.position)
+				.normalized;
+			float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+			weapon.WeaponRotationPointTransform.rotation = Quaternion.Euler(0, 0, angle);
+
+			weapon.ReplaceWeaponRotationAngle(angle);
 		}
 	}
 }
