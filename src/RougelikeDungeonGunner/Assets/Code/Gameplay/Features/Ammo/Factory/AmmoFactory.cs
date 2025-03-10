@@ -34,7 +34,7 @@ namespace Code.Gameplay.Features.Ammo.Factory
 					.AddSpeed(ammoLevel.Speed)
 					.AddTargetLimit(ammoLevel.Pierce)
 					.AddRadius(ammoLevel.ContactRadius)
-					.AddDamage(0)
+					.AddDamage(1)
 					.AddTargetsBuffer(new List<int>(TargetsBufferSize))
 					.AddProcessedTargets(new List<int>(TargetsBufferSize))
 					.AddLayerMask(CollisionLayer.Enemy.AsMask())

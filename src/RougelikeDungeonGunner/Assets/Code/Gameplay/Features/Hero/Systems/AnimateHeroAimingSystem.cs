@@ -1,4 +1,5 @@
-﻿using Code.Gameplay.Features.Hero.States;
+﻿using Code.Gameplay.Features.Hero.Behaviours;
+using Code.Gameplay.Features.Hero.States;
 using Code.Gameplay.Features.Hero.States.StateMachine;
 using Entitas;
 
@@ -6,8 +7,6 @@ namespace Code.Gameplay.Features.Hero.Systems
 {
 	public class AnimateHeroAimingSystem : IExecuteSystem
 	{
-		private const float Hysteresis = 5f;
-
 		private readonly IHeroAnimationStateMachine _stateMachine;
 		private readonly IGroup<GameEntity> _heroes;
 		private readonly IGroup<GameEntity> _weapons;
@@ -37,20 +36,20 @@ namespace Code.Gameplay.Features.Hero.Systems
 
 		private void AnimateRotation(GameEntity weapon, GameEntity hero)
 		{
-			var animator = hero.HeroAnimator;
+			HeroAnimator animator = hero.HeroAnimator;
 			float angle = weapon.WeaponRotationAngle;
 
-			if (angle >= 22f - Hysteresis && angle <= 67f + Hysteresis)
+			if (angle >= 22f && angle <= 67f)
 				_stateMachine.Enter<AimUpRightAnimationState>(animator);
-			else if (angle > 67f - Hysteresis && angle <= 112f + Hysteresis)
+			else if (angle > 67f && angle <= 112f)
 				_stateMachine.Enter<AimUpAnimationState>(animator);
-			else if (angle > 112f - Hysteresis && angle <= 158f + Hysteresis)
+			else if (angle > 112f && angle <= 158f)
 				_stateMachine.Enter<AimUpLeftAnimationState>(animator);
-			else if ((angle <= 180f && angle > 158f - Hysteresis) || (angle > -180f && angle <= -135f + Hysteresis))
+			else if ((angle <= 180f && angle > 158f ) || (angle > -180f && angle <= -135f))
 				_stateMachine.Enter<AimLeftAnimationState>(animator);
-			else if (angle > -135f - Hysteresis && angle <= -45f + Hysteresis)
+			else if (angle > -135f && angle <= -45f)
 				_stateMachine.Enter<AimDownAnimationState>(animator);
-			else if ((angle > -45f - Hysteresis && angle <= 0f) || (angle > 0f && angle < 22f + Hysteresis))
+			else if ((angle > -45f && angle <= 0f) || (angle > 0f && angle < 22f))
 				_stateMachine.Enter<AimRightAnimationState>(animator);
 		}
 	}
