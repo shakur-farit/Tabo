@@ -1,6 +1,7 @@
 ﻿using Code.Common;
 using Code.Gameplay.Features.Ammo;
-using Code.Gameplay.Features.DamageApplication;
+using Code.Gameplay.Features.EffectApplication;
+using Code.Gameplay.Features.Effects;
 using Code.Gameplay.Features.Enemy;
 using Code.Gameplay.Features.Hero;
 using Code.Gameplay.Features.Lifetime;
@@ -29,8 +30,9 @@ namespace Code.Gameplay
 			Add(systems.Create<AmmoFeature>());
 
 			Add(systems.Create<CollectTargetsFeature>());
+			Add(systems.Create<EffectsFeature>());
 
-			Add(systems.Create<DamageApplicationFeature>());
+			Add(systems.Create<EffectApplicationFeature>());
 
 			Add(systems.Create<ProcessDestructedFeature>());
 		}

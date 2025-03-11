@@ -45,7 +45,9 @@ namespace Code.Gameplay.Features.Ammo.Systems
 				if (distance > weapon.Radius)
 					continue;
 
-				_ammoFactory.CreatePistolBullet(1, weapon.FirePositionTransform.position)
+				_ammoFactory
+					.CreatePistolBullet(1, weapon.FirePositionTransform.position)
+					.AddProducerId(weapon.Id)
 					.ReplaceDirection(weapon.FirePositionTransform.right)
 					.With(x => x.isMoving = true);
 

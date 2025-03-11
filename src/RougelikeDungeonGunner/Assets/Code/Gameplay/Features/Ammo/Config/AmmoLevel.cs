@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using Code.Gameplay.Features.Effects;
 
 namespace Code.Gameplay.Features.Ammo.Config
 {
@@ -8,5 +10,6 @@ namespace Code.Gameplay.Features.Ammo.Config
 		public float Speed;
 		public int Pierce = 1;
 		public float ContactRadius;
+		public List<EffectSetup> EffectSetups;
 	}
 }

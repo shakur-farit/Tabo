@@ -18,3 +18,6 @@ MonoBehaviour:
   - Speed: 5
     Pierce: 1
     ContactRadius: 0.1
+    EffectSetups:
+    - EffectTypeId: 1
+      Value: 1

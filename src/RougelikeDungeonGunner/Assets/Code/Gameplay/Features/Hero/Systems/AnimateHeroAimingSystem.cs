@@ -1,5 +1,5 @@
 ﻿using Code.Gameplay.Features.Hero.Behaviours;
-using Code.Gameplay.Features.Hero.States;
+using Code.Gameplay.Features.Hero.States.HeroAnimationStates;
 using Code.Gameplay.Features.Hero.States.StateMachine;
 using Entitas;
 

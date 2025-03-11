@@ -4,9 +4,12 @@ using Code.Gameplay.Common.Physics;
 using Code.Gameplay.Common.Random;
 using Code.Gameplay.Common.Time;
 using Code.Gameplay.Features.Ammo.Factory;
+using Code.Gameplay.Features.Effects;
+using Code.Gameplay.Features.Effects.Factory;
 using Code.Gameplay.Features.Enemy.Factory;
 using Code.Gameplay.Features.Hero.Factory;
 using Code.Gameplay.Features.Hero.States;
+using Code.Gameplay.Features.Hero.States.HeroAnimationStates;
 using Code.Gameplay.Features.Hero.States.StateMachine;
 using Code.Gameplay.Features.Weapon.Factory;
 using Code.Gameplay.Input.Service;
@@ -107,6 +110,7 @@ namespace Code.Infrastructure.Installers
 			Container.Bind<IEnemyFactory>().To<EnemyFactory>().AsSingle();
 			Container.Bind<IAmmoFactory>().To<AmmoFactory>().AsSingle();
 			Container.Bind<IWeaponFactory>().To<WeaponFactory>().AsSingle();
+			Container.Bind<IEffectFactory>().To<EffectFactory>().AsSingle();
 		}
 
 		private void BindSystemFactory()

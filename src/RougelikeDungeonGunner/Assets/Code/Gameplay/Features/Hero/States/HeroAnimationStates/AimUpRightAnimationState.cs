@@ -1,6 +1,6 @@
 ﻿using Code.Gameplay.Features.Hero.Behaviours;
 
-namespace Code.Gameplay.Features.Hero.States
+namespace Code.Gameplay.Features.Hero.States.HeroAnimationStates
 {
 	public class AimUpRightAnimationState : IHeroAnimationState
 	{
