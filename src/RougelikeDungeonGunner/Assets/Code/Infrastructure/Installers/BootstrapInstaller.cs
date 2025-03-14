@@ -11,6 +11,7 @@ using Code.Gameplay.Features.Hero.Factory;
 using Code.Gameplay.Features.Hero.States;
 using Code.Gameplay.Features.Hero.States.HeroAnimationStates;
 using Code.Gameplay.Features.Hero.States.StateMachine;
+using Code.Gameplay.Features.Statuses.Factory;
 using Code.Gameplay.Features.Weapon.Factory;
 using Code.Gameplay.Input.Service;
 using Code.Gameplay.Levels;
@@ -111,6 +112,7 @@ namespace Code.Infrastructure.Installers
 			Container.Bind<IAmmoFactory>().To<AmmoFactory>().AsSingle();
 			Container.Bind<IWeaponFactory>().To<WeaponFactory>().AsSingle();
 			Container.Bind<IEffectFactory>().To<EffectFactory>().AsSingle();
+			Container.Bind<IStatusFactory>().To<StatusFactory>().AsSingle();
 		}
 
 		private void BindSystemFactory()

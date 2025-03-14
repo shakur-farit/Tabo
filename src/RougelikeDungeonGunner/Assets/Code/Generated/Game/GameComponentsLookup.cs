@@ -49,28 +49,36 @@ public static class GameComponentsLookup {
     public const int MovementAvailable = 38;
     public const int Moving = 39;
     public const int Speed = 40;
-    public const int CollectTargetsContinuously = 41;
-    public const int CollectTargetsInterval = 42;
-    public const int CollectTargetsTimer = 43;
-    public const int LayerMask = 44;
-    public const int ProcessedTargets = 45;
-    public const int Radius = 46;
-    public const int ReadyToCollectTargets = 47;
-    public const int TargetsBuffer = 48;
-    public const int ClosestTarget = 49;
-    public const int FirePositionTransform = 50;
-    public const int MagazineSize = 51;
-    public const int Pistol = 52;
-    public const int ReloadTime = 53;
-    public const int Weapon = 54;
-    public const int WeaponId = 55;
-    public const int WeaponRotationAngle = 56;
-    public const int WeaponRotationPointTransform = 57;
-    public const int WeaponSpriteRenderer = 58;
-    public const int AxisInput = 59;
-    public const int Input = 60;
+    public const int Applied = 41;
+    public const int Duration = 42;
+    public const int Period = 43;
+    public const int Status = 44;
+    public const int StatusTypeId = 45;
+    public const int TimeLeft = 46;
+    public const int TimeSinceLastTick = 47;
+    public const int Unapplied = 48;
+    public const int CollectTargetsContinuously = 49;
+    public const int CollectTargetsInterval = 50;
+    public const int CollectTargetsTimer = 51;
+    public const int LayerMask = 52;
+    public const int ProcessedTargets = 53;
+    public const int Radius = 54;
+    public const int ReadyToCollectTargets = 55;
+    public const int TargetsBuffer = 56;
+    public const int ClosestTarget = 57;
+    public const int FirePositionTransform = 58;
+    public const int MagazineSize = 59;
+    public const int Pistol = 60;
+    public const int ReloadTime = 61;
+    public const int Weapon = 62;
+    public const int WeaponId = 63;
+    public const int WeaponRotationAngle = 64;
+    public const int WeaponRotationPointTransform = 65;
+    public const int WeaponSpriteRenderer = 66;
+    public const int AxisInput = 67;
+    public const int Input = 68;
 
-    public const int TotalComponents = 61;
+    public const int TotalComponents = 69;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -114,6 +122,14 @@ public static class GameComponentsLookup {
         "MovementAvailable",
         "Moving",
         "Speed",
+        "Applied",
+        "Duration",
+        "Period",
+        "Status",
+        "StatusTypeId",
+        "TimeLeft",
+        "TimeSinceLastTick",
+        "Unapplied",
         "CollectTargetsContinuously",
         "CollectTargetsInterval",
         "CollectTargetsTimer",
@@ -178,6 +194,14 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Movement.MovementAvailable),
         typeof(Code.Gameplay.Features.Movement.Moving),
         typeof(Code.Gameplay.Features.Movement.Speed),
+        typeof(Code.Gameplay.Features.Statuses.StatusComponents.Applied),
+        typeof(Code.Gameplay.Features.Statuses.StatusComponents.Duration),
+        typeof(Code.Gameplay.Features.Statuses.StatusComponents.Period),
+        typeof(Code.Gameplay.Features.Statuses.StatusComponents.Status),
+        typeof(Code.Gameplay.Features.Statuses.StatusComponents.StatusTypeIdComponent),
+        typeof(Code.Gameplay.Features.Statuses.StatusComponents.TimeLeft),
+        typeof(Code.Gameplay.Features.Statuses.StatusComponents.TimeSinceLastTick),
+        typeof(Code.Gameplay.Features.Statuses.StatusComponents.Unapplied),
         typeof(Code.Gameplay.Features.TargetCollection.CollectTargetsContinuously),
         typeof(Code.Gameplay.Features.TargetCollection.CollectTargetsInterval),
         typeof(Code.Gameplay.Features.TargetCollection.CollectTargetsTimer),
