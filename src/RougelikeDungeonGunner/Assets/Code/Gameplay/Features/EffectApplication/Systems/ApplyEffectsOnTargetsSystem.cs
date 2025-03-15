@@ -6,13 +6,11 @@ namespace Code.Gameplay.Features.EffectApplication.Systems
 {
 	public class ApplyEffectsOnTargetsSystem : IExecuteSystem
 	{
-		private readonly GameContext _game;
 		private readonly IEffectFactory _effectFactory;
 		private readonly IGroup<GameEntity> _entities;
 
 		public ApplyEffectsOnTargetsSystem(GameContext game, IEffectFactory effectFactory)
 		{
-			_game = game;
 			_effectFactory = effectFactory;
 			_entities = game.GetGroup(GameMatcher
 				.AllOf(
