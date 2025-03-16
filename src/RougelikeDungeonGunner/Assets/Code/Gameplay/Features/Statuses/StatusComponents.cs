@@ -14,5 +14,7 @@ namespace Code.Gameplay.Features.Statuses
 
 		[Game] public class Applied : IComponent { }
 		[Game] public class Unapplied : IComponent { }
+
+		[Game] public class Posion : IComponent { }
 	}
 }

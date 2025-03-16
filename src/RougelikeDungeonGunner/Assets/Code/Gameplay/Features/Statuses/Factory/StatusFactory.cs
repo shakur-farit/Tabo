@@ -47,6 +47,7 @@ namespace Code.Gameplay.Features.Statuses.Factory
 					.AddProducerId(producerId)
 					.AddTargetId(targetId)
 					.With(x => x.isStatus = true)
+					.With(x => x.isPosion = true)
 				;
 			;
 		}

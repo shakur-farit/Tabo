@@ -1,0 +1,29 @@
+﻿using System.Collections.Generic;
+using Code.Gameplay.Features.Effects;
+using Entitas;
+
+namespace Code.Gameplay.Features.Statuses.Systems
+{
+	public class ApplyPoisonVisualsSystem : ReactiveSystem<GameEntity>
+	{
+		public ApplyPoisonVisualsSystem(GameContext context) : base(context)
+		{
+		}
+
+		protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context) => 
+			context.CreateCollector(GameMatcher.Posion.Added());
+
+		protected override bool Filter(GameEntity entity) => entity.isStatus && entity.isPosion && entity.hasTargetId;
+
+		protected override void Execute(List<GameEntity> statuses)
+		{
+			foreach (var status in statuses)
+			{
+				GameEntity target = status.Target();
+
+				if(target is {hasStatusVisuals: true})
+					target.StatusVisuals.ApplyPoison();
+			}
+		}
+	}
+}

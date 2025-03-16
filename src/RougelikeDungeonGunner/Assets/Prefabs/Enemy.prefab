@@ -122,6 +122,8 @@ GameObject:
   - component: {fileID: 2865671190086617213}
   - component: {fileID: 8147719445628319563}
   - component: {fileID: 7506000045583834391}
+  - component: {fileID: 8526994447061613267}
+  - component: {fileID: 4320597656362753033}
   m_Layer: 7
   m_Name: Enemy
   m_TagString: Untagged
@@ -285,6 +287,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EntityView: {fileID: 8166552356577901019}
+--- !u!114 &8526994447061613267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5438004444555498043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b896919de816ce46b86119ae6b760b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EntityView: {fileID: 8166552356577901019}
+  StatusVisuals: {fileID: 4320597656362753033}
+--- !u!114 &4320597656362753033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5438004444555498043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78237a0e7e679ec44a6c274488b92c42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Renderer: {fileID: 5241945053856362886}
+  Animator: {fileID: 1448632814092989399}
+  FreezeColor: {r: 0.21960784, g: 0.6392157, b: 0.74509805, a: 1}
+  FreezeOutlineSize: 0.54
+  FreezeOutlineSmoothness: 2.04
+  PoisonColor: {r: 0.21960784, g: 0.6392157, b: 0.74509805, a: 1}
+  PoisonColorIntensity: 0.412
 --- !u!1 &7187357344701163008
 GameObject:
   m_ObjectHideFlags: 0

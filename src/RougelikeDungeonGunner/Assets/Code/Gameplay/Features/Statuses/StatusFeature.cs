@@ -1,4 +1,5 @@
-﻿using Code.Infrastructure;
+﻿using Code.Gameplay.Features.Statuses.Systems;
+using Code.Infrastructure;
 
 namespace Code.Gameplay.Features.Statuses
 {
@@ -7,6 +8,9 @@ namespace Code.Gameplay.Features.Statuses
 		public StatusFeature(ISystemsFactory systems)
 		{
 			Add(systems.Create<StatusDurationSystem>());
+			Add(systems.Create<PeriodicDamageStatusSystem>());
+
+			Add(systems.Create<StatusVisualsFeature>());
 
 			Add(systems.Create<CleanupUnappliedStatusesSystem>());
 		}

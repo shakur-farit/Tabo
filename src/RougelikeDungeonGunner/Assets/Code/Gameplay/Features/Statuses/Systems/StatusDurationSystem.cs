@@ -1,7 +1,7 @@
 ﻿using Code.Gameplay.Common.Time;
 using Entitas;
 
-namespace Code.Gameplay.Features.Statuses
+namespace Code.Gameplay.Features.Statuses.Systems
 {
 	public class StatusDurationSystem : IExecuteSystem
 	{

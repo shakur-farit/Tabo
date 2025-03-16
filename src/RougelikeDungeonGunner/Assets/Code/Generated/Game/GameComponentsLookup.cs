@@ -20,66 +20,68 @@ public static class GameComponentsLookup {
     public const int Id = 9;
     public const int ParentTransform = 10;
     public const int SpriteRenderer = 11;
-    public const int Transform = 12;
-    public const int WorldPosition = 13;
-    public const int Ammo = 14;
-    public const int AmmoId = 15;
-    public const int EffectSetups = 16;
-    public const int PistolBullet = 17;
-    public const int Processed = 18;
-    public const int StatusSetups = 19;
-    public const int TargetLimit = 20;
-    public const int Cooldown = 21;
-    public const int CooldownLeft = 22;
-    public const int CooldownUp = 23;
-    public const int DamageEffect = 24;
-    public const int Effect = 25;
-    public const int EffectValue = 26;
-    public const int ProducerId = 27;
-    public const int TargetId = 28;
-    public const int Enemy = 29;
-    public const int EnemyAnimator = 30;
-    public const int EnemyTypeId = 31;
-    public const int Hero = 32;
-    public const int HeroAnimator = 33;
-    public const int CurrentHp = 34;
-    public const int Dead = 35;
-    public const int MaxHp = 36;
-    public const int ProcessingDeath = 37;
-    public const int Direction = 38;
-    public const int MovementAvailable = 39;
-    public const int Moving = 40;
-    public const int Speed = 41;
-    public const int Applied = 42;
-    public const int Duration = 43;
-    public const int Period = 44;
-    public const int Status = 45;
-    public const int StatusTypeId = 46;
-    public const int TimeLeft = 47;
-    public const int TimeSinceLastTick = 48;
-    public const int Unapplied = 49;
-    public const int CollectTargetsContinuously = 50;
-    public const int CollectTargetsInterval = 51;
-    public const int CollectTargetsTimer = 52;
-    public const int LayerMask = 53;
-    public const int ProcessedTargets = 54;
-    public const int Radius = 55;
-    public const int ReadyToCollectTargets = 56;
-    public const int TargetsBuffer = 57;
-    public const int ClosestTarget = 58;
-    public const int FirePositionTransform = 59;
-    public const int MagazineSize = 60;
-    public const int Pistol = 61;
-    public const int ReloadTime = 62;
-    public const int Weapon = 63;
-    public const int WeaponId = 64;
-    public const int WeaponRotationAngle = 65;
-    public const int WeaponRotationPointTransform = 66;
-    public const int WeaponSpriteRenderer = 67;
-    public const int AxisInput = 68;
-    public const int Input = 69;
+    public const int StatusVisuals = 12;
+    public const int Transform = 13;
+    public const int WorldPosition = 14;
+    public const int Ammo = 15;
+    public const int AmmoId = 16;
+    public const int EffectSetups = 17;
+    public const int PistolBullet = 18;
+    public const int Processed = 19;
+    public const int StatusSetups = 20;
+    public const int TargetLimit = 21;
+    public const int Cooldown = 22;
+    public const int CooldownLeft = 23;
+    public const int CooldownUp = 24;
+    public const int DamageEffect = 25;
+    public const int Effect = 26;
+    public const int EffectValue = 27;
+    public const int ProducerId = 28;
+    public const int TargetId = 29;
+    public const int Enemy = 30;
+    public const int EnemyAnimator = 31;
+    public const int EnemyTypeId = 32;
+    public const int Hero = 33;
+    public const int HeroAnimator = 34;
+    public const int CurrentHp = 35;
+    public const int Dead = 36;
+    public const int MaxHp = 37;
+    public const int ProcessingDeath = 38;
+    public const int Direction = 39;
+    public const int MovementAvailable = 40;
+    public const int Moving = 41;
+    public const int Speed = 42;
+    public const int Applied = 43;
+    public const int Duration = 44;
+    public const int Period = 45;
+    public const int Posion = 46;
+    public const int Status = 47;
+    public const int StatusTypeId = 48;
+    public const int TimeLeft = 49;
+    public const int TimeSinceLastTick = 50;
+    public const int Unapplied = 51;
+    public const int CollectTargetsContinuously = 52;
+    public const int CollectTargetsInterval = 53;
+    public const int CollectTargetsTimer = 54;
+    public const int LayerMask = 55;
+    public const int ProcessedTargets = 56;
+    public const int Radius = 57;
+    public const int ReadyToCollectTargets = 58;
+    public const int TargetsBuffer = 59;
+    public const int ClosestTarget = 60;
+    public const int FirePositionTransform = 61;
+    public const int MagazineSize = 62;
+    public const int Pistol = 63;
+    public const int ReloadTime = 64;
+    public const int Weapon = 65;
+    public const int WeaponId = 66;
+    public const int WeaponRotationAngle = 67;
+    public const int WeaponRotationPointTransform = 68;
+    public const int WeaponSpriteRenderer = 69;
+    public const int AxisInput = 70;
+    public const int Input = 71;
 
-    public const int TotalComponents = 70;
+    public const int TotalComponents = 72;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -94,6 +96,7 @@ public static class GameComponentsLookup {
         "Id",
         "ParentTransform",
         "SpriteRenderer",
+        "StatusVisuals",
         "Transform",
         "WorldPosition",
         "Ammo",
@@ -127,6 +130,7 @@ public static class GameComponentsLookup {
         "Applied",
         "Duration",
         "Period",
+        "Posion",
         "Status",
         "StatusTypeId",
         "TimeLeft",
@@ -167,6 +171,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Common.Id),
         typeof(Code.Gameplay.Common.ParentTransform),
         typeof(Code.Gameplay.Common.SpriteRendererComponent),
+        typeof(Code.Gameplay.Common.StatusVisualsComponent),
         typeof(Code.Gameplay.Common.TransformComponent),
         typeof(Code.Gameplay.Common.WorldPosition),
         typeof(Code.Gameplay.Features.Ammo.Ammo),
@@ -200,6 +205,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Statuses.StatusComponents.Applied),
         typeof(Code.Gameplay.Features.Statuses.StatusComponents.Duration),
         typeof(Code.Gameplay.Features.Statuses.StatusComponents.Period),
+        typeof(Code.Gameplay.Features.Statuses.StatusComponents.Posion),
         typeof(Code.Gameplay.Features.Statuses.StatusComponents.Status),
         typeof(Code.Gameplay.Features.Statuses.StatusComponents.StatusTypeIdComponent),
         typeof(Code.Gameplay.Features.Statuses.StatusComponents.TimeLeft),

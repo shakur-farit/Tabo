@@ -1,16 +1,16 @@
+using Code.Common.EntityIndices;
 using Code.Gameplay.Cameras.Provider;
 using Code.Gameplay.Common.Collisions;
 using Code.Gameplay.Common.Physics;
 using Code.Gameplay.Common.Random;
 using Code.Gameplay.Common.Time;
 using Code.Gameplay.Features.Ammo.Factory;
-using Code.Gameplay.Features.Effects;
 using Code.Gameplay.Features.Effects.Factory;
 using Code.Gameplay.Features.Enemy.Factory;
 using Code.Gameplay.Features.Hero.Factory;
-using Code.Gameplay.Features.Hero.States;
 using Code.Gameplay.Features.Hero.States.HeroAnimationStates;
 using Code.Gameplay.Features.Hero.States.StateMachine;
+using Code.Gameplay.Features.Statuses.Applier;
 using Code.Gameplay.Features.Statuses.Factory;
 using Code.Gameplay.Features.Weapon.Factory;
 using Code.Gameplay.Input.Service;
@@ -46,6 +46,7 @@ namespace Code.Infrastructure.Installers
 			BindGameplayFactories();
 			BindCameraProvider();
 			BindProgressServices();
+			BindEntityIndices();
 		}
 
 		private void BindStateMachine()
@@ -102,6 +103,7 @@ namespace Code.Infrastructure.Installers
 		{
 			Container.Bind<IStaticDataService>().To<StaticDataService>().AsSingle();
 			Container.Bind<ILevelDataProvider>().To<LevelDataProvider>().AsSingle();
+			Container.Bind<IStatusApplier>().To<StatusApplier>().AsSingle();
 		}
 
 		private void BindGameplayFactories()
@@ -143,6 +145,11 @@ namespace Code.Infrastructure.Installers
 		private void BindInputService()
 		{
 			Container.Bind<IInputService>().To<StandaloneInputService>().AsSingle();
+		}
+
+		public void BindEntityIndices()
+		{
+			Container.BindInterfacesAndSelfTo<GameEntityIndices>().AsSingle();
 		}
 
 		public void Initialize()
