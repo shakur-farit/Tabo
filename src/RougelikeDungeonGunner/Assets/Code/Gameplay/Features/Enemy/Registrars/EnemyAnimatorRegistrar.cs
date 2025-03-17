@@ -8,11 +8,12 @@ namespace Code.Gameplay.Features.Enemy.Registrars
 	{
 		[SerializeField] private EnemyAnimator _enemyAnimator;
 
-		public override void RegisterComponents() =>
+		public override void RegisterComponents()
+		{
 			Entity
 				.AddEnemyAnimator(_enemyAnimator)
-				.AddDamageTakenAnimator(_enemyAnimator)
-			;
+				.AddDamageTakenAnimator(_enemyAnimator);
+		}
 
 		public override void UnregisterComponents()
 		{

@@ -41,47 +41,48 @@ public static class GameComponentsLookup {
     public const int Enemy = 30;
     public const int EnemyAnimator = 31;
     public const int EnemyTypeId = 32;
-    public const int Hero = 33;
-    public const int HeroAnimator = 34;
-    public const int CurrentHp = 35;
-    public const int Dead = 36;
-    public const int MaxHp = 37;
-    public const int ProcessingDeath = 38;
-    public const int Direction = 39;
-    public const int MovementAvailable = 40;
-    public const int Moving = 41;
-    public const int Speed = 42;
-    public const int Applied = 43;
-    public const int Duration = 44;
-    public const int Period = 45;
-    public const int Posion = 46;
-    public const int Status = 47;
-    public const int StatusTypeId = 48;
-    public const int TimeLeft = 49;
-    public const int TimeSinceLastTick = 50;
-    public const int Unapplied = 51;
-    public const int CollectTargetsContinuously = 52;
-    public const int CollectTargetsInterval = 53;
-    public const int CollectTargetsTimer = 54;
-    public const int LayerMask = 55;
-    public const int ProcessedTargets = 56;
-    public const int Radius = 57;
-    public const int ReadyToCollectTargets = 58;
-    public const int TargetsBuffer = 59;
-    public const int ClosestTarget = 60;
-    public const int FirePositionTransform = 61;
-    public const int MagazineSize = 62;
-    public const int Pistol = 63;
-    public const int ReloadTime = 64;
-    public const int Weapon = 65;
-    public const int WeaponId = 66;
-    public const int WeaponRotationAngle = 67;
-    public const int WeaponRotationPointTransform = 68;
-    public const int WeaponSpriteRenderer = 69;
-    public const int AxisInput = 70;
-    public const int Input = 71;
+    public const int Orc = 33;
+    public const int Hero = 34;
+    public const int HeroAnimator = 35;
+    public const int CurrentHp = 36;
+    public const int Dead = 37;
+    public const int MaxHp = 38;
+    public const int ProcessingDeath = 39;
+    public const int Direction = 40;
+    public const int MovementAvailable = 41;
+    public const int Moving = 42;
+    public const int Speed = 43;
+    public const int Applied = 44;
+    public const int Duration = 45;
+    public const int Period = 46;
+    public const int Posion = 47;
+    public const int Status = 48;
+    public const int StatusTypeId = 49;
+    public const int TimeLeft = 50;
+    public const int TimeSinceLastTick = 51;
+    public const int Unapplied = 52;
+    public const int CollectTargetsContinuously = 53;
+    public const int CollectTargetsInterval = 54;
+    public const int CollectTargetsTimer = 55;
+    public const int LayerMask = 56;
+    public const int ProcessedTargets = 57;
+    public const int Radius = 58;
+    public const int ReadyToCollectTargets = 59;
+    public const int TargetsBuffer = 60;
+    public const int ClosestTarget = 61;
+    public const int FirePositionTransform = 62;
+    public const int MagazineSize = 63;
+    public const int Pistol = 64;
+    public const int ReloadTime = 65;
+    public const int Weapon = 66;
+    public const int WeaponId = 67;
+    public const int WeaponRotationAngle = 68;
+    public const int WeaponRotationPointTransform = 69;
+    public const int WeaponSpriteRenderer = 70;
+    public const int AxisInput = 71;
+    public const int Input = 72;
 
-    public const int TotalComponents = 72;
+    public const int TotalComponents = 73;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -117,6 +118,7 @@ public static class GameComponentsLookup {
         "Enemy",
         "EnemyAnimator",
         "EnemyTypeId",
+        "Orc",
         "Hero",
         "HeroAnimator",
         "CurrentHp",
@@ -192,6 +194,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Enemy.Enemy),
         typeof(Code.Gameplay.Features.Enemy.EnemyAnimatorComponent),
         typeof(Code.Gameplay.Features.Enemy.EnemyTypeIdComponent),
+        typeof(Code.Gameplay.Features.Enemy.Orc),
         typeof(Code.Gameplay.Features.Hero.Hero),
         typeof(Code.Gameplay.Features.Hero.HeroAnimatorComponent),
         typeof(Code.Gameplay.Features.Lifetime.CurrentHp),

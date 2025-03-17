@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Code.Common.Entity;
 using Code.Common.Extensions;
 using Code.Gameplay.Features.Effects;
+using Code.Gameplay.StaticData;
 using Code.Infrastructure.Identifiers;
 using UnityEngine;
 
@@ -10,13 +11,19 @@ namespace Code.Gameplay.Features.Enemy.Factory
 {
 	public class EnemyFactory : IEnemyFactory
 	{
-		private const string EnemyViewPath = "Enemy";
+		private const float AttackRadius = 0.5f;
+		private const float AttackInterval = 0.5f;
+		private const int TargetAmount = 1;
+		private const float AttackTimerStartValue = 0;
 
 		private readonly IIdentifierService _identifier;
+		private readonly IStaticDataService _staticDataService;
 
-
-		public EnemyFactory(IIdentifierService identifier) =>
+		public EnemyFactory(IIdentifierService identifier, IStaticDataService staticDataService)
+		{
 			_identifier = identifier;
+			_staticDataService = staticDataService;
+		}
 
 		public GameEntity CreateEnemy(Vector3 at, EnemyTypeId typeId)
 		{
@@ -31,21 +38,29 @@ namespace Code.Gameplay.Features.Enemy.Factory
 
 		private GameEntity CreateOrc(Vector3 at)
 		{
+			EnemyConfig config = _staticDataService.GetEnemyConfig(EnemyTypeId.Orc);
+
+			return CreateEnemyEntity(at, config)
+					.AddEnemyTypeId(EnemyTypeId.Orc)
+				;
+		}
+
+		private GameEntity CreateEnemyEntity(Vector3 at, EnemyConfig config)
+		{
 			return CreateEntity.Empty()
 					.AddId(_identifier.Next())
-					.AddEnemyTypeId(EnemyTypeId.Orc)
 					.AddWorldPosition(at)
 					.AddDirection(Vector2.zero)
-					.AddCurrentHp(3)
-					.AddMaxHp(5)
-					.AddEffectSetups(new List<EffectSetup>{EffectSetup.FormId(EffectTypeId.Damage, 1)})
-					.AddSpeed(1)
-					.AddTargetsBuffer(new List<int>(1))
-					.AddRadius(0.5f)
-					.AddCollectTargetsInterval(0.5f)
-					.AddCollectTargetsTimer(0)
+					.AddCurrentHp(config.CurrentHp)
+					.AddMaxHp(config.MaxHp)
+					.AddEffectSetups(new List<EffectSetup> { EffectSetup.FormId(EffectTypeId.Damage, config.Damage) })
+					.AddSpeed(config.MovementSpeed)
+					.AddTargetsBuffer(new List<int>(TargetAmount))
+					.AddRadius(AttackRadius)
+					.AddCollectTargetsInterval(AttackInterval)
+					.AddCollectTargetsTimer(AttackTimerStartValue)
 					.AddLayerMask(CollisionLayer.Hero.AsMask())
-					.AddViewPath(EnemyViewPath)
+					.AddViewPrefab(config.PrefabView)
 					.With(x => x.isEnemy = true)
 					.With(x => x.isMovementAvailable = true)
 				;

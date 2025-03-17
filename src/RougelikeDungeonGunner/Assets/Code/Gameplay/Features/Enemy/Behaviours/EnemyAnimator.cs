@@ -1,5 +1,4 @@
-﻿using System;
-using Code.Gameplay.Common.Visuals;
+﻿using Code.Gameplay.Common.Visuals;
 using DG.Tweening;
 using UnityEngine;
 
@@ -48,8 +47,7 @@ namespace Code.Gameplay.Features.Enemy.Behaviours
 
 		public void PlayDied()
 		{
-			Debug.Log("Enemy death animation");
-			//_animator.SetTrigger(_diedHash);
+			
 		}
 
 		public void PlayDamageTaken()
@@ -60,9 +58,7 @@ namespace Code.Gameplay.Features.Enemy.Behaviours
 			});
 		}
 
-		public void ResetAll()
-		{
-			_animator.ResetTrigger(_diedHash);
-		}
+		public void SetRuntimeAnimatorController(RuntimeAnimatorController runtimeAnimatorController) => 
+			_animator.runtimeAnimatorController = runtimeAnimatorController;
 	}
 }

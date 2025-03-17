@@ -79,7 +79,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
@@ -95,7 +95,7 @@ Animator:
   m_GameObject: {fileID: 2043731351018429605}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: cf2b002105910e04a8f79c160b4602a0, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -318,7 +318,7 @@ MonoBehaviour:
   FreezeColor: {r: 0.21960784, g: 0.6392157, b: 0.74509805, a: 1}
   FreezeOutlineSize: 0.54
   FreezeOutlineSmoothness: 2.04
-  PoisonColor: {r: 0.21960784, g: 0.6392157, b: 0.74509805, a: 1}
+  PoisonColor: {r: 0.41568628, g: 0.9843137, b: 0.49803922, a: 1}
   PoisonColorIntensity: 0.412
 --- !u!1 &7187357344701163008
 GameObject:

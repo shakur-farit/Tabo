@@ -22,11 +22,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 9dc33cf00c86b7440a425de8b022c28a
-    m_Address: Enemy
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 5802e3c5436790f4084542f8f877fee9
     m_Address: PistolBulletConfig
     m_ReadOnly: 0
@@ -43,6 +38,12 @@ MonoBehaviour:
     m_Address: WeaponRotationPoint
     m_ReadOnly: 0
     m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 510a3ff03a5d48c44a9b595f8c11d399
+    m_Address: OrcEnemyConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EnemyConfig
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 7128017d563554245a79368046c75e1a, type: 2}

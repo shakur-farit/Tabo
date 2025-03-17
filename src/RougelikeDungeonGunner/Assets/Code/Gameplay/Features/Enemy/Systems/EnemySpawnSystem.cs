@@ -1,5 +1,6 @@
 ﻿using Code.Gameplay.Common.Random;
 using Code.Gameplay.Features.Enemy.Factory;
+using Code.Gameplay.StaticData;
 using Entitas;
 using UnityEngine;
 
@@ -20,7 +21,8 @@ namespace Code.Gameplay.Features.Enemy.Systems
 		{
 			for (int i = 0; i < 3; i++)
 			{
-				_enemyFactory.CreateEnemy(RandomPosition(), EnemyTypeId.Orc);
+				var ebemy = _enemyFactory.CreateEnemy(RandomPosition(), EnemyTypeId.Orc);
+				Debug.Log(ebemy.hasEnemyAnimator);
 			}
 		}
 

@@ -24,7 +24,7 @@ namespace Code.Gameplay.Features.Ammo.Factory
 		public GameEntity CreatePistolBullet(int level, Vector3 at)
 		{
 			AmmoConfig ammo = _staticDataService.GetAmmoConfig(AmmoId.PistolBullet);
-			AmmoLevel ammoLevel = _staticDataService.GetAbilityLevel(AmmoId.PistolBullet, level);
+			AmmoLevel ammoLevel = _staticDataService.GetAmmoLevel(AmmoId.PistolBullet, level);
 
 			return CreateEntity.Empty()
 					.AddId(_identifier.Next())
