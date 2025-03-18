@@ -6,6 +6,7 @@ using Code.Gameplay.Features.Enemy;
 using Code.Gameplay.Features.Hero;
 using Code.Gameplay.Features.Lifetime;
 using Code.Gameplay.Features.Movement;
+using Code.Gameplay.Features.Spawner;
 using Code.Gameplay.Features.Statuses;
 using Code.Gameplay.Features.TargetCollection;
 using Code.Gameplay.Features.Weapon;
@@ -20,6 +21,7 @@ namespace Code.Gameplay
 		public BattleFeature(ISystemsFactory systems)
 		{
 			Add(systems.Create<InputFeature>());
+			Add(systems.Create<SpawnerFeature>());
 			Add(systems.Create<BindViewFeature>());
 
 			Add(systems.Create<HeroFeature>());

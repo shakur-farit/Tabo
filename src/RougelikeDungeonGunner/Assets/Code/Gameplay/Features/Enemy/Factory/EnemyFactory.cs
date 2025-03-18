@@ -42,6 +42,7 @@ namespace Code.Gameplay.Features.Enemy.Factory
 
 			return CreateEnemyEntity(at, config)
 					.AddEnemyTypeId(EnemyTypeId.Orc)
+					.With(x => x.isOrc = true)
 				;
 		}
 

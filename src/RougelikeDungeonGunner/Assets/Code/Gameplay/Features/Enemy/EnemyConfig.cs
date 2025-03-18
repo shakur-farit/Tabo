@@ -1,5 +1,4 @@
-﻿using System;
-using Code.Infrastructure.View;
+﻿using Code.Infrastructure.View;
 using UnityEngine;
 
 namespace Code.Gameplay.Features.Enemy

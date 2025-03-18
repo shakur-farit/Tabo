@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Code.Gameplay.Features.Spawner;
+
 public static class GameComponentsLookup {
 
     public const int Destructed = 0;
@@ -52,37 +55,38 @@ public static class GameComponentsLookup {
     public const int MovementAvailable = 41;
     public const int Moving = 42;
     public const int Speed = 43;
-    public const int Applied = 44;
-    public const int Duration = 45;
-    public const int Period = 46;
-    public const int Posion = 47;
-    public const int Status = 48;
-    public const int StatusTypeId = 49;
-    public const int TimeLeft = 50;
-    public const int TimeSinceLastTick = 51;
-    public const int Unapplied = 52;
-    public const int CollectTargetsContinuously = 53;
-    public const int CollectTargetsInterval = 54;
-    public const int CollectTargetsTimer = 55;
-    public const int LayerMask = 56;
-    public const int ProcessedTargets = 57;
-    public const int Radius = 58;
-    public const int ReadyToCollectTargets = 59;
-    public const int TargetsBuffer = 60;
-    public const int ClosestTarget = 61;
-    public const int FirePositionTransform = 62;
-    public const int MagazineSize = 63;
-    public const int Pistol = 64;
-    public const int ReloadTime = 65;
-    public const int Weapon = 66;
-    public const int WeaponId = 67;
-    public const int WeaponRotationAngle = 68;
-    public const int WeaponRotationPointTransform = 69;
-    public const int WeaponSpriteRenderer = 70;
-    public const int AxisInput = 71;
-    public const int Input = 72;
+    public const int CurrentSpawnedEnemyAmount = 44;
+    public const int Applied = 45;
+    public const int Duration = 46;
+    public const int Period = 47;
+    public const int Posion = 48;
+    public const int Status = 49;
+    public const int StatusTypeId = 50;
+    public const int TimeLeft = 51;
+    public const int TimeSinceLastTick = 52;
+    public const int Unapplied = 53;
+    public const int CollectTargetsContinuously = 54;
+    public const int CollectTargetsInterval = 55;
+    public const int CollectTargetsTimer = 56;
+    public const int LayerMask = 57;
+    public const int ProcessedTargets = 58;
+    public const int Radius = 59;
+    public const int ReadyToCollectTargets = 60;
+    public const int TargetsBuffer = 61;
+    public const int ClosestTarget = 62;
+    public const int FirePositionTransform = 63;
+    public const int MagazineSize = 64;
+    public const int Pistol = 65;
+    public const int ReloadTime = 66;
+    public const int Weapon = 67;
+    public const int WeaponId = 68;
+    public const int WeaponRotationAngle = 69;
+    public const int WeaponRotationPointTransform = 70;
+    public const int WeaponSpriteRenderer = 71;
+    public const int AxisInput = 72;
+    public const int Input = 73;
 
-    public const int TotalComponents = 73;
+    public const int TotalComponents = 74;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -129,6 +133,7 @@ public static class GameComponentsLookup {
         "MovementAvailable",
         "Moving",
         "Speed",
+        "CurrentSpawnedEnemyAmount",
         "Applied",
         "Duration",
         "Period",
@@ -205,6 +210,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Movement.MovementAvailable),
         typeof(Code.Gameplay.Features.Movement.Moving),
         typeof(Code.Gameplay.Features.Movement.Speed),
+        typeof(CurrentSpawnedEnemyAmount),
         typeof(Code.Gameplay.Features.Statuses.StatusComponents.Applied),
         typeof(Code.Gameplay.Features.Statuses.StatusComponents.Duration),
         typeof(Code.Gameplay.Features.Statuses.StatusComponents.Period),
