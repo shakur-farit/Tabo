@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Code.Gameplay.Features.Spawner;
-
 public static class GameComponentsLookup {
 
     public const int Destructed = 0;
@@ -33,60 +30,65 @@ public static class GameComponentsLookup {
     public const int Processed = 19;
     public const int StatusSetups = 20;
     public const int TargetLimit = 21;
-    public const int Cooldown = 22;
-    public const int CooldownLeft = 23;
-    public const int CooldownUp = 24;
-    public const int DamageEffect = 25;
-    public const int Effect = 26;
-    public const int EffectValue = 27;
-    public const int ProducerId = 28;
-    public const int TargetId = 29;
-    public const int Enemy = 30;
-    public const int EnemyAnimator = 31;
-    public const int EnemyTypeId = 32;
-    public const int Orc = 33;
-    public const int Hero = 34;
-    public const int HeroAnimator = 35;
-    public const int CurrentHp = 36;
-    public const int Dead = 37;
-    public const int MaxHp = 38;
-    public const int ProcessingDeath = 39;
-    public const int Direction = 40;
-    public const int MovementAvailable = 41;
-    public const int Moving = 42;
-    public const int Speed = 43;
-    public const int CurrentSpawnedEnemyAmount = 44;
-    public const int Applied = 45;
-    public const int Duration = 46;
-    public const int Period = 47;
-    public const int Posion = 48;
-    public const int Status = 49;
-    public const int StatusTypeId = 50;
-    public const int TimeLeft = 51;
-    public const int TimeSinceLastTick = 52;
-    public const int Unapplied = 53;
-    public const int CollectTargetsContinuously = 54;
-    public const int CollectTargetsInterval = 55;
-    public const int CollectTargetsTimer = 56;
-    public const int LayerMask = 57;
-    public const int ProcessedTargets = 58;
-    public const int Radius = 59;
-    public const int ReadyToCollectTargets = 60;
-    public const int TargetsBuffer = 61;
-    public const int ClosestTarget = 62;
-    public const int FirePositionTransform = 63;
-    public const int MagazineSize = 64;
-    public const int Pistol = 65;
-    public const int ReloadTime = 66;
-    public const int Weapon = 67;
-    public const int WeaponId = 68;
-    public const int WeaponRotationAngle = 69;
-    public const int WeaponRotationPointTransform = 70;
-    public const int WeaponSpriteRenderer = 71;
-    public const int AxisInput = 72;
-    public const int Input = 73;
+    public const int BaseStats = 22;
+    public const int StatChange = 23;
+    public const int StatModifiers = 24;
+    public const int Cooldown = 25;
+    public const int CooldownLeft = 26;
+    public const int CooldownUp = 27;
+    public const int DamageEffect = 28;
+    public const int Effect = 29;
+    public const int EffectValue = 30;
+    public const int ProducerId = 31;
+    public const int TargetId = 32;
+    public const int Enemy = 33;
+    public const int EnemyAnimator = 34;
+    public const int EnemyTypeId = 35;
+    public const int Orc = 36;
+    public const int Hero = 37;
+    public const int HeroAnimator = 38;
+    public const int HeroTypeId = 39;
+    public const int TheGeneral = 40;
+    public const int CurrentHp = 41;
+    public const int Dead = 42;
+    public const int MaxHp = 43;
+    public const int ProcessingDeath = 44;
+    public const int Direction = 45;
+    public const int MovementAvailable = 46;
+    public const int Moving = 47;
+    public const int Speed = 48;
+    public const int CurrentSpawnedEnemyAmount = 49;
+    public const int Applied = 50;
+    public const int Duration = 51;
+    public const int Period = 52;
+    public const int Posion = 53;
+    public const int Status = 54;
+    public const int StatusTypeId = 55;
+    public const int TimeLeft = 56;
+    public const int TimeSinceLastTick = 57;
+    public const int Unapplied = 58;
+    public const int CollectTargetsContinuously = 59;
+    public const int CollectTargetsInterval = 60;
+    public const int CollectTargetsTimer = 61;
+    public const int LayerMask = 62;
+    public const int ProcessedTargets = 63;
+    public const int Radius = 64;
+    public const int ReadyToCollectTargets = 65;
+    public const int TargetsBuffer = 66;
+    public const int ClosestTarget = 67;
+    public const int FirePositionTransform = 68;
+    public const int MagazineSize = 69;
+    public const int Pistol = 70;
+    public const int ReloadTime = 71;
+    public const int Weapon = 72;
+    public const int WeaponId = 73;
+    public const int WeaponRotationAngle = 74;
+    public const int WeaponRotationPointTransform = 75;
+    public const int WeaponSpriteRenderer = 76;
+    public const int AxisInput = 77;
+    public const int Input = 78;
 
-    public const int TotalComponents = 74;
+    public const int TotalComponents = 79;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -111,6 +113,9 @@ public static class GameComponentsLookup {
         "Processed",
         "StatusSetups",
         "TargetLimit",
+        "BaseStats",
+        "StatChange",
+        "StatModifiers",
         "Cooldown",
         "CooldownLeft",
         "CooldownUp",
@@ -125,6 +130,8 @@ public static class GameComponentsLookup {
         "Orc",
         "Hero",
         "HeroAnimator",
+        "HeroTypeId",
+        "TheGeneral",
         "CurrentHp",
         "Dead",
         "MaxHp",
@@ -188,6 +195,9 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Ammo.Processed),
         typeof(Code.Gameplay.Features.Ammo.StatusSetups),
         typeof(Code.Gameplay.Features.Ammo.TargetLimit),
+        typeof(Code.Gameplay.Features.CharacterStats.BaseStats),
+        typeof(Code.Gameplay.Features.CharacterStats.StatChange),
+        typeof(Code.Gameplay.Features.CharacterStats.StatModifiers),
         typeof(Code.Gameplay.Features.Cooldowns.Cooldown),
         typeof(Code.Gameplay.Features.Cooldowns.CooldownLeft),
         typeof(Code.Gameplay.Features.Cooldowns.CooldownUp),
@@ -202,6 +212,8 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Enemy.Orc),
         typeof(Code.Gameplay.Features.Hero.Hero),
         typeof(Code.Gameplay.Features.Hero.HeroAnimatorComponent),
+        typeof(Code.Gameplay.Features.Hero.HeroTypeIdComponent),
+        typeof(Code.Gameplay.Features.Hero.TheGeneral),
         typeof(Code.Gameplay.Features.Lifetime.CurrentHp),
         typeof(Code.Gameplay.Features.Lifetime.Dead),
         typeof(Code.Gameplay.Features.Lifetime.MaxHp),
@@ -210,7 +222,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Movement.MovementAvailable),
         typeof(Code.Gameplay.Features.Movement.Moving),
         typeof(Code.Gameplay.Features.Movement.Speed),
-        typeof(CurrentSpawnedEnemyAmount),
+        typeof(Code.Gameplay.Features.Spawner.CurrentSpawnedEnemyAmount),
         typeof(Code.Gameplay.Features.Statuses.StatusComponents.Applied),
         typeof(Code.Gameplay.Features.Statuses.StatusComponents.Duration),
         typeof(Code.Gameplay.Features.Statuses.StatusComponents.Period),

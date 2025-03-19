@@ -214,7 +214,7 @@ GameObject:
   - component: {fileID: 1419388848337237008}
   - component: {fileID: 350993981172259600}
   m_Layer: 6
-  m_Name: WeaponRotationPoint
+  m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

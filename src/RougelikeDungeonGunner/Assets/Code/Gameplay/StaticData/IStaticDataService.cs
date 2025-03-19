@@ -1,6 +1,7 @@
 ﻿using Code.Gameplay.Features.Ammo;
 using Code.Gameplay.Features.Ammo.Config;
 using Code.Gameplay.Features.Enemy;
+using Code.Gameplay.Features.Hero;
 using Code.Gameplay.Features.Weapon;
 using Code.Gameplay.Features.Weapon.Configs;
 using Cysharp.Threading.Tasks;
@@ -15,5 +16,6 @@ namespace Code.Gameplay.StaticData
     WeaponConfig GetWeaponConfig(WeaponId weaponId);
     WeaponLevel GetWeaponLevel(WeaponId weaponId, int level);
     EnemyConfig GetEnemyConfig(EnemyTypeId enemyId);
+    HeroConfig GetHeroConfig(HeroTypeId heroId);
   }
 }

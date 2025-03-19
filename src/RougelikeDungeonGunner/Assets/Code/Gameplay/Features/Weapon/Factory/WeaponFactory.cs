@@ -4,7 +4,6 @@ using Code.Gameplay.Features.Cooldowns;
 using Code.Gameplay.StaticData;
 using Code.Infrastructure.Identifiers;
 using System;
-using System.Collections.Generic;
 using Code.Gameplay.Features.Weapon.Configs;
 using UnityEngine;
 
@@ -21,39 +20,39 @@ namespace Code.Gameplay.Features.Weapon.Factory
 			_staticDataService = staticDataService;
 		}
 
-		public GameEntity CreateWeapon(WeaponId weaponId, int level, GameEntity entity, Vector2 at)
+		public GameEntity CreateWeapon(WeaponId weaponId, int level, GameEntity parentEntity, Vector2 at)
 		{
 			switch (weaponId)
 			{
 				case WeaponId.Pistol:
-					return CreatePistol(level, entity, at);
+					return CreatePistol(level, parentEntity, at);
 			}
 
 			throw new Exception($"Weapon for {weaponId} was not found");
 		}
 
-		public GameEntity CreatePistol(int level, GameEntity entity, Vector2 at)
+		public GameEntity CreatePistol(int level, GameEntity parentEntity, Vector2 at)
 		{
-			return CreateWeaponEntity(WeaponId.Pistol, level, entity, at)
+			return CreateWeaponEntity(WeaponId.Pistol, level, parentEntity, at)
 				.With(x => x.isPistol = true);
 		}
 
-		private GameEntity CreateWeaponEntity(WeaponId weaponId, int level, GameEntity entity, Vector2 at)
+		private GameEntity CreateWeaponEntity(WeaponId weaponId, int weaponLevel, GameEntity parentEntity, Vector2 at)
 		{
-			WeaponConfig weaponConfig = _staticDataService.GetWeaponConfig(weaponId);
-			WeaponLevel weaponLevel = _staticDataService.GetWeaponLevel(weaponId, level);
+			WeaponConfig config = _staticDataService.GetWeaponConfig(weaponId);
+			WeaponLevel level = _staticDataService.GetWeaponLevel(weaponId, weaponLevel);
 
 			return CreateEntity.Empty()
 					.AddId(_identifier.Next())
-					.AddViewPath("WeaponRotationPoint")
-					.AddViewParent(entity)
+					.AddViewPrefab(config.PrefabView)
+					.AddViewParent(parentEntity)
 					.AddWorldPosition(at)
-					.AddAmmoId(weaponConfig.AmmoId)
-					.AddRadius(weaponLevel.FireRange)
+					.AddAmmoId(config.AmmoId)
+					.AddRadius(level.FireRange)
 					.AddLayerMask(CollisionLayer.Enemy.AsMask())
-					.AddReloadTime(weaponLevel.ReloadTime)
-					.AddMagazineSize(weaponLevel.MagazineSize)
-					.AddCooldown(weaponLevel.Cooldown)
+					.AddReloadTime(level.ReloadTime)
+					.AddMagazineSize(level.MagazineSize)
+					.AddCooldown(level.Cooldown)
 					.With(x => x.isWeapon = true)
 					.PutOnCooldown()
 				;

@@ -1,3 +1,4 @@
+using Code.Gameplay.Features.Hero;
 using Code.Gameplay.Features.Hero.Factory;
 using Code.Gameplay.Features.Spawner;
 using Code.Gameplay.Features.Spawner.Factory;
@@ -36,7 +37,7 @@ namespace Code.Infrastructure.States.GameStates
 		}
 
 		private void PlaceHero() => 
-			_heroFactory.CreateHero(_levelDataProvider.StartPoint);
+			_heroFactory.CreateHero(HeroTypeId.TheGeneral, _levelDataProvider.StartPoint);
 
 		public void Exit()
 		{

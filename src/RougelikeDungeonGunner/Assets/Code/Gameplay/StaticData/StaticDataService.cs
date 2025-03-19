@@ -4,6 +4,7 @@ using System.Linq;
 using Code.Gameplay.Features.Ammo;
 using Code.Gameplay.Features.Ammo.Config;
 using Code.Gameplay.Features.Enemy;
+using Code.Gameplay.Features.Hero;
 using Code.Gameplay.Features.Weapon;
 using Code.Gameplay.Features.Weapon.Configs;
 using Code.Infrastructure.AssetManagement;
@@ -16,10 +17,12 @@ namespace Code.Gameplay.StaticData
 		private const string AmmoConfig = "AmmoConfig";
 		private const string WeaponConfigLabel = "WeaponConfig";
 		private const string EnemyConfigLabel = "EnemyConfig";
+		private const string HeroConfigLabel = "HeroConfig";
 
 		private Dictionary<AmmoId, AmmoConfig> _ammoById;
 		private Dictionary<WeaponId, WeaponConfig> _weaponById;
 		private Dictionary<EnemyTypeId, EnemyConfig> _enemyById;
+		private Dictionary<HeroTypeId, HeroConfig> _heroById;
 
 		private readonly IAssetProvider _assetProvider;
 
@@ -31,6 +34,7 @@ namespace Code.Gameplay.StaticData
 			await LoadAbilities();
 			await LoadWeapons();
 			await LoadEnemies();
+			await LoadHeroes();
 		}
 
 		public AmmoConfig GetAmmoConfig(AmmoId ammoId)
@@ -77,6 +81,14 @@ namespace Code.Gameplay.StaticData
 			throw new Exception($"Enemy config for {enemyId} was not found");
 		}
 
+		public HeroConfig GetHeroConfig(HeroTypeId heroId)
+		{
+			if (_heroById.TryGetValue(heroId, out HeroConfig config))
+				return config;
+
+			throw new Exception($"Hero config for {heroId} was not found");
+		}
+
 		private async UniTask LoadAbilities() =>
 			_ammoById = (await _assetProvider.LoadAll<AmmoConfig>(AmmoConfig))
 				.ToDictionary(x => x.AmmoId, x => x);
@@ -88,5 +100,9 @@ namespace Code.Gameplay.StaticData
 		private async UniTask LoadEnemies() =>
 			_enemyById = (await _assetProvider.LoadAll<EnemyConfig>(EnemyConfigLabel))
 				.ToDictionary(x => x.EnemyTypeId, x => x);
+
+		private async UniTask LoadHeroes() =>
+			_heroById = (await _assetProvider.LoadAll<HeroConfig>(HeroConfigLabel))
+				.ToDictionary(x => x.HeroTypeId, x => x);
 	}
 }

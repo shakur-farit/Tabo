@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Code.Common.Entity;
 using Code.Common.Extensions;
+using Code.Gameplay.Features.CharacterStats;
 using Code.Gameplay.Features.Effects;
 using Code.Gameplay.StaticData;
 using Code.Infrastructure.Identifiers;
@@ -25,7 +26,7 @@ namespace Code.Gameplay.Features.Enemy.Factory
 			_staticDataService = staticDataService;
 		}
 
-		public GameEntity CreateEnemy(Vector3 at, EnemyTypeId typeId)
+		public GameEntity CreateEnemy(EnemyTypeId typeId, Vector3 at)
 		{
 			switch (typeId)
 			{
@@ -48,14 +49,22 @@ namespace Code.Gameplay.Features.Enemy.Factory
 
 		private GameEntity CreateEnemyEntity(Vector3 at, EnemyConfig config)
 		{
+			Dictionary<Stats, float> baseStats = InitStats.EmptyStatDictionary()
+					.With(x => x[Stats.Speed] = config.MovementSpeed)
+					.With(x => x[Stats.MaxHp] = config.MaxHp)
+					.With(x => x[Stats.Damage] = config.Damage)
+				;
+
 			return CreateEntity.Empty()
 					.AddId(_identifier.Next())
 					.AddWorldPosition(at)
 					.AddDirection(Vector2.zero)
+					.AddBaseStats(baseStats)
+					.AddStatModifiers(InitStats.EmptyStatDictionary())
 					.AddCurrentHp(config.CurrentHp)
-					.AddMaxHp(config.MaxHp)
-					.AddEffectSetups(new List<EffectSetup> { EffectSetup.FormId(EffectTypeId.Damage, config.Damage) })
-					.AddSpeed(config.MovementSpeed)
+					.AddMaxHp(baseStats[Stats.MaxHp])
+					.AddEffectSetups(new List<EffectSetup> { EffectSetup.FormId(EffectTypeId.Damage, baseStats[Stats.Damage]) })
+					.AddSpeed(baseStats[Stats.Speed])
 					.AddTargetsBuffer(new List<int>(TargetAmount))
 					.AddRadius(AttackRadius)
 					.AddCollectTargetsInterval(AttackInterval)

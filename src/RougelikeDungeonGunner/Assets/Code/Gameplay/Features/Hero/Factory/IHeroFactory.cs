@@ -4,6 +4,6 @@ namespace Code.Gameplay.Features.Hero.Factory
 {
 	public interface IHeroFactory
 	{
-		GameEntity CreateHero(Vector3 at);
+		GameEntity CreateHero(HeroTypeId typeId, Vector3 at);
 	}
 }

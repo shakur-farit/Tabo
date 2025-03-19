@@ -9,7 +9,6 @@ namespace Code.Gameplay.Features.Hero.Behaviours
 	  [SerializeField] private Animator _animator;
 	  [SerializeField] private SpriteRenderer _spriteRenderer;
 
-	  private readonly int _isIdling = Animator.StringToHash("isIdling");
 	  private readonly int _isMoving = Animator.StringToHash("isMoving");
 
 	  private readonly int _aimUp = Animator.StringToHash("aimUp");
@@ -23,12 +22,6 @@ namespace Code.Gameplay.Features.Hero.Behaviours
 
 	  private void OnDestroy() =>
 		  _spriteRenderer.DOKill();
-
-		public void PlayDied()
-		{
-			Debug.Log("Death animation");
-			//_animator.SetTrigger(_diedHash);
-		}
 
 		public void StartIdling() => _animator.SetBool(_isMoving, false);
 
@@ -60,16 +53,12 @@ namespace Code.Gameplay.Features.Hero.Behaviours
 			    _spriteRenderer.DOColor(Color.white, 0.1f));
     }
 
-    public void ResetAll()
-    {
-      _animator.ResetTrigger(_isIdling);
-      _animator.ResetTrigger(_isIdling);
-      _animator.ResetTrigger(_aimDown);
-      _animator.ResetTrigger(_aimLeft);
-      _animator.ResetTrigger(_aimRight);
-      _animator.ResetTrigger(_aimUp);
-      _animator.ResetTrigger(_aimUpLeft);
-      _animator.ResetTrigger(_aimUpRight);
-    }
+		public void PlayDied()
+		{
+
+		}
+
+		public void SetRuntimeAnimatorController(RuntimeAnimatorController animatorController) => 
+	    _animator.runtimeAnimatorController = animatorController;
   }
 }

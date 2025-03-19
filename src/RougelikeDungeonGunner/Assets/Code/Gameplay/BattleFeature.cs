@@ -1,5 +1,6 @@
 ﻿using Code.Common;
 using Code.Gameplay.Features.Ammo;
+using Code.Gameplay.Features.CharacterStats;
 using Code.Gameplay.Features.EffectApplication;
 using Code.Gameplay.Features.Effects;
 using Code.Gameplay.Features.Enemy;
@@ -35,6 +36,7 @@ namespace Code.Gameplay
 			Add(systems.Create<CollectTargetsFeature>());
 			Add(systems.Create<EffectsFeature>());
 			Add(systems.Create<StatusFeature>());
+			Add(systems.Create<StatsFeature>());
 
 			Add(systems.Create<EffectApplicationFeature>());
 

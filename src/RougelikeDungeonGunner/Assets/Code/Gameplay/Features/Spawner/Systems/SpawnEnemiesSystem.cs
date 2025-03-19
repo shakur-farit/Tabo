@@ -30,7 +30,7 @@ namespace Code.Gameplay.Features.Spawner.Systems
 			{
 				if (spawner.CurrentSpawnedEnemyAmount < 3)
 				{
-					_enemyFactory.CreateEnemy(RandomPosition(), EnemyTypeId.Orc);
+					_enemyFactory.CreateEnemy(EnemyTypeId.Orc, RandomPosition());
 
 					spawner.ReplaceCurrentSpawnedEnemyAmount(spawner.CurrentSpawnedEnemyAmount + 1);
 				}

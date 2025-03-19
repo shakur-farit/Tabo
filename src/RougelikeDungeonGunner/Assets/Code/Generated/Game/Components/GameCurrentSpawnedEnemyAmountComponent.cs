@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Code.Gameplay.Features.Spawner;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherCurrentSpawnedEnemyAmount;
@@ -36,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public CurrentSpawnedEnemyAmount currentSpawnedEnemyAmount { get { return (CurrentSpawnedEnemyAmount)GetComponent(GameComponentsLookup.CurrentSpawnedEnemyAmount); } }
+    public Code.Gameplay.Features.Spawner.CurrentSpawnedEnemyAmount currentSpawnedEnemyAmount { get { return (Code.Gameplay.Features.Spawner.CurrentSpawnedEnemyAmount)GetComponent(GameComponentsLookup.CurrentSpawnedEnemyAmount); } }
     public int CurrentSpawnedEnemyAmount { get { return currentSpawnedEnemyAmount.Value; } }
     public bool hasCurrentSpawnedEnemyAmount { get { return HasComponent(GameComponentsLookup.CurrentSpawnedEnemyAmount); } }
 
     public GameEntity AddCurrentSpawnedEnemyAmount(int newValue) {
         var index = GameComponentsLookup.CurrentSpawnedEnemyAmount;
-        var component = (CurrentSpawnedEnemyAmount)CreateComponent(index, typeof(CurrentSpawnedEnemyAmount));
+        var component = (Code.Gameplay.Features.Spawner.CurrentSpawnedEnemyAmount)CreateComponent(index, typeof(Code.Gameplay.Features.Spawner.CurrentSpawnedEnemyAmount));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -50,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceCurrentSpawnedEnemyAmount(int newValue) {
         var index = GameComponentsLookup.CurrentSpawnedEnemyAmount;
-        var component = (CurrentSpawnedEnemyAmount)CreateComponent(index, typeof(CurrentSpawnedEnemyAmount));
+        var component = (Code.Gameplay.Features.Spawner.CurrentSpawnedEnemyAmount)CreateComponent(index, typeof(Code.Gameplay.Features.Spawner.CurrentSpawnedEnemyAmount));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;
