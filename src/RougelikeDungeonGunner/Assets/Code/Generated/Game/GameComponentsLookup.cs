@@ -39,59 +39,60 @@ public static class GameComponentsLookup {
     public const int DamageEffect = 28;
     public const int Effect = 29;
     public const int EffectValue = 30;
-    public const int ProducerId = 31;
-    public const int TargetId = 32;
-    public const int Enemy = 33;
-    public const int EnemyAnimator = 34;
-    public const int EnemyTypeId = 35;
-    public const int Orc = 36;
-    public const int Hero = 37;
-    public const int HeroAnimator = 38;
-    public const int HeroTypeId = 39;
-    public const int TheGeneral = 40;
-    public const int CurrentHp = 41;
-    public const int Dead = 42;
-    public const int MaxHp = 43;
-    public const int ProcessingDeath = 44;
-    public const int Direction = 45;
-    public const int MovementAvailable = 46;
-    public const int Moving = 47;
-    public const int Speed = 48;
-    public const int CurrentSpawnedEnemyAmount = 49;
-    public const int Affected = 50;
-    public const int Applied = 51;
-    public const int ApplierStatusLink = 52;
-    public const int Duration = 53;
-    public const int Freeze = 54;
-    public const int Period = 55;
-    public const int Poison = 56;
-    public const int Status = 57;
-    public const int StatusTypeId = 58;
-    public const int TimeLeft = 59;
-    public const int TimeSinceLastTick = 60;
-    public const int Unapplied = 61;
-    public const int CollectTargetsContinuously = 62;
-    public const int CollectTargetsInterval = 63;
-    public const int CollectTargetsTimer = 64;
-    public const int LayerMask = 65;
-    public const int ProcessedTargets = 66;
-    public const int Radius = 67;
-    public const int ReadyToCollectTargets = 68;
-    public const int TargetsBuffer = 69;
-    public const int ClosestTarget = 70;
-    public const int FirePositionTransform = 71;
-    public const int MagazineSize = 72;
-    public const int Pistol = 73;
-    public const int ReloadTime = 74;
-    public const int Weapon = 75;
-    public const int WeaponId = 76;
-    public const int WeaponRotationAngle = 77;
-    public const int WeaponRotationPointTransform = 78;
-    public const int WeaponSpriteRenderer = 79;
-    public const int AxisInput = 80;
-    public const int Input = 81;
+    public const int HealEffect = 31;
+    public const int ProducerId = 32;
+    public const int TargetId = 33;
+    public const int Enemy = 34;
+    public const int EnemyAnimator = 35;
+    public const int EnemyTypeId = 36;
+    public const int Orc = 37;
+    public const int Hero = 38;
+    public const int HeroAnimator = 39;
+    public const int HeroTypeId = 40;
+    public const int TheGeneral = 41;
+    public const int CurrentHp = 42;
+    public const int Dead = 43;
+    public const int MaxHp = 44;
+    public const int ProcessingDeath = 45;
+    public const int Direction = 46;
+    public const int MovementAvailable = 47;
+    public const int Moving = 48;
+    public const int Speed = 49;
+    public const int CurrentSpawnedEnemyAmount = 50;
+    public const int Affected = 51;
+    public const int Applied = 52;
+    public const int ApplierStatusLink = 53;
+    public const int Duration = 54;
+    public const int Freeze = 55;
+    public const int Period = 56;
+    public const int Poison = 57;
+    public const int Status = 58;
+    public const int StatusTypeId = 59;
+    public const int TimeLeft = 60;
+    public const int TimeSinceLastTick = 61;
+    public const int Unapplied = 62;
+    public const int CollectTargetsContinuously = 63;
+    public const int CollectTargetsInterval = 64;
+    public const int CollectTargetsTimer = 65;
+    public const int LayerMask = 66;
+    public const int ProcessedTargets = 67;
+    public const int Radius = 68;
+    public const int ReadyToCollectTargets = 69;
+    public const int TargetsBuffer = 70;
+    public const int ClosestTarget = 71;
+    public const int FirePositionTransform = 72;
+    public const int MagazineSize = 73;
+    public const int Pistol = 74;
+    public const int ReloadTime = 75;
+    public const int Weapon = 76;
+    public const int WeaponId = 77;
+    public const int WeaponRotationAngle = 78;
+    public const int WeaponRotationPointTransform = 79;
+    public const int WeaponSpriteRenderer = 80;
+    public const int AxisInput = 81;
+    public const int Input = 82;
 
-    public const int TotalComponents = 82;
+    public const int TotalComponents = 83;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -125,6 +126,7 @@ public static class GameComponentsLookup {
         "DamageEffect",
         "Effect",
         "EffectValue",
+        "HealEffect",
         "ProducerId",
         "TargetId",
         "Enemy",
@@ -210,6 +212,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Effects.DamageEffect),
         typeof(Code.Gameplay.Features.Effects.Effect),
         typeof(Code.Gameplay.Features.Effects.EffectValue),
+        typeof(Code.Gameplay.Features.Effects.HealEffect),
         typeof(Code.Gameplay.Features.Effects.ProducerId),
         typeof(Code.Gameplay.Features.Effects.TargetId),
         typeof(Code.Gameplay.Features.Enemy.Enemy),

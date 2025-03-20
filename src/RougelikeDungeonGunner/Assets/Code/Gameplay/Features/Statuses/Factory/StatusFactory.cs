@@ -9,10 +9,8 @@ namespace Code.Gameplay.Features.Statuses.Factory
 	{
 		private readonly IIdentifierService _identifier;
 
-		public StatusFactory(IIdentifierService identifier)
-		{
+		public StatusFactory(IIdentifierService identifier) => 
 			_identifier = identifier;
-		}
 
 		public GameEntity CreateStatus(StatusSetup setup, int producerId, int targetId)
 		{
@@ -41,31 +39,22 @@ namespace Code.Gameplay.Features.Statuses.Factory
 			return status;
 		}
 
-		private GameEntity CreatePoisonStatus(int producerId, int targetId, StatusSetup setup)
-		{
-			return CreateStatusEntity(producerId, targetId, setup)
-					.AddStatusTypeId(StatusTypeId.Poison)
-					.With(x => x.isPoison = true)
-				;
-		}
+		private GameEntity CreatePoisonStatus(int producerId, int targetId, StatusSetup setup) =>
+			CreateStatusEntity(producerId, targetId, setup)
+				.AddStatusTypeId(StatusTypeId.Poison)
+				.With(x => x.isPoison = true);
 
-		private GameEntity CreateFreezeStatus(int producerId, int targetId, StatusSetup setup)
-		{
-			return CreateStatusEntity(producerId, targetId, setup)
-					.AddStatusTypeId(StatusTypeId.Freeze)
-					.With(x => x.isFreeze = true)
-				;
-		}
+		private GameEntity CreateFreezeStatus(int producerId, int targetId, StatusSetup setup) =>
+			CreateStatusEntity(producerId, targetId, setup)
+				.AddStatusTypeId(StatusTypeId.Freeze)
+				.With(x => x.isFreeze = true);
 
-		private GameEntity CreateStatusEntity(int producerId, int targetId, StatusSetup setup)
-		{
-			return CreateEntity.Empty()
-					.AddId(_identifier.Next())
-					.AddEffectValue(setup.Value)
-					.AddProducerId(producerId)
-					.AddTargetId(targetId)
-					.With(x => x.isStatus = true)
-				;
-		}
+		private GameEntity CreateStatusEntity(int producerId, int targetId, StatusSetup setup) =>
+			CreateEntity.Empty()
+				.AddId(_identifier.Next())
+				.AddEffectValue(setup.Value)
+				.AddProducerId(producerId)
+				.AddTargetId(targetId)
+				.With(x => x.isStatus = true);
 	}
 }

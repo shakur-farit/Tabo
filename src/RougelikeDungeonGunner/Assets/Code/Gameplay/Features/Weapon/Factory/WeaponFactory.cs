@@ -31,11 +31,9 @@ namespace Code.Gameplay.Features.Weapon.Factory
 			throw new Exception($"Weapon for {weaponId} was not found");
 		}
 
-		public GameEntity CreatePistol(int level, GameEntity parentEntity, Vector2 at)
-		{
-			return CreateWeaponEntity(WeaponId.Pistol, level, parentEntity, at)
+		public GameEntity CreatePistol(int level, GameEntity parentEntity, Vector2 at) =>
+			CreateWeaponEntity(WeaponId.Pistol, level, parentEntity, at)
 				.With(x => x.isPistol = true);
-		}
 
 		private GameEntity CreateWeaponEntity(WeaponId weaponId, int weaponLevel, GameEntity parentEntity, Vector2 at)
 		{
@@ -49,7 +47,6 @@ namespace Code.Gameplay.Features.Weapon.Factory
 					.AddWorldPosition(at)
 					.AddAmmoId(config.AmmoId)
 					.AddRadius(level.FireRange)
-					.AddLayerMask(CollisionLayer.Enemy.AsMask())
 					.AddReloadTime(level.ReloadTime)
 					.AddMagazineSize(level.MagazineSize)
 					.AddCooldown(level.Cooldown)

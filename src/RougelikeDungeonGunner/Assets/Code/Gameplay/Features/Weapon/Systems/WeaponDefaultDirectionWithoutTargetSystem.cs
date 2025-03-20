@@ -23,7 +23,7 @@ namespace Code.Gameplay.Features.Weapon.Systems
 			{
 				weapon.WeaponRotationPointTransform.rotation = Quaternion.Euler(0, 0, 0);
 
-				weapon.ReplaceWeaponRotationAngle(0);
+				weapon.ReplaceWeaponRotationAngle(default);
 			}
 		}
 	}

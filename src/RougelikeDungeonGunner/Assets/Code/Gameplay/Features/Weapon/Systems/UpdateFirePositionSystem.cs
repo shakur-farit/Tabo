@@ -20,9 +20,7 @@ namespace Code.Gameplay.Features.Weapon.Systems
 		public void Execute()
 		{
 			foreach (GameEntity weapon in _weapons)
-			{
 				weapon.FirePositionTransform.localPosition = _staticDataService.GetWeaponConfig(WeaponId.Pistol).FirePosition;
-			}
 		}
 	}
 }
