@@ -4,21 +4,21 @@ using Entitas;
 
 namespace Code.Gameplay.Features.Statuses.Systems
 {
-	public class UnapplyPoisonVisualsSystem : ReactiveSystem<GameEntity>
+	public class UnapplyFreezeVisualsSystem : ReactiveSystem<GameEntity>
 	{
-		public UnapplyPoisonVisualsSystem(GameContext context) : base(context)
+		public UnapplyFreezeVisualsSystem(GameContext context) : base(context)
 		{
 		}
 
 		protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context) =>
 			context.CreateCollector(GameMatcher
 				.AllOf(
-					GameMatcher.Poison,
+					GameMatcher.Freeze,
 					GameMatcher.Status,
 					GameMatcher.Unapplied)
 				.Added());
 
-		protected override bool Filter(GameEntity entity) => entity.isStatus && entity.isPoison && entity.hasTargetId;
+		protected override bool Filter(GameEntity entity) => entity.isStatus && entity.isFreeze && entity.hasTargetId;
 
 		protected override void Execute(List<GameEntity> statuses)
 		{
@@ -27,7 +27,7 @@ namespace Code.Gameplay.Features.Statuses.Systems
 				GameEntity target = status.Target();
 
 				if (target is { hasStatusVisuals: true })
-					target.StatusVisuals.UnapplyPoison();
+					target.StatusVisuals.UnapplyFreeze();
 			}
 		}
 	}

@@ -1,5 +1,4 @@
 ﻿using System;
-using UnityEngine.Serialization;
 
 namespace Code.Gameplay.Features.Statuses
 {
@@ -9,6 +8,6 @@ namespace Code.Gameplay.Features.Statuses
 		public StatusTypeId StatusTypeId;
 		public float Value;
 		public float Duration;
-		[FormerlySerializedAs("Preiod")] public float Period;
+		public float Period;
 	}
 }

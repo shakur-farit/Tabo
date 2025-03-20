@@ -11,9 +11,9 @@ namespace Code.Gameplay.Features.Statuses.Systems
 		}
 
 		protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context) => 
-			context.CreateCollector(GameMatcher.Posion.Added());
+			context.CreateCollector(GameMatcher.Poison.Added());
 
-		protected override bool Filter(GameEntity entity) => entity.isStatus && entity.isPosion && entity.hasTargetId;
+		protected override bool Filter(GameEntity entity) => entity.isStatus && entity.isPoison && entity.hasTargetId;
 
 		protected override void Execute(List<GameEntity> statuses)
 		{

@@ -11,7 +11,6 @@ namespace Code.Gameplay.Features.CharacterStats.Systems
 		public StatChangeSystem(GameContext game)
 		{
 			_game = game;
-
 			_statOwners = game.GetGroup(GameMatcher
 				.AllOf(
 					GameMatcher.Id,

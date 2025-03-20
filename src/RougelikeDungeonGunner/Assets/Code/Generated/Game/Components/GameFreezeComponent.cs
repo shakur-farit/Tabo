@@ -8,17 +8,17 @@
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherPosion;
+    static Entitas.IMatcher<GameEntity> _matcherFreeze;
 
-    public static Entitas.IMatcher<GameEntity> Posion {
+    public static Entitas.IMatcher<GameEntity> Freeze {
         get {
-            if (_matcherPosion == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.Posion);
+            if (_matcherFreeze == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.Freeze);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherPosion = matcher;
+                _matcherFreeze = matcher;
             }
 
-            return _matcherPosion;
+            return _matcherFreeze;
         }
     }
 }
@@ -33,18 +33,18 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Statuses.StatusComponents.Posion posionComponent = new Code.Gameplay.Features.Statuses.StatusComponents.Posion();
+    static readonly Code.Gameplay.Features.Statuses.StatusComponents.Freeze freezeComponent = new Code.Gameplay.Features.Statuses.StatusComponents.Freeze();
 
-    public bool isPosion {
-        get { return HasComponent(GameComponentsLookup.Posion); }
+    public bool isFreeze {
+        get { return HasComponent(GameComponentsLookup.Freeze); }
         set {
-            if (value != isPosion) {
-                var index = GameComponentsLookup.Posion;
+            if (value != isFreeze) {
+                var index = GameComponentsLookup.Freeze;
                 if (value) {
                     var componentPool = GetComponentPool(index);
                     var component = componentPool.Count > 0
                             ? componentPool.Pop()
-                            : posionComponent;
+                            : freezeComponent;
 
                     AddComponent(index, component);
                 } else {

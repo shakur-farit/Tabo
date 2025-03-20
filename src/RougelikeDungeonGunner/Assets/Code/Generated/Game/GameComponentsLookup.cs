@@ -58,37 +58,40 @@ public static class GameComponentsLookup {
     public const int Moving = 47;
     public const int Speed = 48;
     public const int CurrentSpawnedEnemyAmount = 49;
-    public const int Applied = 50;
-    public const int Duration = 51;
-    public const int Period = 52;
-    public const int Posion = 53;
-    public const int Status = 54;
-    public const int StatusTypeId = 55;
-    public const int TimeLeft = 56;
-    public const int TimeSinceLastTick = 57;
-    public const int Unapplied = 58;
-    public const int CollectTargetsContinuously = 59;
-    public const int CollectTargetsInterval = 60;
-    public const int CollectTargetsTimer = 61;
-    public const int LayerMask = 62;
-    public const int ProcessedTargets = 63;
-    public const int Radius = 64;
-    public const int ReadyToCollectTargets = 65;
-    public const int TargetsBuffer = 66;
-    public const int ClosestTarget = 67;
-    public const int FirePositionTransform = 68;
-    public const int MagazineSize = 69;
-    public const int Pistol = 70;
-    public const int ReloadTime = 71;
-    public const int Weapon = 72;
-    public const int WeaponId = 73;
-    public const int WeaponRotationAngle = 74;
-    public const int WeaponRotationPointTransform = 75;
-    public const int WeaponSpriteRenderer = 76;
-    public const int AxisInput = 77;
-    public const int Input = 78;
+    public const int Affected = 50;
+    public const int Applied = 51;
+    public const int ApplierStatusLink = 52;
+    public const int Duration = 53;
+    public const int Freeze = 54;
+    public const int Period = 55;
+    public const int Poison = 56;
+    public const int Status = 57;
+    public const int StatusTypeId = 58;
+    public const int TimeLeft = 59;
+    public const int TimeSinceLastTick = 60;
+    public const int Unapplied = 61;
+    public const int CollectTargetsContinuously = 62;
+    public const int CollectTargetsInterval = 63;
+    public const int CollectTargetsTimer = 64;
+    public const int LayerMask = 65;
+    public const int ProcessedTargets = 66;
+    public const int Radius = 67;
+    public const int ReadyToCollectTargets = 68;
+    public const int TargetsBuffer = 69;
+    public const int ClosestTarget = 70;
+    public const int FirePositionTransform = 71;
+    public const int MagazineSize = 72;
+    public const int Pistol = 73;
+    public const int ReloadTime = 74;
+    public const int Weapon = 75;
+    public const int WeaponId = 76;
+    public const int WeaponRotationAngle = 77;
+    public const int WeaponRotationPointTransform = 78;
+    public const int WeaponSpriteRenderer = 79;
+    public const int AxisInput = 80;
+    public const int Input = 81;
 
-    public const int TotalComponents = 79;
+    public const int TotalComponents = 82;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -141,10 +144,13 @@ public static class GameComponentsLookup {
         "Moving",
         "Speed",
         "CurrentSpawnedEnemyAmount",
+        "Affected",
         "Applied",
+        "ApplierStatusLink",
         "Duration",
+        "Freeze",
         "Period",
-        "Posion",
+        "Poison",
         "Status",
         "StatusTypeId",
         "TimeLeft",
@@ -223,10 +229,13 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Movement.Moving),
         typeof(Code.Gameplay.Features.Movement.Speed),
         typeof(Code.Gameplay.Features.Spawner.CurrentSpawnedEnemyAmount),
+        typeof(Code.Gameplay.Features.Statuses.StatusComponents.Affected),
         typeof(Code.Gameplay.Features.Statuses.StatusComponents.Applied),
+        typeof(Code.Gameplay.Features.Statuses.StatusComponents.ApplierStatusLink),
         typeof(Code.Gameplay.Features.Statuses.StatusComponents.Duration),
+        typeof(Code.Gameplay.Features.Statuses.StatusComponents.Freeze),
         typeof(Code.Gameplay.Features.Statuses.StatusComponents.Period),
-        typeof(Code.Gameplay.Features.Statuses.StatusComponents.Posion),
+        typeof(Code.Gameplay.Features.Statuses.StatusComponents.Poison),
         typeof(Code.Gameplay.Features.Statuses.StatusComponents.Status),
         typeof(Code.Gameplay.Features.Statuses.StatusComponents.StatusTypeIdComponent),
         typeof(Code.Gameplay.Features.Statuses.StatusComponents.TimeLeft),

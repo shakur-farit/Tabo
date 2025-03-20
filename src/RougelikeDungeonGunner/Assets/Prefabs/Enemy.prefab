@@ -74,15 +74,15 @@ SpriteRenderer:
   m_SortingLayerID: 468312769
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 8614703209417225712, guid: 4a49f6d6d5594ae48bafa9d9a279031f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2.25, y: 2.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &1448632814092989399
@@ -313,11 +313,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78237a0e7e679ec44a6c274488b92c42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Renderer: {fileID: 5241945053856362886}
-  Animator: {fileID: 1448632814092989399}
-  FreezeColor: {r: 0.21960784, g: 0.6392157, b: 0.74509805, a: 1}
-  FreezeOutlineSize: 0.54
-  FreezeOutlineSmoothness: 2.04
+  _renderer: {fileID: 5241945053856362886}
+  _animator: {fileID: 1448632814092989399}
+  FreezeColor: {r: 0.44705883, g: 0.84313726, b: 0.99215686, a: 1}
   PoisonColor: {r: 0.41568628, g: 0.9843137, b: 0.49803922, a: 1}
   PoisonColorIntensity: 0.412
 --- !u!1 &7187357344701163008
