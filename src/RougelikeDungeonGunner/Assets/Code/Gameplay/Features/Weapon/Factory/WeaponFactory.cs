@@ -4,6 +4,7 @@ using Code.Gameplay.Features.Cooldowns;
 using Code.Gameplay.StaticData;
 using Code.Infrastructure.Identifiers;
 using System;
+using System.Collections.Generic;
 using Code.Gameplay.Features.Weapon.Configs;
 using UnityEngine;
 
@@ -20,37 +21,38 @@ namespace Code.Gameplay.Features.Weapon.Factory
 			_staticDataService = staticDataService;
 		}
 
-		public GameEntity CreateWeapon(WeaponId weaponId, int level, GameEntity parentEntity, Vector2 at)
+		public GameEntity CreateWeapon(WeaponTypeId weaponTypeId, int level, GameEntity parentEntity, Vector2 at)
 		{
-			switch (weaponId)
+			switch (weaponTypeId)
 			{
-				case WeaponId.Pistol:
+				case WeaponTypeId.Pistol:
 					return CreatePistol(level, parentEntity, at);
 			}
 
-			throw new Exception($"Weapon for {weaponId} was not found");
+			throw new Exception($"Weapon for {weaponTypeId} was not found");
 		}
 
 		public GameEntity CreatePistol(int level, GameEntity parentEntity, Vector2 at) =>
-			CreateWeaponEntity(WeaponId.Pistol, level, parentEntity, at)
+			CreateWeaponEntity(WeaponTypeId.Pistol, level, parentEntity, at)
 				.With(x => x.isPistol = true);
 
-		private GameEntity CreateWeaponEntity(WeaponId weaponId, int weaponLevel, GameEntity parentEntity, Vector2 at)
+		private GameEntity CreateWeaponEntity(WeaponTypeId weaponTypeId, int weaponLevel, GameEntity parentEntity, Vector2 at)
 		{
-			WeaponConfig config = _staticDataService.GetWeaponConfig(weaponId);
-			WeaponLevel level = _staticDataService.GetWeaponLevel(weaponId, weaponLevel);
+			WeaponConfig config = _staticDataService.GetWeaponConfig(weaponTypeId);
+			WeaponLevel level = _staticDataService.GetWeaponLevel(weaponTypeId, weaponLevel);
 
 			return CreateEntity.Empty()
 					.AddId(_identifier.Next())
 					.AddViewPrefab(config.PrefabView)
 					.AddViewParent(parentEntity)
 					.AddWorldPosition(at)
-					.AddAmmoId(config.AmmoId)
+					.AddAmmoId(config.AmmoId)	
 					.AddRadius(level.FireRange)
 					.AddReloadTime(level.ReloadTime)
 					.AddMagazineSize(level.MagazineSize)
 					.AddCooldown(level.Cooldown)
 					.With(x => x.isWeapon = true)
+					.With(x => x.isReadyToCollectTargets = true)
 					.PutOnCooldown()
 				;
 		}

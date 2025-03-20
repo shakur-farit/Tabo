@@ -10,7 +10,6 @@ using Code.Gameplay.Features.Enemy.Factory;
 using Code.Gameplay.Features.Hero.Factory;
 using Code.Gameplay.Features.Hero.States.HeroAnimationStates;
 using Code.Gameplay.Features.Hero.States.StateMachine;
-using Code.Gameplay.Features.Spawner;
 using Code.Gameplay.Features.Spawner.Factory;
 using Code.Gameplay.Features.Statuses.Applier;
 using Code.Gameplay.Features.Statuses.Factory;
@@ -115,6 +114,7 @@ namespace Code.Infrastructure.Installers
 			Container.Bind<IEnemyFactory>().To<EnemyFactory>().AsSingle();
 			Container.Bind<IAmmoFactory>().To<AmmoFactory>().AsSingle();
 			Container.Bind<IWeaponFactory>().To<WeaponFactory>().AsSingle();
+			Container.Bind<IWeaponChangeRequestFactory>().To<WeaponChangeRequestFactory>().AsSingle();
 			Container.Bind<IEffectFactory>().To<EffectFactory>().AsSingle();
 			Container.Bind<IStatusFactory>().To<StatusFactory>().AsSingle();
 			Container.Bind<ISpawnerFactory>().To<SpawnerFactory>().AsSingle();

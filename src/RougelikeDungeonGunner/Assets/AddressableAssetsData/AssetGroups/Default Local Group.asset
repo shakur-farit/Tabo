@@ -23,8 +23,8 @@ MonoBehaviour:
     m_SerializedLabels:
     - AmmoConfig
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 0b48c2f69e921be4ba7e0738e79f1ec6
-    m_Address: PistolConfig
+  - m_GUID: 7fbfd3fde618ccd4991e5c32283c67dc
+    m_Address: Assets/StaticData/Weapon/RocketLauncherConfig.asset
     m_ReadOnly: 0
     m_SerializedLabels:
     - WeaponConfig
@@ -40,6 +40,54 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - HeroConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f4c6d79a3245a464ebebcfc94b3d358f
+    m_Address: Assets/StaticData/Weapon/LaserBlasterConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 961760fdfc1250249b0c36224bfb7b64
+    m_Address: Assets/StaticData/Weapon/PlasmaGunConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 98b6f329838e8d54c95361b5f9f2a751
+    m_Address: Assets/StaticData/Weapon/SniperConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3d7b10246e491a34b98dd3f9fb8c3981
+    m_Address: Assets/StaticData/Weapon/MachinegunConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a0b4841403061ff41b7bcb7af75503e8
+    m_Address: Assets/StaticData/Weapon/AutomaticPistolConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 58a6dad192979f4439c6a556c5049e4a
+    m_Address: Assets/StaticData/Weapon/ShotgunConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e90590364b9a31d4894c85db7f986b26
+    m_Address: Assets/StaticData/Weapon/RevolverConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0b48c2f69e921be4ba7e0738e79f1ec6
+    m_Address: Assets/StaticData/Weapon/PistolConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponConfig
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 7128017d563554245a79368046c75e1a, type: 2}

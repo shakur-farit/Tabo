@@ -1,4 +1,5 @@
-﻿using Code.Infrastructure.View;
+﻿using Code.Gameplay.Features.Weapon;
+using Code.Infrastructure.View;
 using UnityEngine;
 
 namespace Code.Gameplay.Features.Hero
@@ -9,6 +10,7 @@ namespace Code.Gameplay.Features.Hero
 		public HeroTypeId HeroTypeId;
 		public EntityBehaviour PrefabView;
 		public RuntimeAnimatorController AnimatorController;
+		public WeaponTypeId StartWeapon;
 		[Range(1, 100)] public int CurrentHp;
 		[Range(1, 100)] public int MaxHp;
 		[Range(1, 100)] public int MovementSpeed;

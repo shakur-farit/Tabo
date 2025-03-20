@@ -38,6 +38,7 @@ namespace Code.Gameplay.Features.Hero.Factory
 
 			return CreateHeroEntity(at, config)
 				.AddHeroTypeId(HeroTypeId.TheGeneral)
+				.AddCurrentWeaponType(config.StartWeapon)
 				.With(x => x.isTheGeneral = true);
 		}
 

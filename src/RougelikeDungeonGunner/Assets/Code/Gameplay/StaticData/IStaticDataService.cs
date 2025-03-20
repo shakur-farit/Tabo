@@ -13,8 +13,8 @@ namespace Code.Gameplay.StaticData
     UniTask Load();
     AmmoConfig GetAmmoConfig(AmmoId ammoId);
     AmmoLevel GetAmmoLevel(AmmoId ammoId, int level);
-    WeaponConfig GetWeaponConfig(WeaponId weaponId);
-    WeaponLevel GetWeaponLevel(WeaponId weaponId, int level);
+    WeaponConfig GetWeaponConfig(WeaponTypeId weaponTypeId);
+    WeaponLevel GetWeaponLevel(WeaponTypeId weaponTypeId, int level);
     EnemyConfig GetEnemyConfig(EnemyTypeId enemyId);
     HeroConfig GetHeroConfig(HeroTypeId heroId);
   }

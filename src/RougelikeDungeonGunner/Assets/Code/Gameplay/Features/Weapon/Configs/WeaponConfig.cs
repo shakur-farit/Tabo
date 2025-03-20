@@ -2,13 +2,14 @@
 using Code.Gameplay.Features.Ammo;
 using Code.Infrastructure.View;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Code.Gameplay.Features.Weapon.Configs
 {
 	[CreateAssetMenu(menuName = "Dungeon Gunner/Weapon Config", fileName = "WeaponConfig")]
 	public class WeaponConfig : ScriptableObject
 	{
-		public WeaponId WeaponId;
+		[FormerlySerializedAs("WeaponId")] public WeaponTypeId weaponTypeId;
 		public EntityBehaviour PrefabView;
 		public Sprite WeaponSprite;
 		public AmmoId AmmoId;

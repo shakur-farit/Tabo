@@ -20,7 +20,7 @@ namespace Code.Gameplay.Features.Weapon.Systems
 		public void Execute()
 		{
 			foreach (GameEntity weapon in _weapons)
-				weapon.SpriteRenderer.sprite = _staticDataService.GetWeaponConfig(WeaponId.Pistol).WeaponSprite;
+				weapon.SpriteRenderer.sprite = _staticDataService.GetWeaponConfig(WeaponTypeId.Pistol).WeaponSprite;
 		}
 	}
 }

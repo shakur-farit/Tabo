@@ -7,7 +7,6 @@ namespace Code.Gameplay.Features.Weapon.Systems
 	{
 		private readonly IGroup<GameEntity> _targets;
 		private readonly IGroup<GameEntity> _weapons;
-		private readonly List<GameEntity> _buffer = new(32);
 
 		public FindClosestTargetSystem(GameContext game)
 		{
@@ -29,7 +28,7 @@ namespace Code.Gameplay.Features.Weapon.Systems
 			{
 				float closestDistance = float.MaxValue;
 
-				foreach (GameEntity target in _targets.GetEntities(_buffer))
+				foreach (GameEntity target in _targets)
 				{
 					float distance = (target.WorldPosition - weapon.WeaponRotationPointTransform.position).magnitude;
 

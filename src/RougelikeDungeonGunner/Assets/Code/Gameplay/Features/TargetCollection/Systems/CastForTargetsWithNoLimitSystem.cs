@@ -2,7 +2,6 @@
 using System.Linq;
 using Code.Gameplay.Common.Physics;
 using Entitas;
-using UnityEngine;
 
 namespace Code.Gameplay.Features.TargetCollection.Systems
 {
