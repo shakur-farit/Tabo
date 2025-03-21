@@ -2,7 +2,6 @@
 using Code.Gameplay.Features.Ammo;
 using Code.Infrastructure.View;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Code.Gameplay.Features.Weapon.Configs
 {

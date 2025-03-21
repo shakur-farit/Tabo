@@ -21,4 +21,6 @@ MonoBehaviour:
   - FireRange: 7
     Cooldown: 1
     ReloadTime: 1
-    MagazineSize: 10
+    PrechargeTime: 0
+    MagazineSize: 7
+    AmountInShot: 0

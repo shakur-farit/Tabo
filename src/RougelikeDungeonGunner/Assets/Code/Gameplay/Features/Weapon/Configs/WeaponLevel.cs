@@ -8,6 +8,8 @@ namespace Code.Gameplay.Features.Weapon.Configs
 		public float FireRange;
 		public float Cooldown;
 		public float ReloadTime;
+		public float PrechargeTime;
 		public int MagazineSize;
+		public int AmountInShot;
 	}
 }

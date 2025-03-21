@@ -18,7 +18,9 @@ MonoBehaviour:
   AmmoId: 1
   FirePosition: {x: 1.08, y: 0.34}
   Levels:
-  - FireRange: 7
-    Cooldown: 1
-    ReloadTime: 1
-    MagazineSize: 10
+  - FireRange: 15
+    Cooldown: 3
+    ReloadTime: 5
+    PrechargeTime: 0
+    MagazineSize: 1
+    AmountInShot: 0

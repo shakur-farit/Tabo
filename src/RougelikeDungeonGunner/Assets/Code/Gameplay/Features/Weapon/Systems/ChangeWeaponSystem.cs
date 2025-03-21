@@ -45,8 +45,6 @@ namespace Code.Gameplay.Features.Weapon.Systems
 						.ReplaceCooldown(level.Cooldown)
 						.With(x=> x.SpriteRenderer.sprite = config.WeaponSprite)
 						;
-
-					Debug.Log(weapon.WeaponTypeId);
 				}
 
 				changeRequest.isReadyToChangeWeapon = false;
