@@ -9,7 +9,7 @@ namespace Code.Gameplay.Features.Weapon.Configs
 	[CreateAssetMenu(menuName = "Dungeon Gunner/Weapon Config", fileName = "WeaponConfig")]
 	public class WeaponConfig : ScriptableObject
 	{
-		[FormerlySerializedAs("WeaponId")] public WeaponTypeId weaponTypeId;
+		public WeaponTypeId WeaponTypeId;
 		public EntityBehaviour PrefabView;
 		public Sprite WeaponSprite;
 		public AmmoId AmmoId;

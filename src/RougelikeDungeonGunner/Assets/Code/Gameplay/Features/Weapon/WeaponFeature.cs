@@ -7,12 +7,13 @@ namespace Code.Gameplay.Features.Weapon
 	{
 		public WeaponFeature(ISystemsFactory systems)
 		{
+			Add(systems.Create<ChangeWeaponSystem>());
 			Add(systems.Create<UpdateWeaponSpriteSystem>());
 			Add(systems.Create<UpdateFirePositionSystem>());
 			Add(systems.Create<FindClosestTargetSystem>());
 			Add(systems.Create<RotateWeaponAlongClosestTargetSystem>());
 			Add(systems.Create<WeaponDefaultDirectionWithoutTargetSystem>());
-		
+
 			Add(systems.Create<CleanupClosestTargetSystem>());
 		}
 	}

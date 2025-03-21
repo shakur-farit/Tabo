@@ -4,7 +4,6 @@ using Code.Gameplay.Features.Cooldowns;
 using Code.Gameplay.StaticData;
 using Code.Infrastructure.Identifiers;
 using System;
-using System.Collections.Generic;
 using Code.Gameplay.Features.Weapon.Configs;
 using UnityEngine;
 
@@ -34,7 +33,8 @@ namespace Code.Gameplay.Features.Weapon.Factory
 
 		public GameEntity CreatePistol(int level, GameEntity parentEntity, Vector2 at) =>
 			CreateWeaponEntity(WeaponTypeId.Pistol, level, parentEntity, at)
-				.With(x => x.isPistol = true);
+				.With(x => x.isPistol = true)
+			;
 
 		private GameEntity CreateWeaponEntity(WeaponTypeId weaponTypeId, int weaponLevel, GameEntity parentEntity, Vector2 at)
 		{
@@ -43,6 +43,7 @@ namespace Code.Gameplay.Features.Weapon.Factory
 
 			return CreateEntity.Empty()
 					.AddId(_identifier.Next())
+					.AddWeaponTypeId(weaponTypeId)
 					.AddViewPrefab(config.PrefabView)
 					.AddViewParent(parentEntity)
 					.AddWorldPosition(at)

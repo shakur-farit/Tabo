@@ -95,7 +95,7 @@ namespace Code.Gameplay.StaticData
 
 		private async UniTask LoadWeapons() =>
 			_weaponById = (await _assetProvider.LoadAll<WeaponConfig>(WeaponConfigLabel))
-				.ToDictionary(x => x.weaponTypeId, x => x);
+				.ToDictionary(x => x.WeaponTypeId, x => x);
 
 		private async UniTask LoadEnemies() =>
 			_enemyById = (await _assetProvider.LoadAll<EnemyConfig>(EnemyConfigLabel))

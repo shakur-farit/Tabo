@@ -33,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Features.Hero.NewWeapon newWeapon { get { return (Code.Gameplay.Features.Hero.NewWeapon)GetComponent(GameComponentsLookup.NewWeapon); } }
+    public Code.Gameplay.Features.Weapon.NewWeapon newWeapon { get { return (Code.Gameplay.Features.Weapon.NewWeapon)GetComponent(GameComponentsLookup.NewWeapon); } }
     public Code.Gameplay.Features.Weapon.WeaponTypeId NewWeapon { get { return newWeapon.Value; } }
     public bool hasNewWeapon { get { return HasComponent(GameComponentsLookup.NewWeapon); } }
 
     public GameEntity AddNewWeapon(Code.Gameplay.Features.Weapon.WeaponTypeId newValue) {
         var index = GameComponentsLookup.NewWeapon;
-        var component = (Code.Gameplay.Features.Hero.NewWeapon)CreateComponent(index, typeof(Code.Gameplay.Features.Hero.NewWeapon));
+        var component = (Code.Gameplay.Features.Weapon.NewWeapon)CreateComponent(index, typeof(Code.Gameplay.Features.Weapon.NewWeapon));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceNewWeapon(Code.Gameplay.Features.Weapon.WeaponTypeId newValue) {
         var index = GameComponentsLookup.NewWeapon;
-        var component = (Code.Gameplay.Features.Hero.NewWeapon)CreateComponent(index, typeof(Code.Gameplay.Features.Hero.NewWeapon));
+        var component = (Code.Gameplay.Features.Weapon.NewWeapon)CreateComponent(index, typeof(Code.Gameplay.Features.Weapon.NewWeapon));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

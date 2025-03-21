@@ -14,13 +14,14 @@ namespace Code.Gameplay.Features.Weapon.Systems
 			_weapons = game.GetGroup(GameMatcher
 				.AllOf(
 					GameMatcher.SpriteRenderer,
-					GameMatcher.Weapon));
+					GameMatcher.Weapon,
+					GameMatcher.WeaponTypeId));
 		}
 
 		public void Execute()
 		{
 			foreach (GameEntity weapon in _weapons)
-				weapon.SpriteRenderer.sprite = _staticDataService.GetWeaponConfig(WeaponTypeId.Pistol).WeaponSprite;
+				weapon.SpriteRenderer.sprite = _staticDataService.GetWeaponConfig(weapon.WeaponTypeId).WeaponSprite;
 		}
 	}
 }
