@@ -12,25 +12,22 @@ namespace Code.Gameplay.Features.Hero.Behaviours
 			if (UnityEngine.Input.GetKeyDown(KeyCode.Alpha1))
 			{
 				CreateEntity.Empty()
-					.AddNewWeapon(WeaponTypeId.Pistol)
+					.AddWeaponChangeRequest(WeaponTypeId.Pistol)
 					.With(x => x.isReadyToChangeWeapon = true)
-					.AddSelfDestructedTimer(0.5f)
 					;
 			}
 			else if (UnityEngine.Input.GetKeyDown(KeyCode.Alpha2))
 			{
 				CreateEntity.Empty()
-					.AddNewWeapon(WeaponTypeId.Machinegun)
+					.AddWeaponChangeRequest(WeaponTypeId.Machinegun)
 					.With(x => x.isReadyToChangeWeapon = true)
-					.AddSelfDestructedTimer(0.5f)
 					;
 			}
 			else if (UnityEngine.Input.GetKeyDown(KeyCode.Alpha3))
 			{
 				CreateEntity.Empty()
-					.AddNewWeapon(WeaponTypeId.Sniper)
+					.AddWeaponChangeRequest(WeaponTypeId.Sniper)
 					.With(x => x.isReadyToChangeWeapon = true)
-					.AddSelfDestructedTimer(0.5f)
 					;
 			}
 		}

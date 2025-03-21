@@ -11,102 +11,107 @@ public static class GameComponentsLookup {
     public const int Destructed = 0;
     public const int Parented = 1;
     public const int SelfDestructedTimer = 2;
-    public const int View = 3;
-    public const int ViewParent = 4;
-    public const int ViewPath = 5;
-    public const int ViewPrefab = 6;
-    public const int Damage = 7;
-    public const int DamageTakenAnimator = 8;
-    public const int Id = 9;
-    public const int ParentTransform = 10;
-    public const int SpriteRenderer = 11;
-    public const int StatusVisuals = 12;
-    public const int Transform = 13;
-    public const int WorldPosition = 14;
-    public const int Ammo = 15;
-    public const int AmmoId = 16;
-    public const int EffectSetups = 17;
-    public const int PistolBullet = 18;
-    public const int Processed = 19;
-    public const int StatusSetups = 20;
-    public const int TargetLimit = 21;
-    public const int BaseStats = 22;
-    public const int StatChange = 23;
-    public const int StatModifiers = 24;
-    public const int Cooldown = 25;
-    public const int CooldownLeft = 26;
-    public const int CooldownUp = 27;
-    public const int DamageEffect = 28;
-    public const int Effect = 29;
-    public const int EffectValue = 30;
-    public const int HealEffect = 31;
-    public const int ProducerId = 32;
-    public const int TargetId = 33;
-    public const int Enemy = 34;
-    public const int EnemyAnimator = 35;
-    public const int EnemyTypeId = 36;
-    public const int Orc = 37;
-    public const int Hero = 38;
-    public const int HeroAnimator = 39;
-    public const int HeroTypeId = 40;
-    public const int TheGeneral = 41;
-    public const int CurrentHp = 42;
-    public const int Dead = 43;
-    public const int MaxHp = 44;
-    public const int ProcessingDeath = 45;
-    public const int Direction = 46;
-    public const int MovementAvailable = 47;
-    public const int Moving = 48;
-    public const int Speed = 49;
-    public const int CurrentSpawnedEnemyAmount = 50;
-    public const int Affected = 51;
-    public const int Applied = 52;
-    public const int ApplierStatusLink = 53;
-    public const int Duration = 54;
-    public const int Freeze = 55;
-    public const int Period = 56;
-    public const int Poison = 57;
-    public const int Status = 58;
-    public const int StatusTypeId = 59;
-    public const int TimeLeft = 60;
-    public const int TimeSinceLastTick = 61;
-    public const int Unapplied = 62;
-    public const int CollectTargetsContinuously = 63;
-    public const int CollectTargetsInterval = 64;
-    public const int CollectTargetsTimer = 65;
-    public const int LayerMask = 66;
-    public const int ProcessedTargets = 67;
-    public const int Radius = 68;
-    public const int ReadyToCollectTargets = 69;
-    public const int TargetsBuffer = 70;
-    public const int AutomaticPistol = 71;
-    public const int ClosestTarget = 72;
-    public const int FirePositionTransform = 73;
-    public const int LaserBlaster = 74;
-    public const int Machinegun = 75;
-    public const int MagazineSize = 76;
-    public const int NewWeapon = 77;
-    public const int Pistol = 78;
-    public const int PlasmaGun = 79;
-    public const int ReadyToChangeWeapon = 80;
-    public const int ReloadTime = 81;
-    public const int Revolver = 82;
-    public const int RocketLauncher = 83;
-    public const int Shotgun = 84;
-    public const int Sniper = 85;
-    public const int Weapon = 86;
-    public const int WeaponRotationAngle = 87;
-    public const int WeaponRotationPointTransform = 88;
-    public const int WeaponTypeId = 89;
-    public const int AxisInput = 90;
-    public const int Input = 91;
+    public const int Unparented = 3;
+    public const int View = 4;
+    public const int ViewParent = 5;
+    public const int ViewPath = 6;
+    public const int ViewPrefab = 7;
+    public const int Damage = 8;
+    public const int DamageTakenAnimator = 9;
+    public const int Id = 10;
+    public const int ParentTransform = 11;
+    public const int Processed = 12;
+    public const int SpriteRenderer = 13;
+    public const int StatusVisuals = 14;
+    public const int Transform = 15;
+    public const int WorldPosition = 16;
+    public const int Ammo = 17;
+    public const int AmmoId = 18;
+    public const int EffectSetups = 19;
+    public const int PistolBullet = 20;
+    public const int StatusSetups = 21;
+    public const int TargetLimit = 22;
+    public const int BaseStats = 23;
+    public const int StatChange = 24;
+    public const int StatModifiers = 25;
+    public const int Cooldown = 26;
+    public const int CooldownLeft = 27;
+    public const int CooldownUp = 28;
+    public const int DamageEffect = 29;
+    public const int Effect = 30;
+    public const int EffectValue = 31;
+    public const int HealEffect = 32;
+    public const int ProducerId = 33;
+    public const int TargetId = 34;
+    public const int Enemy = 35;
+    public const int EnemyAnimator = 36;
+    public const int EnemyTypeId = 37;
+    public const int Orc = 38;
+    public const int Hero = 39;
+    public const int HeroAnimator = 40;
+    public const int HeroTypeId = 41;
+    public const int TheGeneral = 42;
+    public const int Unweaponed = 43;
+    public const int Weaponed = 44;
+    public const int CurrentHp = 45;
+    public const int Dead = 46;
+    public const int MaxHp = 47;
+    public const int ProcessingDeath = 48;
+    public const int Direction = 49;
+    public const int MovementAvailable = 50;
+    public const int Moving = 51;
+    public const int Speed = 52;
+    public const int CurrentSpawnedEnemyAmount = 53;
+    public const int Affected = 54;
+    public const int Applied = 55;
+    public const int ApplierStatusLink = 56;
+    public const int Duration = 57;
+    public const int Freeze = 58;
+    public const int Period = 59;
+    public const int Poison = 60;
+    public const int Status = 61;
+    public const int StatusTypeId = 62;
+    public const int TimeLeft = 63;
+    public const int TimeSinceLastTick = 64;
+    public const int Unapplied = 65;
+    public const int CollectTargetsContinuously = 66;
+    public const int CollectTargetsInterval = 67;
+    public const int CollectTargetsTimer = 68;
+    public const int LayerMask = 69;
+    public const int ProcessedTargets = 70;
+    public const int Radius = 71;
+    public const int ReadyToCollectTargets = 72;
+    public const int TargetsBuffer = 73;
+    public const int AutomaticPistol = 74;
+    public const int NewWeapon = 75;
+    public const int ReadyToChangeWeapon = 76;
+    public const int WeaponChangeRequest = 77;
+    public const int ClosestTarget = 78;
+    public const int FirePositionTransform = 79;
+    public const int LaserBlaster = 80;
+    public const int Machinegun = 81;
+    public const int MagazineSize = 82;
+    public const int Pistol = 83;
+    public const int PlasmaGun = 84;
+    public const int ReloadTime = 85;
+    public const int Revolver = 86;
+    public const int RocketLauncher = 87;
+    public const int Shotgun = 88;
+    public const int Sniper = 89;
+    public const int Weapon = 90;
+    public const int WeaponRotationAngle = 91;
+    public const int WeaponRotationPointTransform = 92;
+    public const int WeaponTypeId = 93;
+    public const int AxisInput = 94;
+    public const int Input = 95;
 
-    public const int TotalComponents = 92;
+    public const int TotalComponents = 96;
 
     public static readonly string[] componentNames = {
         "Destructed",
         "Parented",
         "SelfDestructedTimer",
+        "Unparented",
         "View",
         "ViewParent",
         "ViewPath",
@@ -115,6 +120,7 @@ public static class GameComponentsLookup {
         "DamageTakenAnimator",
         "Id",
         "ParentTransform",
+        "Processed",
         "SpriteRenderer",
         "StatusVisuals",
         "Transform",
@@ -123,7 +129,6 @@ public static class GameComponentsLookup {
         "AmmoId",
         "EffectSetups",
         "PistolBullet",
-        "Processed",
         "StatusSetups",
         "TargetLimit",
         "BaseStats",
@@ -146,6 +151,8 @@ public static class GameComponentsLookup {
         "HeroAnimator",
         "HeroTypeId",
         "TheGeneral",
+        "Unweaponed",
+        "Weaponed",
         "CurrentHp",
         "Dead",
         "MaxHp",
@@ -176,15 +183,16 @@ public static class GameComponentsLookup {
         "ReadyToCollectTargets",
         "TargetsBuffer",
         "AutomaticPistol",
+        "NewWeapon",
+        "ReadyToChangeWeapon",
+        "WeaponChangeRequest",
         "ClosestTarget",
         "FirePositionTransform",
         "LaserBlaster",
         "Machinegun",
         "MagazineSize",
-        "NewWeapon",
         "Pistol",
         "PlasmaGun",
-        "ReadyToChangeWeapon",
         "ReloadTime",
         "Revolver",
         "RocketLauncher",
@@ -202,6 +210,7 @@ public static class GameComponentsLookup {
         typeof(Code.Common.Destructed),
         typeof(Code.Common.Parented),
         typeof(Code.Common.SelfDestructedTimer),
+        typeof(Code.Common.Unparented),
         typeof(Code.Common.View),
         typeof(Code.Common.ViewParent),
         typeof(Code.Common.ViewPath),
@@ -210,6 +219,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Common.DamageTakenAnimatorComponent),
         typeof(Code.Gameplay.Common.Id),
         typeof(Code.Gameplay.Common.ParentTransform),
+        typeof(Code.Gameplay.Common.Processed),
         typeof(Code.Gameplay.Common.SpriteRendererComponent),
         typeof(Code.Gameplay.Common.StatusVisualsComponent),
         typeof(Code.Gameplay.Common.TransformComponent),
@@ -218,7 +228,6 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Ammo.AmmoIdComponent),
         typeof(Code.Gameplay.Features.Ammo.EffectSetups),
         typeof(Code.Gameplay.Features.Ammo.PistolBullet),
-        typeof(Code.Gameplay.Features.Ammo.Processed),
         typeof(Code.Gameplay.Features.Ammo.StatusSetups),
         typeof(Code.Gameplay.Features.Ammo.TargetLimit),
         typeof(Code.Gameplay.Features.CharacterStats.BaseStats),
@@ -241,6 +250,8 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Hero.HeroAnimatorComponent),
         typeof(Code.Gameplay.Features.Hero.HeroTypeIdComponent),
         typeof(Code.Gameplay.Features.Hero.TheGeneral),
+        typeof(Code.Gameplay.Features.Hero.Unweaponed),
+        typeof(Code.Gameplay.Features.Hero.Weaponed),
         typeof(Code.Gameplay.Features.Lifetime.CurrentHp),
         typeof(Code.Gameplay.Features.Lifetime.Dead),
         typeof(Code.Gameplay.Features.Lifetime.MaxHp),
@@ -271,15 +282,16 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.TargetCollection.ReadyToCollectTargets),
         typeof(Code.Gameplay.Features.TargetCollection.TargetsBuffer),
         typeof(Code.Gameplay.Features.Weapon.AutomaticPistol),
+        typeof(Code.Gameplay.Features.Weapon.ChangeRequest.Systems.NewWeapon),
+        typeof(Code.Gameplay.Features.Weapon.ChangeRequest.Systems.ReadyToChangeWeapon),
+        typeof(Code.Gameplay.Features.Weapon.ChangeRequest.Systems.WeaponChangeRequest),
         typeof(Code.Gameplay.Features.Weapon.ClosestTarget),
         typeof(Code.Gameplay.Features.Weapon.FirePositionTransform),
         typeof(Code.Gameplay.Features.Weapon.LaserBlaster),
         typeof(Code.Gameplay.Features.Weapon.Machinegun),
         typeof(Code.Gameplay.Features.Weapon.MagazineSize),
-        typeof(Code.Gameplay.Features.Weapon.NewWeapon),
         typeof(Code.Gameplay.Features.Weapon.Pistol),
         typeof(Code.Gameplay.Features.Weapon.PlasmaGun),
-        typeof(Code.Gameplay.Features.Weapon.ReadyToChangeWeapon),
         typeof(Code.Gameplay.Features.Weapon.ReloadTime),
         typeof(Code.Gameplay.Features.Weapon.Revolver),
         typeof(Code.Gameplay.Features.Weapon.RocketLauncher),

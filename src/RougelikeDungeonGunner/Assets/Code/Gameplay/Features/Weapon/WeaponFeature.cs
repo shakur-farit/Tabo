@@ -1,4 +1,5 @@
-﻿using Code.Gameplay.Features.Weapon.Systems;
+﻿using Code.Gameplay.Features.Weapon.ChangeRequest.Systems;
+using Code.Gameplay.Features.Weapon.Systems;
 using Code.Infrastructure;
 
 namespace Code.Gameplay.Features.Weapon
@@ -7,6 +8,7 @@ namespace Code.Gameplay.Features.Weapon
 	{
 		public WeaponFeature(ISystemsFactory systems)
 		{
+			Add(systems.Create<WeaponChangeRequestFeature>());
 			Add(systems.Create<ChangeWeaponSystem>());
 			Add(systems.Create<UpdateWeaponSpriteSystem>());
 			Add(systems.Create<UpdateFirePositionSystem>());
@@ -15,6 +17,7 @@ namespace Code.Gameplay.Features.Weapon
 			Add(systems.Create<WeaponDefaultDirectionWithoutTargetSystem>());
 
 			Add(systems.Create<CleanupClosestTargetSystem>());
+			Add(systems.Create<CleanupUnparentedWeaponsSystem>());
 		}
 	}
 }

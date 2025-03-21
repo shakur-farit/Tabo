@@ -21,7 +21,7 @@ namespace Code.Infrastructure.View
 		{
 			foreach (GameEntity child in _children.GetEntities(_buffer))
 			{
-				child.Transform.SetParent(child.ViewParent.ParentTransform);
+				child.Transform.SetParent(child.ViewParent);
 				child.isParented = true;
 			}
 		}

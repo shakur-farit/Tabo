@@ -8,17 +8,17 @@
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherProcessed;
+    static Entitas.IMatcher<GameEntity> _matcherUnweaponed;
 
-    public static Entitas.IMatcher<GameEntity> Processed {
+    public static Entitas.IMatcher<GameEntity> Unweaponed {
         get {
-            if (_matcherProcessed == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.Processed);
+            if (_matcherUnweaponed == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.Unweaponed);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherProcessed = matcher;
+                _matcherUnweaponed = matcher;
             }
 
-            return _matcherProcessed;
+            return _matcherUnweaponed;
         }
     }
 }
@@ -33,18 +33,18 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Common.Processed processedComponent = new Code.Gameplay.Common.Processed();
+    static readonly Code.Gameplay.Features.Hero.Unweaponed unweaponedComponent = new Code.Gameplay.Features.Hero.Unweaponed();
 
-    public bool isProcessed {
-        get { return HasComponent(GameComponentsLookup.Processed); }
+    public bool isUnweaponed {
+        get { return HasComponent(GameComponentsLookup.Unweaponed); }
         set {
-            if (value != isProcessed) {
-                var index = GameComponentsLookup.Processed;
+            if (value != isUnweaponed) {
+                var index = GameComponentsLookup.Unweaponed;
                 if (value) {
                     var componentPool = GetComponentPool(index);
                     var component = componentPool.Count > 0
                             ? componentPool.Pop()
-                            : processedComponent;
+                            : unweaponedComponent;
 
                     AddComponent(index, component);
                 } else {

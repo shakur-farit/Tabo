@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Code.Gameplay.Features.Hero.Systems
 {
-	public class HeroWeaponiseSystem : IInitializeSystem
+	public class HeroWeaponiseSystem : IExecuteSystem
 	{
 		private readonly IWeaponFactory _weaponFactory;
 		private readonly IStaticDataService _staticDataService;
@@ -23,16 +23,19 @@ namespace Code.Gameplay.Features.Hero.Systems
 
 			_heroes = game.GetGroup(GameMatcher
 				.AllOf(
-					GameMatcher.Hero));
+					GameMatcher.Hero,
+					GameMatcher.Unweaponed));
 		}
 
-		public void Initialize()
+		public void Execute()
 		{
 			foreach (GameEntity hero in _heroes.GetEntities(_buffer))
 			{
 				HeroConfig config = _staticDataService.GetHeroConfig(HeroTypeId.TheGeneral);
 
-				_weaponFactory.CreateWeapon(config.StartWeapon, 1, hero, Vector2.zero);
+				_weaponFactory.CreateWeapon(config.StartWeapon, 1, hero.ParentTransform, Vector2.zero);
+
+				hero.isUnweaponed = false;
 			}
 		}
 	}

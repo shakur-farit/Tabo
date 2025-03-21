@@ -8,7 +8,6 @@ namespace Code.Gameplay.Features.Ammo.Systems
 		private readonly List<GameEntity> _buffer = new(32);
 
 		private readonly IGroup<GameEntity> _ammo;
-		private readonly IGroup<GameEntity> _firePositionTransforms;
 		private readonly IGroup<GameEntity> _weapons;
 
 		public AmmoLifeRangeSystem(GameContext game)
@@ -18,23 +17,19 @@ namespace Code.Gameplay.Features.Ammo.Systems
 					GameMatcher.Ammo,
 					GameMatcher.WorldPosition));
 
-			_firePositionTransforms = game.GetGroup(GameMatcher
-				.AllOf(
-					GameMatcher.FirePositionTransform));
-
 			_weapons = game.GetGroup(GameMatcher
 				.AllOf(
 					GameMatcher.Weapon,
-					GameMatcher.Radius));
+					GameMatcher.Radius,
+					GameMatcher.FirePositionTransform));
 		}
 
 		public void Execute()
 		{
 			foreach (GameEntity ammo in _ammo.GetEntities(_buffer))
 			foreach (GameEntity weapon in _weapons)
-			foreach (GameEntity firePositionTransform in _firePositionTransforms)
 			{
-				float distance = (ammo.WorldPosition - firePositionTransform.FirePositionTransform.position).magnitude;
+				float distance = (ammo.WorldPosition - weapon.FirePositionTransform.position).magnitude;
 
 				if (distance > weapon.Radius)
 					ammo.isDestructed = true;

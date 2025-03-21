@@ -14,9 +14,6 @@ namespace Code.Gameplay.Features.Weapon
 	[Game] public class ReloadTime : IComponent { public float Value; }
 	[Game] public class MagazineSize : IComponent { public int Value; }
 
-	[Game] public class NewWeapon : IComponent { public WeaponTypeId Value; }
-	[Game] public class ReadyToChangeWeapon : IComponent { }
-
 	[Game] public class Pistol : IComponent { }
 	[Game] public class Revolver : IComponent { }
 	[Game] public class Shotgun : IComponent { }

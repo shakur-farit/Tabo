@@ -60,6 +60,7 @@ namespace Code.Gameplay.Features.Hero.Factory
 					.AddViewPrefab(config.PrefabView)
 					.With(x => x.isHero = true)
 					.With(x => x.isMovementAvailable = true)
+					.With(x => x.isUnweaponed = true)
 				;
 		}
 	}

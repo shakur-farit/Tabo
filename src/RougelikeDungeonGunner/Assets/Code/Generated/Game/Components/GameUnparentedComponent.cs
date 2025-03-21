@@ -8,17 +8,17 @@
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherProcessed;
+    static Entitas.IMatcher<GameEntity> _matcherUnparented;
 
-    public static Entitas.IMatcher<GameEntity> Processed {
+    public static Entitas.IMatcher<GameEntity> Unparented {
         get {
-            if (_matcherProcessed == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.Processed);
+            if (_matcherUnparented == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.Unparented);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherProcessed = matcher;
+                _matcherUnparented = matcher;
             }
 
-            return _matcherProcessed;
+            return _matcherUnparented;
         }
     }
 }
@@ -33,18 +33,18 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Common.Processed processedComponent = new Code.Gameplay.Common.Processed();
+    static readonly Code.Common.Unparented unparentedComponent = new Code.Common.Unparented();
 
-    public bool isProcessed {
-        get { return HasComponent(GameComponentsLookup.Processed); }
+    public bool isUnparented {
+        get { return HasComponent(GameComponentsLookup.Unparented); }
         set {
-            if (value != isProcessed) {
-                var index = GameComponentsLookup.Processed;
+            if (value != isUnparented) {
+                var index = GameComponentsLookup.Unparented;
                 if (value) {
                     var componentPool = GetComponentPool(index);
                     var component = componentPool.Count > 0
                             ? componentPool.Pop()
-                            : processedComponent;
+                            : unparentedComponent;
 
                     AddComponent(index, component);
                 } else {

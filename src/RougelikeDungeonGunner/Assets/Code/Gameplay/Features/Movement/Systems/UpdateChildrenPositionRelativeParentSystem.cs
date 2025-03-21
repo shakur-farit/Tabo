@@ -19,7 +19,7 @@ namespace Code.Gameplay.Features.Movement.Systems
 		{
 			foreach (GameEntity child in _children)
 			{
-				child.ReplaceWorldPosition(child.ViewParent.WorldPosition);
+				child.ReplaceWorldPosition(child.ViewParent.position);
 				child.Transform.localPosition = Vector2.zero;
 			}
 		}

@@ -14,7 +14,7 @@ namespace Code.Gameplay.Features.Weapon.Factory
 		{
 			return CreateEntity.Empty()
 					.AddId(_identifier.Next())
-					.AddNewWeapon(typeId)
+					.AddWeaponChangeRequest(typeId)
 				;
 		}
 	}

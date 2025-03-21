@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using Entitas;
+﻿using Entitas;
 
 namespace Code.Gameplay.Features.Weapon.Systems
 {
