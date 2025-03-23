@@ -6,7 +6,7 @@ namespace Code.Gameplay.Features.Weapon
 	[Game] public class Weapon : IComponent { }
 	[Game] public class WeaponTypeIdComponent : IComponent { public WeaponTypeId Value; }
 
-	[Game] public class ClosestTarget : IComponent { public GameEntity Value; }
+	[Game] public class ClosestTargetPosition : IComponent { public Vector3 Value; }
 
 	[Game] public class FirePositionTransform : IComponent { public Transform Value; }
 	[Game] public class WeaponRotationPointTransform : IComponent { public Transform Value; }
@@ -14,7 +14,10 @@ namespace Code.Gameplay.Features.Weapon
 	[Game] public class WeaponRotationAngle : IComponent { public float Value; }
 
 	[Game] public class ReloadTime : IComponent { public float Value; }
+	[Game] public class ReloadTimeLeft : IComponent { public float Value; }
 	[Game] public class MagazineSize : IComponent { public int Value; }
+	[Game] public class CurrentAmmoAmount : IComponent { public int Value; }
+	[Game] public class MagazineNotEmpty : IComponent { }
 
 	[Game] public class Pistol : IComponent { }
 	[Game] public class Revolver : IComponent { }

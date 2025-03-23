@@ -34,7 +34,7 @@ namespace Code.Gameplay.Features.Weapon.Systems
 					if (distance <= weapon.Radius && distance < closestDistance)
 					{
 						closestDistance = distance;
-						weapon.ReplaceClosestTarget(target);
+						weapon.ReplaceClosestTargetPosition(target.WorldPosition);
 					}
 				}
 			}

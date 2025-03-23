@@ -27,7 +27,9 @@ namespace Code.Gameplay.Features.Ammo.Systems
 					GameMatcher.CooldownUp,
 					GameMatcher.FirePositionTransform,
 					GameMatcher.WorldPosition,
-					GameMatcher.Radius));
+					GameMatcher.Radius,
+					GameMatcher.MagazineNotEmpty,
+					GameMatcher.CurrentAmmoAmount));
 
 			_enemies = game.GetGroup(GameMatcher
 				.AllOf(
@@ -50,6 +52,11 @@ namespace Code.Gameplay.Features.Ammo.Systems
 					.AddProducerId(weapon.Id)
 					.ReplaceDirection(weapon.FirePositionTransform.right)
 					.With(x => x.isMoving = true);
+
+				if (weapon.CurrentAmmoAmount > 0)
+					weapon.ReplaceCurrentAmmoAmount(weapon.CurrentAmmoAmount - 1);
+				else
+					weapon.isMagazineNotEmpty = false;
 
 				weapon
 					.PutOnCooldown(weapon.Cooldown);

@@ -64,10 +64,13 @@ namespace Code.Gameplay.Features.Weapon.Factory
 					.AddAmmoId(config.AmmoId)	
 					.AddRadius(level.FireRange)
 					.AddReloadTime(level.ReloadTime)
+					.AddReloadTimeLeft(level.ReloadTime)
 					.AddMagazineSize(level.MagazineSize)
+					.AddCurrentAmmoAmount(level.MagazineSize)
 					.AddCooldown(level.Cooldown)
 					.With(x => x.isWeapon = true)
 					.With(x => x.isReadyToCollectTargets = true)
+					.With(x => x.isMagazineNotEmpty = true)
 					.PutOnCooldown()
 				;
 		}

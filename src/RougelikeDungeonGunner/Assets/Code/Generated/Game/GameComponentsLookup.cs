@@ -86,27 +86,30 @@ public static class GameComponentsLookup {
     public const int NewWeaponTypeId = 75;
     public const int WeaponChangeable = 76;
     public const int WeaponChangeRequested = 77;
-    public const int ClosestTarget = 78;
-    public const int FirePositionTransform = 79;
-    public const int LaserBlaster = 80;
-    public const int Machinegun = 81;
-    public const int MagazineSize = 82;
-    public const int Pistol = 83;
-    public const int PlasmaGun = 84;
-    public const int ReloadTime = 85;
-    public const int Revolver = 86;
-    public const int RocketLauncher = 87;
-    public const int Shotgun = 88;
-    public const int Sniper = 89;
-    public const int Weapon = 90;
-    public const int WeaponRotationAngle = 91;
-    public const int WeaponRotationPointTransform = 92;
-    public const int WeaponSpriteRenderer = 93;
-    public const int WeaponTypeId = 94;
-    public const int AxisInput = 95;
-    public const int Input = 96;
+    public const int ClosestTargetPosition = 78;
+    public const int CurrentAmmoAmount = 79;
+    public const int FirePositionTransform = 80;
+    public const int LaserBlaster = 81;
+    public const int Machinegun = 82;
+    public const int MagazineNotEmpty = 83;
+    public const int MagazineSize = 84;
+    public const int Pistol = 85;
+    public const int PlasmaGun = 86;
+    public const int ReloadTime = 87;
+    public const int ReloadTimeLeft = 88;
+    public const int Revolver = 89;
+    public const int RocketLauncher = 90;
+    public const int Shotgun = 91;
+    public const int Sniper = 92;
+    public const int Weapon = 93;
+    public const int WeaponRotationAngle = 94;
+    public const int WeaponRotationPointTransform = 95;
+    public const int WeaponSpriteRenderer = 96;
+    public const int WeaponTypeId = 97;
+    public const int AxisInput = 98;
+    public const int Input = 99;
 
-    public const int TotalComponents = 97;
+    public const int TotalComponents = 100;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -187,14 +190,17 @@ public static class GameComponentsLookup {
         "NewWeaponTypeId",
         "WeaponChangeable",
         "WeaponChangeRequested",
-        "ClosestTarget",
+        "ClosestTargetPosition",
+        "CurrentAmmoAmount",
         "FirePositionTransform",
         "LaserBlaster",
         "Machinegun",
+        "MagazineNotEmpty",
         "MagazineSize",
         "Pistol",
         "PlasmaGun",
         "ReloadTime",
+        "ReloadTimeLeft",
         "Revolver",
         "RocketLauncher",
         "Shotgun",
@@ -287,14 +293,17 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Weapon.ChangeRequest.NewWeaponTypeId),
         typeof(Code.Gameplay.Features.Weapon.ChangeRequest.WeaponChangeable),
         typeof(Code.Gameplay.Features.Weapon.ChangeRequest.WeaponChangeRequested),
-        typeof(Code.Gameplay.Features.Weapon.ClosestTarget),
+        typeof(Code.Gameplay.Features.Weapon.ClosestTargetPosition),
+        typeof(Code.Gameplay.Features.Weapon.CurrentAmmoAmount),
         typeof(Code.Gameplay.Features.Weapon.FirePositionTransform),
         typeof(Code.Gameplay.Features.Weapon.LaserBlaster),
         typeof(Code.Gameplay.Features.Weapon.Machinegun),
+        typeof(Code.Gameplay.Features.Weapon.MagazineNotEmpty),
         typeof(Code.Gameplay.Features.Weapon.MagazineSize),
         typeof(Code.Gameplay.Features.Weapon.Pistol),
         typeof(Code.Gameplay.Features.Weapon.PlasmaGun),
         typeof(Code.Gameplay.Features.Weapon.ReloadTime),
+        typeof(Code.Gameplay.Features.Weapon.ReloadTimeLeft),
         typeof(Code.Gameplay.Features.Weapon.Revolver),
         typeof(Code.Gameplay.Features.Weapon.RocketLauncher),
         typeof(Code.Gameplay.Features.Weapon.Shotgun),

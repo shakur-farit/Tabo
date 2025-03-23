@@ -15,7 +15,7 @@ namespace Code.Gameplay.Features.Weapon.Systems
 					GameMatcher.Weapon,
 					GameMatcher.Radius,
 					GameMatcher.WeaponRotationPointTransform,
-					GameMatcher.ClosestTarget));
+					GameMatcher.ClosestTargetPosition));
 
 			_hero = game.GetGroup(GameMatcher
 				.AllOf(
@@ -28,15 +28,15 @@ namespace Code.Gameplay.Features.Weapon.Systems
 			foreach (GameEntity hero in _hero)
 			foreach (GameEntity weapon in _weapons)
 			{
-				GameEntity closestTarget = weapon.ClosestTarget;
+				Vector3 closestTargetPosition = weapon.ClosestTargetPosition;
 
-				RotateWeapon(closestTarget, weapon, hero);
+				RotateWeapon(closestTargetPosition, weapon, hero);
 			}
 		}
 
-		private void RotateWeapon(GameEntity closestTarget, GameEntity weapon, GameEntity hero)
+		private void RotateWeapon(Vector3 closestTargetPosition, GameEntity weapon, GameEntity hero)
 		{
-			Vector3 direction = (closestTarget.WorldPosition - hero.WorldPosition)
+			Vector3 direction = (closestTargetPosition - hero.WorldPosition)
 				.normalized;
 			float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 			weapon.WeaponRotationPointTransform.rotation = Quaternion.Euler(0, 0, angle);

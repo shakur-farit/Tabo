@@ -14,7 +14,7 @@ namespace Code.Gameplay.Features.Weapon.Systems
 					GameMatcher.Weapon,
 					GameMatcher.Radius,
 					GameMatcher.WeaponRotationPointTransform)
-				.NoneOf(GameMatcher.ClosestTarget));
+				.NoneOf(GameMatcher.ClosestTargetPosition));
 		}
 
 		public void Execute()

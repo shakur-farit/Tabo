@@ -13,6 +13,7 @@ namespace Code.Gameplay.Features.Weapon
 			Add(systems.Create<FindClosestTargetSystem>());
 			Add(systems.Create<RotateWeaponAlongClosestTargetSystem>());
 			Add(systems.Create<WeaponDefaultDirectionWithoutTargetSystem>());
+			Add(systems.Create<ReloadWeaponSystem>());
 
 			Add(systems.Create<CleanupClosestTargetSystem>());
 			Add(systems.Create<CleanupUnparentedWeaponsSystem>());

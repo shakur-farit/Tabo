@@ -13,13 +13,13 @@ namespace Code.Gameplay.Features.Weapon.Systems
 			_targets = game.GetGroup(GameMatcher
 				.AllOf(
 					GameMatcher.Weapon,
-					GameMatcher.ClosestTarget));
+					GameMatcher.ClosestTargetPosition));
 		}
 
 		public void Cleanup()
 		{
 			foreach (GameEntity target in _targets.GetEntities(_buffer)) 
-				target.RemoveClosestTarget();
+				target.RemoveClosestTargetPosition();
 		}
 	}
 }
