@@ -12,22 +12,22 @@ namespace Code.Gameplay.Features.Hero.Behaviours
 			if (UnityEngine.Input.GetKeyDown(KeyCode.Alpha1))
 			{
 				CreateEntity.Empty()
-					.AddWeaponChangeRequest(WeaponTypeId.Pistol)
-					.With(x => x.isReadyToChangeWeapon = true)
+					.AddNewWeaponTypeId(WeaponTypeId.Pistol)
+					.With(x => x.isWeaponChangeRequested = true)
 					;
 			}
 			else if (UnityEngine.Input.GetKeyDown(KeyCode.Alpha2))
 			{
 				CreateEntity.Empty()
-					.AddWeaponChangeRequest(WeaponTypeId.Machinegun)
-					.With(x => x.isReadyToChangeWeapon = true)
+					.AddNewWeaponTypeId(WeaponTypeId.Machinegun)
+					.With(x => x.isWeaponChangeRequested = true)
 					;
 			}
 			else if (UnityEngine.Input.GetKeyDown(KeyCode.Alpha3))
 			{
 				CreateEntity.Empty()
-					.AddWeaponChangeRequest(WeaponTypeId.Sniper)
-					.With(x => x.isReadyToChangeWeapon = true)
+					.AddNewWeaponTypeId(WeaponTypeId.Sniper)
+					.With(x => x.isWeaponChangeRequested = true)
 					;
 			}
 		}

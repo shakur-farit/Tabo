@@ -7,13 +7,14 @@ namespace Code.Gameplay.Features.Weapon.ChangeRequest.Systems
 	{
 		private readonly IGroup<GameEntity> _changeRequests;
 		private readonly IGroup<GameEntity> _weapons;
-		private List<GameEntity> _buffer = new(1);
+		private readonly List<GameEntity> _buffer = new(1);
 
 		public ProcessedWeaponChangeRequestSystem(GameContext game)
 		{
 			_changeRequests = game.GetGroup(GameMatcher
 				.AllOf(
-					GameMatcher.WeaponChangeRequest));
+					GameMatcher.WeaponChangeRequested,
+					GameMatcher.NewWeaponTypeId));
 
 			_weapons = game.GetGroup(GameMatcher
 				.AllOf(
@@ -26,10 +27,9 @@ namespace Code.Gameplay.Features.Weapon.ChangeRequest.Systems
 			foreach (GameEntity changeRequest in _changeRequests.GetEntities(_buffer))
 			foreach (GameEntity weapon in _weapons)
 			{
-				if(changeRequest.WeaponChangeRequest == weapon.WeaponTypeId)
-					continue;
+				if(changeRequest.NewWeaponTypeId != weapon.WeaponTypeId)
+					changeRequest.isWeaponChangeable = true;
 
-				changeRequest.isNewWeapon = true;
 				changeRequest.isProcessed = true;
 			}
 		}

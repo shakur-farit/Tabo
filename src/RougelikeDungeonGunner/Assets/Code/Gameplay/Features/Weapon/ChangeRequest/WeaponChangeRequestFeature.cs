@@ -1,6 +1,7 @@
-﻿using Code.Infrastructure;
+﻿using Code.Gameplay.Features.Weapon.ChangeRequest.Systems;
+using Code.Infrastructure;
 
-namespace Code.Gameplay.Features.Weapon.ChangeRequest.Systems
+namespace Code.Gameplay.Features.Weapon.ChangeRequest
 {
 	public sealed class WeaponChangeRequestFeature : Feature
 	{

@@ -1,4 +1,4 @@
-﻿namespace Code.Gameplay.Features.Weapon.Factory
+﻿namespace Code.Gameplay.Features.Weapon.ChangeRequest.Factory
 {
 	public interface IWeaponChangeRequestFactory
 	{

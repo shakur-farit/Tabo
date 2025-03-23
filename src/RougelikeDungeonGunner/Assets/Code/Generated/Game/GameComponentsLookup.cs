@@ -83,9 +83,9 @@ public static class GameComponentsLookup {
     public const int ReadyToCollectTargets = 72;
     public const int TargetsBuffer = 73;
     public const int AutomaticPistol = 74;
-    public const int NewWeapon = 75;
-    public const int ReadyToChangeWeapon = 76;
-    public const int WeaponChangeRequest = 77;
+    public const int NewWeaponTypeId = 75;
+    public const int WeaponChangeable = 76;
+    public const int WeaponChangeRequested = 77;
     public const int ClosestTarget = 78;
     public const int FirePositionTransform = 79;
     public const int LaserBlaster = 80;
@@ -183,9 +183,9 @@ public static class GameComponentsLookup {
         "ReadyToCollectTargets",
         "TargetsBuffer",
         "AutomaticPistol",
-        "NewWeapon",
-        "ReadyToChangeWeapon",
-        "WeaponChangeRequest",
+        "NewWeaponTypeId",
+        "WeaponChangeable",
+        "WeaponChangeRequested",
         "ClosestTarget",
         "FirePositionTransform",
         "LaserBlaster",
@@ -282,9 +282,9 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.TargetCollection.ReadyToCollectTargets),
         typeof(Code.Gameplay.Features.TargetCollection.TargetsBuffer),
         typeof(Code.Gameplay.Features.Weapon.AutomaticPistol),
-        typeof(Code.Gameplay.Features.Weapon.ChangeRequest.Systems.NewWeapon),
-        typeof(Code.Gameplay.Features.Weapon.ChangeRequest.Systems.ReadyToChangeWeapon),
-        typeof(Code.Gameplay.Features.Weapon.ChangeRequest.Systems.WeaponChangeRequest),
+        typeof(Code.Gameplay.Features.Weapon.ChangeRequest.NewWeaponTypeId),
+        typeof(Code.Gameplay.Features.Weapon.ChangeRequest.WeaponChangeable),
+        typeof(Code.Gameplay.Features.Weapon.ChangeRequest.WeaponChangeRequested),
         typeof(Code.Gameplay.Features.Weapon.ClosestTarget),
         typeof(Code.Gameplay.Features.Weapon.FirePositionTransform),
         typeof(Code.Gameplay.Features.Weapon.LaserBlaster),

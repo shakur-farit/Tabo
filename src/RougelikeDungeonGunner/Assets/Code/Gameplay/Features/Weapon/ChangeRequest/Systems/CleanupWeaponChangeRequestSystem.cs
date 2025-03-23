@@ -12,7 +12,7 @@ namespace Code.Gameplay.Features.Weapon.ChangeRequest.Systems
 		{
 			_changeRequests = game.GetGroup(GameMatcher
 				.AllOf(
-					GameMatcher.WeaponChangeRequest,
+					GameMatcher.WeaponChangeRequested,
 					GameMatcher.Processed));
 		}
 

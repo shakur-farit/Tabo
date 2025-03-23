@@ -8,17 +8,17 @@
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherNewWeapon;
+    static Entitas.IMatcher<GameEntity> _matcherWeaponChangeable;
 
-    public static Entitas.IMatcher<GameEntity> NewWeapon {
+    public static Entitas.IMatcher<GameEntity> WeaponChangeable {
         get {
-            if (_matcherNewWeapon == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.NewWeapon);
+            if (_matcherWeaponChangeable == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.WeaponChangeable);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherNewWeapon = matcher;
+                _matcherWeaponChangeable = matcher;
             }
 
-            return _matcherNewWeapon;
+            return _matcherWeaponChangeable;
         }
     }
 }
@@ -33,18 +33,18 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Weapon.ChangeRequest.Systems.NewWeapon newWeaponComponent = new Code.Gameplay.Features.Weapon.ChangeRequest.Systems.NewWeapon();
+    static readonly Code.Gameplay.Features.Weapon.ChangeRequest.WeaponChangeable weaponChangeableComponent = new Code.Gameplay.Features.Weapon.ChangeRequest.WeaponChangeable();
 
-    public bool isNewWeapon {
-        get { return HasComponent(GameComponentsLookup.NewWeapon); }
+    public bool isWeaponChangeable {
+        get { return HasComponent(GameComponentsLookup.WeaponChangeable); }
         set {
-            if (value != isNewWeapon) {
-                var index = GameComponentsLookup.NewWeapon;
+            if (value != isWeaponChangeable) {
+                var index = GameComponentsLookup.WeaponChangeable;
                 if (value) {
                     var componentPool = GetComponentPool(index);
                     var component = componentPool.Count > 0
                             ? componentPool.Pop()
-                            : newWeaponComponent;
+                            : weaponChangeableComponent;
 
                     AddComponent(index, component);
                 } else {

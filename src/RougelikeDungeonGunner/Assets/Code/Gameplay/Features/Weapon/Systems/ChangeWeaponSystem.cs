@@ -24,9 +24,9 @@ namespace Code.Gameplay.Features.Weapon.Systems
 
 			_changeRequests = game.GetGroup(GameMatcher
 				.AllOf(
-					GameMatcher.WeaponChangeRequest,
-					GameMatcher.NewWeapon,
-					GameMatcher.ReadyToChangeWeapon));
+					GameMatcher.WeaponChangeRequested,
+					GameMatcher.WeaponChangeable,
+					GameMatcher.NewWeaponTypeId));
 		}
 
 		public void Execute()
@@ -39,10 +39,8 @@ namespace Code.Gameplay.Features.Weapon.Systems
 
 					weapon.isUnparented = true;
 
-					_weaponFactory.CreateWeapon(changeRequest.WeaponChangeRequest, 1, parent, Vector2.zero);
+					_weaponFactory.CreateWeapon(changeRequest.NewWeaponTypeId, 1, parent, Vector2.zero);
 				}
-
-				changeRequest.isReadyToChangeWeapon = false;
 			}
 		}
 	}

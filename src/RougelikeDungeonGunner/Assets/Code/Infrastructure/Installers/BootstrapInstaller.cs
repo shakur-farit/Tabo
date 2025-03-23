@@ -13,6 +13,7 @@ using Code.Gameplay.Features.Hero.States.StateMachine;
 using Code.Gameplay.Features.Spawner.Factory;
 using Code.Gameplay.Features.Statuses.Applier;
 using Code.Gameplay.Features.Statuses.Factory;
+using Code.Gameplay.Features.Weapon.ChangeRequest.Factory;
 using Code.Gameplay.Features.Weapon.Factory;
 using Code.Gameplay.Input.Service;
 using Code.Gameplay.Levels;

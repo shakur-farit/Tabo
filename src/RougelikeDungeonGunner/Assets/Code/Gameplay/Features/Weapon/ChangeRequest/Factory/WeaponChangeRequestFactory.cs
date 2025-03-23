@@ -1,7 +1,8 @@
 ﻿using Code.Common.Entity;
+using Code.Common.Extensions;
 using Code.Infrastructure.Identifiers;
 
-namespace Code.Gameplay.Features.Weapon.Factory
+namespace Code.Gameplay.Features.Weapon.ChangeRequest.Factory
 {
 	public class WeaponChangeRequestFactory : IWeaponChangeRequestFactory
 	{
@@ -14,7 +15,8 @@ namespace Code.Gameplay.Features.Weapon.Factory
 		{
 			return CreateEntity.Empty()
 					.AddId(_identifier.Next())
-					.AddWeaponChangeRequest(typeId)
+					.AddNewWeaponTypeId(typeId)
+					.With(x => x.isWeaponChangeRequested = true)
 				;
 		}
 	}

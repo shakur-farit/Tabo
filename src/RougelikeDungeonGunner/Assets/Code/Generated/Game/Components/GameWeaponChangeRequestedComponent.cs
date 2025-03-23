@@ -8,17 +8,17 @@
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherReadyToChangeWeapon;
+    static Entitas.IMatcher<GameEntity> _matcherWeaponChangeRequested;
 
-    public static Entitas.IMatcher<GameEntity> ReadyToChangeWeapon {
+    public static Entitas.IMatcher<GameEntity> WeaponChangeRequested {
         get {
-            if (_matcherReadyToChangeWeapon == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.ReadyToChangeWeapon);
+            if (_matcherWeaponChangeRequested == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.WeaponChangeRequested);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherReadyToChangeWeapon = matcher;
+                _matcherWeaponChangeRequested = matcher;
             }
 
-            return _matcherReadyToChangeWeapon;
+            return _matcherWeaponChangeRequested;
         }
     }
 }
@@ -33,18 +33,18 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Weapon.ChangeRequest.Systems.ReadyToChangeWeapon readyToChangeWeaponComponent = new Code.Gameplay.Features.Weapon.ChangeRequest.Systems.ReadyToChangeWeapon();
+    static readonly Code.Gameplay.Features.Weapon.ChangeRequest.WeaponChangeRequested weaponChangeRequestedComponent = new Code.Gameplay.Features.Weapon.ChangeRequest.WeaponChangeRequested();
 
-    public bool isReadyToChangeWeapon {
-        get { return HasComponent(GameComponentsLookup.ReadyToChangeWeapon); }
+    public bool isWeaponChangeRequested {
+        get { return HasComponent(GameComponentsLookup.WeaponChangeRequested); }
         set {
-            if (value != isReadyToChangeWeapon) {
-                var index = GameComponentsLookup.ReadyToChangeWeapon;
+            if (value != isWeaponChangeRequested) {
+                var index = GameComponentsLookup.WeaponChangeRequested;
                 if (value) {
                     var componentPool = GetComponentPool(index);
                     var component = componentPool.Count > 0
                             ? componentPool.Pop()
-                            : readyToChangeWeaponComponent;
+                            : weaponChangeRequestedComponent;
 
                     AddComponent(index, component);
                 } else {
