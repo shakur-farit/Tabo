@@ -9,6 +9,7 @@ namespace Code.Gameplay.Features.Hero.Registrars
 	public class HeroAnimatorRegistrar : EntityComponentRegistrar
 	{
 		[SerializeField] public HeroAnimator _heroAnimator;
+
 		private IStaticDataService _staticDataService;
 
 		[Inject]

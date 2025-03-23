@@ -1,6 +1,7 @@
-﻿using Code.Common.Entity;
+﻿using Code.Gameplay.StaticData;
 using Code.Infrastructure.View.Registrars;
 using UnityEngine;
+using Zenject;
 
 namespace Code.Gameplay.Features.Weapon.Registrars
 {
@@ -8,8 +9,20 @@ namespace Code.Gameplay.Features.Weapon.Registrars
 	{
 		[SerializeField] private Transform _firePosiotionTransform;
 
-		public override void RegisterComponents() => 
-			Entity.AddFirePositionTransform(_firePosiotionTransform);
+		private IStaticDataService _staticDataService;
+
+		[Inject]
+		public void Constructor(IStaticDataService staticDataService) =>
+			_staticDataService = staticDataService;
+		public override void RegisterComponents()
+		{
+			_firePosiotionTransform.localPosition =
+				_staticDataService
+					.GetWeaponConfig(Entity.WeaponTypeId).FirePosition;
+
+			Entity
+				.AddFirePositionTransform(_firePosiotionTransform);
+		}
 
 		public override void UnregisterComponents()
 		{
