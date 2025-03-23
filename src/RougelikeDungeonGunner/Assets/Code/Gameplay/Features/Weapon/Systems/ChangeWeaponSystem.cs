@@ -11,7 +11,6 @@ namespace Code.Gameplay.Features.Weapon.Systems
 		private readonly IGroup<GameEntity> _weapons;
 		private readonly IGroup<GameEntity> _changeRequests;
 		private readonly List<GameEntity> _buffer = new(1);
-		private readonly List<GameEntity> _weaponBuffer = new(4);
 
 		public ChangeWeaponSystem(
 			GameContext game, 
@@ -31,9 +30,9 @@ namespace Code.Gameplay.Features.Weapon.Systems
 
 		public void Execute()
 		{
-			foreach (GameEntity changeRequest in _changeRequests.GetEntities(_buffer))
+			foreach (GameEntity changeRequest in _changeRequests)
 			{
-				foreach (GameEntity weapon in _weapons.GetEntities(_weaponBuffer))
+				foreach (GameEntity weapon in _weapons.GetEntities(_buffer))
 				{
 					Transform parent = weapon.ViewParent;
 
