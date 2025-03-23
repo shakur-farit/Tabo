@@ -10,7 +10,6 @@ namespace Code.Gameplay.Features.Weapon
 		{
 			Add(systems.Create<WeaponChangeRequestFeature>());
 			Add(systems.Create<ChangeWeaponSystem>());
-			Add(systems.Create<UpdateWeaponSpriteSystem>());
 			Add(systems.Create<FindClosestTargetSystem>());
 			Add(systems.Create<RotateWeaponAlongClosestTargetSystem>());
 			Add(systems.Create<WeaponDefaultDirectionWithoutTargetSystem>());
