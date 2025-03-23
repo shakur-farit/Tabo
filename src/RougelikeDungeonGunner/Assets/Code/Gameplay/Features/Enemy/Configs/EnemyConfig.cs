@@ -11,8 +11,8 @@ namespace Code.Gameplay.Features.Enemy
 		public RuntimeAnimatorController AnimatorController;
 		[Range(1, 100)] public int CurrentHp;
 		[Range(1, 100)] public int MaxHp;
-		[Range(1, 100)] public int Damage;
-		[Range(1, 100)] public int MovementSpeed;
+		[Range(0, 100)] public int Damage;
+		[Range(0, 100)] public int MovementSpeed;
 
 		private void OnValidate()
 		{

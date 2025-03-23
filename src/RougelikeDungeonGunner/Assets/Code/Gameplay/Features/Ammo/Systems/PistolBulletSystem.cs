@@ -13,7 +13,6 @@ namespace Code.Gameplay.Features.Ammo.Systems
 
 		private readonly IAmmoFactory _ammoFactory;
 		private readonly IGroup<GameEntity> _weapons;
-		private readonly IGroup<GameEntity> _enemies;
 
 		public PistolBulletSystem(
 			GameContext game,
@@ -27,34 +26,26 @@ namespace Code.Gameplay.Features.Ammo.Systems
 					GameMatcher.CooldownUp,
 					GameMatcher.FirePositionTransform,
 					GameMatcher.WorldPosition,
-					GameMatcher.Radius,
 					GameMatcher.MagazineNotEmpty,
-					GameMatcher.CurrentAmmoAmount));
-
-			_enemies = game.GetGroup(GameMatcher
-				.AllOf(
-					GameMatcher.Enemy,
-					GameMatcher.Radius));
+					GameMatcher.CurrentAmmoAmount,
+					GameMatcher.ClosestTargetPosition));
 		}
 
 		public void Execute()
 		{
 			foreach (GameEntity weapon in _weapons.GetEntities(_buffer))
-			foreach (GameEntity enemy in _enemies)
 			{
-				float distance = (enemy.WorldPosition - weapon.WorldPosition).magnitude;
-
-				if (distance > weapon.Radius)
-					continue;
-
-				_ammoFactory
-					.CreatePistolBullet(1, weapon.FirePositionTransform.position)
-					.AddProducerId(weapon.Id)
-					.ReplaceDirection(weapon.FirePositionTransform.right)
-					.With(x => x.isMoving = true);
-
 				if (weapon.CurrentAmmoAmount > 0)
+				{
+					_ammoFactory
+						.CreatePistolBullet(1, weapon.FirePositionTransform.position)
+						.AddProducerId(weapon.Id)
+						.ReplaceDirection(weapon.FirePositionTransform.right)
+						.With(x => x.isMoving = true);
+
 					weapon.ReplaceCurrentAmmoAmount(weapon.CurrentAmmoAmount - 1);
+					Debug.Log(weapon.CurrentAmmoAmount);
+				}
 				else
 					weapon.isMagazineNotEmpty = false;
 

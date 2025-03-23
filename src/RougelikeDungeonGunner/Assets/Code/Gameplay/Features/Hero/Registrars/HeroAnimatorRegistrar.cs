@@ -18,15 +18,14 @@ namespace Code.Gameplay.Features.Hero.Registrars
 
 		public override void RegisterComponents()
 		{
-			Entity
-				.AddHeroAnimator(_heroAnimator)
-				.AddDamageTakenAnimator(_heroAnimator);
-
 			HeroTypeId typeId = Entity.HeroTypeId;
 			HeroConfig config = _staticDataService.GetHeroConfig(typeId);
 
 			_heroAnimator.SetRuntimeAnimatorController(config.AnimatorController);
 
+			Entity
+				.AddHeroAnimator(_heroAnimator)
+				.AddDamageTakenAnimator(_heroAnimator);
 		}
 
 		public override void UnregisterComponents()

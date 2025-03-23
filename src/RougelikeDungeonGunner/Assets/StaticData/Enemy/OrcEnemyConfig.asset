@@ -18,4 +18,4 @@ MonoBehaviour:
   CurrentHp: 20
   MaxHp: 20
   Damage: 0
-  MovementSpeed: 1
+  MovementSpeed: 0

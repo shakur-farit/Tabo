@@ -19,6 +19,8 @@ MonoBehaviour:
   FirePosition: {x: 1.515, y: 0.21}
   Levels:
   - FireRange: 15
-    Cooldown: 1
+    Cooldown: 3
     ReloadTime: 3
+    PrechargeTime: 0
     MagazineSize: 4
+    AmountInShot: 0

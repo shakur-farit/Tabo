@@ -1,15 +1,12 @@
 ﻿using System.Collections.Generic;
 using Code.Gameplay.Common.Time;
-using Code.Gameplay.StaticData;
 using Entitas;
-using UnityEngine;
 
 namespace Code.Gameplay.Features.Weapon.Systems
 {
 	public class ReloadWeaponSystem : IExecuteSystem
 	{
 		private readonly ITimeService _time;
-		private readonly IStaticDataService _staticDataService;
 		private readonly IGroup<GameEntity> _weapons;
 		private readonly List<GameEntity> _buffer = new(1);
 

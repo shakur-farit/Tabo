@@ -12,7 +12,6 @@ namespace Code.Gameplay.Features.Weapon.Systems
 			_weapons = game.GetGroup(GameMatcher
 				.AllOf(
 					GameMatcher.Weapon,
-					GameMatcher.Radius,
 					GameMatcher.WeaponRotationPointTransform)
 				.NoneOf(GameMatcher.ClosestTargetPosition));
 		}
