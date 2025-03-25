@@ -213,6 +213,7 @@ GameObject:
   - component: {fileID: 1419388848337237008}
   - component: {fileID: 350993981172259600}
   - component: {fileID: 6889685556644026529}
+  - component: {fileID: 6819870706573734747}
   m_Layer: 6
   m_Name: Weapon
   m_TagString: Untagged
@@ -305,3 +306,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EntityView: {fileID: 3867516666948492017}
   _spriteRenderer: {fileID: 1618638716590315681}
+--- !u!114 &6819870706573734747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9159499494650143006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6274a20acda5c9d45bd01c91330c77a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

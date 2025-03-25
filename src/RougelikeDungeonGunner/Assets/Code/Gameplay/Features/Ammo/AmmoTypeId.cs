@@ -1,6 +1,6 @@
 ﻿namespace Code.Gameplay.Features.Ammo
 {
-	public enum AmmoId
+	public enum AmmoTypeId
 	{
 		Unknown = 0,
 		PistolBullet = 1,

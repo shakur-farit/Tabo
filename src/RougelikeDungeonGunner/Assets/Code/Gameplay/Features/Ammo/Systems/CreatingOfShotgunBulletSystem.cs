@@ -3,18 +3,17 @@ using Code.Common.Extensions;
 using Code.Gameplay.Features.Ammo.Factory;
 using Code.Gameplay.Features.Cooldowns;
 using Entitas;
-using UnityEngine;
 
 namespace Code.Gameplay.Features.Ammo.Systems
 {
-	public class PistolBulletSystem : IExecuteSystem
+	public class CreatingOfShotgunBulletSystem : IExecuteSystem
 	{
 		private readonly List<GameEntity> _buffer = new(1);
 
 		private readonly IAmmoFactory _ammoFactory;
 		private readonly IGroup<GameEntity> _weapons;
 
-		public PistolBulletSystem(
+		public CreatingOfShotgunBulletSystem(
 			GameContext game,
 			IAmmoFactory ammoFactory)
 		{
@@ -22,7 +21,7 @@ namespace Code.Gameplay.Features.Ammo.Systems
 
 			_weapons = game.GetGroup(GameMatcher
 				.AllOf(
-					GameMatcher.Pistol,
+					GameMatcher.Shotgun,
 					GameMatcher.CooldownUp,
 					GameMatcher.FirePositionTransform,
 					GameMatcher.WorldPosition,
@@ -38,13 +37,12 @@ namespace Code.Gameplay.Features.Ammo.Systems
 				if (weapon.CurrentAmmoAmount > 0)
 				{
 					_ammoFactory
-						.CreatePistolBullet(1, weapon.FirePositionTransform.position)
+						.CreateAmmo(AmmoTypeId.ShotgunBullet, 1, weapon.FirePositionTransform.position)
 						.AddProducerId(weapon.Id)
 						.ReplaceDirection(weapon.FirePositionTransform.right)
 						.With(x => x.isMoving = true);
 
 					weapon.ReplaceCurrentAmmoAmount(weapon.CurrentAmmoAmount - 1);
-					Debug.Log(weapon.CurrentAmmoAmount);
 				}
 				else
 					weapon.isMagazineNotEmpty = false;

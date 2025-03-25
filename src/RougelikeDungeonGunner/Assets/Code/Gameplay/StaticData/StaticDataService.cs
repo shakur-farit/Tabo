@@ -19,7 +19,7 @@ namespace Code.Gameplay.StaticData
 		private const string EnemyConfigLabel = "EnemyConfig";
 		private const string HeroConfigLabel = "HeroConfig";
 
-		private Dictionary<AmmoId, AmmoConfig> _ammoById;
+		private Dictionary<AmmoTypeId, AmmoConfig> _ammoById;
 		private Dictionary<WeaponTypeId, WeaponConfig> _weaponById;
 		private Dictionary<EnemyTypeId, EnemyConfig> _enemyById;
 		private Dictionary<HeroTypeId, HeroConfig> _heroById;
@@ -37,17 +37,17 @@ namespace Code.Gameplay.StaticData
 			await LoadHeroes();
 		}
 
-		public AmmoConfig GetAmmoConfig(AmmoId ammoId)
+		public AmmoConfig GetAmmoConfig(AmmoTypeId ammoTypeId)
 		{
-			if (_ammoById.TryGetValue(ammoId, out AmmoConfig config))
+			if (_ammoById.TryGetValue(ammoTypeId, out AmmoConfig config))
 				return config;
 
-			throw new Exception($"Ammo config for {ammoId} was not found");
+			throw new Exception($"Ammo config for {ammoTypeId} was not found");
 		}
 
-		public AmmoLevel GetAmmoLevel(AmmoId ammoId, int level)
+		public AmmoLevel GetAmmoLevel(AmmoTypeId ammoTypeId, int level)
 		{
-			AmmoConfig config = GetAmmoConfig(ammoId);
+			AmmoConfig config = GetAmmoConfig(ammoTypeId);
 
 			if (level > config.Levels.Count)
 				level = config.Levels.Count;
@@ -91,7 +91,7 @@ namespace Code.Gameplay.StaticData
 
 		private async UniTask LoadAbilities() =>
 			_ammoById = (await _assetProvider.LoadAll<AmmoConfig>(AmmoConfig))
-				.ToDictionary(x => x.AmmoId, x => x);
+				.ToDictionary(x => x.ammoTypeId, x => x);
 
 		private async UniTask LoadWeapons() =>
 			_weaponById = (await _assetProvider.LoadAll<WeaponConfig>(WeaponConfigLabel))

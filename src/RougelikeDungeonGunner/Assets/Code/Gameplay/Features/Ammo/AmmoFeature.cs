@@ -9,7 +9,15 @@ namespace Code.Gameplay.Features.Ammo
 		public AmmoFeature(ISystemsFactory systems)
 		{
 			Add(systems.Create<CooldownSystem>());
-			Add(systems.Create<PistolBulletSystem>());
+			Add(systems.Create<CreatingOfPistolBulletSystem>());
+			Add(systems.Create<CreatingOfAutomaticPistolBulletSystem>());
+			Add(systems.Create<CreatingOfLaserBoltSystem>());
+			Add(systems.Create<CreatingOfMachinegunBulletSystem>());
+			Add(systems.Create<CreatingOfPlasmaBoltSystem>());
+			Add(systems.Create<CreatingOfRevolverBulletSystem>());
+			Add(systems.Create<CreatingOfShotgunBulletSystem>());
+			Add(systems.Create<CreatingOfRocketMissileSystem>());
+			Add(systems.Create<CreatingOfSniperBulletSystem>());
 			Add(systems.Create<AmmoLifeRangeSystem>());
 			Add(systems.Create<MarkProcessedOnTargetLimitExceededSystem>());
 			Add(systems.Create<FinalizeProcessedAmmoSystem>());

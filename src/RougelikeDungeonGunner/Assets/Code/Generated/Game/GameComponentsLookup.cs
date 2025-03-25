@@ -26,90 +26,98 @@ public static class GameComponentsLookup {
     public const int Transform = 15;
     public const int WorldPosition = 16;
     public const int Ammo = 17;
-    public const int AmmoId = 18;
-    public const int EffectSetups = 19;
-    public const int PistolBullet = 20;
-    public const int StatusSetups = 21;
-    public const int TargetLimit = 22;
-    public const int BaseStats = 23;
-    public const int StatChange = 24;
-    public const int StatModifiers = 25;
-    public const int Cooldown = 26;
-    public const int CooldownLeft = 27;
-    public const int CooldownUp = 28;
-    public const int DamageEffect = 29;
-    public const int Effect = 30;
-    public const int EffectValue = 31;
-    public const int HealEffect = 32;
-    public const int ProducerId = 33;
-    public const int TargetId = 34;
-    public const int Enemy = 35;
-    public const int EnemyAnimator = 36;
-    public const int EnemyTypeId = 37;
-    public const int Orc = 38;
-    public const int Hero = 39;
-    public const int HeroAnimator = 40;
-    public const int HeroTypeId = 41;
-    public const int TheGeneral = 42;
-    public const int Unweaponed = 43;
-    public const int Weaponed = 44;
-    public const int CurrentHp = 45;
-    public const int Dead = 46;
-    public const int MaxHp = 47;
-    public const int ProcessingDeath = 48;
-    public const int Direction = 49;
-    public const int MovementAvailable = 50;
-    public const int Moving = 51;
-    public const int Speed = 52;
-    public const int CurrentSpawnedEnemyAmount = 53;
-    public const int Affected = 54;
-    public const int Applied = 55;
-    public const int ApplierStatusLink = 56;
-    public const int Duration = 57;
-    public const int Freeze = 58;
-    public const int Period = 59;
-    public const int Poison = 60;
-    public const int Status = 61;
-    public const int StatusTypeId = 62;
-    public const int TimeLeft = 63;
-    public const int TimeSinceLastTick = 64;
-    public const int Unapplied = 65;
-    public const int CollectTargetsContinuously = 66;
-    public const int CollectTargetsInterval = 67;
-    public const int CollectTargetsTimer = 68;
-    public const int LayerMask = 69;
-    public const int ProcessedTargets = 70;
-    public const int Radius = 71;
-    public const int ReadyToCollectTargets = 72;
-    public const int TargetsBuffer = 73;
-    public const int AutomaticPistol = 74;
-    public const int NewWeaponTypeId = 75;
-    public const int WeaponChangeable = 76;
-    public const int WeaponChangeRequested = 77;
-    public const int ClosestTargetPosition = 78;
-    public const int CurrentAmmoAmount = 79;
-    public const int FirePositionTransform = 80;
-    public const int LaserBlaster = 81;
-    public const int Machinegun = 82;
-    public const int MagazineNotEmpty = 83;
-    public const int MagazineSize = 84;
-    public const int Pistol = 85;
-    public const int PlasmaGun = 86;
-    public const int ReloadTime = 87;
-    public const int ReloadTimeLeft = 88;
-    public const int Revolver = 89;
-    public const int RocketLauncher = 90;
-    public const int Shotgun = 91;
-    public const int Sniper = 92;
-    public const int Weapon = 93;
-    public const int WeaponRotationAngle = 94;
-    public const int WeaponRotationPointTransform = 95;
-    public const int WeaponSpriteRenderer = 96;
-    public const int WeaponTypeId = 97;
-    public const int AxisInput = 98;
-    public const int Input = 99;
+    public const int AmmoTypeId = 18;
+    public const int AutomaticPistolBullet = 19;
+    public const int EffectSetups = 20;
+    public const int LaserBolt = 21;
+    public const int MachinegunBullet = 22;
+    public const int PistolBullet = 23;
+    public const int PlasmaBolt = 24;
+    public const int RevolverBullet = 25;
+    public const int RocketMissile = 26;
+    public const int ShotgunBullet = 27;
+    public const int SniperBullet = 28;
+    public const int StatusSetups = 29;
+    public const int TargetLimit = 30;
+    public const int BaseStats = 31;
+    public const int StatChange = 32;
+    public const int StatModifiers = 33;
+    public const int Cooldown = 34;
+    public const int CooldownLeft = 35;
+    public const int CooldownUp = 36;
+    public const int DamageEffect = 37;
+    public const int Effect = 38;
+    public const int EffectValue = 39;
+    public const int HealEffect = 40;
+    public const int ProducerId = 41;
+    public const int TargetId = 42;
+    public const int Enemy = 43;
+    public const int EnemyAnimator = 44;
+    public const int EnemyTypeId = 45;
+    public const int Orc = 46;
+    public const int Hero = 47;
+    public const int HeroAnimator = 48;
+    public const int HeroTypeId = 49;
+    public const int TheGeneral = 50;
+    public const int Unweaponed = 51;
+    public const int Weaponed = 52;
+    public const int CurrentHp = 53;
+    public const int Dead = 54;
+    public const int MaxHp = 55;
+    public const int ProcessingDeath = 56;
+    public const int Direction = 57;
+    public const int MovementAvailable = 58;
+    public const int Moving = 59;
+    public const int Speed = 60;
+    public const int CurrentSpawnedEnemyAmount = 61;
+    public const int Affected = 62;
+    public const int Applied = 63;
+    public const int ApplierStatusLink = 64;
+    public const int Duration = 65;
+    public const int Freeze = 66;
+    public const int Period = 67;
+    public const int Poison = 68;
+    public const int Status = 69;
+    public const int StatusTypeId = 70;
+    public const int TimeLeft = 71;
+    public const int TimeSinceLastTick = 72;
+    public const int Unapplied = 73;
+    public const int CollectTargetsContinuously = 74;
+    public const int CollectTargetsInterval = 75;
+    public const int CollectTargetsTimer = 76;
+    public const int LayerMask = 77;
+    public const int ProcessedTargets = 78;
+    public const int Radius = 79;
+    public const int ReadyToCollectTargets = 80;
+    public const int TargetsBuffer = 81;
+    public const int AutomaticPistol = 82;
+    public const int NewWeaponTypeId = 83;
+    public const int WeaponChangeable = 84;
+    public const int WeaponChangeRequested = 85;
+    public const int ClosestTargetPosition = 86;
+    public const int CurrentAmmoAmount = 87;
+    public const int FirePositionTransform = 88;
+    public const int LaserBlaster = 89;
+    public const int Machinegun = 90;
+    public const int MagazineNotEmpty = 91;
+    public const int MagazineSize = 92;
+    public const int Pistol = 93;
+    public const int PlasmaGun = 94;
+    public const int ReloadTime = 95;
+    public const int ReloadTimeLeft = 96;
+    public const int Revolver = 97;
+    public const int RocketLauncher = 98;
+    public const int Shotgun = 99;
+    public const int Sniper = 100;
+    public const int Weapon = 101;
+    public const int WeaponRotationAngle = 102;
+    public const int WeaponRotationPointTransform = 103;
+    public const int WeaponSpriteRenderer = 104;
+    public const int WeaponTypeId = 105;
+    public const int AxisInput = 106;
+    public const int Input = 107;
 
-    public const int TotalComponents = 100;
+    public const int TotalComponents = 108;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -130,9 +138,17 @@ public static class GameComponentsLookup {
         "Transform",
         "WorldPosition",
         "Ammo",
-        "AmmoId",
+        "AmmoTypeId",
+        "AutomaticPistolBullet",
         "EffectSetups",
+        "LaserBolt",
+        "MachinegunBullet",
         "PistolBullet",
+        "PlasmaBolt",
+        "RevolverBullet",
+        "RocketMissile",
+        "ShotgunBullet",
+        "SniperBullet",
         "StatusSetups",
         "TargetLimit",
         "BaseStats",
@@ -233,9 +249,17 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Common.TransformComponent),
         typeof(Code.Gameplay.Common.WorldPosition),
         typeof(Code.Gameplay.Features.Ammo.Ammo),
-        typeof(Code.Gameplay.Features.Ammo.AmmoIdComponent),
+        typeof(Code.Gameplay.Features.Ammo.AmmoTypeIdComponent),
+        typeof(Code.Gameplay.Features.Ammo.AutomaticPistolBullet),
         typeof(Code.Gameplay.Features.Ammo.EffectSetups),
+        typeof(Code.Gameplay.Features.Ammo.LaserBolt),
+        typeof(Code.Gameplay.Features.Ammo.MachinegunBullet),
         typeof(Code.Gameplay.Features.Ammo.PistolBullet),
+        typeof(Code.Gameplay.Features.Ammo.PlasmaBolt),
+        typeof(Code.Gameplay.Features.Ammo.RevolverBullet),
+        typeof(Code.Gameplay.Features.Ammo.RocketMissile),
+        typeof(Code.Gameplay.Features.Ammo.ShotgunBullet),
+        typeof(Code.Gameplay.Features.Ammo.SniperBullet),
         typeof(Code.Gameplay.Features.Ammo.StatusSetups),
         typeof(Code.Gameplay.Features.Ammo.TargetLimit),
         typeof(Code.Gameplay.Features.CharacterStats.BaseStats),

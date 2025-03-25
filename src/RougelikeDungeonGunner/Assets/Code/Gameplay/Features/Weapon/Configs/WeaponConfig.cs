@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using Code.Gameplay.Features.Ammo;
 using Code.Infrastructure.View;
 using UnityEngine;
 
@@ -11,7 +10,6 @@ namespace Code.Gameplay.Features.Weapon.Configs
 		public WeaponTypeId WeaponTypeId;
 		public EntityBehaviour PrefabView;
 		public Sprite WeaponSprite;
-		public AmmoId AmmoId;
 		public Vector2 FirePosition;
 
 		public List<WeaponLevel> Levels;

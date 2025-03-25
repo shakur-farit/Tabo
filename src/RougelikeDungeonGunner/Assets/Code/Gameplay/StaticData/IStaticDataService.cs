@@ -11,8 +11,8 @@ namespace Code.Gameplay.StaticData
   public interface IStaticDataService
   {
     UniTask Load();
-    AmmoConfig GetAmmoConfig(AmmoId ammoId);
-    AmmoLevel GetAmmoLevel(AmmoId ammoId, int level);
+    AmmoConfig GetAmmoConfig(AmmoTypeId ammoTypeId);
+    AmmoLevel GetAmmoLevel(AmmoTypeId ammoTypeId, int level);
     WeaponConfig GetWeaponConfig(WeaponTypeId weaponTypeId);
     WeaponLevel GetWeaponLevel(WeaponTypeId weaponTypeId, int level);
     EnemyConfig GetEnemyConfig(EnemyTypeId enemyId);

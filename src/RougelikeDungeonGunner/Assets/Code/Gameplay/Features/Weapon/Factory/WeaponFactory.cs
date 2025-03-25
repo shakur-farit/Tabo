@@ -25,29 +25,29 @@ namespace Code.Gameplay.Features.Weapon.Factory
 			switch (weaponTypeId)
 			{
 				case WeaponTypeId.Pistol:
-					return CreatePistol(level, parent, at);
+					return CreatePistol(weaponTypeId, level, parent, at);
 				case WeaponTypeId.Machinegun:
-					return CreateMachinegun(level, parent, at);
+					return CreateMachinegun(weaponTypeId, level, parent, at);
 				case WeaponTypeId.Sniper:
-					return CreateSniper(level, parent, at);
+					return CreateSniper(weaponTypeId, level, parent, at);
 			}
 
-			throw new Exception($"Weapon for {weaponTypeId} was not found");
+			throw new Exception($"Weapon for {weaponTypeId} type was not found");
 		}
 
-		private GameEntity CreatePistol(int level, Transform parent, Vector2 at) =>
-			CreateWeaponEntity(WeaponTypeId.Pistol, level, parent, at)
+		private GameEntity CreatePistol(WeaponTypeId weaponTypeId, int level, Transform parent, Vector2 at) =>
+			CreateWeaponEntity(weaponTypeId, level, parent, at)
 				.With(x => x.isPistol = true)
 			;
 
-		private GameEntity CreateMachinegun(int level, Transform parent, Vector2 at) =>
-			CreateWeaponEntity(WeaponTypeId.Machinegun, level, parent, at)
-				.With(x => x.isPistol = true)
+		private GameEntity CreateMachinegun(WeaponTypeId weaponTypeId, int level, Transform parent, Vector2 at) =>
+			CreateWeaponEntity(weaponTypeId, level, parent, at)
+				.With(x => x.isMachinegun = true)
 		;
 
-		private GameEntity CreateSniper(int level, Transform parent, Vector2 at) =>
-			CreateWeaponEntity(WeaponTypeId.Sniper, level, parent, at)
-				.With(x => x.isPistol = true)
+		private GameEntity CreateSniper(WeaponTypeId weaponTypeId, int level, Transform parent, Vector2 at) =>
+			CreateWeaponEntity(weaponTypeId, level, parent, at)
+				.With(x => x.isSniper = true)
 		;
 
 		private GameEntity CreateWeaponEntity(WeaponTypeId weaponTypeId, int weaponLevel, Transform parent, Vector2 at)
@@ -61,7 +61,6 @@ namespace Code.Gameplay.Features.Weapon.Factory
 					.AddViewPrefab(config.PrefabView)
 					.AddViewParent(parent)
 					.AddWorldPosition(at)
-					.AddAmmoId(config.AmmoId)	
 					.AddRadius(level.FireRange)
 					.AddReloadTime(level.ReloadTime)
 					.AddReloadTimeLeft(level.ReloadTime)
