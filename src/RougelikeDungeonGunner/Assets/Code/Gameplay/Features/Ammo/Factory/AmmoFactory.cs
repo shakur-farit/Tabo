@@ -50,107 +50,57 @@ namespace Code.Gameplay.Features.Ammo.Factory
 
 		}
 
-		private GameEntity CreatePistolBullet(AmmoTypeId ammoTypeId, int level, Vector3 at)
+		private GameEntity CreatePistolBullet(AmmoTypeId ammoTypeId, int ammoLevel, Vector3 at) =>
+			CreateAmmoEntity(ammoTypeId, at, ammoLevel)
+				.With(x => x.isPistolBullet = true);
+
+		private GameEntity CreateRevolverBullet(AmmoTypeId ammoTypeId, int ammoLevel, Vector3 at) =>
+			CreateAmmoEntity(ammoTypeId, at, ammoLevel)
+				.With(x => x.isRevolverBullet = true);
+
+		private GameEntity CreateShotgunBullet(AmmoTypeId ammoTypeId, int ammoLevel, Vector3 at) =>
+			CreateAmmoEntity(ammoTypeId, at, ammoLevel)
+				.With(x => x.isShotgunBullet = true);
+
+		private GameEntity CreateAutomaticPistolBullet(AmmoTypeId ammoTypeId, int ammoLevel, Vector3 at) =>
+			CreateAmmoEntity(ammoTypeId, at, ammoLevel)
+				.With(x => x.isAutomaticPistolBullet = true);
+
+		private GameEntity CreateMachinegunBullet(AmmoTypeId ammoTypeId, int ammoLevel, Vector3 at) =>
+			CreateAmmoEntity(ammoTypeId, at,  ammoLevel)
+				.With(x => x.isMachinegunBullet = true);
+
+		private GameEntity CreateSniperBullet(AmmoTypeId ammoTypeId, int ammoLevel, Vector3 at) =>
+			CreateAmmoEntity(ammoTypeId, at,  ammoLevel)
+				.With(x => x.isSniperBullet = true);
+
+		private GameEntity CreatePlasmaBolt(AmmoTypeId ammoTypeId, int ammoLevel, Vector3 at) =>
+			CreateAmmoEntity(ammoTypeId, at, ammoLevel)
+				.With(x => x.isPlasmaBolt = true);
+
+		private GameEntity CreateLaserBolt(AmmoTypeId ammoTypeId, int ammoLevel, Vector3 at) =>
+			CreateAmmoEntity(ammoTypeId, at, ammoLevel)
+				.With(x => x.isLaserBolt = true);
+
+		private GameEntity CreateRocketMissile(AmmoTypeId ammoTypeId, int ammoLevel, Vector3 at) =>
+			CreateAmmoEntity(ammoTypeId, at, ammoLevel)
+				.With(x => x.isRocketMissile = true);
+
+		private GameEntity CreateAmmoEntity(AmmoTypeId ammoTypeId, Vector3 at, int ammoLevel)
 		{
 			AmmoConfig ammo = _staticDataService.GetAmmoConfig(ammoTypeId);
-			AmmoLevel ammoLevel = _staticDataService.GetAmmoLevel(ammoTypeId, level);
+			AmmoLevel level = _staticDataService.GetAmmoLevel(ammoTypeId, ammoLevel);
 
-			return CreateAmmoEntity(ammoTypeId, at, ammo, ammoLevel)
-					.With(x => x.isPistolBullet = true)
-				;
-		}
-
-		private GameEntity CreateRevolverBullet(AmmoTypeId ammoTypeId, int level, Vector3 at)
-		{
-			AmmoConfig ammo = _staticDataService.GetAmmoConfig(ammoTypeId);
-			AmmoLevel ammoLevel = _staticDataService.GetAmmoLevel(ammoTypeId, level);
-
-			return CreateAmmoEntity(ammoTypeId, at, ammo, ammoLevel)
-					.With(x => x.isRevolverBullet = true)
-				;
-		}
-
-		private GameEntity CreateShotgunBullet(AmmoTypeId ammoTypeId, int level, Vector3 at)
-		{
-			AmmoConfig ammo = _staticDataService.GetAmmoConfig(ammoTypeId);
-			AmmoLevel ammoLevel = _staticDataService.GetAmmoLevel(ammoTypeId, level);
-
-			return CreateAmmoEntity(ammoTypeId, at, ammo, ammoLevel)
-					.With(x => x.isShotgunBullet = true)
-				;
-		}
-
-		private GameEntity CreateAutomaticPistolBullet(AmmoTypeId ammoTypeId, int level, Vector3 at)
-		{
-			AmmoConfig ammo = _staticDataService.GetAmmoConfig(ammoTypeId);
-			AmmoLevel ammoLevel = _staticDataService.GetAmmoLevel(ammoTypeId, level);
-
-			return CreateAmmoEntity(ammoTypeId, at, ammo, ammoLevel)
-					.With(x => x.isAutomaticPistolBullet = true)
-				;
-		}
-		private GameEntity CreateMachinegunBullet(AmmoTypeId ammoTypeId, int level, Vector3 at)
-		{
-			AmmoConfig ammo = _staticDataService.GetAmmoConfig(ammoTypeId);
-			AmmoLevel ammoLevel = _staticDataService.GetAmmoLevel(ammoTypeId, level);
-
-			return CreateAmmoEntity(ammoTypeId, at, ammo, ammoLevel)
-					.With(x => x.isMachinegunBullet = true)
-				;
-		}
-
-		private GameEntity CreateSniperBullet(AmmoTypeId ammoTypeId, int level, Vector3 at)
-		{
-			AmmoConfig ammo = _staticDataService.GetAmmoConfig(ammoTypeId);
-			AmmoLevel ammoLevel = _staticDataService.GetAmmoLevel(ammoTypeId, level);
-
-			return CreateAmmoEntity(ammoTypeId, at, ammo, ammoLevel)
-					.With(x => x.isSniperBullet = true)
-				;
-		}
-
-		private GameEntity CreatePlasmaBolt(AmmoTypeId ammoTypeId, int level, Vector3 at)
-		{
-			AmmoConfig ammo = _staticDataService.GetAmmoConfig(ammoTypeId);
-			AmmoLevel ammoLevel = _staticDataService.GetAmmoLevel(ammoTypeId, level);
-
-			return CreateAmmoEntity(ammoTypeId, at, ammo, ammoLevel)
-					.With(x => x.isPlasmaBolt = true)
-				;
-		}
-
-		private GameEntity CreateLaserBolt(AmmoTypeId ammoTypeId, int level, Vector3 at)
-		{
-			AmmoConfig ammo = _staticDataService.GetAmmoConfig(ammoTypeId);
-			AmmoLevel ammoLevel = _staticDataService.GetAmmoLevel(ammoTypeId, level);
-
-			return CreateAmmoEntity(ammoTypeId, at, ammo, ammoLevel)
-					.With(x => x.isLaserBolt = true)
-				;
-		}
-
-		private GameEntity CreateRocketMissile(AmmoTypeId ammoTypeId, int level, Vector3 at)
-		{
-			AmmoConfig ammo = _staticDataService.GetAmmoConfig(ammoTypeId);
-			AmmoLevel ammoLevel = _staticDataService.GetAmmoLevel(ammoTypeId, level);
-
-			return CreateAmmoEntity(ammoTypeId, at, ammo, ammoLevel)
-					.With(x => x.isRocketMissile = true)
-				;
-		}
-
-		private GameEntity CreateAmmoEntity(AmmoTypeId ammoTypeId, Vector3 at, AmmoConfig ammo, AmmoLevel ammoLevel)
-		{
 			return CreateEntity.Empty()
 					.AddId(_identifier.Next())
 					.AddWorldPosition(at)
 					.AddAmmoTypeId(ammoTypeId)
 					.AddViewPrefab(ammo.ViewPrefab)
-					.AddSpeed(ammoLevel.Speed)
-					.AddTargetLimit(ammoLevel.Pierce)
-					.AddRadius(ammoLevel.ContactRadius)
-					.AddEffectSetups(ammoLevel.EffectSetups)
-					.AddStatusSetups(ammoLevel.StatusSetups)
+					.AddSpeed(level.Speed)
+					.AddTargetLimit(level.Pierce)
+					.AddRadius(level.ContactRadius)
+					.AddEffectSetups(level.EffectSetups)
+					.AddStatusSetups(level.StatusSetups)
 					.AddTargetsBuffer(new List<int>(TargetsBufferSize))
 					.AddProcessedTargets(new List<int>(TargetsBufferSize))
 					.AddLayerMask(CollisionLayer.Enemy.AsMask())

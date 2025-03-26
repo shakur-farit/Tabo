@@ -101,23 +101,26 @@ public static class GameComponentsLookup {
     public const int Machinegun = 90;
     public const int MagazineNotEmpty = 91;
     public const int MagazineSize = 92;
-    public const int Pistol = 93;
-    public const int PlasmaGun = 94;
-    public const int ReloadTime = 95;
-    public const int ReloadTimeLeft = 96;
-    public const int Revolver = 97;
-    public const int RocketLauncher = 98;
-    public const int Shotgun = 99;
-    public const int Sniper = 100;
-    public const int Weapon = 101;
-    public const int WeaponRotationAngle = 102;
-    public const int WeaponRotationPointTransform = 103;
-    public const int WeaponSpriteRenderer = 104;
-    public const int WeaponTypeId = 105;
-    public const int AxisInput = 106;
-    public const int Input = 107;
+    public const int MaxPelletsSpreadAngle = 93;
+    public const int MinPelletsSpreadAngle = 94;
+    public const int MultiPellet = 95;
+    public const int Pistol = 96;
+    public const int PlasmaGun = 97;
+    public const int ReloadTime = 98;
+    public const int ReloadTimeLeft = 99;
+    public const int Revolver = 100;
+    public const int RocketLauncher = 101;
+    public const int Shotgun = 102;
+    public const int Sniper = 103;
+    public const int Weapon = 104;
+    public const int WeaponRotationAngle = 105;
+    public const int WeaponRotationPointTransform = 106;
+    public const int WeaponSpriteRenderer = 107;
+    public const int WeaponTypeId = 108;
+    public const int AxisInput = 109;
+    public const int Input = 110;
 
-    public const int TotalComponents = 108;
+    public const int TotalComponents = 111;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -213,6 +216,9 @@ public static class GameComponentsLookup {
         "Machinegun",
         "MagazineNotEmpty",
         "MagazineSize",
+        "MaxPelletsSpreadAngle",
+        "MinPelletsSpreadAngle",
+        "MultiPellet",
         "Pistol",
         "PlasmaGun",
         "ReloadTime",
@@ -324,6 +330,9 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Weapon.Machinegun),
         typeof(Code.Gameplay.Features.Weapon.MagazineNotEmpty),
         typeof(Code.Gameplay.Features.Weapon.MagazineSize),
+        typeof(Code.Gameplay.Features.Weapon.MaxPelletsSpreadAngle),
+        typeof(Code.Gameplay.Features.Weapon.MinPelletsSpreadAngle),
+        typeof(Code.Gameplay.Features.Weapon.MultiPellet),
         typeof(Code.Gameplay.Features.Weapon.Pistol),
         typeof(Code.Gameplay.Features.Weapon.PlasmaGun),
         typeof(Code.Gameplay.Features.Weapon.ReloadTime),

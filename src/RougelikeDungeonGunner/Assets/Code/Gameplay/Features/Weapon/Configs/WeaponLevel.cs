@@ -10,6 +10,8 @@ namespace Code.Gameplay.Features.Weapon.Configs
 		public float ReloadTime;
 		public float PrechargeTime;
 		public int MagazineSize;
-		public int AmountInShot;
+		public int PelletCount = 1;
+		public float MinSpreadAngle;
+		public float MaxSpreadAngle;
 	}
 }

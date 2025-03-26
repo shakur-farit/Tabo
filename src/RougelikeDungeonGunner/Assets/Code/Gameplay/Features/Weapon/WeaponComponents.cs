@@ -18,6 +18,9 @@ namespace Code.Gameplay.Features.Weapon
 	[Game] public class MagazineSize : IComponent { public int Value; }
 	[Game] public class CurrentAmmoAmount : IComponent { public int Value; }
 	[Game] public class MagazineNotEmpty : IComponent { }
+	[Game] public class MultiPellet : IComponent { public int Value; }
+	[Game] public class MinPelletsSpreadAngle : IComponent { public float Value; }
+	[Game] public class MaxPelletsSpreadAngle : IComponent { public float Value; }
 
 	[Game] public class Pistol : IComponent { }
 	[Game] public class Revolver : IComponent { }

@@ -30,6 +30,13 @@ namespace Code.Gameplay.Features.Hero.Behaviours
 					.With(x => x.isWeaponChangeRequested = true)
 					;
 			}
+			else if (UnityEngine.Input.GetKeyDown(KeyCode.Alpha4))
+			{
+				CreateEntity.Empty()
+					.AddNewWeaponTypeId(WeaponTypeId.Shotgun)
+					.With(x => x.isWeaponChangeRequested = true)
+					;
+			}
 		}
 	}
 }

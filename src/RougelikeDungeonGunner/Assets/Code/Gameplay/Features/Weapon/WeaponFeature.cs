@@ -1,4 +1,5 @@
-﻿using Code.Gameplay.Features.Weapon.ChangeRequest;
+﻿using Code.Gameplay.Features.Ammo.Systems;
+using Code.Gameplay.Features.Weapon.ChangeRequest;
 using Code.Gameplay.Features.Weapon.Systems;
 using Code.Infrastructure;
 
@@ -13,6 +14,7 @@ namespace Code.Gameplay.Features.Weapon
 			Add(systems.Create<FindClosestTargetSystem>());
 			Add(systems.Create<RotateWeaponAlongClosestTargetSystem>());
 			Add(systems.Create<WeaponDefaultDirectionWithoutTargetSystem>());
+			Add(systems.Create<CalculateMultiPelletCountSystem>());
 			Add(systems.Create<ReloadWeaponSystem>());
 
 			Add(systems.Create<CleanupClosestTargetSystem>());

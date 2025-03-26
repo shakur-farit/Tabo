@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using Code.Gameplay.Common.Time;
+using Code.Gameplay.Features.Weapon;
 using Entitas;
+using UnityEngine;
 
 namespace Code.Gameplay.Features.Cooldowns.Systems
 {
