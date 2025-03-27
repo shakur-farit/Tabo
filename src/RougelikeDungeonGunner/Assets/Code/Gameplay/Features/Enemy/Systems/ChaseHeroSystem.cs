@@ -1,4 +1,5 @@
-﻿using Entitas;
+﻿using System.Collections.Generic;
+using Entitas;
 
 namespace Code.Gameplay.Features.Enemy.Systems
 {
@@ -6,6 +7,7 @@ namespace Code.Gameplay.Features.Enemy.Systems
 	{
 		private readonly IGroup<GameEntity> _chasers;
 		private readonly IGroup<GameEntity> _heroes;
+		private readonly List<GameEntity> _buffer = new(32);
 
 		public ChaseHeroSystem(GameContext game)
 		{
@@ -24,7 +26,7 @@ namespace Code.Gameplay.Features.Enemy.Systems
 		public void Execute()
 		{
 			foreach (GameEntity hero in _heroes)
-			foreach (GameEntity chaser in _chasers)
+			foreach (GameEntity chaser in _chasers.GetEntities(_buffer))
 			{
 				chaser.ReplaceDirection((hero.WorldPosition - chaser.WorldPosition).normalized);
 				chaser.isMoving = true;

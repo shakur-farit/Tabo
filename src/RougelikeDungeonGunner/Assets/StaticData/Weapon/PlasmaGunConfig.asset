@@ -15,12 +15,14 @@ MonoBehaviour:
   WeaponTypeId: 7
   PrefabView: {fileID: 3867516666948492017, guid: 69172fbde18e101418b3b1f7089f9a29, type: 3}
   WeaponSprite: {fileID: 21300000, guid: a9d9372b640a67a4dae1cdbb59e3b919, type: 3}
-  AmmoId: 1
   FirePosition: {x: 1.03, y: 0.245}
   Levels:
-  - FireRange: 7
+  - isInfinityAmmo: 1
+    FireRange: 7
     Cooldown: 1.5
-    ReloadTime: 1
+    ReloadTime: 0
     PrechargeTime: 1
-    MagazineSize: 6
-    AmountInShot: 0
+    MagazineSize: 0
+    PelletCount: 1
+    MinSpreadAngle: 0
+    MaxSpreadAngle: 0

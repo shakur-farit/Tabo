@@ -20,10 +20,8 @@ namespace Code.Gameplay.Features.Enemy.Systems
 
 		public void Execute()
 		{
-			foreach (GameEntity enemy in _enemies.GetEntities(_buffer))
-			{
+			foreach (GameEntity enemy in _enemies.GetEntities(_buffer)) 
 				enemy.isProcessingDeath = false;
-			}
 		}
 	}
 }

@@ -18,6 +18,8 @@ namespace Code.Gameplay.Features.Weapon
 			Add(systems.Create<WeaponDefaultDirectionWithoutTargetSystem>());
 			Add(systems.Create<CalculateMultiPelletCountSystem>());
 			Add(systems.Create<ReloadWeaponSystem>());
+			Add(systems.Create<MarkWeaponReadyToShotSystem>());
+			Add(systems.Create<PrechargeWeaponSystem>());
 
 			Add(systems.Create<CleanupClosestTargetSystem>());
 			Add(systems.Create<CleanupUnparentedWeaponsSystem>());

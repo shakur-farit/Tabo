@@ -17,7 +17,7 @@ MonoBehaviour:
   WeaponSprite: {fileID: 21300000, guid: 7e70ae1621ea16746be436ae77e38ce9, type: 3}
   FirePosition: {x: 1.515, y: 0.21}
   Levels:
-  - FireRange: 15
+  - FireRange: 13
     Cooldown: 3
     ReloadTime: 5
     PrechargeTime: 0

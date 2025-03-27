@@ -10,19 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c1e63b6f3ed00ab4199a855a53c43c20, type: 3}
-  m_Name: SniperBulletConfig
+  m_Name: LaserBoltConfig
   m_EditorClassIdentifier: 
-  ammoTypeId: 6
+  ammoTypeId: 8
   ViewPrefab: {fileID: 2243231872987813085, guid: a5967ca81ad889847ae902288d60c7a5, type: 3}
   Levels:
-  - Speed: 15
-    Pierce: 1
+  - Speed: 20
+    Pierce: 0
     ContactRadius: 0.1
     EffectSetups:
     - EffectTypeId: 1
-      Value: 5
-    StatusSetups:
-    - StatusTypeId: 1
-      Value: 1
-      Duration: 3
-      Period: 1
+      Value: 10
+    StatusSetups: []

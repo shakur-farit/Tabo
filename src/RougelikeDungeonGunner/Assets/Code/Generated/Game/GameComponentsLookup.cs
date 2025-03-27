@@ -106,21 +106,26 @@ public static class GameComponentsLookup {
     public const int MultiPellet = 95;
     public const int Pistol = 96;
     public const int PlasmaGun = 97;
-    public const int ReloadTime = 98;
-    public const int ReloadTimeLeft = 99;
-    public const int Revolver = 100;
-    public const int RocketLauncher = 101;
-    public const int Shotgun = 102;
-    public const int Sniper = 103;
-    public const int Weapon = 104;
-    public const int WeaponRotationAngle = 105;
-    public const int WeaponRotationPointTransform = 106;
-    public const int WeaponSpriteRenderer = 107;
-    public const int WeaponTypeId = 108;
-    public const int AxisInput = 109;
-    public const int Input = 110;
+    public const int Precharged = 98;
+    public const int PrechargeTime = 99;
+    public const int PrechargeTimeLeft = 100;
+    public const int ReadyToShoot = 101;
+    public const int ReloadTime = 102;
+    public const int ReloadTimeLeft = 103;
+    public const int Revolver = 104;
+    public const int RocketLauncher = 105;
+    public const int Shot = 106;
+    public const int Shotgun = 107;
+    public const int Sniper = 108;
+    public const int Weapon = 109;
+    public const int WeaponRotationAngle = 110;
+    public const int WeaponRotationPointTransform = 111;
+    public const int WeaponSpriteRenderer = 112;
+    public const int WeaponTypeId = 113;
+    public const int AxisInput = 114;
+    public const int Input = 115;
 
-    public const int TotalComponents = 111;
+    public const int TotalComponents = 116;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -221,10 +226,15 @@ public static class GameComponentsLookup {
         "MultiPellet",
         "Pistol",
         "PlasmaGun",
+        "Precharged",
+        "PrechargeTime",
+        "PrechargeTimeLeft",
+        "ReadyToShoot",
         "ReloadTime",
         "ReloadTimeLeft",
         "Revolver",
         "RocketLauncher",
+        "Shot",
         "Shotgun",
         "Sniper",
         "Weapon",
@@ -335,10 +345,15 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Weapon.MultiPellet),
         typeof(Code.Gameplay.Features.Weapon.Pistol),
         typeof(Code.Gameplay.Features.Weapon.PlasmaGun),
+        typeof(Code.Gameplay.Features.Weapon.Precharged),
+        typeof(Code.Gameplay.Features.Weapon.PrechargeTime),
+        typeof(Code.Gameplay.Features.Weapon.PrechargeTimeLeft),
+        typeof(Code.Gameplay.Features.Weapon.ReadyToShoot),
         typeof(Code.Gameplay.Features.Weapon.ReloadTime),
         typeof(Code.Gameplay.Features.Weapon.ReloadTimeLeft),
         typeof(Code.Gameplay.Features.Weapon.Revolver),
         typeof(Code.Gameplay.Features.Weapon.RocketLauncher),
+        typeof(Code.Gameplay.Features.Weapon.Shot),
         typeof(Code.Gameplay.Features.Weapon.Shotgun),
         typeof(Code.Gameplay.Features.Weapon.Sniper),
         typeof(Code.Gameplay.Features.Weapon.Weapon),

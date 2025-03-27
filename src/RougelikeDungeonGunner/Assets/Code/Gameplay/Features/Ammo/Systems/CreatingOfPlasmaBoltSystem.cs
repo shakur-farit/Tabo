@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Code.Common.Extensions;
 using Code.Gameplay.Common.Random;
+using Code.Gameplay.Common.Time;
 using Code.Gameplay.Features.Ammo.Factory;
 using Code.Gameplay.Features.Cooldowns;
 using Entitas;
@@ -14,15 +15,18 @@ namespace Code.Gameplay.Features.Ammo.Systems
 
 		private readonly IAmmoFactory _ammoFactory;
 		private readonly IRandomService _random;
+		private readonly ITimeService _time;
 		private readonly IGroup<GameEntity> _weapons;
 
 		public CreatingOfPlasmaBoltSystem(
 			GameContext game,
 			IAmmoFactory ammoFactory,
-			IRandomService random)
+			IRandomService random,
+			ITimeService time)
 		{
 			_ammoFactory = ammoFactory;
 			_random = random;
+			_time = time;
 
 			_weapons = game.GetGroup(GameMatcher
 				.AllOf(
@@ -33,31 +37,32 @@ namespace Code.Gameplay.Features.Ammo.Systems
 					GameMatcher.FirePositionTransform,
 					GameMatcher.WorldPosition,
 					GameMatcher.MagazineNotEmpty,
-					GameMatcher.CurrentAmmoAmount,
-					GameMatcher.ClosestTargetPosition));
+					GameMatcher.ClosestTargetPosition,
+					GameMatcher.ReadyToShoot));
 		}
 
 		public void Execute()
 		{
 			foreach (GameEntity weapon in _weapons.GetEntities(_buffer))
 			{
-				if (weapon.CurrentAmmoAmount > 0)
+				while (weapon.PrechargeTime > 0)
 				{
-					_ammoFactory
-						.CreateAmmo(AmmoTypeId.PlasmaBolt, 1, weapon.FirePositionTransform.position)
-						.AddProducerId(weapon.Id)
-						.ReplaceDirection(GetSpreadDirection(weapon))
-						.With(x => x.isMoving = true);
-
-					weapon.ReplaceCurrentAmmoAmount(weapon.CurrentAmmoAmount - 1);
+					weapon.ReplacePrechargeTime(weapon.PrechargeTime - _time.DeltaTime);
+					Debug.Log(weapon.PrechargeTime);
 				}
-				else
-					weapon.isMagazineNotEmpty = false;
+
+				_ammoFactory
+					.CreateAmmo(AmmoTypeId.PlasmaBolt, 1, weapon.FirePositionTransform.position)
+					.AddProducerId(weapon.Id)
+					.ReplaceDirection(GetSpreadDirection(weapon))
+					.With(x => x.isMoving = true);
 
 				weapon
+					.With(x => x.isShot = true)
 					.PutOnCooldown(weapon.Cooldown);
 			}
 		}
+
 		private Vector3 GetSpreadDirection(GameEntity weapon)
 		{
 			float spreadAngle = _random.Range(weapon.MinPelletsSpreadAngle, weapon.MaxPelletsSpreadAngle);

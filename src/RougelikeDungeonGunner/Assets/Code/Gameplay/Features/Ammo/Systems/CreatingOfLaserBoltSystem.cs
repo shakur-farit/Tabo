@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Code.Common.Extensions;
 using Code.Gameplay.Common.Random;
+using Code.Gameplay.Common.Time;
 using Code.Gameplay.Features.Ammo.Factory;
 using Code.Gameplay.Features.Cooldowns;
 using Entitas;
@@ -33,36 +34,32 @@ namespace Code.Gameplay.Features.Ammo.Systems
 					GameMatcher.FirePositionTransform,
 					GameMatcher.WorldPosition,
 					GameMatcher.MagazineNotEmpty,
-					GameMatcher.CurrentAmmoAmount,
-					GameMatcher.ClosestTargetPosition));
+					GameMatcher.ClosestTargetPosition,
+					GameMatcher.Precharged,
+					GameMatcher.ReadyToShoot)); ;
 		}
 
 		public void Execute()
 		{
 			foreach (GameEntity weapon in _weapons.GetEntities(_buffer))
 			{
-				if (weapon.CurrentAmmoAmount > 0)
-				{
-					_ammoFactory
-						.CreateAmmo(AmmoTypeId.LaserBolt, 1, weapon.FirePositionTransform.position)
-						.AddProducerId(weapon.Id)
-						.ReplaceDirection(GetSpreadDirection(weapon))
-						.With(x => x.isMoving = true);
-
-					weapon.ReplaceCurrentAmmoAmount(weapon.CurrentAmmoAmount - 1);
-				}
-				else
-					weapon.isMagazineNotEmpty = false;
+				_ammoFactory
+					.CreateAmmo(AmmoTypeId.LaserBolt, 1, weapon.FirePositionTransform.position)
+					.AddProducerId(weapon.Id)
+					.ReplaceDirection(GetSpreadDirection(weapon))
+					.With(x => x.isMoving = true);
 
 				weapon
+					.With(x => x.isShot = true)
+					.With(x => x.isPrecharged = false)
 					.PutOnCooldown(weapon.Cooldown);
 			}
 		}
 
 		private Vector3 GetSpreadDirection(GameEntity weapon)
-		{
-			float spreadAngle = _random.Range(weapon.MinPelletsSpreadAngle, weapon.MaxPelletsSpreadAngle);
-			return Quaternion.Euler(0, 0, spreadAngle) * weapon.FirePositionTransform.right;
+			{
+				float spreadAngle = _random.Range(weapon.MinPelletsSpreadAngle, weapon.MaxPelletsSpreadAngle);
+				return Quaternion.Euler(0, 0, spreadAngle) * weapon.FirePositionTransform.right;
+			}
 		}
 	}
-}

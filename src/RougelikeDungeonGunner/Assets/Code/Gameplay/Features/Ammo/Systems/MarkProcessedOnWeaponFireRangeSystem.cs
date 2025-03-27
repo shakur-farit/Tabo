@@ -3,14 +3,14 @@ using Entitas;
 
 namespace Code.Gameplay.Features.Ammo.Systems
 {
-	public class AmmoLifeRangeSystem : IExecuteSystem
+	public class MarkProcessedOnWeaponFireRangeSystem : IExecuteSystem
 	{
 		private readonly List<GameEntity> _buffer = new(32);
 
 		private readonly IGroup<GameEntity> _ammo;
 		private readonly IGroup<GameEntity> _weapons;
 
-		public AmmoLifeRangeSystem(GameContext game)
+		public MarkProcessedOnWeaponFireRangeSystem(GameContext game)
 		{
 			_ammo = game.GetGroup(GameMatcher
 				.AllOf(
@@ -32,7 +32,7 @@ namespace Code.Gameplay.Features.Ammo.Systems
 				float distance = (ammo.WorldPosition - weapon.FirePositionTransform.position).magnitude;
 
 				if (distance > weapon.Radius)
-					ammo.isDestructed = true;
+					ammo.isProcessed = true;
 			}
 		}
 	}

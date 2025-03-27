@@ -17,11 +17,12 @@ MonoBehaviour:
   WeaponSprite: {fileID: 21300000, guid: abbe40c4d6a803f42a7c4f53404a484d, type: 3}
   FirePosition: {x: 0.91, y: 0.3}
   Levels:
-  - FireRange: 7
+  - isInfinityAmmo: 1
+    FireRange: 7
     Cooldown: 1
-    ReloadTime: 5
+    ReloadTime: 0
     PrechargeTime: 0
-    MagazineSize: 7
+    MagazineSize: 0
     PelletCount: 1
     MinSpreadAngle: -5
     MaxSpreadAngle: 5

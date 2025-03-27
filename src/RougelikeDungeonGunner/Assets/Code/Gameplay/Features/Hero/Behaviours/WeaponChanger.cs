@@ -37,6 +37,13 @@ namespace Code.Gameplay.Features.Hero.Behaviours
 					.With(x => x.isWeaponChangeRequested = true)
 					;
 			}
+			else if (UnityEngine.Input.GetKeyDown(KeyCode.Alpha5))
+			{
+				CreateEntity.Empty()
+					.AddNewWeaponTypeId(WeaponTypeId.LaserBlaster)
+					.With(x => x.isWeaponChangeRequested = true)
+					;
+			}
 		}
 	}
 }

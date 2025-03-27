@@ -21,6 +21,12 @@ namespace Code.Gameplay.Features.Weapon
 	[Game] public class MultiPellet : IComponent { public int Value; }
 	[Game] public class MinPelletsSpreadAngle : IComponent { public float Value; }
 	[Game] public class MaxPelletsSpreadAngle : IComponent { public float Value; }
+	[Game] public class PrechargeTime : IComponent { public float Value; }
+	[Game] public class PrechargeTimeLeft : IComponent { public float Value; }
+	
+	[Game] public class Shot : IComponent { }
+	[Game] public class ReadyToShoot : IComponent { }
+	[Game] public class Precharged : IComponent { }
 
 	[Game] public class Pistol : IComponent { }
 	[Game] public class Revolver : IComponent { }

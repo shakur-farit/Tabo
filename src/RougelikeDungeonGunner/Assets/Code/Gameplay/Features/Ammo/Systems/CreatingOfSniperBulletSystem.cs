@@ -33,28 +33,22 @@ namespace Code.Gameplay.Features.Ammo.Systems
 					GameMatcher.FirePositionTransform,
 					GameMatcher.WorldPosition,
 					GameMatcher.MagazineNotEmpty,
-					GameMatcher.CurrentAmmoAmount,
-					GameMatcher.ClosestTargetPosition));
+					GameMatcher.ClosestTargetPosition,
+					GameMatcher.ReadyToShoot));
 		}
 
 		public void Execute()
 		{
 			foreach (GameEntity weapon in _weapons.GetEntities(_buffer))
 			{
-				if (weapon.CurrentAmmoAmount > 0)
-				{
-					_ammoFactory
-						.CreateAmmo(AmmoTypeId.SniperBullet, 1, weapon.FirePositionTransform.position)
-						.AddProducerId(weapon.Id)
-						.ReplaceDirection(GetSpreadDirection(weapon))
-						.With(x => x.isMoving = true);
-
-					weapon.ReplaceCurrentAmmoAmount(weapon.CurrentAmmoAmount - 1);
-				}
-				else
-					weapon.isMagazineNotEmpty = false;
+				_ammoFactory
+					.CreateAmmo(AmmoTypeId.SniperBullet, 1, weapon.FirePositionTransform.position)
+					.AddProducerId(weapon.Id)
+					.ReplaceDirection(GetSpreadDirection(weapon))
+					.With(x => x.isMoving = true);
 
 				weapon
+					.With(x => x.isShot = true)
 					.PutOnCooldown(weapon.Cooldown);
 			}
 		}

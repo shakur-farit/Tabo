@@ -1,4 +1,5 @@
-﻿using Code.Gameplay.Features.TargetCollection;
+﻿using System.Collections.Generic;
+using Code.Gameplay.Features.TargetCollection;
 using Entitas;
 
 namespace Code.Gameplay.Features.Ammo.Systems
@@ -6,6 +7,7 @@ namespace Code.Gameplay.Features.Ammo.Systems
 	public class FinalizeProcessedAmmoSystem : IExecuteSystem
 	{
 		private readonly IGroup<GameEntity> _ammo;
+		private readonly List<GameEntity> _buffer = new(32);
 
 		public FinalizeProcessedAmmoSystem(GameContext game)
 		{
@@ -17,7 +19,7 @@ namespace Code.Gameplay.Features.Ammo.Systems
 
 		public void Execute()
 		{
-			foreach (GameEntity ammo in _ammo)
+			foreach (GameEntity ammo in _ammo.GetEntities(_buffer))
 			{
 				ammo.RemoveTargetCollectionComponents();
 				ammo.isDestructed = true;

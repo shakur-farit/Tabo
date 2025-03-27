@@ -5,6 +5,7 @@ namespace Code.Gameplay.Features.Weapon.Configs
 	[Serializable]
 	public class WeaponLevel
 	{
+		public bool isInfinityAmmo;
 		public float FireRange;
 		public float Cooldown;
 		public float ReloadTime;
