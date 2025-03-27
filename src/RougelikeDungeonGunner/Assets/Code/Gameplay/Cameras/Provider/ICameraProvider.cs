@@ -8,5 +8,6 @@ namespace Code.Gameplay.Cameras.Provider
     float WorldScreenHeight { get; }
     float WorldScreenWidth { get; }
     void SetMainCamera(Camera camera);
+    void SetCameraSize(float size);
   }
 }
