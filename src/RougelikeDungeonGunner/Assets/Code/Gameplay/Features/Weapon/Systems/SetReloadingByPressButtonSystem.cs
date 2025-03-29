@@ -1,30 +1,30 @@
 ﻿using System.Collections.Generic;
 using Entitas;
+using UnityEngine;
 
-namespace Code.Gameplay.Features.Ammo.Systems
+namespace Code.Gameplay.Features.Weapon.Systems
 {
-	public class CalculateCurrentAmmoAmountSystem : IExecuteSystem
+	public class SetReloadingByPressButtonSystem : IExecuteSystem
 	{
 		private readonly IGroup<GameEntity> _weapons;
 		private readonly List<GameEntity> _buffer = new(1);
 
-		public CalculateCurrentAmmoAmountSystem(GameContext game)
+		public SetReloadingByPressButtonSystem(GameContext game)
 		{
 			_weapons = game.GetGroup(GameMatcher
 				.AllOf(
+					GameMatcher.Weapon,
 					GameMatcher.MagazineSize,
-					GameMatcher.CurrentAmmoAmount,
-					GameMatcher.MagazineNotEmpty,
-					GameMatcher.Shot));
+					GameMatcher.ReloadTime,
+					GameMatcher.ReloadTimeLeft)
+				.NoneOf(GameMatcher.Reloading));
 		}
 
 		public void Execute()
 		{
 			foreach (GameEntity weapon in _weapons.GetEntities(_buffer))
 			{
-				weapon.ReplaceCurrentAmmoAmount(weapon.CurrentAmmoAmount - 1);
-
-				if (weapon.CurrentAmmoAmount <= 0)
+				if (UnityEngine.Input.GetKeyDown(KeyCode.R))
 				{
 					weapon.isMagazineNotEmpty = false;
 					weapon.isReloading = true;
@@ -32,6 +32,4 @@ namespace Code.Gameplay.Features.Ammo.Systems
 			}
 		}
 	}
-
-	
 }

@@ -17,8 +17,10 @@ namespace Code.Gameplay.Features.Weapon
 			Add(systems.Create<RotateWeaponAlongClosestTargetSystem>());
 			Add(systems.Create<WeaponDefaultDirectionWithoutTargetSystem>());
 			Add(systems.Create<CalculateMultiPelletCountSystem>());
+			Add(systems.Create<SetReloadingByPressButtonSystem>());
 			Add(systems.Create<ReloadWeaponSystem>());
 			Add(systems.Create<MarkWeaponReadyToShotSystem>());
+			Add(systems.Create<SetShootingByLeftMouseButtonInputSystem>());
 			Add(systems.Create<PrechargeWeaponSystem>());
 
 			Add(systems.Create<CleanupClosestTargetSystem>());

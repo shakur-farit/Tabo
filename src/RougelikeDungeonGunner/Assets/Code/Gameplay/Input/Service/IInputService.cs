@@ -7,7 +7,8 @@ namespace Code.Gameplay.Input.Service
     float GetVerticalAxis();
     float GetHorizontalAxis();
     bool HasAxisInput();
-    
+
+    bool GetLeftMouseButton();
     bool GetLeftMouseButtonDown();
     Vector2 GetScreenMousePosition();
     Vector2 GetWorldMousePosition();

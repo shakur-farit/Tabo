@@ -27,6 +27,8 @@ namespace Code.Gameplay.Features.Weapon
 	[Game] public class Shot : IComponent { }
 	[Game] public class ReadyToShoot : IComponent { }
 	[Game] public class Precharged : IComponent { }
+	[Game] public class Shooting : IComponent { }
+	[Game] public class Reloading : IComponent { }
 
 	[Game] public class Pistol : IComponent { }
 	[Game] public class Revolver : IComponent { }

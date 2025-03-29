@@ -110,22 +110,25 @@ public static class GameComponentsLookup {
     public const int PrechargeTime = 99;
     public const int PrechargeTimeLeft = 100;
     public const int ReadyToShoot = 101;
-    public const int ReloadTime = 102;
-    public const int ReloadTimeLeft = 103;
-    public const int Revolver = 104;
-    public const int RocketLauncher = 105;
-    public const int Shot = 106;
-    public const int Shotgun = 107;
-    public const int Sniper = 108;
-    public const int Weapon = 109;
-    public const int WeaponRotationAngle = 110;
-    public const int WeaponRotationPointTransform = 111;
-    public const int WeaponSpriteRenderer = 112;
-    public const int WeaponTypeId = 113;
-    public const int AxisInput = 114;
-    public const int Input = 115;
+    public const int Reloading = 102;
+    public const int ReloadTime = 103;
+    public const int ReloadTimeLeft = 104;
+    public const int Revolver = 105;
+    public const int RocketLauncher = 106;
+    public const int Shooting = 107;
+    public const int Shot = 108;
+    public const int Shotgun = 109;
+    public const int Sniper = 110;
+    public const int Weapon = 111;
+    public const int WeaponRotationAngle = 112;
+    public const int WeaponRotationPointTransform = 113;
+    public const int WeaponSpriteRenderer = 114;
+    public const int WeaponTypeId = 115;
+    public const int AxisInput = 116;
+    public const int Input = 117;
+    public const int MouseLeftButtonDown = 118;
 
-    public const int TotalComponents = 116;
+    public const int TotalComponents = 119;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -230,10 +233,12 @@ public static class GameComponentsLookup {
         "PrechargeTime",
         "PrechargeTimeLeft",
         "ReadyToShoot",
+        "Reloading",
         "ReloadTime",
         "ReloadTimeLeft",
         "Revolver",
         "RocketLauncher",
+        "Shooting",
         "Shot",
         "Shotgun",
         "Sniper",
@@ -243,7 +248,8 @@ public static class GameComponentsLookup {
         "WeaponSpriteRenderer",
         "WeaponTypeId",
         "AxisInput",
-        "Input"
+        "Input",
+        "MouseLeftButtonDown"
     };
 
     public static readonly System.Type[] componentTypes = {
@@ -349,10 +355,12 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Weapon.PrechargeTime),
         typeof(Code.Gameplay.Features.Weapon.PrechargeTimeLeft),
         typeof(Code.Gameplay.Features.Weapon.ReadyToShoot),
+        typeof(Code.Gameplay.Features.Weapon.Reloading),
         typeof(Code.Gameplay.Features.Weapon.ReloadTime),
         typeof(Code.Gameplay.Features.Weapon.ReloadTimeLeft),
         typeof(Code.Gameplay.Features.Weapon.Revolver),
         typeof(Code.Gameplay.Features.Weapon.RocketLauncher),
+        typeof(Code.Gameplay.Features.Weapon.Shooting),
         typeof(Code.Gameplay.Features.Weapon.Shot),
         typeof(Code.Gameplay.Features.Weapon.Shotgun),
         typeof(Code.Gameplay.Features.Weapon.Sniper),
@@ -362,6 +370,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Weapon.WeaponSpriteRenderer),
         typeof(Code.Gameplay.Features.Weapon.WeaponTypeIdComponent),
         typeof(Code.Gameplay.Input.AxisInput),
-        typeof(Code.Gameplay.Input.Input)
+        typeof(Code.Gameplay.Input.Input),
+        typeof(Code.Gameplay.Input.MouseLeftButtonDown)
     };
 }

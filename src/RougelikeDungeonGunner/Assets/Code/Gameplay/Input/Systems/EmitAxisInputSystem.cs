@@ -4,12 +4,12 @@ using UnityEngine;
 
 namespace Code.Gameplay.Input.Systems
 {
-	public class EmitInputSystem : IExecuteSystem
+	public class EmitAxisInputSystem : IExecuteSystem
 	{
 		private readonly IInputService _inputService;
 		private readonly IGroup<GameEntity> _inputs;
 
-		public EmitInputSystem(GameContext game, IInputService inputService)
+		public EmitAxisInputSystem(GameContext game, IInputService inputService)
 		{
 			_inputService = inputService;
 			_inputs = game.GetGroup(GameMatcher
