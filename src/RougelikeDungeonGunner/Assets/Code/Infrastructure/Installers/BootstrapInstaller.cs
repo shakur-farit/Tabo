@@ -10,6 +10,7 @@ using Code.Gameplay.Features.Enemy.Factory;
 using Code.Gameplay.Features.Hero.Factory;
 using Code.Gameplay.Features.Hero.States.HeroAnimationStates;
 using Code.Gameplay.Features.Hero.States.StateMachine;
+using Code.Gameplay.Features.Levels;
 using Code.Gameplay.Features.Spawner.Factory;
 using Code.Gameplay.Features.Statuses.Applier;
 using Code.Gameplay.Features.Statuses.Factory;
@@ -106,6 +107,7 @@ namespace Code.Infrastructure.Installers
 			Container.Bind<IStaticDataService>().To<StaticDataService>().AsSingle();
 			Container.Bind<ILevelDataProvider>().To<LevelDataProvider>().AsSingle();
 			Container.Bind<IStatusApplier>().To<StatusApplier>().AsSingle();
+			Container.Bind<ILevelEnvironmentService>().To<LevelEnvironmentService>().AsSingle();
 		}
 
 		private void BindGameplayFactories()
