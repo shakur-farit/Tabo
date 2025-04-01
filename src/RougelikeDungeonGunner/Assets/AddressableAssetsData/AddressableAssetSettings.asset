@@ -15,7 +15,7 @@ MonoBehaviour:
   m_DefaultGroup: f40428f047dc54a46b8184ab91599836
   m_currentHash:
     serializedVersion: 2
-    Hash: 78c119f9219cd208c12a43e067688947
+    Hash: bb0804576c6c8c0d74be0910f03038d3
   m_OptimizeCatalogSize: 0
   m_BuildRemoteCatalog: 0
   m_BundleLocalCatalog: 0
@@ -91,6 +91,7 @@ MonoBehaviour:
     - AmmoConfig
     - EnemyConfig
     - HeroConfig
+    - LevelConfig
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: 85357d346e02ee54ab80d633e7b0c1cf, type: 2}

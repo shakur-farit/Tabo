@@ -120,6 +120,7 @@ namespace Code.Infrastructure.Installers
 			Container.Bind<IWeaponChangeRequestFactory>().To<WeaponChangeRequestFactory>().AsSingle();
 			Container.Bind<IEffectFactory>().To<EffectFactory>().AsSingle();
 			Container.Bind<IStatusFactory>().To<StatusFactory>().AsSingle();
+			Container.Bind<ILevelFactory>().To<LevelFactory>().AsSingle();
 			Container.Bind<ISpawnerFactory>().To<SpawnerFactory>().AsSingle();
 		}
 

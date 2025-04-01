@@ -11,6 +11,6 @@ namespace Code.Gameplay.Features.Levels.Configs
 		public int TimeBetweenSpawnWaves;
 		public int FinishingTime;
 		public List<EnvironmentSetup> EnvironmentSetups;
-		public List<EnemiesSpawnSetup> SpawnSetups;
+		public List<EnemyWave> EnemyWaves;
 	}
 }

@@ -12,9 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fe7e2d4760bd87448aa1180b8484dd6, type: 3}
   m_Name: LevelConfig
   m_EditorClassIdentifier: 
-  LevelTypeId: 0
+  LevelTypeId: 1
   StartingTime: 0
   TimeBetweenSpawnWaves: 0
   FinishingTime: 0
-  EnvironmentSetups: []
-  SpawnSetups: []
+  EnvironmentSetups:
+  - Room: {fileID: 0}
+    HeroStartPosition: {x: 0, y: 0}
+  EnemyWaves:
+  - EnemyTypeId: 2
+    Amount: 10

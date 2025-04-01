@@ -113,6 +113,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - AmmoConfig
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4dd6ed5a8ee0ced478ab47fe77597445
+    m_Address: Assets/StaticData/Level/LevelConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - LevelConfig
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 7128017d563554245a79368046c75e1a, type: 2}
   m_SchemaSet:
