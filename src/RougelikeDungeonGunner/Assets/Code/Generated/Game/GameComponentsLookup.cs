@@ -71,76 +71,75 @@ public static class GameComponentsLookup {
     public const int StartingTimeLeft = 60;
     public const int TimeBetweenWaves = 61;
     public const int TimeBetweenWavesLeft = 62;
-    public const int Wave = 63;
-    public const int WaveAvailable = 64;
-    public const int CurrentHp = 65;
-    public const int Dead = 66;
-    public const int MaxHp = 67;
-    public const int ProcessingDeath = 68;
-    public const int Direction = 69;
-    public const int MovementAvailable = 70;
-    public const int Moving = 71;
-    public const int Speed = 72;
-    public const int CurrentSpawnedEnemyAmount = 73;
-    public const int Affected = 74;
-    public const int Applied = 75;
-    public const int ApplierStatusLink = 76;
-    public const int Duration = 77;
-    public const int Freeze = 78;
-    public const int Period = 79;
-    public const int Poison = 80;
-    public const int Status = 81;
-    public const int StatusTypeId = 82;
-    public const int TimeLeft = 83;
-    public const int TimeSinceLastTick = 84;
-    public const int Unapplied = 85;
-    public const int CollectTargetsContinuously = 86;
-    public const int CollectTargetsInterval = 87;
-    public const int CollectTargetsTimer = 88;
-    public const int LayerMask = 89;
-    public const int ProcessedTargets = 90;
-    public const int Radius = 91;
-    public const int ReadyToCollectTargets = 92;
-    public const int TargetsBuffer = 93;
-    public const int AutomaticPistol = 94;
-    public const int NewWeaponTypeId = 95;
-    public const int WeaponChangeable = 96;
-    public const int WeaponChangeRequested = 97;
-    public const int ClosestTargetPosition = 98;
-    public const int CurrentAmmoAmount = 99;
-    public const int FirePositionTransform = 100;
-    public const int LaserBlaster = 101;
-    public const int Machinegun = 102;
-    public const int MagazineNotEmpty = 103;
-    public const int MagazineSize = 104;
-    public const int MaxPelletsSpreadAngle = 105;
-    public const int MinPelletsSpreadAngle = 106;
-    public const int MultiPellet = 107;
-    public const int Pistol = 108;
-    public const int PlasmaGun = 109;
-    public const int Precharged = 110;
-    public const int PrechargeTime = 111;
-    public const int PrechargeTimeLeft = 112;
-    public const int ReadyToShoot = 113;
-    public const int Reloading = 114;
-    public const int ReloadTime = 115;
-    public const int ReloadTimeLeft = 116;
-    public const int Revolver = 117;
-    public const int RocketLauncher = 118;
-    public const int Shooting = 119;
-    public const int Shot = 120;
-    public const int Shotgun = 121;
-    public const int Sniper = 122;
-    public const int Weapon = 123;
-    public const int WeaponRotationAngle = 124;
-    public const int WeaponRotationPointTransform = 125;
-    public const int WeaponSpriteRenderer = 126;
-    public const int WeaponTypeId = 127;
-    public const int AxisInput = 128;
-    public const int Input = 129;
-    public const int MouseLeftButtonDown = 130;
+    public const int WaveAvailable = 63;
+    public const int CurrentHp = 64;
+    public const int Dead = 65;
+    public const int MaxHp = 66;
+    public const int ProcessingDeath = 67;
+    public const int Direction = 68;
+    public const int MovementAvailable = 69;
+    public const int Moving = 70;
+    public const int Speed = 71;
+    public const int CurrentSpawnedEnemyAmount = 72;
+    public const int Affected = 73;
+    public const int Applied = 74;
+    public const int ApplierStatusLink = 75;
+    public const int Duration = 76;
+    public const int Freeze = 77;
+    public const int Period = 78;
+    public const int Poison = 79;
+    public const int Status = 80;
+    public const int StatusTypeId = 81;
+    public const int TimeLeft = 82;
+    public const int TimeSinceLastTick = 83;
+    public const int Unapplied = 84;
+    public const int CollectTargetsContinuously = 85;
+    public const int CollectTargetsInterval = 86;
+    public const int CollectTargetsTimer = 87;
+    public const int LayerMask = 88;
+    public const int ProcessedTargets = 89;
+    public const int Radius = 90;
+    public const int ReadyToCollectTargets = 91;
+    public const int TargetsBuffer = 92;
+    public const int AutomaticPistol = 93;
+    public const int NewWeaponTypeId = 94;
+    public const int WeaponChangeable = 95;
+    public const int WeaponChangeRequested = 96;
+    public const int ClosestTargetPosition = 97;
+    public const int CurrentAmmoAmount = 98;
+    public const int FirePositionTransform = 99;
+    public const int LaserBlaster = 100;
+    public const int Machinegun = 101;
+    public const int MagazineNotEmpty = 102;
+    public const int MagazineSize = 103;
+    public const int MaxPelletsSpreadAngle = 104;
+    public const int MinPelletsSpreadAngle = 105;
+    public const int MultiPellet = 106;
+    public const int Pistol = 107;
+    public const int PlasmaGun = 108;
+    public const int Precharged = 109;
+    public const int PrechargeTime = 110;
+    public const int PrechargeTimeLeft = 111;
+    public const int ReadyToShoot = 112;
+    public const int Reloading = 113;
+    public const int ReloadTime = 114;
+    public const int ReloadTimeLeft = 115;
+    public const int Revolver = 116;
+    public const int RocketLauncher = 117;
+    public const int Shooting = 118;
+    public const int Shot = 119;
+    public const int Shotgun = 120;
+    public const int Sniper = 121;
+    public const int Weapon = 122;
+    public const int WeaponRotationAngle = 123;
+    public const int WeaponRotationPointTransform = 124;
+    public const int WeaponSpriteRenderer = 125;
+    public const int WeaponTypeId = 126;
+    public const int AxisInput = 127;
+    public const int Input = 128;
+    public const int MouseLeftButtonDown = 129;
 
-    public const int TotalComponents = 131;
+    public const int TotalComponents = 130;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -206,7 +205,6 @@ public static class GameComponentsLookup {
         "StartingTimeLeft",
         "TimeBetweenWaves",
         "TimeBetweenWavesLeft",
-        "Wave",
         "WaveAvailable",
         "CurrentHp",
         "Dead",
@@ -340,7 +338,6 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Levels.StartingTimeLeft),
         typeof(Code.Gameplay.Features.Levels.TimeBetweenWaves),
         typeof(Code.Gameplay.Features.Levels.TimeBetweenWavesLeft),
-        typeof(Code.Gameplay.Features.Levels.Wave),
         typeof(Code.Gameplay.Features.Levels.WaveAvailable),
         typeof(Code.Gameplay.Features.Lifetime.CurrentHp),
         typeof(Code.Gameplay.Features.Lifetime.Dead),

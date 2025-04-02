@@ -5,6 +5,7 @@ using Code.Gameplay.Features.EffectApplication;
 using Code.Gameplay.Features.Effects;
 using Code.Gameplay.Features.Enemy;
 using Code.Gameplay.Features.Hero;
+using Code.Gameplay.Features.Levels;
 using Code.Gameplay.Features.Lifetime;
 using Code.Gameplay.Features.Movement;
 using Code.Gameplay.Features.Spawner;
@@ -22,6 +23,7 @@ namespace Code.Gameplay
 		public BattleFeature(ISystemsFactory systems)
 		{
 			Add(systems.Create<InputFeature>());
+			Add(systems.Create<LevelFeature>());
 			Add(systems.Create<SpawnerFeature>());
 			Add(systems.Create<BindViewFeature>());
 

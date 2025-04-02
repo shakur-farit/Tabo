@@ -1,6 +1,8 @@
 ﻿using Code.Common.Entity;
 using Code.Common.Extensions;
+using Code.Gameplay.Features.Levels.Configs;
 using Entitas;
+using UnityEngine;
 
 namespace Code.Gameplay.Features.Levels
 {
@@ -12,19 +14,21 @@ namespace Code.Gameplay.Features.Levels
 		{
 			_levels = game.GetGroup(GameMatcher
 				.AllOf(
-					GameMatcher.EnemyWaves)
-				.NoneOf(GameMatcher.WaveAvailable));
+					GameMatcher.EnemyWaves));
 		}
 
 		public void Execute()
 		{
 			foreach (GameEntity level in _levels)
+			foreach (EnemyWave enemyWave in level.EnemyWaves)
 			{
 				CreateEntity.Empty()
-					.With(x => x.isWave = true)
-					.With(x => x.isWaveAvailable = true)
+					.AddEnemyWave(enemyWave)
 					;
-			}
+
+				Debug.Log("Create Wave");
+
+				}
 		}
 	}
 }

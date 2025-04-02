@@ -1,9 +1,6 @@
 ﻿using Code.Gameplay.Common.Random;
-using Code.Gameplay.Features.Enemy;
 using Code.Gameplay.Features.Enemy.Factory;
-using Code.Gameplay.Features.Levels;
 using Code.Gameplay.Features.Levels.Configs;
-using Code.Gameplay.StaticData;
 using Entitas;
 using UnityEngine;
 
@@ -13,41 +10,38 @@ namespace Code.Gameplay.Features.Spawner.Systems
 	{
 		private readonly IEnemyFactory _enemyFactory;
 		private readonly IRandomService _randomService;
-		private readonly IStaticDataService _staticDataService;
 		private readonly IGroup<GameEntity> _spawners;
+		private readonly IGroup<GameEntity> _waves;
 
 		public SpawnEnemiesSystem(
-			GameContext game, 
+			GameContext game,
 			IEnemyFactory enemyFactory,
-			IRandomService randomService,
-			IStaticDataService staticDataService)
+			IRandomService randomService)
 		{
 			_enemyFactory = enemyFactory;
 			_randomService = randomService;
-			_staticDataService = staticDataService;
 			_spawners = game.GetGroup(GameMatcher
 				.AllOf(
 					GameMatcher.CurrentSpawnedEnemyAmount
-					));
+				));
+
+			_waves = game.GetGroup(GameMatcher
+				.AllOf(
+					GameMatcher.EnemyWave
+				));
 		}
 
 		public void Execute()
 		{
 			foreach (GameEntity spawner in _spawners)
+			foreach (GameEntity wave in _waves)
+			foreach (EnemiesInWave enemiesInWave in wave.EnemyWave.EnemiesInWave)
 			{
-				int enemyAmountInWave = 0;
+				//_enemyFactory.CreateEnemy(enemiesInWave.EnemyTypeId, RandomPosition());
 
-				foreach (EnemyWave enemyWave in _staticDataService.GetLevelConfig(LevelTypeId.First).EnemyWaves)
-				{
-					enemyAmountInWave += enemyWave.Amount;
-				}
+				//spawner.ReplaceCurrentSpawnedEnemyAmount(spawner.CurrentSpawnedEnemyAmount + 1);
 
-				if (spawner.CurrentSpawnedEnemyAmount < enemyAmountInWave)
-				{
-					_enemyFactory.CreateEnemy(EnemyTypeId.Orc, RandomPosition());
-
-					spawner.ReplaceCurrentSpawnedEnemyAmount(spawner.CurrentSpawnedEnemyAmount + 1);
-				}
+				Debug.Log("Create Enemy");
 			}
 		}
 

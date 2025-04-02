@@ -20,5 +20,6 @@ MonoBehaviour:
   - Room: {fileID: 0}
     HeroStartPosition: {x: 0, y: 0}
   EnemyWaves:
-  - EnemyTypeId: 2
-    Amount: 10
+  - EnemiesInWave:
+    - EnemyTypeId: 2
+      Amount: 10
