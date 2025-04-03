@@ -1,7 +1,6 @@
 using Code.Gameplay.Features.Hero;
 using Code.Gameplay.Features.Hero.Factory;
 using Code.Gameplay.Features.Levels;
-using Code.Gameplay.Features.Spawner.Factory;
 using Code.Gameplay.Levels;
 using Code.Infrastructure.States.StateInfrastructure;
 using Code.Infrastructure.States.StateMachine;
@@ -14,20 +13,17 @@ namespace Code.Infrastructure.States.GameStates
 		private readonly ILevelDataProvider _levelDataProvider;
 		private readonly IHeroFactory _heroFactory;
 		private readonly ILevelFactory _levelFactory;
-		private readonly ISpawnerFactory _spawnerFactory;
 
 		public BattleEnterState(
 			IGameStateMachine stateMachine,
 			ILevelDataProvider levelDataProvider,
 			IHeroFactory heroFactory,
-			ILevelFactory levelFactory,
-			ISpawnerFactory spawnerFactory)
+			ILevelFactory levelFactory)
 		{
 			_stateMachine = stateMachine;
 			_levelDataProvider = levelDataProvider;
 			_heroFactory = heroFactory;
 			_levelFactory = levelFactory;
-			_spawnerFactory = spawnerFactory;
 
 		}
 
@@ -35,9 +31,7 @@ namespace Code.Infrastructure.States.GameStates
 		{
 			_levelFactory.CreateLevel(LevelTypeId.First);
 
-			PlaceHero();
-
-			_spawnerFactory.CreateEnemySpawner();
+			//PlaceHero();
 
 			_stateMachine.Enter<BattleLoopState>();
 		}

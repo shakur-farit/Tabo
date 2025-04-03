@@ -24,6 +24,7 @@ namespace Code.Gameplay.Features.Hero.Systems
 			_heroes = game.GetGroup(GameMatcher
 				.AllOf(
 					GameMatcher.Hero,
+					GameMatcher.ParentTransform,
 					GameMatcher.Unweaponed));
 		}
 

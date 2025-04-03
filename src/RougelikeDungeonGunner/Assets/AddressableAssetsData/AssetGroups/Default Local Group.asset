@@ -119,6 +119,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - LevelConfig
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2070fde95a5b563429e9f23c4c89ce29
+    m_Address: Assets/StaticData/Enemy/HedusaEnemyConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EnemyConfig
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 7128017d563554245a79368046c75e1a, type: 2}
   m_SchemaSet:

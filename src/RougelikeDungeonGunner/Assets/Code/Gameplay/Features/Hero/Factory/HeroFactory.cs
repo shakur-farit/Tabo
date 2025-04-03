@@ -21,28 +21,25 @@ namespace Code.Gameplay.Features.Hero.Factory
 			_staticDataService = staticDataService;
 		}
 
-		public GameEntity CreateHero(HeroTypeId typeId,Vector3 at)
+		public GameEntity CreateHero(HeroTypeId typeId, Vector3 at)
 		{
 			switch (typeId)
 			{
 				case HeroTypeId.TheGeneral:
-					return CreateTheGeneral(at);
+					return CreateTheGeneral(typeId, at);
 			}
 
 			throw new Exception($"Hero with type id {typeId} does not exist");
 		}
 
-		private GameEntity CreateTheGeneral(Vector3 at)
+		private GameEntity CreateTheGeneral(HeroTypeId typeId, Vector3 at) =>
+			CreateHeroEntity(typeId, at)
+				.With(x => x.isTheGeneral = true);
+
+		private GameEntity CreateHeroEntity(HeroTypeId typeId, Vector3 at)
 		{
 			HeroConfig config = _staticDataService.GetHeroConfig(HeroTypeId.TheGeneral);
 
-			return CreateHeroEntity(at, config)
-				.AddHeroTypeId(HeroTypeId.TheGeneral)
-				.With(x => x.isTheGeneral = true);
-		}
-
-		private GameEntity CreateHeroEntity(Vector3 at, HeroConfig config)
-		{
 			Dictionary<Stats, float> baseStats = InitStats.EmptyStatDictionary()
 					.With(x => x[Stats.Speed] = config.MovementSpeed)
 					.With(x => x[Stats.MaxHp] = config.MaxHp)
@@ -50,6 +47,7 @@ namespace Code.Gameplay.Features.Hero.Factory
 
 			return CreateEntity.Empty()
 					.AddId(_identifier.Next())
+					.AddHeroTypeId(typeId)
 					.AddWorldPosition(at)
 					.AddDirection(Vector2.zero)
 					.AddBaseStats(baseStats)

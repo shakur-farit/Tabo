@@ -1,49 +1,30 @@
-﻿using Code.Common.Entity;
-using Code.Common.Extensions;
-using Code.Gameplay.Features.Weapon;
+﻿using Code.Gameplay.Features.Weapon;
+using Code.Gameplay.Features.Weapon.ChangeRequest.Factory;
 using UnityEngine;
+using Zenject;
 
 namespace Code.Gameplay.Features.Hero.Behaviours
 {
 	public class WeaponChanger : MonoBehaviour
 	{
+		private IWeaponChangeRequestFactory _requestFactory;
+
+		[Inject]
+		public void Constructor(IWeaponChangeRequestFactory requestFactory) => 
+			_requestFactory = requestFactory;
+
 		private void Update()
 		{
 			if (UnityEngine.Input.GetKeyDown(KeyCode.Alpha1))
-			{
-				CreateEntity.Empty()
-					.AddNewWeaponTypeId(WeaponTypeId.Pistol)
-					.With(x => x.isWeaponChangeRequested = true)
-					;
-			}
+				_requestFactory.CreateWeaponChangeRequest(WeaponTypeId.Pistol);
 			else if (UnityEngine.Input.GetKeyDown(KeyCode.Alpha2))
-			{
-				CreateEntity.Empty()
-					.AddNewWeaponTypeId(WeaponTypeId.Machinegun)
-					.With(x => x.isWeaponChangeRequested = true)
-					;
-			}
+				_requestFactory.CreateWeaponChangeRequest(WeaponTypeId.Machinegun);
 			else if (UnityEngine.Input.GetKeyDown(KeyCode.Alpha3))
-			{
-				CreateEntity.Empty()
-					.AddNewWeaponTypeId(WeaponTypeId.Sniper)
-					.With(x => x.isWeaponChangeRequested = true)
-					;
-			}
+				_requestFactory.CreateWeaponChangeRequest(WeaponTypeId.Sniper);
 			else if (UnityEngine.Input.GetKeyDown(KeyCode.Alpha4))
-			{
-				CreateEntity.Empty()
-					.AddNewWeaponTypeId(WeaponTypeId.Shotgun)
-					.With(x => x.isWeaponChangeRequested = true)
-					;
-			}
+				_requestFactory.CreateWeaponChangeRequest(WeaponTypeId.Shotgun);
 			else if (UnityEngine.Input.GetKeyDown(KeyCode.Alpha5))
-			{
-				CreateEntity.Empty()
-					.AddNewWeaponTypeId(WeaponTypeId.LaserBlaster)
-					.With(x => x.isWeaponChangeRequested = true)
-					;
-			}
+				_requestFactory.CreateWeaponChangeRequest(WeaponTypeId.LaserBlaster);
 		}
 	}
 }

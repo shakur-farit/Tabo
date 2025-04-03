@@ -6,7 +6,9 @@ namespace Code.Gameplay.Features.Levels
 	{
 		public LevelFeature(ISystemsFactory systems)
 		{
-			Add(systems.Create<EnemyWaveSystem>());
+			Add(systems.Create<EnemyWaveOnLevelSystem>());
+
+			Add(systems.Create<CleanupEnvironmentSetupSystem>());
 		}
 	}
 }

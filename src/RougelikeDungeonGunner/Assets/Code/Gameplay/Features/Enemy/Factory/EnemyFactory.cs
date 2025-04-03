@@ -31,24 +31,27 @@ namespace Code.Gameplay.Features.Enemy.Factory
 			switch (typeId)
 			{
 				case EnemyTypeId.Orc:
-					return CreateOrc(at);
+					return CreateOrc(typeId, at);
+				case EnemyTypeId.Hedusa:
+					return CreateHedusa(typeId, at);
 			}
 
 			throw new Exception($"Enemy with type id {typeId} does not exist");
 		}
 
-		private GameEntity CreateOrc(Vector3 at)
-		{
-			EnemyConfig config = _staticDataService.GetEnemyConfig(EnemyTypeId.Orc);
+		private GameEntity CreateOrc(EnemyTypeId typeId, Vector3 at) =>
+			CreateEnemyEntity(typeId, at)
+				.With(x => x.isOrc = true);
 
-			return CreateEnemyEntity(at, config)
-					.AddEnemyTypeId(EnemyTypeId.Orc)
-					.With(x => x.isOrc = true)
-				;
-		}
+		private GameEntity CreateHedusa(EnemyTypeId typeId, Vector3 at) =>
+			CreateEnemyEntity(typeId, at)
+				.With(x => x.isHedusa = true);
 
-		private GameEntity CreateEnemyEntity(Vector3 at, EnemyConfig config)
+		private GameEntity CreateEnemyEntity(EnemyTypeId typeId, Vector3 at)
 		{
+			EnemyConfig config = _staticDataService.GetEnemyConfig(typeId);
+
+
 			Dictionary<Stats, float> baseStats = InitStats.EmptyStatDictionary()
 					.With(x => x[Stats.Speed] = config.MovementSpeed)
 					.With(x => x[Stats.MaxHp] = config.MaxHp)
@@ -57,6 +60,7 @@ namespace Code.Gameplay.Features.Enemy.Factory
 
 			return CreateEntity.Empty()
 					.AddId(_identifier.Next())
+					.AddEnemyTypeId(typeId)
 					.AddWorldPosition(at)
 					.AddDirection(Vector2.zero)
 					.AddBaseStats(baseStats)

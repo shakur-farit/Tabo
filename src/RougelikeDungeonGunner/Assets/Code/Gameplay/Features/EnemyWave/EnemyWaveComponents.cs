@@ -1,4 +1,5 @@
-﻿using Code.Gameplay.Features.Levels.Configs;
+﻿using System.Collections.Generic;
+using Code.Gameplay.Features.Levels.Configs;
 using Entitas;
 
 namespace Code.Gameplay.Features.Levels

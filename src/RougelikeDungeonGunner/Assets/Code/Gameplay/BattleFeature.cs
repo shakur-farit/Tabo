@@ -8,7 +8,6 @@ using Code.Gameplay.Features.Hero;
 using Code.Gameplay.Features.Levels;
 using Code.Gameplay.Features.Lifetime;
 using Code.Gameplay.Features.Movement;
-using Code.Gameplay.Features.Spawner;
 using Code.Gameplay.Features.Statuses;
 using Code.Gameplay.Features.TargetCollection;
 using Code.Gameplay.Features.Weapon;
@@ -24,7 +23,6 @@ namespace Code.Gameplay
 		{
 			Add(systems.Create<InputFeature>());
 			Add(systems.Create<LevelFeature>());
-			Add(systems.Create<SpawnerFeature>());
 			Add(systems.Create<EnemyWaveFeature>());
 			Add(systems.Create<BindViewFeature>());
 

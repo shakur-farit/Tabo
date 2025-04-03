@@ -8,4 +8,5 @@ namespace Code.Gameplay.Features.Enemy
 	[Game] public class EnemyAnimatorComponent : IComponent { public EnemyAnimator Value; }
 
 	[Game] public class Orc : IComponent { }
+	[Game] public class Hedusa : IComponent { }
 }

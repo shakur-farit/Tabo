@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using Code.Gameplay.Common.Time;
 using Entitas;
-using UnityEngine;
 
 namespace Code.Gameplay.Features.Ammo.Systems
 {
@@ -26,16 +25,12 @@ namespace Code.Gameplay.Features.Ammo.Systems
 		{
 			foreach (GameEntity weapon in _weapons.GetEntities(_buffer))
 			{
-				if(weapon.PrechargeTimeLeft > 0)
-				{
+				if (weapon.PrechargeTimeLeft > 0)
 					weapon.ReplacePrechargeTimeLeft(weapon.PrechargeTimeLeft - _time.DeltaTime);
-					Debug.Log(weapon.PrechargeTimeLeft);
-				}
 				else
 				{
 					weapon.isPrecharged = true;
 					weapon.ReplacePrechargeTimeLeft(weapon.PrechargeTime);
-					Debug.Log(weapon.isPrecharged);
 				}
 			}
 		}

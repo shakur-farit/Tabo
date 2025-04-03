@@ -8,17 +8,17 @@
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherWaveAvailable;
+    static Entitas.IMatcher<GameEntity> _matcherHedusa;
 
-    public static Entitas.IMatcher<GameEntity> WaveAvailable {
+    public static Entitas.IMatcher<GameEntity> Hedusa {
         get {
-            if (_matcherWaveAvailable == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.WaveAvailable);
+            if (_matcherHedusa == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.Hedusa);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherWaveAvailable = matcher;
+                _matcherHedusa = matcher;
             }
 
-            return _matcherWaveAvailable;
+            return _matcherHedusa;
         }
     }
 }
@@ -33,18 +33,18 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Levels.WaveAvailable waveAvailableComponent = new Code.Gameplay.Features.Levels.WaveAvailable();
+    static readonly Code.Gameplay.Features.Enemy.Hedusa hedusaComponent = new Code.Gameplay.Features.Enemy.Hedusa();
 
-    public bool isWaveAvailable {
-        get { return HasComponent(GameComponentsLookup.WaveAvailable); }
+    public bool isHedusa {
+        get { return HasComponent(GameComponentsLookup.Hedusa); }
         set {
-            if (value != isWaveAvailable) {
-                var index = GameComponentsLookup.WaveAvailable;
+            if (value != isHedusa) {
+                var index = GameComponentsLookup.Hedusa;
                 if (value) {
                     var componentPool = GetComponentPool(index);
                     var component = componentPool.Count > 0
                             ? componentPool.Pop()
-                            : waveAvailableComponent;
+                            : hedusaComponent;
 
                     AddComponent(index, component);
                 } else {

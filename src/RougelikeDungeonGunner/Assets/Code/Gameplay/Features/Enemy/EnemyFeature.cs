@@ -1,4 +1,5 @@
 ﻿using Code.Gameplay.Features.Enemy.Systems;
+using Code.Gameplay.Features.Spawner.Systems;
 using Code.Infrastructure;
 
 namespace Code.Gameplay.Features.Enemy
@@ -7,6 +8,7 @@ namespace Code.Gameplay.Features.Enemy
 	{
 		public EnemyFeature(ISystemsFactory systems)
 		{
+			Add(systems.Create<SpawnEnemiesSystem>());
 			Add(systems.Create<ChaseHeroSystem>());
 			Add(systems.Create<AnimateEnemyMovementSystem>());
 			Add(systems.Create<EnemyDeathSystem>());
