@@ -14,12 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LevelTypeId: 1
   StartingTime: 0
-  TimeBetweenSpawnWaves: 0
+  TimeBetweenSpawnWaves: 10
   FinishingTime: 0
   EnvironmentSetups:
   - Room: {fileID: 0}
     HeroStartPosition: {x: 0, y: 0}
   EnemyWaves:
+  - EnemiesInWave:
+    - EnemyTypeId: 2
+      Amount: 10
   - EnemiesInWave:
     - EnemyTypeId: 2
       Amount: 10

@@ -1,6 +1,7 @@
 ﻿using Code.Infrastructure.Identifiers;
 using System;
 using Code.Common.Entity;
+using Code.Common.Extensions;
 using Code.Gameplay.Features.Levels.Configs;
 using Code.Gameplay.StaticData;
 
@@ -40,6 +41,10 @@ namespace Code.Gameplay.Features.Levels
 			return CreateEntity.Empty()
 					.AddId(_identifier.Next())
 					.AddEnemyWaves(config.EnemyWaves)
+					.AddCreatedEnemyWavesAmount(0)
+					.AddCooldown(config.TimeBetweenSpawnWaves)
+					.AddCooldownLeft(config.TimeBetweenSpawnWaves)
+					.With(x => x.isCooldownUp = true)
 				;
 		}
 	}

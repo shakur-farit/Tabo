@@ -25,6 +25,7 @@ namespace Code.Gameplay
 			Add(systems.Create<InputFeature>());
 			Add(systems.Create<LevelFeature>());
 			Add(systems.Create<SpawnerFeature>());
+			Add(systems.Create<EnemyWaveFeature>());
 			Add(systems.Create<BindViewFeature>());
 
 			Add(systems.Create<HeroFeature>());
