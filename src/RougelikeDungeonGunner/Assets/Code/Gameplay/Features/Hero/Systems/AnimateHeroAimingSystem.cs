@@ -31,14 +31,11 @@ namespace Code.Gameplay.Features.Hero.Systems
 		{
 			foreach (GameEntity hero in _heroes)
 			foreach (GameEntity weapon in _weapons)
-				AnimateRotation(weapon, hero);
+				AnimateRotation(weapon.WeaponRotationAngle, hero.HeroAnimator);
 		}
 
-		private void AnimateRotation(GameEntity weapon, GameEntity hero)
+		private void AnimateRotation(float angle, HeroAnimator animator)
 		{
-			HeroAnimator animator = hero.HeroAnimator;
-			float angle = weapon.WeaponRotationAngle;
-
 			if (angle >= 22f && angle <= 67f)
 				_stateMachine.Enter<AimUpRightAnimationState>(animator);
 			else if (angle > 67f && angle <= 112f)

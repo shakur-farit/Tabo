@@ -8,5 +8,6 @@ namespace Code.Infrastructure.States.Factory
 	{
 		T GetGameState<T>() where T : class, IExitableState;
 		T GetHeroAnimationState<T>() where T : class, IHeroAnimationState;
+		T GetEnemyAnimationState<T>() where T : class, IEnemyAnimationState;
 	}
 }

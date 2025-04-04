@@ -22,12 +22,10 @@ namespace Code.Gameplay.Features.Enemy.Systems
 				if (enemy.isMoving)
 				{
 					enemy.EnemyAnimator.StartMoving();
-					enemy.EnemyAnimator.StartAimDown();
+					enemy.EnemyAnimator.StartLookDownAnimation();
 				}
 				else
-				{
 					enemy.EnemyAnimator.StartIdling();
-				}
 			}
 		}
 	}

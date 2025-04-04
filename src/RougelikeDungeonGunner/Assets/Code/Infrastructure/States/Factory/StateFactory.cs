@@ -17,5 +17,8 @@ namespace Code.Infrastructure.States.Factory
 
 		public T GetHeroAnimationState<T>() where T : class, IHeroAnimationState =>
 			_container.Resolve<T>();
+
+		public T GetEnemyAnimationState<T>() where T : class, IEnemyAnimationState => 
+			_container.Resolve<T>();
 	}
 }

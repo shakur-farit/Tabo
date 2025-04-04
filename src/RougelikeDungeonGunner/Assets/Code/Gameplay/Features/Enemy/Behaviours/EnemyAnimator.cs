@@ -27,23 +27,23 @@ namespace Code.Gameplay.Features.Enemy.Behaviours
 
 		public void StartMoving() => _animator.SetBool(_isMoving, true);
 
-		public void StartAimUp() => _animator.SetBool(_aimUp, true);
-		public void StopAimUp() => _animator.SetBool(_aimUp, false);
+		public void StartLookUpAnimation() => _animator.SetBool(_aimUp, true);
+		public void StopLookUpAnimation() => _animator.SetBool(_aimUp, false);
 
-		public void StartAimUpRight() => _animator.SetBool(_aimUpRight, true);
-		public void StopAimUpRight() => _animator.SetBool(_aimUpRight, false);
+		public void StartLookUpRightAnimation() => _animator.SetBool(_aimUpRight, true);
+		public void StopLookUpRightAnimation() => _animator.SetBool(_aimUpRight, false);
 
-		public void StartAimUpLeft() => _animator.SetBool(_aimUpLeft, true);
-		public void StopAimUpLeft() => _animator.SetBool(_aimUpLeft, false);
+		public void StartLookUpLeftAnimation() => _animator.SetBool(_aimUpLeft, true);
+		public void StopLookUpLeftAnimation() => _animator.SetBool(_aimUpLeft, false);
 
-		public void StartAimRight() => _animator.SetBool(_aimRight, true);
-		public void StopAimRight() => _animator.SetBool(_aimRight, false);
+		public void StartLookRightAnimation() => _animator.SetBool(_aimRight, true);
+		public void StopAimRightAnimation() => _animator.SetBool(_aimRight, false);
 
-		public void StartAimLeft() => _animator.SetBool(_aimLeft, true);
-		public void StopAimLeft() => _animator.SetBool(_aimLeft, false);
+		public void StartLookLeftAnimation() => _animator.SetBool(_aimLeft, true);
+		public void StopLookLeftAnimation() => _animator.SetBool(_aimLeft, false);
 
-		public void StartAimDown() => _animator.SetBool(_aimDown, true);
-		public void StopAimDown() => _animator.SetBool(_aimDown, false);
+		public void StartLookDownAnimation() => _animator.SetBool(_aimDown, true);
+		public void StopLookDownAnimation() => _animator.SetBool(_aimDown, false);
 
 		public void PlayDied()
 		{

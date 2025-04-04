@@ -2,7 +2,6 @@
 using Code.Gameplay.Features.Cooldowns;
 using Code.Gameplay.Features.Levels.Configs;
 using Entitas;
-using UnityEngine;
 
 namespace Code.Gameplay.Features.Levels
 {
@@ -35,8 +34,6 @@ namespace Code.Gameplay.Features.Levels
 						.ReplaceCreatedEnemyWaves(level.CreatedEnemyWaves + 1)
 						.PutOnCooldown()
 						;
-
-					Debug.Log("Create Wave");
 				}
 			}
 		}

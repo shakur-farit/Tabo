@@ -7,6 +7,7 @@ using Code.Gameplay.Common.Time;
 using Code.Gameplay.Features.Ammo.Factory;
 using Code.Gameplay.Features.Effects.Factory;
 using Code.Gameplay.Features.Enemy.Factory;
+using Code.Gameplay.Features.Enemy.States.StateMachine;
 using Code.Gameplay.Features.Hero.Factory;
 using Code.Gameplay.Features.Hero.States.HeroAnimationStates;
 using Code.Gameplay.Features.Hero.States.StateMachine;
@@ -38,6 +39,7 @@ namespace Code.Infrastructure.Installers
 			BindStateFactory();
 			BindGameStates();
 			BindHeroAnimationStates();
+			BindEnemyAnimationStates();
 			BindInputService();
 			BindSystemFactory();
 			BindInfrastructureServices();
@@ -55,6 +57,7 @@ namespace Code.Infrastructure.Installers
 		{
 			Container.BindInterfacesAndSelfTo<GameStateMachine>().AsSingle();
 			Container.BindInterfacesAndSelfTo<HeroAnimationStateMachine>().AsSingle();
+			Container.BindInterfacesAndSelfTo<EnemyAnimationStateMachine>().AsSingle();
 		}
 
 		private void BindStateFactory()
@@ -82,6 +85,16 @@ namespace Code.Infrastructure.Installers
 			Container.BindInterfacesAndSelfTo<AimLeftAnimationState>().AsSingle();
 			Container.BindInterfacesAndSelfTo<AimUpRightAnimationState>().AsSingle();
 			Container.BindInterfacesAndSelfTo<AimUpLeftAnimationState>().AsSingle();
+		}
+
+		private void BindEnemyAnimationStates()
+		{
+			Container.BindInterfacesAndSelfTo<EnemyDownDirectionAnimationState>().AsSingle();
+			Container.BindInterfacesAndSelfTo<EnemyLeftDirectionAnimationState>().AsSingle();
+			Container.BindInterfacesAndSelfTo<EnemyRightDirectionAnimationState>().AsSingle();
+			Container.BindInterfacesAndSelfTo<EnemyUpDirectionAnimationState>().AsSingle();
+			Container.BindInterfacesAndSelfTo<EnemyUpLeftDirectionAnimationState>().AsSingle();
+			Container.BindInterfacesAndSelfTo<EnemyUpRightDirectionAnimationState>().AsSingle();
 		}
 
 		private void BindContexts()
