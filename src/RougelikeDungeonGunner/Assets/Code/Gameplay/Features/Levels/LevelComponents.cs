@@ -14,7 +14,8 @@ namespace Code.Gameplay.Features.Levels
 	[Game] public class FinishingTimeLeft : IComponent { public float Value; }
 
 	[Game] public class EnemyWaves : IComponent { public List<EnemyWave> Value; }
-	[Game] public class CreatedEnemyWaves : IComponent { public int Value; }
+	[Game] public class EnemyWaveComponent : IComponent { public EnemyWave Value; }
+	[Game] public class SpawnedEnemyWaves : IComponent { public int Value; }
 
 	[Game] public class EnvironmentSetupComponent : IComponent { public EnvironmentSetup Value; }
 	[Game] public class EnvironmentSetupAvailable : IComponent { }

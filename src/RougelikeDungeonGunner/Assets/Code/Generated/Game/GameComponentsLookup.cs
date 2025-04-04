@@ -23,54 +23,54 @@ public static class GameComponentsLookup {
     public const int Processed = 12;
     public const int SpriteRenderer = 13;
     public const int StatusVisuals = 14;
-    public const int Transform = 15;
-    public const int WorldPosition = 16;
-    public const int Ammo = 17;
-    public const int AmmoTypeId = 18;
-    public const int AutomaticPistolBullet = 19;
-    public const int EffectSetups = 20;
-    public const int LaserBolt = 21;
-    public const int MachinegunBullet = 22;
-    public const int PistolBullet = 23;
-    public const int PlasmaBolt = 24;
-    public const int RevolverBullet = 25;
-    public const int RocketMissile = 26;
-    public const int ShotgunBullet = 27;
-    public const int SniperBullet = 28;
-    public const int StatusSetups = 29;
-    public const int TargetLimit = 30;
-    public const int BaseStats = 31;
-    public const int StatChange = 32;
-    public const int StatModifiers = 33;
-    public const int Cooldown = 34;
-    public const int CooldownLeft = 35;
-    public const int CooldownUp = 36;
-    public const int DamageEffect = 37;
-    public const int Effect = 38;
-    public const int EffectValue = 39;
-    public const int HealEffect = 40;
-    public const int ProducerId = 41;
-    public const int TargetId = 42;
-    public const int Enemy = 43;
-    public const int EnemyAnimator = 44;
-    public const int EnemyTypeId = 45;
-    public const int Hedusa = 46;
-    public const int Orc = 47;
-    public const int Hero = 48;
-    public const int HeroAnimator = 49;
-    public const int HeroTypeId = 50;
-    public const int TheGeneral = 51;
-    public const int Unweaponed = 52;
-    public const int Weaponed = 53;
-    public const int CreatedEnemyWaves = 54;
-    public const int EnemyAmountInWave = 55;
-    public const int EnemyWave = 56;
-    public const int EnemyWaves = 57;
-    public const int EnvironmentSetupAvailable = 58;
-    public const int EnvironmentSetup = 59;
-    public const int FinishingTime = 60;
-    public const int FinishingTimeLeft = 61;
-    public const int LevelTypeId = 62;
+    public const int Stunned = 15;
+    public const int Transform = 16;
+    public const int WorldPosition = 17;
+    public const int Ammo = 18;
+    public const int AmmoTypeId = 19;
+    public const int AutomaticPistolBullet = 20;
+    public const int EffectSetups = 21;
+    public const int LaserBolt = 22;
+    public const int MachinegunBullet = 23;
+    public const int PistolBullet = 24;
+    public const int PlasmaBolt = 25;
+    public const int RevolverBullet = 26;
+    public const int RocketMissile = 27;
+    public const int ShotgunBullet = 28;
+    public const int SniperBullet = 29;
+    public const int StatusSetups = 30;
+    public const int TargetLimit = 31;
+    public const int BaseStats = 32;
+    public const int StatChange = 33;
+    public const int StatModifiers = 34;
+    public const int Cooldown = 35;
+    public const int CooldownLeft = 36;
+    public const int CooldownUp = 37;
+    public const int DamageEffect = 38;
+    public const int Effect = 39;
+    public const int EffectValue = 40;
+    public const int HealEffect = 41;
+    public const int ProducerId = 42;
+    public const int TargetId = 43;
+    public const int Enemy = 44;
+    public const int EnemyAnimator = 45;
+    public const int EnemyTypeId = 46;
+    public const int Hedusa = 47;
+    public const int Orc = 48;
+    public const int Hero = 49;
+    public const int HeroAnimator = 50;
+    public const int HeroTypeId = 51;
+    public const int TheGeneral = 52;
+    public const int Unweaponed = 53;
+    public const int Weaponed = 54;
+    public const int EnemyWave = 55;
+    public const int EnemyWaves = 56;
+    public const int EnvironmentSetupAvailable = 57;
+    public const int EnvironmentSetup = 58;
+    public const int FinishingTime = 59;
+    public const int FinishingTimeLeft = 60;
+    public const int LevelTypeId = 61;
+    public const int SpawnedEnemyWaves = 62;
     public const int StartingTime = 63;
     public const int StartingTimeLeft = 64;
     public const int TimeBetweenWaves = 65;
@@ -159,6 +159,7 @@ public static class GameComponentsLookup {
         "Processed",
         "SpriteRenderer",
         "StatusVisuals",
+        "Stunned",
         "Transform",
         "WorldPosition",
         "Ammo",
@@ -198,8 +199,6 @@ public static class GameComponentsLookup {
         "TheGeneral",
         "Unweaponed",
         "Weaponed",
-        "CreatedEnemyWaves",
-        "EnemyAmountInWave",
         "EnemyWave",
         "EnemyWaves",
         "EnvironmentSetupAvailable",
@@ -207,6 +206,7 @@ public static class GameComponentsLookup {
         "FinishingTime",
         "FinishingTimeLeft",
         "LevelTypeId",
+        "SpawnedEnemyWaves",
         "StartingTime",
         "StartingTimeLeft",
         "TimeBetweenWaves",
@@ -294,6 +294,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Common.Processed),
         typeof(Code.Gameplay.Common.SpriteRendererComponent),
         typeof(Code.Gameplay.Common.StatusVisualsComponent),
+        typeof(Code.Gameplay.Common.Stunned),
         typeof(Code.Gameplay.Common.TransformComponent),
         typeof(Code.Gameplay.Common.WorldPosition),
         typeof(Code.Gameplay.Features.Ammo.Ammo),
@@ -333,8 +334,6 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Hero.TheGeneral),
         typeof(Code.Gameplay.Features.Hero.Unweaponed),
         typeof(Code.Gameplay.Features.Hero.Weaponed),
-        typeof(Code.Gameplay.Features.Levels.CreatedEnemyWaves),
-        typeof(Code.Gameplay.Features.Levels.EnemyAmountInWave),
         typeof(Code.Gameplay.Features.Levels.EnemyWaveComponent),
         typeof(Code.Gameplay.Features.Levels.EnemyWaves),
         typeof(Code.Gameplay.Features.Levels.EnvironmentSetupAvailable),
@@ -342,6 +341,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Levels.FinishingTime),
         typeof(Code.Gameplay.Features.Levels.FinishingTimeLeft),
         typeof(Code.Gameplay.Features.Levels.LevelTypeIdComponent),
+        typeof(Code.Gameplay.Features.Levels.SpawnedEnemyWaves),
         typeof(Code.Gameplay.Features.Levels.StartingTime),
         typeof(Code.Gameplay.Features.Levels.StartingTimeLeft),
         typeof(Code.Gameplay.Features.Levels.TimeBetweenWaves),

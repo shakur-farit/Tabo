@@ -47,7 +47,7 @@ namespace Code.Gameplay.Features.Levels
 			return CreateEntity.Empty()
 					.AddId(_identifier.Next())
 					.AddEnemyWaves(config.EnemyWaves)
-					.AddCreatedEnemyWaves(0)
+					.AddSpawnedEnemyWaves(0)
 					.AddEnvironmentSetup(config.EnvironmentSetups[randomIndex])
 					.AddCooldown(config.TimeBetweenSpawnWaves)
 					.AddCooldownLeft(config.TimeBetweenSpawnWaves)

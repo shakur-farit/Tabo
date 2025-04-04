@@ -18,7 +18,8 @@ namespace Code.Gameplay.Features.Enemy.Systems
 				.AllOf(
 					GameMatcher.Enemy,
 					GameMatcher.EnemyAnimator,
-					GameMatcher.Direction));
+					GameMatcher.Direction)
+				.NoneOf(GameMatcher.Stunned));
 		}
 
 		public void Execute()
@@ -27,26 +28,55 @@ namespace Code.Gameplay.Features.Enemy.Systems
 			{
 				float angle = Mathf.Atan2(enemy.Direction.y, enemy.Direction.x) * Mathf.Rad2Deg;
 
-				Debug.Log(angle);
-
 				AnimateDirection(angle, enemy.EnemyAnimator);
 			}
 		}
 
 		private void AnimateDirection(float angle, EnemyAnimator animator)
 		{
+			//if (angle >= 22f && angle <= 67f)
+			//	_stateMachine.Enter<EnemyUpRightDirectionAnimationState>(animator);
+			//else if (angle > 67f && angle <= 112f)
+			//	_stateMachine.Enter<EnemyUpDirectionAnimationState>(animator);
+			//else if (angle > 112f && angle <= 158f)
+			//	_stateMachine.Enter<EnemyUpLeftDirectionAnimationState>(animator);
+			//else if ((angle <= 180f && angle > 158f) || (angle > -180f && angle <= -135f))
+			//	_stateMachine.Enter<EnemyLeftDirectionAnimationState>(animator);
+			//else if (angle > -135f && angle <= -45f)
+			//	_stateMachine.Enter<EnemyDownDirectionAnimationState>(animator);
+			//else if ((angle > -45f && angle <= 0f) || (angle > 0f && angle < 22f))
+			//	_stateMachine.Enter<EnemyRightDirectionAnimationState>(animator);
+
 			if (angle >= 22f && angle <= 67f)
-				_stateMachine.Enter<EnemyUpRightDirectionAnimationState>(animator);
+			{
+				animator.Recall();
+				animator.StartLookUpRightAnimation();
+			}
 			else if (angle > 67f && angle <= 112f)
-				_stateMachine.Enter<EnemyUpDirectionAnimationState>(animator);
+			{
+				animator.Recall();
+				animator.StartLookUpAnimation();
+			}
 			else if (angle > 112f && angle <= 158f)
-				_stateMachine.Enter<EnemyUpLeftDirectionAnimationState>(animator);
+			{
+				animator.Recall();
+				animator.StartLookUpLeftAnimation();
+			}
 			else if ((angle <= 180f && angle > 158f) || (angle > -180f && angle <= -135f))
-				_stateMachine.Enter<EnemyLeftDirectionAnimationState>(animator);
+			{
+				animator.Recall();
+				animator.StartLookLeftAnimation();
+			}
 			else if (angle > -135f && angle <= -45f)
-				_stateMachine.Enter<EnemyDownDirectionAnimationState>(animator);
+			{
+				animator.Recall();
+				animator.StartLookDownAnimation();
+			}
 			else if ((angle > -45f && angle <= 0f) || (angle > 0f && angle < 22f))
-				_stateMachine.Enter<EnemyRightDirectionAnimationState>(animator);
+			{
+				animator.Recall();
+				animator.StartLookRightAnimation();
+			}
 		}
 	}
 }

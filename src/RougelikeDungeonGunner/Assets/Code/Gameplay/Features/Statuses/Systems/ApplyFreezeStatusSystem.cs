@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using Code.Common.Entity;
 using Code.Gameplay.Features.CharacterStats;
+using Code.Gameplay.Features.Effects;
 using Entitas;
-using TMPro.EditorUtilities;
 
 namespace Code.Gameplay.Features.Statuses.Systems
 {
@@ -35,6 +35,9 @@ namespace Code.Gameplay.Features.Statuses.Systems
 					.AddEffectValue(status.EffectValue)
 					.AddApplierStatusLink(status.Id)
 					;
+
+				status.Target()
+					.isStunned = true;
 
 				status.isAffected = true;
 			}

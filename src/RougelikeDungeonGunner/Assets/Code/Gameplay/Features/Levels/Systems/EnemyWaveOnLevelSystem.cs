@@ -2,18 +2,17 @@
 using Code.Gameplay.Features.Cooldowns;
 using Code.Gameplay.Features.Levels.Configs;
 using Entitas;
+using UnityEngine;
 
 namespace Code.Gameplay.Features.Levels
 {
 	public class EnemyWaveOnLevelSystem : IExecuteSystem
 	{
-		private readonly IEnemyWaveFactory _enemyWaveFactory;
 		private readonly IGroup<GameEntity> _levels;
 		private readonly List<GameEntity> _buffer = new(1);
 
-		public EnemyWaveOnLevelSystem(GameContext game, IEnemyWaveFactory enemyWaveFactory)
+		public EnemyWaveOnLevelSystem(GameContext game)
 		{
-			_enemyWaveFactory = enemyWaveFactory;
 			_levels = game.GetGroup(GameMatcher
 				.AllOf(
 					GameMatcher.EnemyWaves,
@@ -24,14 +23,13 @@ namespace Code.Gameplay.Features.Levels
 		{
 			foreach (GameEntity level in _levels.GetEntities(_buffer))
 			{
-				if (level.CreatedEnemyWaves < level.EnemyWaves.Count)
+				if (level.SpawnedEnemyWaves < level.EnemyWaves.Count)
 				{
-					EnemyWave enemyWave = level.EnemyWaves[level.CreatedEnemyWaves];
-
-					_enemyWaveFactory.CreateEnemyWave(enemyWave);
+					EnemyWave enemyWave = level.EnemyWaves[level.SpawnedEnemyWaves];
 
 					level
-						.ReplaceCreatedEnemyWaves(level.CreatedEnemyWaves + 1)
+						.ReplaceEnemyWave(enemyWave)
+						.ReplaceSpawnedEnemyWaves(level.SpawnedEnemyWaves + 1)
 						.PutOnCooldown()
 						;
 				}

@@ -20,10 +20,7 @@ namespace Code.Gameplay.Features.Enemy.Systems
 			foreach (GameEntity enemy in _enemies)
 			{
 				if (enemy.isMoving)
-				{
 					enemy.EnemyAnimator.StartMoving();
-					enemy.EnemyAnimator.StartLookDownAnimation();
-				}
 				else
 					enemy.EnemyAnimator.StartIdling();
 			}

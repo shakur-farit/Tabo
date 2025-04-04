@@ -37,7 +37,7 @@ namespace Code.Gameplay.Features.Enemy.Behaviours
 		public void StopLookUpLeftAnimation() => _animator.SetBool(_aimUpLeft, false);
 
 		public void StartLookRightAnimation() => _animator.SetBool(_aimRight, true);
-		public void StopAimRightAnimation() => _animator.SetBool(_aimRight, false);
+		public void StopLookRightAnimation() => _animator.SetBool(_aimRight, false);
 
 		public void StartLookLeftAnimation() => _animator.SetBool(_aimLeft, true);
 		public void StopLookLeftAnimation() => _animator.SetBool(_aimLeft, false);
@@ -60,5 +60,15 @@ namespace Code.Gameplay.Features.Enemy.Behaviours
 
 		public void SetRuntimeAnimatorController(RuntimeAnimatorController runtimeAnimatorController) => 
 			_animator.runtimeAnimatorController = runtimeAnimatorController;
+
+		public void Recall()
+		{
+			StopLookDownAnimation();
+			StopLookLeftAnimation();
+			StopLookRightAnimation();
+			StopLookUpAnimation();
+			StopLookUpLeftAnimation();
+			StopLookUpRightAnimation();
+		}
 	}
 }

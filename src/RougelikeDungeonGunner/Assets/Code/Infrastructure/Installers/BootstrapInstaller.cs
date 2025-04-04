@@ -89,12 +89,12 @@ namespace Code.Infrastructure.Installers
 
 		private void BindEnemyAnimationStates()
 		{
-			Container.BindInterfacesAndSelfTo<EnemyDownDirectionAnimationState>().AsSingle();
-			Container.BindInterfacesAndSelfTo<EnemyLeftDirectionAnimationState>().AsSingle();
-			Container.BindInterfacesAndSelfTo<EnemyRightDirectionAnimationState>().AsSingle();
-			Container.BindInterfacesAndSelfTo<EnemyUpDirectionAnimationState>().AsSingle();
-			Container.BindInterfacesAndSelfTo<EnemyUpLeftDirectionAnimationState>().AsSingle();
-			Container.BindInterfacesAndSelfTo<EnemyUpRightDirectionAnimationState>().AsSingle();
+			Container.BindInterfacesAndSelfTo<EnemyDownDirectionAnimationState>().AsTransient();
+			Container.BindInterfacesAndSelfTo<EnemyLeftDirectionAnimationState>().AsTransient();
+			Container.BindInterfacesAndSelfTo<EnemyRightDirectionAnimationState>().AsTransient();
+			Container.BindInterfacesAndSelfTo<EnemyUpDirectionAnimationState>().AsTransient();
+			Container.BindInterfacesAndSelfTo<EnemyUpLeftDirectionAnimationState>().AsTransient();
+			Container.BindInterfacesAndSelfTo<EnemyUpRightDirectionAnimationState>().AsTransient();
 		}
 
 		private void BindContexts()
@@ -133,7 +133,6 @@ namespace Code.Infrastructure.Installers
 			Container.Bind<IEffectFactory>().To<EffectFactory>().AsSingle();
 			Container.Bind<IStatusFactory>().To<StatusFactory>().AsSingle();
 			Container.Bind<ILevelFactory>().To<LevelFactory>().AsSingle();
-			Container.Bind<IEnemyWaveFactory>().To<EnemyWaveFactory>().AsSingle();
 		}
 
 		private void BindSystemFactory()

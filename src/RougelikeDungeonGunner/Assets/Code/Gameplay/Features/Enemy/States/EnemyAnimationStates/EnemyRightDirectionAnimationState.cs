@@ -15,6 +15,6 @@ namespace Code.Gameplay.Features.Hero.States.HeroAnimationStates
 		}
 
 		public void Exit() =>
-			_enemyAnimator.StopAimRightAnimation();
+			_enemyAnimator.StopLookRightAnimation();
 	}
 }

@@ -22,7 +22,7 @@ namespace Code.Gameplay.Features.Statuses.Systems
 
 		protected override void Execute(List<GameEntity> statuses)
 		{
-			foreach (var status in statuses)
+			foreach (GameEntity status in statuses)
 			{
 				GameEntity target = status.Target();
 

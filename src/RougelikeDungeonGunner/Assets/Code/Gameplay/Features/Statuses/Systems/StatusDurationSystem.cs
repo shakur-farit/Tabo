@@ -1,4 +1,5 @@
 ﻿using Code.Gameplay.Common.Time;
+using Code.Gameplay.Features.Effects;
 using Entitas;
 
 namespace Code.Gameplay.Features.Statuses.Systems
@@ -24,7 +25,12 @@ namespace Code.Gameplay.Features.Statuses.Systems
 				if (status.TimeLeft >= 0)
 					status.ReplaceTimeLeft(status.TimeLeft - _time.DeltaTime);
 				else
+				{
+					status.Target()
+						.isStunned = false;
+
 					status.isUnapplied = true;
+				}
 			}
 		}
 	}

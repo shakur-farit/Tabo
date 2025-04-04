@@ -11,7 +11,7 @@ namespace Code.Gameplay.Features.Spawner.Systems
 	{
 		private readonly IEnemyFactory _enemyFactory;
 		private readonly IRandomService _randomService;
-		private readonly IGroup<GameEntity> _waves;
+		private readonly IGroup<GameEntity> _levels;
 		private readonly List<GameEntity> _buffer = new(1);
 
 		public SpawnEnemiesSystem(
@@ -21,20 +21,20 @@ namespace Code.Gameplay.Features.Spawner.Systems
 		{
 			_enemyFactory = enemyFactory;
 			_randomService = randomService;
-			_waves = game.GetGroup(GameMatcher
+			_levels = game.GetGroup(GameMatcher
 				.AllOf(
 					GameMatcher.EnemyWave));
 		}
 
 		public void Execute()
 		{
-			foreach (GameEntity wave in _waves.GetEntities(_buffer))
+			foreach (GameEntity level in _levels.GetEntities(_buffer))
 			{
-				foreach (EnemiesInWave enemiesInWave in wave.EnemyWave.EnemiesInWave)
+				foreach (EnemiesInWave enemiesInWave in level.EnemyWave.EnemiesInWave)
 					for (int i = 0; i < enemiesInWave.Amount; i++)
 						_enemyFactory.CreateEnemy(enemiesInWave.EnemyTypeId, RandomPosition());
 
-				wave.isProcessed = true;
+				level.RemoveEnemyWave();
 			}
 		}
 
