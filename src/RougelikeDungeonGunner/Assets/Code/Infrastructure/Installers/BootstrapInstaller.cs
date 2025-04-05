@@ -7,10 +7,7 @@ using Code.Gameplay.Common.Time;
 using Code.Gameplay.Features.Ammo.Factory;
 using Code.Gameplay.Features.Effects.Factory;
 using Code.Gameplay.Features.Enemy.Factory;
-using Code.Gameplay.Features.Enemy.States.StateMachine;
 using Code.Gameplay.Features.Hero.Factory;
-using Code.Gameplay.Features.Hero.States.HeroAnimationStates;
-using Code.Gameplay.Features.Hero.States.StateMachine;
 using Code.Gameplay.Features.Levels;
 using Code.Gameplay.Features.Statuses.Applier;
 using Code.Gameplay.Features.Statuses.Factory;
@@ -38,8 +35,6 @@ namespace Code.Infrastructure.Installers
 			BindStateMachine();
 			BindStateFactory();
 			BindGameStates();
-			BindHeroAnimationStates();
-			BindEnemyAnimationStates();
 			BindInputService();
 			BindSystemFactory();
 			BindInfrastructureServices();
@@ -56,8 +51,6 @@ namespace Code.Infrastructure.Installers
 		private void BindStateMachine()
 		{
 			Container.BindInterfacesAndSelfTo<GameStateMachine>().AsSingle();
-			Container.BindInterfacesAndSelfTo<HeroAnimationStateMachine>().AsSingle();
-			Container.BindInterfacesAndSelfTo<EnemyAnimationStateMachine>().AsSingle();
 		}
 
 		private void BindStateFactory()
@@ -75,26 +68,6 @@ namespace Code.Infrastructure.Installers
 			Container.BindInterfacesAndSelfTo<LoadingBattleState>().AsSingle();
 			Container.BindInterfacesAndSelfTo<BattleEnterState>().AsSingle();
 			Container.BindInterfacesAndSelfTo<BattleLoopState>().AsSingle();
-		}
-
-		private void BindHeroAnimationStates()
-		{
-			Container.BindInterfacesAndSelfTo<AimDownAnimationState>().AsSingle();
-			Container.BindInterfacesAndSelfTo<AimUpAnimationState>().AsSingle();
-			Container.BindInterfacesAndSelfTo<AimRightAnimationState>().AsSingle();
-			Container.BindInterfacesAndSelfTo<AimLeftAnimationState>().AsSingle();
-			Container.BindInterfacesAndSelfTo<AimUpRightAnimationState>().AsSingle();
-			Container.BindInterfacesAndSelfTo<AimUpLeftAnimationState>().AsSingle();
-		}
-
-		private void BindEnemyAnimationStates()
-		{
-			Container.BindInterfacesAndSelfTo<EnemyDownDirectionAnimationState>().AsTransient();
-			Container.BindInterfacesAndSelfTo<EnemyLeftDirectionAnimationState>().AsTransient();
-			Container.BindInterfacesAndSelfTo<EnemyRightDirectionAnimationState>().AsTransient();
-			Container.BindInterfacesAndSelfTo<EnemyUpDirectionAnimationState>().AsTransient();
-			Container.BindInterfacesAndSelfTo<EnemyUpLeftDirectionAnimationState>().AsTransient();
-			Container.BindInterfacesAndSelfTo<EnemyUpRightDirectionAnimationState>().AsTransient();
 		}
 
 		private void BindContexts()
