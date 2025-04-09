@@ -22,6 +22,8 @@ namespace Code.Infrastructure.States.GameStates
 		{
 			InitializeProgress();
 
+			_progressProvider.SetTransientData(new TransientData());
+
 			_stateMachine.Enter<LoadStaticDataState>();
 		}
 

@@ -2,16 +2,15 @@
 using Code.Gameplay.Features.Cooldowns;
 using Code.Gameplay.Features.Levels.Configs;
 using Entitas;
-using UnityEngine;
 
 namespace Code.Gameplay.Features.Levels
 {
-	public class EnemyWaveOnLevelSystem : IExecuteSystem
+	public class AddEnemyWaveWithCooldownSystem : IExecuteSystem
 	{
 		private readonly IGroup<GameEntity> _levels;
 		private readonly List<GameEntity> _buffer = new(1);
 
-		public EnemyWaveOnLevelSystem(GameContext game)
+		public AddEnemyWaveWithCooldownSystem(GameContext game)
 		{
 			_levels = game.GetGroup(GameMatcher
 				.AllOf(

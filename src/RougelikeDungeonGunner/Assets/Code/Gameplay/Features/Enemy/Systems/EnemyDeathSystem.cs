@@ -9,6 +9,7 @@ namespace Code.Gameplay.Features.Enemy.Systems
 		private readonly List<GameEntity> _buffer = new(128);
 
 		private readonly IGroup<GameEntity> _enemies;
+		private readonly IGroup<GameEntity> _levels;
 
 		public EnemyDeathSystem(GameContext game)
 		{
@@ -18,10 +19,15 @@ namespace Code.Gameplay.Features.Enemy.Systems
 					GameMatcher.Dead,
 					GameMatcher.ProcessingDeath,
 					GameMatcher.EnemyAnimator));
+
+			_levels = game.GetGroup(GameMatcher
+				.AllOf(
+					GameMatcher.EnemiesInLevelCount));
 		}
 
 		public void Execute()
 		{
+			foreach (GameEntity level in _levels)
 			foreach (GameEntity enemy in _enemies.GetEntities(_buffer))
 			{
 				enemy.isMovementAvailable = false;
@@ -29,6 +35,8 @@ namespace Code.Gameplay.Features.Enemy.Systems
 				enemy.EnemyAnimator.PlayDied();
 				//enemy.ReplaceSelfDestructedTimer(2);
 				enemy.isDestructed = true;
+
+				level.ReplaceEnemiesInLevelCount(level.EnemiesInLevelCount - 1);
 			}
 		}
 	}

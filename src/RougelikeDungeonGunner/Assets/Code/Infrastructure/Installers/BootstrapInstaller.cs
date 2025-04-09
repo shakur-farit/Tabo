@@ -68,6 +68,7 @@ namespace Code.Infrastructure.Installers
 			Container.BindInterfacesAndSelfTo<LoadingBattleState>().AsSingle();
 			Container.BindInterfacesAndSelfTo<BattleEnterState>().AsSingle();
 			Container.BindInterfacesAndSelfTo<BattleLoopState>().AsSingle();
+			Container.BindInterfacesAndSelfTo<LevelCompleteState>().AsSingle();
 		}
 
 		private void BindContexts()

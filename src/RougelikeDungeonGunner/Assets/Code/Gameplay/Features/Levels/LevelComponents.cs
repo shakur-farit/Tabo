@@ -5,6 +5,7 @@ using Entitas;
 namespace Code.Gameplay.Features.Levels
 {
 	[Game] public class LevelTypeIdComponent : IComponent { public LevelTypeId Value; }
+	[Game] public class Level : IComponent { }
 
 	[Game] public class StartingTime : IComponent { public float Value; }
 	[Game] public class StartingTimeLeft : IComponent { public float Value; }
@@ -16,6 +17,8 @@ namespace Code.Gameplay.Features.Levels
 	[Game] public class EnemyWaves : IComponent { public List<EnemyWave> Value; }
 	[Game] public class EnemyWaveComponent : IComponent { public EnemyWave Value; }
 	[Game] public class SpawnedEnemyWaves : IComponent { public int Value; }
+	[Game] public class EnemiesInLevelCount : IComponent { public int Value; }
+	[Game] public class EnemiesInLevelCountCalculated : IComponent { }
 
 	[Game] public class EnvironmentSetupComponent : IComponent { public EnvironmentSetup Value; }
 	[Game] public class EnvironmentSetupAvailable : IComponent { }

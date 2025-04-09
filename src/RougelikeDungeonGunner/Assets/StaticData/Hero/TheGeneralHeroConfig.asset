@@ -18,4 +18,4 @@ MonoBehaviour:
   StartWeapon: 1
   CurrentHp: 100
   MaxHp: 100
-  MovementSpeed: 2
+  MovementSpeed: 3

@@ -2,6 +2,6 @@
 {
 	public interface ILevelFactory
 	{
-		GameEntity CreateLevel(LevelTypeId typeId);
+		GameEntity CreateLevel(int level);
 	}
 }

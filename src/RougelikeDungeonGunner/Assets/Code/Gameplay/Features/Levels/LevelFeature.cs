@@ -6,7 +6,11 @@ namespace Code.Gameplay.Features.Levels
 	{
 		public LevelFeature(ISystemsFactory systems)
 		{
-			Add(systems.Create<EnemyWaveOnLevelSystem>());
+			Add(systems.Create<CalculateEnemiesInLevelSystem>());
+			Add(systems.Create<AddEnemyWaveWithCooldownSystem>());
+			Add(systems.Create<MarkProcessedOnAllEnemiesDeadSystem>());
+			Add(systems.Create<MarkHeroDestructedOnLevelProcessedSystem>());
+			Add(systems.Create<FinalizeProcessedLevelSystem>());
 
 			Add(systems.Create<CleanupEnvironmentSetupSystem>());
 		}
