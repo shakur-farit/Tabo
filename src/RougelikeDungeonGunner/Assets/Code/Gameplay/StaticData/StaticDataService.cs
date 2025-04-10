@@ -4,6 +4,7 @@ using System.Linq;
 using Code.Gameplay.Features.Ammo;
 using Code.Gameplay.Features.Ammo.Config;
 using Code.Gameplay.Features.Enemy;
+using Code.Gameplay.Features.Enemy.Configs;
 using Code.Gameplay.Features.Hero;
 using Code.Gameplay.Features.Levels;
 using Code.Gameplay.Features.Levels.Configs;

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Entitas;
 
-namespace Code.Gameplay.Features.Ammo.Systems
+namespace Code.Gameplay.Features.Weapon.Systems
 {
 	public class MarkWeaponReadyToShotSystem : IExecuteSystem
 	{

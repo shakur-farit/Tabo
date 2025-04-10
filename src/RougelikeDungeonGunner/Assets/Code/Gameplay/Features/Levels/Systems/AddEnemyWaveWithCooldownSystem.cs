@@ -3,7 +3,7 @@ using Code.Gameplay.Features.Cooldowns;
 using Code.Gameplay.Features.Levels.Configs;
 using Entitas;
 
-namespace Code.Gameplay.Features.Levels
+namespace Code.Gameplay.Features.Levels.Systems
 {
 	public class AddEnemyWaveWithCooldownSystem : IExecuteSystem
 	{

@@ -5,7 +5,7 @@ using Code.Gameplay.Features.Levels.Configs;
 using Entitas;
 using UnityEngine;
 
-namespace Code.Gameplay.Features.Spawner.Systems
+namespace Code.Gameplay.Features.Enemy.Systems
 {
 	public class SpawnEnemiesSystem : IExecuteSystem
 	{

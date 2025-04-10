@@ -1,6 +1,6 @@
 ﻿using Code.Infrastructure;
 
-namespace Code.Gameplay.Features.Statuses.Systems
+namespace Code.Gameplay.Features.Statuses.Systems.StatusVisuals
 {
 	public sealed class StatusVisualsFeature : Feature
 	{

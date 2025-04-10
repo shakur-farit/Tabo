@@ -4,6 +4,7 @@ using Code.Common.Entity;
 using Code.Common.Extensions;
 using Code.Gameplay.Features.CharacterStats;
 using Code.Gameplay.Features.Effects;
+using Code.Gameplay.Features.Enemy.Configs;
 using Code.Gameplay.StaticData;
 using Code.Infrastructure.Identifiers;
 using UnityEngine;

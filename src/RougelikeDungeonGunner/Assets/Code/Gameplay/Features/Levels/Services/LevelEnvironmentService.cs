@@ -3,7 +3,7 @@ using Code.Gameplay.Common.Random;
 using Code.Gameplay.Features.Levels.Configs;
 using Code.Gameplay.StaticData;
 
-namespace Code.Gameplay.Features.Levels
+namespace Code.Gameplay.Features.Levels.Services
 {
 	public class LevelEnvironmentService : ILevelEnvironmentService
 	{

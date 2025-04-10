@@ -1,13 +1,13 @@
 ﻿using System.Collections.Generic;
 using Entitas;
 
-namespace Code.Gameplay.Features.Levels
+namespace Code.Gameplay.Features.Weapon.Systems
 {
-	public class MarkWeaponDestructedSystem : ReactiveSystem<GameEntity>
+	public class MarkWeaponDestructedOnLevelProcessedSystem : ReactiveSystem<GameEntity>
 	{
 		private readonly IGroup<GameEntity> _weapons;
 
-		public MarkWeaponDestructedSystem(GameContext context) : base(context)
+		public MarkWeaponDestructedOnLevelProcessedSystem(GameContext context) : base(context)
 		{
 			_weapons = context.GetGroup(GameMatcher.Weapon);
 		}

@@ -1,6 +1,6 @@
 ﻿using Entitas;
 
-namespace Code.Gameplay.Features.Levels
+namespace Code.Gameplay.Features.Levels.Systems
 {
 	public class MarkLevelProcessedOnAllEnemiesDeadSystem : IExecuteSystem
 	{

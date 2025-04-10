@@ -1,4 +1,5 @@
 ﻿using Code.Gameplay.Features.Enemy.Behaviours;
+using Code.Gameplay.Features.Enemy.Configs;
 using Code.Gameplay.StaticData;
 using Code.Infrastructure.View.Registrars;
 using UnityEngine;

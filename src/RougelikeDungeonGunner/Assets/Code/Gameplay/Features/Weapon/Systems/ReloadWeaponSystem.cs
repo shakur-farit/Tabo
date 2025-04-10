@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using Code.Gameplay.Common.Time;
 using Entitas;
-using UnityEngine;
 
 namespace Code.Gameplay.Features.Weapon.Systems
 {
@@ -31,7 +30,6 @@ namespace Code.Gameplay.Features.Weapon.Systems
 				if (weapon.ReloadTimeLeft > 0)
 				{
 					weapon.ReplaceReloadTimeLeft(weapon.ReloadTimeLeft - _time.DeltaTime);
-					Debug.Log("Reloading");
 				}
 				else
 				{

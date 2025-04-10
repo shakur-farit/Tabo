@@ -1,4 +1,7 @@
-﻿using Code.Infrastructure;
+﻿using Code.Gameplay.Features.Hero.Systems;
+using Code.Gameplay.Features.Levels.Systems;
+using Code.Gameplay.Features.Weapon.Systems;
+using Code.Infrastructure;
 
 namespace Code.Gameplay.Features.Levels
 {
@@ -9,10 +12,8 @@ namespace Code.Gameplay.Features.Levels
 			Add(systems.Create<CalculateEnemiesInLevelSystem>());
 			Add(systems.Create<AddEnemyWaveWithCooldownSystem>());
 			Add(systems.Create<MarkLevelProcessedOnAllEnemiesDeadSystem>());
-			//Add(systems.Create<MarkHeroDestructedOnLevelProcessedSystem>());
-			//Add(systems.Create<MarkWeaponDestructedOnLevelProcessedSystem>());
-			Add(systems.Create<MarkHeroDestructedSystem>());
-			Add(systems.Create<MarkWeaponDestructedSystem>());
+			Add(systems.Create<MarkHeroDestructedOnLevelProcessedSystem>());
+			Add(systems.Create<MarkWeaponDestructedOnLevelProcessedSystem>());
 			Add(systems.Create<FinalizeProcessedLevelSystem>());
 
 			Add(systems.Create<CleanupEnvironmentSetupSystem>());

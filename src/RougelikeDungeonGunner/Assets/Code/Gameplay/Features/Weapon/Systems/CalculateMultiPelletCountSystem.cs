@@ -1,7 +1,7 @@
 ﻿using Code.Gameplay.StaticData;
 using Entitas;
 
-namespace Code.Gameplay.Features.Ammo.Systems
+namespace Code.Gameplay.Features.Weapon.Systems
 {
 	public class CalculateMultiPelletCountSystem : IExecuteSystem
 	{

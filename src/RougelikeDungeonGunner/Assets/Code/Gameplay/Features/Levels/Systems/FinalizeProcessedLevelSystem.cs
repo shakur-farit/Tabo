@@ -4,7 +4,7 @@ using Code.Infrastructure.States.StateMachine;
 using Entitas;
 using UnityEngine;
 
-namespace Code.Gameplay.Features.Levels
+namespace Code.Gameplay.Features.Levels.Systems
 {
 	public class FinalizeProcessedLevelSystem : IExecuteSystem
 	{
@@ -25,7 +25,6 @@ namespace Code.Gameplay.Features.Levels
 		{
 			foreach (GameEntity level in _levels.GetEntities(_buffer))
 			{
-				Debug.Log("Level Complete");
 				level.isDestructed = true;
 				_stateMachine.Enter<LevelCompleteState>();
 			}

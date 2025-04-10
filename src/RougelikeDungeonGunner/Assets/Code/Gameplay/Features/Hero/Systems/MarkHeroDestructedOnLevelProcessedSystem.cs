@@ -1,13 +1,13 @@
 ﻿using System.Collections.Generic;
 using Entitas;
 
-namespace Code.Gameplay.Features.Levels
+namespace Code.Gameplay.Features.Hero.Systems
 {
-	public class MarkHeroDestructedSystem : ReactiveSystem<GameEntity>
+	public class MarkHeroDestructedOnLevelProcessedSystem : ReactiveSystem<GameEntity>
 	{
 		private readonly IGroup<GameEntity> _heroes;
 
-		public MarkHeroDestructedSystem(GameContext context) : base(context)
+		public MarkHeroDestructedOnLevelProcessedSystem(GameContext context) : base(context)
 		{
 			_heroes = context.GetGroup(GameMatcher.Hero);
 		}

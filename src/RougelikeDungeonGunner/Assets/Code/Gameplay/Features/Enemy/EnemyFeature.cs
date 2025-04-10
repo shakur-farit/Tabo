@@ -1,5 +1,4 @@
 ﻿using Code.Gameplay.Features.Enemy.Systems;
-using Code.Gameplay.Features.Spawner.Systems;
 using Code.Infrastructure;
 
 namespace Code.Gameplay.Features.Enemy

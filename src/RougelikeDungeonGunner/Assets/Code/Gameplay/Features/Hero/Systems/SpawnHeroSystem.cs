@@ -1,8 +1,7 @@
-﻿using Code.Gameplay.Features.Hero;
-using Code.Gameplay.Features.Hero.Factory;
+﻿using Code.Gameplay.Features.Hero.Factory;
 using Entitas;
 
-namespace Code.Gameplay.Features.Spawner.Systems
+namespace Code.Gameplay.Features.Hero.Systems
 {
 	public class SpawnHeroSystem : IExecuteSystem
 	{

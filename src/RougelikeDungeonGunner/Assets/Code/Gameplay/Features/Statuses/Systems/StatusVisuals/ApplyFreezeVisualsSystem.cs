@@ -2,7 +2,7 @@
 using Code.Gameplay.Features.Effects;
 using Entitas;
 
-namespace Code.Gameplay.Features.Statuses.Systems
+namespace Code.Gameplay.Features.Statuses.Systems.StatusVisuals
 {
 	public class ApplyFreezeVisualsSystem : ReactiveSystem<GameEntity>
 	{

@@ -1,7 +1,7 @@
 ﻿using Code.Infrastructure.View;
 using UnityEngine;
 
-namespace Code.Gameplay.Features.Enemy
+namespace Code.Gameplay.Features.Enemy.Configs
 {
 	[CreateAssetMenu(menuName = "Dungeon Gunner/Enemy Config", fileName = "EnemyConfig")]
 	public class EnemyConfig : ScriptableObject

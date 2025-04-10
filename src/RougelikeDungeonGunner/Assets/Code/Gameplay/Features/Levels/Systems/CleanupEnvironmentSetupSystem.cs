@@ -3,7 +3,7 @@ using Code.Common.Extensions;
 using Entitas;
 using UnityEngine;
 
-namespace Code.Gameplay.Features.Levels
+namespace Code.Gameplay.Features.Levels.Systems
 {
 	public class CleanupEnvironmentSetupSystem : ICleanupSystem
 	{
@@ -21,14 +21,10 @@ namespace Code.Gameplay.Features.Levels
 		public void Cleanup()
 		{
 			foreach (GameEntity level in _levels.GetEntities(_buffer))
-			{
 				level
 					.RemoveEnvironmentSetup()
 					.With(x => x.isEnvironmentSetupAvailable = false)
 					;
-
-				Debug.Log($"Cleanup environment");
-			}
 		}
 	}
 }

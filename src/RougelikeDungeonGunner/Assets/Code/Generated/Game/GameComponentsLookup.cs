@@ -82,69 +82,74 @@ public static class GameComponentsLookup {
     public const int Dead = 71;
     public const int MaxHp = 72;
     public const int ProcessingDeath = 73;
-    public const int Direction = 74;
-    public const int MovementAvailable = 75;
-    public const int Moving = 76;
-    public const int Speed = 77;
-    public const int Affected = 78;
-    public const int Applied = 79;
-    public const int ApplierStatusLink = 80;
-    public const int Duration = 81;
-    public const int Freeze = 82;
-    public const int Period = 83;
-    public const int Poison = 84;
-    public const int Status = 85;
-    public const int StatusTypeId = 86;
-    public const int TimeLeft = 87;
-    public const int TimeSinceLastTick = 88;
-    public const int Unapplied = 89;
-    public const int CollectTargetsContinuously = 90;
-    public const int CollectTargetsInterval = 91;
-    public const int CollectTargetsTimer = 92;
-    public const int LayerMask = 93;
-    public const int ProcessedTargets = 94;
-    public const int Radius = 95;
-    public const int ReadyToCollectTargets = 96;
-    public const int TargetsBuffer = 97;
-    public const int AutomaticPistol = 98;
-    public const int NewWeaponTypeId = 99;
-    public const int WeaponChangeable = 100;
-    public const int WeaponChangeRequested = 101;
-    public const int ClosestTargetPosition = 102;
-    public const int CurrentAmmoAmount = 103;
-    public const int FirePositionTransform = 104;
-    public const int LaserBlaster = 105;
-    public const int Machinegun = 106;
-    public const int MagazineNotEmpty = 107;
-    public const int MagazineSize = 108;
-    public const int MaxPelletsSpreadAngle = 109;
-    public const int MinPelletsSpreadAngle = 110;
-    public const int MultiPellet = 111;
-    public const int Pistol = 112;
-    public const int PlasmaGun = 113;
-    public const int Precharged = 114;
-    public const int PrechargeTime = 115;
-    public const int PrechargeTimeLeft = 116;
-    public const int ReadyToShoot = 117;
-    public const int Reloading = 118;
-    public const int ReloadTime = 119;
-    public const int ReloadTimeLeft = 120;
-    public const int Revolver = 121;
-    public const int RocketLauncher = 122;
-    public const int Shooting = 123;
-    public const int Shot = 124;
-    public const int Shotgun = 125;
-    public const int Sniper = 126;
-    public const int Weapon = 127;
-    public const int WeaponRotationAngle = 128;
-    public const int WeaponRotationPointTransform = 129;
-    public const int WeaponSpriteRenderer = 130;
-    public const int WeaponTypeId = 131;
-    public const int AxisInput = 132;
-    public const int Input = 133;
-    public const int MouseLeftButtonDown = 134;
+    public const int Collected = 74;
+    public const int LootTypeId = 75;
+    public const int PickupRadius = 76;
+    public const int Pullable = 77;
+    public const int Pulling = 78;
+    public const int Direction = 79;
+    public const int MovementAvailable = 80;
+    public const int Moving = 81;
+    public const int Speed = 82;
+    public const int Affected = 83;
+    public const int Applied = 84;
+    public const int ApplierStatusLink = 85;
+    public const int Duration = 86;
+    public const int Freeze = 87;
+    public const int Period = 88;
+    public const int Poison = 89;
+    public const int Status = 90;
+    public const int StatusTypeId = 91;
+    public const int TimeLeft = 92;
+    public const int TimeSinceLastTick = 93;
+    public const int Unapplied = 94;
+    public const int CollectTargetsContinuously = 95;
+    public const int CollectTargetsInterval = 96;
+    public const int CollectTargetsTimer = 97;
+    public const int LayerMask = 98;
+    public const int ProcessedTargets = 99;
+    public const int Radius = 100;
+    public const int ReadyToCollectTargets = 101;
+    public const int TargetsBuffer = 102;
+    public const int AutomaticPistol = 103;
+    public const int NewWeaponTypeId = 104;
+    public const int WeaponChangeable = 105;
+    public const int WeaponChangeRequested = 106;
+    public const int ClosestTargetPosition = 107;
+    public const int CurrentAmmoAmount = 108;
+    public const int FirePositionTransform = 109;
+    public const int LaserBlaster = 110;
+    public const int Machinegun = 111;
+    public const int MagazineNotEmpty = 112;
+    public const int MagazineSize = 113;
+    public const int MaxPelletsSpreadAngle = 114;
+    public const int MinPelletsSpreadAngle = 115;
+    public const int MultiPellet = 116;
+    public const int Pistol = 117;
+    public const int PlasmaGun = 118;
+    public const int Precharged = 119;
+    public const int PrechargeTime = 120;
+    public const int PrechargeTimeLeft = 121;
+    public const int ReadyToShoot = 122;
+    public const int Reloading = 123;
+    public const int ReloadTime = 124;
+    public const int ReloadTimeLeft = 125;
+    public const int Revolver = 126;
+    public const int RocketLauncher = 127;
+    public const int Shooting = 128;
+    public const int Shot = 129;
+    public const int Shotgun = 130;
+    public const int Sniper = 131;
+    public const int Weapon = 132;
+    public const int WeaponRotationAngle = 133;
+    public const int WeaponRotationPointTransform = 134;
+    public const int WeaponSpriteRenderer = 135;
+    public const int WeaponTypeId = 136;
+    public const int AxisInput = 137;
+    public const int Input = 138;
+    public const int MouseLeftButtonDown = 139;
 
-    public const int TotalComponents = 135;
+    public const int TotalComponents = 140;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -221,6 +226,11 @@ public static class GameComponentsLookup {
         "Dead",
         "MaxHp",
         "ProcessingDeath",
+        "Collected",
+        "LootTypeId",
+        "PickupRadius",
+        "Pullable",
+        "Pulling",
         "Direction",
         "MovementAvailable",
         "Moving",
@@ -359,6 +369,11 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Lifetime.Dead),
         typeof(Code.Gameplay.Features.Lifetime.MaxHp),
         typeof(Code.Gameplay.Features.Lifetime.ProcessingDeath),
+        typeof(Code.Gameplay.Features.Loot.LootComponents.Collected),
+        typeof(Code.Gameplay.Features.Loot.LootComponents.LootTypeIdComponent),
+        typeof(Code.Gameplay.Features.Loot.LootComponents.PickupRadius),
+        typeof(Code.Gameplay.Features.Loot.LootComponents.Pullable),
+        typeof(Code.Gameplay.Features.Loot.LootComponents.Pulling),
         typeof(Code.Gameplay.Features.Movement.Direction),
         typeof(Code.Gameplay.Features.Movement.MovementAvailable),
         typeof(Code.Gameplay.Features.Movement.Moving),
