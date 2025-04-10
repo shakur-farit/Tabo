@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Code.Common.Extensions;
 using Entitas;
+using UnityEngine;
 
 namespace Code.Gameplay.Features.Levels
 {
@@ -25,6 +26,8 @@ namespace Code.Gameplay.Features.Levels
 					.RemoveEnvironmentSetup()
 					.With(x => x.isEnvironmentSetupAvailable = false)
 					;
+
+				Debug.Log($"Cleanup environment");
 			}
 		}
 	}

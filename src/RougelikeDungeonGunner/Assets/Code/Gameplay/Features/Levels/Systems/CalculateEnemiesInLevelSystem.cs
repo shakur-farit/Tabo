@@ -25,13 +25,9 @@ namespace Code.Gameplay.Features.Levels
 			{
 				foreach (EnemyWave enemyWave in level.EnemyWaves)
 				foreach (EnemiesInWave enemiesInWave in enemyWave.EnemiesInWave)
-				{
 					level.ReplaceEnemiesInLevelCount(level.EnemiesInLevelCount + enemiesInWave.Amount);
-				}
 
 				level.isEnemiesInLevelCountCalculated = true;
-				Debug.Log(level.EnemiesInLevelCount);
-
 			}
 		}
 	}

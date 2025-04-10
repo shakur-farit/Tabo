@@ -5,6 +5,7 @@ using Code.Common.Extensions;
 using Code.Gameplay.Common.Random;
 using Code.Gameplay.Features.Levels.Configs;
 using Code.Gameplay.StaticData;
+using UnityEngine;
 
 namespace Code.Gameplay.Features.Levels
 {
@@ -35,6 +36,8 @@ namespace Code.Gameplay.Features.Levels
 				LevelConfig config = _staticDataService.GetLevelConfig(typeId);
 
 				int randomIndex = _random.Range(0, config.EnvironmentSetups.Count);
+
+				Debug.Log($"Create {typeId}");
 
 				return CreateEntity.Empty()
 						.AddId(_identifier.Next())

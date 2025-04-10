@@ -12,6 +12,7 @@ namespace Code.Gameplay.Features.Movement.Systems
 			_children = game.GetGroup(GameMatcher
 				.AllOf(
 					GameMatcher.ViewParent,
+					GameMatcher.Transform,
 					GameMatcher.Parented));
 		}
 

@@ -24,7 +24,7 @@ namespace Code.Gameplay.Features.Weapon
 			Add(systems.Create<PrechargeWeaponSystem>());
 
 			Add(systems.Create<CleanupClosestTargetSystem>());
-			Add(systems.Create<CleanupUnparentedWeaponsSystem>());
+			Add(systems.Create<MarkDestructedUnparentedWeaponsSystem>());
 		}
 	}
 }

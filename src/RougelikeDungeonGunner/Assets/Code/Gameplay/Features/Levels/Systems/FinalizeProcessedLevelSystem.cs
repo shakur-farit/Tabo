@@ -1,4 +1,5 @@
-﻿using Code.Infrastructure.States.GameStates;
+﻿using System.Collections.Generic;
+using Code.Infrastructure.States.GameStates;
 using Code.Infrastructure.States.StateMachine;
 using Entitas;
 using UnityEngine;
@@ -9,6 +10,7 @@ namespace Code.Gameplay.Features.Levels
 	{
 		private readonly IGameStateMachine _stateMachine;
 		private readonly IGroup<GameEntity> _levels;
+		private readonly List<GameEntity> _buffer = new(1);
 
 		public FinalizeProcessedLevelSystem(GameContext game, IGameStateMachine stateMachine)
 		{
@@ -21,7 +23,7 @@ namespace Code.Gameplay.Features.Levels
 
 		public void Execute()
 		{
-			foreach (GameEntity level in _levels)
+			foreach (GameEntity level in _levels.GetEntities(_buffer))
 			{
 				Debug.Log("Level Complete");
 				level.isDestructed = true;

@@ -19,6 +19,9 @@ namespace Code.Common.Systems
 		{
 			foreach (GameEntity entity in _entities)
 			{
+				if(entity.isHero)
+					Debug.Log("Hero is destruct");
+
 				entity.View.ReleaseEntity();
 				Object.Destroy(entity.View.gameObject);
 			}
