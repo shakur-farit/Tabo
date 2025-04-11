@@ -9,5 +9,7 @@ namespace Code.Gameplay.Features.Loot
 		[Game] public class Pulling : IComponent { }
 		[Game] public class Collected : IComponent { }
 		[Game] public class PickupRadius : IComponent { public float Value; }
+		
+		[Game] public class Coin : IComponent { public int Value; }
 	}
 }

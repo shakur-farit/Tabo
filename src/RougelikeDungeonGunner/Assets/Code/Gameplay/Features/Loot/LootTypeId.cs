@@ -3,8 +3,10 @@
 	public enum LootTypeId
 	{
 		Unknown = 0,
-		Coins = 1,
-		Heal = 2,
-		Shield = 3
+		CoinItem = 1,
+		HealingItem = 2,
+		ShieldItem = 3,
+		PoisonEnchantItem = 4,
+		FreezeEnchantItem = 5
 	}
 }

@@ -11,6 +11,7 @@ namespace Code.Gameplay.Features.Hero.Factory
 {
 	public class HeroFactory : IHeroFactory
 	{
+		private const int StartingCoinsCount = 0;
 		private readonly IIdentifierService _identifier;
 		private readonly IStaticDataService _staticDataService;
 
@@ -56,6 +57,7 @@ namespace Code.Gameplay.Features.Hero.Factory
 					.AddMaxHp(baseStats[Stats.MaxHp])
 					.AddSpeed(baseStats[Stats.Speed])
 					.AddViewPrefab(config.PrefabView)
+					.AddCoin(StartingCoinsCount)
 					.With(x => x.isHero = true)
 					.With(x => x.isMovementAvailable = true)
 					.With(x => x.isUnweaponed = true)

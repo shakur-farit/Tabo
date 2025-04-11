@@ -2,7 +2,7 @@
 using Code.Gameplay.Common.Physics;
 using Entitas;
 
-namespace Code.Gameplay.Features.Loot
+namespace Code.Gameplay.Features.Loot.Systems
 {
 	public class CastForPullableSystem : IExecuteSystem
 	{
@@ -16,7 +16,7 @@ namespace Code.Gameplay.Features.Loot
 			_physicsService = physicsService;
 			_looters = game.GetGroup(GameMatcher
 				.AllOf(
-					GameMatcher.WorldPosition, 
+					GameMatcher.WorldPosition,
 					GameMatcher.PickupRadius));
 		}
 
@@ -37,12 +37,12 @@ namespace Code.Gameplay.Features.Loot
 			}
 		}
 
-		private int LootInRadius(GameEntity looter) => 
+		private int LootInRadius(GameEntity looter) =>
 			_physicsService.CircleCastNonAlloc(looter.WorldPosition, looter.PickupRadius, _layerMask, _hitBuffer);
 
 		private void ClearBuffer()
 		{
-			for (int i = 0; i < _hitBuffer.Length; i++) 
+			for (int i = 0; i < _hitBuffer.Length; i++)
 				_hitBuffer[i] = null;
 		}
 	}

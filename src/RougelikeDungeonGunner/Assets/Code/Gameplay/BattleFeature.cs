@@ -30,10 +30,11 @@ namespace Code.Gameplay
 			Add(systems.Create<EnemyFeature>());
 			Add(systems.Create<DeathFeature>());
 
+			Add(systems.Create<LootFeature>());
+
 			Add(systems.Create<MovementFeature>());
 			Add(systems.Create<WeaponFeature>());
 			Add(systems.Create<AmmoFeature>());
-			Add(systems.Create<LootFeature>());
 
 			Add(systems.Create<CollectTargetsFeature>());
 			Add(systems.Create<EffectsFeature>());

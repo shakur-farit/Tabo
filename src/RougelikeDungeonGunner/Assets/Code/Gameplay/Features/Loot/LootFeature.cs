@@ -1,4 +1,4 @@
-﻿using System;
+﻿using Code.Gameplay.Features.Loot.Systems;
 using Code.Infrastructure;
 
 namespace Code.Gameplay.Features.Loot
@@ -7,7 +7,16 @@ namespace Code.Gameplay.Features.Loot
 	{
 		public LootFeature(ISystemsFactory systems)
 		{
-			
+			Add(systems.Create<CastForPullableSystem>());
+
+			Add(systems.Create<PullTowardsHeroSystem>());
+			Add(systems.Create<CollectWhenNearToHeroSystem>());
+
+			Add(systems.Create<CollectCoinsSystem>());
+			Add(systems.Create<CollectEffectItemSystem>());
+			Add(systems.Create<CollectStatusItemSystem>());
+
+			Add(systems.Create<CleanupCollectedSystem>());
 		}
 	}
 }
