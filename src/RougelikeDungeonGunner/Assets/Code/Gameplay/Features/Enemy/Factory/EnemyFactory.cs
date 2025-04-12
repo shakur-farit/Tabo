@@ -75,7 +75,7 @@ namespace Code.Gameplay.Features.Enemy.Factory
 					.AddCollectTargetsInterval(AttackInterval)
 					.AddCollectTargetsTimer(AttackTimerStartValue)
 					.AddLayerMask(CollisionLayer.Hero.AsMask())
-					.AddViewPrefab(config.PrefabView)
+					.AddViewPrefab(config.ViewPrefab)
 					.With(x => x.isEnemy = true)
 					.With(x => x.isMovementAvailable = true)
 				;

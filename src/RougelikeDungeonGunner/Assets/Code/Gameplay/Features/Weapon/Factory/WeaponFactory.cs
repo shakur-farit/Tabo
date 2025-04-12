@@ -91,7 +91,7 @@ namespace Code.Gameplay.Features.Weapon.Factory
 			return CreateEntity.Empty()
 					.AddId(_identifier.Next())
 					.AddWeaponTypeId(weaponTypeId)
-					.AddViewPrefab(config.PrefabView)
+					.AddViewPrefab(config.ViewPrefab)
 					.AddViewParent(parent)
 					.AddWorldPosition(at)
 					.AddRadius(level.FireRange)

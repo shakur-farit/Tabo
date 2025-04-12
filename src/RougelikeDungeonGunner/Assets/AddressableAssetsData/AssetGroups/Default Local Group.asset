@@ -131,6 +131,11 @@ MonoBehaviour:
     m_SerializedLabels:
     - LevelConfig
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e1d7da7e71c63da49a48f4906eb40c6f
+    m_Address: Assets/StaticData/Loot/CoinLootConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 7128017d563554245a79368046c75e1a, type: 2}
   m_SchemaSet:

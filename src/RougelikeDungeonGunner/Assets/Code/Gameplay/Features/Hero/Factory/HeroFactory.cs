@@ -6,12 +6,14 @@ using Code.Gameplay.Features.CharacterStats;
 using Code.Gameplay.StaticData;
 using UnityEngine;
 using System;
+using Code.Gameplay.Features.Hero.Configs;
 
 namespace Code.Gameplay.Features.Hero.Factory
 {
 	public class HeroFactory : IHeroFactory
 	{
 		private const int StartingCoinsCount = 0;
+		private const float PickupRadius = 0.5f;
 		private readonly IIdentifierService _identifier;
 		private readonly IStaticDataService _staticDataService;
 
@@ -56,8 +58,9 @@ namespace Code.Gameplay.Features.Hero.Factory
 					.AddCurrentHp(baseStats[Stats.MaxHp])
 					.AddMaxHp(baseStats[Stats.MaxHp])
 					.AddSpeed(baseStats[Stats.Speed])
-					.AddViewPrefab(config.PrefabView)
+					.AddViewPrefab(config.ViewPrefab)
 					.AddCoin(StartingCoinsCount)
+					.AddPickupRadius(PickupRadius)
 					.With(x => x.isHero = true)
 					.With(x => x.isMovementAvailable = true)
 					.With(x => x.isUnweaponed = true)

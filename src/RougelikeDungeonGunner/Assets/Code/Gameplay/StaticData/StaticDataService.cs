@@ -6,8 +6,11 @@ using Code.Gameplay.Features.Ammo.Config;
 using Code.Gameplay.Features.Enemy;
 using Code.Gameplay.Features.Enemy.Configs;
 using Code.Gameplay.Features.Hero;
+using Code.Gameplay.Features.Hero.Configs;
 using Code.Gameplay.Features.Levels;
 using Code.Gameplay.Features.Levels.Configs;
+using Code.Gameplay.Features.Loot;
+using Code.Gameplay.Features.Loot.Configs;
 using Code.Gameplay.Features.Weapon;
 using Code.Gameplay.Features.Weapon.Configs;
 using Code.Infrastructure.AssetManagement;
@@ -22,12 +25,14 @@ namespace Code.Gameplay.StaticData
 		private const string EnemyConfigLabel = "EnemyConfig";
 		private const string HeroConfigLabel = "HeroConfig";
 		private const string LevelConfigLabel = "LevelConfig";
+		private const string LootConfigLabel = "LootConfig";
 
 		private Dictionary<AmmoTypeId, AmmoConfig> _ammoById;
 		private Dictionary<WeaponTypeId, WeaponConfig> _weaponById;
 		private Dictionary<EnemyTypeId, EnemyConfig> _enemyById;
 		private Dictionary<HeroTypeId, HeroConfig> _heroById;
 		private Dictionary<LevelTypeId, LevelConfig> _levelById;
+		private Dictionary<LootTypeId, LootConfig> _lootById;
 
 		private readonly IAssetProvider _assetProvider;
 
@@ -41,6 +46,7 @@ namespace Code.Gameplay.StaticData
 			await LoadEnemies();
 			await LoadHeroes();
 			await LoadLevels();
+			await LoadLoots();
 		}
 
 		public AmmoConfig GetAmmoConfig(AmmoTypeId ammoTypeId)
@@ -103,6 +109,14 @@ namespace Code.Gameplay.StaticData
 			throw new Exception($"Level config for {levelId} was not found");
 		}
 
+		public LootConfig GetLootConfig(LootTypeId lootId)
+		{
+			if (_lootById.TryGetValue(lootId, out LootConfig config))
+				return config;
+
+			throw new Exception($"Loot config for {lootId} was not found");
+		}
+
 		private async UniTask LoadAbilities() =>
 			_ammoById = (await _assetProvider.LoadAll<AmmoConfig>(AmmoConfig))
 				.ToDictionary(x => x.ammoTypeId, x => x);
@@ -122,5 +136,10 @@ namespace Code.Gameplay.StaticData
 		private async UniTask LoadLevels() =>
 			_levelById = (await _assetProvider.LoadAll<LevelConfig>(LevelConfigLabel))
 				.ToDictionary(x => x.LevelTypeId, x => x);
+
+		private async UniTask LoadLoots() =>
+			_lootById = (await _assetProvider.LoadAll<LootConfig>(LootConfigLabel))
+				.ToDictionary(x => x.LootTypeId, x => x);
+
 	}
 }

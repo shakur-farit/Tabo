@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Code.Gameplay.Features.Hero.Configs;
 using Code.Gameplay.Features.Weapon.Factory;
 using Code.Gameplay.StaticData;
 using Entitas;

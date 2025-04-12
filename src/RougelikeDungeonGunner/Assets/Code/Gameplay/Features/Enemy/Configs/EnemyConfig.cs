@@ -7,7 +7,7 @@ namespace Code.Gameplay.Features.Enemy.Configs
 	public class EnemyConfig : ScriptableObject
 	{
 		public EnemyTypeId EnemyTypeId;
-		public EntityBehaviour PrefabView;
+		public EntityBehaviour ViewPrefab;
 		public RuntimeAnimatorController AnimatorController;
 		[Range(1, 100)] public int CurrentHp;
 		[Range(1, 100)] public int MaxHp;

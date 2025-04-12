@@ -8,7 +8,7 @@ namespace Code.Gameplay.Features.Weapon.Configs
 	public class WeaponConfig : ScriptableObject
 	{
 		public WeaponTypeId WeaponTypeId;
-		public EntityBehaviour PrefabView;
+		public EntityBehaviour ViewPrefab;
 		public Sprite WeaponSprite;
 		public Vector2 FirePosition;
 
