@@ -59,7 +59,7 @@ namespace Code.Gameplay.Features.Hero.Factory
 					.AddMaxHp(baseStats[Stats.MaxHp])
 					.AddSpeed(baseStats[Stats.Speed])
 					.AddViewPrefab(config.ViewPrefab)
-					.AddCoin(StartingCoinsCount)
+					.AddCoins(StartingCoinsCount)
 					.AddPickupRadius(PickupRadius)
 					.With(x => x.isHero = true)
 					.With(x => x.isMovementAvailable = true)

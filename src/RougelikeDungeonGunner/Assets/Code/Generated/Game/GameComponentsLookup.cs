@@ -82,7 +82,7 @@ public static class GameComponentsLookup {
     public const int Dead = 71;
     public const int MaxHp = 72;
     public const int ProcessingDeath = 73;
-    public const int Coin = 74;
+    public const int Coins = 74;
     public const int Collected = 75;
     public const int LootTypeId = 76;
     public const int PickupRadius = 77;
@@ -227,7 +227,7 @@ public static class GameComponentsLookup {
         "Dead",
         "MaxHp",
         "ProcessingDeath",
-        "Coin",
+        "Coins",
         "Collected",
         "LootTypeId",
         "PickupRadius",
@@ -371,7 +371,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Lifetime.Dead),
         typeof(Code.Gameplay.Features.Lifetime.MaxHp),
         typeof(Code.Gameplay.Features.Lifetime.ProcessingDeath),
-        typeof(Code.Gameplay.Features.Loot.LootComponents.Coin),
+        typeof(Code.Gameplay.Features.Loot.LootComponents.Coins),
         typeof(Code.Gameplay.Features.Loot.LootComponents.Collected),
         typeof(Code.Gameplay.Features.Loot.LootComponents.LootTypeIdComponent),
         typeof(Code.Gameplay.Features.Loot.LootComponents.PickupRadius),

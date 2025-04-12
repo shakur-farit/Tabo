@@ -11,9 +11,9 @@ namespace Code.Gameplay.Features.Levels
 		{
 			Add(systems.Create<CalculateEnemiesInLevelSystem>());
 			Add(systems.Create<AddEnemyWaveWithCooldownSystem>());
-			Add(systems.Create<MarkLevelProcessedOnAllEnemiesDeadSystem>());
-			Add(systems.Create<MarkHeroDestructedOnLevelProcessedSystem>());
-			Add(systems.Create<MarkWeaponDestructedOnLevelProcessedSystem>());
+			//Add(systems.Create<MarkLevelProcessedOnAllEnemiesDeadSystem>());
+			//Add(systems.Create<MarkHeroDestructedOnLevelProcessedSystem>());
+			//Add(systems.Create<MarkWeaponDestructedOnLevelProcessedSystem>());
 			Add(systems.Create<FinalizeProcessedLevelSystem>());
 
 			Add(systems.Create<CleanupEnvironmentSetupSystem>());

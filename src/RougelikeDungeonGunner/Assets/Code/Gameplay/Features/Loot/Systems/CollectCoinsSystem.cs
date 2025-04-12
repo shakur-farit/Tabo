@@ -12,19 +12,19 @@ namespace Code.Gameplay.Features.Loot.Systems
 			_collected = game.GetGroup(GameMatcher
 				.AllOf(
 					GameMatcher.Collected,
-					GameMatcher.Coin));
+					GameMatcher.Coins));
 
 			_heroes = game.GetGroup(GameMatcher
 				.AllOf(
 					GameMatcher.Hero,
-					GameMatcher.Coin));
+					GameMatcher.Coins));
 		}
 
 		public void Execute()
 		{
 			foreach (GameEntity hero in _heroes)
 			foreach (GameEntity collected in _collected)
-				hero.ReplaceCoin(hero.Coin + collected.Coin);
+				hero.ReplaceCoins(hero.Coins + collected.Coins);
 		}
 	}
 }

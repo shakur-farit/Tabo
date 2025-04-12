@@ -119,7 +119,7 @@ namespace Code.Gameplay.StaticData
 
 		private async UniTask LoadAbilities() =>
 			_ammoById = (await _assetProvider.LoadAll<AmmoConfig>(AmmoConfig))
-				.ToDictionary(x => x.ammoTypeId, x => x);
+				.ToDictionary(x => x.AmmoTypeId, x => x);
 
 		private async UniTask LoadWeapons() =>
 			_weaponById = (await _assetProvider.LoadAll<WeaponConfig>(WeaponConfigLabel))

@@ -13,11 +13,12 @@ MonoBehaviour:
   m_Name: AutomaticPistolConfig
   m_EditorClassIdentifier: 
   WeaponTypeId: 4
-  PrefabView: {fileID: 3867516666948492017, guid: 69172fbde18e101418b3b1f7089f9a29, type: 3}
-  WeaponSprite: {fileID: 21300000, guid: a735f74a317b5f944929af56be472cb7, type: 3}
+  ViewPrefab: {fileID: 3867516666948492017, guid: 69172fbde18e101418b3b1f7089f9a29, type: 3}
+  Sprite: {fileID: 21300000, guid: a735f74a317b5f944929af56be472cb7, type: 3}
   FirePosition: {x: 0.9, y: 0.275}
   Levels:
-  - FireRange: 7
+  - isInfinityAmmo: 0
+    FireRange: 7
     Cooldown: 0.5
     ReloadTime: 1
     PrechargeTime: 0

@@ -2,7 +2,9 @@
 using Code.Gameplay.Features.Loot.Systems;
 using Code.Infrastructure;
 using System;
-using Code.Common.Extensions;
+using Code.Gameplay.Features.Enemy.Behaviours;
+using Code.Gameplay.Features.Enemy.Configs;
+using UnityEngine.Serialization;
 
 namespace Code.Gameplay.Features.Loot
 {

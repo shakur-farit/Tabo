@@ -15,11 +15,12 @@ namespace Code.Gameplay.Features.Weapon.Registrars
 		[Inject]
 		public void Constructor(IStaticDataService staticDataService) =>
 			_staticDataService = staticDataService;
+
 		public override void RegisterComponents()
 		{
 			_spriteRenderer.sprite =
 				_staticDataService
-					.GetWeaponConfig(Entity.WeaponTypeId).WeaponSprite;
+					.GetWeaponConfig(Entity.WeaponTypeId).Sprite;
 
 			Entity
 				.AddWeaponSpriteRenderer(_spriteRenderer);

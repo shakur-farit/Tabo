@@ -13,11 +13,12 @@ MonoBehaviour:
   m_Name: ShotgunConfig
   m_EditorClassIdentifier: 
   WeaponTypeId: 3
-  PrefabView: {fileID: 3867516666948492017, guid: 69172fbde18e101418b3b1f7089f9a29, type: 3}
-  WeaponSprite: {fileID: 21300000, guid: 957e7c5a4532c7b4fa28cd31bf5aee5d, type: 3}
+  ViewPrefab: {fileID: 3867516666948492017, guid: 69172fbde18e101418b3b1f7089f9a29, type: 3}
+  Sprite: {fileID: 21300000, guid: 957e7c5a4532c7b4fa28cd31bf5aee5d, type: 3}
   FirePosition: {x: 1.215, y: 0.23}
   Levels:
-  - FireRange: 6
+  - isInfinityAmmo: 0
+    FireRange: 6
     Cooldown: 1.3
     ReloadTime: 1.5
     PrechargeTime: 0

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: LaserBlasterConfig
   m_EditorClassIdentifier: 
   WeaponTypeId: 8
-  PrefabView: {fileID: 3867516666948492017, guid: 69172fbde18e101418b3b1f7089f9a29, type: 3}
-  WeaponSprite: {fileID: 21300000, guid: e9d1276e0a6b9bf42b04b5470c7073fb, type: 3}
+  ViewPrefab: {fileID: 3867516666948492017, guid: 69172fbde18e101418b3b1f7089f9a29, type: 3}
+  Sprite: {fileID: 21300000, guid: e9d1276e0a6b9bf42b04b5470c7073fb, type: 3}
   FirePosition: {x: 1.115, y: 0.275}
   Levels:
   - isInfinityAmmo: 1

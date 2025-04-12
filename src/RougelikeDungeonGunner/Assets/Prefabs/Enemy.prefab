@@ -120,7 +120,6 @@ GameObject:
   - component: {fileID: 8166552356577901019}
   - component: {fileID: 555350148321321711}
   - component: {fileID: 2865671190086617213}
-  - component: {fileID: 8147719445628319563}
   - component: {fileID: 7506000045583834391}
   - component: {fileID: 8526994447061613267}
   - component: {fileID: 4320597656362753033}
@@ -260,20 +259,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EntityView: {fileID: 8166552356577901019}
   _enemyAnimator: {fileID: 555350148321321711}
---- !u!114 &8147719445628319563
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5438004444555498043}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4eee636bc49e97940b7239e9da120b4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EntityView: {fileID: 8166552356577901019}
-  _spriteRenderer: {fileID: 5241945053856362886}
 --- !u!114 &7506000045583834391
 MonoBehaviour:
   m_ObjectHideFlags: 0

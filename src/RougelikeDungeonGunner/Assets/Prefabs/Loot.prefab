@@ -27,7 +27,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7837466841284669904}
@@ -94,6 +94,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7837466841284669904}
   - component: {fileID: 4494103209788103135}
+  - component: {fileID: 4183021661537760819}
+  - component: {fileID: 4861672964701166593}
   - component: {fileID: 1635307446632545918}
   m_Layer: 8
   m_Name: Loot
@@ -130,6 +132,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f995b7c574ebe654d91168f1183f0916, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4183021661537760819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7211374989496638016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b8a654e6cfe0df4183acf3af6618ebe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EntityView: {fileID: 4494103209788103135}
+--- !u!114 &4861672964701166593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7211374989496638016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1d028bf754848e49b30b928c3591ae8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EntityView: {fileID: 4494103209788103135}
+  _spriteRenderer: {fileID: 7268932067284476884}
 --- !u!58 &1635307446632545918
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -164,4 +193,4 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.7
+  m_Radius: 0.3

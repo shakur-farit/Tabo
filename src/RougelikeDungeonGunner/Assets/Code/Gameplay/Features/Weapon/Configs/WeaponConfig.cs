@@ -9,7 +9,7 @@ namespace Code.Gameplay.Features.Weapon.Configs
 	{
 		public WeaponTypeId WeaponTypeId;
 		public EntityBehaviour ViewPrefab;
-		public Sprite WeaponSprite;
+		public Sprite Sprite;
 		public Vector2 FirePosition;
 
 		public List<WeaponLevel> Levels;

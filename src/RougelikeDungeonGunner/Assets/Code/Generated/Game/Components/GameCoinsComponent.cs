@@ -8,17 +8,17 @@
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherCoin;
+    static Entitas.IMatcher<GameEntity> _matcherCoins;
 
-    public static Entitas.IMatcher<GameEntity> Coin {
+    public static Entitas.IMatcher<GameEntity> Coins {
         get {
-            if (_matcherCoin == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.Coin);
+            if (_matcherCoins == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.Coins);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherCoin = matcher;
+                _matcherCoins = matcher;
             }
 
-            return _matcherCoin;
+            return _matcherCoins;
         }
     }
 }
@@ -33,28 +33,28 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Features.Loot.LootComponents.Coin coin { get { return (Code.Gameplay.Features.Loot.LootComponents.Coin)GetComponent(GameComponentsLookup.Coin); } }
-    public int Coin { get { return coin.Value; } }
-    public bool hasCoin { get { return HasComponent(GameComponentsLookup.Coin); } }
+    public Code.Gameplay.Features.Loot.LootComponents.Coins coins { get { return (Code.Gameplay.Features.Loot.LootComponents.Coins)GetComponent(GameComponentsLookup.Coins); } }
+    public int Coins { get { return coins.Value; } }
+    public bool hasCoins { get { return HasComponent(GameComponentsLookup.Coins); } }
 
-    public GameEntity AddCoin(int newValue) {
-        var index = GameComponentsLookup.Coin;
-        var component = (Code.Gameplay.Features.Loot.LootComponents.Coin)CreateComponent(index, typeof(Code.Gameplay.Features.Loot.LootComponents.Coin));
+    public GameEntity AddCoins(int newValue) {
+        var index = GameComponentsLookup.Coins;
+        var component = (Code.Gameplay.Features.Loot.LootComponents.Coins)CreateComponent(index, typeof(Code.Gameplay.Features.Loot.LootComponents.Coins));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
     }
 
-    public GameEntity ReplaceCoin(int newValue) {
-        var index = GameComponentsLookup.Coin;
-        var component = (Code.Gameplay.Features.Loot.LootComponents.Coin)CreateComponent(index, typeof(Code.Gameplay.Features.Loot.LootComponents.Coin));
+    public GameEntity ReplaceCoins(int newValue) {
+        var index = GameComponentsLookup.Coins;
+        var component = (Code.Gameplay.Features.Loot.LootComponents.Coins)CreateComponent(index, typeof(Code.Gameplay.Features.Loot.LootComponents.Coins));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;
     }
 
-    public GameEntity RemoveCoin() {
-        RemoveComponent(GameComponentsLookup.Coin);
+    public GameEntity RemoveCoins() {
+        RemoveComponent(GameComponentsLookup.Coins);
         return this;
     }
 }
