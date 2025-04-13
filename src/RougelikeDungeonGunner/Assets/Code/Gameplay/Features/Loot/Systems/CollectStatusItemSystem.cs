@@ -1,6 +1,7 @@
 ﻿using Code.Gameplay.Features.Statuses;
 using Code.Gameplay.Features.Statuses.Applier;
 using Entitas;
+using UnityEngine;
 
 namespace Code.Gameplay.Features.Loot.Systems
 {
@@ -8,7 +9,7 @@ namespace Code.Gameplay.Features.Loot.Systems
 	{
 		private readonly IStatusApplier _statusApplier;
 		private readonly IGroup<GameEntity> _collected;
-		private readonly IGroup<GameEntity> _heroes;
+		private readonly IGroup<GameEntity> _ammo;
 
 		public CollectStatusItemSystem(GameContext game, IStatusApplier statusApplier)
 		{
@@ -18,7 +19,7 @@ namespace Code.Gameplay.Features.Loot.Systems
 					GameMatcher.Collected,
 					GameMatcher.StatusSetups));
 
-			_heroes = game.GetGroup(GameMatcher
+			_ammo = game.GetGroup(GameMatcher
 				.AllOf(
 					GameMatcher.Hero,
 					GameMatcher.Id,
@@ -27,11 +28,12 @@ namespace Code.Gameplay.Features.Loot.Systems
 
 		public void Execute()
 		{
-			foreach (GameEntity hero in _heroes)
+			foreach (GameEntity ammo in _ammo)
 			foreach (GameEntity collected in _collected)
 			foreach (StatusSetup statusSetup in collected.StatusSetups)
 			{
-				_statusApplier.ApplyStatus(statusSetup, hero.Id, hero.Id);
+				_statusApplier.ApplyStatus(statusSetup, ammo.Id, ammo.Id);
+				Debug.Log("Here");
 			}
 		}
 	}

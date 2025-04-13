@@ -13,7 +13,7 @@ namespace Code.Gameplay.Features.Hero.Factory
 	public class HeroFactory : IHeroFactory
 	{
 		private const int StartingCoinsCount = 0;
-		private const float PickupRadius = 0.5f;
+		private const float PickupRadius = 2f;
 		private readonly IIdentifierService _identifier;
 		private readonly IStaticDataService _staticDataService;
 

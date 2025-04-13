@@ -2,6 +2,7 @@
 using Code.Common.Entity;
 using Code.Common.Extensions;
 using Code.Infrastructure.Identifiers;
+using UnityEngine;
 
 namespace Code.Gameplay.Features.Statuses.Factory
 {
@@ -49,12 +50,16 @@ namespace Code.Gameplay.Features.Statuses.Factory
 				.AddStatusTypeId(StatusTypeId.Freeze)
 				.With(x => x.isFreeze = true);
 
-		private GameEntity CreateStatusEntity(int producerId, int targetId, StatusSetup setup) =>
-			CreateEntity.Empty()
+		private GameEntity CreateStatusEntity(int producerId, int targetId, StatusSetup setup)
+		{
+			Debug.Log("CreateStatus");
+
+			return CreateEntity.Empty()
 				.AddId(_identifier.Next())
 				.AddEffectValue(setup.Value)
 				.AddProducerId(producerId)
 				.AddTargetId(targetId)
 				.With(x => x.isStatus = true);
+		}
 	}
 }

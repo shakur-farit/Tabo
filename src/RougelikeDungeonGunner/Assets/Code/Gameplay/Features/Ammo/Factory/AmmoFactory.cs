@@ -47,7 +47,6 @@ namespace Code.Gameplay.Features.Ammo.Factory
 			}
 
 			throw new Exception($"Ammo for {ammoTypeId} type was not found");
-
 		}
 
 		private GameEntity CreatePistolBullet(AmmoTypeId ammoTypeId, int ammoLevel, Vector3 at) =>
@@ -67,11 +66,11 @@ namespace Code.Gameplay.Features.Ammo.Factory
 				.With(x => x.isAutomaticPistolBullet = true);
 
 		private GameEntity CreateMachinegunBullet(AmmoTypeId ammoTypeId, int ammoLevel, Vector3 at) =>
-			CreateAmmoEntity(ammoTypeId, at,  ammoLevel)
+			CreateAmmoEntity(ammoTypeId, at, ammoLevel)
 				.With(x => x.isMachinegunBullet = true);
 
 		private GameEntity CreateSniperBullet(AmmoTypeId ammoTypeId, int ammoLevel, Vector3 at) =>
-			CreateAmmoEntity(ammoTypeId, at,  ammoLevel)
+			CreateAmmoEntity(ammoTypeId, at, ammoLevel)
 				.With(x => x.isSniperBullet = true);
 
 		private GameEntity CreatePlasmaBolt(AmmoTypeId ammoTypeId, int ammoLevel, Vector3 at) =>
@@ -98,13 +97,13 @@ namespace Code.Gameplay.Features.Ammo.Factory
 					.AddViewPrefab(ammo.ViewPrefab)
 					.AddSpeed(level.Speed)
 					.AddRadius(level.ContactRadius)
-					.AddEffectSetups(level.EffectSetups)
-					.AddStatusSetups(level.StatusSetups)
 					.AddTargetsBuffer(new List<int>(TargetsBufferSize))
 					.AddProcessedTargets(new List<int>(TargetsBufferSize))
 					.AddLayerMask(CollisionLayer.Enemy.AsMask())
 					.With(x => x.isAmmo = true)
 					.With(x => x.AddTargetLimit(level.Pierce), when: level.Pierce > 0)
+					.With(x => x.AddEffectSetups(level.EffectSetups), when: level.EffectSetups.IsNullOrEmpty() == false)
+					.With(x => x.AddStatusSetups(level.StatusSetups), when: level.StatusSetups.IsNullOrEmpty() == false)
 					.With(x => x.isMovementAvailable = true)
 					.With(x => x.isReadyToCollectTargets = true)
 					.With(x => x.isCollectTargetsContinuously = true)

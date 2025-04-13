@@ -25,11 +25,14 @@ namespace Code.Gameplay.Features.Enemy.Systems
 		{
 			foreach (GameEntity enemy in _enemies)
 			{
-				_lootFactory.CreateLoot(
-					Random.Range(0, 1f) <= 0.5f 
-						? LootTypeId.HealingItem 
-						: LootTypeId.CoinItem,
-					enemy.WorldPosition);
+				float randomFloat = Random.Range(0, 1f);
+
+				if (randomFloat <= 0.3f)
+					_lootFactory.CreateLoot(LootTypeId.CoinItem, enemy.WorldPosition);
+				else if(randomFloat > 0.3f && randomFloat < 0.6)
+					_lootFactory.CreateLoot(LootTypeId.HealingItem, enemy.WorldPosition);
+				else
+					_lootFactory.CreateLoot(LootTypeId.PoisonEnchantItem, enemy.WorldPosition);
 			}
 		}
 	}
