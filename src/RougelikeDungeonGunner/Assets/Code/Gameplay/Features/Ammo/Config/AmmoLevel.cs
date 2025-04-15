@@ -11,7 +11,5 @@ namespace Code.Gameplay.Features.Ammo.Config
 		public float Speed;
 		public int Pierce = 1;
 		public float ContactRadius;
-		public List<EffectSetup> EffectSetups;
-		public List<StatusSetup> StatusSetups;
 	}
 }

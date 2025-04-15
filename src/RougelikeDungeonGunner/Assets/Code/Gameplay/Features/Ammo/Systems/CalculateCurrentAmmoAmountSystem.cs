@@ -32,6 +32,4 @@ namespace Code.Gameplay.Features.Ammo.Systems
 			}
 		}
 	}
-
-	
 }

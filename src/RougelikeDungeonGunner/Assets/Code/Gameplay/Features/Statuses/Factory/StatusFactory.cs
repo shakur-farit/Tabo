@@ -2,7 +2,6 @@
 using Code.Common.Entity;
 using Code.Common.Extensions;
 using Code.Infrastructure.Identifiers;
-using UnityEngine;
 
 namespace Code.Gameplay.Features.Statuses.Factory
 {
@@ -15,51 +14,41 @@ namespace Code.Gameplay.Features.Statuses.Factory
 
 		public GameEntity CreateStatus(StatusSetup setup, int producerId, int targetId)
 		{
-			GameEntity status;
-
 			switch (setup.StatusTypeId)
 			{
 				case StatusTypeId.Poison:
-					status = CreatePoisonStatus(producerId, targetId, setup);
-					break;
+					return CreatePoisonStatus(producerId, targetId, setup);
 				case StatusTypeId.Freeze:
-					status = CreateFreezeStatus(producerId, targetId, setup);
-					break;
-
+					return CreateFreezeStatus(producerId, targetId, setup);
 				default:
 					throw new Exception($"Status with type id {setup.StatusTypeId} does not exist");
 			}
-
-			status
-				.With(x => x.AddDuration(setup.Duration), when: setup.Duration > 0)
-				.With(x => x.AddTimeLeft(setup.Duration), when: setup.Duration > 0)
-				.With(x => x.AddPeriod(setup.Period), when: setup.Period > 0)
-				.With(x => x.AddTimeSinceLastTick(0), when: setup.Period > 0)
-				;
-
-			return status;
 		}
 
 		private GameEntity CreatePoisonStatus(int producerId, int targetId, StatusSetup setup) =>
 			CreateStatusEntity(producerId, targetId, setup)
-				.AddStatusTypeId(StatusTypeId.Poison)
-				.With(x => x.isPoison = true);
+				.With(x => x.isPoison = true)
+			;
 
 		private GameEntity CreateFreezeStatus(int producerId, int targetId, StatusSetup setup) =>
 			CreateStatusEntity(producerId, targetId, setup)
-				.AddStatusTypeId(StatusTypeId.Freeze)
-				.With(x => x.isFreeze = true);
+				.With(x => x.isFreeze = true)
+			;
 
 		private GameEntity CreateStatusEntity(int producerId, int targetId, StatusSetup setup)
 		{
-			Debug.Log("CreateStatus");
-
 			return CreateEntity.Empty()
 				.AddId(_identifier.Next())
+				.AddStatusTypeId(setup.StatusTypeId)
 				.AddEffectValue(setup.Value)
 				.AddProducerId(producerId)
 				.AddTargetId(targetId)
-				.With(x => x.isStatus = true);
+				.With(x => x.isStatus = true)
+				.With(x => x.AddStatusDuration(setup.StatusDuration), when: setup.StatusDuration > 0)
+				.With(x => x.AddStatusTimeLeft(setup.StatusDuration), when: setup.StatusDuration > 0)
+				.With(x => x.AddPeriod(setup.Period), when: setup.Period > 0)
+				.With(x => x.AddTimeSinceLastTick(0), when: setup.Period > 0)
+				;
 		}
 	}
 }

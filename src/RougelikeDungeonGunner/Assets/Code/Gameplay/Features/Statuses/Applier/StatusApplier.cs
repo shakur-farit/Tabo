@@ -1,4 +1,4 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
 using Code.Common.EntityIndices;
 using Code.Common.Extensions;
 using Code.Gameplay.Features.Statuses.Factory;
@@ -18,11 +18,12 @@ namespace Code.Gameplay.Features.Statuses.Applier
 
 		public GameEntity ApplyStatus(StatusSetup setup, int producerId, int targetId)
 		{
-			GameEntity status = _game.TargetStatusOfType(setup.StatusTypeId, targetId).FirstOrDefault();
+			HashSet<GameEntity> existingStatuses = _game.TargetStatusOfType(setup.StatusTypeId, targetId);
 
-			if (status != null) 
-				return status.ReplaceTimeLeft(status.Duration);
-			
+			foreach (GameEntity status in existingStatuses)
+				if (setup.IsIdenticalTo(status))
+					return status.ReplaceStatusTimeLeft(setup.StatusDuration);
+
 			return _statusFactory.CreateStatus(setup, producerId, targetId)
 				.With(x => x.isApplied = true);
 		}

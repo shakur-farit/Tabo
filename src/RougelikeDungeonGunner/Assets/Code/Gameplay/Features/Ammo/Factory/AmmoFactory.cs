@@ -102,8 +102,6 @@ namespace Code.Gameplay.Features.Ammo.Factory
 					.AddLayerMask(CollisionLayer.Enemy.AsMask())
 					.With(x => x.isAmmo = true)
 					.With(x => x.AddTargetLimit(level.Pierce), when: level.Pierce > 0)
-					.With(x => x.AddEffectSetups(level.EffectSetups), when: level.EffectSetups.IsNullOrEmpty() == false)
-					.With(x => x.AddStatusSetups(level.StatusSetups), when: level.StatusSetups.IsNullOrEmpty() == false)
 					.With(x => x.isMovementAvailable = true)
 					.With(x => x.isReadyToCollectTargets = true)
 					.With(x => x.isCollectTargetsContinuously = true)

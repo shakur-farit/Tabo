@@ -7,7 +7,7 @@ namespace Code.Gameplay.Features.Statuses
 	{
 		public StatusTypeId StatusTypeId;
 		public float Value;
-		public float Duration;
+		public float StatusDuration;
 		public float Period;
 	}
 }

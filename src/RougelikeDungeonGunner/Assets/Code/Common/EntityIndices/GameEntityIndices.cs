@@ -28,8 +28,8 @@ namespace Code.Common.EntityIndices
 					  GameMatcher.StatusTypeId,
 					  GameMatcher.TargetId,
 					  GameMatcher.Status,
-					  GameMatcher.Duration,
-					  GameMatcher.TimeLeft)),
+					  GameMatcher.StatusDuration,
+					  GameMatcher.StatusTimeLeft)),
 				getKey: GetTargetStatusKey,
 				new StatusKeyEqualityComparer()));
 

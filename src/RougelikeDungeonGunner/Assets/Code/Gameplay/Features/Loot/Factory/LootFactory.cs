@@ -1,6 +1,9 @@
-﻿using Code.Common.Entity;
+﻿using System.Collections.Generic;
+using System.Linq;
+using Code.Common.Entity;
 using Code.Common.Extensions;
 using Code.Gameplay.Features.Loot.Configs;
+using Code.Gameplay.Features.Statuses;
 using Code.Gameplay.StaticData;
 using Code.Infrastructure.Identifiers;
 using UnityEngine;
@@ -29,7 +32,7 @@ namespace Code.Gameplay.Features.Loot.Factory
 					.AddViewPrefab(config.ViewPrefab)
 					.With(x => x.AddCoins(config.Coins), when: config.Coins > 0)
 					.With(x => x.AddEffectSetups(config.EffectSetups), when: config.EffectSetups.IsNullOrEmpty() == false)
-					.With(x => x.AddStatusSetups(config.StatusSetups), when: config.StatusSetups.IsNullOrEmpty() == false)
+					.With(x => x.AddTemporaryStatusSetups(config.StatusSetups), when: config.StatusSetups.IsNullOrEmpty() == false)
 					.With(x => x.isPullable = true)
 				;
 		}

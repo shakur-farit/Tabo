@@ -109,6 +109,8 @@ namespace Code.Gameplay.Features.Weapon.Factory
 					.With(x => x.AddCurrentAmmoAmount(level.MagazineSize), when: level.isInfinityAmmo == false)
 					.With(x => x.AddReloadTime(level.ReloadTime), when: level.ReloadTime > 0 && level.isInfinityAmmo == false)
 					.With(x => x.AddReloadTimeLeft(level.ReloadTime), when: level.ReloadTime > 0 && level.isInfinityAmmo == false)
+					.With(x => x.AddEffectSetups(level.EffectSetups), when: level.EffectSetups.IsNullOrEmpty() == false)
+					.With(x => x.AddPermanentStatusSetups(level.StatusSetups), when: level.StatusSetups.IsNullOrEmpty() == false)
 					.PutOnCooldown()
 				;
 		}

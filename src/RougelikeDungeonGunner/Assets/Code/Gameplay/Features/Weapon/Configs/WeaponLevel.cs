@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Code.Gameplay.Features.Effects;
+using Code.Gameplay.Features.Statuses;
+using System;
+using System.Collections.Generic;
 
 namespace Code.Gameplay.Features.Weapon.Configs
 {
@@ -14,5 +17,8 @@ namespace Code.Gameplay.Features.Weapon.Configs
 		public int PelletCount = 1;
 		public float MinSpreadAngle;
 		public float MaxSpreadAngle;
+
+		public List<EffectSetup> EffectSetups;
+		public List<StatusSetup> StatusSetups;
 	}
 }

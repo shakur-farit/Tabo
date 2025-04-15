@@ -26,3 +26,7 @@ MonoBehaviour:
     PelletCount: 1
     MinSpreadAngle: -5
     MaxSpreadAngle: 5
+    EffectSetups:
+    - EffectTypeId: 1
+      Value: 3
+    StatusSetups: []

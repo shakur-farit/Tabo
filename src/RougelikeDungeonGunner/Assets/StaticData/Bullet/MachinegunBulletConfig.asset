@@ -15,10 +15,6 @@ MonoBehaviour:
   AmmoTypeId: 5
   ViewPrefab: {fileID: 2243231872987813085, guid: a5967ca81ad889847ae902288d60c7a5, type: 3}
   Levels:
-  - Speed: 8
+  - Speed: 7
     Pierce: 1
     ContactRadius: 0.1
-    EffectSetups:
-    - EffectTypeId: 1
-      Value: 2
-    StatusSetups: []

@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 58ad05875d303c14da9f16618bcda545, type: 3}
-  m_Name: PoisonEnchantItemLootConfig
+  m_Name: FreezeEnchantItemLootConfig
   m_EditorClassIdentifier: 
-  LootTypeId: 4
+  LootTypeId: 5
   ViewPrefab: {fileID: 4494103209788103135, guid: c97df207954ad734eaf0eab1d27c9f42, type: 3}
-  Sprite: {fileID: 3641686006095517685, guid: 1a59e6589a702274ca77ec6b61130abd, type: 3}
+  Sprite: {fileID: -2878736502288998233, guid: ab89f761ffc11b9468624cc72d2c1214, type: 3}
   Coins: 0
   EffectSetups: []
   StatusSetups:
   - Setup:
-      StatusTypeId: 1
-      Value: 1
-      StatusDuration: 3
-      Period: 1
-    Duration: 10
+      StatusTypeId: 2
+      Value: -5
+      StatusDuration: 2
+      Period: 0
+    Duration: 5

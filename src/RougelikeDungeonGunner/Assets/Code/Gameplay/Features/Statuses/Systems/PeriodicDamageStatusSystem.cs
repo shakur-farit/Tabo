@@ -30,8 +30,6 @@ namespace Code.Gameplay.Features.Statuses.Systems
 		{
 			foreach (GameEntity status in _statuses)
 			{
-				Debug.Log("InPeriodicDamage");
-
 				if (status.TimeSinceLastTick >= 0)
 					status.ReplaceTimeSinceLastTick(status.TimeSinceLastTick - _time.DeltaTime);
 				else
@@ -41,8 +39,6 @@ namespace Code.Gameplay.Features.Statuses.Systems
 						GetEffectSetup(status), 
 						status.ProducerId,
 						status.TargetId);
-
-					Debug.Log("MakeDamage");
 				}
 			}
 		}

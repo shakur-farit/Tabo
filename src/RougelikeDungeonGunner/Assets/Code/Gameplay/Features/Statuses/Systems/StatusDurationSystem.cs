@@ -15,18 +15,19 @@ namespace Code.Gameplay.Features.Statuses.Systems
 			_statuses = game.GetGroup(GameMatcher
 				.AllOf(
 					GameMatcher.Status,
-					GameMatcher.TimeLeft));
+					GameMatcher.StatusTimeLeft));
 		}
 
 		public void Execute()
 		{
 			foreach (GameEntity status in _statuses)
 			{
-				if (status.TimeLeft >= 0)
-					status.ReplaceTimeLeft(status.TimeLeft - _time.DeltaTime);
+				if (status.StatusTimeLeft >= 0)
+					status.ReplaceStatusTimeLeft(status.StatusTimeLeft - _time.DeltaTime);
 				else
 				{
-					status.Target()
+					if(status.Target() != null)
+						status.Target()
 						.isStunned = false;
 
 					status.isUnapplied = true;
