@@ -18,9 +18,7 @@ MonoBehaviour:
   Coins: 0
   EffectSetups: []
   StatusSetups:
-  - Setup:
-      StatusTypeId: 2
-      Value: -5
-      StatusDuration: 2
-      Period: 0
-    Duration: 5
+  - StatusTypeId: 2
+    Value: -5
+    StatusDuration: 2
+    Period: 0

@@ -16,6 +16,6 @@ namespace Code.Gameplay.Features.Loot.Configs
 		public int Coins;
 
 		public List<EffectSetup> EffectSetups;
-		public List<TemporaryStatusData> StatusSetups;
+		public List<StatusSetup> StatusSetups;
 	}
 }

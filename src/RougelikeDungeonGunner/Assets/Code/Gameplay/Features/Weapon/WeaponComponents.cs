@@ -34,10 +34,7 @@ namespace Code.Gameplay.Features.Weapon
 	[Game] public class Reloading : IComponent { }
 
 	[Game] public class EffectSetups : IComponent { public List<EffectSetup> Value; }
-	[Game] public class PermanentStatusSetups : IComponent { public List<StatusSetup> Value; }
-	[Game] public class TemporaryStatusSetups : IComponent { public List<TemporaryStatusData> Value; }
-	[Game] public class TemporaryStatusDuration : IComponent { public float Value; }
-	[Game] public class TemporaryStatusTimeLeft : IComponent { public float Value; }
+	[Game] public class StatusSetups : IComponent { public List<StatusSetup> Value; }
 
 	[Game] public class Pistol : IComponent { }
 	[Game] public class Revolver : IComponent { }

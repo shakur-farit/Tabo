@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using Code.Gameplay.Features.Effects;
-using Code.Gameplay.Features.Statuses;
-using Entitas;
+﻿using Entitas;
 
 namespace Code.Gameplay.Features.Ammo
 {
@@ -9,7 +6,6 @@ namespace Code.Gameplay.Features.Ammo
 
 	[Game] public class AmmoTypeIdComponent : IComponent { public AmmoTypeId Value; }
 	[Game] public class TargetLimit : IComponent { public int Value; }
-	[Game] public class StatusSetups : IComponent { public List<StatusSetup> Value; }
 
 	[Game] public class PistolBullet : IComponent { }
 	[Game] public class RevolverBullet : IComponent { }

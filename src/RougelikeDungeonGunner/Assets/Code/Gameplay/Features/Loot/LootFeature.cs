@@ -19,7 +19,7 @@ namespace Code.Gameplay.Features.Loot
 
 			Add(systems.Create<CollectCoinsSystem>());
 			Add(systems.Create<CollectEffectItemSystem>());
-			Add(systems.Create<CollectTemporaryStatusItemSystem>());
+			Add(systems.Create<CollectStatusItemSystem>());
 
 			Add(systems.Create<CleanupCollectedSystem>());
 		}

@@ -19,9 +19,7 @@ namespace Code.Gameplay.Features.Ammo
 			Add(systems.Create<CreatingOfRocketMissileSystem>());
 			Add(systems.Create<CreatingOfSniperBulletSystem>());
 			Add(systems.Create<ApplyEffectsToAmmoSystem>());
-			Add(systems.Create<ApplyPermanentStatusesToAmmoSystem>());
-			Add(systems.Create<ApplyTemporaryStatusesToAmmoSystem>());
-			Add(systems.Create<ApplyCombinedStatusesToAmmoSystem>());
+			Add(systems.Create<ApplyStatusesToAmmoSystem>());
 			Add(systems.Create<CalculateCurrentAmmoAmountSystem>());
 			Add(systems.Create<MarkAmmoProcessedOnWeaponFireRangeSystem>());
 			Add(systems.Create<MarkAmmoProcessedOnTargetLimitExceededSystem>());
