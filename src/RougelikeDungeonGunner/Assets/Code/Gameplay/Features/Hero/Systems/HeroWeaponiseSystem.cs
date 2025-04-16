@@ -35,7 +35,7 @@ namespace Code.Gameplay.Features.Hero.Systems
 			{
 				HeroConfig config = _staticDataService.GetHeroConfig(HeroTypeId.TheGeneral);
 
-				_weaponFactory.CreateWeapon(config.StartWeapon, 1, hero.ParentTransform, Vector2.zero);
+				_weaponFactory.CreateWeapon(config.StartWeapon, 1, hero.ParentTransform, Vector2.zero, hero.Id);
 
 				hero.isUnweaponed = false;
 			}

@@ -1,5 +1,6 @@
 ﻿using Code.Gameplay.Features.Ammo;
 using Code.Gameplay.Features.Ammo.Config;
+using Code.Gameplay.Features.Effects;
 using Code.Gameplay.Features.Enemy;
 using Code.Gameplay.Features.Enemy.Configs;
 using Code.Gameplay.Features.Hero;
@@ -25,5 +26,6 @@ namespace Code.Gameplay.StaticData
     HeroConfig GetHeroConfig(HeroTypeId heroId);
     LevelConfig GetLevelConfig(LevelTypeId levelId);
     LootConfig GetLootConfig(LootTypeId lootId);
+    EnchantConfig GetEnchantConfig(EnchantTypeId id);
   }
 }

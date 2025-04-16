@@ -15,7 +15,7 @@ MonoBehaviour:
   m_DefaultGroup: f40428f047dc54a46b8184ab91599836
   m_currentHash:
     serializedVersion: 2
-    Hash: d02aeebb34527dfdb25f475fe21ba6f2
+    Hash: 61114f68bbbd7830b55883ff003437f5
   m_OptimizeCatalogSize: 0
   m_BuildRemoteCatalog: 0
   m_BundleLocalCatalog: 0
@@ -93,6 +93,7 @@ MonoBehaviour:
     - HeroConfig
     - LevelConfig
     - LootConfig
+    - EnchantConfig
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: 85357d346e02ee54ab80d633e7b0c1cf, type: 2}

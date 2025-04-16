@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58ad05875d303c14da9f16618bcda545, type: 3}
   m_Name: HealLootConfig
   m_EditorClassIdentifier: 
-  LootTypeId: 2
+  TypeId: 2
   ViewPrefab: {fileID: 4494103209788103135, guid: c97df207954ad734eaf0eab1d27c9f42, type: 3}
   Sprite: {fileID: 21300000, guid: 93356131eec0f44458223985928ac6e3, type: 3}
   Coins: 0

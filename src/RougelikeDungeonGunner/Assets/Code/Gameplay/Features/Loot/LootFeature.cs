@@ -1,10 +1,5 @@
-﻿using Code.Gameplay.Features.Enemy;
-using Code.Gameplay.Features.Loot.Systems;
+﻿using Code.Gameplay.Features.Loot.Systems;
 using Code.Infrastructure;
-using System;
-using Code.Gameplay.Features.Enemy.Behaviours;
-using Code.Gameplay.Features.Enemy.Configs;
-using UnityEngine.Serialization;
 
 namespace Code.Gameplay.Features.Loot
 {
@@ -19,7 +14,6 @@ namespace Code.Gameplay.Features.Loot
 
 			Add(systems.Create<CollectCoinsSystem>());
 			Add(systems.Create<CollectEffectItemSystem>());
-			Add(systems.Create<CollectStatusItemSystem>());
 
 			Add(systems.Create<CleanupCollectedSystem>());
 		}

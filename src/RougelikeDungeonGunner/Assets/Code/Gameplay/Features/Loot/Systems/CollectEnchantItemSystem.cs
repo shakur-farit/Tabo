@@ -3,18 +3,18 @@ using Entitas;
 
 namespace Code.Gameplay.Features.Loot.Systems
 {
-	public class CollectTemporaryStatusItemSystem : IExecuteSystem
+	public class CollectEnchantItemSystem : IExecuteSystem
 	{
 		private readonly IGroup<GameEntity> _collected;
 		private readonly IGroup<GameEntity> _weapons;
 		private readonly List<GameEntity> _buffer = new(1);
 
-		public CollectTemporaryStatusItemSystem(GameContext game)
+		public CollectEnchantItemSystem(GameContext game)
 		{
 			_collected = game.GetGroup(GameMatcher
 				.AllOf(
-					GameMatcher.Collected
-					//GameMatcher.StatusSetups
+					GameMatcher.Collected,
+					GameMatcher.EnchantTypeId
 					));
 
 			_weapons = game.GetGroup(GameMatcher
@@ -27,16 +27,7 @@ namespace Code.Gameplay.Features.Loot.Systems
 			foreach (GameEntity weapon in _weapons.GetEntities(_buffer))
 			foreach (GameEntity collected in _collected)
 			{
-				//if (weapon.hasTemporaryStatusSetups)
-				//{
-				//	foreach (StatusSetup setup in collected.TemporaryStatusSetups.ToList())
-				//		if (weapon.TemporaryStatusSetups.Contains(setup) == false)
-				//			weapon.TemporaryStatusSetups.Add(setup);
-				//}
-				//else
-				//{
-				//	weapon.AddTemporaryStatusSetups(new List<StatusSetup>(collected.TemporaryStatusSetups));
-				//}
+				
 			}
 		}
 	}

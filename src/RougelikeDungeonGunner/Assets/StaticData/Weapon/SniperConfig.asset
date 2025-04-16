@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c169df0c55d374fb648c370f9b7fea, type: 3}
   m_Name: SniperConfig
   m_EditorClassIdentifier: 
-  WeaponTypeId: 6
+  TypeId: 6
   ViewPrefab: {fileID: 3867516666948492017, guid: 69172fbde18e101418b3b1f7089f9a29, type: 3}
   Sprite: {fileID: 21300000, guid: 7e70ae1621ea16746be436ae77e38ce9, type: 3}
   FirePosition: {x: 1.515, y: 0.21}

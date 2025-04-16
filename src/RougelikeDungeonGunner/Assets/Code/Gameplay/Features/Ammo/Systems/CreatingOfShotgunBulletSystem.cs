@@ -47,7 +47,7 @@ namespace Code.Gameplay.Features.Ammo.Systems
 				{
 					_ammoFactory
 						.CreateAmmo(AmmoTypeId.ShotgunBullet, 1, weapon.FirePositionTransform.position)
-						.AddProducerId(weapon.Id)
+						.AddProducerId(weapon.ProducerId)
 						.ReplaceDirection(GetSpreadDirection(weapon))
 						.With(x => x.isMoving = true);
 				}

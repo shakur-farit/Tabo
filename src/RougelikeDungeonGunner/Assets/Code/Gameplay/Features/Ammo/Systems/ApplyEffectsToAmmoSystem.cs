@@ -26,9 +26,7 @@ namespace Code.Gameplay.Features.Ammo.Systems
 		{
 			foreach (GameEntity weapon in _weapons)
 			foreach (GameEntity ammo in _ammo.GetEntities(_buffer))
-			{
 				ammo.AddEffectSetups(weapon.EffectSetups);
-			}
 		}
 	}
 }

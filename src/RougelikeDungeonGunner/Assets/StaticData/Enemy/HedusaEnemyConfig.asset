@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4918d858ae4269f4eb851105c3fd703d, type: 3}
   m_Name: HedusaEnemyConfig
   m_EditorClassIdentifier: 
-  EnemyTypeId: 1
+  TypeId: 1
   ViewPrefab: {fileID: 8166552356577901019, guid: 9dc33cf00c86b7440a425de8b022c28a, type: 3}
   AnimatorController: {fileID: 9100000, guid: 19b6ff9fbadc74e479b63068d33eb245, type: 2}
   CurrentHp: 5

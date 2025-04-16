@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Code.Gameplay.Features.Ammo;
 using Code.Gameplay.Features.Ammo.Config;
+using Code.Gameplay.Features.Effects;
 using Code.Gameplay.Features.Enemy;
 using Code.Gameplay.Features.Enemy.Configs;
 using Code.Gameplay.Features.Hero;
@@ -26,6 +27,7 @@ namespace Code.Gameplay.StaticData
 		private const string HeroConfigLabel = "HeroConfig";
 		private const string LevelConfigLabel = "LevelConfig";
 		private const string LootConfigLabel = "LootConfig";
+		private const string EnchantConfigLabel = "EnchantConfig";
 
 		private Dictionary<AmmoTypeId, AmmoConfig> _ammoById;
 		private Dictionary<WeaponTypeId, WeaponConfig> _weaponById;
@@ -33,6 +35,7 @@ namespace Code.Gameplay.StaticData
 		private Dictionary<HeroTypeId, HeroConfig> _heroById;
 		private Dictionary<LevelTypeId, LevelConfig> _levelById;
 		private Dictionary<LootTypeId, LootConfig> _lootById;
+		private Dictionary<EnchantTypeId, EnchantConfig> _enchantById;
 
 		private readonly IAssetProvider _assetProvider;
 
@@ -47,19 +50,20 @@ namespace Code.Gameplay.StaticData
 			await LoadHeroes();
 			await LoadLevels();
 			await LoadLoots();
+			await LoadEnchants();
 		}
 
-		public AmmoConfig GetAmmoConfig(AmmoTypeId ammoTypeId)
+		public AmmoConfig GetAmmoConfig(AmmoTypeId id)
 		{
-			if (_ammoById.TryGetValue(ammoTypeId, out AmmoConfig config))
+			if (_ammoById.TryGetValue(id, out AmmoConfig config))
 				return config;
 
-			throw new Exception($"Ammo config for {ammoTypeId} was not found");
+			throw new Exception($"Ammo config for {id} was not found");
 		}
 
-		public AmmoLevel GetAmmoLevel(AmmoTypeId ammoTypeId, int level)
+		public AmmoLevel GetAmmoLevel(AmmoTypeId id, int level)
 		{
-			AmmoConfig config = GetAmmoConfig(ammoTypeId);
+			AmmoConfig config = GetAmmoConfig(id);
 
 			if (level > config.Levels.Count)
 				level = config.Levels.Count;
@@ -67,17 +71,17 @@ namespace Code.Gameplay.StaticData
 			return config.Levels[level - 1];
 		}
 
-		public WeaponConfig GetWeaponConfig(WeaponTypeId weaponTypeId)
+		public WeaponConfig GetWeaponConfig(WeaponTypeId id)
 		{
-			if (_weaponById.TryGetValue(weaponTypeId, out WeaponConfig config))
+			if (_weaponById.TryGetValue(id, out WeaponConfig config))
 				return config;
 
-			throw new Exception($"Weapon config for {weaponTypeId} was not found");
+			throw new Exception($"Weapon config for {id} was not found");
 		}
 
-		public WeaponLevel GetWeaponLevel(WeaponTypeId weaponTypeId, int level)
+		public WeaponLevel GetWeaponLevel(WeaponTypeId id, int level)
 		{
-			WeaponConfig config = GetWeaponConfig(weaponTypeId);
+			WeaponConfig config = GetWeaponConfig(id);
 
 			if (level > config.Levels.Count)
 				level = config.Levels.Count;
@@ -85,61 +89,72 @@ namespace Code.Gameplay.StaticData
 			return config.Levels[level - 1];
 		}
 
-		public EnemyConfig GetEnemyConfig(EnemyTypeId enemyId)
+		public EnemyConfig GetEnemyConfig(EnemyTypeId id)
 		{
-			if (_enemyById.TryGetValue(enemyId, out EnemyConfig config))
+			if (_enemyById.TryGetValue(id, out EnemyConfig config))
 				return config;
 
-			throw new Exception($"Enemy config for {enemyId} was not found");
+			throw new Exception($"Enemy config for {id} was not found");
 		}
 
-		public HeroConfig GetHeroConfig(HeroTypeId heroId)
+		public HeroConfig GetHeroConfig(HeroTypeId id)
 		{
-			if (_heroById.TryGetValue(heroId, out HeroConfig config))
+			if (_heroById.TryGetValue(id, out HeroConfig config))
 				return config;
 
-			throw new Exception($"Hero config for {heroId} was not found");
+			throw new Exception($"Hero config for {id} was not found");
 		}
 
-		public LevelConfig GetLevelConfig(LevelTypeId levelId)
+		public LevelConfig GetLevelConfig(LevelTypeId id)
 		{
-			if (_levelById.TryGetValue(levelId, out LevelConfig config))
+			if (_levelById.TryGetValue(id, out LevelConfig config))
 				return config;
 
-			throw new Exception($"Level config for {levelId} was not found");
+			throw new Exception($"Level config for {id} was not found");
 		}
 
-		public LootConfig GetLootConfig(LootTypeId lootId)
+		public LootConfig GetLootConfig(LootTypeId id)
 		{
-			if (_lootById.TryGetValue(lootId, out LootConfig config))
+			if (_lootById.TryGetValue(id, out LootConfig config))
 				return config;
 
-			throw new Exception($"Loot config for {lootId} was not found");
+			throw new Exception($"Loot config for {id} was not found");
+		}
+
+		public EnchantConfig GetEnchantConfig(EnchantTypeId id)
+		{
+			if (_enchantById.TryGetValue(id, out EnchantConfig config))
+				return config;
+
+			throw new Exception($"Enchant config for {id} was not found");
 		}
 
 		private async UniTask LoadAbilities() =>
 			_ammoById = (await _assetProvider.LoadAll<AmmoConfig>(AmmoConfig))
-				.ToDictionary(x => x.AmmoTypeId, x => x);
+				.ToDictionary(x => x.TypeId, x => x);
 
 		private async UniTask LoadWeapons() =>
 			_weaponById = (await _assetProvider.LoadAll<WeaponConfig>(WeaponConfigLabel))
-				.ToDictionary(x => x.WeaponTypeId, x => x);
+				.ToDictionary(x => x.TypeId, x => x);
 
 		private async UniTask LoadEnemies() =>
 			_enemyById = (await _assetProvider.LoadAll<EnemyConfig>(EnemyConfigLabel))
-				.ToDictionary(x => x.EnemyTypeId, x => x);
+				.ToDictionary(x => x.TypeId, x => x);
 
 		private async UniTask LoadHeroes() =>
 			_heroById = (await _assetProvider.LoadAll<HeroConfig>(HeroConfigLabel))
-				.ToDictionary(x => x.HeroTypeId, x => x);
+				.ToDictionary(x => x.TypeId, x => x);
 		
 		private async UniTask LoadLevels() =>
 			_levelById = (await _assetProvider.LoadAll<LevelConfig>(LevelConfigLabel))
-				.ToDictionary(x => x.LevelTypeId, x => x);
+				.ToDictionary(x => x.TypeId, x => x);
 
 		private async UniTask LoadLoots() =>
 			_lootById = (await _assetProvider.LoadAll<LootConfig>(LootConfigLabel))
-				.ToDictionary(x => x.LootTypeId, x => x);
+				.ToDictionary(x => x.TypeId, x => x);
 
+		private async UniTask LoadEnchants() =>
+			_enchantById = (await _assetProvider.LoadAll<EnchantConfig>(EnchantConfigLabel))
+				.ToDictionary(x => x.TypeId, x => x);
 	}
 }

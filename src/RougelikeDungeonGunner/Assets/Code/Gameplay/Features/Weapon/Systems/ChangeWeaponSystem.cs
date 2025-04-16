@@ -31,15 +31,14 @@ namespace Code.Gameplay.Features.Weapon.Systems
 		public void Execute()
 		{
 			foreach (GameEntity changeRequest in _changeRequests)
+			foreach (GameEntity weapon in _weapons.GetEntities(_buffer))
 			{
-				foreach (GameEntity weapon in _weapons.GetEntities(_buffer))
-				{
-					Transform parent = weapon.ViewParent;
+				Transform parent = weapon.ViewParent;
+				int producerId = weapon.ProducerId;
 
-					weapon.isUnparented = true;
+				weapon.isUnparented = true;
 
-					_weaponFactory.CreateWeapon(changeRequest.NewWeaponTypeId, 1, parent, Vector2.zero);
-				}
+				_weaponFactory.CreateWeapon(changeRequest.NewWeaponTypeId, 1, parent, Vector2.zero, producerId);
 			}
 		}
 	}

@@ -6,7 +6,7 @@ namespace Code.Gameplay.Features.Enemy.Configs
 	[CreateAssetMenu(menuName = "Dungeon Gunner/Enemy Config", fileName = "EnemyConfig")]
 	public class EnemyConfig : ScriptableObject
 	{
-		public EnemyTypeId EnemyTypeId;
+		public EnemyTypeId TypeId;
 		public EntityBehaviour ViewPrefab;
 		public RuntimeAnimatorController AnimatorController;
 		[Range(1, 100)] public int CurrentHp;

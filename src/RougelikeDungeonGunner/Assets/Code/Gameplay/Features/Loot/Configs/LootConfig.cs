@@ -10,7 +10,7 @@ namespace Code.Gameplay.Features.Loot.Configs
 
 	public class LootConfig : ScriptableObject
 	{
-		public LootTypeId LootTypeId;
+		public LootTypeId TypeId;
 		public EntityBehaviour ViewPrefab;
 		public Sprite Sprite;
 		public int Coins;

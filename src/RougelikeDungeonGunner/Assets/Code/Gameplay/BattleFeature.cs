@@ -37,11 +37,13 @@ namespace Code.Gameplay
 			Add(systems.Create<AmmoFeature>());
 
 			Add(systems.Create<CollectTargetsFeature>());
+			Add(systems.Create<EffectApplicationFeature>());
+
+			Add(systems.Create<EnchantFeature>());
 			Add(systems.Create<EffectsFeature>());
 			Add(systems.Create<StatusFeature>());
 			Add(systems.Create<StatsFeature>());
 
-			Add(systems.Create<EffectApplicationFeature>());
 
 			Add(systems.Create<ProcessDestructedFeature>());
 		}

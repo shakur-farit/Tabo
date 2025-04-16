@@ -7,7 +7,7 @@ namespace Code.Gameplay.Features.Hero.Configs
 	[CreateAssetMenu(menuName = "Dungeon Gunner/Hero Config", fileName = "HeroConfig")]
 	public class HeroConfig : ScriptableObject
 	{
-		public HeroTypeId HeroTypeId;
+		public HeroTypeId TypeId;
 		public EntityBehaviour ViewPrefab;
 		public RuntimeAnimatorController AnimatorController;
 		public WeaponTypeId StartWeapon;

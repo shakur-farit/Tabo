@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fe7e2d4760bd87448aa1180b8484dd6, type: 3}
   m_Name: SecondLevelConfig
   m_EditorClassIdentifier: 
-  LevelTypeId: 2
+  TypeId: 2
   StartingTime: 0
   TimeBetweenSpawnWaves: 5
   FinishingTime: 0

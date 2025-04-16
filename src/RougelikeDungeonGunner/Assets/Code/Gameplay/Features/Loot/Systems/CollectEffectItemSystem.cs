@@ -30,9 +30,7 @@ namespace Code.Gameplay.Features.Loot.Systems
 			foreach (GameEntity hero in _heroes)
 			foreach (GameEntity collected in _collected)
 			foreach (EffectSetup effectSetup in collected.EffectSetups)
-			{
 				_effectFactory.CreateEffect(effectSetup, hero.Id, hero.Id);
-			}
 		}
 	}
 }

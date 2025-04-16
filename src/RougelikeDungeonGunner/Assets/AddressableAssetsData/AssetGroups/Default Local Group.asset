@@ -155,6 +155,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - LootConfig
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7993d4a8896a5c342bf032cb07e112ad
+    m_Address: Assets/StaticData/Enchnat/PoisonEnchantConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EnchantConfig
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 7128017d563554245a79368046c75e1a, type: 2}
   m_SchemaSet:
