@@ -1,7 +1,10 @@
 ﻿using Entitas;
 
-namespace Code.Gameplay.Features.Effects
+namespace Code.Gameplay.Features.Enchants
 {
 	[Game] public class EnchantTypeIdComponent : IComponent { public EnchantTypeId Value; }
+	[Game] public class EnchantDuration : IComponent { public float Value; }
+	[Game] public class EnchantTimeLeft : IComponent { public float Value; }
 	[Game] public class PoisonEnchant : IComponent { }
+	[Game] public class FreezeEnchant : IComponent { }
 }

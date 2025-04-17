@@ -4,6 +4,6 @@
 	{
 		Unknown = 0,
 		Poison = 1,
-		Freeze = 2
+		Freeze = 2,
 	}
 }

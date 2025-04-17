@@ -6,6 +6,7 @@ using Code.Gameplay.Common.Random;
 using Code.Gameplay.Common.Time;
 using Code.Gameplay.Features.Ammo.Factory;
 using Code.Gameplay.Features.Effects.Factory;
+using Code.Gameplay.Features.Enchants.Factory;
 using Code.Gameplay.Features.Enemy.Factory;
 using Code.Gameplay.Features.Hero.Factory;
 using Code.Gameplay.Features.Levels;
@@ -111,6 +112,7 @@ namespace Code.Infrastructure.Installers
 			Container.Bind<IStatusFactory>().To<StatusFactory>().AsSingle();
 			Container.Bind<ILevelFactory>().To<LevelFactory>().AsSingle();
 			Container.Bind<ILootFactory>().To<LootFactory>().AsSingle();
+			Container.Bind<IEnchantFactory>().To<EnchantFactory>().AsSingle();
 		}
 
 		private void BindSystemFactory()

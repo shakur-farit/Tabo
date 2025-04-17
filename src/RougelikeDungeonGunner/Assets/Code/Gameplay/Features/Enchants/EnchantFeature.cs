@@ -1,6 +1,7 @@
-﻿using Code.Infrastructure;
+﻿using Code.Gameplay.Features.Enchants.Systems;
+using Code.Infrastructure;
 
-namespace Code.Gameplay.Features.Effects
+namespace Code.Gameplay.Features.Enchants
 {
 	public sealed class EnchantFeature : Feature
 	{

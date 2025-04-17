@@ -4,6 +4,8 @@ using System.Linq;
 using Code.Gameplay.Features.Ammo;
 using Code.Gameplay.Features.Ammo.Config;
 using Code.Gameplay.Features.Effects;
+using Code.Gameplay.Features.Enchants;
+using Code.Gameplay.Features.Enchants.Configs;
 using Code.Gameplay.Features.Enemy;
 using Code.Gameplay.Features.Enemy.Configs;
 using Code.Gameplay.Features.Hero;

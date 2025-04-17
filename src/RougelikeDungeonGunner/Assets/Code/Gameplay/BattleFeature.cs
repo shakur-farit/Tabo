@@ -3,6 +3,7 @@ using Code.Gameplay.Features.Ammo;
 using Code.Gameplay.Features.CharacterStats;
 using Code.Gameplay.Features.EffectApplication;
 using Code.Gameplay.Features.Effects;
+using Code.Gameplay.Features.Enchants;
 using Code.Gameplay.Features.Enemy;
 using Code.Gameplay.Features.Hero;
 using Code.Gameplay.Features.Levels;

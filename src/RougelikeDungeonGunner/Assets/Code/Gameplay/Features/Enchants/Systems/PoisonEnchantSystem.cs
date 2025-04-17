@@ -3,51 +3,50 @@ using Code.Gameplay.Features.Statuses;
 using Code.Gameplay.StaticData;
 using Entitas;
 
-namespace Code.Gameplay.Features.Effects
+namespace Code.Gameplay.Features.Enchants.Systems
 {
 	public class PoisonEnchantSystem : IExecuteSystem
 	{
-		private readonly IStaticDataService _staticDataService;
 		private readonly IGroup<GameEntity> _enchants;
-		private readonly IGroup<GameEntity> _weapons;
-		private readonly List<GameEntity> _buffer = new(1);
+		private readonly IGroup<GameEntity> _ammo;
+		private readonly List<GameEntity> _buffer = new(32);
+		private readonly List<GameEntity> _enchantsBuffer = new(32);
 
-		public PoisonEnchantSystem(GameContext game, IStaticDataService staticDataService)
+		public PoisonEnchantSystem(GameContext game)
 		{
-			_staticDataService = staticDataService;
 			_enchants = game.GetGroup(GameMatcher
 				.AllOf(
-					GameMatcher.EnchantTypeId,
+					GameMatcher.StatusSetups,
 					GameMatcher.ProducerId,
 					GameMatcher.PoisonEnchant));
 
-			_weapons = game.GetGroup(GameMatcher
+			_ammo = game.GetGroup(GameMatcher
 				.AllOf(
-					GameMatcher.Weapon,
+					GameMatcher.Ammo,
 					GameMatcher.ProducerId)
 					.NoneOf(GameMatcher.PoisonEnchant));
 		}
 
 		public void Execute()
 		{
-			foreach (GameEntity enchant in _enchants)
-			foreach (GameEntity weapon in _weapons.GetEntities(_buffer))
+			foreach (GameEntity enchant in _enchants.GetEntities(_enchantsBuffer))
+			foreach (GameEntity ammo in _ammo.GetEntities(_buffer))
 			{
-				if (enchant.ProducerId == weapon.ProducerId)
+				if (enchant.ProducerId == ammo.ProducerId)
 				{
-					GetOrAddStatusSetups(weapon)
-						.AddRange(_staticDataService.GetEnchantConfig(EnchantTypeId.PoisonEnchant).StatusSetups);
-					weapon.isPoisonEnchant = true;
+					GetOrAddStatusSetups(ammo)
+						.AddRange(enchant.StatusSetups);
+					ammo.isPoisonEnchant = true;
 				}
 			}
 		}
 
-		private List<StatusSetup> GetOrAddStatusSetups(GameEntity weapon)
+		private List<StatusSetup> GetOrAddStatusSetups(GameEntity ammo)
 		{
-			if (weapon.hasStatusSetups == false)
-				weapon.AddStatusSetups(new List<StatusSetup>());
+			if (ammo.hasStatusSetups == false)
+				ammo.AddStatusSetups(new List<StatusSetup>());
 
-			return weapon.StatusSetups;
+			return ammo.StatusSetups;
 		}
 	}
 }

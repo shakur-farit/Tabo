@@ -8,17 +8,17 @@
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherPoisonEnchant;
+    static Entitas.IMatcher<GameEntity> _matcherFreezeEnchant;
 
-    public static Entitas.IMatcher<GameEntity> PoisonEnchant {
+    public static Entitas.IMatcher<GameEntity> FreezeEnchant {
         get {
-            if (_matcherPoisonEnchant == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.PoisonEnchant);
+            if (_matcherFreezeEnchant == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.FreezeEnchant);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherPoisonEnchant = matcher;
+                _matcherFreezeEnchant = matcher;
             }
 
-            return _matcherPoisonEnchant;
+            return _matcherFreezeEnchant;
         }
     }
 }
@@ -33,18 +33,18 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Enchants.PoisonEnchant poisonEnchantComponent = new Code.Gameplay.Features.Enchants.PoisonEnchant();
+    static readonly Code.Gameplay.Features.Enchants.FreezeEnchant freezeEnchantComponent = new Code.Gameplay.Features.Enchants.FreezeEnchant();
 
-    public bool isPoisonEnchant {
-        get { return HasComponent(GameComponentsLookup.PoisonEnchant); }
+    public bool isFreezeEnchant {
+        get { return HasComponent(GameComponentsLookup.FreezeEnchant); }
         set {
-            if (value != isPoisonEnchant) {
-                var index = GameComponentsLookup.PoisonEnchant;
+            if (value != isFreezeEnchant) {
+                var index = GameComponentsLookup.FreezeEnchant;
                 if (value) {
                     var componentPool = GetComponentPool(index);
                     var component = componentPool.Count > 0
                             ? componentPool.Pop()
-                            : poisonEnchantComponent;
+                            : freezeEnchantComponent;
 
                     AddComponent(index, component);
                 } else {

@@ -14,6 +14,7 @@ namespace Code.Gameplay.Features.Loot
 
 			Add(systems.Create<CollectCoinsSystem>());
 			Add(systems.Create<CollectEffectItemSystem>());
+			Add(systems.Create<CollectEnchantItemSystem>());
 
 			Add(systems.Create<CleanupCollectedSystem>());
 		}
