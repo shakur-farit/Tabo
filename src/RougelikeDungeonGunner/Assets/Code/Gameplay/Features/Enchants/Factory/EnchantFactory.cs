@@ -37,20 +37,23 @@ namespace Code.Gameplay.Features.Enchants.Factory
 			CreateEnchantEntity(setup, EnchantTypeId.PoisonEnchant, producerId)
 				.With(x => x.isPoisonEnchant = true);
 
+		private GameEntity CreateFreezeEnchant(StatusSetup setup, int producerId) =>
+			CreateEnchantEntity(setup, EnchantTypeId.FreezeEnchant, producerId)
+				.With(x => x.isFreezeEnchant = true);
+
 		private GameEntity CreateEnchantEntity(StatusSetup setup, EnchantTypeId typeId, int producerId)
 		{
 			EnchantConfig config = _staticDataService.GetEnchantConfig(typeId);
 
 			return CreateEntity.Empty()
-					.AddId(_identifier.Next())
-					.AddEnchantTypeId(typeId)
-					.AddEnchantDuration(config.Duration)
-					.AddStatusSetups(new List<StatusSetup>{setup})
-					.AddProducerId(producerId)
+				.AddId(_identifier.Next())
+				.AddEnchantTypeId(typeId)
+				.AddStatusSetups(new List<StatusSetup> { setup })
+				.AddProducerId(producerId)
+				.With(x => x.isEnchant = true)
+				.With(x => x.AddEnchantDuration(config.Duration), when: config.Duration > 0)
+				.With(x => x.AddEnchantTimeLeft(config.Duration), when: config.Duration > 0)
 				;
 		}
-
-		private GameEntity CreateFreezeEnchant(StatusSetup setup, int producerId) => 
-			null;
 	}
 }

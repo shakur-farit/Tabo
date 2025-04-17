@@ -4,26 +4,26 @@ using Entitas;
 
 namespace Code.Gameplay.Features.Enchants.Systems
 {
-	public class PoisonEnchantSystem : IExecuteSystem
+	public class FreezeEnchantSystem : IExecuteSystem
 	{
 		private readonly IGroup<GameEntity> _enchants;
 		private readonly IGroup<GameEntity> _ammo;
 		private readonly List<GameEntity> _buffer = new(32);
 		private readonly List<GameEntity> _enchantsBuffer = new(32);
 
-		public PoisonEnchantSystem(GameContext game)
+		public FreezeEnchantSystem(GameContext game)
 		{
 			_enchants = game.GetGroup(GameMatcher
 				.AllOf(
 					GameMatcher.StatusSetups,
 					GameMatcher.ProducerId,
-					GameMatcher.PoisonEnchant));
+					GameMatcher.FreezeEnchant));
 
 			_ammo = game.GetGroup(GameMatcher
 				.AllOf(
 					GameMatcher.Ammo,
 					GameMatcher.ProducerId)
-					.NoneOf(GameMatcher.PoisonEnchant));
+				.NoneOf(GameMatcher.FreezeEnchant));
 		}
 
 		public void Execute()
@@ -35,7 +35,7 @@ namespace Code.Gameplay.Features.Enchants.Systems
 				{
 					GetOrAddStatusSetups(ammo)
 						.AddRange(enchant.StatusSetups);
-					ammo.isPoisonEnchant = true;
+					ammo.isFreezeEnchant = true;
 				}
 			}
 		}

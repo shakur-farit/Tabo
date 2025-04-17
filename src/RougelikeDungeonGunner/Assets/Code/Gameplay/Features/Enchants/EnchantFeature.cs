@@ -8,6 +8,9 @@ namespace Code.Gameplay.Features.Enchants
 		public EnchantFeature(ISystemsFactory systems)
 		{
 			Add(systems.Create<PoisonEnchantSystem>());
+			Add(systems.Create<FreezeEnchantSystem>());
+			Add(systems.Create<MarkEnchantDestructedSystem>());
+			Add(systems.Create<RemoveEnchantFromWeaponSystem>());
 		}
 	}
 }

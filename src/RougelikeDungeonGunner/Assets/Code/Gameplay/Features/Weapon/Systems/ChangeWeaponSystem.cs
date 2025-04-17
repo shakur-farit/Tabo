@@ -34,11 +34,11 @@ namespace Code.Gameplay.Features.Weapon.Systems
 			foreach (GameEntity weapon in _weapons.GetEntities(_buffer))
 			{
 				Transform parent = weapon.ViewParent;
-				int producerId = weapon.ProducerId;
+				int ownerId = weapon.WeaponOwnerId;
 
 				weapon.isUnparented = true;
 
-				_weaponFactory.CreateWeapon(changeRequest.NewWeaponTypeId, 1, parent, Vector2.zero, producerId);
+				_weaponFactory.CreateWeapon(changeRequest.NewWeaponTypeId, 1, parent, Vector2.zero, ownerId);
 			}
 		}
 	}

@@ -8,6 +8,7 @@ namespace Code.Gameplay.Features.Weapon
 {
 	[Game] public class Weapon : IComponent { }
 	[Game] public class WeaponTypeIdComponent : IComponent { public WeaponTypeId Value; }
+	[Game] public class WeaponOwnerId : IComponent { public int Value; }
 
 	[Game] public class ClosestTargetPosition : IComponent { public Vector3 Value; }
 
@@ -35,6 +36,8 @@ namespace Code.Gameplay.Features.Weapon
 
 	[Game] public class EffectSetups : IComponent { public List<EffectSetup> Value; }
 	[Game] public class StatusSetups : IComponent { public List<StatusSetup> Value; }
+
+	[Game] public class WeaponEnchants : IComponent { public Dictionary<int, StatusSetup> Value; }
 
 	[Game] public class Pistol : IComponent { }
 	[Game] public class Revolver : IComponent { }
