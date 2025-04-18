@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: c3be09077243891458bdbf46a57d2e8a, type: 3}
-  m_Color: {r: 0.7735849, g: 0.20834655, b: 0.1715023, a: 1}
+  m_Color: {r: 0.745283, g: 0.141209, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -97,6 +97,8 @@ GameObject:
   - component: {fileID: -4163875877110265030}
   - component: {fileID: 2243231872987813085}
   - component: {fileID: 2719461292396719340}
+  - component: {fileID: 2224264420142898566}
+  - component: {fileID: 2308486921878832860}
   m_Layer: 10
   m_Name: Ammo
   m_TagString: Untagged
@@ -207,3 +209,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EntityView: {fileID: 2243231872987813085}
+--- !u!114 &2224264420142898566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6539570766999889727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90a6d15d17b358a478ce74617e43c843, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EntityView: {fileID: 2243231872987813085}
+  _visuals: {fileID: 2308486921878832860}
+--- !u!114 &2308486921878832860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6539570766999889727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 230836facad135c4faa4b72846b91d5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spriteRenderer: {fileID: 6390910501267623108}

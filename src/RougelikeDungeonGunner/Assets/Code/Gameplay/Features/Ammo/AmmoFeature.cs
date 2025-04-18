@@ -20,6 +20,7 @@ namespace Code.Gameplay.Features.Ammo
 			Add(systems.Create<CreatingOfSniperBulletSystem>());
 			Add(systems.Create<ApplyEffectsToAmmoSystem>());
 			Add(systems.Create<ApplyStatusesToAmmoSystem>());
+			Add(systems.Create<ApplyEnchantVisualsToAmmoReactiveSystem>());
 			Add(systems.Create<CalculateCurrentAmmoAmountSystem>());
 			Add(systems.Create<MarkAmmoProcessedOnWeaponFireRangeSystem>());
 			Add(systems.Create<MarkAmmoProcessedOnTargetLimitExceededSystem>());
