@@ -28,7 +28,7 @@ namespace Code.Gameplay.Features.Enemy.Systems
 				float randomFloat = Random.Range(0, 1f);
 
 				if (randomFloat <= 0.5f)
-					_lootFactory.CreateLoot(LootTypeId.FreezeEnchantItem, enemy.WorldPosition);
+					_lootFactory.CreateLoot(LootTypeId.CoinItem, enemy.WorldPosition);
 				else
 					_lootFactory.CreateLoot(LootTypeId.PoisonEnchantItem, enemy.WorldPosition);
 			}

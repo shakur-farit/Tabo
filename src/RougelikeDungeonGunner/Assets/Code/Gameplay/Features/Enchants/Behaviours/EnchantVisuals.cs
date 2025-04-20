@@ -19,8 +19,6 @@ namespace Code.Gameplay.Features.Enchants
 					ApplyFreeze();
 					break;
 			}
-
-			Debug.Log(_spriteRenderer.color);
 		}
 
 		private void ApplyPoison()

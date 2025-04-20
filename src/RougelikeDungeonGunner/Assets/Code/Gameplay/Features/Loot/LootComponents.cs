@@ -1,4 +1,5 @@
-﻿using Entitas;
+﻿using Code.Gameplay.Features.Loot.Behaviours;
+using Entitas;
 
 namespace Code.Gameplay.Features.Loot
 {
@@ -11,5 +12,7 @@ namespace Code.Gameplay.Features.Loot
 		[Game] public class PickupRadius : IComponent { public float Value; }
 
 		[Game] public class Coins : IComponent { public int Value; }
+
+		[Game] public class CoinsHolderComponent : IComponent { public CoinsHolder Value; }
 	}
 }

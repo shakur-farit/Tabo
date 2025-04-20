@@ -88,78 +88,79 @@ public static class GameComponentsLookup {
     public const int MaxHp = 77;
     public const int ProcessingDeath = 78;
     public const int Coins = 79;
-    public const int Collected = 80;
-    public const int LootTypeId = 81;
-    public const int PickupRadius = 82;
-    public const int Pullable = 83;
-    public const int Pulling = 84;
-    public const int Direction = 85;
-    public const int MovementAvailable = 86;
-    public const int Moving = 87;
-    public const int Speed = 88;
-    public const int Affected = 89;
-    public const int Applied = 90;
-    public const int ApplierStatusLink = 91;
-    public const int Freeze = 92;
-    public const int Period = 93;
-    public const int Poison = 94;
-    public const int Status = 95;
-    public const int StatusDuration = 96;
-    public const int StatusTimeLeft = 97;
-    public const int StatusTypeId = 98;
-    public const int TimeSinceLastTick = 99;
-    public const int Unapplied = 100;
-    public const int CollectTargetsContinuously = 101;
-    public const int CollectTargetsInterval = 102;
-    public const int CollectTargetsTimer = 103;
-    public const int LayerMask = 104;
-    public const int ProcessedTargets = 105;
-    public const int Radius = 106;
-    public const int ReadyToCollectTargets = 107;
-    public const int TargetsBuffer = 108;
-    public const int AutomaticPistol = 109;
-    public const int NewWeaponTypeId = 110;
-    public const int WeaponChangeable = 111;
-    public const int WeaponChangeRequested = 112;
-    public const int ClosestTargetPosition = 113;
-    public const int CurrentAmmoAmount = 114;
-    public const int EffectSetups = 115;
-    public const int FirePositionTransform = 116;
-    public const int LaserBlaster = 117;
-    public const int Machinegun = 118;
-    public const int MagazineNotEmpty = 119;
-    public const int MagazineSize = 120;
-    public const int MaxPelletsSpreadAngle = 121;
-    public const int MinPelletsSpreadAngle = 122;
-    public const int MultiPellet = 123;
-    public const int Pistol = 124;
-    public const int PlasmaGun = 125;
-    public const int Precharged = 126;
-    public const int PrechargeTime = 127;
-    public const int PrechargeTimeLeft = 128;
-    public const int ReadyToShoot = 129;
-    public const int Reloading = 130;
-    public const int ReloadTime = 131;
-    public const int ReloadTimeLeft = 132;
-    public const int Revolver = 133;
-    public const int RocketLauncher = 134;
-    public const int Shooting = 135;
-    public const int Shot = 136;
-    public const int Shotgun = 137;
-    public const int Sniper = 138;
-    public const int StatusSetups = 139;
-    public const int Weapon = 140;
-    public const int WeaponEnchants = 141;
-    public const int WeaponOwnerId = 142;
-    public const int WeaponRotationAngle = 143;
-    public const int WeaponRotationPointTransform = 144;
-    public const int WeaponSpriteRenderer = 145;
-    public const int WeaponTypeId = 146;
-    public const int AxisInput = 147;
-    public const int Input = 148;
-    public const int MouseLeftButtonDown = 149;
+    public const int CoinsHolder = 80;
+    public const int Collected = 81;
+    public const int LootTypeId = 82;
+    public const int PickupRadius = 83;
+    public const int Pullable = 84;
+    public const int Pulling = 85;
+    public const int Direction = 86;
+    public const int MovementAvailable = 87;
+    public const int Moving = 88;
+    public const int Speed = 89;
+    public const int Affected = 90;
+    public const int Applied = 91;
+    public const int ApplierStatusLink = 92;
+    public const int Freeze = 93;
+    public const int Period = 94;
+    public const int Poison = 95;
+    public const int Status = 96;
+    public const int StatusDuration = 97;
+    public const int StatusTimeLeft = 98;
+    public const int StatusTypeId = 99;
+    public const int TimeSinceLastTick = 100;
+    public const int Unapplied = 101;
+    public const int CollectTargetsContinuously = 102;
+    public const int CollectTargetsInterval = 103;
+    public const int CollectTargetsTimer = 104;
+    public const int LayerMask = 105;
+    public const int ProcessedTargets = 106;
+    public const int Radius = 107;
+    public const int ReadyToCollectTargets = 108;
+    public const int TargetsBuffer = 109;
+    public const int AutomaticPistol = 110;
+    public const int NewWeaponTypeId = 111;
+    public const int WeaponChangeable = 112;
+    public const int WeaponChangeRequested = 113;
+    public const int ClosestTargetPosition = 114;
+    public const int CurrentAmmoAmount = 115;
+    public const int EffectSetups = 116;
+    public const int FirePositionTransform = 117;
+    public const int LaserBlaster = 118;
+    public const int Machinegun = 119;
+    public const int MagazineNotEmpty = 120;
+    public const int MagazineSize = 121;
+    public const int MaxPelletsSpreadAngle = 122;
+    public const int MinPelletsSpreadAngle = 123;
+    public const int MultiPellet = 124;
+    public const int Pistol = 125;
+    public const int PlasmaGun = 126;
+    public const int Precharged = 127;
+    public const int PrechargeTime = 128;
+    public const int PrechargeTimeLeft = 129;
+    public const int ReadyToShoot = 130;
+    public const int Reloading = 131;
+    public const int ReloadTime = 132;
+    public const int ReloadTimeLeft = 133;
+    public const int Revolver = 134;
+    public const int RocketLauncher = 135;
+    public const int Shooting = 136;
+    public const int Shot = 137;
+    public const int Shotgun = 138;
+    public const int Sniper = 139;
+    public const int StatusSetups = 140;
+    public const int Weapon = 141;
+    public const int WeaponEnchants = 142;
+    public const int WeaponOwnerId = 143;
+    public const int WeaponRotationAngle = 144;
+    public const int WeaponRotationPointTransform = 145;
+    public const int WeaponSpriteRenderer = 146;
+    public const int WeaponTypeId = 147;
+    public const int AxisInput = 148;
+    public const int Input = 149;
+    public const int MouseLeftButtonDown = 150;
 
-    public const int TotalComponents = 150;
+    public const int TotalComponents = 151;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -242,6 +243,7 @@ public static class GameComponentsLookup {
         "MaxHp",
         "ProcessingDeath",
         "Coins",
+        "CoinsHolder",
         "Collected",
         "LootTypeId",
         "PickupRadius",
@@ -395,6 +397,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Lifetime.MaxHp),
         typeof(Code.Gameplay.Features.Lifetime.ProcessingDeath),
         typeof(Code.Gameplay.Features.Loot.LootComponents.Coins),
+        typeof(Code.Gameplay.Features.Loot.LootComponents.CoinsHolderComponent),
         typeof(Code.Gameplay.Features.Loot.LootComponents.Collected),
         typeof(Code.Gameplay.Features.Loot.LootComponents.LootTypeIdComponent),
         typeof(Code.Gameplay.Features.Loot.LootComponents.PickupRadius),

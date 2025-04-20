@@ -3,7 +3,7 @@ using Code.Infrastructure.View.Registrars;
 using UnityEngine;
 using Zenject;
 
-namespace Code.Gameplay.Features.Loot
+namespace Code.Gameplay.Features.Loot.Registrars
 {
 	public class LootSpriteRendererRegistrar : EntityComponentRegistrar
 	{
