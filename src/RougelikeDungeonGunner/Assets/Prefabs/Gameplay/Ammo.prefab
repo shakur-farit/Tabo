@@ -222,7 +222,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EntityView: {fileID: 2243231872987813085}
-  _visuals: {fileID: 2308486921878832860}
+  _visualEffect: {fileID: 2308486921878832860}
 --- !u!114 &2308486921878832860
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -6,26 +6,26 @@ namespace Code.Gameplay.Features.Ammo.Systems
 {
 	public class ApplyEnchantVisualsToAmmoReactiveSystem : ReactiveSystem<GameEntity>
 	{
-		private readonly GameContext _context;
+		public ApplyEnchantVisualsToAmmoReactiveSystem(GameContext context) : base(context)
+		{
 
-		public ApplyEnchantVisualsToAmmoReactiveSystem(GameContext context) : base(context) => 
-			_context = context;
+		} 
 
 		protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
 		{
 			return context.CreateCollector(GameMatcher.AllOf(
 				GameMatcher.StatusSetups,
-				GameMatcher.EnchantVisuals)
+				GameMatcher.EnchantVisualEffect)
 				.Added());
 		}
 
-		protected override bool Filter(GameEntity entity) => entity.hasStatusSetups && entity.hasEnchantVisuals;
+		protected override bool Filter(GameEntity entity) => entity.hasStatusSetups && entity.hasEnchantVisualEffect;
 
 		protected override void Execute(List<GameEntity> entities)
 		{
 			foreach (GameEntity ammo in entities)
 			foreach (StatusSetup setup in ammo.StatusSetups)
-				ammo.EnchantVisuals.ApplyVisual(setup.StatusTypeId);
+				ammo.EnchantVisualEffect.ApplyVisual(setup.StatusTypeId);
 		}
 	}
 }

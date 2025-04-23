@@ -1,18 +1,15 @@
-﻿using System;
-using Code.Gameplay.StaticData;
+﻿using Code.Gameplay.StaticData;
 using Code.Infrastructure.View.Registrars;
 using UnityEngine;
-using Zenject;
 
-namespace Code.Gameplay.Features.Weapon.Registrars
+namespace Code.Gameplay.Features.Enchants
 {
-	public class WeaponSpriteRendererRegistrar : EntityComponentRegistrar
+	public class EnchantSpriteRendererRegistrar : EntityComponentRegistrar
 	{
 		[SerializeField] private SpriteRenderer _spriteRenderer;
 
 		private IStaticDataService _staticDataService;
 
-		[Inject]
 		public void Constructor(IStaticDataService staticDataService) =>
 			_staticDataService = staticDataService;
 
@@ -20,7 +17,7 @@ namespace Code.Gameplay.Features.Weapon.Registrars
 		{
 			_spriteRenderer.sprite =
 				_staticDataService
-					.GetWeaponConfig(Entity.WeaponTypeId).Sprite;
+					.GetEnchantConfig(Entity.EnchantTypeId).Sprite;
 
 			Entity
 				.AddSpriteRenderer(_spriteRenderer);

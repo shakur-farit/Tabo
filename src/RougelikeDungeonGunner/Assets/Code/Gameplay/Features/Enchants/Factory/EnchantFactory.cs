@@ -56,4 +56,24 @@ namespace Code.Gameplay.Features.Enchants.Factory
 				;
 		}
 	}
+
+	public class EnchantVisualFactory
+	{
+		private readonly IIdentifierService _identifier;
+		private readonly IStaticDataService _staticDataService;
+
+		public EnchantVisualFactory(IIdentifierService identifier, IStaticDataService staticDataService)
+		{
+			_identifier = identifier;
+			_staticDataService = staticDataService;
+		}
+
+		public GameEntity CreateEnchantVisual(EnchantTypeId typeId)
+		{
+			return CreateEntity.Empty()
+				.AddId(_identifier.Next())
+				.AddEnchantTypeId(typeId)
+				;
+		}
+	}
 }

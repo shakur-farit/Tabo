@@ -7,10 +7,7 @@ namespace Code.Gameplay.Features.Loot.Behaviours
 	{
 		[SerializeField] private TextMeshProUGUI _coinsText;
 
-		public void UpdateCoinsText(int value)
-		{
-			Debug.Log(value);
+		public void UpdateCoinsText(int value) => 
 			_coinsText.text = value.ToString("D3");
-		}
 	}
 }
