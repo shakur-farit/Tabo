@@ -8,7 +8,7 @@ namespace Code.Gameplay.Features.Loot
 	{
 		[SerializeField] private CoinsHolder _coinsHolder;
 
-		public override void RegisterComponents() => 
+		public override void RegisterComponents() =>
 			Entity
 				.AddCoinsHolder(_coinsHolder);
 

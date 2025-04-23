@@ -10,10 +10,12 @@ namespace Code.Gameplay.Features.Enchants
 			Add(systems.Create<PoisonEnchantSystem>());
 			Add(systems.Create<FreezeEnchantSystem>());
 			
-			Add(systems.Create<AddEnchantVisualInHolderSystem>());
+			Add(systems.Create<AddEnchantVisualToHolderSystem>());
+			Add(systems.Create<UpdateEnchantTimeLeftVisualSystem>());
 
 			Add(systems.Create<MarkEnchantDestructedSystem>());
 			Add(systems.Create<RemoveEnchantFromWeaponSystem>());
+			Add(systems.Create<RemoveEnchantVisualFromHolderSystem>());
 		}
 	}
 }

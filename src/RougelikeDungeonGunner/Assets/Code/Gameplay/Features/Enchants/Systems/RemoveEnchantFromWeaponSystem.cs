@@ -7,12 +7,10 @@ namespace Code.Gameplay.Features.Enchants.Systems
 	{
 		private readonly IGroup<GameEntity> _weapons;
 
-		public RemoveEnchantFromWeaponSystem(Contexts contexts) : base(contexts.game)
-		{
+		public RemoveEnchantFromWeaponSystem(Contexts contexts) : base(contexts.game) =>
 			_weapons = contexts.game.GetGroup(GameMatcher.AllOf(
 				GameMatcher.Weapon,
 				GameMatcher.WeaponEnchants));
-		}
 
 		protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context) =>
 			context.CreateCollector(GameMatcher.AllOf(
@@ -23,7 +21,7 @@ namespace Code.Gameplay.Features.Enchants.Systems
 
 		protected override void Execute(List<GameEntity> entities)
 		{
-			foreach (var enchant in entities)
+			foreach (GameEntity enchant in entities)
 			{
 				int enchantId = enchant.Id;
 

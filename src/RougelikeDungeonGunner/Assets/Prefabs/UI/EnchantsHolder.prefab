@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4299136777975774948}
   - component: {fileID: 6975387092081298862}
   - component: {fileID: -379696152000709945}
+  - component: {fileID: 6864064246338238356}
   m_Layer: 5
   m_Name: EnchantsHolder
   m_TagString: Untagged
@@ -64,7 +65,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EntityView: {fileID: 4299136777975774948}
-  _enchantHolder: {fileID: 6508785138404635910}
+  _enchantHolder: {fileID: 6864064246338238356}
 --- !u!114 &-379696152000709945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78,6 +79,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EntityBehaviour: {fileID: 4299136777975774948}
+--- !u!114 &6864064246338238356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2206785697293330298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6badc1ae161eaaa47b99829c2105fe7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enchantHolder: {fileID: 6508785138404635910}
 --- !u!1 &6136138970849692673
 GameObject:
   m_ObjectHideFlags: 0

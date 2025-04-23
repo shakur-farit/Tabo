@@ -47,10 +47,13 @@ namespace Code.Gameplay.Features.Loot.Systems
 				}
 				else
 				{
-					GameEntity enchant = _enchantFactory.CreateEnchant(setup, weapon.Id);
-					AddOrCreateNewWeaponEnchants(weapon, enchant, setup);
+					if (HasRoomForNewEnchant(weapon, setup))
+					{
+						GameEntity enchant = _enchantFactory.CreateEnchant(setup, weapon.Id);
+						AddOrCreateNewWeaponEnchants(weapon, enchant, setup);
+					}
 				}
-			}
+}
 		}
 
 		private bool TryGetExistingEnchantId(GameEntity weapon, StatusSetup setup, out int enchantId)
@@ -75,12 +78,68 @@ namespace Code.Gameplay.Features.Loot.Systems
 			return false;
 		}
 
+		private bool HasRoomForNewEnchant(GameEntity weapon, StatusSetup newSetup)
+		{
+			if (!weapon.hasWeaponEnchants)
+				return true;
+
+			HashSet<StatusTypeId> existingTypes = new HashSet<StatusTypeId>();
+			foreach (StatusSetup setup in weapon.WeaponEnchants.Values)
+			{
+				existingTypes.Add(setup.StatusTypeId);
+			}
+
+			if (existingTypes.Contains(newSetup.StatusTypeId))
+				return true;
+
+			// Если меньше двух — можно добавлять
+			return existingTypes.Count < 1;
+		}
+
 		private void AddOrCreateNewWeaponEnchants(GameEntity weapon, GameEntity enchant, StatusSetup setup)
 		{
-			if (weapon.hasWeaponEnchants == false)
+			if (!weapon.hasWeaponEnchants)
 				weapon.AddWeaponEnchants(new Dictionary<int, StatusSetup>());
 
-			weapon.WeaponEnchants.Add(enchant.Id, setup);
+			if (!weapon.hasWeaponEnchantsQueue)
+				weapon.AddWeaponEnchantsQueue(new Queue<StatusTypeId>());
+
+			if (!weapon.hasMaxWeaponEnchantsCount)
+				weapon.AddMaxWeaponEnchantsCount(2); // по умолчанию максимум 2
+
+			var enchants = weapon.WeaponEnchants;
+			var queue = weapon.WeaponEnchantsQueue;
+			var maxCount = weapon.MaxWeaponEnchantsCount;
+
+			// если уже есть такой тип — просто добавить и вернуть (должно быть перехвачено раньше)
+			if (queue.Contains(setup.StatusTypeId) == false && queue.Count >= maxCount)
+			{
+				// удаляем самый старый
+				var removedType = queue.Dequeue();
+
+				// находим соответствующий enchantId
+				int? toRemove = null;
+				foreach (var kvp in enchants)
+				{
+					if (kvp.Value.StatusTypeId == removedType)
+					{
+						toRemove = kvp.Key;
+						break;
+					}
+				}
+
+				if (toRemove.HasValue)
+				{
+					enchants.Remove(toRemove.Value);
+
+					var entity = _game.GetEntityWithId(toRemove.Value);
+					entity?.Destroy();
+				}
+			}
+
+			// Добавляем новый
+			enchants[enchant.Id] = setup;
+			queue.Enqueue(setup.StatusTypeId);
 		}
 	}
 }

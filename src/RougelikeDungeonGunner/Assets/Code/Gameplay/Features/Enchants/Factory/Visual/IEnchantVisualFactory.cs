@@ -4,6 +4,6 @@ namespace Code.Gameplay.Features.Enchants.Factory
 {
 	public interface IEnchantVisualFactory
 	{
-		GameEntity CreateEnchantVisual(EnchantTypeId typeId, Transform parent);
+		EnchantVisual CreateEnchantVisual(EnchantTypeId typeId, Transform parent);
 	}
 }

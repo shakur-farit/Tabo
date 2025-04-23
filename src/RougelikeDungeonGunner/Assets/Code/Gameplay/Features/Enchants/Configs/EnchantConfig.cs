@@ -7,7 +7,7 @@ namespace Code.Gameplay.Features.Enchants.Configs
 	public class EnchantConfig : ScriptableObject
 	{
 		public EnchantTypeId TypeId;
-		public EntityBehaviour ViewPrefab;
+		public GameObject ViewPrefab;
 		public Sprite Sprite;
 		public float Duration;
 	}

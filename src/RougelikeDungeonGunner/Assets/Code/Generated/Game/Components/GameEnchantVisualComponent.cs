@@ -33,7 +33,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Enchants.EnchantVisual enchantVisualComponent = new Code.Gameplay.Features.Enchants.EnchantVisual();
+    static readonly Code.Gameplay.Features.Enchants.EnchantVisualComponent enchantVisualComponent = new Code.Gameplay.Features.Enchants.EnchantVisualComponent();
 
     public bool isEnchantVisual {
         get { return HasComponent(GameComponentsLookup.EnchantVisual); }

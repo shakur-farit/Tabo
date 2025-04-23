@@ -37,6 +37,8 @@ namespace Code.Gameplay.Features.Weapon
 	[Game] public class StatusSetups : IComponent { public List<StatusSetup> Value; }
 
 	[Game] public class WeaponEnchants : IComponent { public Dictionary<int, StatusSetup> Value; }
+	[Game] public class MaxWeaponEnchantsCount : IComponent { public int Value; }
+	[Game] public class WeaponEnchantsQueue : IComponent { public Queue<StatusTypeId> Value; }
 
 	[Game] public class Pistol : IComponent { }
 	[Game] public class Revolver : IComponent { }
