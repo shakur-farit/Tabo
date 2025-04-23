@@ -7,6 +7,7 @@ namespace Code.Gameplay.Features.Enchants
 	[Game] public class EnchantTypeIdComponent : IComponent { public EnchantTypeId Value; }
 	[Game] public class EnchantDuration : IComponent { public float Value; }
 	[Game] public class EnchantTimeLeft : IComponent { public float Value; }
+	[Game] public class EnchantAlreadyHeld : IComponent { }
 
 	[Game] public class EnchantVisualEffectComponent : IComponent { public EnchantVisualEffect Value; }
 	[Game] public class EnchantHolderComponent : IComponent { public EnchantHolder Value; }

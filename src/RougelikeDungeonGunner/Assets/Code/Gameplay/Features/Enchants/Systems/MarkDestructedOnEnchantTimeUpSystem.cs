@@ -3,12 +3,12 @@ using Entitas;
 
 namespace Code.Gameplay.Features.Enchants.Systems
 {
-	public class MarkEnchantDestructedSystem : IExecuteSystem
+	public class MarkDestructedOnEnchantTimeUpSystem : IExecuteSystem
 	{
 		private readonly ITimeService _time;
 		private readonly IGroup<GameEntity> _enchants;
 
-		public MarkEnchantDestructedSystem(GameContext game, ITimeService time)
+		public MarkDestructedOnEnchantTimeUpSystem(GameContext game, ITimeService time)
 		{
 			_time = time;
 			_enchants = game.GetGroup(GameMatcher
