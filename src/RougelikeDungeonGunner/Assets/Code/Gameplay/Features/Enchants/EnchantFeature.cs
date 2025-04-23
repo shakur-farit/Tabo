@@ -9,6 +9,9 @@ namespace Code.Gameplay.Features.Enchants
 		{
 			Add(systems.Create<PoisonEnchantSystem>());
 			Add(systems.Create<FreezeEnchantSystem>());
+			
+			Add(systems.Create<AddEnchantVisualInHolderSystem>());
+
 			Add(systems.Create<MarkEnchantDestructedSystem>());
 			Add(systems.Create<RemoveEnchantFromWeaponSystem>());
 		}

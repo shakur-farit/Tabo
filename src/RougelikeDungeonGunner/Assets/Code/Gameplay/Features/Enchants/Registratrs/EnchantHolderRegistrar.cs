@@ -5,10 +5,13 @@ namespace Code.Gameplay.Features.Enchants
 {
 	public class EnchantHolderRegistrar : EntityComponentRegistrar
 	{
-		[SerializeField] private EnchantHolder _enchantHolder;
+		[SerializeField] private Transform _enchantHolder;
 
-		public override void RegisterComponents() =>
+		public override void RegisterComponents()
+		{
 			Entity.AddEnchantHolder(_enchantHolder);
+			Debug.Log("register");
+		}
 
 		public override void UnregisterComponents()
 		{

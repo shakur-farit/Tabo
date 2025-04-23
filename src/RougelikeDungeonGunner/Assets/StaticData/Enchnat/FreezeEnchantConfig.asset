@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: FreezeEnchantConfig
   m_EditorClassIdentifier: 
   TypeId: 2
+  ViewPrefab: {fileID: 2941936387153775719, guid: 81262980ba6085d408abcd6a32cf889f, type: 3}
+  Sprite: {fileID: -2878736502288998233, guid: ab89f761ffc11b9468624cc72d2c1214, type: 3}
   Duration: 5

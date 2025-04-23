@@ -47,6 +47,7 @@ namespace Code.Infrastructure.Installers
 			BindContexts();
 			BindGameplayServices();
 			BindGameplayFactories();
+			BindUIFactories();
 			BindCameraProvider();
 			BindProgressServices();
 			BindEntityIndices();
@@ -113,6 +114,11 @@ namespace Code.Infrastructure.Installers
 			Container.Bind<ILevelFactory>().To<LevelFactory>().AsSingle();
 			Container.Bind<ILootFactory>().To<LootFactory>().AsSingle();
 			Container.Bind<IEnchantFactory>().To<EnchantFactory>().AsSingle();
+		}
+
+		private void BindUIFactories()
+		{
+			Container.Bind<IEnchantVisualFactory>().To<EnchantVisualFactory>().AsSingle();
 		}
 
 		private void BindSystemFactory()
