@@ -1,4 +1,5 @@
-﻿using Code.Gameplay.Features.Statuses;
+﻿using System.Collections.Generic;
+using Code.Gameplay.Features.Statuses;
 using UnityEngine;
 
 namespace Code.Gameplay.Features.Enchants
@@ -6,41 +7,28 @@ namespace Code.Gameplay.Features.Enchants
 	public class EnchantVisualEffect : MonoBehaviour
 	{
 		[SerializeField] private SpriteRenderer _spriteRenderer;
-		private bool _hasEnchant;
+
+		private readonly HashSet<StatusTypeId> _activeEnchantTypes = new();
 
 		public void ApplyVisual(StatusTypeId typeId)
 		{
-			switch (typeId)
-			{
-				case StatusTypeId.Poison:
-					ApplyPoison();
-					break;
-				case StatusTypeId.Freeze:
-					ApplyFreeze();
-					break;
-			}
+			_activeEnchantTypes.Add(typeId);
+
+			_spriteRenderer.color = _activeEnchantTypes.Count > 1 
+				? Color.cyan 
+				: GetColorForType(typeId);
+
+			Debug.Log(_spriteRenderer.color);
 		}
 
-		private void ApplyPoison()
+		private Color GetColorForType(StatusTypeId typeId)
 		{
-			if (_hasEnchant)
-				_spriteRenderer.color = Color.cyan;
-			else
+			return typeId switch
 			{
-				_spriteRenderer.color = Color.green;
-				_hasEnchant = true;
-			}
-		}
-
-		private void ApplyFreeze()
-		{
-			if (_hasEnchant)
-				_spriteRenderer.color = Color.cyan;
-			else
-			{
-				_spriteRenderer.color = Color.blue;
-				_hasEnchant = true;
-			}
+				StatusTypeId.Poison => Color.green,
+				StatusTypeId.Freeze => Color.blue,
+				_ => Color.white
+			};
 		}
 	}
 }

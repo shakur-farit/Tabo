@@ -15,7 +15,8 @@ namespace Code.Gameplay.Features.Enchants.Systems
 		protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context) =>
 			context.CreateCollector(GameMatcher.AllOf(
 				GameMatcher.Enchant,
-				GameMatcher.Destructed));
+				GameMatcher.Destructed)
+				.NoneOf(GameMatcher.EnchantAlreadyHeld));
 
 		protected override bool Filter(GameEntity entity) => entity.isEnchant && entity.isDestructed;
 

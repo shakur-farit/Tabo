@@ -8,8 +8,10 @@ namespace Code.Gameplay.Features.Enchants
 	{
 		public EnchantFeature(ISystemsFactory systems)
 		{
-			Add(systems.Create<MarkEnchantAlreadyHeldSystem>());
-			Add(systems.Create<AddEnchantToWeaponSystem>());
+			//Add(systems.Create<MarkEnchantAlreadyHeldSystem>());
+			//Add(systems.Create<UpdateAlreadyHeldEnchantTimeLeftSystem>());
+			//Add(systems.Create<AddEnchantToWeaponSystem>());
+		//	Add(systems.Create<LimitWeaponEnchantsSystem>());
 
 			Add(systems.Create<PoisonEnchantSystem>());
 			Add(systems.Create<FreezeEnchantSystem>());
@@ -19,6 +21,7 @@ namespace Code.Gameplay.Features.Enchants
 
 			Add(systems.Create<MarkDestructedOnEnchantTimeUpSystem>());
 			Add(systems.Create<MarkDestructedOnEnchantAlreadyHeldSystem>());
+
 			Add(systems.Create<RemoveEnchantFromWeaponSystem>());
 			Add(systems.Create<RemoveEnchantVisualFromHolderSystem>());
 		}

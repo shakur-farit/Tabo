@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Code.Gameplay.Features.Statuses;
 using Entitas;
+using UnityEngine;
 
 namespace Code.Gameplay.Features.Ammo.Systems
 {
@@ -25,7 +26,11 @@ namespace Code.Gameplay.Features.Ammo.Systems
 		{
 			foreach (GameEntity ammo in entities)
 			foreach (StatusSetup setup in ammo.StatusSetups)
-				ammo.EnchantVisualEffect.ApplyVisual(setup.StatusTypeId);
+			{
+				Debug.Log(setup.StatusTypeId);
+
+					ammo.EnchantVisualEffect.ApplyVisual(setup.StatusTypeId);
+			}
 		}
 	}
 }

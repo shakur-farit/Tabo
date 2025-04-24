@@ -9,6 +9,7 @@ namespace Code.Gameplay.Features.Ammo
 		public AmmoFeature(ISystemsFactory systems)
 		{
 			Add(systems.Create<CooldownSystem>());
+
 			Add(systems.Create<CreatingOfPistolBulletSystem>());
 			Add(systems.Create<CreatingOfAutomaticPistolBulletSystem>());
 			Add(systems.Create<CreatingOfLaserBoltSystem>());
@@ -18,10 +19,14 @@ namespace Code.Gameplay.Features.Ammo
 			Add(systems.Create<CreatingOfShotgunBulletSystem>());
 			Add(systems.Create<CreatingOfRocketMissileSystem>());
 			Add(systems.Create<CreatingOfSniperBulletSystem>());
+
 			Add(systems.Create<ApplyEffectsToAmmoSystem>());
 			Add(systems.Create<ApplyStatusesToAmmoSystem>());
-			Add(systems.Create<ApplyEnchantVisualsToAmmoReactiveSystem>());
+
+			//Add(systems.Create<ApplyEnchantVisualsToAmmoReactiveSystem>());
+
 			Add(systems.Create<CalculateCurrentAmmoAmountSystem>());
+
 			Add(systems.Create<MarkAmmoProcessedOnWeaponFireRangeSystem>());
 			Add(systems.Create<MarkAmmoProcessedOnTargetLimitExceededSystem>());
 			Add(systems.Create<FinalizeProcessedAmmoSystem>());

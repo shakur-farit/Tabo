@@ -8,6 +8,7 @@ namespace Code.Gameplay.Features.Loot.Systems
 	{
 		private readonly IGroup<GameEntity> _enchants;
 		private readonly IGroup<GameEntity> _weapons;
+		private readonly List<GameEntity> _buffer = new(16);
 
 		public AddEnchantToWeaponSystem(GameContext game)
 		{
@@ -16,6 +17,7 @@ namespace Code.Gameplay.Features.Loot.Systems
 					GameMatcher.Enchant,
 					GameMatcher.Id,
 					GameMatcher.EnchantDuration,
+					GameMatcher.NewCollectedEnchant,
 					GameMatcher.StatusSetups));
 
 			_weapons = game.GetGroup(GameMatcher
@@ -25,7 +27,7 @@ namespace Code.Gameplay.Features.Loot.Systems
 
 		public void Execute()
 		{
-			foreach (GameEntity enchant in _enchants)
+			foreach (GameEntity enchant in _enchants.GetEntities(_buffer))
 			foreach (StatusSetup setup in enchant.StatusSetups)
 			foreach (GameEntity weapon in _weapons)
 			{
@@ -33,6 +35,8 @@ namespace Code.Gameplay.Features.Loot.Systems
 					weapon.AddWeaponEnchants(new Dictionary<int, StatusSetup>());
 
 				weapon.WeaponEnchants.Add(enchant.Id, setup);
+
+				enchant.isNewCollectedEnchant = false;
 			}
 		}
 	}

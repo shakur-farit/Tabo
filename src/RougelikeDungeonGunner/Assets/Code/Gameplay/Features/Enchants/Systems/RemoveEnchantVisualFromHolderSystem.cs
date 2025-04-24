@@ -15,7 +15,8 @@ namespace Code.Gameplay.Features.Enchants.Systems
 			context.CreateCollector(GameMatcher.AllOf(
 				GameMatcher.Enchant,
 				GameMatcher.EnchantVisual,
-				GameMatcher.Destructed));
+				GameMatcher.Destructed)
+				.NoneOf(GameMatcher.EnchantAlreadyHeld));
 
 		protected override bool Filter(GameEntity enchants) => 
 			enchants.isEnchant && enchants.isDestructed && enchants.isEnchantVisual && enchants.hasEnchantTypeId;

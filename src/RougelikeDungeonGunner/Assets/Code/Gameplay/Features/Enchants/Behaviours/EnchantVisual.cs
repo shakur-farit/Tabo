@@ -19,7 +19,7 @@ namespace Code.Gameplay.Features.Enchants
 			_icon.sprite = config.Sprite;
 		}
 
-		public void UpdateTimeLeftText(float value) => 
-			_timeLeftText.text = ((int)value).ToString();
+		public void UpdateTimeLeftText(float value) =>
+			_timeLeftText.text = Mathf.CeilToInt(value).ToString();
 	}
 }

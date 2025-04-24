@@ -51,6 +51,7 @@ namespace Code.Gameplay.Features.Enchants.Factory
 				.AddStatusSetups(new List<StatusSetup> { setup })
 				.AddProducerId(producerId)
 				.With(x => x.isEnchant = true)
+				.With(x => x.isNewCollectedEnchant = true)
 				.With(x => x.AddEnchantDuration(config.Duration), when: config.Duration > 0)
 				.With(x => x.AddEnchantTimeLeft(config.Duration), when: config.Duration > 0)
 				;

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: PoisonEnchantConfig
   m_EditorClassIdentifier: 
   TypeId: 1
-  ViewPrefab: {fileID: 2941936387153775719, guid: 81262980ba6085d408abcd6a32cf889f, type: 3}
+  ViewPrefab: {fileID: 9027750098773177115, guid: 81262980ba6085d408abcd6a32cf889f, type: 3}
   Sprite: {fileID: 3641686006095517685, guid: 1a59e6589a702274ca77ec6b61130abd, type: 3}
   Duration: 5

@@ -32,9 +32,7 @@ namespace Code.Gameplay.Features.Loot.Systems
 			foreach (GameEntity weapon in _weapons.GetEntities(_buffer))
 			foreach (GameEntity collected in _collected)
 			foreach (StatusSetup setup in collected.StatusSetups)
-			{
 				_enchantFactory.CreateEnchant(setup, weapon.Id);
-			}
 		}
 	}
 }

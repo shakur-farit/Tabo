@@ -24,6 +24,7 @@ namespace Code.Gameplay.Features.Loot.Systems
 			_enchants = game.GetGroup(GameMatcher
 				.AllOf(
 					GameMatcher.Enchant,
+					GameMatcher.NewCollectedEnchant,
 					GameMatcher.StatusSetups));
 		}
 
@@ -36,7 +37,7 @@ namespace Code.Gameplay.Features.Loot.Systems
 			{
 				StatusSetup setupOnWeapon = weaponEnchant.Value;
 
-				if (AreEqual(setupOnWeapon, collectedSetup))
+				if (AreEqual(setupOnWeapon, collectedSetup)) 
 					enchant.isEnchantAlreadyHeld = true;
 			}
 		}
