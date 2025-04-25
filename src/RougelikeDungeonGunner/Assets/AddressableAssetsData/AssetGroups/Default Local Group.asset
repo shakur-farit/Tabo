@@ -173,6 +173,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - EnchantConfig
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 17afb457c40697b4aa71daa220a84045
+    m_Address: Assets/StaticData/Loot/ExplosionEnchantItemLootConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - LootConfig
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 7128017d563554245a79368046c75e1a, type: 2}
   m_SchemaSet:
