@@ -4,6 +4,7 @@
 	{
 		Unknown = 0,
 		PoisonEnchant = 1,
-		FreezeEnchant = 2
+		FreezeEnchant = 2,
+		ExplosionEnchant = 3
 	}
 }

@@ -6,6 +6,7 @@ using Code.Infrastructure.Identifiers;
 using System;
 using System.Collections.Generic;
 using Code.Gameplay.Features.Statuses;
+using UnityEngine;
 
 namespace Code.Gameplay.Features.Enchants.Factory
 {
@@ -28,6 +29,8 @@ namespace Code.Gameplay.Features.Enchants.Factory
 					return CreatePoisonEnchant(setup, producerId);
 				case StatusTypeId.Freeze:
 					return CreateFreezeEnchant(setup, producerId);
+				case StatusTypeId.Explosion:
+					return CreateExplosionEnchant(setup, producerId);
 			}
 
 			throw new Exception($"Enchant for {setup.StatusTypeId} type was not found");
@@ -41,9 +44,15 @@ namespace Code.Gameplay.Features.Enchants.Factory
 			CreateEnchantEntity(setup, EnchantTypeId.FreezeEnchant, producerId)
 				.With(x => x.isFreezeEnchant = true);
 
+		private GameEntity CreateExplosionEnchant(StatusSetup setup, int producerId) =>
+			CreateEnchantEntity(setup, EnchantTypeId.FreezeEnchant, producerId)
+				.With(x => x.isExplosionEnchant = true);
+
 		private GameEntity CreateEnchantEntity(StatusSetup setup, EnchantTypeId typeId, int producerId)
 		{
 			EnchantConfig config = _staticDataService.GetEnchantConfig(typeId);
+
+			Debug.Log($"create {typeId}");
 
 			return CreateEntity.Empty()
 				.AddId(_identifier.Next())

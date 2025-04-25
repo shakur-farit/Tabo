@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Code.Gameplay.Features.Enemy;
+using UnityEngine;
 
 namespace Code.Gameplay.Features.Levels.Configs
 {
@@ -14,6 +15,6 @@ namespace Code.Gameplay.Features.Levels.Configs
 	public class EnemiesInWave
 	{
 		public EnemyTypeId EnemyTypeId;
-		public int Amount;
+		[Range(0, 100)] public int Amount;
 	}
 }

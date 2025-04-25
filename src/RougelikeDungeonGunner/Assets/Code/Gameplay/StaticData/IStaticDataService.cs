@@ -1,4 +1,5 @@
-﻿using Code.Gameplay.Features.Ammo;
+﻿using System.Collections.Generic;
+using Code.Gameplay.Features.Ammo;
 using Code.Gameplay.Features.Ammo.Config;
 using Code.Gameplay.Features.Effects;
 using Code.Gameplay.Features.Enchants;
@@ -19,8 +20,11 @@ namespace Code.Gameplay.StaticData
 {
   public interface IStaticDataService
   {
-    UniTask Load();
-    AmmoConfig GetAmmoConfig(AmmoTypeId ammoTypeId);
+	  IEnumerable<LootConfig> GetAllLootConfigs();
+
+	  UniTask Load();
+
+	  AmmoConfig GetAmmoConfig(AmmoTypeId ammoTypeId);
     AmmoLevel GetAmmoLevel(AmmoTypeId ammoTypeId, int level);
     WeaponConfig GetWeaponConfig(WeaponTypeId weaponTypeId);
     WeaponLevel GetWeaponLevel(WeaponTypeId weaponTypeId, int level);

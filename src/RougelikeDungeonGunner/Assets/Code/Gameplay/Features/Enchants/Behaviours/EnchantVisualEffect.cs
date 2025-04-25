@@ -17,8 +17,6 @@ namespace Code.Gameplay.Features.Enchants
 			_spriteRenderer.color = _activeEnchantTypes.Count > 1 
 				? Color.cyan 
 				: GetColorForType(typeId);
-
-			Debug.Log(_spriteRenderer.color);
 		}
 
 		private Color GetColorForType(StatusTypeId typeId)
@@ -27,6 +25,7 @@ namespace Code.Gameplay.Features.Enchants
 			{
 				StatusTypeId.Poison => Color.green,
 				StatusTypeId.Freeze => Color.blue,
+				StatusTypeId.Explosion => Color.red,
 				_ => Color.white
 			};
 		}

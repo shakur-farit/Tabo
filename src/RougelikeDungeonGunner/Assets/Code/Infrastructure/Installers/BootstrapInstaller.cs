@@ -12,6 +12,7 @@ using Code.Gameplay.Features.Hero.Factory;
 using Code.Gameplay.Features.Levels;
 using Code.Gameplay.Features.Levels.Factory;
 using Code.Gameplay.Features.Levels.Services;
+using Code.Gameplay.Features.Loot;
 using Code.Gameplay.Features.Loot.Factory;
 using Code.Gameplay.Features.Statuses.Applier;
 using Code.Gameplay.Features.Statuses.Factory;
@@ -99,6 +100,7 @@ namespace Code.Infrastructure.Installers
 			Container.Bind<ILevelDataProvider>().To<LevelDataProvider>().AsSingle();
 			Container.Bind<IStatusApplier>().To<StatusApplier>().AsSingle();
 			Container.Bind<ILevelEnvironmentService>().To<LevelEnvironmentService>().AsSingle();
+			Container.Bind<ILootRandomizerService>().To<LootRandomizerService>().AsSingle();
 		}
 
 		private void BindGameplayFactories()

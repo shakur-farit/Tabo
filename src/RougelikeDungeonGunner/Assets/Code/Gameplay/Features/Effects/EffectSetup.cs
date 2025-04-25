@@ -1,4 +1,5 @@
 ﻿using System;
+using UnityEngine;
 
 namespace Code.Gameplay.Features.Effects
 {
@@ -6,7 +7,7 @@ namespace Code.Gameplay.Features.Effects
 	public class EffectSetup
 	{
 		public EffectTypeId EffectTypeId;
-		public float Value;
+		[Range(0f, 100f)] public float Value;
 
 		public static EffectSetup FormId(EffectTypeId typeId, float value) =>
 			new() { EffectTypeId = typeId, Value = value };

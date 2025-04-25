@@ -41,6 +41,8 @@ namespace Code.Gameplay.StaticData
 
 		private readonly IAssetProvider _assetProvider;
 
+		public IEnumerable<LootConfig> GetAllLootConfigs() => _lootById.Values;
+
 		public StaticDataService(IAssetProvider assetProvider) =>
 			_assetProvider = assetProvider;
 

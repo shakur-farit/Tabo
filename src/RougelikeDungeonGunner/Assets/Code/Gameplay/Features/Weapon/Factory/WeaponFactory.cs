@@ -104,7 +104,7 @@ namespace Code.Gameplay.Features.Weapon.Factory
 					.AddMinPelletsSpreadAngle(level.MinSpreadAngle)
 					.AddMaxPelletsSpreadAngle(level.MaxSpreadAngle)
 					.AddCooldown(level.Cooldown)
-					.AddMaxWeaponEnchantsCount(2)
+					.AddMaxWeaponEnchantsCount(level.MaxEnchantsCount)
 					.With(x => x.isWeapon = true)
 					.With(x => x.isReadyToCollectTargets = true)
 					.With(x => x.isMagazineNotEmpty = true)

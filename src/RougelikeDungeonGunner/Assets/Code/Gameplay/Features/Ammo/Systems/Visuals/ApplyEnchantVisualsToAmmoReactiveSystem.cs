@@ -26,11 +26,7 @@ namespace Code.Gameplay.Features.Ammo.Systems
 		{
 			foreach (GameEntity ammo in entities)
 			foreach (StatusSetup setup in ammo.StatusSetups)
-			{
-				Debug.Log(setup.StatusTypeId);
-
-					ammo.EnchantVisualEffect.ApplyVisual(setup.StatusTypeId);
-			}
+				ammo.EnchantVisualEffect.ApplyVisual(setup.StatusTypeId);
 		}
 	}
 }

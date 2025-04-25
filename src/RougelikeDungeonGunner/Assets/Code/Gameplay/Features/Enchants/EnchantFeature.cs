@@ -15,6 +15,7 @@ namespace Code.Gameplay.Features.Enchants
 
 			Add(systems.Create<PoisonEnchantSystem>());
 			Add(systems.Create<FreezeEnchantSystem>());
+			Add(systems.Create<ExplosionEnchantSystem>());
 
 			Add(systems.Create<AddEnchantVisualToHolderSystem>());
 			Add(systems.Create<UpdateEnchantTimeLeftVisualSystem>());

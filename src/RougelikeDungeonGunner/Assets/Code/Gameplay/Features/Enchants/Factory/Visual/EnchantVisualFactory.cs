@@ -22,7 +22,6 @@ namespace Code.Gameplay.Features.Enchants.Factory
 
 			EnchantVisual enchant = _instantiator.InstantiatePrefabForComponent<EnchantVisual>(config.ViewPrefab, parent);
 			enchant.Set(config);
-			Debug.Log("Create");
 
 			return enchant;
 		}

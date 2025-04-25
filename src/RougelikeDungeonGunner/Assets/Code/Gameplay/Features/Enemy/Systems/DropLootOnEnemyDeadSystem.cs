@@ -7,11 +7,16 @@ namespace Code.Gameplay.Features.Enemy.Systems
 {
 	public class DropLootOnEnemyDeadSystem : IExecuteSystem
 	{
+		private readonly ILootRandomizerService _randomizer;
 		private readonly ILootFactory _lootFactory;
 		private readonly IGroup<GameEntity> _enemies;
 
-		public DropLootOnEnemyDeadSystem(GameContext game, ILootFactory lootFactory)
+		public DropLootOnEnemyDeadSystem(
+			GameContext game,
+			ILootRandomizerService randomizer,
+			ILootFactory lootFactory)
 		{
+			_randomizer = randomizer;
 			_lootFactory = lootFactory;
 			_enemies = game.GetGroup(GameMatcher
 				.AllOf(
@@ -25,12 +30,10 @@ namespace Code.Gameplay.Features.Enemy.Systems
 		{
 			foreach (GameEntity enemy in _enemies)
 			{
-				float randomFloat = Random.Range(0, 1f);
+				LootTypeId? loot = _randomizer.GetLootToDrop(enemy);
 
-				if (randomFloat <= 0.5f)
-					_lootFactory.CreateLoot(LootTypeId.FreezeEnchantItem, enemy.WorldPosition);
-				else
-					_lootFactory.CreateLoot(LootTypeId.PoisonEnchantItem, enemy.WorldPosition);
+				if (loot.HasValue)
+					_lootFactory.CreateLoot(loot.Value, enemy.WorldPosition);
 			}
 		}
 	}

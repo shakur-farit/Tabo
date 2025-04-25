@@ -1,5 +1,4 @@
-﻿using Code.Infrastructure.View;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Code.Gameplay.Features.Enchants.Configs
 {
@@ -9,6 +8,6 @@ namespace Code.Gameplay.Features.Enchants.Configs
 		public EnchantTypeId TypeId;
 		public GameObject ViewPrefab;
 		public Sprite Sprite;
-		public float Duration;
+		[Range(0f, 100f)] public float Duration;
 	}
 }

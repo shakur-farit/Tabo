@@ -26,11 +26,8 @@ MonoBehaviour:
     PelletCount: 1
     MinSpreadAngle: -5
     MaxSpreadAngle: 5
+    MaxEnchantsCount: 0
     EffectSetups:
     - EffectTypeId: 1
       Value: 1
-    StatusSetups:
-    - StatusTypeId: 1
-      Value: 2
-      StatusDuration: 5
-      Period: 1
+    StatusSetups: []
