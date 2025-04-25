@@ -23,7 +23,7 @@ namespace Code.Gameplay.Features.Ammo
 			Add(systems.Create<ApplyEffectsToAmmoSystem>());
 			Add(systems.Create<ApplyStatusesToAmmoSystem>());
 
-			//Add(systems.Create<ApplyEnchantVisualsToAmmoReactiveSystem>());
+			Add(systems.Create<ApplyEnchantVisualsToAmmoReactiveSystem>());
 
 			Add(systems.Create<CalculateCurrentAmmoAmountSystem>());
 

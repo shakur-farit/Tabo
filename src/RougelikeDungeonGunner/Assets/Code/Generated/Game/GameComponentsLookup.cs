@@ -156,16 +156,15 @@ public static class GameComponentsLookup {
     public const int StatusSetups = 145;
     public const int Weapon = 146;
     public const int WeaponEnchants = 147;
-    public const int WeaponEnchantsQueue = 148;
-    public const int WeaponOwnerId = 149;
-    public const int WeaponRotationAngle = 150;
-    public const int WeaponRotationPointTransform = 151;
-    public const int WeaponTypeId = 152;
-    public const int AxisInput = 153;
-    public const int Input = 154;
-    public const int MouseLeftButtonDown = 155;
+    public const int WeaponOwnerId = 148;
+    public const int WeaponRotationAngle = 149;
+    public const int WeaponRotationPointTransform = 150;
+    public const int WeaponTypeId = 151;
+    public const int AxisInput = 152;
+    public const int Input = 153;
+    public const int MouseLeftButtonDown = 154;
 
-    public const int TotalComponents = 156;
+    public const int TotalComponents = 155;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -316,7 +315,6 @@ public static class GameComponentsLookup {
         "StatusSetups",
         "Weapon",
         "WeaponEnchants",
-        "WeaponEnchantsQueue",
         "WeaponOwnerId",
         "WeaponRotationAngle",
         "WeaponRotationPointTransform",
@@ -475,7 +473,6 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Weapon.StatusSetups),
         typeof(Code.Gameplay.Features.Weapon.Weapon),
         typeof(Code.Gameplay.Features.Weapon.WeaponEnchants),
-        typeof(Code.Gameplay.Features.Weapon.WeaponEnchantsQueue),
         typeof(Code.Gameplay.Features.Weapon.WeaponOwnerId),
         typeof(Code.Gameplay.Features.Weapon.WeaponRotationAngle),
         typeof(Code.Gameplay.Features.Weapon.WeaponRotationPointTransform),
