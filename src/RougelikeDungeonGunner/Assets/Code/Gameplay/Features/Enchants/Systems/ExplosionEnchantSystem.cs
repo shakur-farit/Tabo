@@ -17,13 +17,13 @@ namespace Code.Gameplay.Features.Enchants.Systems
 				.AllOf(
 					GameMatcher.StatusSetups,
 					GameMatcher.ProducerId,
-					GameMatcher.ExplosionEnchant));
+					GameMatcher.FlameEnchant));
 
 			_ammo = game.GetGroup(GameMatcher
 				.AllOf(
 					GameMatcher.Ammo,
 					GameMatcher.ProducerId)
-				.NoneOf(GameMatcher.ExplosionEnchant));
+				.NoneOf(GameMatcher.FlameEnchant));
 		}
 
 		public void Execute()
@@ -35,7 +35,7 @@ namespace Code.Gameplay.Features.Enchants.Systems
 				{
 					GetOrAddStatusSetups(ammo)
 						.AddRange(enchant.StatusSetups);
-					ammo.isExplosionEnchant = true;
+					ammo.isFlameEnchant = true;
 				}
 			}
 		}

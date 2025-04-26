@@ -2,6 +2,7 @@
 using Code.Gameplay.Features.Enchants.Factory;
 using Code.Gameplay.Features.Statuses;
 using Entitas;
+using UnityEngine;
 
 namespace Code.Gameplay.Features.Loot.Systems
 {
@@ -36,5 +37,3 @@ namespace Code.Gameplay.Features.Loot.Systems
 		}
 	}
 }
-
-	

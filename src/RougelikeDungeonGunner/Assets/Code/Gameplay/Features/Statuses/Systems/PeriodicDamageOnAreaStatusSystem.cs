@@ -2,16 +2,17 @@
 using Code.Gameplay.Features.Effects;
 using Code.Gameplay.Features.Effects.Factory;
 using Entitas;
+using UnityEngine;
 
 namespace Code.Gameplay.Features.Statuses.Systems
 {
-	public class PeriodicDamageStatusSystem : IExecuteSystem
+	public class PeriodicDamageOnAreaStatusSystem : IExecuteSystem
 	{
 		private readonly ITimeService _time;
 		private readonly IEffectFactory _effectFactory;
 		private readonly IGroup<GameEntity> _statuses;
 
-		public PeriodicDamageStatusSystem(GameContext game, ITimeService time, IEffectFactory effectFactory)
+		public PeriodicDamageOnAreaStatusSystem(GameContext game, ITimeService time, IEffectFactory effectFactory)
 		{
 			_time = time;
 			_effectFactory = effectFactory;
@@ -22,28 +23,39 @@ namespace Code.Gameplay.Features.Statuses.Systems
 					GameMatcher.EffectValue,
 					GameMatcher.TimeSinceLastTick,
 					GameMatcher.ProducerId,
-					GameMatcher.TargetId)
-				.NoneOf(GameMatcher.Radius));
+					GameMatcher.Radius,
+					GameMatcher.WorldPosition,
+					GameMatcher.TargetsBuffer,
+					GameMatcher.TargetId));
 		}
 
 		public void Execute()
 		{
 			foreach (GameEntity status in _statuses)
+			foreach (int target in status.TargetsBuffer)
 			{
+					Debug.Log($"Create {status.TargetsBuffer.Count}");
+
+				status.ReplaceWorldPosition(status.Target().WorldPosition);
+
 				if (status.TimeSinceLastTick >= 0)
+				{
 					status.ReplaceTimeSinceLastTick(status.TimeSinceLastTick - _time.DeltaTime);
+				}
 				else
 				{
 					status.ReplaceTimeSinceLastTick(status.Period);
+
+					status.ReplaceTimeSinceLastTick(status.Period);
 					_effectFactory.CreateEffect(
-						GetEffectSetup(status), 
+						GetEffectSetup(status),
 						status.ProducerId,
-						status.TargetId);
+						target);
 				}
 			}
 		}
 
-		private EffectSetup GetEffectSetup(GameEntity status) => 
+		private EffectSetup GetEffectSetup(GameEntity status) =>
 			EffectSetup.FormId(EffectTypeId.Damage, status.EffectValue);
 	}
 }

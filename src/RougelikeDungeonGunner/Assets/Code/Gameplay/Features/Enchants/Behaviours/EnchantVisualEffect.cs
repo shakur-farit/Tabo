@@ -25,7 +25,7 @@ namespace Code.Gameplay.Features.Enchants
 			{
 				StatusTypeId.Poison => Color.green,
 				StatusTypeId.Freeze => Color.blue,
-				StatusTypeId.Explosion => Color.red,
+				StatusTypeId.Flame => Color.red,
 				_ => Color.white
 			};
 		}

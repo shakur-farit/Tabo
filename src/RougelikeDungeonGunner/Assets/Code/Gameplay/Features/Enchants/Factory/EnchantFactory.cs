@@ -12,6 +12,8 @@ namespace Code.Gameplay.Features.Enchants.Factory
 {
 	public class EnchantFactory : IEnchantFactory
 	{
+		private const int TargetsBufferSize = 16;
+
 		private readonly IIdentifierService _identifier;
 		private readonly IStaticDataService _staticDataService;
 
@@ -29,8 +31,8 @@ namespace Code.Gameplay.Features.Enchants.Factory
 					return CreatePoisonEnchant(setup, producerId);
 				case StatusTypeId.Freeze:
 					return CreateFreezeEnchant(setup, producerId);
-				case StatusTypeId.Explosion:
-					return CreateExplosionEnchant(setup, producerId);
+				case StatusTypeId.Flame:
+					return CreateFlameEnchant(setup, producerId);
 			}
 
 			throw new Exception($"Enchant for {setup.StatusTypeId} type was not found");
@@ -38,15 +40,24 @@ namespace Code.Gameplay.Features.Enchants.Factory
 
 		private GameEntity CreatePoisonEnchant(StatusSetup setup, int producerId) =>
 			CreateEnchantEntity(setup, EnchantTypeId.PoisonEnchant, producerId)
-				.With(x => x.isPoisonEnchant = true);
+				.With(x => x.isPoisonEnchant = true)
+			;
 
 		private GameEntity CreateFreezeEnchant(StatusSetup setup, int producerId) =>
 			CreateEnchantEntity(setup, EnchantTypeId.FreezeEnchant, producerId)
-				.With(x => x.isFreezeEnchant = true);
+				.With(x => x.isFreezeEnchant = true)
+			;
 
-		private GameEntity CreateExplosionEnchant(StatusSetup setup, int producerId) =>
-			CreateEnchantEntity(setup, EnchantTypeId.FreezeEnchant, producerId)
-				.With(x => x.isExplosionEnchant = true);
+		private GameEntity CreateFlameEnchant(StatusSetup setup, int producerId) =>
+			CreateEnchantEntity(setup, EnchantTypeId.FlameEnchant, producerId)
+				.AddWorldPosition(Vector3.zero)
+				.AddRadius(setup.Radius)
+				.AddTargetsBuffer(new List<int>(TargetsBufferSize))
+				.AddProcessedTargets(new List<int>(TargetsBufferSize))
+				.With(x => x.isFlameEnchant = true)
+				.With(x => x.isReadyToCollectTargets = true)
+				.With(x => x.isCollectTargetsContinuously = true)
+			;
 
 		private GameEntity CreateEnchantEntity(StatusSetup setup, EnchantTypeId typeId, int producerId)
 		{

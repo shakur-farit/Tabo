@@ -58,7 +58,7 @@ public static class GameComponentsLookup {
     public const int EnchantTypeId = 47;
     public const int EnchantVisual = 48;
     public const int EnchantVisualEffect = 49;
-    public const int ExplosionEnchant = 50;
+    public const int FlameEnchant = 50;
     public const int FreezeEnchant = 51;
     public const int NewCollectedEnchant = 52;
     public const int PoisonEnchant = 53;
@@ -106,66 +106,67 @@ public static class GameComponentsLookup {
     public const int Affected = 95;
     public const int Applied = 96;
     public const int ApplierStatusLink = 97;
-    public const int Freeze = 98;
-    public const int Period = 99;
-    public const int Poison = 100;
-    public const int Status = 101;
-    public const int StatusDuration = 102;
-    public const int StatusTimeLeft = 103;
-    public const int StatusTypeId = 104;
-    public const int TimeSinceLastTick = 105;
-    public const int Unapplied = 106;
-    public const int CollectTargetsContinuously = 107;
-    public const int CollectTargetsInterval = 108;
-    public const int CollectTargetsTimer = 109;
-    public const int LayerMask = 110;
-    public const int ProcessedTargets = 111;
-    public const int Radius = 112;
-    public const int ReadyToCollectTargets = 113;
-    public const int TargetsBuffer = 114;
-    public const int AutomaticPistol = 115;
-    public const int NewWeaponTypeId = 116;
-    public const int WeaponChangeable = 117;
-    public const int WeaponChangeRequested = 118;
-    public const int ClosestTargetPosition = 119;
-    public const int CurrentAmmoAmount = 120;
-    public const int EffectSetups = 121;
-    public const int FirePositionTransform = 122;
-    public const int LaserBlaster = 123;
-    public const int Machinegun = 124;
-    public const int MagazineNotEmpty = 125;
-    public const int MagazineSize = 126;
-    public const int MaxPelletsSpreadAngle = 127;
-    public const int MaxWeaponEnchantsCount = 128;
-    public const int MinPelletsSpreadAngle = 129;
-    public const int MultiPellet = 130;
-    public const int Pistol = 131;
-    public const int PlasmaGun = 132;
-    public const int Precharged = 133;
-    public const int PrechargeTime = 134;
-    public const int PrechargeTimeLeft = 135;
-    public const int ReadyToShoot = 136;
-    public const int Reloading = 137;
-    public const int ReloadTime = 138;
-    public const int ReloadTimeLeft = 139;
-    public const int Revolver = 140;
-    public const int RocketLauncher = 141;
-    public const int Shooting = 142;
-    public const int Shot = 143;
-    public const int Shotgun = 144;
-    public const int Sniper = 145;
-    public const int StatusSetups = 146;
-    public const int Weapon = 147;
-    public const int WeaponEnchants = 148;
-    public const int WeaponOwnerId = 149;
-    public const int WeaponRotationAngle = 150;
-    public const int WeaponRotationPointTransform = 151;
-    public const int WeaponTypeId = 152;
-    public const int AxisInput = 153;
-    public const int Input = 154;
-    public const int MouseLeftButtonDown = 155;
+    public const int Flame = 98;
+    public const int Freeze = 99;
+    public const int Period = 100;
+    public const int Poison = 101;
+    public const int Status = 102;
+    public const int StatusDuration = 103;
+    public const int StatusTimeLeft = 104;
+    public const int StatusTypeId = 105;
+    public const int TimeSinceLastTick = 106;
+    public const int Unapplied = 107;
+    public const int CollectTargetsContinuously = 108;
+    public const int CollectTargetsInterval = 109;
+    public const int CollectTargetsTimer = 110;
+    public const int LayerMask = 111;
+    public const int ProcessedTargets = 112;
+    public const int Radius = 113;
+    public const int ReadyToCollectTargets = 114;
+    public const int TargetsBuffer = 115;
+    public const int AutomaticPistol = 116;
+    public const int NewWeaponTypeId = 117;
+    public const int WeaponChangeable = 118;
+    public const int WeaponChangeRequested = 119;
+    public const int ClosestTargetPosition = 120;
+    public const int CurrentAmmoAmount = 121;
+    public const int EffectSetups = 122;
+    public const int FirePositionTransform = 123;
+    public const int LaserBlaster = 124;
+    public const int Machinegun = 125;
+    public const int MagazineNotEmpty = 126;
+    public const int MagazineSize = 127;
+    public const int MaxPelletsSpreadAngle = 128;
+    public const int MaxWeaponEnchantsCount = 129;
+    public const int MinPelletsSpreadAngle = 130;
+    public const int MultiPellet = 131;
+    public const int Pistol = 132;
+    public const int PlasmaGun = 133;
+    public const int Precharged = 134;
+    public const int PrechargeTime = 135;
+    public const int PrechargeTimeLeft = 136;
+    public const int ReadyToShoot = 137;
+    public const int Reloading = 138;
+    public const int ReloadTime = 139;
+    public const int ReloadTimeLeft = 140;
+    public const int Revolver = 141;
+    public const int RocketLauncher = 142;
+    public const int Shooting = 143;
+    public const int Shot = 144;
+    public const int Shotgun = 145;
+    public const int Sniper = 146;
+    public const int StatusSetups = 147;
+    public const int Weapon = 148;
+    public const int WeaponEnchants = 149;
+    public const int WeaponOwnerId = 150;
+    public const int WeaponRotationAngle = 151;
+    public const int WeaponRotationPointTransform = 152;
+    public const int WeaponTypeId = 153;
+    public const int AxisInput = 154;
+    public const int Input = 155;
+    public const int MouseLeftButtonDown = 156;
 
-    public const int TotalComponents = 156;
+    public const int TotalComponents = 157;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -218,7 +219,7 @@ public static class GameComponentsLookup {
         "EnchantTypeId",
         "EnchantVisual",
         "EnchantVisualEffect",
-        "ExplosionEnchant",
+        "FlameEnchant",
         "FreezeEnchant",
         "NewCollectedEnchant",
         "PoisonEnchant",
@@ -266,6 +267,7 @@ public static class GameComponentsLookup {
         "Affected",
         "Applied",
         "ApplierStatusLink",
+        "Flame",
         "Freeze",
         "Period",
         "Poison",
@@ -377,7 +379,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Enchants.EnchantTypeIdComponent),
         typeof(Code.Gameplay.Features.Enchants.EnchantVisualComponent),
         typeof(Code.Gameplay.Features.Enchants.EnchantVisualEffectComponent),
-        typeof(Code.Gameplay.Features.Enchants.ExplosionEnchant),
+        typeof(Code.Gameplay.Features.Enchants.FlameEnchant),
         typeof(Code.Gameplay.Features.Enchants.FreezeEnchant),
         typeof(Code.Gameplay.Features.Enchants.NewCollectedEnchant),
         typeof(Code.Gameplay.Features.Enchants.PoisonEnchant),
@@ -425,6 +427,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Statuses.StatusComponents.Affected),
         typeof(Code.Gameplay.Features.Statuses.StatusComponents.Applied),
         typeof(Code.Gameplay.Features.Statuses.StatusComponents.ApplierStatusLink),
+        typeof(Code.Gameplay.Features.Statuses.StatusComponents.Flame),
         typeof(Code.Gameplay.Features.Statuses.StatusComponents.Freeze),
         typeof(Code.Gameplay.Features.Statuses.StatusComponents.Period),
         typeof(Code.Gameplay.Features.Statuses.StatusComponents.Poison),

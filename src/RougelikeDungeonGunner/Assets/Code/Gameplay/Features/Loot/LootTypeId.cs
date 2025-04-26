@@ -8,6 +8,6 @@
 		ShieldItem = 3,
 		PoisonEnchantItem = 4,
 		FreezeEnchantItem = 5,
-		ExplosionEnchantItem = 6
+		FlameEnchantItem = 6
 	}
 }

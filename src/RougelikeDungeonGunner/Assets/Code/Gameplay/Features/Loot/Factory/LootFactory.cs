@@ -1,9 +1,6 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using Code.Common.Entity;
+﻿using Code.Common.Entity;
 using Code.Common.Extensions;
 using Code.Gameplay.Features.Loot.Configs;
-using Code.Gameplay.Features.Statuses;
 using Code.Gameplay.StaticData;
 using Code.Infrastructure.Identifiers;
 using UnityEngine;

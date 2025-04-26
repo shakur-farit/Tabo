@@ -5,6 +5,6 @@
 		Unknown = 0,
 		Poison = 1,
 		Freeze = 2,
-		Explosion = 3,
+		Flame = 3,
 	}
 }

@@ -8,17 +8,17 @@
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherExplosionEnchant;
+    static Entitas.IMatcher<GameEntity> _matcherFlameEnchant;
 
-    public static Entitas.IMatcher<GameEntity> ExplosionEnchant {
+    public static Entitas.IMatcher<GameEntity> FlameEnchant {
         get {
-            if (_matcherExplosionEnchant == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.ExplosionEnchant);
+            if (_matcherFlameEnchant == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.FlameEnchant);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherExplosionEnchant = matcher;
+                _matcherFlameEnchant = matcher;
             }
 
-            return _matcherExplosionEnchant;
+            return _matcherFlameEnchant;
         }
     }
 }
@@ -33,18 +33,18 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Enchants.ExplosionEnchant explosionEnchantComponent = new Code.Gameplay.Features.Enchants.ExplosionEnchant();
+    static readonly Code.Gameplay.Features.Enchants.FlameEnchant flameEnchantComponent = new Code.Gameplay.Features.Enchants.FlameEnchant();
 
-    public bool isExplosionEnchant {
-        get { return HasComponent(GameComponentsLookup.ExplosionEnchant); }
+    public bool isFlameEnchant {
+        get { return HasComponent(GameComponentsLookup.FlameEnchant); }
         set {
-            if (value != isExplosionEnchant) {
-                var index = GameComponentsLookup.ExplosionEnchant;
+            if (value != isFlameEnchant) {
+                var index = GameComponentsLookup.FlameEnchant;
                 if (value) {
                     var componentPool = GetComponentPool(index);
                     var component = componentPool.Count > 0
                             ? componentPool.Pop()
-                            : explosionEnchantComponent;
+                            : flameEnchantComponent;
 
                     AddComponent(index, component);
                 } else {

@@ -19,7 +19,9 @@ namespace Code.Gameplay.Features.Statuses.Factory
 				case StatusTypeId.Poison:
 					return CreatePoisonStatus(setup, producerId, targetId);
 				case StatusTypeId.Freeze:
-					return CreateFreezeStatus(setup, producerId, targetId); 
+					return CreateFreezeStatus(setup, producerId, targetId);
+				case StatusTypeId.Flame:
+					return CreateFlameStatus(setup, producerId, targetId);
 			}
 			
 			throw new Exception($"Status with type id {setup.StatusTypeId} does not exist");
@@ -27,12 +29,18 @@ namespace Code.Gameplay.Features.Statuses.Factory
 
 		private GameEntity CreatePoisonStatus(StatusSetup setup, int producerId, int targetId) =>
 			CreateStatusEntity(setup, producerId, targetId)
-				.With(x => x.isPoison = true);
+				.With(x => x.isPoison = true)
+			;
 
 		private GameEntity CreateFreezeStatus(StatusSetup setup, int producerId, int targetId) =>
 			CreateStatusEntity(setup, producerId, targetId)
 				.With(x => x.isFreeze = true)
 			;
+
+		private GameEntity CreateFlameStatus(StatusSetup setup, int producerId, int targetId) =>
+			CreateStatusEntity(setup, producerId, targetId)
+				.With(x => x.isFlame = true)
+		;
 
 		private GameEntity CreateStatusEntity(StatusSetup setup, int producerId, int targetId)
 		{

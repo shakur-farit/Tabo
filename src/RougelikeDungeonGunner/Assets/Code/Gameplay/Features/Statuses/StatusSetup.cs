@@ -10,5 +10,6 @@ namespace Code.Gameplay.Features.Statuses
 		[Range(0f, 100f)] public float Value;
 		[Range(0f, 100f)] public float StatusDuration;
 		[Range(0f, 100f)] public float Period;
+		[Range(0f, 100f)] public float Radius;
 	}
 }

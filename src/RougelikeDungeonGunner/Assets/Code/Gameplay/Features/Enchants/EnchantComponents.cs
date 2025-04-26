@@ -16,5 +16,5 @@ namespace Code.Gameplay.Features.Enchants
 
 	[Game] public class PoisonEnchant : IComponent { }
 	[Game] public class FreezeEnchant : IComponent { }
-	[Game] public class ExplosionEnchant : IComponent { }
+	[Game] public class FlameEnchant : IComponent { }
 }
