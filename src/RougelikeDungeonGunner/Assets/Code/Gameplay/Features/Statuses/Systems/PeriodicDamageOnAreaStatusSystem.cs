@@ -2,7 +2,6 @@
 using Code.Gameplay.Features.Effects;
 using Code.Gameplay.Features.Effects.Factory;
 using Entitas;
-using UnityEngine;
 
 namespace Code.Gameplay.Features.Statuses.Systems
 {
@@ -24,33 +23,29 @@ namespace Code.Gameplay.Features.Statuses.Systems
 					GameMatcher.TimeSinceLastTick,
 					GameMatcher.ProducerId,
 					GameMatcher.Radius,
-					GameMatcher.WorldPosition,
-					GameMatcher.TargetsBuffer,
-					GameMatcher.TargetId));
+					GameMatcher.TargetsBuffer));
 		}
 
 		public void Execute()
 		{
 			foreach (GameEntity status in _statuses)
-			foreach (int target in status.TargetsBuffer)
 			{
-					Debug.Log($"Create {status.TargetsBuffer.Count}");
-
-				status.ReplaceWorldPosition(status.Target().WorldPosition);
-
 				if (status.TimeSinceLastTick >= 0)
 				{
 					status.ReplaceTimeSinceLastTick(status.TimeSinceLastTick - _time.DeltaTime);
 				}
 				else
 				{
-					status.ReplaceTimeSinceLastTick(status.Period);
+					foreach (int target in status.TargetsBuffer)
+					{
+						status.ReplaceTimeSinceLastTick(status.Period);
+						_effectFactory.CreateEffect(
+							GetEffectSetup(status),
+							status.ProducerId,
+							target);
+					}
 
 					status.ReplaceTimeSinceLastTick(status.Period);
-					_effectFactory.CreateEffect(
-						GetEffectSetup(status),
-						status.ProducerId,
-						target);
 				}
 			}
 		}

@@ -12,8 +12,6 @@ namespace Code.Gameplay.Features.Enchants.Factory
 {
 	public class EnchantFactory : IEnchantFactory
 	{
-		private const int TargetsBufferSize = 16;
-
 		private readonly IIdentifierService _identifier;
 		private readonly IStaticDataService _staticDataService;
 
@@ -50,20 +48,12 @@ namespace Code.Gameplay.Features.Enchants.Factory
 
 		private GameEntity CreateFlameEnchant(StatusSetup setup, int producerId) =>
 			CreateEnchantEntity(setup, EnchantTypeId.FlameEnchant, producerId)
-				.AddWorldPosition(Vector3.zero)
-				.AddRadius(setup.Radius)
-				.AddTargetsBuffer(new List<int>(TargetsBufferSize))
-				.AddProcessedTargets(new List<int>(TargetsBufferSize))
 				.With(x => x.isFlameEnchant = true)
-				.With(x => x.isReadyToCollectTargets = true)
-				.With(x => x.isCollectTargetsContinuously = true)
-			;
+		;
 
 		private GameEntity CreateEnchantEntity(StatusSetup setup, EnchantTypeId typeId, int producerId)
 		{
 			EnchantConfig config = _staticDataService.GetEnchantConfig(typeId);
-
-			Debug.Log($"create {typeId}");
 
 			return CreateEntity.Empty()
 				.AddId(_identifier.Next())

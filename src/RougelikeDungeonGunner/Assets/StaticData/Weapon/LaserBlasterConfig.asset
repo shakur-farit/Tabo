@@ -26,6 +26,7 @@ MonoBehaviour:
     PelletCount: 1
     MinSpreadAngle: 0
     MaxSpreadAngle: 0
+    MaxEnchantsCount: 2
     EffectSetups:
     - EffectTypeId: 1
       Value: 10
