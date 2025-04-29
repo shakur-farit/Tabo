@@ -1,8 +1,7 @@
 ﻿using System.Collections.Generic;
 using Entitas;
-using Unity.VisualScripting;
 
-namespace Code.Gameplay.Features.Loot.Systems
+namespace Code.Gameplay.Features.Enchants.Systems
 {
 	public class MarkDestructedOnEnchantAlreadyHeldSystem : IExecuteSystem
 	{

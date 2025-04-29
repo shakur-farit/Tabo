@@ -2,7 +2,7 @@
 using Code.Gameplay.Features.Statuses;
 using Entitas;
 
-namespace Code.Gameplay.Features.Loot.Systems
+namespace Code.Gameplay.Features.Enchants.Systems
 {
 	public class AddEnchantToWeaponSystem : IExecuteSystem
 	{

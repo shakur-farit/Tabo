@@ -1,4 +1,6 @@
-﻿using Entitas;
+﻿using Code.Gameplay.Features.Enchants.Behaviours;
+using Code.Meta.UI.Hud.EnchantHolder.Behaviours;
+using Entitas;
 using UnityEngine;
 
 namespace Code.Gameplay.Features.Enchants
@@ -12,7 +14,7 @@ namespace Code.Gameplay.Features.Enchants
 
 	[Game] public class EnchantVisualEffectComponent : IComponent { public EnchantVisualEffect Value; }
 	[Game] public class EnchantHolderComponent : IComponent { public EnchantHolder Value; }
-	[Game] public class EnchantVisualComponent : IComponent { }
+	[Game] public class EnchantUIComponent : IComponent { }
 
 	[Game] public class PoisonEnchant : IComponent { }
 	[Game] public class FreezeEnchant : IComponent { }

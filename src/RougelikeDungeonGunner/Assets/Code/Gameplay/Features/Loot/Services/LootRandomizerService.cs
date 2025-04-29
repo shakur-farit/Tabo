@@ -5,7 +5,7 @@ using Code.Gameplay.Features.Enemy;
 using Code.Gameplay.Features.Loot.Configs;
 using Code.Gameplay.StaticData;
 
-namespace Code.Gameplay.Features.Loot
+namespace Code.Gameplay.Features.Loot.Services
 {
 	public class LootRandomizerService : ILootRandomizerService
 	{

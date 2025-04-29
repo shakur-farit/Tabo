@@ -2,7 +2,7 @@
 using Code.Gameplay.Features.Statuses;
 using UnityEngine;
 
-namespace Code.Gameplay.Features.Enchants
+namespace Code.Gameplay.Features.Enchants.Behaviours
 {
 	public class EnchantVisualEffect : MonoBehaviour
 	{

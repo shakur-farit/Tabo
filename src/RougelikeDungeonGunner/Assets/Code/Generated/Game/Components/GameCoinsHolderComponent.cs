@@ -34,10 +34,10 @@ public sealed partial class GameMatcher {
 public partial class GameEntity {
 
     public Code.Gameplay.Features.Loot.LootComponents.CoinsHolderComponent coinsHolder { get { return (Code.Gameplay.Features.Loot.LootComponents.CoinsHolderComponent)GetComponent(GameComponentsLookup.CoinsHolder); } }
-    public Code.Gameplay.Features.Loot.Behaviours.CoinsHolder CoinsHolder { get { return coinsHolder.Value; } }
+    public Code.Meta.UI.Hud.CoinsHolder.Behaviours.CoinsHolder CoinsHolder { get { return coinsHolder.Value; } }
     public bool hasCoinsHolder { get { return HasComponent(GameComponentsLookup.CoinsHolder); } }
 
-    public GameEntity AddCoinsHolder(Code.Gameplay.Features.Loot.Behaviours.CoinsHolder newValue) {
+    public GameEntity AddCoinsHolder(Code.Meta.UI.Hud.CoinsHolder.Behaviours.CoinsHolder newValue) {
         var index = GameComponentsLookup.CoinsHolder;
         var component = (Code.Gameplay.Features.Loot.LootComponents.CoinsHolderComponent)CreateComponent(index, typeof(Code.Gameplay.Features.Loot.LootComponents.CoinsHolderComponent));
         component.Value = newValue;
@@ -45,7 +45,7 @@ public partial class GameEntity {
         return this;
     }
 
-    public GameEntity ReplaceCoinsHolder(Code.Gameplay.Features.Loot.Behaviours.CoinsHolder newValue) {
+    public GameEntity ReplaceCoinsHolder(Code.Meta.UI.Hud.CoinsHolder.Behaviours.CoinsHolder newValue) {
         var index = GameComponentsLookup.CoinsHolder;
         var component = (Code.Gameplay.Features.Loot.LootComponents.CoinsHolderComponent)CreateComponent(index, typeof(Code.Gameplay.Features.Loot.LootComponents.CoinsHolderComponent));
         component.Value = newValue;

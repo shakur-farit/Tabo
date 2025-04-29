@@ -34,10 +34,10 @@ public sealed partial class GameMatcher {
 public partial class GameEntity {
 
     public Code.Gameplay.Features.Enchants.EnchantHolderComponent enchantHolder { get { return (Code.Gameplay.Features.Enchants.EnchantHolderComponent)GetComponent(GameComponentsLookup.EnchantHolder); } }
-    public Code.Gameplay.Features.Enchants.EnchantHolder EnchantHolder { get { return enchantHolder.Value; } }
+    public Code.Meta.UI.Hud.EnchantHolder.Behaviours.EnchantHolder EnchantHolder { get { return enchantHolder.Value; } }
     public bool hasEnchantHolder { get { return HasComponent(GameComponentsLookup.EnchantHolder); } }
 
-    public GameEntity AddEnchantHolder(Code.Gameplay.Features.Enchants.EnchantHolder newValue) {
+    public GameEntity AddEnchantHolder(Code.Meta.UI.Hud.EnchantHolder.Behaviours.EnchantHolder newValue) {
         var index = GameComponentsLookup.EnchantHolder;
         var component = (Code.Gameplay.Features.Enchants.EnchantHolderComponent)CreateComponent(index, typeof(Code.Gameplay.Features.Enchants.EnchantHolderComponent));
         component.Value = newValue;
@@ -45,7 +45,7 @@ public partial class GameEntity {
         return this;
     }
 
-    public GameEntity ReplaceEnchantHolder(Code.Gameplay.Features.Enchants.EnchantHolder newValue) {
+    public GameEntity ReplaceEnchantHolder(Code.Meta.UI.Hud.EnchantHolder.Behaviours.EnchantHolder newValue) {
         var index = GameComponentsLookup.EnchantHolder;
         var component = (Code.Gameplay.Features.Enchants.EnchantHolderComponent)CreateComponent(index, typeof(Code.Gameplay.Features.Enchants.EnchantHolderComponent));
         component.Value = newValue;

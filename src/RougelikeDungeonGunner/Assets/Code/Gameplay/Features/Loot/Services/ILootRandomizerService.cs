@@ -1,4 +1,4 @@
-﻿namespace Code.Gameplay.Features.Loot
+﻿namespace Code.Gameplay.Features.Loot.Services
 {
 	public interface ILootRandomizerService
 	{

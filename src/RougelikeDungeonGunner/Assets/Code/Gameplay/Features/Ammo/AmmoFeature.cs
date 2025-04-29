@@ -1,6 +1,8 @@
 ﻿using Code.Gameplay.Features.Ammo.Systems;
+using Code.Gameplay.Features.Ammo.Systems.Visuals;
 using Code.Gameplay.Features.Cooldowns.Systems;
 using Code.Infrastructure;
+using Code.Meta.UI.Hud.AmmoHolder.Systems;
 
 namespace Code.Gameplay.Features.Ammo
 {
@@ -25,7 +27,8 @@ namespace Code.Gameplay.Features.Ammo
 
 			Add(systems.Create<ApplyEnchantVisualsToAmmoReactiveSystem>());
 
-			Add(systems.Create<CalculateCurrentAmmoAmountSystem>());
+			Add(systems.Create<CalculateCurrentAmmoCountSystem>());
+			Add(systems.Create<UpdateAmmoUICountInHolderSystem>());
 
 			Add(systems.Create<MarkAmmoProcessedOnWeaponFireRangeSystem>());
 			Add(systems.Create<MarkAmmoProcessedOnTargetLimitExceededSystem>());

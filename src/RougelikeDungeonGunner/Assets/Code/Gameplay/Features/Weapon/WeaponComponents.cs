@@ -2,6 +2,8 @@
 using Code.Gameplay.Features.Statuses;
 using Entitas;
 using System.Collections.Generic;
+using Code.Meta.UI.Hud.CoinsHolder.Behaviours;
+using Code.Meta.UI.Hud.WeaponHolder.Behaviours;
 using UnityEngine;
 
 namespace Code.Gameplay.Features.Weapon
@@ -19,7 +21,8 @@ namespace Code.Gameplay.Features.Weapon
 	[Game] public class ReloadTime : IComponent { public float Value; }
 	[Game] public class ReloadTimeLeft : IComponent { public float Value; }
 	[Game] public class MagazineSize : IComponent { public int Value; }
-	[Game] public class CurrentAmmoAmount : IComponent { public int Value; }
+	[Game] public class InfinityAmmo : IComponent { }
+	[Game] public class CurrentAmmoCount : IComponent { public int Value; }
 	[Game] public class MagazineNotEmpty : IComponent { }
 	[Game] public class MultiPellet : IComponent { public int Value; }
 	[Game] public class MinPelletsSpreadAngle : IComponent { public float Value; }
@@ -49,4 +52,6 @@ namespace Code.Gameplay.Features.Weapon
 	[Game] public class LaserBlaster : IComponent { }
 	[Game] public class RocketLauncher : IComponent { }
 
+	[Game] public class WeaponHolderComponent : IComponent { public WeaponHolder Value; }
+	[Game] public class ReloadingAnimatorComponent : IComponent { public ReloadingAnimator Value; }
 }

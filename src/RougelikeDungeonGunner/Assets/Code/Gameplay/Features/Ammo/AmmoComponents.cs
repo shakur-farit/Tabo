@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using Code.Gameplay.Features.Statuses;
+﻿using Code.Meta.UI.Hud.AmmoHolder.Behaviours;
+using Code.Meta.UI.Hud.CoinsHolder.Behaviours;
 using Entitas;
 
 namespace Code.Gameplay.Features.Ammo
@@ -18,4 +18,7 @@ namespace Code.Gameplay.Features.Ammo
 	[Game] public class PlasmaBolt : IComponent { }
 	[Game] public class LaserBolt : IComponent { }
 	[Game] public class RocketMissile : IComponent { }
+
+	[Game] public class AmmoHolderComponent : IComponent { public AmmoHolder Value; }
+
 }

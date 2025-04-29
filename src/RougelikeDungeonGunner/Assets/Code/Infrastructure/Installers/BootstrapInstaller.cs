@@ -9,11 +9,10 @@ using Code.Gameplay.Features.Effects.Factory;
 using Code.Gameplay.Features.Enchants.Factory;
 using Code.Gameplay.Features.Enemy.Factory;
 using Code.Gameplay.Features.Hero.Factory;
-using Code.Gameplay.Features.Levels;
 using Code.Gameplay.Features.Levels.Factory;
 using Code.Gameplay.Features.Levels.Services;
-using Code.Gameplay.Features.Loot;
 using Code.Gameplay.Features.Loot.Factory;
+using Code.Gameplay.Features.Loot.Services;
 using Code.Gameplay.Features.Statuses.Applier;
 using Code.Gameplay.Features.Statuses.Factory;
 using Code.Gameplay.Features.Weapon.ChangeRequest.Factory;
@@ -28,6 +27,8 @@ using Code.Infrastructure.States.Factory;
 using Code.Infrastructure.States.GameStates;
 using Code.Infrastructure.States.StateMachine;
 using Code.Infrastructure.View;
+using Code.Meta.UI.Hud.AmmoHolder.Factory;
+using Code.Meta.UI.Hud.EnchantHolder.Factory;
 using Code.Progress.Provider;
 using Zenject;
 
@@ -120,7 +121,8 @@ namespace Code.Infrastructure.Installers
 
 		private void BindUIFactories()
 		{
-			Container.Bind<IEnchantVisualFactory>().To<EnchantVisualFactory>().AsSingle();
+			Container.Bind<IEnchantUIFactory>().To<EnchantUIFactory>().AsSingle();
+			Container.Bind<IAmmoUIFactory>().To<AmmoUIFactory>().AsSingle();
 		}
 
 		private void BindSystemFactory()

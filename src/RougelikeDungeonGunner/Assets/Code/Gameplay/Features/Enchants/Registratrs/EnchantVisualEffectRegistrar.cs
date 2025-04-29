@@ -1,9 +1,8 @@
-﻿using Code.Infrastructure.View.Registrars;
-using TMPro;
+﻿using Code.Gameplay.Features.Enchants.Behaviours;
+using Code.Infrastructure.View.Registrars;
 using UnityEngine;
-using UnityEngine.Serialization;
 
-namespace Code.Gameplay.Features.Enchants
+namespace Code.Gameplay.Features.Enchants.Registratrs
 {
 	public class EnchantVisualEffectRegistrar : EntityComponentRegistrar
 	{
