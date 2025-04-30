@@ -25,38 +25,7 @@ namespace Code.Meta.UI.Hud.WeaponHolder.Systems
 		{
 			foreach (GameEntity weapon in weapons)
 			foreach (GameEntity animator in _reloadingAnimator)
-			{
-				animator.ReloadingAnimator.StartAnimateReloadText();
-				animator.ReloadingAnimator.StartReloadingBarAnimation(weapon.ReloadTimeLeft);
-			}
-		}
-	}
-
-	public class StopWeaponReloadingAnimationSystem : ReactiveSystem<GameEntity>
-	{
-		private readonly IGroup<GameEntity> _reloadingAnimator;
-
-		public StopWeaponReloadingAnimationSystem(Contexts contexts) : base(contexts.game) =>
-			_reloadingAnimator = contexts.game.GetGroup(GameMatcher.AllOf(
-				GameMatcher.ReloadingAnimator));
-
-		protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context) =>
-			context.CreateCollector(GameMatcher.AllOf(
-					GameMatcher.Weapon,
-					GameMatcher.MagazineNotEmpty)
-				.Added());
-
-		protected override bool Filter(GameEntity weapons) =>
-			weapons.isWeapon && weapons.isMagazineNotEmpty;
-
-		protected override void Execute(List<GameEntity> weapons)
-		{
-			foreach (GameEntity weapon in weapons)
-			foreach (GameEntity animator in _reloadingAnimator)
-			{
-				animator.ReloadingAnimator.StopAnimateReloadText();
-				animator.ReloadingAnimator.StopReloadingBarAnimation();
-			}
+				animator.ReloadingAnimator.AnimateReloading(weapon.ReloadTimeLeft, weapon.ReloadTime);
 		}
 	}
 }

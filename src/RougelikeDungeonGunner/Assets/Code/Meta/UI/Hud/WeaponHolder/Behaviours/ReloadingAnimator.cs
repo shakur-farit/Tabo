@@ -1,4 +1,4 @@
-﻿using DG.Tweening;
+﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,58 +10,51 @@ namespace Code.Meta.UI.Hud.WeaponHolder.Behaviours
 		[SerializeField] private Transform _relaodingBar;
 		[SerializeField] private Image _relaodingBarImage;
 
-		private Tween _reloadBlinkTween;
-		private Tween _reloadBarTween;
+		private Vector3 _originalScale;
 
 		private void Awake()
 		{
 			_reloadingTextCanvas.gameObject.SetActive(false);
 			_relaodingBar.localScale = Vector3.one;
+			_originalScale = _relaodingBar.localScale;
 
-			_relaodingBarImage.type = Image.Type.Filled;
-			_relaodingBarImage.fillMethod = Image.FillMethod.Horizontal;
-			_relaodingBarImage.fillAmount = 1f;
 			_relaodingBarImage.color = Color.green;
 		}
 
-		public void StartAnimateReloadText()
+		public void AnimateReloading(float reloadTimeLeft, float reloadTime)
 		{
-			_reloadingTextCanvas.gameObject.SetActive(true);
+			_relaodingBar.localScale = new Vector3(0,1,1);
 
-			_reloadBlinkTween?.Kill();
-
-			_reloadingTextCanvas.alpha = 1f;
-			_reloadBlinkTween = _reloadingTextCanvas.DOFade(0f, 0.5f)
-				.SetLoops(-1, LoopType.Yoyo)
-				.SetEase(Ease.Linear);
+			StartCoroutine(ReloadCoroutine(reloadTimeLeft, reloadTime));
 		}
 
-		public void StopAnimateReloadText()
+		private IEnumerator ReloadCoroutine(float reloadTimeLeft, float reloadTime)
 		{
-			_reloadBlinkTween?.Kill();
-			_reloadingTextCanvas.alpha = 1f;
-			_reloadingTextCanvas.gameObject.SetActive(false);
-		}
-
-		public void StartReloadingBarAnimation(float value)
-		{
-			_reloadBarTween?.Kill();
+			StartAnimateReloadText();
 
 			_relaodingBarImage.color = Color.red;
-			_relaodingBarImage.fillAmount = 0f;
 
-			_reloadBarTween = DOTween.To(() => _relaodingBarImage.fillAmount,
-					x => _relaodingBarImage.fillAmount = x,
-					1f,
-					value)
-				.SetEase(Ease.Linear);
-		}
+			float elapsed = reloadTime - reloadTimeLeft;
 
-		public void StopReloadingBarAnimation()
-		{
-			_reloadBarTween?.Kill();
-			_relaodingBarImage.fillAmount = 1f;
+			while (elapsed < reloadTime)
+			{
+				float progress = Mathf.Clamp01(elapsed / reloadTime);
+				_relaodingBar.localScale = new Vector3(progress * _originalScale.x, _originalScale.y, _originalScale.z);
+
+				yield return null;
+				elapsed += Time.deltaTime;
+			}
+
+			_relaodingBar.localScale = _originalScale;
 			_relaodingBarImage.color = Color.green;
+
+			StopAnimateReloadText();
 		}
+
+		private void StartAnimateReloadText() => 
+			_reloadingTextCanvas.gameObject.SetActive(true);
+
+		private void StopAnimateReloadText() =>
+			_reloadingTextCanvas.gameObject.SetActive(false);
 	}
 }

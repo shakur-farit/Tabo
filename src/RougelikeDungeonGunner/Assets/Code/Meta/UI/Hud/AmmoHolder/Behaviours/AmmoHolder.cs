@@ -19,8 +19,6 @@ namespace Code.Meta.UI.Hud.AmmoHolder.Behaviours
 
 		public async void CreateAmmoUI(int count)
 		{
-			Debug.Log("create");
-
 			for (int i = 0; i < count; i++)
 			{
 				GameObject icon = await _factory.CreateAmmoUI(_holder);
