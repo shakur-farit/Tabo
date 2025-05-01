@@ -20,5 +20,4 @@ namespace Code.Gameplay.Features.Ammo
 	[Game] public class RocketMissile : IComponent { }
 
 	[Game] public class AmmoHolderComponent : IComponent { public AmmoHolder Value; }
-
 }

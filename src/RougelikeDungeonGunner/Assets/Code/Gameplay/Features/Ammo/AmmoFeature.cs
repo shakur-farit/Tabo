@@ -28,7 +28,7 @@ namespace Code.Gameplay.Features.Ammo
 			Add(systems.Create<ApplyEnchantVisualsToAmmoReactiveSystem>());
 
 			Add(systems.Create<CalculateCurrentAmmoCountSystem>());
-			Add(systems.Create<UpdateAmmoUICountInHolderSystem>());
+			Add(systems.Create<UpdateAmmoUICountInHolderOnShotSystem>());
 
 			Add(systems.Create<MarkAmmoProcessedOnWeaponFireRangeSystem>());
 			Add(systems.Create<MarkAmmoProcessedOnTargetLimitExceededSystem>());

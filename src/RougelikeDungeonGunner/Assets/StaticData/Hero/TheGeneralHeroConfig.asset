@@ -16,6 +16,6 @@ MonoBehaviour:
   ViewPrefab: {fileID: 8254426112849521288, guid: 8ce004de107d0ba4eba3d92948a32f93, type: 3}
   AnimatorController: {fileID: 9100000, guid: e87ce176a15556c459b355908992b930, type: 2}
   StartWeapon: 1
-  CurrentHp: 100
+  CurrentHp: 32
   MaxHp: 100
   MovementSpeed: 3

@@ -1,4 +1,5 @@
 ﻿using Code.Gameplay.Features.Hero.Behaviours;
+using Code.Meta.UI.Hud.AmmoHolder.Behaviours;
 using Entitas;
 
 namespace Code.Gameplay.Features.Hero
@@ -11,4 +12,6 @@ namespace Code.Gameplay.Features.Hero
 	[Game] public class Unweaponed : IComponent { }
 
 	[Game] public class TheGeneral : IComponent { }
+
+	[Game] public class HeartHolderComponent : IComponent { public HeartHolder Value; }
 }

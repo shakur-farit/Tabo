@@ -1,6 +1,5 @@
 ﻿using Code.Infrastructure.View.Registrars;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Code.Meta.UI.Hud.WeaponHolder.Registrar
 {

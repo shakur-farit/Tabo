@@ -17,7 +17,8 @@ namespace Code.Gameplay.Features.Weapon
 
 			Add(systems.Create<UpdateWeaponIconInHolderSystem>());
 			Add(systems.Create<UpdateWeaponNameInHolderSystem>());
-			Add(systems.Create<AmmoUICountInHolderSystem>());
+			Add(systems.Create<UpdateAmmoUICountInHolderOnCreateOrReloadWeaponSystem>());
+			Add(systems.Create<UpdateAmmoUICountInHolderForWeaponWithInfinityAmmoSystem>());
 			Add(systems.Create<SetActiveTextOnInfinityAmmoSystem>());
 			Add(systems.Create<SetInactiveTextOnLimitedAmmoSystem>());
 			
@@ -29,7 +30,7 @@ namespace Code.Gameplay.Features.Weapon
 			Add(systems.Create<ReloadWeaponSystem>());
 			
 			Add(systems.Create<StartWeaponReloadingAnimationSystem>());
-
+			 
 			Add(systems.Create<MarkWeaponReadyToShotSystem>());
 			Add(systems.Create<SetShootingByLeftMouseButtonInputSystem>());
 			Add(systems.Create<PrechargeWeaponSystem>());

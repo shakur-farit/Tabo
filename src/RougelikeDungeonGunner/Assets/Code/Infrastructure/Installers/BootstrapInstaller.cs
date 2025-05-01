@@ -123,6 +123,7 @@ namespace Code.Infrastructure.Installers
 		{
 			Container.Bind<IEnchantUIFactory>().To<EnchantUIFactory>().AsSingle();
 			Container.Bind<IAmmoUIFactory>().To<AmmoUIFactory>().AsSingle();
+			Container.Bind<IHeartUIFactory>().To<HeartUIFactory>().AsSingle();
 		}
 
 		private void BindSystemFactory()

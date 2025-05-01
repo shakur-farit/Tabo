@@ -3,28 +3,30 @@ using Entitas;
 
 namespace Code.Meta.UI.Hud.AmmoHolder.Systems
 {
-	public class UpdateAmmoUICountInHolderSystem : ReactiveSystem<GameEntity>
+	public class UpdateAmmoUICountInHolderForWeaponWithInfinityAmmoSystem : ReactiveSystem<GameEntity>
 	{
+		private const int InfinityMagazineSize = 0;
+
 		private readonly IGroup<GameEntity> _ammoHolders;
 
-		public UpdateAmmoUICountInHolderSystem(Contexts contexts) : base(contexts.game) =>
+		public UpdateAmmoUICountInHolderForWeaponWithInfinityAmmoSystem(Contexts contexts) : base(contexts.game) =>
 			_ammoHolders = contexts.game.GetGroup(GameMatcher.AllOf(
 				GameMatcher.AmmoHolder));
 
 		protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context) =>
 			context.CreateCollector(GameMatcher.AllOf(
 					GameMatcher.Weapon,
-					GameMatcher.Shot)
+					GameMatcher.InfinityAmmo)
 				.Added());
 
 		protected override bool Filter(GameEntity weapons) =>
-			weapons.isWeapon && weapons.isShot && weapons.hasCurrentAmmoCount;
+			weapons.isWeapon && weapons.isInfinityAmmo;
 
 		protected override void Execute(List<GameEntity> weapons)
 		{
 			foreach (GameEntity weapon in weapons)
 			foreach (GameEntity holder in _ammoHolders)
-				holder.AmmoHolder.UpdateAmmoUICount(weapon.CurrentAmmoCount);
+				holder.AmmoHolder.UpdateAmmoUICount(InfinityMagazineSize);
 		}
 	}
 }
