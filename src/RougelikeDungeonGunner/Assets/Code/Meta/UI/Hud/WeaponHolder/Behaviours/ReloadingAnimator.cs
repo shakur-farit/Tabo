@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System.Threading;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -21,34 +22,40 @@ namespace Code.Meta.UI.Hud.WeaponHolder.Behaviours
 			_relaodingBarImage.color = Color.green;
 		}
 
-		public void AnimateReloading(float reloadTimeLeft, float reloadTime)
+		public async void AnimateReloading(float reloadTimeLeft, float reloadTime)
 		{
-			_relaodingBar.localScale = new Vector3(0,1,1);
+			_relaodingBar.localScale = new Vector3(0, 1, 1);
 
-			StartCoroutine(ReloadCoroutine(reloadTimeLeft, reloadTime));
+			StartAnimateReloadText();
+			await ReloadAsync(reloadTimeLeft, reloadTime);
+			StopAnimateReloadText();
 		}
 
-		private IEnumerator ReloadCoroutine(float reloadTimeLeft, float reloadTime)
+		public async void AnimatePrecharging(float reloadTimeLeft, float reloadTime)
 		{
-			StartAnimateReloadText();
+			_relaodingBar.localScale = new Vector3(0, 1, 1);
+			await ReloadAsync(reloadTimeLeft, reloadTime);
+		}
 
+		private async UniTask ReloadAsync(float reloadTimeLeft, float reloadTime)
+		{
 			_relaodingBarImage.color = Color.red;
 
 			float elapsed = reloadTime - reloadTimeLeft;
+
+			CancellationToken token = this.GetCancellationTokenOnDestroy();
 
 			while (elapsed < reloadTime)
 			{
 				float progress = Mathf.Clamp01(elapsed / reloadTime);
 				_relaodingBar.localScale = new Vector3(progress * _originalScale.x, _originalScale.y, _originalScale.z);
 
-				yield return null;
+				await UniTask.Yield(PlayerLoopTiming.Update, token);
 				elapsed += Time.deltaTime;
 			}
 
 			_relaodingBar.localScale = _originalScale;
 			_relaodingBarImage.color = Color.green;
-
-			StopAnimateReloadText();
 		}
 
 		private void StartAnimateReloadText() => 

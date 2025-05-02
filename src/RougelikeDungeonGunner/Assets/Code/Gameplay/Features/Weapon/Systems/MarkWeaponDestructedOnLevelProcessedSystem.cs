@@ -7,15 +7,13 @@ namespace Code.Gameplay.Features.Weapon.Systems
 	{
 		private readonly IGroup<GameEntity> _weapons;
 
-		public MarkWeaponDestructedOnLevelProcessedSystem(GameContext context) : base(context)
-		{
+		public MarkWeaponDestructedOnLevelProcessedSystem(GameContext context) : base(context) => 
 			_weapons = context.GetGroup(GameMatcher.Weapon);
-		}
 
 		protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context) =>
 			context.CreateCollector(GameMatcher.Processed.Added());
 
-		protected override bool Filter(GameEntity entity) => entity.isLevel;
+		protected override bool Filter(GameEntity entity) => entity.isLevel && entity.isProcessed;
 
 		protected override void Execute(List<GameEntity> levels)
 		{

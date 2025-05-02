@@ -8,6 +8,7 @@ namespace Code.Gameplay.Features.Weapon.Systems
 	{
 		private readonly ITimeService _time;
 		private readonly IGroup<GameEntity> _weapons;
+		private readonly IGroup<GameEntity> _animators;
 		private readonly List<GameEntity> _buffer = new(1);
 
 		public PrechargeWeaponSystem(GameContext game, ITimeService time)
@@ -19,14 +20,22 @@ namespace Code.Gameplay.Features.Weapon.Systems
 					GameMatcher.PrechargeTimeLeft,
 					GameMatcher.ReadyToShoot)
 				.NoneOf(GameMatcher.Precharged));
+
+			_animators = game.GetGroup(GameMatcher
+				.AllOf(
+					GameMatcher.ReloadingAnimator));
 		}
 
 		public void Execute()
 		{
 			foreach (GameEntity weapon in _weapons.GetEntities(_buffer))
+			foreach (GameEntity animator in _animators)
 			{
 				if (weapon.PrechargeTimeLeft > 0)
+				{
 					weapon.ReplacePrechargeTimeLeft(weapon.PrechargeTimeLeft - _time.DeltaTime);
+					animator.ReloadingAnimator.AnimatePrecharging(weapon.PrechargeTimeLeft, weapon.PrechargeTime);
+				}
 				else
 				{
 					weapon.isPrecharged = true;

@@ -16,12 +16,8 @@ namespace Code.Gameplay.Features.Levels.Systems
 		public void Execute()
 		{
 			foreach (GameEntity level in _levels)
-			{
 				if (level.EnemiesInLevelCount <= 0)
-				{
 					level.isProcessed = true;
-				}
-			}
 		}
 	}
 }
