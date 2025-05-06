@@ -1,4 +1,5 @@
-﻿using Code.Infrastructure;
+﻿using Code.Common;
+using Code.Infrastructure;
 
 namespace Code.Meta
 {
@@ -6,7 +7,7 @@ namespace Code.Meta
 	{
 		public HomeScreenFeature(ISystemsFactory systems)
 		{
-			
+			Add(systems.Create<ProcessMetaDestructedFeature>());
 		}
 	}
 }

@@ -45,8 +45,7 @@ namespace Code.Gameplay
 			Add(systems.Create<StatusFeature>());
 			Add(systems.Create<StatsFeature>());
 
-
-			Add(systems.Create<ProcessDestructedFeature>());
+			Add(systems.Create<ProcessGameDestructedFeature>());
 		}
 	}
 }

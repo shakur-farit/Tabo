@@ -17,7 +17,9 @@ using Code.Gameplay.Features.Loot.Configs;
 using Code.Gameplay.Features.Weapon;
 using Code.Gameplay.Features.Weapon.Configs;
 using Code.Infrastructure.AssetManagement;
+using Code.Meta.UI.UIRoot.Factory;
 using Cysharp.Threading.Tasks;
+using UnityEngine;
 
 namespace Code.Gameplay.StaticData
 {
@@ -30,6 +32,7 @@ namespace Code.Gameplay.StaticData
 		private const string LevelConfigLabel = "LevelConfig";
 		private const string LootConfigLabel = "LootConfig";
 		private const string EnchantConfigLabel = "EnchantConfig";
+		private const string WindowConfigLabel = "WindowConfig";
 
 		private Dictionary<AmmoTypeId, AmmoConfig> _ammoById;
 		private Dictionary<WeaponTypeId, WeaponConfig> _weaponById;
@@ -38,6 +41,7 @@ namespace Code.Gameplay.StaticData
 		private Dictionary<LevelTypeId, LevelConfig> _levelById;
 		private Dictionary<LootTypeId, LootConfig> _lootById;
 		private Dictionary<EnchantTypeId, EnchantConfig> _enchantById;
+		private Dictionary<WindowId, GameObject> _windowPrefabsById;
 
 		private readonly IAssetProvider _assetProvider;
 
@@ -55,6 +59,7 @@ namespace Code.Gameplay.StaticData
 			await LoadLevels();
 			await LoadLoots();
 			await LoadEnchants();
+			LoadWindows();
 		}
 
 		public AmmoConfig GetAmmoConfig(AmmoTypeId id)
@@ -133,6 +138,11 @@ namespace Code.Gameplay.StaticData
 			throw new Exception($"Enchant config for {id} was not found");
 		}
 
+		public GameObject GetWindowPrefab(WindowId id)
+		{
+			return null;
+		}
+
 		private async UniTask LoadAbilities() =>
 			_ammoById = (await _assetProvider.LoadAll<AmmoConfig>(AmmoConfig))
 				.ToDictionary(x => x.TypeId, x => x);
@@ -160,5 +170,10 @@ namespace Code.Gameplay.StaticData
 		private async UniTask LoadEnchants() =>
 			_enchantById = (await _assetProvider.LoadAll<EnchantConfig>(EnchantConfigLabel))
 				.ToDictionary(x => x.TypeId, x => x);
+
+		private async UniTask LoadWindows() =>
+			_windowPrefabsById = (await _assetProvider.Load<WindowsConfig>(WindowConfigLabel))
+				.WindowConfigs
+				.ToDictionary(x => x.Id, x => x.Prefab);
 	}
 }

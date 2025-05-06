@@ -3,9 +3,9 @@ using Code.Infrastructure;
 
 namespace Code.Common
 {
-	public sealed class ProcessDestructedFeature : Feature
+	public sealed class ProcessGameDestructedFeature : Feature
 	{
-		public ProcessDestructedFeature(ISystemsFactory systems)
+		public ProcessGameDestructedFeature(ISystemsFactory systems)
 		{
 			Add(systems.Create<SelfDestructTimerSystem>());
 

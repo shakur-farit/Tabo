@@ -6,19 +6,19 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-public sealed partial class GameMatcher {
+public sealed partial class InputMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherMouseLeftButtonDown;
+    static Entitas.IMatcher<InputEntity> _matcherInput;
 
-    public static Entitas.IMatcher<GameEntity> MouseLeftButtonDown {
+    public static Entitas.IMatcher<InputEntity> Input {
         get {
-            if (_matcherMouseLeftButtonDown == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.MouseLeftButtonDown);
-                matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherMouseLeftButtonDown = matcher;
+            if (_matcherInput == null) {
+                var matcher = (Entitas.Matcher<InputEntity>)Entitas.Matcher<InputEntity>.AllOf(InputComponentsLookup.Input);
+                matcher.componentNames = InputComponentsLookup.componentNames;
+                _matcherInput = matcher;
             }
 
-            return _matcherMouseLeftButtonDown;
+            return _matcherInput;
         }
     }
 }
@@ -31,20 +31,20 @@ public sealed partial class GameMatcher {
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-public partial class GameEntity {
+public partial class InputEntity {
 
-    static readonly Code.Gameplay.Input.MouseLeftButtonDown mouseLeftButtonDownComponent = new Code.Gameplay.Input.MouseLeftButtonDown();
+    static readonly Code.Gameplay.Input.Input inputComponent = new Code.Gameplay.Input.Input();
 
-    public bool isMouseLeftButtonDown {
-        get { return HasComponent(GameComponentsLookup.MouseLeftButtonDown); }
+    public bool isInput {
+        get { return HasComponent(InputComponentsLookup.Input); }
         set {
-            if (value != isMouseLeftButtonDown) {
-                var index = GameComponentsLookup.MouseLeftButtonDown;
+            if (value != isInput) {
+                var index = InputComponentsLookup.Input;
                 if (value) {
                     var componentPool = GetComponentPool(index);
                     var component = componentPool.Count > 0
                             ? componentPool.Pop()
-                            : mouseLeftButtonDownComponent;
+                            : inputComponent;
 
                     AddComponent(index, component);
                 } else {

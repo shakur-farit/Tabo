@@ -62,3 +62,4 @@ public sealed partial class GameEntity : INamedEntity
 
   public string BaseToString() => base.ToString();
 }
+

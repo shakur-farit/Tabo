@@ -7,7 +7,7 @@ namespace Code.Meta.UI.UIRoot.Factory
 {
 	public class UIRootFactory : IUIRootFactory
 	{
-		private const string UIRootAddress = "VALUE";
+		private const string UIRootAddress = "UIRoot";
 
 		private readonly IAssetProvider _assetProvider;
 		private readonly IInstantiator _instantiator;

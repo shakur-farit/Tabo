@@ -14,7 +14,9 @@ using Code.Gameplay.Features.Loot;
 using Code.Gameplay.Features.Loot.Configs;
 using Code.Gameplay.Features.Weapon;
 using Code.Gameplay.Features.Weapon.Configs;
+using Code.Meta.UI.UIRoot.Factory;
 using Cysharp.Threading.Tasks;
+using UnityEngine;
 
 namespace Code.Gameplay.StaticData
 {
@@ -33,5 +35,6 @@ namespace Code.Gameplay.StaticData
     LevelConfig GetLevelConfig(LevelTypeId levelId);
     LootConfig GetLootConfig(LootTypeId lootId);
     EnchantConfig GetEnchantConfig(EnchantTypeId id);
+    GameObject GetWindowPrefab(WindowId id);
   }
 }

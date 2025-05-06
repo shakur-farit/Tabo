@@ -167,11 +167,8 @@ public static class GameComponentsLookup {
     public const int WeaponRotationAngle = 156;
     public const int WeaponRotationPointTransform = 157;
     public const int WeaponTypeId = 158;
-    public const int AxisInput = 159;
-    public const int Input = 160;
-    public const int MouseLeftButtonDown = 161;
 
-    public const int TotalComponents = 162;
+    public const int TotalComponents = 159;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -332,10 +329,7 @@ public static class GameComponentsLookup {
         "WeaponOwnerId",
         "WeaponRotationAngle",
         "WeaponRotationPointTransform",
-        "WeaponTypeId",
-        "AxisInput",
-        "Input",
-        "MouseLeftButtonDown"
+        "WeaponTypeId"
     };
 
     public static readonly System.Type[] componentTypes = {
@@ -497,9 +491,6 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Weapon.WeaponOwnerId),
         typeof(Code.Gameplay.Features.Weapon.WeaponRotationAngle),
         typeof(Code.Gameplay.Features.Weapon.WeaponRotationPointTransform),
-        typeof(Code.Gameplay.Features.Weapon.WeaponTypeIdComponent),
-        typeof(Code.Gameplay.Input.AxisInput),
-        typeof(Code.Gameplay.Input.Input),
-        typeof(Code.Gameplay.Input.MouseLeftButtonDown)
+        typeof(Code.Gameplay.Features.Weapon.WeaponTypeIdComponent)
     };
 }

@@ -6,19 +6,19 @@ namespace Code.Gameplay.Input.Systems
 	public class EmitLeftMouseButtonInputSystem : IExecuteSystem
 	{
 		private readonly IInputService _inputService;
-		private readonly IGroup<GameEntity> _inputs;
+		private readonly IGroup<InputEntity> _inputs;
 
-		public EmitLeftMouseButtonInputSystem(GameContext game, IInputService inputService)
+		public EmitLeftMouseButtonInputSystem(InputContext input, IInputService inputService)
 		{
 			_inputService = inputService;
-			_inputs = game.GetGroup(GameMatcher
+			_inputs = input.GetGroup(InputMatcher
 				.AllOf(
-					GameMatcher.Input));
+					InputMatcher.Input));
 		}
 
 		public void Execute()
 		{
-			foreach (GameEntity input in _inputs) 
+			foreach (InputEntity input in _inputs) 
 				input.isMouseLeftButtonDown = _inputService.GetLeftMouseButton();
 		}
 	}

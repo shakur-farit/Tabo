@@ -5,22 +5,22 @@ namespace Code.Gameplay.Features.Weapon.Systems
 	public class SetShootingByLeftMouseButtonInputSystem : IExecuteSystem
 	{
 		private readonly IGroup<GameEntity> _weapons;
-		private readonly IGroup<GameEntity> _inputs;
+		private readonly IGroup<InputEntity> _inputs;
 
-		public SetShootingByLeftMouseButtonInputSystem(GameContext game)
+		public SetShootingByLeftMouseButtonInputSystem(GameContext game, InputContext input)
 		{
 			_weapons = game.GetGroup(GameMatcher
 				.AllOf(
 					GameMatcher.Weapon));
 
-			_inputs = game.GetGroup(GameMatcher
+			_inputs = input.GetGroup(InputMatcher
 				.AllOf(
-					GameMatcher.Input));
+					InputMatcher.Input));
 		}
 
 		public void Execute()
 		{
-			foreach (GameEntity input in _inputs)
+			foreach (InputEntity input in _inputs)
 			foreach (GameEntity weapon in _weapons)
 				weapon.isShooting = input.isMouseLeftButtonDown;
 		}
