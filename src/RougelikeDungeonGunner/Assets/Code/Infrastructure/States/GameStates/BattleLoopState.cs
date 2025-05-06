@@ -8,10 +8,12 @@ namespace Code.Infrastructure.States.GameStates
 		private BattleFeature _battleFeature;
 
 		private readonly ISystemsFactory _systemsFactory;
+		private readonly GameContext _gameContext;
 
-		public BattleLoopState(ISystemsFactory systemsFactory)
+		public BattleLoopState(ISystemsFactory systemsFactory, GameContext gameContext)
 		{
 			_systemsFactory = systemsFactory;
+			_gameContext = gameContext;
 		}
 
 		public void Enter()
@@ -40,7 +42,8 @@ namespace Code.Infrastructure.States.GameStates
 
 		private void DestructEntities()
 		{
-			
+			foreach (GameEntity entity in _gameContext.GetEntities())
+				entity.isDestructed = true;
 		}
 	}
 }	

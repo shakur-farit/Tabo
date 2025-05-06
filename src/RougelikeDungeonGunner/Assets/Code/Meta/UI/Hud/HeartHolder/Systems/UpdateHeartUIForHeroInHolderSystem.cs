@@ -1,6 +1,6 @@
 ﻿using Entitas;
 
-namespace Code.Meta.UI.Hud.AmmoHolder.Registrars
+namespace Code.Meta.UI.Hud.HeartHolder.Systems
 {
 	public class UpdateHeartUIForHeroInHolderSystem : IExecuteSystem
 	{

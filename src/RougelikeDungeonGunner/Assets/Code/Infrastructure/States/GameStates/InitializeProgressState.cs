@@ -2,6 +2,7 @@ using Code.Infrastructure.States.StateInfrastructure;
 using Code.Infrastructure.States.StateMachine;
 using Code.Progress.Data;
 using Code.Progress.Provider;
+using UnityEngine;
 
 namespace Code.Infrastructure.States.GameStates
 {
@@ -20,6 +21,8 @@ namespace Code.Infrastructure.States.GameStates
 
 		public void Enter()
 		{
+			Debug.Log(GetType());
+
 			InitializeProgress();
 
 			_progressProvider.SetTransientData(new TransientData());

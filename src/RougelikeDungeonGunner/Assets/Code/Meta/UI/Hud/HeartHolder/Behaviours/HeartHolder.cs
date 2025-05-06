@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
-using Code.Meta.UI.Hud.AmmoHolder.Factory;
+using Code.Meta.UI.Hud.HeartHolder.Factory;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 using Zenject;
 
-namespace Code.Meta.UI.Hud.AmmoHolder.Behaviours
+namespace Code.Meta.UI.Hud.HeartHolder.Behaviours
 {
 	public class HeartHolder : MonoBehaviour
 	{

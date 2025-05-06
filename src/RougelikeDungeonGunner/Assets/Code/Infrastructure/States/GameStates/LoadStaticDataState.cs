@@ -1,5 +1,4 @@
 using Code.Gameplay.StaticData;
-using Code.Infrastructure.Loading;
 using Code.Infrastructure.States.StateInfrastructure;
 using Code.Infrastructure.States.StateMachine;
 
@@ -20,7 +19,7 @@ namespace Code.Infrastructure.States.GameStates
 		{
 			await _staticDataService.Load();
 
-			_stateMachine.Enter<LoadingBattleState, string>(Scenes.Gameplay);
+			_stateMachine.Enter<LoadingHomeScreenState>();
 
 		}
 

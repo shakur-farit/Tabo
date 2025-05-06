@@ -18,7 +18,6 @@ using Code.Gameplay.Features.Statuses.Factory;
 using Code.Gameplay.Features.Weapon.ChangeRequest.Factory;
 using Code.Gameplay.Features.Weapon.Factory;
 using Code.Gameplay.Input.Service;
-using Code.Gameplay.Levels;
 using Code.Gameplay.StaticData;
 using Code.Infrastructure.AssetManagement;
 using Code.Infrastructure.Identifiers;
@@ -29,6 +28,8 @@ using Code.Infrastructure.States.StateMachine;
 using Code.Infrastructure.View;
 using Code.Meta.UI.Hud.AmmoHolder.Factory;
 using Code.Meta.UI.Hud.EnchantHolder.Factory;
+using Code.Meta.UI.Hud.HeartHolder.Factory;
+using Code.Meta.UI.UIRoot.Factory;
 using Code.Progress.Provider;
 using Zenject;
 
@@ -98,7 +99,6 @@ namespace Code.Infrastructure.Installers
 		private void BindGameplayServices()
 		{
 			Container.Bind<IStaticDataService>().To<StaticDataService>().AsSingle();
-			Container.Bind<ILevelDataProvider>().To<LevelDataProvider>().AsSingle();
 			Container.Bind<IStatusApplier>().To<StatusApplier>().AsSingle();
 			Container.Bind<ILevelEnvironmentService>().To<LevelEnvironmentService>().AsSingle();
 			Container.Bind<ILootRandomizerService>().To<LootRandomizerService>().AsSingle();
@@ -124,6 +124,7 @@ namespace Code.Infrastructure.Installers
 			Container.Bind<IEnchantUIFactory>().To<EnchantUIFactory>().AsSingle();
 			Container.Bind<IAmmoUIFactory>().To<AmmoUIFactory>().AsSingle();
 			Container.Bind<IHeartUIFactory>().To<HeartUIFactory>().AsSingle();
+			Container.Bind<IUIRootFactory>().To<UIRootFactory>().AsSingle();
 		}
 
 		private void BindSystemFactory()
