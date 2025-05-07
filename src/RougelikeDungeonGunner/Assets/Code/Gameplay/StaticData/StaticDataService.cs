@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using Code.Gameplay.Features.Ammo;
 using Code.Gameplay.Features.Ammo.Config;
-using Code.Gameplay.Features.Effects;
 using Code.Gameplay.Features.Enchants;
 using Code.Gameplay.Features.Enchants.Configs;
 using Code.Gameplay.Features.Enemy;
@@ -19,7 +18,6 @@ using Code.Gameplay.Features.Weapon.Configs;
 using Code.Infrastructure.AssetManagement;
 using Code.Meta.UI.UIRoot.Factory;
 using Cysharp.Threading.Tasks;
-using UnityEngine;
 
 namespace Code.Gameplay.StaticData
 {
@@ -41,7 +39,7 @@ namespace Code.Gameplay.StaticData
 		private Dictionary<LevelTypeId, LevelConfig> _levelById;
 		private Dictionary<LootTypeId, LootConfig> _lootById;
 		private Dictionary<EnchantTypeId, EnchantConfig> _enchantById;
-		private Dictionary<WindowId, GameObject> _windowPrefabsById;
+		private Dictionary<WindowId, WindowConfig> _windowById;
 
 		private readonly IAssetProvider _assetProvider;
 
@@ -59,7 +57,7 @@ namespace Code.Gameplay.StaticData
 			await LoadLevels();
 			await LoadLoots();
 			await LoadEnchants();
-			LoadWindows();
+			await LoadWindows();
 		}
 
 		public AmmoConfig GetAmmoConfig(AmmoTypeId id)
@@ -138,9 +136,12 @@ namespace Code.Gameplay.StaticData
 			throw new Exception($"Enchant config for {id} was not found");
 		}
 
-		public GameObject GetWindowPrefab(WindowId id)
+		public WindowConfig GetWindowConfig(WindowId id)
 		{
-			return null;
+			if (_windowById.TryGetValue(id, out WindowConfig config))
+				return config;
+
+			throw new Exception($"Window config for {id} was not found");
 		}
 
 		private async UniTask LoadAbilities() =>
@@ -172,8 +173,7 @@ namespace Code.Gameplay.StaticData
 				.ToDictionary(x => x.TypeId, x => x);
 
 		private async UniTask LoadWindows() =>
-			_windowPrefabsById = (await _assetProvider.Load<WindowsConfig>(WindowConfigLabel))
-				.WindowConfigs
-				.ToDictionary(x => x.Id, x => x.Prefab);
+			_windowById = (await _assetProvider.LoadAll<WindowConfig>(WindowConfigLabel))
+				.ToDictionary(x => x.TypeId, x => x);
 	}
 }

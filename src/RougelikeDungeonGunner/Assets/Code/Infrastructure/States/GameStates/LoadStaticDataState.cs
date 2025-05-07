@@ -1,6 +1,7 @@
 using Code.Gameplay.StaticData;
 using Code.Infrastructure.States.StateInfrastructure;
 using Code.Infrastructure.States.StateMachine;
+using UnityEngine;
 
 namespace Code.Infrastructure.States.GameStates
 {
@@ -20,7 +21,6 @@ namespace Code.Infrastructure.States.GameStates
 			await _staticDataService.Load();
 
 			_stateMachine.Enter<LoadingHomeScreenState>();
-
 		}
 
 		public void Exit()

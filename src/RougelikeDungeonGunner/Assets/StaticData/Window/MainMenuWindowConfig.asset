@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 641cb81d2d4968942b129cd2b0143559, type: 3}
+  m_Script: {fileID: 11500000, guid: c6316ef929a239d43af15994e75e06c5, type: 3}
   m_Name: MainMenuWindowConfig
   m_EditorClassIdentifier: 
-  WindowConfigs:
-  - Id: 1
-    Prefab: {fileID: 0}
+  TypeId: 1
+  ViewPrefab: {fileID: 731944184819309819, guid: 6e60df6474c4f804c90c7cbbe25b5e36, type: 3}

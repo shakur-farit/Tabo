@@ -8,7 +8,7 @@ namespace Code.Meta.UI.UIRoot.Factory
 	{
 		private readonly IStaticDataService _staticData;
 		private readonly IInstantiator _instantiator;
-		private RectTransform _uiRoot;
+		private Transform _uiRoot;
 
 		public WindowFactory(IStaticDataService staticData, IInstantiator instantiator)
 		{
@@ -22,7 +22,7 @@ namespace Code.Meta.UI.UIRoot.Factory
 		public BaseWindow CreateWindow(WindowId windowId) =>
 			_instantiator.InstantiatePrefabForComponent<BaseWindow>(PrefabFor(windowId), _uiRoot);
 
-		private GameObject PrefabFor(WindowId id) =>
-			_staticData.GetWindowPrefab(id);
+		private GameObject PrefabFor(WindowId id) => 
+			_staticData.GetWindowConfig(id).ViewPrefab;
 	}
 }

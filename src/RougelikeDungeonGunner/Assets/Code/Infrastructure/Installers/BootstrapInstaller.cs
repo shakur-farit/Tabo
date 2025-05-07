@@ -51,6 +51,7 @@ namespace Code.Infrastructure.Installers
 			BindGameplayServices();
 			BindGameplayFactories();
 			BindUIFactories();
+			BindUIServices();
 			BindCameraProvider();
 			BindProgressServices();
 			BindEntityIndices();
@@ -72,6 +73,7 @@ namespace Code.Infrastructure.Installers
 			Container.BindInterfacesAndSelfTo<InitializeProgressState>().AsSingle();
 			Container.BindInterfacesAndSelfTo<LoadStaticDataState>().AsSingle();
 			Container.BindInterfacesAndSelfTo<LoadingHomeScreenState>().AsSingle();
+			Container.BindInterfacesAndSelfTo<HomeScreenEnterState>().AsSingle();
 			Container.BindInterfacesAndSelfTo<HomeScreenState>().AsSingle();
 			Container.BindInterfacesAndSelfTo<LoadingBattleState>().AsSingle();
 			Container.BindInterfacesAndSelfTo<BattleEnterState>().AsSingle();
@@ -126,7 +128,12 @@ namespace Code.Infrastructure.Installers
 			Container.Bind<IEnchantUIFactory>().To<EnchantUIFactory>().AsSingle();
 			Container.Bind<IAmmoUIFactory>().To<AmmoUIFactory>().AsSingle();
 			Container.Bind<IHeartUIFactory>().To<HeartUIFactory>().AsSingle();
-			Container.Bind<IUIRootFactory>().To<UIRootFactory>().AsSingle();
+			Container.Bind<IWindowFactory>().To<WindowFactory>().AsSingle();
+		}
+
+		private void BindUIServices()
+		{
+			Container.Bind<IWindowService>().To<WindowService>().AsSingle();
 		}
 
 		private void BindSystemFactory()

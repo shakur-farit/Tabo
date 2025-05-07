@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Code.Meta.UI.UIRoot.Factory
 {
-	public class WindowService
+	public class WindowService : IWindowService
 	{
 		private readonly IWindowFactory _windowFactory;
 

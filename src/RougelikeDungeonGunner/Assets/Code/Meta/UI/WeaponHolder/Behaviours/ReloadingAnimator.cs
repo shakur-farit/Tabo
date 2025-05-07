@@ -1,4 +1,5 @@
-﻿using System.Threading;
+﻿using System;
+using System.Threading;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
@@ -27,14 +28,31 @@ namespace Code.Meta.UI.Hud.WeaponHolder.Behaviours
 			_relaodingBar.localScale = new Vector3(0, 1, 1);
 
 			StartAnimateReloadText();
-			await ReloadAsync(reloadTimeLeft, reloadTime);
+
+			try
+			{
+				await ReloadAsync(reloadTimeLeft, reloadTime);
+			}
+			catch (OperationCanceledException)
+			{
+				Debug.Log("Weapon holder was destroyed");
+			}
+
 			StopAnimateReloadText();
 		}
 
 		public async void AnimatePrecharging(float reloadTimeLeft, float reloadTime)
 		{
 			_relaodingBar.localScale = new Vector3(0, 1, 1);
-			await ReloadAsync(reloadTimeLeft, reloadTime);
+
+			try
+			{
+				await ReloadAsync(reloadTimeLeft, reloadTime);
+			}
+			catch (OperationCanceledException)
+			{
+				Debug.Log("Weapon holder was destroyed");
+			}
 		}
 
 		private async UniTask ReloadAsync(float reloadTimeLeft, float reloadTime)

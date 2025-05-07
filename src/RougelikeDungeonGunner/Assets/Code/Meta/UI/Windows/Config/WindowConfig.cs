@@ -1,12 +1,11 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Code.Meta.UI.UIRoot.Factory
 {
-	[Serializable]
-	public class WindowConfig
+	[CreateAssetMenu(menuName = "Dungeon Gunner/Window Config", fileName = "WindowConfig")]
+	public class WindowConfig : ScriptableObject
 	{
-		public WindowId Id;
-		public GameObject Prefab;
+		public WindowId TypeId;
+		public GameObject ViewPrefab;
 	}
 }

@@ -35,6 +35,6 @@ namespace Code.Gameplay.StaticData
     LevelConfig GetLevelConfig(LevelTypeId levelId);
     LootConfig GetLootConfig(LootTypeId lootId);
     EnchantConfig GetEnchantConfig(EnchantTypeId id);
-    GameObject GetWindowPrefab(WindowId id);
+    WindowConfig GetWindowConfig(WindowId id);
   }
 }

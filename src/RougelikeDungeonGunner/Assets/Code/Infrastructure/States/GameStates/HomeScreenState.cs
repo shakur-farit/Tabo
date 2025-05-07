@@ -1,6 +1,5 @@
 using Code.Infrastructure.States.StateInfrastructure;
 using Code.Meta;
-using Code.Meta.UI.UIRoot.Factory;
 
 namespace Code.Infrastructure.States.GameStates
 {
@@ -10,22 +9,17 @@ namespace Code.Infrastructure.States.GameStates
 
 		private readonly ISystemsFactory _systems;
 		private readonly GameContext _gameContext;
-		private readonly IUIRootFactory _uiRootFactory;
 
 		public HomeScreenState(
 			ISystemsFactory systems,
-			GameContext gameContext,
-			IUIRootFactory uiRootFactory)
+			GameContext gameContext)
 		{
 			_systems = systems;
 			_gameContext = gameContext;
-			_uiRootFactory = uiRootFactory;
 		}
 
 		public void Enter()
 		{
-			_uiRootFactory.CreateUIRoot();
-
 			_homeScreenFeature = _systems.Create<HomeScreenFeature>();
 			_homeScreenFeature.Initialize();
 		}

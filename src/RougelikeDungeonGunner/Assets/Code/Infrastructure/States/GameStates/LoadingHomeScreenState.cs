@@ -1,6 +1,7 @@
 using Code.Infrastructure.Loading;
 using Code.Infrastructure.States.StateInfrastructure;
 using Code.Infrastructure.States.StateMachine;
+using UnityEngine;
 
 namespace Code.Infrastructure.States.GameStates
 {
@@ -15,8 +16,10 @@ namespace Code.Infrastructure.States.GameStates
 			_sceneLoader = sceneLoader;
 		}
 
-		public void Enter() => 
+		public void Enter()
+		{
 			_sceneLoader.LoadScene(Scenes.HomeScreen, EnterHomeScreenState);
+		}
 
 		public void Exit()
 		{
@@ -24,6 +27,6 @@ namespace Code.Infrastructure.States.GameStates
 		}
 
 		private void EnterHomeScreenState() => 
-			_stateMachine.Enter<HomeScreenState>();
+			_stateMachine.Enter<HomeScreenEnterState>();
 	}
 }

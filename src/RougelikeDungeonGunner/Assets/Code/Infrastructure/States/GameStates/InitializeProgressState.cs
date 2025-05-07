@@ -21,8 +21,6 @@ namespace Code.Infrastructure.States.GameStates
 
 		public void Enter()
 		{
-			Debug.Log(GetType());
-
 			InitializeProgress();
 
 			_progressProvider.SetTransientData(new TransientData());
