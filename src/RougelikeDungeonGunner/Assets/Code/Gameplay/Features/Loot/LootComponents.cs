@@ -13,6 +13,6 @@ namespace Code.Gameplay.Features.Loot
 
 		[Game] public class Coins : IComponent { public int Value; }
 
-		[Game] public class CoinsHolderComponent : IComponent { public CoinsHolder Value; }
+		[Game] public class CoinsHolder : IComponent { public CoinsHolderBehaviour Value; }
 	}
 }

@@ -33,21 +33,21 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Features.Loot.LootComponents.CoinsHolderComponent coinsHolder { get { return (Code.Gameplay.Features.Loot.LootComponents.CoinsHolderComponent)GetComponent(GameComponentsLookup.CoinsHolder); } }
-    public Code.Meta.UI.Hud.CoinsHolder.Behaviours.CoinsHolder CoinsHolder { get { return coinsHolder.Value; } }
+    public Code.Gameplay.Features.Loot.LootComponents.CoinsHolder coinsHolder { get { return (Code.Gameplay.Features.Loot.LootComponents.CoinsHolder)GetComponent(GameComponentsLookup.CoinsHolder); } }
+    public Code.Meta.UI.Hud.CoinsHolder.Behaviours.CoinsHolderBehaviour CoinsHolder { get { return coinsHolder.Value; } }
     public bool hasCoinsHolder { get { return HasComponent(GameComponentsLookup.CoinsHolder); } }
 
-    public GameEntity AddCoinsHolder(Code.Meta.UI.Hud.CoinsHolder.Behaviours.CoinsHolder newValue) {
+    public GameEntity AddCoinsHolder(Code.Meta.UI.Hud.CoinsHolder.Behaviours.CoinsHolderBehaviour newValue) {
         var index = GameComponentsLookup.CoinsHolder;
-        var component = (Code.Gameplay.Features.Loot.LootComponents.CoinsHolderComponent)CreateComponent(index, typeof(Code.Gameplay.Features.Loot.LootComponents.CoinsHolderComponent));
+        var component = (Code.Gameplay.Features.Loot.LootComponents.CoinsHolder)CreateComponent(index, typeof(Code.Gameplay.Features.Loot.LootComponents.CoinsHolder));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
     }
 
-    public GameEntity ReplaceCoinsHolder(Code.Meta.UI.Hud.CoinsHolder.Behaviours.CoinsHolder newValue) {
+    public GameEntity ReplaceCoinsHolder(Code.Meta.UI.Hud.CoinsHolder.Behaviours.CoinsHolderBehaviour newValue) {
         var index = GameComponentsLookup.CoinsHolder;
-        var component = (Code.Gameplay.Features.Loot.LootComponents.CoinsHolderComponent)CreateComponent(index, typeof(Code.Gameplay.Features.Loot.LootComponents.CoinsHolderComponent));
+        var component = (Code.Gameplay.Features.Loot.LootComponents.CoinsHolder)CreateComponent(index, typeof(Code.Gameplay.Features.Loot.LootComponents.CoinsHolder));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

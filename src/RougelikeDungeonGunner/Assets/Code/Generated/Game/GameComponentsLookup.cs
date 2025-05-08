@@ -420,7 +420,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Lifetime.MaxHp),
         typeof(Code.Gameplay.Features.Lifetime.ProcessingDeath),
         typeof(Code.Gameplay.Features.Loot.LootComponents.Coins),
-        typeof(Code.Gameplay.Features.Loot.LootComponents.CoinsHolderComponent),
+        typeof(Code.Gameplay.Features.Loot.LootComponents.CoinsHolder),
         typeof(Code.Gameplay.Features.Loot.LootComponents.Collected),
         typeof(Code.Gameplay.Features.Loot.LootComponents.LootTypeIdComponent),
         typeof(Code.Gameplay.Features.Loot.LootComponents.PickupRadius),

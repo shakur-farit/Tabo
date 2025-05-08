@@ -5,7 +5,7 @@ namespace Code.Meta.UI.Hud.CoinsHolder.Registrar
 {
 	public class CoinsHolderRegistrar :  EntityComponentRegistrar
 	{
-		[SerializeField] private Behaviours.CoinsHolder _coinsHolder;
+		[SerializeField] private Behaviours.CoinsHolderBehaviour _coinsHolder;
 
 		public override void RegisterComponents() =>
 			Entity
