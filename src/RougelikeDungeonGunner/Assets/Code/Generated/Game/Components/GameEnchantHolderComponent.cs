@@ -33,21 +33,21 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Features.Enchants.EnchantHolderComponent enchantHolder { get { return (Code.Gameplay.Features.Enchants.EnchantHolderComponent)GetComponent(GameComponentsLookup.EnchantHolder); } }
-    public Code.Meta.UI.Hud.EnchantHolder.Behaviours.EnchantHolder EnchantHolder { get { return enchantHolder.Value; } }
+    public Code.Gameplay.Features.Enchants.EnchantHolder enchantHolder { get { return (Code.Gameplay.Features.Enchants.EnchantHolder)GetComponent(GameComponentsLookup.EnchantHolder); } }
+    public Code.Meta.UI.Hud.EnchantHolder.Behaviours.EnchantHolderBehaviour EnchantHolder { get { return enchantHolder.Value; } }
     public bool hasEnchantHolder { get { return HasComponent(GameComponentsLookup.EnchantHolder); } }
 
-    public GameEntity AddEnchantHolder(Code.Meta.UI.Hud.EnchantHolder.Behaviours.EnchantHolder newValue) {
+    public GameEntity AddEnchantHolder(Code.Meta.UI.Hud.EnchantHolder.Behaviours.EnchantHolderBehaviour newValue) {
         var index = GameComponentsLookup.EnchantHolder;
-        var component = (Code.Gameplay.Features.Enchants.EnchantHolderComponent)CreateComponent(index, typeof(Code.Gameplay.Features.Enchants.EnchantHolderComponent));
+        var component = (Code.Gameplay.Features.Enchants.EnchantHolder)CreateComponent(index, typeof(Code.Gameplay.Features.Enchants.EnchantHolder));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
     }
 
-    public GameEntity ReplaceEnchantHolder(Code.Meta.UI.Hud.EnchantHolder.Behaviours.EnchantHolder newValue) {
+    public GameEntity ReplaceEnchantHolder(Code.Meta.UI.Hud.EnchantHolder.Behaviours.EnchantHolderBehaviour newValue) {
         var index = GameComponentsLookup.EnchantHolder;
-        var component = (Code.Gameplay.Features.Enchants.EnchantHolderComponent)CreateComponent(index, typeof(Code.Gameplay.Features.Enchants.EnchantHolderComponent));
+        var component = (Code.Gameplay.Features.Enchants.EnchantHolder)CreateComponent(index, typeof(Code.Gameplay.Features.Enchants.EnchantHolder));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

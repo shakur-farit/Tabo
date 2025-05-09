@@ -2,7 +2,6 @@
 using Code.Gameplay.Features.Statuses;
 using Entitas;
 using System.Collections.Generic;
-using Code.Meta.UI.Hud.CoinsHolder.Behaviours;
 using Code.Meta.UI.Hud.WeaponHolder.Behaviours;
 using UnityEngine;
 
@@ -52,6 +51,6 @@ namespace Code.Gameplay.Features.Weapon
 	[Game] public class LaserBlaster : IComponent { }
 	[Game] public class RocketLauncher : IComponent { }
 
-	[Game] public class WeaponHolderComponent : IComponent { public WeaponHolder Value; }
+	[Game] public class WeaponHolder : IComponent { public WeaponHolderBehaviour Value; }
 	[Game] public class ReloadingAnimatorComponent : IComponent { public ReloadingAnimator Value; }
 }

@@ -1,11 +1,12 @@
 ﻿using Code.Infrastructure.View.Registrars;
+using Code.Meta.UI.Hud.AmmoHolder.Behaviours;
 using UnityEngine;
 
 namespace Code.Meta.UI.Hud.AmmoHolder.Registrars
 {
 	public class AmmoUIRegistrar : EntityComponentRegistrar
 	{
-		[SerializeField] private Behaviours.AmmoHolder _ammoHolder;
+		[SerializeField] private AmmoHolderBehaviour _ammoHolder;
 
 		public override void RegisterComponents() => 
 			Entity.AddAmmoHolder(_ammoHolder);

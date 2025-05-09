@@ -33,21 +33,21 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Features.Ammo.AmmoHolderComponent ammoHolder { get { return (Code.Gameplay.Features.Ammo.AmmoHolderComponent)GetComponent(GameComponentsLookup.AmmoHolder); } }
-    public Code.Meta.UI.Hud.AmmoHolder.Behaviours.AmmoHolder AmmoHolder { get { return ammoHolder.Value; } }
+    public Code.Gameplay.Features.Ammo.AmmoHolder ammoHolder { get { return (Code.Gameplay.Features.Ammo.AmmoHolder)GetComponent(GameComponentsLookup.AmmoHolder); } }
+    public Code.Meta.UI.Hud.AmmoHolder.Behaviours.AmmoHolderBehaviour AmmoHolder { get { return ammoHolder.Value; } }
     public bool hasAmmoHolder { get { return HasComponent(GameComponentsLookup.AmmoHolder); } }
 
-    public GameEntity AddAmmoHolder(Code.Meta.UI.Hud.AmmoHolder.Behaviours.AmmoHolder newValue) {
+    public GameEntity AddAmmoHolder(Code.Meta.UI.Hud.AmmoHolder.Behaviours.AmmoHolderBehaviour newValue) {
         var index = GameComponentsLookup.AmmoHolder;
-        var component = (Code.Gameplay.Features.Ammo.AmmoHolderComponent)CreateComponent(index, typeof(Code.Gameplay.Features.Ammo.AmmoHolderComponent));
+        var component = (Code.Gameplay.Features.Ammo.AmmoHolder)CreateComponent(index, typeof(Code.Gameplay.Features.Ammo.AmmoHolder));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
     }
 
-    public GameEntity ReplaceAmmoHolder(Code.Meta.UI.Hud.AmmoHolder.Behaviours.AmmoHolder newValue) {
+    public GameEntity ReplaceAmmoHolder(Code.Meta.UI.Hud.AmmoHolder.Behaviours.AmmoHolderBehaviour newValue) {
         var index = GameComponentsLookup.AmmoHolder;
-        var component = (Code.Gameplay.Features.Ammo.AmmoHolderComponent)CreateComponent(index, typeof(Code.Gameplay.Features.Ammo.AmmoHolderComponent));
+        var component = (Code.Gameplay.Features.Ammo.AmmoHolder)CreateComponent(index, typeof(Code.Gameplay.Features.Ammo.AmmoHolder));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

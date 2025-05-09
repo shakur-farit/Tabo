@@ -39,8 +39,8 @@ SpriteAtlas:
       padding: 4
       blockOffset: 1
       allowAlphaSplitting: 0
-      enableRotation: 0
-      enableTightPacking: 1
+      enableRotation: 1
+      enableTightPacking: 0
       enableAlphaDilation: 0
     secondaryTextureSettings: {}
     variantMultiplier: 1
@@ -679,6 +679,7 @@ SpriteAtlas:
     - 85e6c6115088d2442baa1c14c67d0e39: -743135786207652365
     - 85e6c6115088d2442baa1c14c67d0e39: -8553600823783343772
     - 2788b711f80a9194096a03ef26a440cb: 21300000
+    - 74d29d11d14e7e846bbb9390b1d4b1dc: 21300000
     - 370179218b8e7c14b85a6a52fb84894a: -606138159474177416
     - 370179218b8e7c14b85a6a52fb84894a: -4235428918711793208
     - 370179218b8e7c14b85a6a52fb84894a: 5308455662670309532
@@ -5575,6 +5576,7 @@ SpriteAtlas:
   - {fileID: -743135786207652365, guid: 85e6c6115088d2442baa1c14c67d0e39, type: 3}
   - {fileID: -8553600823783343772, guid: 85e6c6115088d2442baa1c14c67d0e39, type: 3}
   - {fileID: 21300000, guid: 2788b711f80a9194096a03ef26a440cb, type: 3}
+  - {fileID: 21300000, guid: 74d29d11d14e7e846bbb9390b1d4b1dc, type: 3}
   - {fileID: -606138159474177416, guid: 370179218b8e7c14b85a6a52fb84894a, type: 3}
   - {fileID: -4235428918711793208, guid: 370179218b8e7c14b85a6a52fb84894a, type: 3}
   - {fileID: 5308455662670309532, guid: 370179218b8e7c14b85a6a52fb84894a, type: 3}
@@ -10470,6 +10472,7 @@ SpriteAtlas:
   - snake-d3_2
   - snake-d3_3
   - TheScientestHand
+  - Free Flat Arrow 3 E Icon
   - GoldenBarrel_5
   - GoldenBarrel_4
   - GoldenBarrel_1

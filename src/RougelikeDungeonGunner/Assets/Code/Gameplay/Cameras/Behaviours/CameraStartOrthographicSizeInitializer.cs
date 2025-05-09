@@ -1,4 +1,7 @@
-﻿using Code.Gameplay.Features.Hero;
+﻿using System;
+using Code.Gameplay.Features.Hero;
+using Code.Gameplay.Features.Weapon;
+using Code.Gameplay.Features.Weapon.Configs;
 using Code.Gameplay.StaticData;
 using UnityEngine;
 using Zenject;
@@ -19,8 +22,8 @@ namespace Code.Gameplay.Cameras.Provider
 
 		private void Start()
 		{
-			var weaponId = _staticDataService.GetHeroConfig(HeroTypeId.TheGeneral).StartWeapon;
-			var weaponLevel = _staticDataService.GetWeaponLevel(weaponId, 1);
+			WeaponTypeId weaponId = _staticDataService.GetHeroConfig(HeroTypeId.TheGeneral).StartWeapon;
+			WeaponLevel weaponLevel = _staticDataService.GetWeaponLevel(weaponId, 1);
 
 			_cameraProvider.SetCameraSize(weaponLevel.FireRange);
 		}

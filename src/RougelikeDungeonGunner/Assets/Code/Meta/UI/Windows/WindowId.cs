@@ -6,6 +6,5 @@
 		MainMenuWindow = 1,
 		LevelCompleteWindow = 2,
 		GameOverWindow = 3
-
 	}
 }

@@ -13,7 +13,7 @@ namespace Code.Gameplay.Features.Enchants
 	[Game] public class NewCollectedEnchant : IComponent { }
 
 	[Game] public class EnchantVisualEffectComponent : IComponent { public EnchantVisualEffect Value; }
-	[Game] public class EnchantHolderComponent : IComponent { public EnchantHolder Value; }
+	[Game] public class EnchantHolder : IComponent { public EnchantHolderBehaviour Value; }
 	[Game] public class EnchantUIComponent : IComponent { }
 
 	[Game] public class PoisonEnchant : IComponent { }

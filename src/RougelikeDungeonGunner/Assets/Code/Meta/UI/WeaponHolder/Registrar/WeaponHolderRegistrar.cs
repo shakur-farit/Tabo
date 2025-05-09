@@ -1,11 +1,12 @@
 ﻿using Code.Infrastructure.View.Registrars;
+using Code.Meta.UI.Hud.WeaponHolder.Behaviours;
 using UnityEngine;
 
 namespace Code.Meta.UI.Hud.WeaponHolder.Registrar
 {
 	public class WeaponHolderRegistrar : EntityComponentRegistrar
 	{
-		[SerializeField] private Behaviours.WeaponHolder _weaponHolder;
+		[SerializeField] private WeaponHolderBehaviour _weaponHolder;
 
 		public override void RegisterComponents() => 
 			Entity.AddWeaponHolder(_weaponHolder);

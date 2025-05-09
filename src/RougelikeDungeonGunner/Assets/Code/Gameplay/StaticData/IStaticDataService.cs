@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using Code.Gameplay.Features.Ammo;
 using Code.Gameplay.Features.Ammo.Config;
-using Code.Gameplay.Features.Effects;
 using Code.Gameplay.Features.Enchants;
 using Code.Gameplay.Features.Enchants.Configs;
 using Code.Gameplay.Features.Enemy;
@@ -16,19 +15,19 @@ using Code.Gameplay.Features.Weapon;
 using Code.Gameplay.Features.Weapon.Configs;
 using Code.Meta.UI.UIRoot.Factory;
 using Cysharp.Threading.Tasks;
-using UnityEngine;
 
 namespace Code.Gameplay.StaticData
 {
   public interface IStaticDataService
   {
 	  IEnumerable<LootConfig> GetAllLootConfigs();
+	  IEnumerable<HeroConfig> GetAllHeroConfigs();
 
 	  UniTask Load();
 
 	  AmmoConfig GetAmmoConfig(AmmoTypeId ammoTypeId);
-    AmmoLevel GetAmmoLevel(AmmoTypeId ammoTypeId, int level);
-    WeaponConfig GetWeaponConfig(WeaponTypeId weaponTypeId);
+	  AmmoLevel GetAmmoLevel(AmmoTypeId ammoTypeId, int level);
+	  WeaponConfig GetWeaponConfig(WeaponTypeId weaponTypeId);
     WeaponLevel GetWeaponLevel(WeaponTypeId weaponTypeId, int level);
     EnemyConfig GetEnemyConfig(EnemyTypeId enemyId);
     HeroConfig GetHeroConfig(HeroTypeId heroId);

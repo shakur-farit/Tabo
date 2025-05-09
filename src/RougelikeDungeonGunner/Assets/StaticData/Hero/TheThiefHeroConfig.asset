@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b1c1ef6d90c88c04e9eb06f7eaa2cdaa, type: 3}
-  m_Name: TheGeneralHeroConfig
+  m_Name: TheThiefHeroConfig
   m_EditorClassIdentifier: 
-  TypeId: 1
+  TypeId: 2
   ViewPrefab: {fileID: 8254426112849521288, guid: 8ce004de107d0ba4eba3d92948a32f93, type: 3}
-  AnimatorController: {fileID: 9100000, guid: e87ce176a15556c459b355908992b930, type: 2}
+  AnimatorController: {fileID: 9100000, guid: 3f018cebb641449a7a49950b93679bbc, type: 2}
   StartWeapon: 1
-  CurrentHp: 50
+  CurrentHp: 25
   MaxHp: 100
-  MovementSpeed: 3
+  MovementSpeed: 4

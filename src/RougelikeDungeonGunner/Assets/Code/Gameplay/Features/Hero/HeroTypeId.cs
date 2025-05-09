@@ -5,6 +5,6 @@
 		Unknown = 0,
 		TheGeneral = 1,
 		TheThief = 2,
-		TheScientist = 2,
+		TheScientist = 3,
 	}
 }

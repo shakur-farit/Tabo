@@ -200,6 +200,18 @@ MonoBehaviour:
     m_SerializedLabels:
     - WindowConfig
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8ed21c78f2aa56849ac7cce6b77be104
+    m_Address: Assets/StaticData/Hero/TheScientisHeroConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9013bc64c784f1c4cb380fadd883f85c
+    m_Address: Assets/StaticData/Hero/TheThiefHeroConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroConfig
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 7128017d563554245a79368046c75e1a, type: 2}
   m_SchemaSet:

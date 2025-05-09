@@ -1,11 +1,12 @@
 ﻿using Code.Infrastructure.View.Registrars;
+using Code.Meta.UI.Hud.EnchantHolder.Behaviours;
 using UnityEngine;
 
 namespace Code.Meta.UI.Hud.EnchantHolder.Registratrs
 {
 	public class EnchantHolderRegistrar : EntityComponentRegistrar
 	{
-		[SerializeField] private Behaviours.EnchantHolder _enchantHolder;
+		[SerializeField] private EnchantHolderBehaviour _enchantHolder;
 
 		public override void RegisterComponents() => 
 			Entity.AddEnchantHolder(_enchantHolder);
