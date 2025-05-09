@@ -3,6 +3,7 @@ using System.Linq;
 using Code.Gameplay.Features.Hero.Configs;
 using Code.Gameplay.StaticData;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 using Zenject;
 
@@ -10,6 +11,7 @@ namespace Code.Meta.UI.UIRoot.Factory
 {
 	public class HeroSelectorBehaviour : MonoBehaviour
 	{
+		[SerializeField] private HeroUI _heroUI;
 		[SerializeField] private Button _nextHeroButton;
 		[SerializeField] private Button _previousHeroButton;
 
@@ -30,7 +32,7 @@ namespace Code.Meta.UI.UIRoot.Factory
 		private void Start()
 		{
 			_heroConfigs = _staticDataService.GetAllHeroConfigs().ToList();
-			UpdateUI();
+			UpdateHeroUI(_heroConfigs[_currentIndex]);
 			UpdateNavigationButtons();
 		}
 
@@ -39,7 +41,7 @@ namespace Code.Meta.UI.UIRoot.Factory
 			if (_currentIndex < _heroConfigs.Count - 1)
 				_currentIndex++;
 
-			UpdateUI();
+			UpdateHeroUI(_heroConfigs[_currentIndex]);
 			UpdateNavigationButtons();
 		}
 
@@ -48,13 +50,12 @@ namespace Code.Meta.UI.UIRoot.Factory
 			if (_currentIndex > 0)
 				_currentIndex--;
 
-			UpdateUI();
+			UpdateHeroUI(_heroConfigs[_currentIndex]);
 			UpdateNavigationButtons();
 		}
 
-		private void UpdateUI()
-		{
-		}
+		private void UpdateHeroUI(HeroConfig config) => 
+			_heroUI.UpdateHeroUI(config);
 
 		private void UpdateNavigationButtons()
 		{

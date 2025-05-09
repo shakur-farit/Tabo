@@ -903,6 +903,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8736272477208363943}
+  - component: {fileID: 2886116420696186306}
   m_Layer: 11
   m_Name: HeroUI
   m_TagString: Untagged
@@ -926,6 +927,21 @@ Transform:
   - {fileID: 5430568913281853584}
   m_Father: {fileID: 4415671452589626990}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2886116420696186306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3437648079352038045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 475ce541961686749846d400d45f8b50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _handSpriteRenderer: {fileID: 7541619320362379204}
+  _weaponSpriteRenderer: {fileID: 2985649813390564966}
+  _animator: {fileID: 493322833982439395}
 --- !u!1 &4329173407160148416
 GameObject:
   m_ObjectHideFlags: 0
@@ -1122,6 +1138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57df6a7580e0e7540ad95aa1159ff1ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _heroUI: {fileID: 2886116420696186306}
   _nextHeroButton: {fileID: 739598937162239560}
   _previousHeroButton: {fileID: 843266088149974284}
 --- !u!1 &5064392111378677006

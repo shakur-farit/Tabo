@@ -10,6 +10,7 @@ namespace Code.Gameplay.Features.Hero.Configs
 		public HeroTypeId TypeId;
 		public EntityBehaviour ViewPrefab;
 		public RuntimeAnimatorController AnimatorController;
+		public Sprite HandSprite;
 		public WeaponTypeId StartWeapon;
 		[Range(1, 100)] public int CurrentHp;
 		[Range(1, 100)] public int MaxHp;
