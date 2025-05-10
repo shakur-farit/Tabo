@@ -212,6 +212,18 @@ MonoBehaviour:
     m_SerializedLabels:
     - HeroConfig
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 18b656a26093e844091eac1ed1695a71
+    m_Address: Assets/StaticData/Window/HudConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WindowConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cb2dfc2551c746641b7a9abc95d36433
+    m_Address: Assets/StaticData/Window/LevelCompleteWindowConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WindowConfig
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 7128017d563554245a79368046c75e1a, type: 2}
   m_SchemaSet:

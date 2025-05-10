@@ -24,6 +24,9 @@ namespace Code.Infrastructure.States.GameStates
 
 		public void Update()
 		{
+			if (_battleFeature == null)
+				return;
+
 			_battleFeature.Execute();
 			_battleFeature.Cleanup();
 		}
@@ -46,4 +49,4 @@ namespace Code.Infrastructure.States.GameStates
 				entity.isDestructed = true;
 		}
 	}
-}	
+}

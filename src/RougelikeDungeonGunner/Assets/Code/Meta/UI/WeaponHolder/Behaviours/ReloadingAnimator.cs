@@ -51,7 +51,6 @@ namespace Code.Meta.UI.Hud.WeaponHolder.Behaviours
 			}
 			catch (OperationCanceledException)
 			{
-				Debug.Log("Weapon holder was destroyed");
 			}
 		}
 

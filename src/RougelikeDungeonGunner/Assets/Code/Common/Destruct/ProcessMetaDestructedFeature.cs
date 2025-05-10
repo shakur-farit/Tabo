@@ -7,7 +7,7 @@ namespace Code.Common
 	{
 		public ProcessMetaDestructedFeature(ISystemsFactory systems)
 		{
-			Add(systems.Create<CleanupMateDestructedSystem>());
+			Add(systems.Create<CleanupMetaDestructedSystem>());
 		}
 	}
 }

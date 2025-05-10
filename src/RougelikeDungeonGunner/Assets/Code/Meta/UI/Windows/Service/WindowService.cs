@@ -12,7 +12,7 @@ namespace Code.Meta.UI.UIRoot.Factory
 		public WindowService(IWindowFactory windowFactory) =>
 			_windowFactory = windowFactory;
 
-		public void Open(WindowId windowId) =>
+		public void Open(WindowId windowId) => 
 			_openedWindows.Add(_windowFactory.CreateWindow(windowId));
 
 		public void Close(WindowId windowId)

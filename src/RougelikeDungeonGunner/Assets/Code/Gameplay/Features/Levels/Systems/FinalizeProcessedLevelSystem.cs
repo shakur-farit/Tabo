@@ -2,7 +2,6 @@
 using Code.Infrastructure.States.GameStates;
 using Code.Infrastructure.States.StateMachine;
 using Entitas;
-using UnityEngine;
 
 namespace Code.Gameplay.Features.Levels.Systems
 {

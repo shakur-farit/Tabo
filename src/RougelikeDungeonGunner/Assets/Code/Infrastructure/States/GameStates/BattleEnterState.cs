@@ -1,6 +1,7 @@
 using Code.Gameplay.Features.Levels.Factory;
 using Code.Infrastructure.States.StateInfrastructure;
 using Code.Infrastructure.States.StateMachine;
+using Code.Meta.UI.UIRoot.Factory;
 using Code.Progress.Provider;
 
 namespace Code.Infrastructure.States.GameStates
@@ -10,20 +11,25 @@ namespace Code.Infrastructure.States.GameStates
 		private readonly IGameStateMachine _stateMachine;
 		private readonly ILevelFactory _levelFactory;
 		private readonly IProgressProvider _progressProvider;
+		private readonly IWindowService _windowService;
 
 		public BattleEnterState(
 			IGameStateMachine stateMachine,
 			ILevelFactory levelFactory,
-			IProgressProvider progressProvider)
+			IProgressProvider progressProvider,
+			IWindowService windowService)
 		{
 			_stateMachine = stateMachine;
 			_levelFactory = levelFactory;
 			_progressProvider = progressProvider;
+			_windowService = windowService;
 		}
 
 		public void Enter()
 		{
 			_levelFactory.CreateLevel(_progressProvider.TransientData.CurrentLevel);
+
+			_windowService.Open(WindowId.Hud);
 
 			_stateMachine.Enter<BattleLoopState>();
 		}

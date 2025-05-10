@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c6316ef929a239d43af15994e75e06c5, type: 3}
-  m_Name: MainMenuWindowConfig
+  m_Name: LevelCompleteWindowConfig
   m_EditorClassIdentifier: 
-  TypeId: 2
-  ViewPrefab: {fileID: 731944184819309819, guid: 6e60df6474c4f804c90c7cbbe25b5e36, type: 3}
+  TypeId: 3
+  ViewPrefab: {fileID: 731944184819309819, guid: 05e1a25a9a5343044b1b7a7dbebafb0b, type: 3}

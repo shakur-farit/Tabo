@@ -1,5 +1,4 @@
-﻿using Code.Gameplay.Cameras.Systems;
-using Code.Gameplay.Features.Weapon.ChangeRequest;
+﻿using Code.Gameplay.Features.Weapon.ChangeRequest;
 using Code.Gameplay.Features.Weapon.Systems;
 using Code.Infrastructure;
 using Code.Meta.UI.Hud.AmmoHolder.Systems;
@@ -13,8 +12,8 @@ namespace Code.Gameplay.Features.Weapon
 		{
 			Add(systems.Create<WeaponChangeRequestFeature>());
 			Add(systems.Create<ChangeWeaponSystem>());
-			Add(systems.Create<ChangeCameraSizeDependingOnWeaponTypeSystem>());
-
+			Add(systems.Create<ChangeCameraSizeByWeaponRangeSystem>());
+			
 			Add(systems.Create<UpdateWeaponIconInHolderSystem>());
 			Add(systems.Create<UpdateWeaponNameInHolderSystem>());
 			Add(systems.Create<UpdateAmmoUICountInHolderOnCreateOrReloadWeaponSystem>());

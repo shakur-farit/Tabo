@@ -1,0 +1,30 @@
+﻿using System.Collections.Generic;
+using Code.Gameplay.Cameras.Provider;
+using Entitas;
+
+namespace Code.Meta.UI.Hud.AmmoHolder.Systems
+{
+	public class ChangeCameraSizeByWeaponRangeSystem : ReactiveSystem<GameEntity>
+	{
+		private readonly ICameraProvider _cameraProvider;
+
+		public ChangeCameraSizeByWeaponRangeSystem(Contexts contexts, ICameraProvider cameraProvider) : base(contexts.game) => 
+			_cameraProvider = cameraProvider;
+
+
+		protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context) =>
+			context.CreateCollector(GameMatcher.AllOf(
+					GameMatcher.Weapon,
+					GameMatcher.Radius)
+				.Added());
+
+		protected override bool Filter(GameEntity weapons) =>
+			weapons.isWeapon && weapons.hasRadius;
+
+		protected override void Execute(List<GameEntity> weapons)
+		{
+			foreach (GameEntity weapon in weapons)
+				_cameraProvider.SetCameraSize(weapon.Radius);
+		}
+	}
+}

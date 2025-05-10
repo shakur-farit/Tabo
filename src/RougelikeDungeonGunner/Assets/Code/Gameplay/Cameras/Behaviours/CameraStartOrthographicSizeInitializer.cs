@@ -1,5 +1,4 @@
-﻿using System;
-using Code.Gameplay.Features.Hero;
+﻿using Code.Gameplay.Features.Hero;
 using Code.Gameplay.Features.Weapon;
 using Code.Gameplay.Features.Weapon.Configs;
 using Code.Gameplay.StaticData;
