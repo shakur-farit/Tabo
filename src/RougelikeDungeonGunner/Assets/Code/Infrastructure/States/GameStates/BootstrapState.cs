@@ -1,36 +1,31 @@
-using Code.Gameplay.StaticData;
 using Code.Infrastructure.AssetManagement;
 using Code.Infrastructure.States.StateInfrastructure;
 using Code.Infrastructure.States.StateMachine;
+using Cysharp.Threading.Tasks;
 
 namespace Code.Infrastructure.States.GameStates
 {
-	public class BootstrapState : IState
+	public class BootstrapState : SimpleState
 	{
 		private readonly IGameStateMachine _stateMachine;
-		private readonly IStaticDataService _staticDataService;
 		private readonly IAssetProvider _assetProvider;
 
-		public BootstrapState(
-			IGameStateMachine stateMachine, 
-			IStaticDataService staticDataService,
-			IAssetProvider assetProvider)
+		public BootstrapState(IGameStateMachine stateMachine, IAssetProvider assetProvider)
 		{
 			_stateMachine = stateMachine;
-			_staticDataService = staticDataService;
 			_assetProvider = assetProvider;
 		}
 
-		public async void Enter()
+		public override async void Enter()
 		{
+			await InitAddressables();
+			EnterToInitializeProgressState();
+		}
+
+		private async UniTask InitAddressables() => 
 			await _assetProvider.Initialize();
 
+		private void EnterToInitializeProgressState() => 
 			_stateMachine.Enter<InitializeProgressState>();
-		}
-
-		public void Exit()
-		{
-
-		}
 	}
 }

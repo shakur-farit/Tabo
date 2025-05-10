@@ -6,7 +6,7 @@ using Code.Progress.Provider;
 
 namespace Code.Infrastructure.States.GameStates
 {
-	public class BattleEnterState : IState
+	public class BattleEnterState : SimpleState
 	{
 		private readonly IGameStateMachine _stateMachine;
 		private readonly ILevelFactory _levelFactory;
@@ -25,18 +25,20 @@ namespace Code.Infrastructure.States.GameStates
 			_windowService = windowService;
 		}
 
-		public void Enter()
+		public override void Enter()
 		{
+			CreateNewLevel();
+			OpenHud();
+			EnterToBattleLoop();
+		}
+
+		private void CreateNewLevel() => 
 			_levelFactory.CreateLevel(_progressProvider.TransientData.CurrentLevel);
 
+		private void OpenHud() => 
 			_windowService.Open(WindowId.Hud);
 
+		private void EnterToBattleLoop() => 
 			_stateMachine.Enter<BattleLoopState>();
-		}
-
-		public void Exit()
-		{
-
-		}
 	}
 }

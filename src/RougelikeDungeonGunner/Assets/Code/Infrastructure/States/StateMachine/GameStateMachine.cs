@@ -1,5 +1,6 @@
 using Code.Infrastructure.States.Factory;
 using Code.Infrastructure.States.StateInfrastructure;
+using Cysharp.Threading.Tasks;
 using Zenject;
 
 namespace Code.Infrastructure.States.StateMachine
@@ -18,26 +19,51 @@ namespace Code.Infrastructure.States.StateMachine
 				updateableState.Update();
 		}
 
-		public void Enter<TState>() where TState : class, IState
+		public async UniTask Enter<TState>() where TState : class, IState =>
+			await RequestEnter<TState>();
+
+		public async UniTask Enter<TState, TPayload>(TPayload payload) where TState : class, IPayloadState<TPayload> =>
+			await RequestEnter<TState, TPayload>(payload);
+
+		private async UniTask<TState> RequestEnter<TState>() where TState : class, IState
 		{
-			IState state = ChangeState<TState>();
-			state.Enter();
+			TState state = await RequestChangeState<TState>();
+			return EnterState(state);
 		}
 
-		public void Enter<TState, TPayload>(TPayload payload) where TState : class, IPayloadState<TPayload>
+		private async UniTask<TState> RequestEnter<TState, TPayload>(TPayload payload) where TState : class, IPayloadState<TPayload>
 		{
-			TState state = ChangeState<TState>();
-			state.Enter(payload);
+			TState state = await RequestChangeState<TState>();
+			return EnterPayloadState(state, payload);
 		}
 
-		private TState ChangeState<TState>() where TState : class, IExitableState
+		private TState EnterState<TState>(TState state) where TState : class, IState
 		{
-			_activeState?.Exit();
-
-			TState state = _stateFactory.GetGameState<TState>();
 			_activeState = state;
-
+			state.Enter();
 			return state;
 		}
+
+		private TState EnterPayloadState<TState, TPayload>(TState state, TPayload payload)
+			where TState : class, IPayloadState<TPayload>
+		{
+			_activeState = state;
+			state.Enter(payload);
+			return state;
+		}
+
+		private async UniTask<TState> RequestChangeState<TState>() where TState : class, IExitableState
+		{
+			if (_activeState != null)
+			{
+				await _activeState.BeginExit();
+				_activeState.EndExit();
+			}
+
+			return GetState<TState>();
+		}
+
+		private TState GetState<TState>() where TState : class, IExitableState =>
+			_stateFactory.GetState<TState>();
 	}
 }

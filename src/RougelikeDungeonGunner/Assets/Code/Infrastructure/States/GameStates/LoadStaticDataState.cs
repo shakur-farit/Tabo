@@ -1,11 +1,11 @@
+using System.Threading.Tasks;
 using Code.Gameplay.StaticData;
 using Code.Infrastructure.States.StateInfrastructure;
 using Code.Infrastructure.States.StateMachine;
-using UnityEngine;
 
 namespace Code.Infrastructure.States.GameStates
 {
-	public class LoadStaticDataState : IState
+	public class LoadStaticDataState : SimpleState
 	{
 		private readonly IStaticDataService _staticDataService;
 		private readonly IGameStateMachine _stateMachine;
@@ -16,16 +16,16 @@ namespace Code.Infrastructure.States.GameStates
 			_stateMachine = stateMachine;
 		}
 
-		public async void Enter()
+		public override async void Enter()
 		{
+			await LoadStaticData();
+			EnterToLoadingHomeScreenState();
+		}
+
+		private async Task LoadStaticData() => 
 			await _staticDataService.Load();
 
+		private void EnterToLoadingHomeScreenState() => 
 			_stateMachine.Enter<LoadingHomeScreenState>();
-		}
-
-		public void Exit()
-		{
-			
-		}
 	}
 }

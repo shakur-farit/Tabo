@@ -4,6 +4,6 @@ namespace Code.Infrastructure.States.Factory
 {
 	public interface IStateFactory
 	{
-		T GetGameState<T>() where T : class, IExitableState;
+		T GetState<T>() where T : class, IExitableState;
 	}
 }

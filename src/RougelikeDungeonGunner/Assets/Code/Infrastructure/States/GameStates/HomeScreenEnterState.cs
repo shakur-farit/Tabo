@@ -1,34 +1,31 @@
 using Code.Infrastructure.States.StateInfrastructure;
 using Code.Infrastructure.States.StateMachine;
 using Code.Meta.UI.UIRoot.Factory;
-using UnityEngine;
 
 namespace Code.Infrastructure.States.GameStates
 {
-	public class HomeScreenEnterState : IState
+	public class HomeScreenEnterState : SimpleState
 	{
 		private readonly IWindowService _windowService;
-		private IGameStateMachine _stateMachine;
+		private readonly IGameStateMachine _stateMachine;
 
-		public HomeScreenEnterState(
-			IWindowService windowService, 
-			IGameStateMachine stateMachine)
+		public HomeScreenEnterState(IWindowService windowService, IGameStateMachine stateMachine)
 		{
 			_windowService = windowService;
 			_stateMachine = stateMachine;
 		}
 
 
-		public void Enter()
+		public override void Enter()
 		{
-			_windowService.Open(WindowId.MainMenuWindow);
+			OpenMainMenuWindow();
+			EnterToHomeScreenState();
+		}
 
+		private void EnterToHomeScreenState() => 
 			_stateMachine.Enter<HomeScreenState>();
-		}
 
-		public void Exit()
-		{
-
-		}
+		private void OpenMainMenuWindow() => 
+			_windowService.Open(WindowId.MainMenuWindow);
 	}
 }

@@ -1,11 +1,10 @@
 using Code.Infrastructure.Loading;
 using Code.Infrastructure.States.StateInfrastructure;
 using Code.Infrastructure.States.StateMachine;
-using UnityEngine;
 
 namespace Code.Infrastructure.States.GameStates
 {
-	public class LoadingHomeScreenState : IState
+	public class LoadingHomeScreenState : SimpleState
 	{
 		private readonly IGameStateMachine _stateMachine;
 		private readonly ISceneLoader _sceneLoader;
@@ -16,15 +15,11 @@ namespace Code.Infrastructure.States.GameStates
 			_sceneLoader = sceneLoader;
 		}
 
-		public void Enter()
-		{
+		public override void Enter() => 
+			LoadHomeScreenScene();
+
+		private void LoadHomeScreenScene() => 
 			_sceneLoader.LoadScene(Scenes.HomeScreen, EnterHomeScreenState);
-		}
-
-		public void Exit()
-		{
-
-		}
 
 		private void EnterHomeScreenState() => 
 			_stateMachine.Enter<HomeScreenEnterState>();

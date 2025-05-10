@@ -2,44 +2,34 @@ using Code.Infrastructure.States.StateInfrastructure;
 using Code.Infrastructure.States.StateMachine;
 using Code.Progress.Data;
 using Code.Progress.Provider;
-using UnityEngine;
 
 namespace Code.Infrastructure.States.GameStates
 {
-	public class InitializeProgressState : IState
+	public class InitializeProgressState : SimpleState
 	{
 		private readonly IGameStateMachine _stateMachine;
 		private readonly IProgressProvider _progressProvider;
 
-		public InitializeProgressState(
-			IGameStateMachine stateMachine,
-			IProgressProvider progressProvider)
+		public InitializeProgressState(IGameStateMachine stateMachine, IProgressProvider progressProvider)
 		{
 			_stateMachine = stateMachine;
 			_progressProvider = progressProvider;
 		}
 
-		public void Enter()
+		public override void Enter()
 		{
 			InitializeProgress();
-
 			_progressProvider.SetTransientData(new TransientData());
-
-			_stateMachine.Enter<LoadStaticDataState>();
+			EnterToLoadStaticDataState();
 		}
 
-		private void InitializeProgress()
-		{
+		private void InitializeProgress() => 
 			CreateNewProgress();
-		}
 
-		private void CreateNewProgress()
-		{
+		private void CreateNewProgress() => 
 			_progressProvider.SetProgressData(new ProgressData());
-		}
 
-		public void Exit()
-		{
-		}
+		private void EnterToLoadStaticDataState() => 
+			_stateMachine.Enter<LoadStaticDataState>();
 	}
 }

@@ -10,7 +10,7 @@ namespace Code.Infrastructure.States.Factory
 		public StateFactory(DiContainer container) => 
 			_container = container;
 
-		public T GetGameState<T>() where T : class, IExitableState => 
+		public T GetState<T>() where T : class, IExitableState => 
 			_container.Resolve<T>();
 	}
 }

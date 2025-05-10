@@ -5,33 +5,37 @@ using Code.Progress.Provider;
 
 namespace Code.Infrastructure.States.GameStates
 {
-	public class LevelCompleteState : IState
+	public class LevelCompleteState : SimpleState
 	{
 		private readonly IProgressProvider _progressProvider;
-		private readonly IGameStateMachine _stateMachine;
 		private readonly IWindowService _windowService;
 
-		public LevelCompleteState(
-			IProgressProvider progressProvider, 
-			IGameStateMachine stateMachine,
-			IWindowService windowService)
+		public LevelCompleteState(IProgressProvider progressProvider, IWindowService windowService)
 		{
 			_progressProvider = progressProvider;
-			_stateMachine = stateMachine;
 			_windowService = windowService;
 		}
 
-		public void Enter()
+		public override void Enter()
 		{
+			CloseHud();
+			OpenLevelCompleteWindow();
+			MarkNextLevel();
+		}
+
+		protected override void Exit() => 
+			CloseLevelCompleteWindow();
+
+		private void CloseHud() => 
 			_windowService.Close(WindowId.Hud);
+
+		private void OpenLevelCompleteWindow() => 
 			_windowService.Open(WindowId.LevelCompleteWindow);
 
+		private void MarkNextLevel() => 
 			_progressProvider.TransientData.CurrentLevel += 1;
-		}
 
-		public void Exit()
-		{
+		private void CloseLevelCompleteWindow() => 
 			_windowService.Close(WindowId.LevelCompleteWindow);
-		}
 	}
 }

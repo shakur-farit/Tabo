@@ -1,10 +1,11 @@
 using Code.Infrastructure.States.StateInfrastructure;
+using Cysharp.Threading.Tasks;
 
 namespace Code.Infrastructure.States.StateMachine
 {
 	public interface IGameStateMachine
 	{
-		void Enter<TState>() where TState : class, IState;
-		void Enter<TState, TPayload>(TPayload payload) where TState : class, IPayloadState<TPayload>;
+		UniTask Enter<TState>() where TState : class, IState;
+		UniTask Enter<TState, TPayload>(TPayload payload) where TState : class, IPayloadState<TPayload>;
 	}
 }

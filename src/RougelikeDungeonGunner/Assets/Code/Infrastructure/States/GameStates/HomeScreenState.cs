@@ -3,7 +3,7 @@ using Code.Meta;
 
 namespace Code.Infrastructure.States.GameStates
 {
-	public class HomeScreenState : IState, IUpdateable
+	public class HomeScreenState : EndOfFrameExitState
 	{
 		private HomeScreenFeature _homeScreenFeature;
 
@@ -18,19 +18,19 @@ namespace Code.Infrastructure.States.GameStates
 			_gameContext = gameContext;
 		}
 
-		public void Enter()
+		public override void Enter()
 		{
 			_homeScreenFeature = _systems.Create<HomeScreenFeature>();
 			_homeScreenFeature.Initialize();
 		}
 
-		public void Update()
+		protected override void OnUpdate()
 		{
 			_homeScreenFeature.Execute();
 			_homeScreenFeature.Cleanup();
 		}
 
-		public void Exit()
+		protected override void ExitOnEndOfFrame()
 		{
 			_homeScreenFeature.DeactivateReactiveSystems();
 			_homeScreenFeature.ClearReactiveSystems();
