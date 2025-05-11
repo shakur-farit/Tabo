@@ -26,9 +26,9 @@ namespace Code.Infrastructure.States.StateInfrastructure
 			return _exitCompletionSource.Task;
 		}
 
-		void IExitableState.EndExit()
+		async UniTask IExitableState.EndExit()
 		{
-			WaitForEndOfFrame().Forget();
+			await WaitForEndOfFrame();
 			ClearExitTask();
 		}
 
@@ -48,8 +48,8 @@ namespace Code.Infrastructure.States.StateInfrastructure
 				ResolveExitPromise();
 		}
 
-		private void ResolveExitPromise() =>
-			_exitCompletionSource.TrySetResult();
+		private void ResolveExitPromise() => 
+			_exitCompletionSource?.TrySetResult();
 
 		private void ClearExitTask() =>
 			_exitCompletionSource = null;

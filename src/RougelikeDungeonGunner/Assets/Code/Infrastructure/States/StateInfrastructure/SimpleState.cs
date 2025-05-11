@@ -18,8 +18,7 @@ namespace Code.Infrastructure.States.StateInfrastructure
 			return UniTask.CompletedTask;
 		}
 
-		void IExitableState.EndExit()
-		{
-		}
+		UniTask IExitableState.EndExit() => 
+			UniTask.CompletedTask;
 	}
 }

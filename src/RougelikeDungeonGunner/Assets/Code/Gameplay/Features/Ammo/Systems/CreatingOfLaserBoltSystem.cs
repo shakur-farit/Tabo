@@ -37,7 +37,7 @@ namespace Code.Gameplay.Features.Ammo.Systems
 					GameMatcher.ClosestTargetPosition,
 					GameMatcher.Shooting,
 					GameMatcher.Precharged,
-					GameMatcher.ReadyToShoot)); ;
+					GameMatcher.ReadyToShoot)); 
 		}
 
 		public void Execute()

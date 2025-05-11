@@ -29,6 +29,7 @@ namespace Code.Gameplay.Features.Weapon
 			Add(systems.Create<ReloadWeaponSystem>());
 			
 			Add(systems.Create<StartWeaponReloadingAnimationSystem>());
+			Add(systems.Create<StartWeaponPrechargeAnimationSystem>());
 			 
 			Add(systems.Create<MarkWeaponReadyToShotSystem>());
 			Add(systems.Create<SetShootingByLeftMouseButtonInputSystem>());

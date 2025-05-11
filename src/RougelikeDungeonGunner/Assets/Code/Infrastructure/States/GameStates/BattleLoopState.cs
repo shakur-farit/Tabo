@@ -24,9 +24,6 @@ namespace Code.Infrastructure.States.GameStates
 
 		protected override void OnUpdate()
 		{
-			if (_battleFeature == null)
-				return;
-
 			_battleFeature.Execute();
 			_battleFeature.Cleanup();
 		}

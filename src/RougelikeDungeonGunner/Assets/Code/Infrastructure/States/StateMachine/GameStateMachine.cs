@@ -57,7 +57,7 @@ namespace Code.Infrastructure.States.StateMachine
 			if (_activeState != null)
 			{
 				await _activeState.BeginExit();
-				_activeState.EndExit();
+				await _activeState.EndExit();
 			}
 
 			return GetState<TState>();

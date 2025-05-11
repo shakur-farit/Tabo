@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Code.Infrastructure.States.GameStates;
 using Code.Infrastructure.States.StateMachine;
+using Cysharp.Threading.Tasks;
 using Entitas;
 
 namespace Code.Gameplay.Features.Levels.Systems
@@ -22,10 +23,15 @@ namespace Code.Gameplay.Features.Levels.Systems
 
 		public void Execute()
 		{
+			FinalizeAsync().Forget();
+		}
+
+		private async UniTaskVoid FinalizeAsync()
+		{
 			foreach (GameEntity level in _levels.GetEntities(_buffer))
 			{
 				level.isDestructed = true;
-				_stateMachine.Enter<LevelCompleteState>();
+				await _stateMachine.Enter<LevelCompleteState>();
 			}
 		}
 	}

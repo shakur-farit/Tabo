@@ -22,8 +22,8 @@ namespace Code.Infrastructure.States.GameStates
 			EnterToHomeScreenState();
 		}
 
-		private void EnterToHomeScreenState() => 
-			_stateMachine.Enter<HomeScreenState>();
+		private async void EnterToHomeScreenState() => 
+			await _stateMachine.Enter<HomeScreenState>();
 
 		private void OpenMainMenuWindow() => 
 			_windowService.Open(WindowId.MainMenuWindow);
