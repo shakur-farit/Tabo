@@ -26,6 +26,7 @@ using Code.Infrastructure.States.Factory;
 using Code.Infrastructure.States.GameStates;
 using Code.Infrastructure.States.StateMachine;
 using Code.Infrastructure.View;
+using Code.Meta.Features.Shop.Weapon.Behaviours;
 using Code.Meta.UI.AmmoHolder.Factory;
 using Code.Meta.UI.EnchantHolder.Factory;
 using Code.Meta.UI.HeartHolder.Factory;
@@ -130,6 +131,7 @@ namespace Code.Infrastructure.Installers
 			Container.Bind<IAmmoUIFactory>().To<AmmoUIFactory>().AsSingle();
 			Container.Bind<IHeartUIFactory>().To<HeartUIFactory>().AsSingle();
 			Container.Bind<IWindowFactory>().To<WindowFactory>().AsSingle();
+			Container.Bind<IWeaponShopItemFactory>().To<WeaponShopItemFactory>().AsSingle();
 		}
 
 		private void BindUIServices()

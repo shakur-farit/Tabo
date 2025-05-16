@@ -13,7 +13,8 @@ using Code.Gameplay.Features.Loot;
 using Code.Gameplay.Features.Loot.Configs;
 using Code.Gameplay.Features.Weapon;
 using Code.Gameplay.Features.Weapon.Configs;
-using Code.Meta;
+using Code.Meta.Features.Shop.Weapon;
+using Code.Meta.Features.Shop.Weapon.Configs;
 using Code.Meta.Features.Shop.WeaponUpgrade;
 using Code.Meta.Features.Shop.WeaponUpgrade.Configs;
 using Code.Meta.UI.Windows;
@@ -26,19 +27,21 @@ namespace Code.Gameplay.StaticData
   {
 	  IEnumerable<LootConfig> GetAllLootConfigs();
 	  IEnumerable<HeroConfig> GetAllHeroConfigs();
+	  IEnumerable<WeaponShopItemConfig> GetAllWeaponShopItemConfigs();
 
 	  UniTask Load();
 
 	  AmmoConfig GetAmmoConfig(AmmoTypeId ammoTypeId);
 	  AmmoLevel GetAmmoLevel(AmmoTypeId ammoTypeId, int level);
 	  WeaponConfig GetWeaponConfig(WeaponTypeId weaponTypeId);
-    WeaponLevel GetWeaponLevel(WeaponTypeId weaponTypeId, int level);
-    EnemyConfig GetEnemyConfig(EnemyTypeId enemyId);
+	  WeaponLevel GetWeaponLevel(WeaponTypeId weaponTypeId, int level);
+	  EnemyConfig GetEnemyConfig(EnemyTypeId enemyId);
     HeroConfig GetHeroConfig(HeroTypeId heroId);
     LevelConfig GetLevelConfig(LevelTypeId levelId);
     LootConfig GetLootConfig(LootTypeId lootId);
     EnchantConfig GetEnchantConfig(EnchantTypeId id);
     WindowConfig GetWindowConfig(WindowId id);
-    ShopWeaponUpgradeConfig GetShopWeaponUpgradeConfig(ShopWeaponUpgradeTypeId id);
+    UpgradeShopItemConfig GetUpgradeShopItemConfig(UpgradeShopItemTypeId id);
+    WeaponShopItemConfig GetWeaponShopItemConfig(WeaponShopItemTypeId id);
   }
 }

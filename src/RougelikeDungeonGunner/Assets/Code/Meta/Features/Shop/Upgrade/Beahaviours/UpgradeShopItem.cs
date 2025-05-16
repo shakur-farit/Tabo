@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Code.Meta.Features.Shop.WeaponUpgrade.Beahaviours
 {
-	public class ShopWeaponUpgradeItem : MonoBehaviour
+	public class UpgradeShopItem : MonoBehaviour
 	{
 		
 		[SerializeField] private TextMeshProUGUI ItemName;

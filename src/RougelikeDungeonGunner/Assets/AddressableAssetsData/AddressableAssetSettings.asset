@@ -15,7 +15,7 @@ MonoBehaviour:
   m_DefaultGroup: f40428f047dc54a46b8184ab91599836
   m_currentHash:
     serializedVersion: 2
-    Hash: ed324265b24c479602299503cd7cb897
+    Hash: 2e1683424043544d4054a49bd7d0fd9a
   m_OptimizeCatalogSize: 0
   m_BuildRemoteCatalog: 0
   m_BundleLocalCatalog: 0
@@ -95,6 +95,8 @@ MonoBehaviour:
     - LootConfig
     - EnchantConfig
     - WindowConfig
+    - WeaponShopItemConfig
+    - UpgradeShopItemConfig
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: 85357d346e02ee54ab80d633e7b0c1cf, type: 2}

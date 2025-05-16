@@ -224,6 +224,42 @@ MonoBehaviour:
     m_SerializedLabels:
     - WindowConfig
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6306e093a4e755f4580fc39d95a99059
+    m_Address: Assets/StaticData/Shop/Weapon/PistolItemConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponShopItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d7b14f0459868ab4094b91d2a01e23d0
+    m_Address: Assets/StaticData/Shop/Weapon/LaserBlasterItemConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponShopItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 092ffeb3b696ab549b6d3d9312536817
+    m_Address: Assets/StaticData/Shop/Weapon/MachinegunItemConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponShopItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1184a1357b1952a49b39ef7fb9c9f862
+    m_Address: Assets/StaticData/Shop/Weapon/ShotgunItemConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponShopItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c815bbc413724e348acebcd05cc05189
+    m_Address: Assets/StaticData/Shop/Weapon/SniperItemConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponShopItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ba6f7193f65ce01449ef3954de34356f
+    m_Address: Assets/StaticData/Shop/Upgrade/UpgradeItemConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - UpgradeShopItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 7128017d563554245a79368046c75e1a, type: 2}
   m_SchemaSet:

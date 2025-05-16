@@ -1,6 +1,6 @@
 ﻿namespace Code.Meta.Features.Shop.WeaponUpgrade
 {
-	public enum ShopWeaponUpgradeTypeId
+	public enum UpgradeShopItemTypeId
 	{
 		Unknown = 0,
 		FireRange = 1,

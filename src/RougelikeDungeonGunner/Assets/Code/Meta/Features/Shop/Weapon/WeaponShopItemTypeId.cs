@@ -1,6 +1,6 @@
-﻿namespace Code.Meta.Features.Shop.NewWeapon
+﻿namespace Code.Meta.Features.Shop.Weapon
 {
-	public enum ShopWeaponTypeId
+	public enum WeaponShopItemTypeId
 	{
 		Unknown = 0,
 		Pistol = 1,
