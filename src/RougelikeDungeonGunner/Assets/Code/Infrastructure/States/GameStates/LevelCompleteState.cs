@@ -1,5 +1,6 @@
 using Code.Infrastructure.States.StateInfrastructure;
-using Code.Meta.UI.UIRoot.Factory;
+using Code.Meta.UI.Windows;
+using Code.Meta.UI.Windows.Service;
 using Code.Progress.Provider;
 
 namespace Code.Infrastructure.States.GameStates

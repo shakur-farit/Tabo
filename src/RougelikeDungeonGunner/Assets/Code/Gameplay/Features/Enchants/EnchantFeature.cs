@@ -1,6 +1,6 @@
 ﻿using Code.Gameplay.Features.Enchants.Systems;
 using Code.Infrastructure;
-using Code.Meta.UI.Hud.EnchantHolder.Systems;
+using Code.Meta.UI.EnchantHolder.Systems;
 
 namespace Code.Gameplay.Features.Enchants
 {

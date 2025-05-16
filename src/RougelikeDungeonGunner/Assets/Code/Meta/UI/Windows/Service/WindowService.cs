@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
+using Code.Meta.UI.Windows.Behaviours;
+using Code.Meta.UI.Windows.Factory;
 using UnityEngine;
 
-namespace Code.Meta.UI.UIRoot.Factory
+namespace Code.Meta.UI.Windows.Service
 {
 	public class WindowService : IWindowService
 	{

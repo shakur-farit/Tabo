@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Code.Gameplay.Common.Visuals.StatusVisuals;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherStatusVisuals;
@@ -34,10 +37,10 @@ public sealed partial class GameMatcher {
 public partial class GameEntity {
 
     public Code.Gameplay.Common.StatusVisualsComponent statusVisuals { get { return (Code.Gameplay.Common.StatusVisualsComponent)GetComponent(GameComponentsLookup.StatusVisuals); } }
-    public Code.Gameplay.Common.IStatusVisuals StatusVisuals { get { return statusVisuals.Value; } }
+    public IStatusVisuals StatusVisuals { get { return statusVisuals.Value; } }
     public bool hasStatusVisuals { get { return HasComponent(GameComponentsLookup.StatusVisuals); } }
 
-    public GameEntity AddStatusVisuals(Code.Gameplay.Common.IStatusVisuals newValue) {
+    public GameEntity AddStatusVisuals(IStatusVisuals newValue) {
         var index = GameComponentsLookup.StatusVisuals;
         var component = (Code.Gameplay.Common.StatusVisualsComponent)CreateComponent(index, typeof(Code.Gameplay.Common.StatusVisualsComponent));
         component.Value = newValue;
@@ -45,7 +48,7 @@ public partial class GameEntity {
         return this;
     }
 
-    public GameEntity ReplaceStatusVisuals(Code.Gameplay.Common.IStatusVisuals newValue) {
+    public GameEntity ReplaceStatusVisuals(IStatusVisuals newValue) {
         var index = GameComponentsLookup.StatusVisuals;
         var component = (Code.Gameplay.Common.StatusVisualsComponent)CreateComponent(index, typeof(Code.Gameplay.Common.StatusVisualsComponent));
         component.Value = newValue;

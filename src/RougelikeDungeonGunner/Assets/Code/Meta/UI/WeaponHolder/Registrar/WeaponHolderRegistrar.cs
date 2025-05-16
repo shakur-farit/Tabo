@@ -1,8 +1,8 @@
 ﻿using Code.Infrastructure.View.Registrars;
-using Code.Meta.UI.Hud.WeaponHolder.Behaviours;
+using Code.Meta.UI.WeaponHolder.Behaviours;
 using UnityEngine;
 
-namespace Code.Meta.UI.Hud.WeaponHolder.Registrar
+namespace Code.Meta.UI.WeaponHolder.Registrar
 {
 	public class WeaponHolderRegistrar : EntityComponentRegistrar
 	{

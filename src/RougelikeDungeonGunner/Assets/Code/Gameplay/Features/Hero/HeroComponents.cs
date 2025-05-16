@@ -1,6 +1,5 @@
 ﻿using Code.Gameplay.Features.Hero.Behaviours;
-using Code.Meta.UI.Hud.AmmoHolder.Behaviours;
-using Code.Meta.UI.Hud.HeartHolder.Behaviours;
+using Code.Meta.UI.HeartHolder.Behaviours;
 using Entitas;
 
 namespace Code.Gameplay.Features.Hero

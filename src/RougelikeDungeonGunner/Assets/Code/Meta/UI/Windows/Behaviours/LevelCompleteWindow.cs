@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
 
-namespace Code.Meta.UI.UIRoot.Factory
+namespace Code.Meta.UI.Windows.Behaviours
 {
 	public class LevelCompleteWindow : BaseWindow
 	{

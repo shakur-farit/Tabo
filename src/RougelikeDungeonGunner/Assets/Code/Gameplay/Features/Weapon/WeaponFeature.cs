@@ -1,8 +1,9 @@
-﻿using Code.Gameplay.Features.Weapon.ChangeRequest;
+﻿using Code.Gameplay.Cameras.Systems;
+using Code.Gameplay.Features.Weapon.ChangeRequest;
 using Code.Gameplay.Features.Weapon.Systems;
 using Code.Infrastructure;
-using Code.Meta.UI.Hud.AmmoHolder.Systems;
-using Code.Meta.UI.Hud.WeaponHolder.Systems;
+using Code.Meta.UI.AmmoHolder.Systems;
+using Code.Meta.UI.WeaponHolder.Systems;
 
 namespace Code.Gameplay.Features.Weapon
 {

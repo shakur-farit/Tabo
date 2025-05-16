@@ -2,7 +2,7 @@
 using Code.Gameplay.Cameras.Provider;
 using Entitas;
 
-namespace Code.Meta.UI.Hud.AmmoHolder.Systems
+namespace Code.Gameplay.Cameras.Systems
 {
 	public class ChangeCameraSizeByWeaponRangeSystem : ReactiveSystem<GameEntity>
 	{

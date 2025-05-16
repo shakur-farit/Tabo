@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Code.Gameplay.Features.Ammo.Config
+namespace Code.Gameplay.Features.Ammo.Configs
 {
 	[Serializable]
 	public class AmmoLevel

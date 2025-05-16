@@ -2,7 +2,7 @@
 using Code.Gameplay.Features.Ammo.Systems.Visuals;
 using Code.Gameplay.Features.Cooldowns.Systems;
 using Code.Infrastructure;
-using Code.Meta.UI.Hud.AmmoHolder.Systems;
+using Code.Meta.UI.AmmoHolder.Systems;
 
 namespace Code.Gameplay.Features.Ammo
 {

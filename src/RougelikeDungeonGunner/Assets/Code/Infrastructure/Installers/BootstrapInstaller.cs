@@ -26,10 +26,11 @@ using Code.Infrastructure.States.Factory;
 using Code.Infrastructure.States.GameStates;
 using Code.Infrastructure.States.StateMachine;
 using Code.Infrastructure.View;
-using Code.Meta.UI.Hud.AmmoHolder.Factory;
-using Code.Meta.UI.Hud.EnchantHolder.Factory;
-using Code.Meta.UI.Hud.HeartHolder.Factory;
-using Code.Meta.UI.UIRoot.Factory;
+using Code.Meta.UI.AmmoHolder.Factory;
+using Code.Meta.UI.EnchantHolder.Factory;
+using Code.Meta.UI.HeartHolder.Factory;
+using Code.Meta.UI.Windows.Factory;
+using Code.Meta.UI.Windows.Service;
 using Code.Progress.Provider;
 using Zenject;
 

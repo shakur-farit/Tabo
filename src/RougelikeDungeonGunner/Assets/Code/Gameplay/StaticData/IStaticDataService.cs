@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using Code.Gameplay.Features.Ammo;
-using Code.Gameplay.Features.Ammo.Config;
+using Code.Gameplay.Features.Ammo.Configs;
 using Code.Gameplay.Features.Enchants;
 using Code.Gameplay.Features.Enchants.Configs;
 using Code.Gameplay.Features.Enemy;
@@ -13,7 +13,11 @@ using Code.Gameplay.Features.Loot;
 using Code.Gameplay.Features.Loot.Configs;
 using Code.Gameplay.Features.Weapon;
 using Code.Gameplay.Features.Weapon.Configs;
-using Code.Meta.UI.UIRoot.Factory;
+using Code.Meta;
+using Code.Meta.Features.Shop.WeaponUpgrade;
+using Code.Meta.Features.Shop.WeaponUpgrade.Configs;
+using Code.Meta.UI.Windows;
+using Code.Meta.UI.Windows.Config;
 using Cysharp.Threading.Tasks;
 
 namespace Code.Gameplay.StaticData
@@ -35,5 +39,6 @@ namespace Code.Gameplay.StaticData
     LootConfig GetLootConfig(LootTypeId lootId);
     EnchantConfig GetEnchantConfig(EnchantTypeId id);
     WindowConfig GetWindowConfig(WindowId id);
+    ShopWeaponUpgradeConfig GetShopWeaponUpgradeConfig(ShopWeaponUpgradeTypeId id);
   }
 }

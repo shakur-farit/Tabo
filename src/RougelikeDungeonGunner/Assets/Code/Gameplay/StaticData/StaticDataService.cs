@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Code.Gameplay.Features.Ammo;
-using Code.Gameplay.Features.Ammo.Config;
+using Code.Gameplay.Features.Ammo.Configs;
 using Code.Gameplay.Features.Enchants;
 using Code.Gameplay.Features.Enchants.Configs;
 using Code.Gameplay.Features.Enemy;
@@ -16,7 +16,11 @@ using Code.Gameplay.Features.Loot.Configs;
 using Code.Gameplay.Features.Weapon;
 using Code.Gameplay.Features.Weapon.Configs;
 using Code.Infrastructure.AssetManagement;
-using Code.Meta.UI.UIRoot.Factory;
+using Code.Meta;
+using Code.Meta.Features.Shop.WeaponUpgrade;
+using Code.Meta.Features.Shop.WeaponUpgrade.Configs;
+using Code.Meta.UI.Windows;
+using Code.Meta.UI.Windows.Config;
 using Cysharp.Threading.Tasks;
 
 namespace Code.Gameplay.StaticData
@@ -31,6 +35,7 @@ namespace Code.Gameplay.StaticData
 		private const string LootConfigLabel = "LootConfig";
 		private const string EnchantConfigLabel = "EnchantConfig";
 		private const string WindowConfigLabel = "WindowConfig";
+		private const string ShopWeaponUpgradeConfigLabel = "ShopWeaponUpgradeConfig";
 
 		private Dictionary<AmmoTypeId, AmmoConfig> _ammoById;
 		private Dictionary<WeaponTypeId, WeaponConfig> _weaponById;
@@ -40,6 +45,7 @@ namespace Code.Gameplay.StaticData
 		private Dictionary<LootTypeId, LootConfig> _lootById;
 		private Dictionary<EnchantTypeId, EnchantConfig> _enchantById;
 		private Dictionary<WindowId, WindowConfig> _windowById;
+		private Dictionary<ShopWeaponUpgradeTypeId, ShopWeaponUpgradeConfig> _shopWeaponUpgradeById;
 
 		private readonly IAssetProvider _assetProvider;
 
@@ -59,6 +65,7 @@ namespace Code.Gameplay.StaticData
 			await LoadLoots();
 			await LoadEnchants();
 			await LoadWindows();
+			await LoadShopWeaponUpgrade();
 		}
 
 		public AmmoConfig GetAmmoConfig(AmmoTypeId id)
@@ -145,6 +152,14 @@ namespace Code.Gameplay.StaticData
 			throw new Exception($"Window config for {id} was not found");
 		}
 
+		public ShopWeaponUpgradeConfig GetShopWeaponUpgradeConfig(ShopWeaponUpgradeTypeId id)
+		{
+			if (_shopWeaponUpgradeById.TryGetValue(id, out ShopWeaponUpgradeConfig config))
+				return config;
+
+			throw new Exception($"Weapon Upgrade config for {id} was not found");
+		}
+
 		private async UniTask LoadAbilities() =>
 			_ammoById = (await _assetProvider.LoadAll<AmmoConfig>(AmmoConfig))
 				.ToDictionary(x => x.TypeId, x => x);
@@ -176,5 +191,10 @@ namespace Code.Gameplay.StaticData
 		private async UniTask LoadWindows() =>
 			_windowById = (await _assetProvider.LoadAll<WindowConfig>(WindowConfigLabel))
 				.ToDictionary(x => x.TypeId, x => x);
+
+		private async UniTask LoadShopWeaponUpgrade() =>
+			_shopWeaponUpgradeById = (await _assetProvider.LoadAll<ShopWeaponUpgradeConfig>(ShopWeaponUpgradeConfigLabel))
+				.ToDictionary(x => x.TypeId, x => x);
+
 	}
 }

@@ -1,11 +1,11 @@
 ﻿using Code.Gameplay.Features.Enchants;
 using Code.Gameplay.Features.Enchants.Configs;
 using Code.Gameplay.StaticData;
-using Code.Meta.UI.Hud.EnchantHolder.Behaviours;
+using Code.Meta.UI.EnchantHolder.Behaviours;
 using UnityEngine;
 using Zenject;
 
-namespace Code.Meta.UI.Hud.EnchantHolder.Factory
+namespace Code.Meta.UI.EnchantHolder.Factory
 {
 	public class EnchantUIFactory : IEnchantUIFactory
 	{

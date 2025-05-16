@@ -7098,10 +7098,10 @@ RectTransform:
   - {fileID: 5607602830077428183}
   m_Father: {fileID: 2511428277162685766}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 250, y: -150}
+  m_SizeDelta: {x: 300, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &6858564447412076794
 GameObject:
@@ -7921,7 +7921,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8437513390451093172}
   m_Layer: 5
-  m_Name: StatsHolder
+  m_Name: WeaponUpgradeHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

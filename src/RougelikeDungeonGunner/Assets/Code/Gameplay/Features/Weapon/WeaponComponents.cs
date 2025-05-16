@@ -2,7 +2,7 @@
 using Code.Gameplay.Features.Statuses;
 using Entitas;
 using System.Collections.Generic;
-using Code.Meta.UI.Hud.WeaponHolder.Behaviours;
+using Code.Meta.UI.WeaponHolder.Behaviours;
 using UnityEngine;
 
 namespace Code.Gameplay.Features.Weapon

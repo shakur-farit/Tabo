@@ -1,6 +1,4 @@
-﻿using Entitas;
-
-namespace Code.Gameplay.Common
+﻿namespace Code.Gameplay.Common.Visuals.StatusVisuals
 {
 	public interface IStatusVisuals
 	{

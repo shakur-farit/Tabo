@@ -1,8 +1,8 @@
 ﻿using Code.Infrastructure.View.Registrars;
-using Code.Meta.UI.Hud.AmmoHolder.Behaviours;
+using Code.Meta.UI.AmmoHolder.Behaviours;
 using UnityEngine;
 
-namespace Code.Meta.UI.Hud.AmmoHolder.Registrars
+namespace Code.Meta.UI.AmmoHolder.Registrars
 {
 	public class AmmoUIRegistrar : EntityComponentRegistrar
 	{

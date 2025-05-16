@@ -1,7 +1,6 @@
-﻿using Code.Infrastructure.Loading;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Code.Meta.UI.UIRoot.Factory
+namespace Code.Meta.UI.Windows.Behaviours
 {
 	public class BaseWindow : MonoBehaviour
 	{

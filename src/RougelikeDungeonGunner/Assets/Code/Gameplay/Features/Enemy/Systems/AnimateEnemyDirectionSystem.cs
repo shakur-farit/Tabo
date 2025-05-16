@@ -1,4 +1,5 @@
 ﻿using Code.Gameplay.Common;
+using Code.Gameplay.Common.Direction;
 using Entitas;
 using UnityEngine;
 

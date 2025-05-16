@@ -1,6 +1,6 @@
 ﻿using Code.Infrastructure.View.Registrars;
 
-namespace Code.Gameplay.Common
+namespace Code.Gameplay.Common.Visuals.StatusVisuals
 {
 	public class StatusVisualsRegistrar : EntityComponentRegistrar
 	{

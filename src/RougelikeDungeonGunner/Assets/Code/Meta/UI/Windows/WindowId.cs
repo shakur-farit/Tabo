@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Code.Meta.UI.UIRoot.Factory
+﻿namespace Code.Meta.UI.Windows
 {
 	public enum WindowId
 	{

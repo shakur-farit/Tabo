@@ -1,4 +1,5 @@
 ﻿using Code.Gameplay.Common.Visuals;
+using Code.Gameplay.Common.Visuals.StatusVisuals;
 using Entitas;
 using Entitas.CodeGeneration.Attributes;
 using UnityEngine;

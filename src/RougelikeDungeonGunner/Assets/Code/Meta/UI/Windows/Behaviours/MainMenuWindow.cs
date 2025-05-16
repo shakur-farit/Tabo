@@ -1,11 +1,12 @@
 ﻿using Code.Infrastructure.Loading;
 using Code.Infrastructure.States.GameStates;
 using Code.Infrastructure.States.StateMachine;
+using Code.Meta.UI.Windows.Service;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
 
-namespace Code.Meta.UI.UIRoot.Factory
+namespace Code.Meta.UI.Windows.Behaviours
 {
 	public class MainMenuWindow : BaseWindow
 	{

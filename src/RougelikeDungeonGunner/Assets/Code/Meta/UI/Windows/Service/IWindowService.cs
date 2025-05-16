@@ -1,4 +1,4 @@
-﻿namespace Code.Meta.UI.UIRoot.Factory
+﻿namespace Code.Meta.UI.Windows.Service
 {
 	public interface IWindowService
 	{

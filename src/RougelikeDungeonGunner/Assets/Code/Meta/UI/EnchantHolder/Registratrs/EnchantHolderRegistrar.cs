@@ -1,8 +1,8 @@
 ﻿using Code.Infrastructure.View.Registrars;
-using Code.Meta.UI.Hud.EnchantHolder.Behaviours;
+using Code.Meta.UI.EnchantHolder.Behaviours;
 using UnityEngine;
 
-namespace Code.Meta.UI.Hud.EnchantHolder.Registratrs
+namespace Code.Meta.UI.EnchantHolder.Registratrs
 {
 	public class EnchantHolderRegistrar : EntityComponentRegistrar
 	{

@@ -3,11 +3,10 @@ using System.Linq;
 using Code.Gameplay.Features.Hero.Configs;
 using Code.Gameplay.StaticData;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 using Zenject;
 
-namespace Code.Meta.UI.UIRoot.Factory
+namespace Code.Meta.UI.HeroSelector.Behaviours
 {
 	public class HeroSelectorBehaviour : MonoBehaviour
 	{

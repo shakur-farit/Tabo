@@ -1,5 +1,4 @@
-﻿using Code.Meta.UI.Hud.AmmoHolder.Behaviours;
-using Code.Meta.UI.Hud.CoinsHolder.Behaviours;
+﻿using Code.Meta.UI.AmmoHolder.Behaviours;
 using Entitas;
 
 namespace Code.Gameplay.Features.Ammo

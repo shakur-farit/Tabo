@@ -1,7 +1,6 @@
-﻿using UnityEngine;
-using Zenject;
+﻿using Zenject;
 
-namespace Code.Meta.UI.UIRoot.Factory
+namespace Code.Meta.UI.Windows.Behaviours
 {
 	public class Hud : BaseWindow
 	{

@@ -1,6 +1,6 @@
 ﻿using Entitas;
 
-namespace Code.Meta.UI.Hud.CoinsHolder.Systems
+namespace Code.Meta.UI.CoinsHolder.Systems
 {
 	public class UpdateCoinsTextInHolderSystem : IExecuteSystem
 	{

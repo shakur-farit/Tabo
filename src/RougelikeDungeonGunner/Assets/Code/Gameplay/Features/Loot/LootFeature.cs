@@ -1,6 +1,6 @@
 ﻿using Code.Gameplay.Features.Loot.Systems;
 using Code.Infrastructure;
-using Code.Meta.UI.Hud.CoinsHolder.Systems;
+using Code.Meta.UI.CoinsHolder.Systems;
 
 namespace Code.Gameplay.Features.Loot
 {

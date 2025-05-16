@@ -1,7 +1,7 @@
 ﻿using Cysharp.Threading.Tasks;
 using UnityEngine;
 
-namespace Code.Meta.UI.Hud.AmmoHolder.Factory
+namespace Code.Meta.UI.AmmoHolder.Factory
 {
 	public interface IAmmoUIFactory
 	{
