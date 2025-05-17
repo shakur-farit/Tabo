@@ -260,6 +260,24 @@ MonoBehaviour:
     m_SerializedLabels:
     - UpgradeShopItemConfig
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e69a30b632eb7ae4ab02e65973d32831
+    m_Address: Assets/StaticData/Window/WeaponUpgradeWindowConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WindowConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c6a4b9a90c5526243b544c298c8fc62f
+    m_Address: Assets/StaticData/Window/WeaponBuyWindowConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WindowConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a9d1eafde73b1cc42b2bd7b98d3b385f
+    m_Address: Assets/StaticData/Window/EnchantBuyWindowConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WindowConfig
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 7128017d563554245a79368046c75e1a, type: 2}
   m_SchemaSet:

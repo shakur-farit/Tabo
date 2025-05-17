@@ -7,5 +7,8 @@
 		MainMenuWindow = 2,
 		LevelCompleteWindow = 3,
 		GameOverWindow = 4,
+		WeaponUpgradeWindow = 5,
+		WeaponBuyWindow = 6,
+		EnchantBuyWindow = 7,
 	}
 }
