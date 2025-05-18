@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Text.RegularExpressions;
 using Code.Gameplay.StaticData;
 using Code.Meta.Features.Shop.Weapon.Configs;
 using UnityEngine;
@@ -28,15 +27,8 @@ namespace Code.Meta.Features.Shop.Weapon.Behaviours
 			foreach (WeaponShopItemConfig config in configs)
 			{
 				WeaponShopItem item =_factory.CreateWeaponShopItem(config, _layout);
-				item.Setup(config.Sprite, config.Price, FormatToName(config.TypeId));
+				item.Setup(config);
 			}
-		}
-
-		private string FormatToName(WeaponShopItemTypeId typeId)
-		{
-			string name = typeId.ToString();
-
-			return Regex.Replace(name, "(?<!^)([A-Z])", " $1");
 		}
 	}
 }

@@ -34,7 +34,7 @@ namespace Code.Infrastructure.States.GameStates
 		}
 
 		private void CreateNewLevel() => 
-			_levelFactory.CreateLevel(_progressProvider.TransientData.CurrentLevel);
+			_levelFactory.CreateLevel(_progressProvider.TransientData.LevelData.CurrentLevel);
 
 		private void OpenHud() => 
 			_windowService.Open(WindowId.Hud);

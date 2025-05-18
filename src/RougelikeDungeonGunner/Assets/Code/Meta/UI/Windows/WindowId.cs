@@ -10,5 +10,6 @@
 		WeaponUpgradeWindow = 5,
 		WeaponBuyWindow = 6,
 		EnchantBuyWindow = 7,
+		WeaponBuyDialogWindow = 8,
 	}
 }

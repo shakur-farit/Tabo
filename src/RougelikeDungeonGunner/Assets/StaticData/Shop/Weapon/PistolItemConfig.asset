@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: PistolItemConfig
   m_EditorClassIdentifier: 
   TypeId: 1
+  WeaponTypeId: 5
   ViewPrefab: {fileID: 2577542548309263996, guid: fccb6f1e3e269bf4a9b875979e47a8a3, type: 3}
   Sprite: {fileID: 21300000, guid: abbe40c4d6a803f42a7c4f53404a484d, type: 3}
   Price: 50

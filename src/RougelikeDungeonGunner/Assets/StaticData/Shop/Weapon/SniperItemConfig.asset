@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: SniperItemConfig
   m_EditorClassIdentifier: 
   TypeId: 6
+  WeaponTypeId: 6
   ViewPrefab: {fileID: 2577542548309263996, guid: fccb6f1e3e269bf4a9b875979e47a8a3, type: 3}
   Sprite: {fileID: 21300000, guid: 7e70ae1621ea16746be436ae77e38ce9, type: 3}
   Price: 150

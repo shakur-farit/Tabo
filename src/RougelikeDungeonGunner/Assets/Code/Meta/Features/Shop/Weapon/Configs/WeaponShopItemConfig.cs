@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Code.Gameplay.Features.Weapon;
+using UnityEngine;
 
 namespace Code.Meta.Features.Shop.Weapon.Configs
 {
@@ -6,6 +7,7 @@ namespace Code.Meta.Features.Shop.Weapon.Configs
 	public class WeaponShopItemConfig : ScriptableObject
 	{
 		public WeaponShopItemTypeId TypeId;
+		public WeaponTypeId WeaponTypeId;
 		public GameObject ViewPrefab;
 		public Sprite Sprite;
 		[Range(0, 1000)] public int Price;

@@ -22,7 +22,9 @@ namespace Code.Meta.UI.Windows.Behaviours
 		protected override void Initialize() =>
 			_closeButton.onClick.AddListener(Close);
 
-		private void Close() =>
+		private void Close()
+		{
 			_windowService.Close(WindowId.WeaponBuyWindow);
+		}
 	}
 }
