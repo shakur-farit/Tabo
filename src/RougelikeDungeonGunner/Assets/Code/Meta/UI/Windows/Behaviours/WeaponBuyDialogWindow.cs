@@ -1,6 +1,5 @@
 ﻿using Code.Meta.Features.Shop.Weapon.Behaviours;
 using Code.Meta.UI.Windows.Service;
-using Code.Progress.Data;
 using Code.Progress.Provider;
 using UnityEngine;
 using UnityEngine.UI;
@@ -17,9 +16,6 @@ namespace Code.Meta.UI.Windows.Behaviours
 		private IWindowService _windowService;
 		private IProgressProvider _progressProvider;
 
-		public TransientData Data => _progressProvider.TransientData;
-		public ShopData ShopData => Data.ShopData;
-
 		[Inject]
 		public void Constructor(IWindowService windowService, IProgressProvider progressProvider)
 		{
@@ -32,20 +28,35 @@ namespace Code.Meta.UI.Windows.Behaviours
 		protected override void Initialize()
 		{
 			_buyButton.onClick.AddListener(BuyWeapon);
-			_closeButton.onClick.AddListener(Close);
+			_closeButton.onClick.AddListener(CloseWindow);
 
-			_weaponToBuyShopItem.Setup(ShopData.WeaponToBuyConfig);
+			_weaponToBuyShopItem.Setup(_progressProvider.ShopData.WeaponToBuyConfig);
 		}
 
 		private void BuyWeapon()
 		{
-			Data.HeroData.CurrentWeaponTypeId = ShopData.WeaponToBuyConfig.WeaponTypeId;
-			ShopData.WeaponToBuyConfig = null;
+			if(IsNotEnoughCoins())
+				return;
 
-			Close();
+			SubtractPrice();
+			ChangeCurrentWeapon();
+			CloseWindow();
 		}
 
-		private void Close() =>
+		private void SubtractPrice() => 
+			_progressProvider.HeroData.CurrentCoinsCount -= _progressProvider.ShopData.WeaponToBuyConfig.Price;
+
+		private void ChangeCurrentWeapon()
+		{
+			_progressProvider.HeroData.CurrentWeaponTypeId =
+				_progressProvider.ShopData.WeaponToBuyConfig.WeaponTypeId;
+			_progressProvider.ShopData.WeaponToBuyConfig = null;
+		}
+
+		private bool IsNotEnoughCoins() => 
+			_progressProvider.HeroData.CurrentCoinsCount < _progressProvider.ShopData.WeaponToBuyConfig.Price;
+
+		private void CloseWindow() =>
 			_windowService.Close(WindowId.WeaponBuyDialogWindow);
 	}
 }

@@ -33,7 +33,7 @@ namespace Code.Infrastructure.States.GameStates
 			_windowService.Open(WindowId.LevelCompleteWindow);
 
 		private void MarkNextLevel() => 
-			_progressProvider.TransientData.LevelData.CurrentLevel += 1;
+			_progressProvider.LevelData.CurrentLevel += 1;
 
 		private void CloseLevelCompleteWindow() => 
 			_windowService.Close(WindowId.LevelCompleteWindow);

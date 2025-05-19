@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Code.Meta.UI.EnchantHolder.Behaviours;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherEnchantHolder;
@@ -37,10 +34,10 @@ public sealed partial class GameMatcher {
 public partial class GameEntity {
 
     public Code.Gameplay.Features.Enchants.EnchantHolder enchantHolder { get { return (Code.Gameplay.Features.Enchants.EnchantHolder)GetComponent(GameComponentsLookup.EnchantHolder); } }
-    public EnchantHolderBehaviour EnchantHolder { get { return enchantHolder.Value; } }
+    public Code.Meta.UI.EnchantHolder.Behaviours.EnchantHolderBehaviour EnchantHolder { get { return enchantHolder.Value; } }
     public bool hasEnchantHolder { get { return HasComponent(GameComponentsLookup.EnchantHolder); } }
 
-    public GameEntity AddEnchantHolder(EnchantHolderBehaviour newValue) {
+    public GameEntity AddEnchantHolder(Code.Meta.UI.EnchantHolder.Behaviours.EnchantHolderBehaviour newValue) {
         var index = GameComponentsLookup.EnchantHolder;
         var component = (Code.Gameplay.Features.Enchants.EnchantHolder)CreateComponent(index, typeof(Code.Gameplay.Features.Enchants.EnchantHolder));
         component.Value = newValue;
@@ -48,7 +45,7 @@ public partial class GameEntity {
         return this;
     }
 
-    public GameEntity ReplaceEnchantHolder(EnchantHolderBehaviour newValue) {
+    public GameEntity ReplaceEnchantHolder(Code.Meta.UI.EnchantHolder.Behaviours.EnchantHolderBehaviour newValue) {
         var index = GameComponentsLookup.EnchantHolder;
         var component = (Code.Gameplay.Features.Enchants.EnchantHolder)CreateComponent(index, typeof(Code.Gameplay.Features.Enchants.EnchantHolder));
         component.Value = newValue;

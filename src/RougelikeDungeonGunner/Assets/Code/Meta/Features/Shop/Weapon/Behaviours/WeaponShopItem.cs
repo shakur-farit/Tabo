@@ -50,11 +50,9 @@ namespace Code.Meta.Features.Shop.Weapon.Behaviours
 
 		private void OpenWeaponBuyDialogWindow()
 		{
-			Debug.Log("Press");
-
 			_windowService.Open(WindowId.WeaponBuyDialogWindow);
 
-			_progressProvider.TransientData.ShopData.WeaponToBuyConfig = _weaponToBuyConfig;
+			_progressProvider.ShopData.WeaponToBuyConfig = _weaponToBuyConfig;
 		}
 	}
 }

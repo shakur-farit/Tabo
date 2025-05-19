@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Code.Meta.UI.CoinsHolder.Behaviours;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherCoinsHolder;
@@ -37,10 +34,10 @@ public sealed partial class GameMatcher {
 public partial class GameEntity {
 
     public Code.Gameplay.Features.Loot.LootComponents.CoinsHolder coinsHolder { get { return (Code.Gameplay.Features.Loot.LootComponents.CoinsHolder)GetComponent(GameComponentsLookup.CoinsHolder); } }
-    public CoinsHolderBehaviour CoinsHolder { get { return coinsHolder.Value; } }
+    public Code.Meta.UI.CoinsHolder.Behaviours.CoinsHolderBehaviour CoinsHolder { get { return coinsHolder.Value; } }
     public bool hasCoinsHolder { get { return HasComponent(GameComponentsLookup.CoinsHolder); } }
 
-    public GameEntity AddCoinsHolder(CoinsHolderBehaviour newValue) {
+    public GameEntity AddCoinsHolder(Code.Meta.UI.CoinsHolder.Behaviours.CoinsHolderBehaviour newValue) {
         var index = GameComponentsLookup.CoinsHolder;
         var component = (Code.Gameplay.Features.Loot.LootComponents.CoinsHolder)CreateComponent(index, typeof(Code.Gameplay.Features.Loot.LootComponents.CoinsHolder));
         component.Value = newValue;
@@ -48,7 +45,7 @@ public partial class GameEntity {
         return this;
     }
 
-    public GameEntity ReplaceCoinsHolder(CoinsHolderBehaviour newValue) {
+    public GameEntity ReplaceCoinsHolder(Code.Meta.UI.CoinsHolder.Behaviours.CoinsHolderBehaviour newValue) {
         var index = GameComponentsLookup.CoinsHolder;
         var component = (Code.Gameplay.Features.Loot.LootComponents.CoinsHolder)CreateComponent(index, typeof(Code.Gameplay.Features.Loot.LootComponents.CoinsHolder));
         component.Value = newValue;

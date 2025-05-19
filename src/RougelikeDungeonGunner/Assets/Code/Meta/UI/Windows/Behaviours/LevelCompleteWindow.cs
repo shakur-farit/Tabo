@@ -1,6 +1,8 @@
 ﻿using Code.Infrastructure.States.GameStates;
 using Code.Infrastructure.States.StateMachine;
 using Code.Meta.UI.Windows.Service;
+using Code.Progress.Provider;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
@@ -13,16 +15,23 @@ namespace Code.Meta.UI.Windows.Behaviours
 		[SerializeField] private Button _weaponUpgradeButton;
 		[SerializeField] private Button _weaponBuyButton;
 		[SerializeField] private Button _enchantBuyButton;
+		[SerializeField] private TextMeshProUGUI _coinsText;
+
 		private IGameStateMachine _stateMachine;
 		private IWindowService _windowService;
+		private IProgressProvider _progressProvider;
 
 		[Inject]
-		public void Constructor(IGameStateMachine stateMachine, IWindowService windowService)
+		public void Constructor(
+			IGameStateMachine stateMachine, 
+			IWindowService windowService,
+			IProgressProvider progressProvider)
 		{
 			Id = WindowId.LevelCompleteWindow;
 
 			_stateMachine = stateMachine;
 			_windowService = windowService;
+			_progressProvider = progressProvider;
 		}
 
 		protected override void Initialize()
@@ -31,12 +40,20 @@ namespace Code.Meta.UI.Windows.Behaviours
 			_weaponUpgradeButton.onClick.AddListener(OpenWeaponUpgradeWindow);
 			_weaponBuyButton.onClick.AddListener(OpenWeaponBuyWindow);
 			_enchantBuyButton.onClick.AddListener(OpenEnchantBuyWindow);
+			
+			CoinsTextUpdate();
 		}
+
+		protected override void SubscribeUpdates() => 
+			_progressProvider.HeroData.CoinsChanged += CoinsTextUpdate;
+
+		protected override void UnsubscribeUpdates() => 
+			_progressProvider.HeroData.CoinsChanged -= CoinsTextUpdate;
 
 		private void EnterToBattle() =>
 			_stateMachine.Enter<BattleEnterState>();
 
-		private void OpenWeaponUpgradeWindow() => 
+		private void OpenWeaponUpgradeWindow() =>
 			_windowService.Open(WindowId.WeaponUpgradeWindow);
 
 		private void OpenWeaponBuyWindow() =>
@@ -44,5 +61,8 @@ namespace Code.Meta.UI.Windows.Behaviours
 
 		private void OpenEnchantBuyWindow() =>
 			_windowService.Open(WindowId.EnchantBuyWindow);
+
+		private void CoinsTextUpdate() => 
+			_coinsText.text = _progressProvider.HeroData.CurrentCoinsCount.ToString();
 	}
 }

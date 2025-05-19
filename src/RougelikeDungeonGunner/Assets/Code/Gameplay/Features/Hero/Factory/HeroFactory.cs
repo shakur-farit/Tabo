@@ -7,21 +7,27 @@ using Code.Gameplay.StaticData;
 using UnityEngine;
 using System;
 using Code.Gameplay.Features.Hero.Configs;
+using Code.Gameplay.Features.Weapon;
+using Code.Progress.Data;
+using Code.Progress.Provider;
 
 namespace Code.Gameplay.Features.Hero.Factory
 {
 	public class HeroFactory : IHeroFactory
 	{
-		private const int StartingCoinsCount = 0;
 		private const float PickupRadius = 2f;
 		private readonly IIdentifierService _identifier;
 		private readonly IStaticDataService _staticDataService;
+		private readonly IProgressProvider _progressProvider;
 
-
-		public HeroFactory(IIdentifierService identifier, IStaticDataService staticDataService)
+		public HeroFactory(
+			IIdentifierService identifier, 
+			IStaticDataService staticDataService,
+			IProgressProvider progressProvider)
 		{
 			_identifier = identifier;
 			_staticDataService = staticDataService;
+			_progressProvider = progressProvider;
 		}
 
 		public GameEntity CreateHero(HeroTypeId typeId, Vector3 at)
@@ -59,12 +65,24 @@ namespace Code.Gameplay.Features.Hero.Factory
 					.AddMaxHp(baseStats[Stats.MaxHp])
 					.AddSpeed(baseStats[Stats.Speed])
 					.AddViewPrefab(config.ViewPrefab)
-					.AddCoins(StartingCoinsCount)
+					.AddCoins(_progressProvider.HeroData.CurrentCoinsCount)
 					.AddPickupRadius(PickupRadius)
+					.AddCurrentWeaponTypeId(CurrentWeapon(config))
 					.With(x => x.isHero = true)
 					.With(x => x.isMovementAvailable = true)
 					.With(x => x.isUnweaponed = true)
 				;
+		}
+
+		private WeaponTypeId CurrentWeapon(HeroConfig config)
+		{
+			if (_progressProvider.HeroData.CurrentWeaponTypeId == WeaponTypeId.Unknown)
+			{
+				_progressProvider.HeroData.CurrentWeaponTypeId = config.StartWeapon;
+				return config.StartWeapon;
+			}
+
+			return _progressProvider.HeroData.CurrentWeaponTypeId;
 		}
 	}
 }
