@@ -1,10 +1,13 @@
 ﻿using System.Collections.Generic;
 using Entitas;
+using UnityEngine;
 
 namespace Code.Gameplay.Features.Enemy.Systems
 {
 	public class ChaseHeroSystem : IExecuteSystem
 	{
+		private const float MinDistance = 0.5f;
+
 		private readonly IGroup<GameEntity> _chasers;
 		private readonly IGroup<GameEntity> _heroes;
 		private readonly List<GameEntity> _buffer = new(32);
@@ -28,8 +31,17 @@ namespace Code.Gameplay.Features.Enemy.Systems
 			foreach (GameEntity hero in _heroes)
 			foreach (GameEntity chaser in _chasers.GetEntities(_buffer))
 			{
-				chaser.ReplaceDirection((hero.WorldPosition - chaser.WorldPosition).normalized);
-				chaser.isMoving = true;
+				Vector3 delta = hero.WorldPosition - chaser.WorldPosition;
+
+				if (delta.magnitude > MinDistance)
+				{
+					chaser.ReplaceDirection((hero.WorldPosition - chaser.WorldPosition).normalized);
+					chaser.isMoving = true;
+				}
+				else
+				{
+					chaser.isParented = false;
+				}
 			}
 		}
 	}

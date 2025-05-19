@@ -16,10 +16,8 @@ namespace Code.Gameplay.Features.Movement.Systems
 
 		public void Execute()
 		{
-			foreach (GameEntity mover in _movers)
-			{
+			foreach (GameEntity mover in _movers) 
 				mover.Transform.position = mover.WorldPosition;
-			}
 		}
 	}
 }

@@ -15,7 +15,7 @@ MonoBehaviour:
   TypeId: 1
   StartingTime: 0
   TimeBetweenSpawnWaves: 10
-  FinishingTime: 0
+  FinishingTime: 5
   EnvironmentSetups:
   - Room: {fileID: 0}
     HeroStartPosition: {x: 0, y: 0}

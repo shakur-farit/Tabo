@@ -1,11 +1,12 @@
-﻿using Code.Gameplay.Common;
-using Code.Gameplay.Common.Direction;
+﻿using Code.Gameplay.Common.Direction;
 using Entitas;
 
 namespace Code.Gameplay.Features.Hero.Systems
 {
 	public class AnimateHeroAimingSystem : IExecuteSystem
 	{
+		private const int Hysteresis = 5;
+
 		private readonly IGroup<GameEntity> _heroes;
 		private readonly IGroup<GameEntity> _weapons;
 
@@ -34,17 +35,17 @@ namespace Code.Gameplay.Features.Hero.Systems
 
 		private FacingDirection GetDirectionEnum(float angle)
 		{
-			if (angle >= 22f && angle <= 67f)
+			if (angle >= 22f + Hysteresis && angle <= 67f - Hysteresis)
 				return FacingDirection.UpRight;
-			if (angle > 67f && angle <= 112f)
+			if (angle > 67f + Hysteresis && angle <= 112f - Hysteresis)
 				return FacingDirection.Up;
-			if (angle > 112f && angle <= 158f)
+			if (angle > 112f + Hysteresis && angle <= 158f - Hysteresis)
 				return FacingDirection.UpLeft;
-			if ((angle <= 180f && angle > 158f) || (angle > -180f && angle <= -135f))
+			if ((angle <= 180f && angle > 158f + Hysteresis) || (angle > -180f && angle <= -135f - Hysteresis))
 				return FacingDirection.Left;
-			if (angle > -135f && angle <= -45f)
+			if (angle > -135f + Hysteresis && angle <= -45f - Hysteresis)
 				return FacingDirection.Down;
-			if ((angle > -45f && angle <= 0f) || (angle > 0f && angle < 22f))
+			if ((angle > -45f + Hysteresis && angle <= 0f) || (angle > 0f && angle < 22f - Hysteresis))
 				return FacingDirection.Right;
 
 			return FacingDirection.Up;
