@@ -1,7 +1,7 @@
-using System.Threading.Tasks;
 using Code.Gameplay.StaticData;
 using Code.Infrastructure.States.StateInfrastructure;
 using Code.Infrastructure.States.StateMachine;
+using Cysharp.Threading.Tasks;
 
 namespace Code.Infrastructure.States.GameStates
 {
@@ -22,7 +22,7 @@ namespace Code.Infrastructure.States.GameStates
 			EnterToLoadingHomeScreenState();
 		}
 
-		private async Task LoadStaticData() => 
+		private async UniTask LoadStaticData() => 
 			await _staticDataService.Load();
 
 		private void EnterToLoadingHomeScreenState() => 

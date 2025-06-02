@@ -99,16 +99,6 @@ namespace Code.Gameplay.StaticData
 			throw new Exception($"Weapon config for {id} was not found");
 		}
 
-		public WeaponLevel GetWeaponLevel(WeaponTypeId id, int level)
-		{
-			WeaponConfig config = GetWeaponConfig(id);
-
-			if (level > config.Levels.Count)
-				level = config.Levels.Count;
-
-			return config.Levels[level - 1];
-		}
-
 		public EnemyConfig GetEnemyConfig(EnemyTypeId id)
 		{
 			if (_enemyById.TryGetValue(id, out EnemyConfig config))

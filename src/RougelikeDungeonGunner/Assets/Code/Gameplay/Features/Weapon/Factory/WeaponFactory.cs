@@ -5,6 +5,8 @@ using Code.Gameplay.StaticData;
 using Code.Infrastructure.Identifiers;
 using System;
 using Code.Gameplay.Features.Weapon.Configs;
+using Code.Progress.Data;
+using Code.Progress.Provider;
 using UnityEngine;
 
 namespace Code.Gameplay.Features.Weapon.Factory
@@ -13,11 +15,16 @@ namespace Code.Gameplay.Features.Weapon.Factory
 	{
 		private readonly IIdentifierService _identifier;
 		private readonly IStaticDataService _staticDataService;
+		private readonly IProgressProvider _progressProvider;
 
-		public WeaponFactory(IIdentifierService identifier, IStaticDataService staticDataService)
+		public WeaponFactory(
+			IIdentifierService identifier, 
+			IStaticDataService staticDataService,
+			IProgressProvider progressProvider)
 		{
 			_identifier = identifier;
 			_staticDataService = staticDataService;
+			_progressProvider = progressProvider;
 		}
 
 		public GameEntity CreateWeapon(WeaponTypeId weaponTypeId, int level, Transform parent, Vector2 at, int ownerId)
@@ -91,7 +98,7 @@ namespace Code.Gameplay.Features.Weapon.Factory
 		private GameEntity CreateWeaponEntity(WeaponTypeId weaponTypeId, int weaponLevel, Transform parent, Vector2 at, int ownerId)
 		{
 			WeaponConfig config = _staticDataService.GetWeaponConfig(weaponTypeId);
-			WeaponLevel level = _staticDataService.GetWeaponLevel(weaponTypeId, weaponLevel);
+			WeaponData data = GetWeaponData(config);
 
 			return CreateEntity.Empty()
 					.AddId(_identifier.Next())
@@ -100,27 +107,33 @@ namespace Code.Gameplay.Features.Weapon.Factory
 					.AddViewParent(parent)
 					.AddWeaponOwnerId(ownerId)
 					.AddWorldPosition(at)
-					.AddRadius(level.FireRange)
-					.AddMinPelletsSpreadAngle(level.MinSpreadAngle)
-					.AddMaxPelletsSpreadAngle(level.MaxSpreadAngle)
-					.AddCooldown(level.Cooldown)
-					.AddMaxWeaponEnchantsCount(level.MaxEnchantsCount)
+					.AddRadius(data.FireRange)
+					.AddMinPelletsSpreadAngle(data.MinSpreadAngle)
+					.AddMaxPelletsSpreadAngle(data.MaxSpreadAngle)
+					.AddCooldown(data.Cooldown)
+					.AddMaxWeaponEnchantsCount(data.MaxEnchantsCount)
 					.With(x => x.isWeapon = true)
 					.With(x => x.isReadyToCollectTargets = true)
 					.With(x => x.isMagazineNotEmpty = true)
 					.With(x => x.isReadyToShoot = true)
-					.With(x => x.AddMultiPellet(level.PelletCount), when: level.PelletCount > 1)
-					.With(x => x.AddPrechargeTime(level.PrechargeTime), when: level.PrechargeTime > 0)
-					.With(x => x.AddPrechargeTimeLeft(level.PrechargeTime), when: level.PrechargeTime > 0)
-					.With(x => x.AddMagazineSize(level.MagazineSize), when: level.isInfinityAmmo == false)
-					.With(x => x.isInfinityAmmo = true, when: level.isInfinityAmmo)
-					.With(x => x.AddCurrentAmmoCount(level.MagazineSize), when: level.isInfinityAmmo == false)
-					.With(x => x.AddReloadTime(level.ReloadTime), when: level.ReloadTime > 0 && level.isInfinityAmmo == false)
-					.With(x => x.AddReloadTimeLeft(level.ReloadTime), when: level.ReloadTime > 0 && level.isInfinityAmmo == false)
-					.With(x => x.AddEffectSetups(level.EffectSetups), when: level.EffectSetups.IsNullOrEmpty() == false)
-					.With(x => x.AddStatusSetups(level.StatusSetups), when: level.StatusSetups.IsNullOrEmpty() == false)
+					.With(x => x.AddMultiPellet(data.PelletCount), when: data.PelletCount > 1)
+					.With(x => x.AddPrechargeTime(data.PrechargingTime), when: data.PrechargingTime > 0)
+					.With(x => x.AddPrechargeTimeLeft(data.PrechargingTime), when: data.PrechargingTime > 0)
+					.With(x => x.AddMagazineSize(data.MagazineSize), when: data.isInfinityAmmo == false)
+					.With(x => x.isInfinityAmmo = true, when: data.isInfinityAmmo)
+					.With(x => x.AddCurrentAmmoCount(data.MagazineSize), when: data.isInfinityAmmo == false)
+					.With(x => x.AddReloadTime(data.ReloadTime), when: data.ReloadTime > 0 && data.isInfinityAmmo == false)
+					.With(x => x.AddReloadTimeLeft(data.ReloadTime), when: data.ReloadTime > 0 && data.isInfinityAmmo == false)
+					.With(x => x.AddEffectSetups(data.EffectSetups), when: data.EffectSetups.IsNullOrEmpty() == false)
+					.With(x => x.AddStatusSetups(data.StatusSetups), when: data.StatusSetups.IsNullOrEmpty() == false)
 					.PutOnCooldown()
 				;
+		}
+
+		private WeaponData GetWeaponData(WeaponConfig config)
+		{
+			_progressProvider.WeaponData.ResetWeaponData(config);
+			return _progressProvider.WeaponData;
 		}
 	}
 }

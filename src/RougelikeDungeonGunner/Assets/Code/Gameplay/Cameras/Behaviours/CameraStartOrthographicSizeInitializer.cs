@@ -3,6 +3,8 @@ using Code.Gameplay.Features.Hero;
 using Code.Gameplay.Features.Weapon;
 using Code.Gameplay.Features.Weapon.Configs;
 using Code.Gameplay.StaticData;
+using Code.Progress.Data;
+using Code.Progress.Provider;
 using UnityEngine;
 using Zenject;
 
@@ -10,22 +12,23 @@ namespace Code.Gameplay.Cameras.Behaviours
 {
 	public class CameraStartOrthographicSizeInitializer : MonoBehaviour
 	{
-		private IStaticDataService _staticDataService;
 		private ICameraProvider _cameraProvider;
+		private IProgressProvider _progressProvider;
 
 		[Inject]
-		public void Constructor(IStaticDataService staticDataService, ICameraProvider cameraProvider)
+		public void Constructor(ICameraProvider cameraProvider, IProgressProvider progressProvider)
 		{
-			_staticDataService = staticDataService;
 			_cameraProvider = cameraProvider;
+			_progressProvider = progressProvider;
 		}
 
 		private void Start()
 		{
-			WeaponTypeId weaponId = _staticDataService.GetHeroConfig(HeroTypeId.TheGeneral).StartWeapon;
-			WeaponLevel weaponLevel = _staticDataService.GetWeaponLevel(weaponId, 1);
+			WeaponData data = _progressProvider.WeaponData;
 
-			_cameraProvider.SetCameraSize(weaponLevel.FireRange);
+			Debug.Log(data.FireRange);
+
+			_cameraProvider.SetCameraSize(data.FireRange);
 		}
 	}
 }
