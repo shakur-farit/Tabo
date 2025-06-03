@@ -10,7 +10,6 @@ namespace Code.Meta.Features.Shop.Weapon.Behaviours
 		[SerializeField] private Image _icon;
 		[SerializeField] private TextMeshProUGUI _price;
 
-
 		public void Setup(WeaponShopItemConfig config)
 		{
 			_icon.sprite = config.Sprite;

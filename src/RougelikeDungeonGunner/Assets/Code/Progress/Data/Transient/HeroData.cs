@@ -29,10 +29,11 @@ namespace Code.Progress.Data
 			get => _currentCoinsCount;
 			set
 			{
-				if (_currentCoinsCount == value)
+				int clampedValue = Math.Max(0, value);
+				if (_currentCoinsCount == clampedValue)
 					return;
 
-				_currentCoinsCount = value;
+				_currentCoinsCount = clampedValue;
 				CoinsChanged?.Invoke();
 			}
 		}

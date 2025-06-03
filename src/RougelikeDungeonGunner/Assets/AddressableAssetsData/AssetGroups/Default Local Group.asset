@@ -257,8 +257,7 @@ MonoBehaviour:
   - m_GUID: ba6f7193f65ce01449ef3954de34356f
     m_Address: Assets/StaticData/Shop/Upgrade/UpgradeItemConfig.asset
     m_ReadOnly: 0
-    m_SerializedLabels:
-    - UpgradeShopItemConfig
+    m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e69a30b632eb7ae4ab02e65973d32831
     m_Address: Assets/StaticData/Window/WeaponUpgradeWindowConfig.asset
@@ -283,6 +282,42 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - WindowConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8c1d35139c943f34d816396d022dde47
+    m_Address: Assets/StaticData/Shop/Upgrade/FireRangeWeaponUpgradeItemConfig 1.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponUpgradeShopItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f8a4ee29daa4dc44481c0fe8ca09bbed
+    m_Address: Assets/StaticData/Shop/Upgrade/CooldownWeaponUpgradeItemConfig 2.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponUpgradeShopItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 85ca8616071b4cd499969ace316fa7ff
+    m_Address: Assets/StaticData/Shop/Upgrade/CooldownWeaponUpgradeItemConfig 3.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponUpgradeShopItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 10fc081cb1c79c84ab89bca12b918660
+    m_Address: Assets/StaticData/Shop/Upgrade/CooldownWeaponUpgradeItemConfig 4.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponUpgradeShopItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: eebf926802b2c364db7d1d4e5e1400e0
+    m_Address: Assets/StaticData/Shop/Upgrade/CooldownWeaponUpgradeItemConfig 5.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponUpgradeShopItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: af9b416a80159f1419d7455ae91f6cec
+    m_Address: Assets/StaticData/Shop/Upgrade/CooldownWeaponUpgradeItemConfig 6.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponUpgradeShopItemConfig
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 7128017d563554245a79368046c75e1a, type: 2}

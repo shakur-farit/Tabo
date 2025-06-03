@@ -132,11 +132,13 @@ namespace Code.Infrastructure.Installers
 			Container.Bind<IHeartUIFactory>().To<HeartUIFactory>().AsSingle();
 			Container.Bind<IWindowFactory>().To<WindowFactory>().AsSingle();
 			Container.Bind<IWeaponShopItemFactory>().To<WeaponShopItemFactory>().AsSingle();
+			Container.Bind<IWeaponUpgradeShopItemFactory>().To<WeaponUpgradeShopItemFactory>().AsSingle();
 		}
 
 		private void BindUIServices()
 		{
 			Container.Bind<IWindowService>().To<WindowService>().AsSingle();
+			Container.Bind<IWeaponUpgradeService>().To<WeaponUpgradeService>().AsSingle();
 		}
 
 		private void BindSystemFactory()

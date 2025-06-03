@@ -1,6 +1,6 @@
 ﻿namespace Code.Meta.Features.Shop.WeaponUpgrade
 {
-	public enum UpgradeShopItemTypeId
+	public enum WeaponUpgradeShopItemTypeId
 	{
 		Unknown = 0,
 		FireRange = 1,
@@ -8,7 +8,7 @@
 		ReloadTime = 3,
 		PrechargingTime = 4,
 		MagazineSize = 5,
-		MaxSpreadAngle = 6,
+		Accuracy = 6,
 		EnchantSlots = 7,
 	}
 }

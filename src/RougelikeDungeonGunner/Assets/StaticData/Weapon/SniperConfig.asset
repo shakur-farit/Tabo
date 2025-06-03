@@ -16,17 +16,17 @@ MonoBehaviour:
   ViewPrefab: {fileID: 3867516666948492017, guid: 69172fbde18e101418b3b1f7089f9a29, type: 3}
   Sprite: {fileID: 21300000, guid: 7e70ae1621ea16746be436ae77e38ce9, type: 3}
   FirePosition: {x: 1.515, y: 0.21}
-  Levels:
-  - isInfinityAmmo: 0
-    FireRange: 13
-    Cooldown: 3
-    ReloadTime: 5
-    PrechargeTime: 0
-    MagazineSize: 4
-    PelletCount: 1
-    MinSpreadAngle: -2
-    MaxSpreadAngle: 2
-    EffectSetups:
-    - EffectTypeId: 1
-      Value: 7
-    StatusSetups: []
+  isInfinityAmmo: 0
+  FireRange: 13
+  Cooldown: 2
+  ReloadTime: 2
+  PrechargingTime: 0
+  MagazineSize: 4
+  PelletCount: 1
+  MinSpreadAngle: 0
+  MaxSpreadAngle: 0
+  MaxEnchantsCount: 0
+  EffectSetups:
+  - EffectTypeId: 1
+    Value: 10
+  StatusSetups: []

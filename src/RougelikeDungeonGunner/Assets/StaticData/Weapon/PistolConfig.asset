@@ -18,13 +18,15 @@ MonoBehaviour:
   FirePosition: {x: 0.91, y: 0.3}
   isInfinityAmmo: 1
   FireRange: 6
-  Cooldown: 0
+  Cooldown: 1
   ReloadTime: 0
   PrechargingTime: 0
   MagazineSize: 0
   PelletCount: 1
-  MinSpreadAngle: 0
-  MaxSpreadAngle: 0
+  MinSpreadAngle: 1
+  MaxSpreadAngle: 5
   MaxEnchantsCount: 0
-  EffectSetups: []
+  EffectSetups:
+  - EffectTypeId: 1
+    Value: 1
   StatusSetups: []

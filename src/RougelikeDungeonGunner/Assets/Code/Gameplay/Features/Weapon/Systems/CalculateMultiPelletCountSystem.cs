@@ -1,4 +1,6 @@
-﻿using Code.Progress.Provider;
+﻿using Code.Gameplay.Features.Weapon.Configs;
+using Code.Gameplay.StaticData;
+using Code.Progress.Provider;
 using Entitas;
 using UnityEngine;
 
@@ -6,12 +8,12 @@ namespace Code.Gameplay.Features.Weapon.Systems
 {
 	public class CalculateMultiPelletCountSystem : IExecuteSystem
 	{
-		private readonly IProgressProvider _progressProvider;
+		private readonly IStaticDataService _staticDataService;
 		private readonly IGroup<GameEntity> _weapons;
 
-		public CalculateMultiPelletCountSystem(GameContext game, IProgressProvider progressProvider)
+		public CalculateMultiPelletCountSystem(GameContext game, IStaticDataService staticDataService)
 		{
-			_progressProvider = progressProvider;
+			_staticDataService = staticDataService;
 			_weapons = game.GetGroup(GameMatcher
 				.AllOf(
 					GameMatcher.Weapon,
@@ -21,8 +23,12 @@ namespace Code.Gameplay.Features.Weapon.Systems
 		public void Execute()
 		{
 			foreach (GameEntity weapon in _weapons)
+			{
+				WeaponConfig config = _staticDataService.GetWeaponConfig(weapon.WeaponTypeId);
+
 				weapon
-					.ReplaceMultiPellet(_progressProvider.WeaponData.PelletCount);
+					.ReplaceMultiPellet(config.PelletCount);
+			}
 		}
 	}
 }
