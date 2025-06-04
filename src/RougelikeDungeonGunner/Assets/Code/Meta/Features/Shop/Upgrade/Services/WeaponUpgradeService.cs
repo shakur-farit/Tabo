@@ -12,79 +12,89 @@ namespace Code.Meta.Features.Shop.Weapon.Behaviours
 
 		private readonly IProgressProvider _progressProvider;
 
-		public WeaponUpgradeService(IProgressProvider progressProvider) => 
+		public WeaponUpgradeService(IProgressProvider progressProvider) =>
 			_progressProvider = progressProvider;
 
 		public void Upgrade(WeaponUpgradeShopItemConfig config)
 		{
-			if(config.Price > _progressProvider.HeroData.CurrentCoinsCount)
+			if (config.Price > _progressProvider.HeroData.CurrentCoinsCount)
 				return;
 
 			switch (config.TypeId)
 			{
 				case WeaponUpgradeShopItemTypeId.FireRange:
-					UpgradeFireRange(config.UpgareValue);
+					UpgradeFireRange(config);
 					break;
 				case WeaponUpgradeShopItemTypeId.Cooldown:
-					UpgradeCooldown(config.UpgareValue);
+					UpgradeCooldown(config);
 					break;
 				case WeaponUpgradeShopItemTypeId.ReloadTime:
-					UpgradeReloadTime(config.UpgareValue);
+					UpgradeReloadTime(config);
 					break;
 				case WeaponUpgradeShopItemTypeId.PrechargingTime:
-					UpgradePrechargingTime(config.UpgareValue);
+					UpgradePrechargingTime(config);
 					break;
 				case WeaponUpgradeShopItemTypeId.MagazineSize:
-					UpgradeMagazineSize(config.UpgareValue);
+					UpgradeMagazineSize(config);
 					break;
 				case WeaponUpgradeShopItemTypeId.Accuracy:
-					UpgradeAccuracy(config.UpgareValue);
+					UpgradeAccuracy(config);
 					break;
 				case WeaponUpgradeShopItemTypeId.EnchantSlots:
-					UpgradeEnchantSlots(config.UpgareValue);
+					UpgradeEnchantSlots(config);
 					break;
 			}
+		}
 
+		private void UpgradeFireRange(WeaponUpgradeShopItemConfig config)
+		{
+			_progressProvider.WeaponData.FireRange += config.UpgareValue;
 			SubtractPrice(config.Price);
 		}
 
-		private void UpgradeFireRange(float upgradeValue) =>
-			_progressProvider.WeaponData.FireRange += upgradeValue;
-
-		private void UpgradeCooldown(float upgradeValue)
+		private void UpgradeCooldown(WeaponUpgradeShopItemConfig config)
 		{
 			if (_progressProvider.WeaponData.Cooldown <= MinValue)
 				return;
 
 			_progressProvider.WeaponData.Cooldown = Mathf.Max(
 				0,
-				_progressProvider.WeaponData.Cooldown - upgradeValue);
+				_progressProvider.WeaponData.Cooldown - config.UpgareValue);
+
+			SubtractPrice(config.Price);
 		}
 
-		private void UpgradeReloadTime(float upgradeValue)
+		private void UpgradeReloadTime(WeaponUpgradeShopItemConfig config)
 		{
 			if (_progressProvider.WeaponData.ReloadTime <= MinValue)
 				return;
 
 			_progressProvider.WeaponData.ReloadTime = Mathf.Max(
 				0,
-				_progressProvider.WeaponData.ReloadTime - upgradeValue);
+				_progressProvider.WeaponData.ReloadTime - config.UpgareValue);
+
+			SubtractPrice(config.Price);
 		}
 
-		private void UpgradePrechargingTime(float upgradeValue)
+		private void UpgradePrechargingTime(WeaponUpgradeShopItemConfig config)
 		{
 			if (_progressProvider.WeaponData.PrechargingTime <= MinValue)
 				return;
 
 			_progressProvider.WeaponData.PrechargingTime = Mathf.Max(
 				0,
-				_progressProvider.WeaponData.PrechargingTime - upgradeValue);
+				_progressProvider.WeaponData.PrechargingTime - config.UpgareValue);
+
+			SubtractPrice(config.Price);
 		}
 
-		private void UpgradeMagazineSize(float upgradeValue) =>
-			_progressProvider.WeaponData.MagazineSize += (int)upgradeValue;
+		private void UpgradeMagazineSize(WeaponUpgradeShopItemConfig config)
+		{
+			_progressProvider.WeaponData.MagazineSize += (int)config.UpgareValue;
+			SubtractPrice(config.Price);
+		}
 
-		private void UpgradeAccuracy(float upgradeValue)
+		private void UpgradeAccuracy(WeaponUpgradeShopItemConfig config)
 		{
 			if (_progressProvider.WeaponData.Accuracy >= MaxAccuracyValue)
 			{
@@ -92,11 +102,15 @@ namespace Code.Meta.Features.Shop.Weapon.Behaviours
 				return;
 			}
 
-			_progressProvider.WeaponData.Accuracy += upgradeValue;
+			_progressProvider.WeaponData.Accuracy += config.UpgareValue;
+			SubtractPrice(config.Price);
 		}
 
-		private void UpgradeEnchantSlots(float upgradeValue) =>
-			_progressProvider.WeaponData.MaxEnchantsCount += (int)upgradeValue;
+		private void UpgradeEnchantSlots(WeaponUpgradeShopItemConfig config)
+		{
+			_progressProvider.WeaponData.MaxEnchantsCount += (int)config.UpgareValue;
+			SubtractPrice(config.Price);
+		}
 
 		private void SubtractPrice(int price) =>
 			_progressProvider.HeroData.CurrentCoinsCount -= price;

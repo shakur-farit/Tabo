@@ -30,7 +30,7 @@ namespace Code.Progress.Data
 			{
 				float spread = Mathf.Abs(MinSpreadAngle) + Mathf.Abs(MaxSpreadAngle);
 				float accuracy = 1f - Mathf.Clamp01(spread / MaxSpread);
-				return Mathf.Round(accuracy * 100f);
+				return accuracy * 100f;
 			}
 			set
 			{

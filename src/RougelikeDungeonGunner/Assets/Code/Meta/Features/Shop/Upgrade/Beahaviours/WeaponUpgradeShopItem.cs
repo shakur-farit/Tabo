@@ -53,9 +53,6 @@ namespace Code.Meta.Features.Shop.Weapon.Behaviours
 			_weaponUpgradeService.Upgrade(_config);
 
 			_statValueText.text = UpdateCurrentValueText();
-
-			Debug.Log($"{_progressProvider.WeaponData.Accuracy}%");
-			Debug.Log($"{_progressProvider.WeaponData.MinSpreadAngle} / {_progressProvider.WeaponData.MaxSpreadAngle}");
 		}
 
 		private string UpdateCurrentValueText()
