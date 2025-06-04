@@ -28,7 +28,7 @@ namespace Code.Gameplay.Features.Hero.Systems
 		{
 			foreach (GameEntity hero in _heroes.GetEntities(_buffer))
 			{
-				_weaponFactory.CreateWeapon(hero.CurrentWeaponTypeId, 1, hero.ParentTransform, Vector2.zero, hero.Id);
+				_weaponFactory.CreateWeapon(hero.CurrentWeaponTypeId, hero.ParentTransform, Vector2.zero, hero.Id);
 
 				hero.isUnweaponed = false;
 			}

@@ -38,7 +38,7 @@ namespace Code.Gameplay.Features.Weapon.Systems
 
 				weapon.isUnparented = true;
 
-				_weaponFactory.CreateWeapon(changeRequest.NewWeaponTypeId, 1, parent, Vector2.zero, ownerId);
+				_weaponFactory.CreateWeapon(changeRequest.NewWeaponTypeId, parent, Vector2.zero, ownerId);
 			}
 		}
 	}

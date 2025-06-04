@@ -27,78 +27,80 @@ namespace Code.Gameplay.Features.Weapon.Factory
 			_progressProvider = progressProvider;
 		}
 
-		public GameEntity CreateWeapon(WeaponTypeId weaponTypeId, int level, Transform parent, Vector2 at, int ownerId)
+		public GameEntity CreateWeapon(WeaponTypeId weaponTypeId, Transform parent, Vector2 at, int ownerId)
 		{
 			switch (weaponTypeId)
 			{
 				case WeaponTypeId.Pistol:
-					return CreatePistol(weaponTypeId, level, parent, at, ownerId);
+					return CreatePistol(weaponTypeId, parent, at, ownerId);
 				case WeaponTypeId.Machinegun:
-					return CreateMachinegun(weaponTypeId, level, parent, at, ownerId);
+					return CreateMachinegun(weaponTypeId, parent, at, ownerId);
 				case WeaponTypeId.Sniper:
-					return CreateSniper(weaponTypeId, level, parent, at, ownerId);
+					return CreateSniper(weaponTypeId, parent, at, ownerId);
 				case WeaponTypeId.Shotgun:
-					return CreateShotgun(weaponTypeId, level, parent, at, ownerId);
+					return CreateShotgun(weaponTypeId, parent, at, ownerId);
 				case WeaponTypeId.LaserBlaster:
-					return CreateLaserBlaster(weaponTypeId, level, parent, at, ownerId);
+					return CreateLaserBlaster(weaponTypeId, parent, at, ownerId);
 			}
 
 			throw new Exception($"Weapon for {weaponTypeId} type was not found");
 		}
 
-		private GameEntity CreatePistol(WeaponTypeId weaponTypeId, int level, Transform parent, Vector2 at, int ownerId) =>
-			CreateWeaponEntity(weaponTypeId, level, parent, at, ownerId)
+		private GameEntity CreatePistol(WeaponTypeId weaponTypeId, Transform parent, Vector2 at, int ownerId) =>
+			CreateWeaponEntity(weaponTypeId, parent, at, ownerId)
 				.With(x => x.isPistol = true)
 			;
 
-		private GameEntity CreateRevolver(WeaponTypeId weaponTypeId, int level, Transform parent, Vector2 at,
+		private GameEntity CreateRevolver(WeaponTypeId weaponTypeId, Transform parent, Vector2 at,
 			int ownerId) =>
-			CreateWeaponEntity(weaponTypeId, level, parent, at, ownerId)
+			CreateWeaponEntity(weaponTypeId, parent, at, ownerId)
 				.With(x => x.isRevolver = true)
 		;
 
-		private GameEntity CreateShotgun(WeaponTypeId weaponTypeId, int level, Transform parent, Vector2 at, int ownerId) =>
-			CreateWeaponEntity(weaponTypeId, level, parent, at, ownerId)
+		private GameEntity CreateShotgun(WeaponTypeId weaponTypeId, Transform parent, Vector2 at, int ownerId) =>
+			CreateWeaponEntity(weaponTypeId, parent, at, ownerId)
 				.With(x => x.isShotgun = true)
 		;
 
-		private GameEntity CreateAutomaticPistol(WeaponTypeId weaponTypeId, int level, Transform parent, Vector2 at,
+		private GameEntity CreateAutomaticPistol(WeaponTypeId weaponTypeId, Transform parent, Vector2 at,
 			int ownerId) =>
-			CreateWeaponEntity(weaponTypeId, level, parent, at, ownerId)
+			CreateWeaponEntity(weaponTypeId, parent, at, ownerId)
 				.With(x => x.isAutomaticPistol = true)
 		;
-		private GameEntity CreateMachinegun(WeaponTypeId weaponTypeId, int level, Transform parent, Vector2 at,
+		private GameEntity CreateMachinegun(WeaponTypeId weaponTypeId, Transform parent, Vector2 at,
 			int ownerId) =>
-			CreateWeaponEntity(weaponTypeId, level, parent, at, ownerId)
+			CreateWeaponEntity(weaponTypeId, parent, at, ownerId)
 				.With(x => x.isMachinegun = true)
 		;
 
-		private GameEntity CreateSniper(WeaponTypeId weaponTypeId, int level, Transform parent, Vector2 at, int ownerId) =>
-			CreateWeaponEntity(weaponTypeId, level, parent, at, ownerId)
+		private GameEntity CreateSniper(WeaponTypeId weaponTypeId, Transform parent, Vector2 at, int ownerId) =>
+			CreateWeaponEntity(weaponTypeId, parent, at, ownerId)
 				.With(x => x.isSniper = true)
 		;
 
-		private GameEntity CreatePlasmaGun(WeaponTypeId weaponTypeId, int level, Transform parent, Vector2 at,
+		private GameEntity CreatePlasmaGun(WeaponTypeId weaponTypeId, Transform parent, Vector2 at,
 			int ownerId) =>
-			CreateWeaponEntity(weaponTypeId, level, parent, at, ownerId)
+			CreateWeaponEntity(weaponTypeId, parent, at, ownerId)
 				.With(x => x.isPlasmaGun = true)
 		;
 
-		private GameEntity CreateLaserBlaster(WeaponTypeId weaponTypeId, int level, Transform parent, Vector2 at,
+		private GameEntity CreateLaserBlaster(WeaponTypeId weaponTypeId, Transform parent, Vector2 at,
 			int ownerId) =>
-			CreateWeaponEntity(weaponTypeId, level, parent, at, ownerId)
+			CreateWeaponEntity(weaponTypeId, parent, at, ownerId)
 				.With(x => x.isLaserBlaster = true)
 		;
 
-		private GameEntity CreateRocketLauncher(WeaponTypeId weaponTypeId, int level, Transform parent, Vector2 at, int ownerId) =>
-			CreateWeaponEntity(weaponTypeId, level, parent, at, ownerId)
+		private GameEntity CreateRocketLauncher(WeaponTypeId weaponTypeId, Transform parent, Vector2 at, int ownerId) =>
+			CreateWeaponEntity(weaponTypeId, parent, at, ownerId)
 				.With(x => x.isRocketLauncher = true)
 		;
 
-		private GameEntity CreateWeaponEntity(WeaponTypeId weaponTypeId, int weaponLevel, Transform parent, Vector2 at, int ownerId)
+		private GameEntity CreateWeaponEntity(WeaponTypeId weaponTypeId, Transform parent, Vector2 at, int ownerId)
 		{
 			WeaponConfig config = _staticDataService.GetWeaponConfig(weaponTypeId);
 			WeaponData data = GetWeaponData(config);
+
+			Debug.Log($"{data.Cooldown} / {data.MaxSpreadAngle}");
 
 			return CreateEntity.Empty()
 					.AddId(_identifier.Next())
