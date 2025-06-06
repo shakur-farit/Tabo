@@ -57,25 +57,7 @@ namespace Code.Meta.Features.Shop.Weapon.Behaviours
 
 		private string UpdateCurrentValueText()
 		{
-			switch (_config.TypeId)
-			{
-				case WeaponUpgradeShopItemTypeId.FireRange:
-					return $"{_progressProvider.WeaponData.FireRange}";
-				case WeaponUpgradeShopItemTypeId.Cooldown:
-					return $"{_progressProvider.WeaponData.Cooldown}";
-				case WeaponUpgradeShopItemTypeId.ReloadTime:
-					return $"{_progressProvider.WeaponData.ReloadTime}";
-				case WeaponUpgradeShopItemTypeId.PrechargingTime:
-					return $"{_progressProvider.WeaponData.PrechargingTime}";
-				case WeaponUpgradeShopItemTypeId.MagazineSize:
-					return $"{_progressProvider.WeaponData.MagazineSize}";
-				case WeaponUpgradeShopItemTypeId.Accuracy:
-					return $"{_progressProvider.WeaponData.Accuracy}%";
-				case WeaponUpgradeShopItemTypeId.EnchantSlots:
-					return $"{_progressProvider.WeaponData.MaxEnchantsCount }";
-				default:
 					return string.Empty;
-			}
 		}
 	}
 }

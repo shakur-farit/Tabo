@@ -20,9 +20,7 @@ namespace Code.Gameplay.Cameras.Behaviours
 
 		private void Start()
 		{
-			WeaponData data = _progressProvider.WeaponData;
-
-			_cameraProvider.SetCameraSize(data.FireRange);
+			_cameraProvider.SetCameraSize(15);
 		}
 	}
 }

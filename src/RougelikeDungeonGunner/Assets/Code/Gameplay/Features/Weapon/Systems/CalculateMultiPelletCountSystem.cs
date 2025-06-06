@@ -27,7 +27,7 @@ namespace Code.Gameplay.Features.Weapon.Systems
 				WeaponConfig config = _staticDataService.GetWeaponConfig(weapon.WeaponTypeId);
 
 				weapon
-					.ReplaceMultiPellet(config.PelletCount);
+					.ReplaceMultiPellet(config.Stats.PelletCount);
 			}
 		}
 	}

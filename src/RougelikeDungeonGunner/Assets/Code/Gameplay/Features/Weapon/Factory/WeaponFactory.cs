@@ -5,6 +5,7 @@ using Code.Gameplay.StaticData;
 using Code.Infrastructure.Identifiers;
 using System;
 using Code.Gameplay.Features.Weapon.Configs;
+using Code.Meta.Features.Shop.Weapon.Behaviours;
 using Code.Progress.Data;
 using Code.Progress.Provider;
 using UnityEngine;
@@ -16,15 +17,18 @@ namespace Code.Gameplay.Features.Weapon.Factory
 		private readonly IIdentifierService _identifier;
 		private readonly IStaticDataService _staticDataService;
 		private readonly IProgressProvider _progressProvider;
+		private readonly IWeaponStatsProvider _statsProvider;
 
 		public WeaponFactory(
 			IIdentifierService identifier, 
 			IStaticDataService staticDataService,
-			IProgressProvider progressProvider)
+			IProgressProvider progressProvider,
+			IWeaponStatsProvider statsProvider)
 		{
 			_identifier = identifier;
 			_staticDataService = staticDataService;
 			_progressProvider = progressProvider;
+			_statsProvider = statsProvider;
 		}
 
 		public GameEntity CreateWeapon(WeaponTypeId weaponTypeId, Transform parent, Vector2 at, int ownerId)
@@ -98,7 +102,7 @@ namespace Code.Gameplay.Features.Weapon.Factory
 		private GameEntity CreateWeaponEntity(WeaponTypeId weaponTypeId, Transform parent, Vector2 at, int ownerId)
 		{
 			WeaponConfig config = _staticDataService.GetWeaponConfig(weaponTypeId);
-			WeaponData data = GetWeaponData(config);
+			WeaponStats data = _statsProvider.GetStats(weaponTypeId);
 
 			Debug.Log($"{data.Cooldown} / {data.MaxSpreadAngle}");
 
@@ -118,24 +122,18 @@ namespace Code.Gameplay.Features.Weapon.Factory
 					.With(x => x.isReadyToCollectTargets = true)
 					.With(x => x.isMagazineNotEmpty = true)
 					.With(x => x.isReadyToShoot = true)
-					.With(x => x.AddMultiPellet(config.PelletCount), when: config.PelletCount > 1)
+					.With(x => x.AddMultiPellet(config.Stats.PelletCount), when: config.Stats.PelletCount > 1)
 					.With(x => x.AddPrechargeTime(data.PrechargingTime), when: data.PrechargingTime > 0)
 					.With(x => x.AddPrechargeTimeLeft(data.PrechargingTime), when: data.PrechargingTime > 0)
-					.With(x => x.AddMagazineSize(data.MagazineSize), when: config.isInfinityAmmo == false)
-					.With(x => x.isInfinityAmmo = true, when: config.isInfinityAmmo)
-					.With(x => x.AddCurrentAmmoCount(data.MagazineSize), when: config.isInfinityAmmo == false)
-					.With(x => x.AddReloadTime(data.ReloadTime), when: data.ReloadTime > 0 && config.isInfinityAmmo == false)
-					.With(x => x.AddReloadTimeLeft(data.ReloadTime), when: data.ReloadTime > 0 && config.isInfinityAmmo == false)
-					.With(x => x.AddEffectSetups(data.EffectSetups), when: data.EffectSetups.IsNullOrEmpty() == false)
-					.With(x => x.AddStatusSetups(data.StatusSetups), when: data.StatusSetups.IsNullOrEmpty() == false)
+					.With(x => x.AddMagazineSize(data.MagazineSize), when: config.Stats.isInfinityAmmo == false)
+					.With(x => x.isInfinityAmmo = true, when: config.Stats.isInfinityAmmo)
+					.With(x => x.AddCurrentAmmoCount(data.MagazineSize), when: config.Stats.isInfinityAmmo == false)
+					.With(x => x.AddReloadTime(data.ReloadTime), when: data.ReloadTime > 0 && config.Stats.isInfinityAmmo == false)
+					.With(x => x.AddReloadTimeLeft(data.ReloadTime), when: data.ReloadTime > 0 && config.Stats.isInfinityAmmo == false)
+					.With(x => x.AddEffectSetups(config.EffectSetups), when: config.EffectSetups.IsNullOrEmpty() == false)
+					.With(x => x.AddStatusSetups(config.StatusSetups), when: config.StatusSetups.IsNullOrEmpty() == false)
 					.PutOnCooldown()
 				;
-		}
-
-		private WeaponData GetWeaponData(WeaponConfig config)
-		{
-			_progressProvider.WeaponData.ResetWeaponData(config);
-			return _progressProvider.WeaponData;
 		}
 	}
 }

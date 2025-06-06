@@ -48,67 +48,37 @@ namespace Code.Meta.Features.Shop.Weapon.Behaviours
 
 		private void UpgradeFireRange(WeaponUpgradeShopItemConfig config)
 		{
-			_progressProvider.WeaponData.FireRange += config.UpgareValue;
 			SubtractPrice(config.Price);
 		}
 
 		private void UpgradeCooldown(WeaponUpgradeShopItemConfig config)
 		{
-			if (_progressProvider.WeaponData.Cooldown <= MinValue)
-				return;
-
-			_progressProvider.WeaponData.Cooldown = Mathf.Max(
-				0,
-				_progressProvider.WeaponData.Cooldown - config.UpgareValue);
-
+			
 			SubtractPrice(config.Price);
 		}
 
 		private void UpgradeReloadTime(WeaponUpgradeShopItemConfig config)
 		{
-			if (_progressProvider.WeaponData.ReloadTime <= MinValue)
-				return;
-
-			_progressProvider.WeaponData.ReloadTime = Mathf.Max(
-				0,
-				_progressProvider.WeaponData.ReloadTime - config.UpgareValue);
-
 			SubtractPrice(config.Price);
 		}
 
 		private void UpgradePrechargingTime(WeaponUpgradeShopItemConfig config)
 		{
-			if (_progressProvider.WeaponData.PrechargingTime <= MinValue)
-				return;
-
-			_progressProvider.WeaponData.PrechargingTime = Mathf.Max(
-				0,
-				_progressProvider.WeaponData.PrechargingTime - config.UpgareValue);
-
 			SubtractPrice(config.Price);
 		}
 
 		private void UpgradeMagazineSize(WeaponUpgradeShopItemConfig config)
 		{
-			_progressProvider.WeaponData.MagazineSize += (int)config.UpgareValue;
 			SubtractPrice(config.Price);
 		}
 
 		private void UpgradeAccuracy(WeaponUpgradeShopItemConfig config)
 		{
-			if (_progressProvider.WeaponData.Accuracy >= MaxAccuracyValue)
-			{
-				_progressProvider.WeaponData.Accuracy = MaxAccuracyValue;
-				return;
-			}
-
-			_progressProvider.WeaponData.Accuracy += config.UpgareValue;
 			SubtractPrice(config.Price);
 		}
 
 		private void UpgradeEnchantSlots(WeaponUpgradeShopItemConfig config)
 		{
-			_progressProvider.WeaponData.MaxEnchantsCount += (int)config.UpgareValue;
 			SubtractPrice(config.Price);
 		}
 

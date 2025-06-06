@@ -15,6 +15,16 @@ namespace Code.Gameplay.Features.Weapon.Configs
 		public Sprite Sprite;
 		public Vector2 FirePosition;
 
+		public WeaponStats Stats;
+
+		public List<EffectSetup> EffectSetups;
+		public List<StatusSetup> StatusSetups;
+
+	}
+
+	[Serializable]
+	public class WeaponStats
+	{
 		public bool isInfinityAmmo;
 		[Range(0f, 100f)] public float FireRange;
 		[Range(0f, 100f)] public float Cooldown;
@@ -26,12 +36,9 @@ namespace Code.Gameplay.Features.Weapon.Configs
 		[Range(-100f, 100f)] public float MaxSpreadAngle;
 		[Range(0, 10)] public int MaxEnchantsCount;
 
-		public List<EffectSetup> EffectSetups;
-		public List<StatusSetup> StatusSetups;
-
 		private void OnValidate()
 		{
-			if(MinSpreadAngle > MaxSpreadAngle)
+			if (MinSpreadAngle > MaxSpreadAngle)
 				MaxSpreadAngle = MinSpreadAngle;
 		}
 	}
