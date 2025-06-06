@@ -1,36 +1,29 @@
 ﻿using Code.Gameplay.Features.Weapon;
 using Code.Gameplay.Features.Weapon.Configs;
 using Code.Gameplay.StaticData;
+using Code.Meta.Features.Shop.WeaponUpgrade;
+using UnityEngine;
 
 namespace Code.Meta.Features.Shop.Weapon.Behaviours
 {
 	public class WeaponStatsProvider : IWeaponStatsProvider
 	{
-		private readonly IStaticDataService _staticDataService;
+		private readonly IWeaponUpgradeService _upgradeService;
 
-		public WeaponStatsProvider(IStaticDataService staticDataService)
+		public WeaponStatsProvider(IWeaponUpgradeService upgradeService)
 		{
-			_staticDataService = staticDataService;
+			_upgradeService = upgradeService;
 		}
 
-		public WeaponStats GetStats(WeaponTypeId id)
+
+		public float GetFireRange(WeaponConfig config) => 
+			config.Stats.FireRange + _upgradeService.GetUpgradeBonus(WeaponUpgradeShopItemTypeId.FireRange);
+
+		public float GetCooldown(WeaponConfig config)
 		{
-			var config = _staticDataService.GetWeaponConfig(id);
-			var baseStats = config.Stats;
-
-			WeaponStats newStats = new WeaponStats()
-			{
-				FireRange = baseStats.FireRange,
-				Cooldown = baseStats.Cooldown,
-				ReloadTime = baseStats.ReloadTime,
-				PrechargingTime = baseStats.PrechargingTime,
-				MagazineSize = baseStats.MagazineSize,
-				MinSpreadAngle = baseStats.MinSpreadAngle,
-				MaxSpreadAngle = baseStats.MaxSpreadAngle,
-				MaxEnchantsCount = baseStats.MaxEnchantsCount
-			};
-
-			return newStats;
+			float baseValue = config.Stats.Cooldown;
+			float bonus = _upgradeService.GetUpgradeBonus(WeaponUpgradeShopItemTypeId.Cooldown);
+			return Mathf.Max(0.1f, baseValue - bonus);
 		}
 	}
 }

@@ -1,4 +1,5 @@
 ﻿using System.Text.RegularExpressions;
+using Code.Gameplay.StaticData;
 using Code.Meta.Features.Shop.WeaponUpgrade;
 using Code.Meta.Features.Shop.WeaponUpgrade.Configs;
 using Code.Progress.Provider;
@@ -20,12 +21,20 @@ namespace Code.Meta.Features.Shop.Weapon.Behaviours
 
 		private IProgressProvider _progressProvider;
 		private IWeaponUpgradeService _weaponUpgradeService;
+		private IWeaponStatsProvider _statsProvider;
+		private IStaticDataService _staticDataService;
 
 		[Inject]
-		public void Constructor(IProgressProvider progressProvider, IWeaponUpgradeService weaponUpgradeService)
+		public void Constructor(
+			IProgressProvider progressProvider, 
+			IWeaponUpgradeService weaponUpgradeService,
+			IWeaponStatsProvider statsProvider,
+			IStaticDataService staticDataService)
 		{
 			_progressProvider = progressProvider;
 			_weaponUpgradeService = weaponUpgradeService;
+			_statsProvider = statsProvider;
+			_staticDataService = staticDataService;
 		}
 
 		private void OnEnable() =>
@@ -57,7 +66,16 @@ namespace Code.Meta.Features.Shop.Weapon.Behaviours
 
 		private string UpdateCurrentValueText()
 		{
+			var currentWeapon = _progressProvider.HeroData.CurrentWeaponTypeId;
+			var weaponConfig = _staticDataService.GetWeaponConfig(currentWeapon);
+
+			switch (_config.TypeId)
+			{
+				case WeaponUpgradeShopItemTypeId.FireRange:
+					return _statsProvider.GetFireRange(weaponConfig).ToString();
+				default:
 					return string.Empty;
+			}
 		}
 	}
 }

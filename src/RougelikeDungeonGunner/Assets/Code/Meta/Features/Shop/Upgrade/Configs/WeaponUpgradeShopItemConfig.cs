@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Code.Meta.Features.Shop.WeaponUpgrade.Configs
 {
@@ -8,6 +9,6 @@ namespace Code.Meta.Features.Shop.WeaponUpgrade.Configs
 		public WeaponUpgradeShopItemTypeId TypeId;
 		public GameObject ViewPrefab;
 		[Range(0, 1000)] public int Price;
-		[Range(0, 1000)] public float UpgareValue;
+		[FormerlySerializedAs("UpgareValue")] [Range(0, 1000)] public float UpgradeValue;
 	}
 }

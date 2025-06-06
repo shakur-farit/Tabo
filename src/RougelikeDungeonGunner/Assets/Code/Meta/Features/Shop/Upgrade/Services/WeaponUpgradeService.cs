@@ -1,14 +1,13 @@
 ﻿using Code.Meta.Features.Shop.WeaponUpgrade;
 using Code.Meta.Features.Shop.WeaponUpgrade.Configs;
 using Code.Progress.Provider;
-using UnityEngine;
+using System.Collections.Generic;
 
 namespace Code.Meta.Features.Shop.Weapon.Behaviours
 {
 	public class WeaponUpgradeService : IWeaponUpgradeService
 	{
-		private const int MaxAccuracyValue = 100;
-		private const int MinValue = 0;
+		private readonly Dictionary<WeaponUpgradeShopItemTypeId, float> _upgrades = new();
 
 		private readonly IProgressProvider _progressProvider;
 
@@ -17,70 +16,18 @@ namespace Code.Meta.Features.Shop.Weapon.Behaviours
 
 		public void Upgrade(WeaponUpgradeShopItemConfig config)
 		{
-			if (config.Price > _progressProvider.HeroData.CurrentCoinsCount)
-				return;
-
-			switch (config.TypeId)
-			{
-				case WeaponUpgradeShopItemTypeId.FireRange:
-					UpgradeFireRange(config);
-					break;
-				case WeaponUpgradeShopItemTypeId.Cooldown:
-					UpgradeCooldown(config);
-					break;
-				case WeaponUpgradeShopItemTypeId.ReloadTime:
-					UpgradeReloadTime(config);
-					break;
-				case WeaponUpgradeShopItemTypeId.PrechargingTime:
-					UpgradePrechargingTime(config);
-					break;
-				case WeaponUpgradeShopItemTypeId.MagazineSize:
-					UpgradeMagazineSize(config);
-					break;
-				case WeaponUpgradeShopItemTypeId.Accuracy:
-					UpgradeAccuracy(config);
-					break;
-				case WeaponUpgradeShopItemTypeId.EnchantSlots:
-					UpgradeEnchantSlots(config);
-					break;
-			}
+			if (_upgrades.ContainsKey(config.TypeId))
+				_upgrades[config.TypeId] += config.UpgradeValue;
+			else
+				_upgrades[config.TypeId] = config.UpgradeValue;
 		}
 
-		private void UpgradeFireRange(WeaponUpgradeShopItemConfig config)
-		{
-			SubtractPrice(config.Price);
-		}
 
-		private void UpgradeCooldown(WeaponUpgradeShopItemConfig config)
-		{
-			
-			SubtractPrice(config.Price);
-		}
+		public float GetUpgradeBonus(WeaponUpgradeShopItemTypeId typeId) =>
+			_upgrades.TryGetValue(typeId, out var value) ? value : 0f;
 
-		private void UpgradeReloadTime(WeaponUpgradeShopItemConfig config)
-		{
-			SubtractPrice(config.Price);
-		}
-
-		private void UpgradePrechargingTime(WeaponUpgradeShopItemConfig config)
-		{
-			SubtractPrice(config.Price);
-		}
-
-		private void UpgradeMagazineSize(WeaponUpgradeShopItemConfig config)
-		{
-			SubtractPrice(config.Price);
-		}
-
-		private void UpgradeAccuracy(WeaponUpgradeShopItemConfig config)
-		{
-			SubtractPrice(config.Price);
-		}
-
-		private void UpgradeEnchantSlots(WeaponUpgradeShopItemConfig config)
-		{
-			SubtractPrice(config.Price);
-		}
+		public void RemoveUpgrades() => 
+			_upgrades.Clear();
 
 		private void SubtractPrice(int price) =>
 			_progressProvider.HeroData.CurrentCoinsCount -= price;
