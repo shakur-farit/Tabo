@@ -1,5 +1,4 @@
 ﻿using Code.Gameplay.Cameras.Provider;
-using Code.Progress.Data;
 using Code.Progress.Provider;
 using UnityEngine;
 using Zenject;
