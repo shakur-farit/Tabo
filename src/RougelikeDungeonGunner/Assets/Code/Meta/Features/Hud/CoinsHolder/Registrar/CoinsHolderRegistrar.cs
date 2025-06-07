@@ -1,8 +1,8 @@
 ﻿using Code.Infrastructure.View.Registrars;
-using Code.Meta.UI.CoinsHolder.Behaviours;
+using Code.Meta.Features.Hud.CoinsHolder.Behaviours;
 using UnityEngine;
 
-namespace Code.Meta.UI.CoinsHolder.Registrar
+namespace Code.Meta.Features.Hud.CoinsHolder.Registrar
 {
 	public class CoinsHolderRegistrar :  EntityComponentRegistrar
 	{

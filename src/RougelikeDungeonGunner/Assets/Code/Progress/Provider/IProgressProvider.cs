@@ -1,4 +1,5 @@
-using Code.Progress.Data;
+using Code.Progress.Data.Progress;
+using Code.Progress.Data.Transient;
 
 namespace Code.Progress.Provider
 {
@@ -10,7 +11,6 @@ namespace Code.Progress.Provider
 		LevelData LevelData => TransientData.LevelData;
 		HeroData HeroData => TransientData.HeroData;
 		ShopData ShopData => TransientData.ShopData;
-		WeaponData WeaponData => TransientData.WeaponData;
 
 		void SetProgressData(ProgressData data);
 		void SetTransientData(TransientData data);

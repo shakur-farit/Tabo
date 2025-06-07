@@ -2,8 +2,9 @@
 using Code.Gameplay.Features.Weapon.ChangeRequest;
 using Code.Gameplay.Features.Weapon.Systems;
 using Code.Infrastructure;
-using Code.Meta.UI.AmmoHolder.Systems;
-using Code.Meta.UI.WeaponHolder.Systems;
+using Code.Infrastructure.Systems;
+using Code.Meta.Features.Hud.AmmoHolder.Systems;
+using Code.Meta.Features.Hud.WeaponHolder.Systems;
 
 namespace Code.Gameplay.Features.Weapon
 {

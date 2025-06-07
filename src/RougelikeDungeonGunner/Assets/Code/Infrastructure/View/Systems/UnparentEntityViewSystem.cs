@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using Entitas;
 
-namespace Code.Infrastructure.View
+namespace Code.Infrastructure.View.Systems
 {
 	public class UnparentEntityViewSystem : IExecuteSystem
 	{

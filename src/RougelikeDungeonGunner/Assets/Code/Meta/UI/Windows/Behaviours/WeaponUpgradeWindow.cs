@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
 using Code.Gameplay.StaticData;
+using Code.Meta.Features.Shop.Upgrade.Beahaviours;
+using Code.Meta.Features.Shop.Upgrade.Configs;
+using Code.Meta.Features.Shop.Upgrade.Factory;
 using Code.Meta.Features.Shop.Weapon.Behaviours;
-using Code.Meta.Features.Shop.WeaponUpgrade.Configs;
 using Code.Meta.UI.Windows.Service;
 using UnityEngine;
 using UnityEngine.UI;

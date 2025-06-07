@@ -4,7 +4,7 @@ using Code.Gameplay.StaticData;
 using UnityEngine;
 using Zenject;
 
-namespace Code.Meta.UI.HeroSelector.Behaviours
+namespace Code.Meta.Features.Hud.HeroSelector.Behaviours
 {
 	public class HeroUI : MonoBehaviour
 	{

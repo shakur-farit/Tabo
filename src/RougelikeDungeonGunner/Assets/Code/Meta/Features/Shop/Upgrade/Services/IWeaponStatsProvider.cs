@@ -1,10 +1,10 @@
-﻿using Code.Gameplay.Features.Weapon;
-using Code.Gameplay.Features.Weapon.Configs;
+﻿using Code.Gameplay.Features.Weapon.Configs;
 
-namespace Code.Meta.Features.Shop.Weapon.Behaviours
+namespace Code.Meta.Features.Shop.Upgrade.Services
 {
 	public interface IWeaponStatsProvider
 	{
 		float GetFireRange(WeaponConfig config);
+		float GetCooldown(WeaponConfig config);
 	}
 }

@@ -1,8 +1,9 @@
-﻿using Code.Meta.Features.Shop.WeaponUpgrade.Configs;
+﻿using Code.Meta.Features.Shop.Upgrade.Beahaviours;
+using Code.Meta.Features.Shop.Upgrade.Configs;
 using UnityEngine;
 using Zenject;
 
-namespace Code.Meta.Features.Shop.Weapon.Behaviours
+namespace Code.Meta.Features.Shop.Upgrade.Factory
 {
 	public class WeaponUpgradeShopItemFactory : IWeaponUpgradeShopItemFactory
 	{

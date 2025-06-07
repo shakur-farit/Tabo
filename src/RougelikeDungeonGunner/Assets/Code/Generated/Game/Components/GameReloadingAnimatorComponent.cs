@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Code.Meta.Features.Hud.WeaponHolder.Behaviours;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherReloadingAnimator;
@@ -34,10 +37,10 @@ public sealed partial class GameMatcher {
 public partial class GameEntity {
 
     public Code.Gameplay.Features.Weapon.ReloadingAnimatorComponent reloadingAnimator { get { return (Code.Gameplay.Features.Weapon.ReloadingAnimatorComponent)GetComponent(GameComponentsLookup.ReloadingAnimator); } }
-    public Code.Meta.UI.WeaponHolder.Behaviours.ReloadingAnimator ReloadingAnimator { get { return reloadingAnimator.Value; } }
+    public ReloadingAnimator ReloadingAnimator { get { return reloadingAnimator.Value; } }
     public bool hasReloadingAnimator { get { return HasComponent(GameComponentsLookup.ReloadingAnimator); } }
 
-    public GameEntity AddReloadingAnimator(Code.Meta.UI.WeaponHolder.Behaviours.ReloadingAnimator newValue) {
+    public GameEntity AddReloadingAnimator(ReloadingAnimator newValue) {
         var index = GameComponentsLookup.ReloadingAnimator;
         var component = (Code.Gameplay.Features.Weapon.ReloadingAnimatorComponent)CreateComponent(index, typeof(Code.Gameplay.Features.Weapon.ReloadingAnimatorComponent));
         component.Value = newValue;
@@ -45,7 +48,7 @@ public partial class GameEntity {
         return this;
     }
 
-    public GameEntity ReplaceReloadingAnimator(Code.Meta.UI.WeaponHolder.Behaviours.ReloadingAnimator newValue) {
+    public GameEntity ReplaceReloadingAnimator(ReloadingAnimator newValue) {
         var index = GameComponentsLookup.ReloadingAnimator;
         var component = (Code.Gameplay.Features.Weapon.ReloadingAnimatorComponent)CreateComponent(index, typeof(Code.Gameplay.Features.Weapon.ReloadingAnimatorComponent));
         component.Value = newValue;

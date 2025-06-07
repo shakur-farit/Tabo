@@ -1,7 +1,7 @@
 using Entitas;
 using Zenject;
 
-namespace Code.Infrastructure
+namespace Code.Infrastructure.Systems
 {
 	public class SystemsFactory : ISystemsFactory
 	{

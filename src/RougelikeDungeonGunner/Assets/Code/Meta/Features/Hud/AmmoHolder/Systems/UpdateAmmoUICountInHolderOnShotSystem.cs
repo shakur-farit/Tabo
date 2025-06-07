@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Entitas;
 
-namespace Code.Meta.UI.AmmoHolder.Systems
+namespace Code.Meta.Features.Hud.AmmoHolder.Systems
 {
 	public class UpdateAmmoUICountInHolderOnShotSystem : ReactiveSystem<GameEntity>
 	{

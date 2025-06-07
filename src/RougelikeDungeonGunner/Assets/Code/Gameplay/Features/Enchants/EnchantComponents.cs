@@ -1,5 +1,5 @@
 ﻿using Code.Gameplay.Features.Enchants.Behaviours;
-using Code.Meta.UI.EnchantHolder.Behaviours;
+using Code.Meta.Features.Hud.EnchantHolder.Behaviours;
 using Entitas;
 using UnityEngine;
 

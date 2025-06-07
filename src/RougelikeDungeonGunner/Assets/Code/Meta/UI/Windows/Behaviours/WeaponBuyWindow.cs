@@ -5,6 +5,7 @@ using Code.Meta.UI.Windows.Service;
 using Code.Progress.Provider;
 using System.Collections.Generic;
 using System.Linq;
+using Code.Meta.Features.Shop.Weapon.Factory;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;

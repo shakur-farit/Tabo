@@ -1,7 +1,7 @@
 using System;
 using Code.Gameplay.Features.Weapon;
 
-namespace Code.Progress.Data
+namespace Code.Progress.Data.Transient
 {
 	public class HeroData
 	{

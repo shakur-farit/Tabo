@@ -1,7 +1,6 @@
-﻿using Code.Meta.Features.Shop.WeaponUpgrade;
-using Code.Meta.Features.Shop.WeaponUpgrade.Configs;
+﻿using Code.Meta.Features.Shop.Upgrade.Configs;
 
-namespace Code.Meta.Features.Shop.Weapon.Behaviours
+namespace Code.Meta.Features.Shop.Upgrade.Services
 {
 	public interface IWeaponUpgradeService
 	{

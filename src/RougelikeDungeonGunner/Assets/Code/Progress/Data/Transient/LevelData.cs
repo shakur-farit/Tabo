@@ -1,4 +1,4 @@
-namespace Code.Progress.Data
+namespace Code.Progress.Data.Transient
 {
 	public class LevelData
 	{

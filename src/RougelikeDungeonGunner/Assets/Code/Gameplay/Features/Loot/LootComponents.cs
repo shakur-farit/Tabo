@@ -1,4 +1,4 @@
-﻿using Code.Meta.UI.CoinsHolder.Behaviours;
+﻿using Code.Meta.Features.Hud.CoinsHolder.Behaviours;
 using Entitas;
 
 namespace Code.Gameplay.Features.Loot

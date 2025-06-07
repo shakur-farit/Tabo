@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
-using Code.Meta.UI.AmmoHolder.Factory;
+using Code.Meta.Features.Hud.AmmoHolder.Factory;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 using Zenject;
 
-namespace Code.Meta.UI.AmmoHolder.Behaviours
+namespace Code.Meta.Features.Hud.AmmoHolder.Behaviours
 {
 	public class AmmoHolderBehaviour : MonoBehaviour
 	{

@@ -4,7 +4,7 @@ using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Code.Meta.UI.WeaponHolder.Behaviours
+namespace Code.Meta.Features.Hud.WeaponHolder.Behaviours
 {
 	public class ReloadingAnimator : MonoBehaviour
 	{

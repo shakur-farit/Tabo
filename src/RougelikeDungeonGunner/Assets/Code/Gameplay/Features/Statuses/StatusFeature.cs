@@ -1,6 +1,7 @@
 ﻿using Code.Gameplay.Features.Statuses.Systems;
 using Code.Gameplay.Features.Statuses.Systems.StatusVisuals;
 using Code.Infrastructure;
+using Code.Infrastructure.Systems;
 
 namespace Code.Gameplay.Features.Statuses
 {

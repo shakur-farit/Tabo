@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Entitas;
 
-namespace Code.Meta.UI.WeaponHolder.Systems
+namespace Code.Meta.Features.Hud.WeaponHolder.Systems
 {
 	public class UpdateWeaponIconInHolderSystem : ReactiveSystem<GameEntity>
 	{

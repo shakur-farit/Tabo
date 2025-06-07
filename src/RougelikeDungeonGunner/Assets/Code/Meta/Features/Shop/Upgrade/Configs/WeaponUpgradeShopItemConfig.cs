@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
-using UnityEngine.Serialization;
 
-namespace Code.Meta.Features.Shop.WeaponUpgrade.Configs
+namespace Code.Meta.Features.Shop.Upgrade.Configs
 {
 	[CreateAssetMenu(menuName = "Dungeon Gunner/Shop/Weapon Upgrade Item Config", fileName = "UpgradeItemConfig")]
 	public class WeaponUpgradeShopItemConfig : ScriptableObject
@@ -9,6 +8,7 @@ namespace Code.Meta.Features.Shop.WeaponUpgrade.Configs
 		public WeaponUpgradeShopItemTypeId TypeId;
 		public GameObject ViewPrefab;
 		[Range(0, 1000)] public int Price;
-		[FormerlySerializedAs("UpgareValue")] [Range(0, 1000)] public float UpgradeValue;
+		[Range(0, 1000)] public float UpgradeValue;
+		[Range(0, 1000)] public float MaxUpgradeValue;
 	}
 }

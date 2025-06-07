@@ -1,4 +1,6 @@
 using Code.Progress.Data;
+using Code.Progress.Data.Progress;
+using Code.Progress.Data.Transient;
 
 namespace Code.Progress.Provider
 {

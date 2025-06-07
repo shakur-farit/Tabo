@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Code.Meta.UI.EnchantHolder.Behaviours
+namespace Code.Meta.Features.Hud.EnchantHolder.Behaviours
 {
 	public class EnchantUI : MonoBehaviour
 	{

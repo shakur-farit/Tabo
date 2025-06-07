@@ -1,4 +1,4 @@
-﻿using Code.Meta.UI.AmmoHolder.Behaviours;
+﻿using Code.Meta.Features.Hud.AmmoHolder.Behaviours;
 using Entitas;
 
 namespace Code.Gameplay.Features.Ammo

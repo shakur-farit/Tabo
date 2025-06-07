@@ -1,6 +1,7 @@
 using Code.Infrastructure.States.StateInfrastructure;
 using Code.Infrastructure.States.StateMachine;
-using Code.Progress.Data;
+using Code.Progress.Data.Progress;
+using Code.Progress.Data.Transient;
 using Code.Progress.Provider;
 
 namespace Code.Infrastructure.States.GameStates

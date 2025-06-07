@@ -2,7 +2,7 @@
 using Code.Gameplay.Features.Weapon;
 using Entitas;
 
-namespace Code.Meta.UI.WeaponHolder.Systems
+namespace Code.Meta.Features.Hud.WeaponHolder.Systems
 {
 	public class UpdateWeaponNameInHolderSystem : ReactiveSystem<GameEntity>
 	{

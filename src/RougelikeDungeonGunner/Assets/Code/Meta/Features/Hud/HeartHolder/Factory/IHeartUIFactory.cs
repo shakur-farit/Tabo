@@ -1,7 +1,7 @@
 ﻿using Cysharp.Threading.Tasks;
 using UnityEngine;
 
-namespace Code.Meta.UI.HeartHolder.Factory
+namespace Code.Meta.Features.Hud.HeartHolder.Factory
 {
 	public interface IHeartUIFactory
 	{

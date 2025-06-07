@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Code.Meta.Features.Hud.AmmoHolder.Behaviours;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherAmmoHolder;
@@ -34,10 +37,10 @@ public sealed partial class GameMatcher {
 public partial class GameEntity {
 
     public Code.Gameplay.Features.Ammo.AmmoHolder ammoHolder { get { return (Code.Gameplay.Features.Ammo.AmmoHolder)GetComponent(GameComponentsLookup.AmmoHolder); } }
-    public Code.Meta.UI.AmmoHolder.Behaviours.AmmoHolderBehaviour AmmoHolder { get { return ammoHolder.Value; } }
+    public AmmoHolderBehaviour AmmoHolder { get { return ammoHolder.Value; } }
     public bool hasAmmoHolder { get { return HasComponent(GameComponentsLookup.AmmoHolder); } }
 
-    public GameEntity AddAmmoHolder(Code.Meta.UI.AmmoHolder.Behaviours.AmmoHolderBehaviour newValue) {
+    public GameEntity AddAmmoHolder(AmmoHolderBehaviour newValue) {
         var index = GameComponentsLookup.AmmoHolder;
         var component = (Code.Gameplay.Features.Ammo.AmmoHolder)CreateComponent(index, typeof(Code.Gameplay.Features.Ammo.AmmoHolder));
         component.Value = newValue;
@@ -45,7 +48,7 @@ public partial class GameEntity {
         return this;
     }
 
-    public GameEntity ReplaceAmmoHolder(Code.Meta.UI.AmmoHolder.Behaviours.AmmoHolderBehaviour newValue) {
+    public GameEntity ReplaceAmmoHolder(AmmoHolderBehaviour newValue) {
         var index = GameComponentsLookup.AmmoHolder;
         var component = (Code.Gameplay.Features.Ammo.AmmoHolder)CreateComponent(index, typeof(Code.Gameplay.Features.Ammo.AmmoHolder));
         component.Value = newValue;

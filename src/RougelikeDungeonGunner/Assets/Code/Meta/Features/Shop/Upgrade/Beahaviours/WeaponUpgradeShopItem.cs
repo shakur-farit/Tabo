@@ -1,14 +1,16 @@
 ﻿using System.Text.RegularExpressions;
+using Code.Gameplay.Features.Weapon;
+using Code.Gameplay.Features.Weapon.Configs;
 using Code.Gameplay.StaticData;
-using Code.Meta.Features.Shop.WeaponUpgrade;
-using Code.Meta.Features.Shop.WeaponUpgrade.Configs;
+using Code.Meta.Features.Shop.Upgrade.Configs;
+using Code.Meta.Features.Shop.Upgrade.Services;
 using Code.Progress.Provider;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
 
-namespace Code.Meta.Features.Shop.Weapon.Behaviours
+namespace Code.Meta.Features.Shop.Upgrade.Beahaviours
 {
 	public class WeaponUpgradeShopItem : MonoBehaviour
 	{
@@ -66,8 +68,8 @@ namespace Code.Meta.Features.Shop.Weapon.Behaviours
 
 		private string UpdateCurrentValueText()
 		{
-			var currentWeapon = _progressProvider.HeroData.CurrentWeaponTypeId;
-			var weaponConfig = _staticDataService.GetWeaponConfig(currentWeapon);
+			WeaponTypeId currentWeapon = _progressProvider.HeroData.CurrentWeaponTypeId;
+			WeaponConfig weaponConfig = _staticDataService.GetWeaponConfig(currentWeapon);
 
 			switch (_config.TypeId)
 			{

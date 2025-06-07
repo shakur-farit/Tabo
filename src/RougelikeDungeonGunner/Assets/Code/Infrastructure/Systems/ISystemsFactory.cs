@@ -1,6 +1,6 @@
 using Entitas;
 
-namespace Code.Infrastructure
+namespace Code.Infrastructure.Systems
 {
 	public interface ISystemsFactory
 	{

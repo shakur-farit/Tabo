@@ -1,6 +1,6 @@
 using Cysharp.Threading.Tasks;
 
-namespace Code.Infrastructure.View
+namespace Code.Infrastructure.View.Factory
 {
 	public interface IEntityViewFactory
 	{

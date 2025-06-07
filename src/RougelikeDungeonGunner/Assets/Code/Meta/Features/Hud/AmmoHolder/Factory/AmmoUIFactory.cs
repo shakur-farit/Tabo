@@ -3,7 +3,7 @@ using Cysharp.Threading.Tasks;
 using UnityEngine;
 using Zenject;
 
-namespace Code.Meta.UI.AmmoHolder.Factory
+namespace Code.Meta.Features.Hud.AmmoHolder.Factory
 {
 	public class AmmoUIFactory : IAmmoUIFactory
 	{

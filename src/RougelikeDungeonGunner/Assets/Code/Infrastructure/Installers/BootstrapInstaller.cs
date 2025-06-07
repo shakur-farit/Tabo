@@ -25,11 +25,14 @@ using Code.Infrastructure.Loading;
 using Code.Infrastructure.States.Factory;
 using Code.Infrastructure.States.GameStates;
 using Code.Infrastructure.States.StateMachine;
-using Code.Infrastructure.View;
-using Code.Meta.Features.Shop.Weapon.Behaviours;
-using Code.Meta.UI.AmmoHolder.Factory;
-using Code.Meta.UI.EnchantHolder.Factory;
-using Code.Meta.UI.HeartHolder.Factory;
+using Code.Infrastructure.Systems;
+using Code.Infrastructure.View.Factory;
+using Code.Meta.Features.Hud.AmmoHolder.Factory;
+using Code.Meta.Features.Hud.EnchantHolder.Factory;
+using Code.Meta.Features.Hud.HeartHolder.Factory;
+using Code.Meta.Features.Shop.Upgrade.Factory;
+using Code.Meta.Features.Shop.Upgrade.Services;
+using Code.Meta.Features.Shop.Weapon.Factory;
 using Code.Meta.UI.Windows.Factory;
 using Code.Meta.UI.Windows.Service;
 using Code.Progress.Provider;
@@ -109,6 +112,8 @@ namespace Code.Infrastructure.Installers
 			Container.Bind<ILevelEnvironmentService>().To<LevelEnvironmentService>().AsSingle();
 			Container.Bind<ILootRandomizerService>().To<LootRandomizerService>().AsSingle();
 			Container.Bind<IWeaponStatsProvider>().To<WeaponStatsProvider>().AsSingle();
+			Container.Bind<IWeaponUpgradeValidator>().To<WeaponUpgradeValidator>().AsSingle();
+			Container.Bind<IWeaponUpgradeService>().To<WeaponUpgradeService>().AsSingle();
 		}
 
 		private void BindGameplayFactories()
@@ -139,7 +144,6 @@ namespace Code.Infrastructure.Installers
 		private void BindUIServices()
 		{
 			Container.Bind<IWindowService>().To<WindowService>().AsSingle();
-			Container.Bind<IWeaponUpgradeService>().To<WeaponUpgradeService>().AsSingle();
 		}
 
 		private void BindSystemFactory()
