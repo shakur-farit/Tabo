@@ -6,9 +6,6 @@ using Code.Infrastructure.Identifiers;
 using System;
 using Code.Gameplay.Features.Weapon.Configs;
 using Code.Meta.Features.Shop.Upgrade.Services;
-using Code.Meta.Features.Shop.Weapon.Behaviours;
-using Code.Progress.Data;
-using Code.Progress.Provider;
 using UnityEngine;
 
 namespace Code.Gameplay.Features.Weapon.Factory
@@ -101,6 +98,8 @@ namespace Code.Gameplay.Features.Weapon.Factory
 		{
 			WeaponConfig config = _staticDataService.GetWeaponConfig(weaponTypeId);
 
+			Debug.Log($"{_statsProvider.GetMinSpreadAngle(config)} / {_statsProvider.GetMaxSpreadAngle(config)}");
+
 			return CreateEntity.Empty()
 					.AddId(_identifier.Next())
 					.AddWeaponTypeId(weaponTypeId)
@@ -109,22 +108,28 @@ namespace Code.Gameplay.Features.Weapon.Factory
 					.AddWeaponOwnerId(ownerId)
 					.AddWorldPosition(at)
 					.AddRadius(_statsProvider.GetFireRange(config))
-					.AddMinPelletsSpreadAngle(config.Stats.MinSpreadAngle)
-					.AddMaxPelletsSpreadAngle(config.Stats.MaxSpreadAngle)
-					.AddCooldown(config.Stats.Cooldown)
-					.AddMaxWeaponEnchantsCount(config.Stats.EnchantSlots)
+					.AddMinPelletsSpreadAngle(_statsProvider.GetMinSpreadAngle(config))
+					.AddMaxPelletsSpreadAngle(_statsProvider.GetMaxSpreadAngle(config))
+					.AddCooldown(_statsProvider.GetCooldown(config))
+					.AddMaxWeaponEnchantsCount(_statsProvider.GetEnchantSlots(config))
 					.With(x => x.isWeapon = true)
 					.With(x => x.isReadyToCollectTargets = true)
 					.With(x => x.isMagazineNotEmpty = true)
 					.With(x => x.isReadyToShoot = true)
 					.With(x => x.AddMultiPellet(config.Stats.PelletCount), when: config.Stats.PelletCount > 1)
-					.With(x => x.AddPrechargeTime(config.Stats.PrechargingTime), when: config.Stats.PrechargingTime > 0)
-					.With(x => x.AddPrechargeTimeLeft(config.Stats.PrechargingTime), when: config.Stats.PrechargingTime > 0)
-					.With(x => x.AddMagazineSize(config.Stats.MagazineSize), when: config.Stats.isInfinityAmmo == false)
+					.With(x => 
+						x.AddPrechargeTime(_statsProvider.GetPrechargingTime(config)), when: _statsProvider.GetPrechargingTime(config) > 0)
+					.With(x => 
+						x.AddPrechargeTimeLeft(_statsProvider.GetPrechargingTime(config)), when: _statsProvider.GetPrechargingTime(config) > 0)
+					.With(x => x.AddMagazineSize(_statsProvider.GetMagazineSize(config)), when: config.Stats.isInfinityAmmo == false)
 					.With(x => x.isInfinityAmmo = true, when: config.Stats.isInfinityAmmo)
-					.With(x => x.AddCurrentAmmoCount(config.Stats.MagazineSize), when: config.Stats.isInfinityAmmo == false)
-					.With(x => x.AddReloadTime(config.Stats.ReloadTime), when: config.Stats.ReloadTime > 0 && config.Stats.isInfinityAmmo == false)
-					.With(x => x.AddReloadTimeLeft(config.Stats.ReloadTime), when: config.Stats.ReloadTime > 0 && config.Stats.isInfinityAmmo == false)
+					.With(x => x.AddCurrentAmmoCount(_statsProvider.GetMagazineSize(config)), when: config.Stats.isInfinityAmmo == false)
+					.With(x => 
+						x.AddReloadTime(_statsProvider.GetReloadTime(config)), 
+						when: _statsProvider.GetReloadTime(config) > 0 && config.Stats.isInfinityAmmo == false)
+					.With(x => 
+						x.AddReloadTimeLeft(_statsProvider.GetReloadTime(config)), 
+						when: _statsProvider.GetReloadTime(config) > 0 && config.Stats.isInfinityAmmo == false)
 					.With(x => x.AddEffectSetups(config.EffectSetups), when: config.EffectSetups.IsNullOrEmpty() == false)
 					.With(x => x.AddStatusSetups(config.StatusSetups), when: config.StatusSetups.IsNullOrEmpty() == false)
 					.PutOnCooldown()

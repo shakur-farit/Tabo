@@ -1,7 +1,5 @@
 ﻿using System.Collections.Generic;
 using Code.Gameplay.Features.Weapon.Factory;
-using Code.Gameplay.StaticData;
-using Code.Progress.Provider;
 using Entitas;
 using UnityEngine;
 

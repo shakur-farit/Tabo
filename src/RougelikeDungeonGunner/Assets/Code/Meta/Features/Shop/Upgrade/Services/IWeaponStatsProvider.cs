@@ -8,8 +8,10 @@ namespace Code.Meta.Features.Shop.Upgrade.Services
 		float GetCooldown(WeaponConfig config);
 		float GetReloadTime(WeaponConfig config);
 		float GetPrechargingTime(WeaponConfig config);
-		float GetMagazineSize(WeaponConfig config);
+		int GetMagazineSize(WeaponConfig config);
 		float GetAccuracy(WeaponConfig config);
-		float GetEnchantSlots(WeaponConfig config);
+		int GetEnchantSlots(WeaponConfig config);
+		float GetMinSpreadAngle(WeaponConfig config);
+		float GetMaxSpreadAngle(WeaponConfig config);
 	}
 }

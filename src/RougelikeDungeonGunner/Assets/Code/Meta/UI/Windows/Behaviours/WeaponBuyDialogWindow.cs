@@ -16,16 +16,16 @@ namespace Code.Meta.UI.Windows.Behaviours
 
 		private IWindowService _windowService;
 		private IProgressProvider _progressProvider;
-		private IWeaponUpgradeService _upgradeService;
+		private IWeaponUpgradesCleaner _upgraderCleaner;
 
 		[Inject]
-		public void Constructor(IWindowService windowService, IProgressProvider progressProvider, IWeaponUpgradeService upgradeService)
+		public void Constructor(IWindowService windowService, IProgressProvider progressProvider, IWeaponUpgradesCleaner upgraderCleaner)
 		{
 			Id = WindowId.WeaponBuyDialogWindow;
 
 			_windowService = windowService;
 			_progressProvider = progressProvider;
-			_upgradeService = upgradeService;
+			_upgraderCleaner = upgraderCleaner;
 		}
 
 		protected override void Initialize()
@@ -42,7 +42,7 @@ namespace Code.Meta.UI.Windows.Behaviours
 				return;
 
 			SubtractPrice();
-			RemoveUpgrades();
+			CleanUpgrades();
 			ChangeCurrentWeapon();
 			CloseWindow();
 		}
@@ -57,8 +57,8 @@ namespace Code.Meta.UI.Windows.Behaviours
 			_progressProvider.ShopData.WeaponToBuyConfig = null;
 		}
 
-		private void RemoveUpgrades() => 
-			_upgradeService.RemoveUpgrades();
+		private void CleanUpgrades() => 
+			_upgraderCleaner.CleanUpgrades();
 
 		private bool IsNotEnoughCoins() => 
 			_progressProvider.HeroData.CurrentCoinsCount < _progressProvider.ShopData.WeaponToBuyConfig.Price;

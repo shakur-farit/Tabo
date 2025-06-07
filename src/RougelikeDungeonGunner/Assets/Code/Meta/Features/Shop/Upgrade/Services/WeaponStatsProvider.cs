@@ -9,26 +9,26 @@ namespace Code.Meta.Features.Shop.Upgrade.Services
 		private const float GLOBAL_MAX = 100f;
 		private const float GLOBAL_SPREAD = GLOBAL_MAX - GLOBAL_MIN;
 
-		private readonly IWeaponUpgradeService _upgradeService;
+		private readonly IWeaponUpgradesProvider _provider;
 
-		public WeaponStatsProvider(IWeaponUpgradeService upgradeService) => 
-			_upgradeService = upgradeService;
+		public WeaponStatsProvider(IWeaponUpgradesProvider provider) => 
+			_provider = provider;
 
 
 		public float GetFireRange(WeaponConfig config) => 
-			config.Stats.FireRange + _upgradeService.GetUpgradeBonus(WeaponUpgradeShopItemTypeId.FireRange);
+			config.Stats.FireRange + _provider.GetUpgradeBonus(WeaponUpgradeShopItemTypeId.FireRange);
 
 		public float GetCooldown(WeaponConfig config) => 
-			config.Stats.Cooldown  - _upgradeService.GetUpgradeBonus(WeaponUpgradeShopItemTypeId.Cooldown);
+			config.Stats.Cooldown  - _provider.GetUpgradeBonus(WeaponUpgradeShopItemTypeId.Cooldown);
 		
 		public float GetReloadTime(WeaponConfig config) =>
-			config.Stats.ReloadTime - _upgradeService.GetUpgradeBonus(WeaponUpgradeShopItemTypeId.ReloadTime);
+			config.Stats.ReloadTime - _provider.GetUpgradeBonus(WeaponUpgradeShopItemTypeId.ReloadTime);
 
 		public float GetPrechargingTime(WeaponConfig config) =>
-			config.Stats.PrechargingTime - _upgradeService.GetUpgradeBonus(WeaponUpgradeShopItemTypeId.PrechargingTime);
+			config.Stats.PrechargingTime - _provider.GetUpgradeBonus(WeaponUpgradeShopItemTypeId.PrechargingTime);
 
-		public float GetMagazineSize(WeaponConfig config) =>
-			config.Stats.MagazineSize + _upgradeService.GetUpgradeBonus(WeaponUpgradeShopItemTypeId.MagazineSize);
+		public int GetMagazineSize(WeaponConfig config) =>
+			config.Stats.MagazineSize + (int)_provider.GetUpgradeBonus(WeaponUpgradeShopItemTypeId.MagazineSize);
 
 		public float GetAccuracy(WeaponConfig config)
 		{
@@ -39,29 +39,45 @@ namespace Code.Meta.Features.Shop.Upgrade.Services
 
 			float baseAccuracy01 = 1f - (spread / 200f);
 
-			float accuracyBonusPercent = _upgradeService.GetUpgradeBonus(WeaponUpgradeShopItemTypeId.Accuracy);
+			float accuracyBonusPercent = _provider.GetUpgradeBonus(WeaponUpgradeShopItemTypeId.Accuracy);
 			float upgradedAccuracy01 = baseAccuracy01 + (accuracyBonusPercent / 100f);
 
-			return Mathf.Clamp(upgradedAccuracy01 * 100f, 0f, 100f);
+			float clamped = Mathf.Clamp01(upgradedAccuracy01);
+
+			return Mathf.Lerp(-100f, 100f, clamped);
 		}
 
-		public float GetEnchantSlots(WeaponConfig config) =>
-			config.Stats.EnchantSlots + _upgradeService.GetUpgradeBonus(WeaponUpgradeShopItemTypeId.EnchantSlots);
+		public int GetEnchantSlots(WeaponConfig config) =>
+			config.Stats.EnchantSlots + (int)_provider.GetUpgradeBonus(WeaponUpgradeShopItemTypeId.EnchantSlots);
 
 		public float GetMinSpreadAngle(WeaponConfig config)
 		{
-			float accuracy = GetAccuracy(config);
-			float actualSpread = GLOBAL_SPREAD * (1 - accuracy);
-			float center = (config.Stats.MinSpreadAngle + config.Stats.MaxSpreadAngle) / 2f;
-			return center - actualSpread / 2f;
+			float rawAccuracy = GetAccuracy(config);
+			float normalizedAccuracy = Mathf.InverseLerp(GLOBAL_MIN, GLOBAL_MAX, rawAccuracy);
+
+			float min = config.Stats.MinSpreadAngle;
+			float max = config.Stats.MaxSpreadAngle;
+
+			float fullSpread = max - min;
+			float reducedSpread = fullSpread * (1f - normalizedAccuracy);
+			float center = (min + max) / 2f;
+
+			return center - reducedSpread / 2f;
 		}
 
 		public float GetMaxSpreadAngle(WeaponConfig config)
 		{
-			float accuracy = GetAccuracy(config);
-			float actualSpread = GLOBAL_SPREAD * (1 - accuracy);
-			float center = (config.Stats.MinSpreadAngle + config.Stats.MaxSpreadAngle) / 2f;
-			return center + actualSpread / 2f;
+			float rawAccuracy = GetAccuracy(config);
+			float normalizedAccuracy = Mathf.InverseLerp(GLOBAL_MIN, GLOBAL_MAX, rawAccuracy); 
+
+			float min = config.Stats.MinSpreadAngle;
+			float max = config.Stats.MaxSpreadAngle;
+
+			float fullSpread = max - min;
+			float reducedSpread = fullSpread * (1f - normalizedAccuracy);
+			float center = (min + max) / 2f;
+
+			return center + reducedSpread / 2f;
 		}
 	}
 }

@@ -1,7 +1,6 @@
 ﻿using Code.Gameplay.StaticData;
 using Code.Meta.Features.Shop.Upgrade.Configs;
 using Code.Progress.Provider;
-using UnityEngine;
 
 namespace Code.Meta.Features.Shop.Upgrade.Services
 {

@@ -2,10 +2,8 @@
 
 namespace Code.Meta.Features.Shop.Upgrade.Services
 {
-	public interface IWeaponUpgradeService
+	public interface IWeaponUpgrader
 	{
 		void Upgrade(WeaponUpgradeShopItemConfig config);
-		float GetUpgradeBonus(WeaponUpgradeShopItemTypeId typeId);
-		void RemoveUpgrades();
 	}
 }

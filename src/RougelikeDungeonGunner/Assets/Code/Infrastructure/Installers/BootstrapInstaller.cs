@@ -111,9 +111,10 @@ namespace Code.Infrastructure.Installers
 			Container.Bind<IStatusApplier>().To<StatusApplier>().AsSingle();
 			Container.Bind<ILevelEnvironmentService>().To<LevelEnvironmentService>().AsSingle();
 			Container.Bind<ILootRandomizerService>().To<LootRandomizerService>().AsSingle();
-			Container.Bind<IWeaponStatsProvider>().To<WeaponStatsProvider>().AsSingle();
 			Container.Bind<IWeaponUpgradeValidator>().To<WeaponUpgradeValidator>().AsSingle();
-			Container.Bind<IWeaponUpgradeService>().To<WeaponUpgradeService>().AsSingle();
+			Container.Bind<IWeaponStatsProvider>().To<WeaponStatsProvider>().AsSingle();
+			Container.Bind<IWeaponUpgrader>().To<WeaponUpgrader>().AsSingle();
+			Container.BindInterfacesAndSelfTo<WeaponUpgrades>().AsSingle();
 		}
 
 		private void BindGameplayFactories()

@@ -257,7 +257,8 @@ MonoBehaviour:
   - m_GUID: ba6f7193f65ce01449ef3954de34356f
     m_Address: Assets/StaticData/Shop/Upgrade/UpgradeItemConfig.asset
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - WeaponUpgradeShopItemConfig
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e69a30b632eb7ae4ab02e65973d32831
     m_Address: Assets/StaticData/Window/WeaponUpgradeWindowConfig.asset

@@ -22,19 +22,19 @@ namespace Code.Meta.Features.Shop.Upgrade.Beahaviours
 		private WeaponUpgradeShopItemConfig _config;
 
 		private IProgressProvider _progressProvider;
-		private IWeaponUpgradeService _weaponUpgradeService;
+		private IWeaponUpgrader _weaponUpgrader;
 		private IWeaponStatsProvider _statsProvider;
 		private IStaticDataService _staticDataService;
 
 		[Inject]
 		public void Constructor(
 			IProgressProvider progressProvider, 
-			IWeaponUpgradeService weaponUpgradeService,
+			IWeaponUpgrader weaponUpgrader,
 			IWeaponStatsProvider statsProvider,
 			IStaticDataService staticDataService)
 		{
 			_progressProvider = progressProvider;
-			_weaponUpgradeService = weaponUpgradeService;
+			_weaponUpgrader = weaponUpgrader;
 			_statsProvider = statsProvider;
 			_staticDataService = staticDataService;
 		}
@@ -61,7 +61,7 @@ namespace Code.Meta.Features.Shop.Upgrade.Beahaviours
 
 		private void Upgrade()
 		{
-			_weaponUpgradeService.Upgrade(_config);
+			_weaponUpgrader.Upgrade(_config);
 
 			_statValueText.text = UpdateCurrentValueText();
 		}
