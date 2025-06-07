@@ -4,6 +4,7 @@ using Code.Gameplay.Features.Effects;
 using Code.Gameplay.Features.Statuses;
 using Code.Infrastructure.View;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Code.Gameplay.Features.Weapon.Configs
 {
@@ -34,7 +35,7 @@ namespace Code.Gameplay.Features.Weapon.Configs
 		[Range(0, 10)] public int PelletCount = 1;
 		[Range(-100f, 100f)] public float MinSpreadAngle;
 		[Range(-100f, 100f)] public float MaxSpreadAngle;
-		[Range(0, 10)] public int MaxEnchantsCount;
+		[Range(0, 5)] public int EnchantSlots;
 
 		private void OnValidate()
 		{

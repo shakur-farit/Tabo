@@ -17,18 +17,15 @@ namespace Code.Gameplay.Features.Weapon.Factory
 	{
 		private readonly IIdentifierService _identifier;
 		private readonly IStaticDataService _staticDataService;
-		private readonly IProgressProvider _progressProvider;
 		private readonly IWeaponStatsProvider _statsProvider;
 
 		public WeaponFactory(
 			IIdentifierService identifier, 
 			IStaticDataService staticDataService,
-			IProgressProvider progressProvider,
 			IWeaponStatsProvider statsProvider)
 		{
 			_identifier = identifier;
 			_staticDataService = staticDataService;
-			_progressProvider = progressProvider;
 			_statsProvider = statsProvider;
 		}
 
@@ -115,7 +112,7 @@ namespace Code.Gameplay.Features.Weapon.Factory
 					.AddMinPelletsSpreadAngle(config.Stats.MinSpreadAngle)
 					.AddMaxPelletsSpreadAngle(config.Stats.MaxSpreadAngle)
 					.AddCooldown(config.Stats.Cooldown)
-					.AddMaxWeaponEnchantsCount(config.Stats.MaxEnchantsCount)
+					.AddMaxWeaponEnchantsCount(config.Stats.EnchantSlots)
 					.With(x => x.isWeapon = true)
 					.With(x => x.isReadyToCollectTargets = true)
 					.With(x => x.isMagazineNotEmpty = true)

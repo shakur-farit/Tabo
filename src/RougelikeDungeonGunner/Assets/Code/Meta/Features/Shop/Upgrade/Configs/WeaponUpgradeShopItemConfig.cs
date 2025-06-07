@@ -9,6 +9,5 @@ namespace Code.Meta.Features.Shop.Upgrade.Configs
 		public GameObject ViewPrefab;
 		[Range(0, 1000)] public int Price;
 		[Range(0, 1000)] public float UpgradeValue;
-		[Range(0, 1000)] public float MaxUpgradeValue;
 	}
 }

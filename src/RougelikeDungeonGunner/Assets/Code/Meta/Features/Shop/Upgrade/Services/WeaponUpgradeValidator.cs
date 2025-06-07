@@ -29,9 +29,24 @@ namespace Code.Meta.Features.Shop.Upgrade.Services
 			switch (config.TypeId)
 			{
 				case WeaponUpgradeShopItemTypeId.Cooldown:
-					float currentCooldown = _statsProvider.GetCooldown(weaponConfig);
-					float newCooldown = Mathf.Max(0.1f, currentCooldown - config.UpgradeValue);
-					return newCooldown >= 0.1f;
+					float cooldown = _statsProvider.GetCooldown(weaponConfig);
+					return cooldown - config.UpgradeValue >= 0.1f;
+
+				case WeaponUpgradeShopItemTypeId.ReloadTime:
+					float reload = _statsProvider.GetReloadTime(weaponConfig);
+					return reload - config.UpgradeValue >= 0.1f;
+
+				case WeaponUpgradeShopItemTypeId.PrechargingTime:
+					float precharge = _statsProvider.GetPrechargingTime(weaponConfig);
+					return precharge - config.UpgradeValue >= 0.1f;
+
+				case WeaponUpgradeShopItemTypeId.Accuracy:
+					float accuracy = _statsProvider.GetAccuracy(weaponConfig);
+					return accuracy + config.UpgradeValue <= 100f;
+
+				case WeaponUpgradeShopItemTypeId.EnchantSlots:
+					float slots = _statsProvider.GetEnchantSlots(weaponConfig);
+					return slots + config.UpgradeValue <= 10f;
 
 				default:
 					return true;
