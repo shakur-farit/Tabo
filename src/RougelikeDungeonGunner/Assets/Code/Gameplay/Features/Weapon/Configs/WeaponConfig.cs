@@ -33,14 +33,8 @@ namespace Code.Gameplay.Features.Weapon.Configs
 		[Range(0f, 100f)] public float PrechargingTime;
 		[Range(0, 100)] public int MagazineSize;
 		[Range(0, 10)] public int PelletCount = 1;
-		[Range(-100f, 100f)] public float MinSpreadAngle;
-		[Range(-100f, 100f)] public float MaxSpreadAngle;
+		[Tooltip("")]
+		[Range(0f, 100f)] public float Accuracy;
 		[Range(0, 5)] public int EnchantSlots;
-
-		private void OnValidate()
-		{
-			if (MinSpreadAngle > MaxSpreadAngle)
-				MaxSpreadAngle = MinSpreadAngle;
-		}
 	}
 }

@@ -75,6 +75,18 @@ namespace Code.Meta.Features.Shop.Upgrade.Beahaviours
 			{
 				case WeaponUpgradeShopItemTypeId.FireRange:
 					return _statsProvider.GetFireRange(weaponConfig).ToString();
+				case WeaponUpgradeShopItemTypeId.Cooldown:
+					return _statsProvider.GetCooldown(weaponConfig).ToString();
+				case WeaponUpgradeShopItemTypeId.ReloadTime:
+					return _statsProvider.GetReloadTime(weaponConfig).ToString();
+				case WeaponUpgradeShopItemTypeId.PrechargingTime:
+					return _statsProvider.GetPrechargingTime(weaponConfig).ToString();
+				case WeaponUpgradeShopItemTypeId.MagazineSize:
+					return _statsProvider.GetMagazineSize(weaponConfig).ToString();
+				case WeaponUpgradeShopItemTypeId.Accuracy:
+					return _statsProvider.GetAccuracy(weaponConfig).ToString();
+				case WeaponUpgradeShopItemTypeId.EnchantSlots:
+					return _statsProvider.GetEnchantSlots(weaponConfig).ToString();
 				default:
 					return string.Empty;
 			}

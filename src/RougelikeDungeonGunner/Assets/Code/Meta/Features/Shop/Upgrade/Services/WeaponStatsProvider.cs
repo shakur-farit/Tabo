@@ -1,18 +1,19 @@
 ﻿using Code.Gameplay.Features.Weapon.Configs;
+using Code.Gameplay.StaticData;
 using UnityEngine;
 
 namespace Code.Meta.Features.Shop.Upgrade.Services
 {
 	public class WeaponStatsProvider : IWeaponStatsProvider
 	{
-		private const float GLOBAL_MIN = -100f;
-		private const float GLOBAL_MAX = 100f;
-		private const float GLOBAL_SPREAD = GLOBAL_MAX - GLOBAL_MIN;
-
 		private readonly IWeaponUpgradesProvider _provider;
+		private readonly IStaticDataService _staticDataService;
 
-		public WeaponStatsProvider(IWeaponUpgradesProvider provider) => 
+		public WeaponStatsProvider(IWeaponUpgradesProvider provider, IStaticDataService staticDataService)
+		{
 			_provider = provider;
+			_staticDataService = staticDataService;
+		}
 
 
 		public float GetFireRange(WeaponConfig config) => 
@@ -30,54 +31,26 @@ namespace Code.Meta.Features.Shop.Upgrade.Services
 		public int GetMagazineSize(WeaponConfig config) =>
 			config.Stats.MagazineSize + (int)_provider.GetUpgradeBonus(WeaponUpgradeShopItemTypeId.MagazineSize);
 
-		public float GetAccuracy(WeaponConfig config)
-		{
-			float min = config.Stats.MinSpreadAngle;
-			float max = config.Stats.MaxSpreadAngle;
-
-			float spread = Mathf.Abs(max - min);
-
-			float baseAccuracy01 = 1f - (spread / 200f);
-
-			float accuracyBonusPercent = _provider.GetUpgradeBonus(WeaponUpgradeShopItemTypeId.Accuracy);
-			float upgradedAccuracy01 = baseAccuracy01 + (accuracyBonusPercent / 100f);
-
-			float clamped = Mathf.Clamp01(upgradedAccuracy01);
-
-			return Mathf.Lerp(-100f, 100f, clamped);
-		}
+		public float GetAccuracy(WeaponConfig config) => 
+			config.Stats.Accuracy + _provider.GetUpgradeBonus(WeaponUpgradeShopItemTypeId.Accuracy);
 
 		public int GetEnchantSlots(WeaponConfig config) =>
 			config.Stats.EnchantSlots + (int)_provider.GetUpgradeBonus(WeaponUpgradeShopItemTypeId.EnchantSlots);
 
-		public float GetMinSpreadAngle(WeaponConfig config)
+		public float GetMinDeviation(WeaponConfig config) => 
+			-GetHalfSpread(GetAccuracy(config));
+
+		public float GetMaxDeviation(WeaponConfig config) => 
+			GetHalfSpread(GetAccuracy(config));
+
+		private float GetHalfSpread(float accuracy)
 		{
-			float rawAccuracy = GetAccuracy(config);
-			float normalizedAccuracy = Mathf.InverseLerp(GLOBAL_MIN, GLOBAL_MAX, rawAccuracy);
-
-			float min = config.Stats.MinSpreadAngle;
-			float max = config.Stats.MaxSpreadAngle;
-
-			float fullSpread = max - min;
-			float reducedSpread = fullSpread * (1f - normalizedAccuracy);
-			float center = (min + max) / 2f;
-
-			return center - reducedSpread / 2f;
-		}
-
-		public float GetMaxSpreadAngle(WeaponConfig config)
-		{
-			float rawAccuracy = GetAccuracy(config);
-			float normalizedAccuracy = Mathf.InverseLerp(GLOBAL_MIN, GLOBAL_MAX, rawAccuracy); 
-
-			float min = config.Stats.MinSpreadAngle;
-			float max = config.Stats.MaxSpreadAngle;
-
-			float fullSpread = max - min;
-			float reducedSpread = fullSpread * (1f - normalizedAccuracy);
-			float center = (min + max) / 2f;
-
-			return center + reducedSpread / 2f;
+			Debug.Log(accuracy);
+			accuracy = Mathf.Clamp01(accuracy/100f);
+			Debug.Log(accuracy);
+			float spread = _staticDataService.GetBalance().WeaponBalance.MaxSpreadAngle * (1f - accuracy);
+			Debug.Log(spread);
+			return spread * 0.5f;
 		}
 	}
 }

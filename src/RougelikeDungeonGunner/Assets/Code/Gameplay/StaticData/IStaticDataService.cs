@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Code.Common;
 using Code.Gameplay.Features.Ammo;
 using Code.Gameplay.Features.Ammo.Configs;
 using Code.Gameplay.Features.Enchants;
@@ -32,14 +33,15 @@ namespace Code.Gameplay.StaticData
 
 	  UniTask Load();
 
+	  BalanceConfig GetBalance();
 	  AmmoConfig GetAmmoConfig(AmmoTypeId ammoTypeId);
 	  AmmoLevel GetAmmoLevel(AmmoTypeId ammoTypeId, int level);
 	  WeaponConfig GetWeaponConfig(WeaponTypeId weaponTypeId);
 	  EnemyConfig GetEnemyConfig(EnemyTypeId enemyId);
 	  HeroConfig GetHeroConfig(HeroTypeId heroId);
 	  LevelConfig GetLevelConfig(LevelTypeId levelId);
-    LootConfig GetLootConfig(LootTypeId lootId);
-    EnchantConfig GetEnchantConfig(EnchantTypeId id);
+	  LootConfig GetLootConfig(LootTypeId lootId);
+	  EnchantConfig GetEnchantConfig(EnchantTypeId id);
     WindowConfig GetWindowConfig(WindowId id);
     WeaponUpgradeShopItemConfig GetUpgradeShopItemConfig(WeaponUpgradeShopItemTypeId id);
     WeaponShopItemConfig GetWeaponShopItemConfig(WeaponShopItemTypeId id);

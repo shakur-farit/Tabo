@@ -24,8 +24,8 @@ namespace Code.Gameplay.Features.Weapon
 	[Game] public class CurrentAmmoCount : IComponent { public int Value; }
 	[Game] public class MagazineNotEmpty : IComponent { }
 	[Game] public class MultiPellet : IComponent { public int Value; }
-	[Game] public class MinPelletsSpreadAngle : IComponent { public float Value; }
-	[Game] public class MaxPelletsSpreadAngle : IComponent { public float Value; }
+	[Game] public class MinPelletsDeviation : IComponent { public float Value; }
+	[Game] public class MaxPelletsDeviation : IComponent { public float Value; }
 	[Game] public class PrechargeTime : IComponent { public float Value; }
 	[Game] public class PrechargeTimeLeft : IComponent { public float Value; }
 	

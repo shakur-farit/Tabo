@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Code.Meta.Features.Hud.HeartHolder.Behaviours;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherHeartHolder;
@@ -37,10 +34,10 @@ public sealed partial class GameMatcher {
 public partial class GameEntity {
 
     public Code.Gameplay.Features.Hero.HeartHolderComponent heartHolder { get { return (Code.Gameplay.Features.Hero.HeartHolderComponent)GetComponent(GameComponentsLookup.HeartHolder); } }
-    public HeartHolder HeartHolder { get { return heartHolder.Value; } }
+    public Code.Meta.Features.Hud.HeartHolder.Behaviours.HeartHolder HeartHolder { get { return heartHolder.Value; } }
     public bool hasHeartHolder { get { return HasComponent(GameComponentsLookup.HeartHolder); } }
 
-    public GameEntity AddHeartHolder(HeartHolder newValue) {
+    public GameEntity AddHeartHolder(Code.Meta.Features.Hud.HeartHolder.Behaviours.HeartHolder newValue) {
         var index = GameComponentsLookup.HeartHolder;
         var component = (Code.Gameplay.Features.Hero.HeartHolderComponent)CreateComponent(index, typeof(Code.Gameplay.Features.Hero.HeartHolderComponent));
         component.Value = newValue;
@@ -48,7 +45,7 @@ public partial class GameEntity {
         return this;
     }
 
-    public GameEntity ReplaceHeartHolder(HeartHolder newValue) {
+    public GameEntity ReplaceHeartHolder(Code.Meta.Features.Hud.HeartHolder.Behaviours.HeartHolder newValue) {
         var index = GameComponentsLookup.HeartHolder;
         var component = (Code.Gameplay.Features.Hero.HeartHolderComponent)CreateComponent(index, typeof(Code.Gameplay.Features.Hero.HeartHolderComponent));
         component.Value = newValue;

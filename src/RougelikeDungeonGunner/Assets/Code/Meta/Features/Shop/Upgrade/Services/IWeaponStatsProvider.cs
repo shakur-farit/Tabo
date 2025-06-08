@@ -11,7 +11,7 @@ namespace Code.Meta.Features.Shop.Upgrade.Services
 		int GetMagazineSize(WeaponConfig config);
 		float GetAccuracy(WeaponConfig config);
 		int GetEnchantSlots(WeaponConfig config);
-		float GetMinSpreadAngle(WeaponConfig config);
-		float GetMaxSpreadAngle(WeaponConfig config);
+		float GetMinDeviation(WeaponConfig config);
+		float GetMaxDeviation(WeaponConfig config);
 	}
 }

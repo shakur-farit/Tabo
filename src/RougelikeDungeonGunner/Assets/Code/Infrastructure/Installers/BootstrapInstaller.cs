@@ -5,6 +5,7 @@ using Code.Gameplay.Common.Physics;
 using Code.Gameplay.Common.Random;
 using Code.Gameplay.Common.Time;
 using Code.Gameplay.Features.Ammo.Factory;
+using Code.Gameplay.Features.Ammo.Systems;
 using Code.Gameplay.Features.Effects.Factory;
 using Code.Gameplay.Features.Enchants.Factory;
 using Code.Gameplay.Features.Enemy.Factory;
@@ -115,6 +116,7 @@ namespace Code.Infrastructure.Installers
 			Container.Bind<IWeaponStatsProvider>().To<WeaponStatsProvider>().AsSingle();
 			Container.Bind<IWeaponUpgrader>().To<WeaponUpgrader>().AsSingle();
 			Container.BindInterfacesAndSelfTo<WeaponUpgrades>().AsSingle();
+			Container.Bind<IAmmoDirectionProvider>().To<AmmoDirectionProvider>().AsSingle();
 		}
 
 		private void BindGameplayFactories()

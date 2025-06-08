@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Code.Meta.Features.Hud.WeaponHolder.Behaviours;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherWeaponHolder;
@@ -37,10 +34,10 @@ public sealed partial class GameMatcher {
 public partial class GameEntity {
 
     public Code.Gameplay.Features.Weapon.WeaponHolder weaponHolder { get { return (Code.Gameplay.Features.Weapon.WeaponHolder)GetComponent(GameComponentsLookup.WeaponHolder); } }
-    public WeaponHolderBehaviour WeaponHolder { get { return weaponHolder.Value; } }
+    public Code.Meta.Features.Hud.WeaponHolder.Behaviours.WeaponHolderBehaviour WeaponHolder { get { return weaponHolder.Value; } }
     public bool hasWeaponHolder { get { return HasComponent(GameComponentsLookup.WeaponHolder); } }
 
-    public GameEntity AddWeaponHolder(WeaponHolderBehaviour newValue) {
+    public GameEntity AddWeaponHolder(Code.Meta.Features.Hud.WeaponHolder.Behaviours.WeaponHolderBehaviour newValue) {
         var index = GameComponentsLookup.WeaponHolder;
         var component = (Code.Gameplay.Features.Weapon.WeaponHolder)CreateComponent(index, typeof(Code.Gameplay.Features.Weapon.WeaponHolder));
         component.Value = newValue;
@@ -48,7 +45,7 @@ public partial class GameEntity {
         return this;
     }
 
-    public GameEntity ReplaceWeaponHolder(WeaponHolderBehaviour newValue) {
+    public GameEntity ReplaceWeaponHolder(Code.Meta.Features.Hud.WeaponHolder.Behaviours.WeaponHolderBehaviour newValue) {
         var index = GameComponentsLookup.WeaponHolder;
         var component = (Code.Gameplay.Features.Weapon.WeaponHolder)CreateComponent(index, typeof(Code.Gameplay.Features.Weapon.WeaponHolder));
         component.Value = newValue;

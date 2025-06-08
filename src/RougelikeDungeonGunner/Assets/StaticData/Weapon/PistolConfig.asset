@@ -24,9 +24,8 @@ MonoBehaviour:
     PrechargingTime: 0
     MagazineSize: 0
     PelletCount: 1
-    MinSpreadAngle: -20
-    MaxSpreadAngle: 20
-    MaxEnchantsCount: 0
+    Accuracy: 90
+    EnchantSlots: 0
   EffectSetups:
   - EffectTypeId: 1
     Value: 1

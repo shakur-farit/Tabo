@@ -98,7 +98,7 @@ namespace Code.Gameplay.Features.Weapon.Factory
 		{
 			WeaponConfig config = _staticDataService.GetWeaponConfig(weaponTypeId);
 
-			Debug.Log($"{_statsProvider.GetMinSpreadAngle(config)} / {_statsProvider.GetMaxSpreadAngle(config)}");
+			Debug.Log($"{_statsProvider.GetMinDeviation(config)} / {_statsProvider.GetMaxDeviation(config)}");
 
 			return CreateEntity.Empty()
 					.AddId(_identifier.Next())
@@ -108,8 +108,8 @@ namespace Code.Gameplay.Features.Weapon.Factory
 					.AddWeaponOwnerId(ownerId)
 					.AddWorldPosition(at)
 					.AddRadius(_statsProvider.GetFireRange(config))
-					.AddMinPelletsSpreadAngle(_statsProvider.GetMinSpreadAngle(config))
-					.AddMaxPelletsSpreadAngle(_statsProvider.GetMaxSpreadAngle(config))
+					.AddMinPelletsDeviation(_statsProvider.GetMinDeviation(config))
+					.AddMaxPelletsDeviation(_statsProvider.GetMaxDeviation(config))
 					.AddCooldown(_statsProvider.GetCooldown(config))
 					.AddMaxWeaponEnchantsCount(_statsProvider.GetEnchantSlots(config))
 					.With(x => x.isWeapon = true)

@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using Code.Common.Extensions;
-using Code.Gameplay.Common.Random;
 using Code.Gameplay.Common.Time;
 using Code.Gameplay.Features.Ammo.Factory;
 using Code.Gameplay.Features.Cooldowns;
@@ -14,25 +13,25 @@ namespace Code.Gameplay.Features.Ammo.Systems
 		private readonly List<GameEntity> _buffer = new(1);
 
 		private readonly IAmmoFactory _ammoFactory;
-		private readonly IRandomService _random;
+		private readonly IAmmoDirectionProvider _ammoDirectionProvider;
 		private readonly ITimeService _time;
 		private readonly IGroup<GameEntity> _weapons;
 
 		public CreatingOfPlasmaBoltSystem(
 			GameContext game,
 			IAmmoFactory ammoFactory,
-			IRandomService random,
+			IAmmoDirectionProvider ammoDirectionProvider,
 			ITimeService time)
 		{
 			_ammoFactory = ammoFactory;
-			_random = random;
-			_time = time;
+			_ammoDirectionProvider = ammoDirectionProvider;
+				_time = time;
 
 			_weapons = game.GetGroup(GameMatcher
 				.AllOf(
 					GameMatcher.PlasmaGun,
-					GameMatcher.MinPelletsSpreadAngle,
-					GameMatcher.MaxPelletsSpreadAngle,
+					GameMatcher.MinPelletsDeviation,
+					GameMatcher.MaxPelletsDeviation,
 					GameMatcher.CooldownUp,
 					GameMatcher.FirePositionTransform,
 					GameMatcher.WorldPosition,
@@ -55,19 +54,13 @@ namespace Code.Gameplay.Features.Ammo.Systems
 				_ammoFactory
 					.CreateAmmo(AmmoTypeId.PlasmaBolt, 1, weapon.FirePositionTransform.position)
 					.AddProducerId(weapon.Id)
-					.ReplaceDirection(GetSpreadDirection(weapon))
+					.ReplaceDirection(_ammoDirectionProvider.GetDirection(weapon))
 					.With(x => x.isMoving = true);
 
 				weapon
 					.With(x => x.isShot = true)
 					.PutOnCooldown(weapon.Cooldown);
 			}
-		}
-
-		private Vector3 GetSpreadDirection(GameEntity weapon)
-		{
-			float spreadAngle = _random.Range(weapon.MinPelletsSpreadAngle, weapon.MaxPelletsSpreadAngle);
-			return Quaternion.Euler(0, 0, spreadAngle) * weapon.FirePositionTransform.right;
 		}
 	}
 }

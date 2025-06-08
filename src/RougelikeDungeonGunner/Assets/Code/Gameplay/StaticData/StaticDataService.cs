@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Code.Common;
 using Code.Gameplay.Features.Ammo;
 using Code.Gameplay.Features.Ammo.Configs;
 using Code.Gameplay.Features.Enchants;
@@ -28,7 +29,8 @@ namespace Code.Gameplay.StaticData
 {
 	public class StaticDataService : IStaticDataService
 	{
-		private const string AmmoConfig = "AmmoConfig";
+		private const string BalanceConfigPath = "BalanceConfig";
+		private const string AmmoConfigLabel = "AmmoConfig";
 		private const string WeaponConfigLabel = "WeaponConfig";
 		private const string EnemyConfigLabel = "EnemyConfig";
 		private const string HeroConfigLabel = "HeroConfig";
@@ -39,6 +41,7 @@ namespace Code.Gameplay.StaticData
 		private const string WeaponShopItemConfigLabel = "WeaponShopItemConfig";
 		private const string WeaponUpgradeShopItemConfigLabel = "WeaponUpgradeShopItemConfig";
 
+		private BalanceConfig _balance;
 		private Dictionary<AmmoTypeId, AmmoConfig> _ammoById;
 		private Dictionary<WeaponTypeId, WeaponConfig> _weaponById;
 		private Dictionary<EnemyTypeId, EnemyConfig> _enemyById;
@@ -62,6 +65,7 @@ namespace Code.Gameplay.StaticData
 
 		public async UniTask Load()
 		{
+			await LoadBalance();
 			await LoadAbilities();
 			await LoadWeapons();
 			await LoadEnemies();
@@ -164,8 +168,11 @@ namespace Code.Gameplay.StaticData
 			throw new Exception($"Weapon config for {id} was not found");
 		}
 
+		public BalanceConfig GetBalance() => 
+			_balance;
+
 		private async UniTask LoadAbilities() =>
-			_ammoById = (await _assetProvider.LoadAll<AmmoConfig>(AmmoConfig))
+			_ammoById = (await _assetProvider.LoadAll<AmmoConfig>(AmmoConfigLabel))
 				.ToDictionary(x => x.TypeId, x => x);
 
 		private async UniTask LoadWeapons() =>
@@ -203,5 +210,8 @@ namespace Code.Gameplay.StaticData
 		private async UniTask LoadWeaponShopItem() =>
 			_weaponShopItemById = (await _assetProvider.LoadAll<WeaponShopItemConfig>(WeaponShopItemConfigLabel))
 				.ToDictionary(x => x.TypeId, x => x);
+
+		private async UniTask LoadBalance() => 
+			_balance = await _assetProvider.Load<BalanceConfig>(BalanceConfigPath);
 	}
 }

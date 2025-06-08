@@ -140,9 +140,9 @@ public static class GameComponentsLookup {
     public const int Machinegun = 129;
     public const int MagazineNotEmpty = 130;
     public const int MagazineSize = 131;
-    public const int MaxPelletsSpreadAngle = 132;
+    public const int MaxPelletsDeviation = 132;
     public const int MaxWeaponEnchantsCount = 133;
-    public const int MinPelletsSpreadAngle = 134;
+    public const int MinPelletsDeviation = 134;
     public const int MultiPellet = 135;
     public const int Pistol = 136;
     public const int PlasmaGun = 137;
@@ -304,9 +304,9 @@ public static class GameComponentsLookup {
         "Machinegun",
         "MagazineNotEmpty",
         "MagazineSize",
-        "MaxPelletsSpreadAngle",
+        "MaxPelletsDeviation",
         "MaxWeaponEnchantsCount",
-        "MinPelletsSpreadAngle",
+        "MinPelletsDeviation",
         "MultiPellet",
         "Pistol",
         "PlasmaGun",
@@ -467,9 +467,9 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Weapon.Machinegun),
         typeof(Code.Gameplay.Features.Weapon.MagazineNotEmpty),
         typeof(Code.Gameplay.Features.Weapon.MagazineSize),
-        typeof(Code.Gameplay.Features.Weapon.MaxPelletsSpreadAngle),
+        typeof(Code.Gameplay.Features.Weapon.MaxPelletsDeviation),
         typeof(Code.Gameplay.Features.Weapon.MaxWeaponEnchantsCount),
-        typeof(Code.Gameplay.Features.Weapon.MinPelletsSpreadAngle),
+        typeof(Code.Gameplay.Features.Weapon.MinPelletsDeviation),
         typeof(Code.Gameplay.Features.Weapon.MultiPellet),
         typeof(Code.Gameplay.Features.Weapon.Pistol),
         typeof(Code.Gameplay.Features.Weapon.PlasmaGun),

@@ -13,22 +13,22 @@ namespace Code.Gameplay.Features.Ammo.Systems
 		private readonly List<GameEntity> _buffer = new(1);
 
 		private readonly IAmmoFactory _ammoFactory;
-		private readonly IRandomService _random;
+		private readonly IAmmoDirectionProvider _ammoDirectionProvider;
 		private readonly IGroup<GameEntity> _weapons;
 
 		public CreatingOfMachinegunBulletSystem(
 			GameContext game,
 			IAmmoFactory ammoFactory,
-			IRandomService random)
+			IAmmoDirectionProvider ammoDirectionProvider)
 		{
 			_ammoFactory = ammoFactory;
-			_random = random;
+			_ammoDirectionProvider = ammoDirectionProvider;
 
 			_weapons = game.GetGroup(GameMatcher
 				.AllOf(
-					GameMatcher.Machinegun,
-					GameMatcher.MinPelletsSpreadAngle,
-					GameMatcher.MaxPelletsSpreadAngle,
+					GameMatcher.Machinegun, 
+					GameMatcher.MinPelletsDeviation,
+					GameMatcher.MaxPelletsDeviation,
 					GameMatcher.CooldownUp,
 					GameMatcher.FirePositionTransform,
 					GameMatcher.WorldPosition,
@@ -45,19 +45,13 @@ namespace Code.Gameplay.Features.Ammo.Systems
 				_ammoFactory
 					.CreateAmmo(AmmoTypeId.MachinegunBullet, 1, weapon.FirePositionTransform.position)
 					.AddProducerId(weapon.Id)
-					.ReplaceDirection(GetSpreadDirection(weapon))
+					.ReplaceDirection(_ammoDirectionProvider.GetDirection(weapon))
 					.With(x => x.isMoving = true);
 
 				weapon
 					.With(x => x.isShot = true)
 					.PutOnCooldown(weapon.Cooldown);
 			}
-		}
-
-		private Vector3 GetSpreadDirection(GameEntity weapon)
-		{
-			float spreadAngle = _random.Range(weapon.MinPelletsSpreadAngle, weapon.MaxPelletsSpreadAngle);
-			return Quaternion.Euler(0, 0, spreadAngle) * weapon.FirePositionTransform.right;
 		}
 	}
 }
