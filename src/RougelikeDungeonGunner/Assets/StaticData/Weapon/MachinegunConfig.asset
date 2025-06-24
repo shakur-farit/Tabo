@@ -30,3 +30,10 @@ MonoBehaviour:
   - EffectTypeId: 1
     Value: 1
   StatusSetups: []
+  AvailableUpgrades:
+  - UpgradeType: 1
+  - UpgradeType: 2
+  - UpgradeType: 3
+  - UpgradeType: 5
+  - UpgradeType: 6
+  - UpgradeType: 7

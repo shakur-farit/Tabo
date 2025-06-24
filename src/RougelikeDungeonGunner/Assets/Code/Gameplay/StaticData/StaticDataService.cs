@@ -51,7 +51,7 @@ namespace Code.Gameplay.StaticData
 		private Dictionary<EnchantTypeId, EnchantConfig> _enchantById;
 		private Dictionary<WindowId, WindowConfig> _windowById;
 		private Dictionary<WeaponShopItemTypeId, WeaponShopItemConfig> _weaponShopItemById;
-		private Dictionary<WeaponUpgradeShopItemTypeId, WeaponUpgradeShopItemConfig> _weaponUpgradeShopItemById;
+		private Dictionary<WeaponUpgradeTypeId, WeaponUpgradeShopItemConfig> _weaponUpgradeShopItemById;
 
 		private readonly IAssetProvider _assetProvider;
 
@@ -152,7 +152,7 @@ namespace Code.Gameplay.StaticData
 			throw new Exception($"Window config for {id} was not found");
 		}
 
-		public WeaponUpgradeShopItemConfig GetUpgradeShopItemConfig(WeaponUpgradeShopItemTypeId id)
+		public WeaponUpgradeShopItemConfig GetUpgradeShopItemConfig(WeaponUpgradeTypeId id)
 		{
 			if (_weaponUpgradeShopItemById.TryGetValue(id, out WeaponUpgradeShopItemConfig config))
 				return config;

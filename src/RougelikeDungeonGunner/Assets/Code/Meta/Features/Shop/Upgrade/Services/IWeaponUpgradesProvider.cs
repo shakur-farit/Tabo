@@ -4,8 +4,8 @@ namespace Code.Meta.Features.Shop.Upgrade.Services
 {
 	public interface IWeaponUpgradesProvider
 	{
-		float GetUpgradeBonus(WeaponUpgradeShopItemTypeId typeId);
-		void AddUpgrade(WeaponUpgradeShopItemTypeId typeId, float value);
+		float GetUpgradeBonus(WeaponUpgradeTypeId typeId);
+		void AddUpgrade(WeaponUpgradeTypeId typeId, float value);
 	}
 
 	public interface IWeaponUpgradesCleaner

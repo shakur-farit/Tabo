@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
+using Code.Gameplay.Features.Weapon;
+using Code.Gameplay.Features.Weapon.Configs;
 using Code.Gameplay.StaticData;
-using Code.Meta.Features.Shop.Upgrade.Beahaviours;
-using Code.Meta.Features.Shop.Upgrade.Configs;
 using Code.Meta.Features.Shop.Upgrade.Factory;
-using Code.Meta.Features.Shop.Weapon.Behaviours;
 using Code.Meta.UI.Windows.Service;
+using Code.Progress.Provider;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
@@ -18,18 +18,21 @@ namespace Code.Meta.UI.Windows.Behaviours
 
 		private IWindowService _windowService;
 		private IWeaponUpgradeShopItemFactory _factory;
+		private IProgressProvider _progressProvider;
 		private IStaticDataService _staticDataService;
 
 		[Inject]
 		public void Constructor(
 			IWindowService windowService, 
-			IWeaponUpgradeShopItemFactory factory,
+			IWeaponUpgradeShopItemFactory factory, 
+			IProgressProvider progressProvider,
 			IStaticDataService staticDataService)
 		{
 			Id = WindowId.WeaponUpgradeWindow;
 
 			_windowService = windowService;
 			_factory = factory;
+			_progressProvider = progressProvider;
 			_staticDataService = staticDataService;
 		}
 
@@ -42,13 +45,12 @@ namespace Code.Meta.UI.Windows.Behaviours
 
 		private void CreateWeaponUpgradeShopItems()
 		{
-			IEnumerable<WeaponUpgradeShopItemConfig> configs = _staticDataService.GetAllWeaponUpgradeShopItemConfigs();
+			WeaponTypeId currentWeapon = _progressProvider.HeroData.CurrentWeaponTypeId;
+			List<WeaponAvailableUpgrades> upgrades = _staticDataService.GetWeaponConfig(currentWeapon).AvailableUpgrades;
 
-			foreach (WeaponUpgradeShopItemConfig config in configs)
-			{
-				WeaponUpgradeShopItem item = _factory.CreateUpgradeWeaponShopItem(config, _layout);
-				item.Setup(config);
-			}
+			foreach (WeaponAvailableUpgrades upgrade in upgrades)
+				_factory.CreateUpgradeWeaponShopItem(upgrade.UpgradeType, _layout);
+			
 		}
 
 		private void Close() => 

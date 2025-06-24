@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using Code.Gameplay.Features.Effects;
 using Code.Gameplay.Features.Statuses;
 using Code.Infrastructure.View;
+using Code.Meta.Features.Shop.Upgrade;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Code.Gameplay.Features.Weapon.Configs
 {
@@ -21,6 +21,7 @@ namespace Code.Gameplay.Features.Weapon.Configs
 		public List<EffectSetup> EffectSetups;
 		public List<StatusSetup> StatusSetups;
 
+		public List<WeaponAvailableUpgrades> AvailableUpgrades;
 	}
 
 	[Serializable]
@@ -33,8 +34,14 @@ namespace Code.Gameplay.Features.Weapon.Configs
 		[Range(0f, 100f)] public float PrechargingTime;
 		[Range(0, 100)] public int MagazineSize;
 		[Range(0, 10)] public int PelletCount = 1;
-		[Tooltip("")]
+		[Tooltip("In percents")]
 		[Range(0f, 100f)] public float Accuracy;
 		[Range(0, 5)] public int EnchantSlots;
+	}
+
+	[Serializable]
+	public class WeaponAvailableUpgrades
+	{
+		public WeaponUpgradeTypeId UpgradeType;
 	}
 }

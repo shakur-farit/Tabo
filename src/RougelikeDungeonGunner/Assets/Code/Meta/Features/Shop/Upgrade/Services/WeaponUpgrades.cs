@@ -4,12 +4,12 @@ namespace Code.Meta.Features.Shop.Upgrade.Services
 {
 	public class WeaponUpgrades : IWeaponUpgradesProvider, IWeaponUpgradesCleaner
 	{
-		private readonly Dictionary<WeaponUpgradeShopItemTypeId, float> _upgrades = new();
+		private readonly Dictionary<WeaponUpgradeTypeId, float> _upgrades = new();
 
-		public float GetUpgradeBonus(WeaponUpgradeShopItemTypeId typeId) =>
+		public float GetUpgradeBonus(WeaponUpgradeTypeId typeId) =>
 			_upgrades.TryGetValue(typeId, out var value) ? value : 0f;
 
-		public void AddUpgrade(WeaponUpgradeShopItemTypeId typeId, float value)
+		public void AddUpgrade(WeaponUpgradeTypeId typeId, float value)
 		{
 			if (_upgrades.ContainsKey(typeId))
 				_upgrades[typeId] += value;

@@ -52,7 +52,7 @@ namespace Code.Meta.Features.Shop.Upgrade.Beahaviours
 			_statValueText.text = UpdateCurrentValueText();
 		}
 
-		private string FormatToName(WeaponUpgradeShopItemTypeId typeId)
+		private string FormatToName(WeaponUpgradeTypeId typeId)
 		{
 			string name = typeId.ToString();
 
@@ -73,19 +73,19 @@ namespace Code.Meta.Features.Shop.Upgrade.Beahaviours
 
 			switch (_config.TypeId)
 			{
-				case WeaponUpgradeShopItemTypeId.FireRange:
-					return _statsProvider.GetFireRange(weaponConfig).ToString();
-				case WeaponUpgradeShopItemTypeId.Cooldown:
-					return _statsProvider.GetCooldown(weaponConfig).ToString();
-				case WeaponUpgradeShopItemTypeId.ReloadTime:
-					return _statsProvider.GetReloadTime(weaponConfig).ToString();
-				case WeaponUpgradeShopItemTypeId.PrechargingTime:
-					return _statsProvider.GetPrechargingTime(weaponConfig).ToString();
-				case WeaponUpgradeShopItemTypeId.MagazineSize:
+				case WeaponUpgradeTypeId.FireRange:
+					return _statsProvider.GetFireRange(weaponConfig).ToString("F2");
+				case WeaponUpgradeTypeId.Cooldown:
+					return _statsProvider.GetCooldown(weaponConfig).ToString("F2");
+				case WeaponUpgradeTypeId.ReloadTime:
+					return _statsProvider.GetReloadTime(weaponConfig).ToString("F2");
+				case WeaponUpgradeTypeId.PrechargingTime:
+					return _statsProvider.GetPrechargingTime(weaponConfig).ToString("F2");
+				case WeaponUpgradeTypeId.MagazineSize:
 					return _statsProvider.GetMagazineSize(weaponConfig).ToString();
-				case WeaponUpgradeShopItemTypeId.Accuracy:
-					return _statsProvider.GetAccuracy(weaponConfig).ToString();
-				case WeaponUpgradeShopItemTypeId.EnchantSlots:
+				case WeaponUpgradeTypeId.Accuracy:
+					return _statsProvider.GetAccuracy(weaponConfig).ToString("F2") + "%";
+				case WeaponUpgradeTypeId.EnchantSlots:
 					return _statsProvider.GetEnchantSlots(weaponConfig).ToString();
 				default:
 					return string.Empty;

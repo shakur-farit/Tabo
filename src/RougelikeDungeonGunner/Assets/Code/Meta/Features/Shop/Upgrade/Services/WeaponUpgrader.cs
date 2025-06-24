@@ -21,6 +21,9 @@ namespace Code.Meta.Features.Shop.Upgrade.Services
 
 		public void Upgrade(WeaponUpgradeShopItemConfig config)
 		{
+			if(EnoughCoins(config.Price) == false)
+				return;
+
 			if (_validator.CanUpgrade(config) == false)
 				return;
 
@@ -28,6 +31,9 @@ namespace Code.Meta.Features.Shop.Upgrade.Services
 
 			SubtractPrice(config.Price);
 		}
+
+		private bool EnoughCoins(int price) => 
+			_progressProvider.HeroData.CurrentCoinsCount >= price;
 
 		private void SubtractPrice(int price) =>
 			_progressProvider.HeroData.CurrentCoinsCount -= price;

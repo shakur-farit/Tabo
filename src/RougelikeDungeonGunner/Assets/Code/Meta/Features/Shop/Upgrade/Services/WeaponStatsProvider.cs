@@ -17,25 +17,25 @@ namespace Code.Meta.Features.Shop.Upgrade.Services
 
 
 		public float GetFireRange(WeaponConfig config) => 
-			config.Stats.FireRange + _provider.GetUpgradeBonus(WeaponUpgradeShopItemTypeId.FireRange);
+			config.Stats.FireRange + _provider.GetUpgradeBonus(WeaponUpgradeTypeId.FireRange);
 
 		public float GetCooldown(WeaponConfig config) => 
-			config.Stats.Cooldown  - _provider.GetUpgradeBonus(WeaponUpgradeShopItemTypeId.Cooldown);
+			config.Stats.Cooldown  - _provider.GetUpgradeBonus(WeaponUpgradeTypeId.Cooldown);
 		
 		public float GetReloadTime(WeaponConfig config) =>
-			config.Stats.ReloadTime - _provider.GetUpgradeBonus(WeaponUpgradeShopItemTypeId.ReloadTime);
+			config.Stats.ReloadTime - _provider.GetUpgradeBonus(WeaponUpgradeTypeId.ReloadTime);
 
 		public float GetPrechargingTime(WeaponConfig config) =>
-			config.Stats.PrechargingTime - _provider.GetUpgradeBonus(WeaponUpgradeShopItemTypeId.PrechargingTime);
+			config.Stats.PrechargingTime - _provider.GetUpgradeBonus(WeaponUpgradeTypeId.PrechargingTime);
 
 		public int GetMagazineSize(WeaponConfig config) =>
-			config.Stats.MagazineSize + (int)_provider.GetUpgradeBonus(WeaponUpgradeShopItemTypeId.MagazineSize);
+			config.Stats.MagazineSize + (int)_provider.GetUpgradeBonus(WeaponUpgradeTypeId.MagazineSize);
 
 		public float GetAccuracy(WeaponConfig config) => 
-			config.Stats.Accuracy + _provider.GetUpgradeBonus(WeaponUpgradeShopItemTypeId.Accuracy);
+			config.Stats.Accuracy + _provider.GetUpgradeBonus(WeaponUpgradeTypeId.Accuracy);
 
 		public int GetEnchantSlots(WeaponConfig config) =>
-			config.Stats.EnchantSlots + (int)_provider.GetUpgradeBonus(WeaponUpgradeShopItemTypeId.EnchantSlots);
+			config.Stats.EnchantSlots + (int)_provider.GetUpgradeBonus(WeaponUpgradeTypeId.EnchantSlots);
 
 		public float GetMinDeviation(WeaponConfig config) => 
 			-GetHalfSpread(GetAccuracy(config));
@@ -45,11 +45,8 @@ namespace Code.Meta.Features.Shop.Upgrade.Services
 
 		private float GetHalfSpread(float accuracy)
 		{
-			Debug.Log(accuracy);
 			accuracy = Mathf.Clamp01(accuracy/100f);
-			Debug.Log(accuracy);
 			float spread = _staticDataService.GetBalance().WeaponBalance.MaxSpreadAngle * (1f - accuracy);
-			Debug.Log(spread);
 			return spread * 0.5f;
 		}
 	}

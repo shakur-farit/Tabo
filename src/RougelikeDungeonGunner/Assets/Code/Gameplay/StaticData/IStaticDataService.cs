@@ -43,7 +43,7 @@ namespace Code.Gameplay.StaticData
 	  LootConfig GetLootConfig(LootTypeId lootId);
 	  EnchantConfig GetEnchantConfig(EnchantTypeId id);
     WindowConfig GetWindowConfig(WindowId id);
-    WeaponUpgradeShopItemConfig GetUpgradeShopItemConfig(WeaponUpgradeShopItemTypeId id);
+    WeaponUpgradeShopItemConfig GetUpgradeShopItemConfig(WeaponUpgradeTypeId id);
     WeaponShopItemConfig GetWeaponShopItemConfig(WeaponShopItemTypeId id);
   }
 }

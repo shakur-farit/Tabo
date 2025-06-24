@@ -98,8 +98,6 @@ namespace Code.Gameplay.Features.Weapon.Factory
 		{
 			WeaponConfig config = _staticDataService.GetWeaponConfig(weaponTypeId);
 
-			Debug.Log($"{_statsProvider.GetMinDeviation(config)} / {_statsProvider.GetMaxDeviation(config)}");
-
 			return CreateEntity.Empty()
 					.AddId(_identifier.Next())
 					.AddWeaponTypeId(weaponTypeId)
