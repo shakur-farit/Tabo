@@ -5,36 +5,32 @@ using Code.Gameplay.StaticData;
 
 namespace Code.Meta.Features.Shop.Upgrade.Services
 {
-	public class WeaponEffectsProvider
+	public class WeaponEffectsProvider : IWeaponEffectsProvider
 	{
 		private readonly IWeaponUpgradesProvider _provider;
-		private readonly IStaticDataService _staticDataService;
 
-		public WeaponEffectsProvider(IWeaponUpgradesProvider provider, IStaticDataService staticDataService)
-		{
+		public WeaponEffectsProvider(IWeaponUpgradesProvider provider) => 
 			_provider = provider;
-			_staticDataService = staticDataService;
-		}
-
 
 		public List<EffectSetup> GetEffects(WeaponConfig config)
 		{
-			List<EffectSetup> effects = new List<EffectSetup>()
-			{
-				//config.EffectSetups.
-			};
+			List<EffectSetup> modifiedEffects = new(config.EffectSetups.Count);
 
-			foreach (EffectSetup setup in config.EffectSetups)
+			foreach (EffectSetup effect in config.EffectSetups)
 			{
-				if (setup.EffectTypeId == EffectTypeId.Damage)
+				EffectSetup newEffect = new EffectSetup
 				{
-					//setup.
-				}
+					EffectTypeId = effect.EffectTypeId,
+					Value = effect.Value
+				};
+
+				if (effect.EffectTypeId == EffectTypeId.Damage)
+					newEffect.Value += _provider.GetUpgradeBonus(WeaponUpgradeTypeId.Damage);
+
+				modifiedEffects.Add(newEffect);
 			}
 
-			_provider.GetUpgradeBonus(WeaponUpgradeTypeId.Damage);
-
-			return effects;
+			return modifiedEffects;
 		}
 	}
 }

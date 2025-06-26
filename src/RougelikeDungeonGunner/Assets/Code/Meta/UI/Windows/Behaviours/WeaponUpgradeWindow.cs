@@ -50,7 +50,6 @@ namespace Code.Meta.UI.Windows.Behaviours
 
 			foreach (WeaponAvailableUpgrades upgrade in upgrades)
 				_factory.CreateUpgradeWeaponShopItem(upgrade.UpgradeType, _layout);
-			
 		}
 
 		private void Close() => 

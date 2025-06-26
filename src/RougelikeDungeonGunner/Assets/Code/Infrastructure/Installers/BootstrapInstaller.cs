@@ -114,6 +114,7 @@ namespace Code.Infrastructure.Installers
 			Container.Bind<ILootRandomizerService>().To<LootRandomizerService>().AsSingle();
 			Container.Bind<IWeaponUpgradeValidator>().To<WeaponUpgradeValidator>().AsSingle();
 			Container.Bind<IWeaponStatsProvider>().To<WeaponStatsProvider>().AsSingle();
+			Container.Bind<IWeaponEffectsProvider>().To<WeaponEffectsProvider>().AsSingle();
 			Container.Bind<IWeaponUpgrader>().To<WeaponUpgrader>().AsSingle();
 			Container.BindInterfacesAndSelfTo<WeaponUpgrades>().AsSingle();
 			Container.Bind<IAmmoDirectionProvider>().To<AmmoDirectionProvider>().AsSingle();

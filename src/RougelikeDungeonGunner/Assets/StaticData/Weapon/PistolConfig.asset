@@ -19,7 +19,7 @@ MonoBehaviour:
   Stats:
     isInfinityAmmo: 1
     FireRange: 6
-    Cooldown: 1
+    Cooldown: 1.2
     ReloadTime: 0
     PrechargingTime: 0
     MagazineSize: 0
@@ -31,7 +31,8 @@ MonoBehaviour:
     Value: 1
   StatusSetups: []
   AvailableUpgrades:
-  - UpgradeType: 1
+  - UpgradeType: 8
   - UpgradeType: 2
   - UpgradeType: 6
+  - UpgradeType: 1
   - UpgradeType: 7

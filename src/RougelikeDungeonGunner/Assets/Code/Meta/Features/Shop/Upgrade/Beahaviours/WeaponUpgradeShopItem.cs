@@ -1,4 +1,7 @@
-﻿using System.Text.RegularExpressions;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Text.RegularExpressions;
+using Code.Gameplay.Features.Effects;
 using Code.Gameplay.Features.Weapon;
 using Code.Gameplay.Features.Weapon.Configs;
 using Code.Gameplay.StaticData;
@@ -25,17 +28,20 @@ namespace Code.Meta.Features.Shop.Upgrade.Beahaviours
 		private IWeaponUpgrader _weaponUpgrader;
 		private IWeaponStatsProvider _statsProvider;
 		private IStaticDataService _staticDataService;
+		private IWeaponEffectsProvider _effectsProvider;
 
 		[Inject]
 		public void Constructor(
-			IProgressProvider progressProvider, 
+			IProgressProvider progressProvider,
 			IWeaponUpgrader weaponUpgrader,
 			IWeaponStatsProvider statsProvider,
+			IWeaponEffectsProvider effectsProvider,
 			IStaticDataService staticDataService)
 		{
 			_progressProvider = progressProvider;
 			_weaponUpgrader = weaponUpgrader;
 			_statsProvider = statsProvider;
+			_effectsProvider = effectsProvider;
 			_staticDataService = staticDataService;
 		}
 
@@ -87,9 +93,22 @@ namespace Code.Meta.Features.Shop.Upgrade.Beahaviours
 					return _statsProvider.GetAccuracy(weaponConfig).ToString("F2") + "%";
 				case WeaponUpgradeTypeId.EnchantSlots:
 					return _statsProvider.GetEnchantSlots(weaponConfig).ToString();
+				case WeaponUpgradeTypeId.Damage:
+					return VisualDamageValue(weaponConfig);
 				default:
 					return string.Empty;
 			}
+		}
+
+		private string VisualDamageValue(WeaponConfig weaponConfig)
+		{
+			List<EffectSetup> effects = _effectsProvider.GetEffects(weaponConfig);
+			EffectSetup damageEffect = effects.FirstOrDefault(e => e.EffectTypeId == EffectTypeId.Damage);
+
+			if (damageEffect != null)
+				 return damageEffect.Value.ToString();
+
+			return string.Empty;
 		}
 	}
 }
