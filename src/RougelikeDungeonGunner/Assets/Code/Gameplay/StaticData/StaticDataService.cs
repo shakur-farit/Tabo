@@ -58,7 +58,6 @@ namespace Code.Gameplay.StaticData
 		public IEnumerable<LootConfig> GetAllLootConfigs() => _lootById.Values;
 		public IEnumerable<HeroConfig> GetAllHeroConfigs() => _heroById.Values;
 		public IEnumerable<WeaponShopItemConfig> GetAllWeaponShopItemConfigs() => _weaponShopItemById.Values;
-		public IEnumerable<WeaponUpgradeShopItemConfig> GetAllWeaponUpgradeShopItemConfigs() => _weaponUpgradeShopItemById.Values;
 
 		public StaticDataService(IAssetProvider assetProvider) =>
 			_assetProvider = assetProvider;
@@ -84,16 +83,6 @@ namespace Code.Gameplay.StaticData
 				return config;
 
 			throw new Exception($"Ammo config for {id} was not found");
-		}
-
-		public AmmoLevel GetAmmoLevel(AmmoTypeId id, int level)
-		{
-			AmmoConfig config = GetAmmoConfig(id);
-
-			if (level > config.Levels.Count)
-				level = config.Levels.Count;
-
-			return config.Levels[level - 1];
 		}
 
 		public WeaponConfig GetWeaponConfig(WeaponTypeId id)

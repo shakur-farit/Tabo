@@ -8,17 +8,17 @@
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherPlasmaBolt;
+    static Entitas.IMatcher<GameEntity> _matcherLongRangeBullet;
 
-    public static Entitas.IMatcher<GameEntity> PlasmaBolt {
+    public static Entitas.IMatcher<GameEntity> LongRangeBullet {
         get {
-            if (_matcherPlasmaBolt == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.PlasmaBolt);
+            if (_matcherLongRangeBullet == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.LongRangeBullet);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherPlasmaBolt = matcher;
+                _matcherLongRangeBullet = matcher;
             }
 
-            return _matcherPlasmaBolt;
+            return _matcherLongRangeBullet;
         }
     }
 }
@@ -33,18 +33,18 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Ammo.PlasmaBolt plasmaBoltComponent = new Code.Gameplay.Features.Ammo.PlasmaBolt();
+    static readonly Code.Gameplay.Features.Ammo.LongRangeBullet longRangeBulletComponent = new Code.Gameplay.Features.Ammo.LongRangeBullet();
 
-    public bool isPlasmaBolt {
-        get { return HasComponent(GameComponentsLookup.PlasmaBolt); }
+    public bool isLongRangeBullet {
+        get { return HasComponent(GameComponentsLookup.LongRangeBullet); }
         set {
-            if (value != isPlasmaBolt) {
-                var index = GameComponentsLookup.PlasmaBolt;
+            if (value != isLongRangeBullet) {
+                var index = GameComponentsLookup.LongRangeBullet;
                 if (value) {
                     var componentPool = GetComponentPool(index);
                     var component = componentPool.Count > 0
                             ? componentPool.Pop()
-                            : plasmaBoltComponent;
+                            : longRangeBulletComponent;
 
                     AddComponent(index, component);
                 } else {

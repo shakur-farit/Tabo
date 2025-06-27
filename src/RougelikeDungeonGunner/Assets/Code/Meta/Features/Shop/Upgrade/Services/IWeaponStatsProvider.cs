@@ -13,5 +13,6 @@ namespace Code.Meta.Features.Shop.Upgrade.Services
 		int GetEnchantSlots(WeaponConfig config);
 		float GetMinDeviation(WeaponConfig config);
 		float GetMaxDeviation(WeaponConfig config);
+		int GetPierce(WeaponConfig config);
 	}
 }

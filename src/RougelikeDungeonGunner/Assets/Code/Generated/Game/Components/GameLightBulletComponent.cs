@@ -8,17 +8,17 @@
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherMachinegunBullet;
+    static Entitas.IMatcher<GameEntity> _matcherLightBullet;
 
-    public static Entitas.IMatcher<GameEntity> MachinegunBullet {
+    public static Entitas.IMatcher<GameEntity> LightBullet {
         get {
-            if (_matcherMachinegunBullet == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.MachinegunBullet);
+            if (_matcherLightBullet == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.LightBullet);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherMachinegunBullet = matcher;
+                _matcherLightBullet = matcher;
             }
 
-            return _matcherMachinegunBullet;
+            return _matcherLightBullet;
         }
     }
 }
@@ -33,18 +33,18 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Ammo.MachinegunBullet machinegunBulletComponent = new Code.Gameplay.Features.Ammo.MachinegunBullet();
+    static readonly Code.Gameplay.Features.Ammo.LightBullet lightBulletComponent = new Code.Gameplay.Features.Ammo.LightBullet();
 
-    public bool isMachinegunBullet {
-        get { return HasComponent(GameComponentsLookup.MachinegunBullet); }
+    public bool isLightBullet {
+        get { return HasComponent(GameComponentsLookup.LightBullet); }
         set {
-            if (value != isMachinegunBullet) {
-                var index = GameComponentsLookup.MachinegunBullet;
+            if (value != isLightBullet) {
+                var index = GameComponentsLookup.LightBullet;
                 if (value) {
                     var componentPool = GetComponentPool(index);
                     var component = componentPool.Count > 0
                             ? componentPool.Pop()
-                            : machinegunBulletComponent;
+                            : lightBulletComponent;
 
                     AddComponent(index, component);
                 } else {

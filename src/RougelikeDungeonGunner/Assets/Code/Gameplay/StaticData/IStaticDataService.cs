@@ -29,13 +29,11 @@ namespace Code.Gameplay.StaticData
 	  IEnumerable<LootConfig> GetAllLootConfigs();
 	  IEnumerable<HeroConfig> GetAllHeroConfigs();
 	  IEnumerable<WeaponShopItemConfig> GetAllWeaponShopItemConfigs();
-	  IEnumerable<WeaponUpgradeShopItemConfig> GetAllWeaponUpgradeShopItemConfigs();
 
 	  UniTask Load();
 
 	  BalanceConfig GetBalance();
 	  AmmoConfig GetAmmoConfig(AmmoTypeId ammoTypeId);
-	  AmmoLevel GetAmmoLevel(AmmoTypeId ammoTypeId, int level);
 	  WeaponConfig GetWeaponConfig(WeaponTypeId weaponTypeId);
 	  EnemyConfig GetEnemyConfig(EnemyTypeId enemyId);
 	  HeroConfig GetHeroConfig(HeroTypeId heroId);

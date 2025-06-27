@@ -10,6 +10,7 @@
 		MagazineSize = 5,
 		Accuracy = 6,
 		EnchantSlots = 7,
-		Damage = 8
+		Damage = 8,
+		Pierce = 9,
 	}
 }

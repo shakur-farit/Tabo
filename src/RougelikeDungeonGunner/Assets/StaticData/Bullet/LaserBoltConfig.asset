@@ -14,7 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TypeId: 8
   ViewPrefab: {fileID: 2243231872987813085, guid: a5967ca81ad889847ae902288d60c7a5, type: 3}
-  Levels:
-  - Speed: 20
-    Pierce: 0
+  Stats:
+    Speed: 10
     ContactRadius: 0.1

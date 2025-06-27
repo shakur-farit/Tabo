@@ -8,17 +8,17 @@
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherPistolBullet;
+    static Entitas.IMatcher<GameEntity> _matcherRifleBullet;
 
-    public static Entitas.IMatcher<GameEntity> PistolBullet {
+    public static Entitas.IMatcher<GameEntity> RifleBullet {
         get {
-            if (_matcherPistolBullet == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.PistolBullet);
+            if (_matcherRifleBullet == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.RifleBullet);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherPistolBullet = matcher;
+                _matcherRifleBullet = matcher;
             }
 
-            return _matcherPistolBullet;
+            return _matcherRifleBullet;
         }
     }
 }
@@ -33,18 +33,18 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Ammo.PistolBullet pistolBulletComponent = new Code.Gameplay.Features.Ammo.PistolBullet();
+    static readonly Code.Gameplay.Features.Ammo.RifleBullet rifleBulletComponent = new Code.Gameplay.Features.Ammo.RifleBullet();
 
-    public bool isPistolBullet {
-        get { return HasComponent(GameComponentsLookup.PistolBullet); }
+    public bool isRifleBullet {
+        get { return HasComponent(GameComponentsLookup.RifleBullet); }
         set {
-            if (value != isPistolBullet) {
-                var index = GameComponentsLookup.PistolBullet;
+            if (value != isRifleBullet) {
+                var index = GameComponentsLookup.RifleBullet;
                 if (value) {
                     var componentPool = GetComponentPool(index);
                     var component = componentPool.Count > 0
                             ? componentPool.Pop()
-                            : pistolBulletComponent;
+                            : rifleBulletComponent;
 
                     AddComponent(index, component);
                 } else {

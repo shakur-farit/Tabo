@@ -8,17 +8,17 @@
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherSniperBullet;
+    static Entitas.IMatcher<GameEntity> _matcherShotgunShell;
 
-    public static Entitas.IMatcher<GameEntity> SniperBullet {
+    public static Entitas.IMatcher<GameEntity> ShotgunShell {
         get {
-            if (_matcherSniperBullet == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.SniperBullet);
+            if (_matcherShotgunShell == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.ShotgunShell);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherSniperBullet = matcher;
+                _matcherShotgunShell = matcher;
             }
 
-            return _matcherSniperBullet;
+            return _matcherShotgunShell;
         }
     }
 }
@@ -33,18 +33,18 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Ammo.SniperBullet sniperBulletComponent = new Code.Gameplay.Features.Ammo.SniperBullet();
+    static readonly Code.Gameplay.Features.Ammo.ShotgunShell shotgunShellComponent = new Code.Gameplay.Features.Ammo.ShotgunShell();
 
-    public bool isSniperBullet {
-        get { return HasComponent(GameComponentsLookup.SniperBullet); }
+    public bool isShotgunShell {
+        get { return HasComponent(GameComponentsLookup.ShotgunShell); }
         set {
-            if (value != isSniperBullet) {
-                var index = GameComponentsLookup.SniperBullet;
+            if (value != isShotgunShell) {
+                var index = GameComponentsLookup.ShotgunShell;
                 if (value) {
                     var componentPool = GetComponentPool(index);
                     var component = componentPool.Count > 0
                             ? componentPool.Pop()
-                            : sniperBulletComponent;
+                            : shotgunShellComponent;
 
                     AddComponent(index, component);
                 } else {

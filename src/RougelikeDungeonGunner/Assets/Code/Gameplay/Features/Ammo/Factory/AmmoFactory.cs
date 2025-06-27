@@ -5,6 +5,7 @@ using Code.Common.Extensions;
 using Code.Gameplay.Features.Ammo.Configs;
 using Code.Gameplay.StaticData;
 using Code.Infrastructure.Identifiers;
+using Code.Meta.Features.Shop.Upgrade.Services;
 using UnityEngine;
 
 namespace Code.Gameplay.Features.Ammo.Factory
@@ -15,93 +16,81 @@ namespace Code.Gameplay.Features.Ammo.Factory
 
 		private readonly IIdentifierService _identifier;
 		private readonly IStaticDataService _staticDataService;
+		private readonly IWeaponStatsProvider _weaponStatsProvider;
 
-		public AmmoFactory(IIdentifierService identifier, IStaticDataService staticDataService)
+		public AmmoFactory(
+			IIdentifierService identifier,
+			IStaticDataService staticDataService,
+			IWeaponStatsProvider weaponStatsProvider)
 		{
 			_identifier = identifier;
 			_staticDataService = staticDataService;
+			_weaponStatsProvider = weaponStatsProvider;
 		}
 
-		public GameEntity CreateAmmo(AmmoTypeId ammoTypeId, int level, Vector3 at)
+		public GameEntity CreateAmmo(AmmoTypeId ammoTypeId, Vector3 at)
 		{
 			switch (ammoTypeId)
 			{
-				case AmmoTypeId.PistolBullet:
-					return CreatePistolBullet(ammoTypeId, level, at);
-				case AmmoTypeId.RevolverBullet:
-					return CreateRevolverBullet(ammoTypeId, level, at);
-				case AmmoTypeId.ShotgunBullet:
-					return CreateShotgunBullet(ammoTypeId, level, at);
-				case AmmoTypeId.AutomaticPistolBullet:
-					return CreateAutomaticPistolBullet(ammoTypeId, level, at);
-				case AmmoTypeId.MachinegunBullet:
-					return CreateMachinegunBullet(ammoTypeId, level, at);
-				case AmmoTypeId.SniperBullet:
-					return CreateSniperBullet(ammoTypeId, level, at);
-				case AmmoTypeId.PlasmaBolt:
-					return CreatePlasmaBolt(ammoTypeId, level, at);
+				case AmmoTypeId.Light:
+					return CreateLightBullet(ammoTypeId, at);
+				case AmmoTypeId.Rifle:
+					return CreateRifleBullet(ammoTypeId, at);
+				case AmmoTypeId.ShotgunShell:
+					return CreateShotgunShell(ammoTypeId, at);
+				case AmmoTypeId.LongRange:
+					return CreateLongRangeBullet(ammoTypeId, at);
 				case AmmoTypeId.LaserBolt:
-					return CreateLaserBolt(ammoTypeId, level, at);
+					return CreateLaserBolt(ammoTypeId, at);
 				case AmmoTypeId.RocketMissile:
-					return CreateRocketMissile(ammoTypeId, level, at);
+					return CreateRocketMissile(ammoTypeId, at);
 			}
 
 			throw new Exception($"Ammo for {ammoTypeId} type was not found");
 		}
 
-		private GameEntity CreatePistolBullet(AmmoTypeId ammoTypeId, int ammoLevel, Vector3 at) =>
-			CreateAmmoEntity(ammoTypeId, at, ammoLevel)
-				.With(x => x.isPistolBullet = true);
 
-		private GameEntity CreateRevolverBullet(AmmoTypeId ammoTypeId, int ammoLevel, Vector3 at) =>
-			CreateAmmoEntity(ammoTypeId, at, ammoLevel)
-				.With(x => x.isRevolverBullet = true);
+		private GameEntity CreateLightBullet(AmmoTypeId ammoTypeId, Vector3 at) =>
+			CreateAmmoEntity(ammoTypeId, at)
+				.With(x => x.isLightBullet = true);
 
-		private GameEntity CreateShotgunBullet(AmmoTypeId ammoTypeId, int ammoLevel, Vector3 at) =>
-			CreateAmmoEntity(ammoTypeId, at, ammoLevel)
-				.With(x => x.isShotgunBullet = true);
+		private GameEntity CreateRifleBullet(AmmoTypeId ammoTypeId, Vector3 at) =>
+			CreateAmmoEntity(ammoTypeId, at)
+				.With(x => x.isRifleBullet = true);
 
-		private GameEntity CreateAutomaticPistolBullet(AmmoTypeId ammoTypeId, int ammoLevel, Vector3 at) =>
-			CreateAmmoEntity(ammoTypeId, at, ammoLevel)
-				.With(x => x.isAutomaticPistolBullet = true);
+		private GameEntity CreateShotgunShell(AmmoTypeId ammoTypeId, Vector3 at) =>
+			CreateAmmoEntity(ammoTypeId, at)
+				.With(x => x.isShotgunShell = true);
 
-		private GameEntity CreateMachinegunBullet(AmmoTypeId ammoTypeId, int ammoLevel, Vector3 at) =>
-			CreateAmmoEntity(ammoTypeId, at, ammoLevel)
-				.With(x => x.isMachinegunBullet = true);
+		private GameEntity CreateLongRangeBullet(AmmoTypeId ammoTypeId, Vector3 at) =>
+			CreateAmmoEntity(ammoTypeId, at)
+				.With(x => x.isLongRangeBullet = true);
 
-		private GameEntity CreateSniperBullet(AmmoTypeId ammoTypeId, int ammoLevel, Vector3 at) =>
-			CreateAmmoEntity(ammoTypeId, at, ammoLevel)
-				.With(x => x.isSniperBullet = true);
-
-		private GameEntity CreatePlasmaBolt(AmmoTypeId ammoTypeId, int ammoLevel, Vector3 at) =>
-			CreateAmmoEntity(ammoTypeId, at, ammoLevel)
-				.With(x => x.isPlasmaBolt = true);
-
-		private GameEntity CreateLaserBolt(AmmoTypeId ammoTypeId, int ammoLevel, Vector3 at) =>
-			CreateAmmoEntity(ammoTypeId, at, ammoLevel)
+		private GameEntity CreateLaserBolt(AmmoTypeId ammoTypeId, Vector3 at) =>
+			CreateAmmoEntity(ammoTypeId, at)
 				.With(x => x.isLaserBolt = true);
 
-		private GameEntity CreateRocketMissile(AmmoTypeId ammoTypeId, int ammoLevel, Vector3 at) =>
-			CreateAmmoEntity(ammoTypeId, at, ammoLevel)
+		private GameEntity CreateRocketMissile(AmmoTypeId ammoTypeId, Vector3 at) =>
+			CreateAmmoEntity(ammoTypeId, at)
 				.With(x => x.isRocketMissile = true);
 
-		private GameEntity CreateAmmoEntity(AmmoTypeId ammoTypeId, Vector3 at, int ammoLevel)
+		private GameEntity CreateAmmoEntity(AmmoTypeId ammoTypeId, Vector3 at)
 		{
-			AmmoConfig ammo = _staticDataService.GetAmmoConfig(ammoTypeId);
-			AmmoLevel level = _staticDataService.GetAmmoLevel(ammoTypeId, ammoLevel);
+			AmmoConfig config = _staticDataService.GetAmmoConfig(ammoTypeId);
+			AmmoStats stats = config.Stats;
 
 			return CreateEntity.Empty()
 					.AddId(_identifier.Next())
 					.AddWorldPosition(at)
 					.AddAmmoTypeId(ammoTypeId)
-					.AddViewPrefab(ammo.ViewPrefab)
-					.AddSpeed(level.Speed)
-					.AddRadius(level.ContactRadius)
+					.AddViewPrefab(config.ViewPrefab)
+					.AddSpeed(stats.Speed)
+					.AddRadius(stats.ContactRadius)
 					.AddTargetsBuffer(new List<int>(TargetsBufferSize))
 					.AddProcessedTargets(new List<int>(TargetsBufferSize))
 					.AddLayerMask(CollisionLayer.Enemy.AsMask())
 					.With(x => x.isAmmo = true)
-					.With(x => x.AddTargetLimit(level.Pierce), when: level.Pierce > 0)
+					//.With(x => x.AddTargetLimit(_weaponStatsProvider.GetPierce()), when: stats.Pierce > 0)
 					.With(x => x.isMovementAvailable = true)
 					.With(x => x.isReadyToCollectTargets = true)
 					.With(x => x.isCollectTargetsContinuously = true)

@@ -41,7 +41,7 @@ namespace Code.Gameplay.Features.Ammo.Systems
 			foreach (GameEntity weapon in _weapons.GetEntities(_buffer))
 			{
 				_ammoFactory
-					.CreateAmmo(AmmoTypeId.RocketMissile, 1, weapon.FirePositionTransform.position)
+					.CreateAmmo(AmmoTypeId.RocketMissile, weapon.FirePositionTransform.position)
 					.AddProducerId(weapon.Id)
 					.ReplaceDirection(_ammoDirectionProvider.GetDirection(weapon))
 					.With(x => x.isMoving = true);

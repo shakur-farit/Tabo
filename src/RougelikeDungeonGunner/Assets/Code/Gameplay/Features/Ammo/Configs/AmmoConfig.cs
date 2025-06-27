@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using Code.Infrastructure.View;
+﻿using Code.Infrastructure.View;
 using UnityEngine;
 
 namespace Code.Gameplay.Features.Ammo.Configs
@@ -10,6 +9,6 @@ namespace Code.Gameplay.Features.Ammo.Configs
 		public AmmoTypeId TypeId;
 		public EntityBehaviour ViewPrefab;
 
-		public List<AmmoLevel> Levels;
+		public AmmoStats Stats;
 	}
 }
