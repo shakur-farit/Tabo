@@ -1,7 +1,6 @@
 ﻿using Code.Gameplay.Features.Ammo.Systems;
 using Code.Gameplay.Features.Ammo.Systems.Visuals;
 using Code.Gameplay.Features.Cooldowns.Systems;
-using Code.Infrastructure;
 using Code.Infrastructure.Systems;
 using Code.Meta.Features.Hud.AmmoHolder.Systems;
 
@@ -23,6 +22,7 @@ namespace Code.Gameplay.Features.Ammo
 			Add(systems.Create<CreatingOfRocketMissileSystem>());
 			Add(systems.Create<CreatingOfSniperBulletSystem>());
 
+			Add(systems.Create<ApplyTargetLimitToAmmoSystem>());
 			Add(systems.Create<ApplyEffectsToAmmoSystem>());
 			Add(systems.Create<ApplyStatusesToAmmoSystem>());
 

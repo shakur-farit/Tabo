@@ -20,6 +20,7 @@ namespace Code.Gameplay.Features.Weapon
 	[Game] public class ReloadTime : IComponent { public float Value; }
 	[Game] public class ReloadTimeLeft : IComponent { public float Value; }
 	[Game] public class MagazineSize : IComponent { public int Value; }
+	[Game] public class Pierce : IComponent { public int Value; }
 	[Game] public class InfinityAmmo : IComponent { }
 	[Game] public class CurrentAmmoCount : IComponent { public int Value; }
 	[Game] public class MagazineNotEmpty : IComponent { }

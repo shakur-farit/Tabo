@@ -141,32 +141,33 @@ public static class GameComponentsLookup {
     public const int MaxWeaponEnchantsCount = 130;
     public const int MinPelletsDeviation = 131;
     public const int MultiPellet = 132;
-    public const int Pistol = 133;
-    public const int PlasmaGun = 134;
-    public const int Precharged = 135;
-    public const int PrechargeTime = 136;
-    public const int PrechargeTimeLeft = 137;
-    public const int ReadyToShoot = 138;
-    public const int Reloading = 139;
-    public const int ReloadingAnimator = 140;
-    public const int ReloadTime = 141;
-    public const int ReloadTimeLeft = 142;
-    public const int Revolver = 143;
-    public const int RocketLauncher = 144;
-    public const int Shooting = 145;
-    public const int Shot = 146;
-    public const int Shotgun = 147;
-    public const int Sniper = 148;
-    public const int StatusSetups = 149;
-    public const int Weapon = 150;
-    public const int WeaponEnchants = 151;
-    public const int WeaponHolder = 152;
-    public const int WeaponOwnerId = 153;
-    public const int WeaponRotationAngle = 154;
-    public const int WeaponRotationPointTransform = 155;
-    public const int WeaponTypeId = 156;
+    public const int Pierce = 133;
+    public const int Pistol = 134;
+    public const int PlasmaGun = 135;
+    public const int Precharged = 136;
+    public const int PrechargeTime = 137;
+    public const int PrechargeTimeLeft = 138;
+    public const int ReadyToShoot = 139;
+    public const int Reloading = 140;
+    public const int ReloadingAnimator = 141;
+    public const int ReloadTime = 142;
+    public const int ReloadTimeLeft = 143;
+    public const int Revolver = 144;
+    public const int RocketLauncher = 145;
+    public const int Shooting = 146;
+    public const int Shot = 147;
+    public const int Shotgun = 148;
+    public const int Sniper = 149;
+    public const int StatusSetups = 150;
+    public const int Weapon = 151;
+    public const int WeaponEnchants = 152;
+    public const int WeaponHolder = 153;
+    public const int WeaponOwnerId = 154;
+    public const int WeaponRotationAngle = 155;
+    public const int WeaponRotationPointTransform = 156;
+    public const int WeaponTypeId = 157;
 
-    public const int TotalComponents = 157;
+    public const int TotalComponents = 158;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -302,6 +303,7 @@ public static class GameComponentsLookup {
         "MaxWeaponEnchantsCount",
         "MinPelletsDeviation",
         "MultiPellet",
+        "Pierce",
         "Pistol",
         "PlasmaGun",
         "Precharged",
@@ -462,6 +464,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Weapon.MaxWeaponEnchantsCount),
         typeof(Code.Gameplay.Features.Weapon.MinPelletsDeviation),
         typeof(Code.Gameplay.Features.Weapon.MultiPellet),
+        typeof(Code.Gameplay.Features.Weapon.Pierce),
         typeof(Code.Gameplay.Features.Weapon.Pistol),
         typeof(Code.Gameplay.Features.Weapon.PlasmaGun),
         typeof(Code.Gameplay.Features.Weapon.Precharged),

@@ -13,6 +13,7 @@ namespace Code.Meta.Features.Hud.WeaponHolder.Behaviours
 		[SerializeField] private Image _relaodingBarImage;
 
 		private Vector3 _originalScale;
+		private CancellationTokenSource _cts;
 
 		private void Awake()
 		{
@@ -23,62 +24,74 @@ namespace Code.Meta.Features.Hud.WeaponHolder.Behaviours
 			_relaodingBarImage.color = Color.green;
 		}
 
-		public async void AnimateReloading(float reloadTimeLeft, float reloadTime)
-		{
-			_relaodingBar.localScale = new Vector3(0, 1, 1);
+		private void OnDestroy() => 
+			CancelOngoingAnimation();
 
+		public void AnimateReloading(float reloadTimeLeft, float reloadTime)
+		{
+			ResetCancellationToken();
 			StartAnimateReloadText();
 
+			_ = AnimateReloadingAsync(reloadTimeLeft, reloadTime, _cts.Token);
+		}
+
+		public void AnimatePrecharging(float reloadTimeLeft, float reloadTime)
+		{
+			ResetCancellationToken();
+			_ = AnimateReloadingAsync(reloadTimeLeft, reloadTime, _cts.Token);
+		}
+
+		private async UniTask AnimateReloadingAsync(float reloadTimeLeft, float reloadTime, CancellationToken token)
+		{
 			try
 			{
-				await ReloadAsync(reloadTimeLeft, reloadTime);
+				_relaodingBar.localScale = new Vector3(0, 1, 1);
+				_relaodingBarImage.color = Color.red;
+
+				float elapsed = reloadTime - reloadTimeLeft;
+
+				while (elapsed < reloadTime)
+				{
+					token.ThrowIfCancellationRequested();
+
+					float progress = Mathf.Clamp01(elapsed / reloadTime);
+					_relaodingBar.localScale = new Vector3(progress * _originalScale.x, _originalScale.y, _originalScale.z);
+
+					await UniTask.Yield(PlayerLoopTiming.Update, token);
+					elapsed += Time.deltaTime;
+				}
+
+				_relaodingBar.localScale = _originalScale;
+				_relaodingBarImage.color = Color.green;
 			}
 			catch (OperationCanceledException)
 			{
-				Debug.Log("Weapon holder was destroyed");
+				Debug.Log("Reloading animation canceled");
 			}
-
-			StopAnimateReloadText();
+			finally
+			{
+				if (this != null && _reloadingTextCanvas != null)
+					StopAnimateReloadText();
+			}
 		}
 
-		public async void AnimatePrecharging(float reloadTimeLeft, float reloadTime)
+		private void ResetCancellationToken()
 		{
-			_relaodingBar.localScale = new Vector3(0, 1, 1);
-
-			try
-			{
-				await ReloadAsync(reloadTimeLeft, reloadTime);
-			}
-			catch (OperationCanceledException)
-			{
-			}
+			CancelOngoingAnimation();
+			_cts = new CancellationTokenSource();
 		}
 
-		private async UniTask ReloadAsync(float reloadTimeLeft, float reloadTime)
+		private void CancelOngoingAnimation()
 		{
-			_relaodingBarImage.color = Color.red;
-
-			float elapsed = reloadTime - reloadTimeLeft;
-
-			CancellationToken token = this.GetCancellationTokenOnDestroy();
-
-			while (elapsed < reloadTime)
-			{
-				float progress = Mathf.Clamp01(elapsed / reloadTime);
-				_relaodingBar.localScale = new Vector3(progress * _originalScale.x, _originalScale.y, _originalScale.z);
-
-				await UniTask.Yield(PlayerLoopTiming.Update, token);
-				elapsed += Time.deltaTime;
-			}
-
-			_relaodingBar.localScale = _originalScale;
-			_relaodingBarImage.color = Color.green;
+			_cts?.Cancel();
+			_cts?.Dispose();
+			_cts = null;
 		}
 
-		private void StartAnimateReloadText() => 
-			_reloadingTextCanvas.gameObject.SetActive(true);
+		private void StartAnimateReloadText() =>
+				_reloadingTextCanvas.gameObject.SetActive(true);
 
 		private void StopAnimateReloadText() =>
-			_reloadingTextCanvas.gameObject.SetActive(false);
+				_reloadingTextCanvas.gameObject.SetActive(false);
 	}
 }

@@ -93,6 +93,8 @@ namespace Code.Meta.Features.Shop.Upgrade.Beahaviours
 					return _statsProvider.GetAccuracy(weaponConfig).ToString("F2") + "%";
 				case WeaponUpgradeTypeId.EnchantSlots:
 					return _statsProvider.GetEnchantSlots(weaponConfig).ToString();
+				case WeaponUpgradeTypeId.Pierce:
+					return _statsProvider.GetPierce(weaponConfig).ToString();
 				case WeaponUpgradeTypeId.Damage:
 					return VisualDamageValue(weaponConfig);
 				default:

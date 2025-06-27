@@ -331,6 +331,18 @@ MonoBehaviour:
     m_SerializedLabels:
     - WeaponUpgradeShopItemConfig
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d62e29931b5cccc45bacbe1a1be6ab3c
+    m_Address: Assets/StaticData/Shop/Upgrade/PierceUpgradeItemConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponUpgradeShopItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9bc893af4b9df2241987011a2e5226b9
+    m_Address: Assets/StaticData/Bullet/RocketMissleConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AmmoConfig
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 7128017d563554245a79368046c75e1a, type: 2}
   m_SchemaSet:

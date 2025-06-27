@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1e63b6f3ed00ab4199a855a53c43c20, type: 3}
   m_Name: MachinegunBulletConfig
   m_EditorClassIdentifier: 
-  TypeId: 5
+  TypeId: 2
   ViewPrefab: {fileID: 2243231872987813085, guid: a5967ca81ad889847ae902288d60c7a5, type: 3}
   Stats:
     Speed: 7

@@ -13,19 +13,15 @@ namespace Code.Gameplay.Features.Ammo.Factory
 	public class AmmoFactory : IAmmoFactory
 	{
 		private const int TargetsBufferSize = 16;
+		private const int NoLimit = 0;
 
 		private readonly IIdentifierService _identifier;
 		private readonly IStaticDataService _staticDataService;
-		private readonly IWeaponStatsProvider _weaponStatsProvider;
 
-		public AmmoFactory(
-			IIdentifierService identifier,
-			IStaticDataService staticDataService,
-			IWeaponStatsProvider weaponStatsProvider)
+		public AmmoFactory(IIdentifierService identifier, IStaticDataService staticDataService)
 		{
 			_identifier = identifier;
 			_staticDataService = staticDataService;
-			_weaponStatsProvider = weaponStatsProvider;
 		}
 
 		public GameEntity CreateAmmo(AmmoTypeId ammoTypeId, Vector3 at)
@@ -87,10 +83,10 @@ namespace Code.Gameplay.Features.Ammo.Factory
 					.AddSpeed(stats.Speed)
 					.AddRadius(stats.ContactRadius)
 					.AddTargetsBuffer(new List<int>(TargetsBufferSize))
+					.AddTargetLimit(NoLimit)
 					.AddProcessedTargets(new List<int>(TargetsBufferSize))
 					.AddLayerMask(CollisionLayer.Enemy.AsMask())
 					.With(x => x.isAmmo = true)
-					//.With(x => x.AddTargetLimit(_weaponStatsProvider.GetPierce()), when: stats.Pierce > 0)
 					.With(x => x.isMovementAvailable = true)
 					.With(x => x.isReadyToCollectTargets = true)
 					.With(x => x.isCollectTargetsContinuously = true)

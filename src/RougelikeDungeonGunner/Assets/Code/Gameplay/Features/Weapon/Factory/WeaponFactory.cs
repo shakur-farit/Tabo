@@ -35,6 +35,8 @@ namespace Code.Gameplay.Features.Weapon.Factory
 			{
 				case WeaponTypeId.Pistol:
 					return CreatePistol(weaponTypeId, parent, at, ownerId);
+				case WeaponTypeId.Revolver:
+					return CreateRevolver(weaponTypeId, parent, at, ownerId);
 				case WeaponTypeId.Machinegun:
 					return CreateMachinegun(weaponTypeId, parent, at, ownerId);
 				case WeaponTypeId.Sniper:
@@ -43,6 +45,12 @@ namespace Code.Gameplay.Features.Weapon.Factory
 					return CreateShotgun(weaponTypeId, parent, at, ownerId);
 				case WeaponTypeId.LaserBlaster:
 					return CreateLaserBlaster(weaponTypeId, parent, at, ownerId);
+				case WeaponTypeId.AutomaticPistol:
+					return CreateAutomaticPistol(weaponTypeId, parent, at, ownerId);
+				case WeaponTypeId.PlasmaGun:
+					return CreatePlasmaGun(weaponTypeId, parent, at, ownerId);
+				case WeaponTypeId.RocketLauncher:
+					return CreateRocketLauncher(weaponTypeId, parent, at, ownerId);
 			}
 
 			throw new Exception($"Weapon for {weaponTypeId} type was not found");
@@ -124,6 +132,7 @@ namespace Code.Gameplay.Features.Weapon.Factory
 						when: _statsProvider.GetPrechargingTime(config) > 0)
 					.With(x => x.AddMagazineSize(_statsProvider.GetMagazineSize(config)), 
 						when: config.Stats.isInfinityAmmo == false)
+					.With(x => x.AddPierce(_statsProvider.GetPierce(config)))
 					.With(x => x.isInfinityAmmo = true, when: config.Stats.isInfinityAmmo)
 					.With(x => x.AddCurrentAmmoCount(_statsProvider.GetMagazineSize(config)), 
 						when: config.Stats.isInfinityAmmo == false)
