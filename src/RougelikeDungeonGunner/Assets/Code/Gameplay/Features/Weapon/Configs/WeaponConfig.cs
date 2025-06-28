@@ -4,6 +4,7 @@ using Code.Gameplay.Features.Effects;
 using Code.Gameplay.Features.Statuses;
 using Code.Infrastructure.View;
 using Code.Meta.Features.Shop.Upgrade;
+using Code.Meta.Features.Shop.Weapon.Configs;
 using UnityEngine;
 
 namespace Code.Gameplay.Features.Weapon.Configs
@@ -21,7 +22,9 @@ namespace Code.Gameplay.Features.Weapon.Configs
 		public List<EffectSetup> EffectSetups;
 		public List<StatusSetup> StatusSetups;
 
-		public List<WeaponAvailableUpgrades> AvailableUpgrades;
+		public List<WeaponAvailableUpgrade> AvailableUpgrades;
+
+		public List<WeaponStatUIEntry> StatsDescriptions;
 	}
 
 	[Serializable]
@@ -41,8 +44,14 @@ namespace Code.Gameplay.Features.Weapon.Configs
 	}
 
 	[Serializable]
-	public class WeaponAvailableUpgrades
+	public class WeaponAvailableUpgrade
 	{
 		public WeaponUpgradeTypeId UpgradeType;
+	}
+
+	[Serializable]
+	public class WeaponStatUIEntry
+	{
+		public WeaponStatUIEntryTypeId StatUIEntryType;
 	}
 }

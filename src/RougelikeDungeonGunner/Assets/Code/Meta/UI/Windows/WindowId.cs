@@ -11,5 +11,7 @@
 		WeaponBuyWindow = 6,
 		EnchantBuyWindow = 7,
 		WeaponBuyDialogWindow = 8,
+		EnchantBuyDialogWindow = 9,
+		CurrentWeaponInfoWindow = 9,
 	}
 }

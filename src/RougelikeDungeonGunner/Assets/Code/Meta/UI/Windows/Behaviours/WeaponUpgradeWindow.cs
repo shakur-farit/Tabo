@@ -46,9 +46,9 @@ namespace Code.Meta.UI.Windows.Behaviours
 		private void CreateWeaponUpgradeShopItems()
 		{
 			WeaponTypeId currentWeapon = _progressProvider.HeroData.CurrentWeaponTypeId;
-			List<WeaponAvailableUpgrades> upgrades = _staticDataService.GetWeaponConfig(currentWeapon).AvailableUpgrades;
+			List<WeaponAvailableUpgrade> upgrades = _staticDataService.GetWeaponConfig(currentWeapon).AvailableUpgrades;
 
-			foreach (WeaponAvailableUpgrades upgrade in upgrades)
+			foreach (WeaponAvailableUpgrade upgrade in upgrades)
 				_factory.CreateUpgradeWeaponShopItem(upgrade.UpgradeType, _layout);
 		}
 
