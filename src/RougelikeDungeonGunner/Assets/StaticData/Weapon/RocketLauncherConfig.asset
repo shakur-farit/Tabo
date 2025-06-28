@@ -23,6 +23,7 @@ MonoBehaviour:
     ReloadTime: 5
     PrechargingTime: 0
     MagazineSize: 1
+    Pierce: 1
     PelletCount: 1
     Accuracy: 100
     EnchantSlots: 0
@@ -35,3 +36,4 @@ MonoBehaviour:
   - UpgradeType: 1
   - UpgradeType: 3
   - UpgradeType: 7
+  - UpgradeType: 9

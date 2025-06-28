@@ -343,6 +343,30 @@ MonoBehaviour:
     m_SerializedLabels:
     - AmmoConfig
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 62f9fa358eb7cba4aac058d10c4aed92
+    m_Address: Assets/StaticData/Shop/Weapon/AutomaticPistolItemConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponShopItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 06e7a74b7791f2e4c91ef3cc1c9214f4
+    m_Address: Assets/StaticData/Shop/Weapon/PlasmaGunItemConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponShopItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c96b3ed6067df4548979f138e4099016
+    m_Address: Assets/StaticData/Shop/Weapon/RevolverItemConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponShopItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3e8d3ae8acd36d24f9520aad1b65e794
+    m_Address: Assets/StaticData/Shop/Weapon/RocketLaunchertemConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponShopItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 7128017d563554245a79368046c75e1a, type: 2}
   m_SchemaSet:
