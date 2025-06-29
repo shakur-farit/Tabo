@@ -15,6 +15,7 @@ namespace Code.Meta.UI.Windows.Behaviours
 		[SerializeField] private Button _weaponUpgradeButton;
 		[SerializeField] private Button _weaponBuyButton;
 		[SerializeField] private Button _enchantBuyButton;
+		[SerializeField] private Button _currentWeaponInfoButton;
 		[SerializeField] private TextMeshProUGUI _coinsText;
 
 		private IGameStateMachine _stateMachine;
@@ -40,6 +41,7 @@ namespace Code.Meta.UI.Windows.Behaviours
 			_weaponUpgradeButton.onClick.AddListener(OpenWeaponUpgradeWindow);
 			_weaponBuyButton.onClick.AddListener(OpenWeaponBuyWindow);
 			_enchantBuyButton.onClick.AddListener(OpenEnchantBuyWindow);
+			_currentWeaponInfoButton.onClick.AddListener(OpenCurrentWeaponInfoWindow);
 			
 			CoinsTextUpdate();
 		}
@@ -61,6 +63,9 @@ namespace Code.Meta.UI.Windows.Behaviours
 
 		private void OpenEnchantBuyWindow() =>
 			_windowService.Open(WindowId.EnchantBuyWindow);
+
+		private void OpenCurrentWeaponInfoWindow() => 
+			_windowService.Open(WindowId.CurrentWeaponInfoWindow);
 
 		private void CoinsTextUpdate() => 
 			_coinsText.text = _progressProvider.HeroData.CurrentCoinsCount.ToString();

@@ -5,7 +5,6 @@ using Code.Meta.Features.Shop.Weapon.Behaviours;
 using Code.Meta.Features.Shop.Weapon.Configs;
 using Code.Meta.UI.Windows.Service;
 using Code.Progress.Provider;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;

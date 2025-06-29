@@ -539,6 +539,7 @@ MonoBehaviour:
   _weaponUpgradeButton: {fileID: 1584857220253939633}
   _weaponBuyButton: {fileID: 2514447146863434449}
   _enchantBuyButton: {fileID: 8875456848377572236}
+  _currentWeaponInfoButton: {fileID: 4482080763016472010}
   _coinsText: {fileID: 8080208432681827772}
 --- !u!1 &1686660170653406831
 GameObject:
