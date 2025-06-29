@@ -13,7 +13,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
 
-namespace Code.Meta.Features.Shop.Upgrade.Beahaviours
+namespace Code.Meta.Features.Shop.Upgrade.Behaviours
 {
 	public class WeaponUpgradeShopItem : MonoBehaviour
 	{

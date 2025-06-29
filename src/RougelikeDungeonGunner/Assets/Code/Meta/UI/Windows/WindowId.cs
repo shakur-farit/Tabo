@@ -12,6 +12,8 @@
 		EnchantBuyWindow = 7,
 		WeaponBuyDialogWindow = 8,
 		EnchantBuyDialogWindow = 9,
-		CurrentWeaponInfoWindow = 9,
+		CurrentWeaponInfoWindow = 10,
+		NotEnoughCoinsWindow = 11,
+		MaxValueReachedWindow = 12,
 	}
 }

@@ -6,6 +6,7 @@ using Code.Infrastructure.View;
 using Code.Meta.Features.Shop.Upgrade;
 using Code.Meta.Features.Shop.Weapon.Configs;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Code.Gameplay.Features.Weapon.Configs
 {
@@ -24,7 +25,7 @@ namespace Code.Gameplay.Features.Weapon.Configs
 
 		public List<WeaponAvailableUpgrade> AvailableUpgrades;
 
-		public List<WeaponStatUIEntry> StatsDescriptions;
+		public List<WeaponStatUIEntry> StatsUIEntry;
 	}
 
 	[Serializable]

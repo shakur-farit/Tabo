@@ -40,6 +40,7 @@ namespace Code.Gameplay.StaticData
 		private const string WindowConfigLabel = "WindowConfig";
 		private const string WeaponShopItemConfigLabel = "WeaponShopItemConfig";
 		private const string WeaponUpgradeShopItemConfigLabel = "WeaponUpgradeShopItemConfig";
+		private const string WeaponStatUIEntryConfigLabel = "WeaponStatUIEntryConfig";
 
 		private BalanceConfig _balance;
 		private Dictionary<AmmoTypeId, AmmoConfig> _ammoById;
@@ -52,6 +53,7 @@ namespace Code.Gameplay.StaticData
 		private Dictionary<WindowId, WindowConfig> _windowById;
 		private Dictionary<WeaponShopItemTypeId, WeaponShopItemConfig> _weaponShopItemById;
 		private Dictionary<WeaponUpgradeTypeId, WeaponUpgradeShopItemConfig> _weaponUpgradeShopItemById;
+		private Dictionary<WeaponStatUIEntryTypeId, WeaponStatUIEntryConfig> _weaponStatUIEntryItemById;
 
 		private readonly IAssetProvider _assetProvider;
 
@@ -74,6 +76,7 @@ namespace Code.Gameplay.StaticData
 			await LoadEnchants();
 			await LoadWindows();
 			await LoadWeaponUpgradeShopItem();
+			await LoadWeaponStatUIEntryItem();
 			await LoadWeaponShopItem();
 		}
 
@@ -157,6 +160,14 @@ namespace Code.Gameplay.StaticData
 			throw new Exception($"Weapon config for {id} was not found");
 		}
 
+		public WeaponStatUIEntryConfig GetWeaponStatUIEntryItemConfig(WeaponStatUIEntryTypeId id)
+		{
+			if (_weaponStatUIEntryItemById.TryGetValue(id, out WeaponStatUIEntryConfig config))
+				return config;
+
+			throw new Exception($"Weapon config for {id} was not found");
+		}
+
 		public BalanceConfig GetBalance() => 
 			_balance;
 
@@ -198,6 +209,10 @@ namespace Code.Gameplay.StaticData
 
 		private async UniTask LoadWeaponShopItem() =>
 			_weaponShopItemById = (await _assetProvider.LoadAll<WeaponShopItemConfig>(WeaponShopItemConfigLabel))
+				.ToDictionary(x => x.TypeId, x => x);
+
+		private async UniTask LoadWeaponStatUIEntryItem() =>
+			_weaponStatUIEntryItemById = (await _assetProvider.LoadAll<WeaponStatUIEntryConfig>(WeaponStatUIEntryConfigLabel))
 				.ToDictionary(x => x.TypeId, x => x);
 
 		private async UniTask LoadBalance() => 

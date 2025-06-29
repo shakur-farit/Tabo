@@ -43,5 +43,6 @@ namespace Code.Gameplay.StaticData
     WindowConfig GetWindowConfig(WindowId id);
     WeaponUpgradeShopItemConfig GetUpgradeShopItemConfig(WeaponUpgradeTypeId id);
     WeaponShopItemConfig GetWeaponShopItemConfig(WeaponShopItemTypeId id);
+    WeaponStatUIEntryConfig GetWeaponStatUIEntryItemConfig(WeaponStatUIEntryTypeId id);
   }
 }

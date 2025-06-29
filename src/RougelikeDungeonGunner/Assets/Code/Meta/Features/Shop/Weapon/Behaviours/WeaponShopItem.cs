@@ -1,4 +1,4 @@
-﻿using System.Text.RegularExpressions;
+﻿using Code.Common.Extensions;
 using Code.Meta.Features.Shop.Weapon.Configs;
 using Code.Meta.UI.Windows;
 using Code.Meta.UI.Windows.Service;
@@ -36,16 +36,9 @@ namespace Code.Meta.Features.Shop.Weapon.Behaviours
 		{
 			_icon.sprite = config.Sprite;
 			_price.text = config.Price.ToString();
-			_name.text = FormatToName(config.TypeId);
+			_name.text = config.TypeId.ToDisplayName();
 
 			_weaponToBuyConfig = config;
-		}
-
-		private string FormatToName(WeaponShopItemTypeId typeId)
-		{
-			string name = typeId.ToString();
-
-			return Regex.Replace(name, "(?<!^)([A-Z])", " $1");
 		}
 
 		private void OpenWeaponBuyDialogWindow()

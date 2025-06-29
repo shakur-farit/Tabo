@@ -45,7 +45,7 @@ namespace Code.Gameplay.Features.Weapon.Factory
 					return CreateShotgun(weaponTypeId, parent, at, ownerId);
 				case WeaponTypeId.LaserBlaster:
 					return CreateLaserBlaster(weaponTypeId, parent, at, ownerId);
-				case WeaponTypeId.AutomaticPistol:
+				case WeaponTypeId.AutoPistol:
 					return CreateAutomaticPistol(weaponTypeId, parent, at, ownerId);
 				case WeaponTypeId.PlasmaGun:
 					return CreatePlasmaGun(weaponTypeId, parent, at, ownerId);

@@ -367,6 +367,92 @@ MonoBehaviour:
     m_SerializedLabels:
     - WeaponShopItemConfig
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e5e28de55772379428cba7fcb75d8800
+    m_Address: Assets/StaticData/Shop/WeaponStatUIEntry/FireRangeWeaponStatUIEntryConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponStatUIEntryConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cfc1f08a5fc41b04b8a215150c78d3d1
+    m_Address: Assets/StaticData/Shop/WeaponStatUIEntry/FireRangeWeaponStatUIEntryConfig
+      2.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponStatUIEntryConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9e9a5c95bf08c2149a13e69adcafc994
+    m_Address: Assets/StaticData/Shop/WeaponStatUIEntry/FireRangeWeaponStatUIEntryConfig
+      3.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponStatUIEntryConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 89758b79be18d76489a50685468220f3
+    m_Address: Assets/StaticData/Shop/WeaponStatUIEntry/FireRangeWeaponStatUIEntryConfig
+      4.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponStatUIEntryConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fff8984789533fb46bdf3b7589297a2d
+    m_Address: Assets/StaticData/Shop/WeaponStatUIEntry/FireRangeWeaponStatUIEntryConfig
+      5.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponStatUIEntryConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 56bd3cbdb71dd2e45955d4c71763245d
+    m_Address: Assets/StaticData/Shop/WeaponStatUIEntry/FireRangeWeaponStatUIEntryConfig
+      6.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponStatUIEntryConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4691b37493b46ef42a3fd7a9986f2937
+    m_Address: Assets/StaticData/Shop/WeaponStatUIEntry/FireRangeWeaponStatUIEntryConfig
+      7.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponStatUIEntryConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f532051e96453b349b6039a08b2df88d
+    m_Address: Assets/StaticData/Shop/WeaponStatUIEntry/FireRangeWeaponStatUIEntryConfig
+      8.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponStatUIEntryConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 59243be24faeff8438f6583ab5b4a145
+    m_Address: Assets/StaticData/Shop/WeaponStatUIEntry/FireRangeWeaponStatUIEntryConfig
+      1.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponStatUIEntryConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 05c12c5dc410e2c40b18a22c00927963
+    m_Address: Assets/StaticData/Shop/WeaponStatUIEntry/InfinityAmmoWeaponStatUIEntryConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponStatUIEntryConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 09cf82f2d3e5a9f49a23835d79f9f131
+    m_Address: Assets/StaticData/Shop/WeaponStatUIEntry/PelletCountWeaponStatUIEntryConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponStatUIEntryConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 17f4d54a7090cd441873ee56fc02d622
+    m_Address: Assets/StaticData/Window/NotEnoughCoinsWindowConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WindowConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a640e1cc0de88374abdac7aa8500d1e1
+    m_Address: Assets/StaticData/Window/MaxValueReachedWindowConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WindowConfig
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 7128017d563554245a79368046c75e1a, type: 2}
   m_SchemaSet:

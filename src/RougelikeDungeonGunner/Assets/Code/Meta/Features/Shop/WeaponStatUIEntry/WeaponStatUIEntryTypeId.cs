@@ -12,6 +12,7 @@
 		EnchantSlots = 7,
 		Damage = 8,
 		Pierce = 9,
-		InfinityAmmo = 10
+		InfinityAmmo = 10,
+		PelletCount = 11 
 	}
 }

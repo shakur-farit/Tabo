@@ -40,3 +40,13 @@ MonoBehaviour:
   - UpgradeType: 3
   - UpgradeType: 7
   - UpgradeType: 9
+  StatsUIEntry:
+  - StatUIEntryType: 8
+  - StatUIEntryType: 2
+  - StatUIEntryType: 3
+  - StatUIEntryType: 5
+  - StatUIEntryType: 6
+  - StatUIEntryType: 9
+  - StatUIEntryType: 1
+  - StatUIEntryType: 7
+  - StatUIEntryType: 11

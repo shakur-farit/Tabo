@@ -8,7 +8,6 @@ using UnityEngine;
 using System;
 using Code.Gameplay.Features.Hero.Configs;
 using Code.Gameplay.Features.Weapon;
-using Code.Progress.Data;
 using Code.Progress.Provider;
 
 namespace Code.Gameplay.Features.Hero.Factory
