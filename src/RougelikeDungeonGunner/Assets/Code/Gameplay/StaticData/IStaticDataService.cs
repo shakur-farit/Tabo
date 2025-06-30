@@ -18,6 +18,11 @@ using Code.Meta.Features.Shop.Upgrade;
 using Code.Meta.Features.Shop.Upgrade.Configs;
 using Code.Meta.Features.Shop.Weapon;
 using Code.Meta.Features.Shop.Weapon.Configs;
+using Code.Meta.Features.Shop.WeaponEnchantUIEntry;
+using Code.Meta.Features.Shop.WeaponEnchantUIEntry.Configs;
+using Code.Meta.Features.Shop.WeaponEnchantUIEntry.Factory;
+using Code.Meta.Features.Shop.WeaponStatUIEntry;
+using Code.Meta.Features.Shop.WeaponStatUIEntry.Configs;
 using Code.Meta.UI.Windows;
 using Code.Meta.UI.Windows.Config;
 using Cysharp.Threading.Tasks;
@@ -42,7 +47,9 @@ namespace Code.Gameplay.StaticData
 	  EnchantConfig GetEnchantConfig(EnchantTypeId id);
     WindowConfig GetWindowConfig(WindowId id);
     WeaponUpgradeShopItemConfig GetUpgradeShopItemConfig(WeaponUpgradeTypeId id);
-    WeaponShopItemConfig GetWeaponShopItemConfig(WeaponShopItemTypeId id);
+    WeaponShopItemConfig GetWeaponToBuyShopItemConfig(WeaponShopItemTypeId id);
     WeaponStatUIEntryConfig GetWeaponStatUIEntryItemConfig(WeaponStatUIEntryTypeId id);
+    WeaponEnchantUIEntryConfig GetWeaponEnchantUIEntryItemConfig(WeaponEnchantUIEntryTypeId id);
+    WeaponEnchantStatUIEntryConfig GetWeaponEnchantStatUIEntryItemConfig(WeaponEnchantStatUIEntryTypeId id);
   }
 }

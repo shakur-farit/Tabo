@@ -1,4 +1,4 @@
-﻿using Code.Meta.Features.Shop.Upgrade.Behaviours;
+﻿using Code.Meta.Features.Shop.Upgrade.Beahaviours;
 using UnityEngine;
 
 namespace Code.Meta.Features.Shop.Upgrade.Factory

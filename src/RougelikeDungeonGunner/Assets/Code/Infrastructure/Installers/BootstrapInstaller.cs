@@ -33,8 +33,9 @@ using Code.Meta.Features.Hud.EnchantHolder.Factory;
 using Code.Meta.Features.Hud.HeartHolder.Factory;
 using Code.Meta.Features.Shop.Upgrade.Factory;
 using Code.Meta.Features.Shop.Upgrade.Services;
-using Code.Meta.Features.Shop.Weapon.Configs;
 using Code.Meta.Features.Shop.Weapon.Factory;
+using Code.Meta.Features.Shop.WeaponEnchantUIEntry.Factory;
+using Code.Meta.Features.Shop.WeaponStatUIEntry.Factory;
 using Code.Meta.UI.Windows.Factory;
 using Code.Meta.UI.Windows.Service;
 using Code.Progress.Provider;
@@ -145,6 +146,8 @@ namespace Code.Infrastructure.Installers
 			Container.Bind<IWeaponShopItemFactory>().To<WeaponShopItemFactory>().AsSingle();
 			Container.Bind<IWeaponUpgradeShopItemFactory>().To<WeaponUpgradeShopItemFactory>().AsSingle();
 			Container.Bind<IWeaponStatUIEntryItemFactory>().To<WeaponStatUIEntryItemFactory>().AsSingle();
+			Container.Bind<IWeaponEnchantUIEntryFactory>().To<WeaponEnchantUIEntryFactory>().AsSingle();
+			Container.Bind<IWeaponEnchantStatUIEntryFactory>().To<WeaponEnchantStatUIEntryFactory>().AsSingle();
 		}
 
 		private void BindUIServices()

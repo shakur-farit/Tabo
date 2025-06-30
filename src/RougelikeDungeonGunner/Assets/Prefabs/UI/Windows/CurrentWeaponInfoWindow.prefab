@@ -162,6 +162,8 @@ GameObject:
   m_Component:
   - component: {fileID: 299126357052379030}
   - component: {fileID: 68609123452826113}
+  - component: {fileID: 1906303532311809390}
+  - component: {fileID: 8099423431512311679}
   m_Layer: 5
   m_Name: CurrentWeaponInfoWindow
   m_TagString: Untagged
@@ -202,8 +204,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1058a48702e50074b9335f3ea711b5df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _statsHolder: {fileID: 406707487366429173}
-  _enchantsHolder: {fileID: 6325671342875802400}
+  statsUIHolder: {fileID: 1906303532311809390}
+  enchantsUIHolder: {fileID: 8099423431512311679}
+  _weaponIcon: {fileID: 7281791863102981639}
+  _closeButton: {fileID: 669298014376959528}
+--- !u!114 &1906303532311809390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1731999498115797555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bde27f992eba26b4d8c6ad1f0e1ddfcc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _holder: {fileID: 406707487366429173}
+--- !u!114 &8099423431512311679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1731999498115797555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2031d4c7232670498bcf28b6a950c2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _holder: {fileID: 6325671342875802400}
 --- !u!1 &2990956764572978505
 GameObject:
   m_ObjectHideFlags: 0

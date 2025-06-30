@@ -4,9 +4,8 @@ using Code.Gameplay.Features.Effects;
 using Code.Gameplay.Features.Statuses;
 using Code.Infrastructure.View;
 using Code.Meta.Features.Shop.Upgrade;
-using Code.Meta.Features.Shop.Weapon.Configs;
+using Code.Meta.Features.Shop.WeaponStatUIEntry;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Code.Gameplay.Features.Weapon.Configs
 {

@@ -1,5 +1,5 @@
 ﻿using Code.Gameplay.StaticData;
-using Code.Meta.Features.Shop.Upgrade.Behaviours;
+using Code.Meta.Features.Shop.Upgrade.Beahaviours;
 using Code.Meta.Features.Shop.Upgrade.Configs;
 using UnityEngine;
 using Zenject;

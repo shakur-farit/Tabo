@@ -1,10 +1,11 @@
-﻿using Code.Gameplay.Features.Weapon.Configs;
+﻿using Code.Meta.Features.Shop.WeaponStatUIEntry.Behaviours;
 using UnityEngine;
 
-namespace Code.Meta.Features.Shop.Weapon.Configs
+namespace Code.Meta.Features.Shop.WeaponStatUIEntry.Factory
 {
 	public interface IWeaponStatUIEntryItemFactory
 	{
-		WeaponStatUIEntryItem CreateStatUIEntryItem(WeaponStatUIEntryTypeId id, Transform parent, WeaponConfig weaponConfig);
+		WeaponStatUIEntryItem CreateStatUIEntryItem(WeaponStatUIEntryTypeId id, Transform parent,
+			string valueText);
 	}
 }

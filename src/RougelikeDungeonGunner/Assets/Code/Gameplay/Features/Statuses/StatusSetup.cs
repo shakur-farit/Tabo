@@ -7,7 +7,7 @@ namespace Code.Gameplay.Features.Statuses
 	public class StatusSetup
 	{
 		public StatusTypeId StatusTypeId;
-		[Range(0f, 100f)] public float Value;
+		[Range(-100f, 100f)] public float Value;
 		[Range(0f, 100f)] public float StatusDuration;
 		[Range(0f, 100f)] public float Period;
 		[Range(0f, 100f)] public float Radius;

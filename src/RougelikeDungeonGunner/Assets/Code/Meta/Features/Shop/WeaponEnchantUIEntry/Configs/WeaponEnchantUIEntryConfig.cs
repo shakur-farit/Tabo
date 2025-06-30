@@ -1,9 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
-namespace Code.Meta.Features.Shop.Weapon.Configs
+namespace Code.Meta.Features.Shop.WeaponEnchantUIEntry.Configs
 {
-	[CreateAssetMenu(menuName = "Dungeon Gunner/Shop/Weapon Enchant UI Entry Config", fileName = "WeaponEnchantUIEntryConfig")]
+	[CreateAssetMenu(menuName = "Dungeon Gunner/Weapon Information/Weapon Enchant UI Entry Config",
+		fileName = "WeaponEnchantUIEntryConfig")]
 	public class WeaponEnchantUIEntryConfig : ScriptableObject
 	{
 		public WeaponEnchantUIEntryTypeId TypeId;
@@ -13,9 +15,9 @@ namespace Code.Meta.Features.Shop.Weapon.Configs
 		public List<EnchantStatUIEntry> EnchantStatUIEntries;
 	}
 
-	[SerializeField]
+	[Serializable]
 	public class EnchantStatUIEntry
 	{
-		public WeaponEnchantStatsUIEntryTypeId TypeId;
+		public WeaponEnchantStatUIEntryTypeId TypeId;
 	}
 }

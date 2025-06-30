@@ -15,7 +15,6 @@ namespace Code.Meta.Features.Shop.Upgrade.Services
 			_staticDataService = staticDataService;
 		}
 
-
 		public float GetFireRange(WeaponConfig config) => 
 			config.Stats.FireRange + _provider.GetUpgradeBonus(WeaponUpgradeTypeId.FireRange);
 
