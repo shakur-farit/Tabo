@@ -507,6 +507,24 @@ MonoBehaviour:
     m_SerializedLabels:
     - WeaponEnchantStatUIEntryConfig
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ccd04f42387118041b5424e5910c2d58
+    m_Address: Assets/StaticData/Shop/Enchant/PoisonEnchantToBuyItemConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EnchantShopItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d982089271f54114ab094fc8a99af95b
+    m_Address: Assets/StaticData/Shop/Enchant/FlameEnchantToBuyItemConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EnchantShopItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a11088f558fa98d4b877d9c393a1e285
+    m_Address: Assets/StaticData/Shop/Enchant/FreezeEnchantToBuyItemConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EnchantShopItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 7128017d563554245a79368046c75e1a, type: 2}
   m_SchemaSet:

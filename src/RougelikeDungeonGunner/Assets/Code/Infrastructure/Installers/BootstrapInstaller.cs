@@ -35,6 +35,7 @@ using Code.Meta.Features.Shop.Upgrade.Factory;
 using Code.Meta.Features.Shop.Upgrade.Services;
 using Code.Meta.Features.Shop.Weapon.Factory;
 using Code.Meta.Features.Shop.WeaponEnchantUIEntry.Factory;
+using Code.Meta.Features.Shop.WeaponStatUIEntry.Configs;
 using Code.Meta.Features.Shop.WeaponStatUIEntry.Factory;
 using Code.Meta.UI.Windows.Factory;
 using Code.Meta.UI.Windows.Service;
@@ -144,6 +145,7 @@ namespace Code.Infrastructure.Installers
 			Container.Bind<IHeartUIFactory>().To<HeartUIFactory>().AsSingle();
 			Container.Bind<IWindowFactory>().To<WindowFactory>().AsSingle();
 			Container.Bind<IWeaponShopItemFactory>().To<WeaponShopItemFactory>().AsSingle();
+			Container.Bind<IEnchantShopItemFactory>().To<EnchantShopItemFactory>().AsSingle();
 			Container.Bind<IWeaponUpgradeShopItemFactory>().To<WeaponUpgradeShopItemFactory>().AsSingle();
 			Container.Bind<IWeaponStatUIEntryItemFactory>().To<WeaponStatUIEntryItemFactory>().AsSingle();
 			Container.Bind<IWeaponEnchantUIEntryFactory>().To<WeaponEnchantUIEntryFactory>().AsSingle();

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: EnchantBuyWindowConfig
   m_EditorClassIdentifier: 
   TypeId: 7
-  ViewPrefab: {fileID: 4945148918330690640, guid: caf7fcbfe4674b84a8cfa5d9b346384f, type: 3}
+  ViewPrefab: {fileID: 6042312791012646439, guid: 68e815b3cd4efdc46b198b907d2dac67, type: 3}

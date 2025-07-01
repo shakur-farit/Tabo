@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
+using Code.Common.Extensions;
 using Code.Gameplay.Features.Effects;
 using Code.Gameplay.Features.Weapon;
 using Code.Gameplay.Features.Weapon.Configs;
@@ -48,21 +49,14 @@ namespace Code.Meta.Features.Shop.Upgrade.Beahaviours
 		private void OnEnable() =>
 			_buyButton.onClick.AddListener(Upgrade);
 
-		public void Setup(WeaponUpgradeShopItemConfig config)
+		public void Setup(WeaponUpgradeTypeId id)
 		{
-			_priceText.text = config.Price.ToString();
-			_name.text = FormatToName(config.TypeId);
+			_config = _staticDataService.GetWeaponUpgradeShopItemConfig(id);
 
-			_config = config;
+			_priceText.text = _config.Price.ToString();
+			_name.text = id.ToDisplayName();
 
 			_statValueText.text = UpdateCurrentValueText();
-		}
-
-		private string FormatToName(WeaponUpgradeTypeId typeId)
-		{
-			string name = typeId.ToString();
-
-			return Regex.Replace(name, "(?<!^)([A-Z])", " $1");
 		}
 
 		private void Upgrade()

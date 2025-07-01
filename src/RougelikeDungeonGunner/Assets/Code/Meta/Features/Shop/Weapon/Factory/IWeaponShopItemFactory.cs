@@ -6,6 +6,6 @@ namespace Code.Meta.Features.Shop.Weapon.Factory
 {
 	public interface IWeaponShopItemFactory
 	{
-		WeaponShopItem CreateWeaponShopItem(WeaponShopItemConfig config, Transform parent);
+		WeaponShopItem CreateWeaponShopItem(WeaponShopItemTypeId config, Transform parent);
 	}
 }

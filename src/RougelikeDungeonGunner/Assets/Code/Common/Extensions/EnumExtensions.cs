@@ -7,7 +7,7 @@ namespace Code.Common.Extensions
 	{
 		private static readonly Regex _camelCaseSplitter = new(@"(?<!^)([A-Z])", RegexOptions.Compiled);
 
-		public static string ToDisplayName(this Enum value) => 
+		public static string ToDisplayName(this Enum value) =>
 			_camelCaseSplitter.Replace(value.ToString(), " $1");
 	}
 }

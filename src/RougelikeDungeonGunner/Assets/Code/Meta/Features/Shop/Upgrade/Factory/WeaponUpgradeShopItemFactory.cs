@@ -19,11 +19,11 @@ namespace Code.Meta.Features.Shop.Upgrade.Factory
 
 		public WeaponUpgradeShopItem CreateUpgradeWeaponShopItem(WeaponUpgradeTypeId typeId, Transform parent)
 		{
-			WeaponUpgradeShopItemConfig config = _staticDataService.GetUpgradeShopItemConfig(typeId);
+			WeaponUpgradeShopItemConfig config = _staticDataService.GetWeaponUpgradeShopItemConfig(typeId);
 
 			WeaponUpgradeShopItem item = _instantiator.InstantiatePrefabForComponent<WeaponUpgradeShopItem>(config.ViewPrefab, parent);
 
-			item.Setup(config);
+			item.Setup(typeId);
 
 			return item;
 		}

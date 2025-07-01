@@ -43,6 +43,7 @@ namespace Code.Gameplay.StaticData
 		private const string EnchantConfigLabel = "EnchantConfig";
 		private const string WindowConfigLabel = "WindowConfig";
 		private const string WeaponShopItemConfigLabel = "WeaponShopItemConfig";
+		private const string EnchantShopItemConfigLabel = "EnchantShopItemConfig";
 		private const string WeaponUpgradeShopItemConfigLabel = "WeaponUpgradeShopItemConfig";
 		private const string WeaponStatUIEntryConfigLabel = "WeaponStatUIEntryConfig";
 		private const string WeaponEnchantUIEntryConfigLabel = "WeaponEnchantUIEntryConfig";
@@ -58,6 +59,7 @@ namespace Code.Gameplay.StaticData
 		private Dictionary<EnchantTypeId, EnchantConfig> _enchantById;
 		private Dictionary<WindowId, WindowConfig> _windowById;
 		private Dictionary<WeaponShopItemTypeId, WeaponShopItemConfig> _weaponShopItemById;
+		private Dictionary<EnchantShopItemTypeId, EnchantShopItemConfig> _enchantShopItemById;
 		private Dictionary<WeaponUpgradeTypeId, WeaponUpgradeShopItemConfig> _weaponUpgradeShopItemById;
 		private Dictionary<WeaponStatUIEntryTypeId, WeaponStatUIEntryConfig> _weaponStatUIEntryItemById;
 		private Dictionary<WeaponEnchantUIEntryTypeId, WeaponEnchantUIEntryConfig> _weaponEnchantUIEntryItemById;
@@ -69,7 +71,6 @@ namespace Code.Gameplay.StaticData
 
 		public IEnumerable<LootConfig> GetAllLootConfigs() => _lootById.Values;
 		public IEnumerable<HeroConfig> GetAllHeroConfigs() => _heroById.Values;
-		public IEnumerable<WeaponShopItemConfig> GetAllWeaponShopItemConfigs() => _weaponShopItemById.Values;
 
 		public StaticDataService(IAssetProvider assetProvider) =>
 			_assetProvider = assetProvider;
@@ -85,7 +86,8 @@ namespace Code.Gameplay.StaticData
 			await LoadLoots();
 			await LoadEnchants();
 			await LoadWindows();
-			await LoadWeaponToBuyShopItem();
+			await LoadWeaponShopItem();
+			await LoadEnchantShopItem();
 			await LoadWeaponUpgradeShopItem();
 			await LoadWeaponStatUIEntryItem();
 			await LoadWeaponEnchantUIEntryItem();
@@ -156,7 +158,7 @@ namespace Code.Gameplay.StaticData
 			throw new Exception($"Window config for {id} was not found");
 		}
 
-		public WeaponUpgradeShopItemConfig GetUpgradeShopItemConfig(WeaponUpgradeTypeId id)
+		public WeaponUpgradeShopItemConfig GetWeaponUpgradeShopItemConfig(WeaponUpgradeTypeId id)
 		{
 			if (_weaponUpgradeShopItemById.TryGetValue(id, out WeaponUpgradeShopItemConfig config))
 				return config;
@@ -164,12 +166,20 @@ namespace Code.Gameplay.StaticData
 			throw new Exception($"Weapon upgrade item config for {id} was not found");
 		}
 
-		public WeaponShopItemConfig GetWeaponToBuyShopItemConfig(WeaponShopItemTypeId id)
+		public WeaponShopItemConfig GetWeaponShopItemConfig(WeaponShopItemTypeId id)
 		{
 			if (_weaponShopItemById.TryGetValue(id, out WeaponShopItemConfig config))
 				return config;
 
 			throw new Exception($"Weapon shop item config for {id} was not found");
+		}
+
+		public EnchantShopItemConfig GetEnchantShopItemConfig(EnchantShopItemTypeId id)
+		{
+			if (_enchantShopItemById.TryGetValue(id, out EnchantShopItemConfig config))
+				return config;
+
+			throw new Exception($"Enchant shop item config for {id} was not found");
 		}
 
 		public WeaponStatUIEntryConfig GetWeaponStatUIEntryItemConfig(WeaponStatUIEntryTypeId id)
@@ -236,8 +246,12 @@ namespace Code.Gameplay.StaticData
 				(await _assetProvider.LoadAll<WeaponUpgradeShopItemConfig>(WeaponUpgradeShopItemConfigLabel))
 				.ToDictionary(x => x.TypeId, x => x);
 
-		private async UniTask LoadWeaponToBuyShopItem() =>
+		private async UniTask LoadWeaponShopItem() =>
 			_weaponShopItemById = (await _assetProvider.LoadAll<WeaponShopItemConfig>(WeaponShopItemConfigLabel))
+				.ToDictionary(x => x.TypeId, x => x);
+
+		private async UniTask LoadEnchantShopItem() =>
+			_enchantShopItemById = (await _assetProvider.LoadAll<EnchantShopItemConfig>(EnchantShopItemConfigLabel))
 				.ToDictionary(x => x.TypeId, x => x);
 
 		private async UniTask LoadWeaponStatUIEntryItem() =>

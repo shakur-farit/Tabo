@@ -282,7 +282,7 @@ MonoBehaviour:
   m_StartCorner: 0
   m_StartAxis: 0
   m_CellSize: {x: 250, y: 250}
-  m_Spacing: {x: 50, y: 80}
+  m_Spacing: {x: 120, y: 80}
   m_Constraint: 0
   m_ConstraintCount: 2
 --- !u!114 &320354560323339081
@@ -612,6 +612,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8458154193943062896}
+  - component: {fileID: 1110744363467839128}
   m_Layer: 5
   m_Name: EnchantBuyWindow
   m_TagString: Untagged
@@ -641,6 +642,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1110744363467839128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6042312791012646439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9d953dd0faae514cb1e7112c9e3e8e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _holder: {fileID: 8579956003564771537}
+  _closeButton: {fileID: 119071195974867259}
 --- !u!1 &6423082682309323829
 GameObject:
   m_ObjectHideFlags: 0

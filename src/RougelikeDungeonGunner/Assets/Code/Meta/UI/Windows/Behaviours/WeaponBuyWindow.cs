@@ -1,10 +1,9 @@
-﻿using Code.Gameplay.StaticData;
-using Code.Meta.Features.Shop.Weapon.Behaviours;
-using Code.Meta.Features.Shop.Weapon.Configs;
+﻿using Code.Meta.Features.Shop.Weapon.Behaviours;
 using Code.Meta.UI.Windows.Service;
 using Code.Progress.Provider;
 using System.Collections.Generic;
-using System.Linq;
+using Code.Common.Extensions;
+using Code.Meta.Features.Shop.Weapon;
 using Code.Meta.Features.Shop.Weapon.Factory;
 using UnityEngine;
 using UnityEngine.UI;
@@ -22,20 +21,17 @@ namespace Code.Meta.UI.Windows.Behaviours
 		private IWindowService _windowService;
 		private IWeaponShopItemFactory _factory;
 		private IProgressProvider _progressProvider;
-		private IStaticDataService _staticDataService;
 
 
 		[Inject]
 		public void Constructor(
 			IWindowService windowService,
-			IStaticDataService staticDataService,
 			IWeaponShopItemFactory factory,
 			IProgressProvider progressProvider)
 		{
 			Id = WindowId.WeaponBuyWindow;
 
 			_windowService = windowService;
-			_staticDataService = staticDataService;
 			_factory = factory;
 			_progressProvider = progressProvider;
 
@@ -61,16 +57,16 @@ namespace Code.Meta.UI.Windows.Behaviours
 		{
 			Clear();
 
-			List<WeaponShopItemConfig> configs = _staticDataService.GetAllWeaponShopItemConfigs().ToList();
+			List<WeaponShopItemTypeId> ids = EnumUtility.InitEnumList<WeaponShopItemTypeId>();
 
-			foreach (WeaponShopItemConfig config in configs)
+			foreach (WeaponShopItemTypeId id in ids)
 			{
-				if (config.WeaponTypeId == _progressProvider.HeroData.CurrentWeaponTypeId)
-					continue;
+				WeaponShopItem item = _factory.CreateWeaponShopItem(id, _layout);
 
-				WeaponShopItem item = _factory.CreateWeaponShopItem(config, _layout);
-				item.Setup(config);
-				_items.Add(item.gameObject);
+				if (item.WeaponToBuy == _progressProvider.HeroData.CurrentWeaponTypeId)
+					Destroy(item.gameObject);
+				else
+					_items.Add(item.gameObject);
 			}
 		}
 
