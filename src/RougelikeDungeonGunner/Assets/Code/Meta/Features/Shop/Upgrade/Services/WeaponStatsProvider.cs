@@ -16,28 +16,28 @@ namespace Code.Meta.Features.Shop.Upgrade.Services
 		}
 
 		public float GetFireRange(WeaponConfig config) => 
-			config.Stats.FireRange + _provider.GetUpgradeBonus(WeaponUpgradeTypeId.FireRange);
+			config.Stats.FireRange + _provider.GetUpgradeBonus(config.TypeId, WeaponUpgradeTypeId.FireRange);
 
 		public float GetCooldown(WeaponConfig config) => 
-			config.Stats.Cooldown  - _provider.GetUpgradeBonus(WeaponUpgradeTypeId.Cooldown);
+			config.Stats.Cooldown  - _provider.GetUpgradeBonus(config.TypeId, WeaponUpgradeTypeId.Cooldown);
 		
 		public float GetReloadTime(WeaponConfig config) =>
-			config.Stats.ReloadTime - _provider.GetUpgradeBonus(WeaponUpgradeTypeId.ReloadTime);
+			config.Stats.ReloadTime - _provider.GetUpgradeBonus(config.TypeId, WeaponUpgradeTypeId.ReloadTime);
 
 		public float GetPrechargingTime(WeaponConfig config) =>
-			config.Stats.PrechargingTime - _provider.GetUpgradeBonus(WeaponUpgradeTypeId.PrechargingTime);
+			config.Stats.PrechargingTime - _provider.GetUpgradeBonus(config.TypeId, WeaponUpgradeTypeId.PrechargingTime);
 
 		public int GetMagazineSize(WeaponConfig config) =>
-			config.Stats.MagazineSize + (int)_provider.GetUpgradeBonus(WeaponUpgradeTypeId.MagazineSize);
+			config.Stats.MagazineSize + (int)_provider.GetUpgradeBonus(config.TypeId, WeaponUpgradeTypeId.MagazineSize);
 
 		public int GetPierce(WeaponConfig config) =>
-			config.Stats.Pierce + (int)_provider.GetUpgradeBonus(WeaponUpgradeTypeId.Pierce);
+			config.Stats.Pierce + (int)_provider.GetUpgradeBonus(config.TypeId, WeaponUpgradeTypeId.Pierce);
 
 		public float GetAccuracy(WeaponConfig config) => 
-			config.Stats.Accuracy + _provider.GetUpgradeBonus(WeaponUpgradeTypeId.Accuracy);
+			config.Stats.Accuracy + _provider.GetUpgradeBonus(config.TypeId, WeaponUpgradeTypeId.Accuracy);
 
 		public int GetEnchantSlots(WeaponConfig config) =>
-			config.Stats.EnchantSlots + (int)_provider.GetUpgradeBonus(WeaponUpgradeTypeId.EnchantSlots);
+			config.Stats.EnchantSlots + (int)_provider.GetUpgradeBonus(config.TypeId, WeaponUpgradeTypeId.EnchantSlots);
 
 		public float GetMinDeviation(WeaponConfig config) => 
 			-GetHalfSpread(GetAccuracy(config));

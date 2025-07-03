@@ -25,7 +25,7 @@ namespace Code.Meta.Features.Shop.Upgrade.Services
 				};
 
 				if (effect.EffectTypeId == EffectTypeId.Damage)
-					newEffect.Value += _provider.GetUpgradeBonus(WeaponUpgradeTypeId.Damage);
+					newEffect.Value += _provider.GetUpgradeBonus(config.TypeId, WeaponUpgradeTypeId.Damage);
 
 				modifiedEffects.Add(newEffect);
 			}
