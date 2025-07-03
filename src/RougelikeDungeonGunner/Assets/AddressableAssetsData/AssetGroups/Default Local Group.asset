@@ -463,19 +463,19 @@ MonoBehaviour:
     m_Address: Assets/StaticData/WeaponInformation/WeaponEnchantUIEntry/FreezeUIEntryConfig.asset
     m_ReadOnly: 0
     m_SerializedLabels:
-    - WeaponEnchantUIEntryConfig
+    - EnchantUIEntryConfig
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c5208cd2ff1908f409549b528d722a71
     m_Address: Assets/StaticData/WeaponInformation/WeaponEnchantUIEntry/FlameUIEntryConfig.asset
     m_ReadOnly: 0
     m_SerializedLabels:
-    - WeaponEnchantUIEntryConfig
+    - EnchantUIEntryConfig
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 157335dbbe7b6f64ba9baab694a96c10
     m_Address: Assets/StaticData/WeaponInformation/WeaponEnchantUIEntry/PoisonUIEntryConfig.asset
     m_ReadOnly: 0
     m_SerializedLabels:
-    - WeaponEnchantUIEntryConfig
+    - EnchantUIEntryConfig
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 0b1b3ed9d6664da4a91705e4d1b6cdd5
     m_Address: Assets/StaticData/Window/EnchantStatsWindowConfig.asset
@@ -487,25 +487,25 @@ MonoBehaviour:
     m_Address: Assets/StaticData/WeaponInformation/WeaponEnchantUIEntry/EnchantStat/PoidonStatUIEntryConfig.asset
     m_ReadOnly: 0
     m_SerializedLabels:
-    - WeaponEnchantStatUIEntryConfig
+    - EnchantStatUIEntryConfig
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 5198daad3a9960e4ebbcda3875a20f03
     m_Address: Assets/StaticData/WeaponInformation/WeaponEnchantUIEntry/EnchantStat/FreezeStatUIEntryConfig.asset
     m_ReadOnly: 0
     m_SerializedLabels:
-    - WeaponEnchantStatUIEntryConfig
+    - EnchantStatUIEntryConfig
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: fa139cd7df8b1e44abf2422de4ad2bde
     m_Address: Assets/StaticData/WeaponInformation/WeaponEnchantUIEntry/EnchantStat/DurationStatUIEntryConfig.asset
     m_ReadOnly: 0
     m_SerializedLabels:
-    - WeaponEnchantStatUIEntryConfig
+    - EnchantStatUIEntryConfig
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 1610237afa8961649b290ed7f8b110bb
     m_Address: Assets/StaticData/WeaponInformation/WeaponEnchantUIEntry/EnchantStat/PeriodStatUIEntryConfig.asset
     m_ReadOnly: 0
     m_SerializedLabels:
-    - WeaponEnchantStatUIEntryConfig
+    - EnchantStatUIEntryConfig
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ccd04f42387118041b5424e5910c2d58
     m_Address: Assets/StaticData/Shop/Enchant/PoisonEnchantToBuyItemConfig.asset
@@ -524,6 +524,12 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - EnchantShopItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8ec2c97b620fc4d4ab21292d91542ebf
+    m_Address: Assets/StaticData/Window/EnchantBuyDialogueWindowConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WindowConfig
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 7128017d563554245a79368046c75e1a, type: 2}

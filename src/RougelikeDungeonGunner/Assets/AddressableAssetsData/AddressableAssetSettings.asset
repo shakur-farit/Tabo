@@ -15,7 +15,7 @@ MonoBehaviour:
   m_DefaultGroup: f40428f047dc54a46b8184ab91599836
   m_currentHash:
     serializedVersion: 2
-    Hash: 3f005334b66f9a19b126b9ba8d6316ff
+    Hash: 0c48ce356e9de6209dd385f8b24b76c5
   m_OptimizeCatalogSize: 0
   m_BuildRemoteCatalog: 0
   m_BundleLocalCatalog: 0
@@ -98,9 +98,9 @@ MonoBehaviour:
     - WeaponShopItemConfig
     - WeaponUpgradeShopItemConfig
     - WeaponStatUIEntryConfig
-    - WeaponEnchantUIEntryConfig
-    - WeaponEnchantStatUIEntryConfig
     - EnchantShopItemConfig
+    - EnchantUIEntryConfig
+    - EnchantStatUIEntryConfig
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: 85357d346e02ee54ab80d633e7b0c1cf, type: 2}

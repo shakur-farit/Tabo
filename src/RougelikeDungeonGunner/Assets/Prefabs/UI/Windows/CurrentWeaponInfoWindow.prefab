@@ -204,8 +204,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1058a48702e50074b9335f3ea711b5df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  statsUIHolder: {fileID: 1906303532311809390}
-  enchantsUIHolder: {fileID: 8099423431512311679}
+  _weaponStatsUIHolder: {fileID: 1906303532311809390}
+  _enchantsUIHolder: {fileID: 8099423431512311679}
   _weaponIcon: {fileID: 7281791863102981639}
   _closeButton: {fileID: 669298014376959528}
 --- !u!114 &1906303532311809390

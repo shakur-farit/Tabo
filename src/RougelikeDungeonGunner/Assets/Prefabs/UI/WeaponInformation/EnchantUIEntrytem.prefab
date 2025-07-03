@@ -182,7 +182,7 @@ GameObject:
   - component: {fileID: 1335557379413306892}
   - component: {fileID: 5262124159696618989}
   m_Layer: 5
-  m_Name: WeaponEnchantUIEntrytem
+  m_Name: EnchantUIEntrytem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

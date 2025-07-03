@@ -148,7 +148,7 @@ namespace Code.Infrastructure.Installers
 			Container.Bind<IEnchantShopItemFactory>().To<EnchantShopItemFactory>().AsSingle();
 			Container.Bind<IWeaponUpgradeShopItemFactory>().To<WeaponUpgradeShopItemFactory>().AsSingle();
 			Container.Bind<IWeaponStatUIEntryItemFactory>().To<WeaponStatUIEntryItemFactory>().AsSingle();
-			Container.Bind<IWeaponEnchantUIEntryFactory>().To<WeaponEnchantUIEntryFactory>().AsSingle();
+			Container.Bind<IEnchantUIEntryFactory>().To<EnchantUIEntryFactory>().AsSingle();
 			Container.Bind<IWeaponEnchantStatUIEntryFactory>().To<WeaponEnchantStatUIEntryFactory>().AsSingle();
 		}
 

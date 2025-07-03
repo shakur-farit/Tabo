@@ -19,29 +19,29 @@ namespace Code.Meta.Features.Shop.WeaponEnchantUIEntry.Behaviours
 			_factory = factory;
 		}
 
-		public void CreateStats(WeaponEnchantStatUIEntryTypeId id)
+		public void CreateStats(EnchantStatUIEntryTypeId id)
 		{
 			switch (id)
 			{
-				case WeaponEnchantStatUIEntryTypeId.Value:
+				case EnchantStatUIEntryTypeId.Value:
 					_factory.CreateWeaponEnchantUIEntryItem(
 						id,
 						_parent,
 						_progressProvider.WeaponData.SelectedEnchantUIStats.Value.ToString());
 					break;
-				case WeaponEnchantStatUIEntryTypeId.Duration:
+				case EnchantStatUIEntryTypeId.Duration:
 					_factory.CreateWeaponEnchantUIEntryItem(
 						id,
 						_parent,
 						_progressProvider.WeaponData.SelectedEnchantUIStats.StatusDuration.ToString());
 					break;
-				case WeaponEnchantStatUIEntryTypeId.Period:
+				case EnchantStatUIEntryTypeId.Period:
 					_factory.CreateWeaponEnchantUIEntryItem(
 						id,
 						_parent,
 						_progressProvider.WeaponData.SelectedEnchantUIStats.Period.ToString());
 					break;
-				case WeaponEnchantStatUIEntryTypeId.Radius:
+				case EnchantStatUIEntryTypeId.Radius:
 					_factory.CreateWeaponEnchantUIEntryItem(
 						id,
 						_parent,

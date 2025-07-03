@@ -6,6 +6,6 @@ namespace Code.Progress.Data.Transient
 	public class WeaponData
 	{
 		public StatusSetup SelectedEnchantUIStats;
-		public WeaponEnchantUIEntryTypeId SelectedEnchantUITypeId;
+		public EnchantUIEntryTypeId SelectedEnchantUITypeId;
 	}
 }

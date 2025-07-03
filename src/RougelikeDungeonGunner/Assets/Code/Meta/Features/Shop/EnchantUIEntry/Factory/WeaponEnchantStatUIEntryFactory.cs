@@ -17,11 +17,11 @@ namespace Code.Meta.Features.Shop.WeaponEnchantUIEntry.Factory
 			_staticDataService = staticDataService;
 		}
 
-		public void CreateWeaponEnchantUIEntryItem(WeaponEnchantStatUIEntryTypeId id, Transform parent, string value)
+		public void CreateWeaponEnchantUIEntryItem(EnchantStatUIEntryTypeId id, Transform parent, string value)
 		{
-			WeaponEnchantStatUIEntryConfig config = _staticDataService.GetWeaponEnchantStatUIEntryItemConfig(id);
-			WeaponEnchantStatUIEntryItem item = _instantiator
-				.InstantiatePrefabForComponent<WeaponEnchantStatUIEntryItem>(config.ViewPrefab, parent);
+			EnchantStatUIEntryConfig config = _staticDataService.GetEnchantStatUIEntryItemConfig(id);
+			EnchantStatUIEntryItem item = _instantiator
+				.InstantiatePrefabForComponent<EnchantStatUIEntryItem>(config.ViewPrefab, parent);
 
 			item.Setup(id, value);
 		}

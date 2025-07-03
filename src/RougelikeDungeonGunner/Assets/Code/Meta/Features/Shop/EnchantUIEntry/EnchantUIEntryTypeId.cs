@@ -1,6 +1,6 @@
 ﻿namespace Code.Meta.Features.Shop.WeaponEnchantUIEntry
 {
-	public enum WeaponEnchantUIEntryTypeId
+	public enum EnchantUIEntryTypeId
 	{
 		Unknown = 0,
 		Poison = 1,

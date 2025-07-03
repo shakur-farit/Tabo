@@ -4,11 +4,10 @@ using UnityEngine;
 
 namespace Code.Meta.Features.Shop.WeaponEnchantUIEntry.Configs
 {
-	[CreateAssetMenu(menuName = "Dungeon Gunner/Weapon Information/Weapon Enchant UI Entry Config",
-		fileName = "WeaponEnchantUIEntryConfig")]
-	public class WeaponEnchantUIEntryConfig : ScriptableObject
+	[CreateAssetMenu(menuName = "Dungeon Gunner/Weapon Information/Enchant UI Entry Config", fileName = "EnchantUIEntryConfig")]
+	public class EnchantUIEntryConfig : ScriptableObject
 	{
-		public WeaponEnchantUIEntryTypeId TypeId;
+		public EnchantUIEntryTypeId TypeId;
 		public GameObject ViewPrefab;
 		public Sprite Sprite;
 
@@ -18,6 +17,6 @@ namespace Code.Meta.Features.Shop.WeaponEnchantUIEntry.Configs
 	[Serializable]
 	public class EnchantStatUIEntry
 	{
-		public WeaponEnchantStatUIEntryTypeId TypeId;
+		public EnchantStatUIEntryTypeId TypeId;
 	}
 }

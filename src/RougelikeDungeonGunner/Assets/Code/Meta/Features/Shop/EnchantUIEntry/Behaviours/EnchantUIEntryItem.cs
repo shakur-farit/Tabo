@@ -10,7 +10,7 @@ using Zenject;
 
 namespace Code.Meta.Features.Shop.WeaponEnchantUIEntry.Behaviours
 {
-	public class WeaponEnchantUIEntryItem : MonoBehaviour
+	public class EnchantUIEntryItem : MonoBehaviour
 	{
 		[SerializeField] private TextMeshProUGUI _name;
 		[SerializeField] private Image _icon;
@@ -19,7 +19,7 @@ namespace Code.Meta.Features.Shop.WeaponEnchantUIEntry.Behaviours
 		private IWindowService _windowService;
 		private IProgressProvider _progressProvider;
 		private StatusSetup _setup;
-		private WeaponEnchantUIEntryTypeId _id;
+		private EnchantUIEntryTypeId _id;
 
 		[Inject]
 		public void Constructor(IWindowService windowService, IProgressProvider progressProvider)
@@ -39,7 +39,7 @@ namespace Code.Meta.Features.Shop.WeaponEnchantUIEntry.Behaviours
 			_windowService.Open(WindowId.EnchantStatsWindow);
 		}
 
-		public void Setup(WeaponEnchantUIEntryTypeId id, Sprite sprite, StatusSetup setup)
+		public void Setup(EnchantUIEntryTypeId id, Sprite sprite, StatusSetup setup)
 		{
 			_name.text = id.ToDisplayName();
 			_icon.sprite = sprite;

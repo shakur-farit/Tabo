@@ -6,7 +6,6 @@ using Code.Meta.UI.Windows.Service;
 using Code.Progress.Provider;
 using Code.Meta.Features.Shop.WeaponStatUIEntry.Behaviours;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 using Zenject;
 
@@ -16,8 +15,8 @@ namespace Code.Meta.UI.Windows.Behaviours
 	{
 		[SerializeField] private Button _closeButton;
 		[SerializeField] private Button _buyButton;
-		[FormerlySerializedAs("_weaponToBuyShopItem")] [SerializeField] private WeaponToBuyItem weaponToBuyItem;
-		[SerializeField] private StatsUIHolder _statsUIHolder;
+		[SerializeField] private WeaponToBuyItem weaponToBuyItem;
+		[SerializeField] private WeaponStatsUIHolder _statsUIHolder;
 
 		private IWindowService _windowService;
 		private IProgressProvider _progressProvider;

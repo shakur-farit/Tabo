@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7126307718191891062}
-  - component: {fileID: 6210538151346183840}
+  - component: {fileID: 2887768381124249028}
   m_Layer: 5
-  m_Name: WeaponEnchantStatUIEntryItem
+  m_Name: EnchantStatUIEntryItem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38,7 +38,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 300, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &6210538151346183840
+--- !u!114 &2887768381124249028
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -47,7 +47,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2418416992635559155}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8aa5a2d0d6fdf0c49a2b1dead322c08f, type: 3}
+  m_Script: {fileID: 11500000, guid: 1c43cc619a5227c4c9b81f22f3605f8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _name: {fileID: 8668000948946296294}

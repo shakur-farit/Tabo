@@ -21,4 +21,9 @@ MonoBehaviour:
     Value: 2
     StatusDuration: 3
     Period: 1
-    Radius: 0
+    Radius: 2
+  EnchantStatUIEntries:
+  - TypeId: 1
+  - TypeId: 2
+  - TypeId: 3
+  - TypeId: 4

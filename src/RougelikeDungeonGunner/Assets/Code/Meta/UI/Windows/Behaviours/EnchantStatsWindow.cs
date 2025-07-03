@@ -44,8 +44,8 @@ namespace Code.Meta.UI.Windows.Behaviours
 
 		private void ShowStats()
 		{
-			WeaponEnchantUIEntryConfig config =
-				_staticDataService.GetWeaponEnchantUIEntryItemConfig(_progressProvider.WeaponData.SelectedEnchantUITypeId);
+			EnchantUIEntryConfig config =
+				_staticDataService.GetEnchantUIEntryItemConfig(_progressProvider.WeaponData.SelectedEnchantUITypeId);
 
 			foreach (EnchantStatUIEntry statUIEntry in config.EnchantStatUIEntries)
 				_holder.CreateStats(statUIEntry.TypeId);

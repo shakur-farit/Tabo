@@ -46,8 +46,8 @@ namespace Code.Gameplay.StaticData
 		private const string EnchantShopItemConfigLabel = "EnchantShopItemConfig";
 		private const string WeaponUpgradeShopItemConfigLabel = "WeaponUpgradeShopItemConfig";
 		private const string WeaponStatUIEntryConfigLabel = "WeaponStatUIEntryConfig";
-		private const string WeaponEnchantUIEntryConfigLabel = "WeaponEnchantUIEntryConfig";
-		private const string WeaponEnchantStatUIEntryConfigLabel = "WeaponEnchantStatUIEntryConfig";
+		private const string EnchantUIEntryConfigLabel = "EnchantUIEntryConfig";
+		private const string EnchantStatUIEntryConfigLabel = "EnchantStatUIEntryConfig";
 
 		private BalanceConfig _balance;
 		private Dictionary<AmmoTypeId, AmmoConfig> _ammoById;
@@ -59,12 +59,12 @@ namespace Code.Gameplay.StaticData
 		private Dictionary<EnchantTypeId, EnchantConfig> _enchantById;
 		private Dictionary<WindowId, WindowConfig> _windowById;
 		private Dictionary<WeaponShopItemTypeId, WeaponShopItemConfig> _weaponShopItemById;
-		private Dictionary<EnchantShopItemTypeId, EnchantShopItemConfig> _enchantShopItemById;
 		private Dictionary<WeaponUpgradeTypeId, WeaponUpgradeShopItemConfig> _weaponUpgradeShopItemById;
 		private Dictionary<WeaponStatUIEntryTypeId, WeaponStatUIEntryConfig> _weaponStatUIEntryItemById;
-		private Dictionary<WeaponEnchantUIEntryTypeId, WeaponEnchantUIEntryConfig> _weaponEnchantUIEntryItemById;
+		private Dictionary<EnchantShopItemTypeId, EnchantShopItemConfig> _enchantShopItemById;
+		private Dictionary<EnchantUIEntryTypeId, EnchantUIEntryConfig> _enchantUIEntryItemById;
 
-		private Dictionary<WeaponEnchantStatUIEntryTypeId, WeaponEnchantStatUIEntryConfig>
+		private Dictionary<EnchantStatUIEntryTypeId, EnchantStatUIEntryConfig>
 			_weaponEnchantStatUIEntryItemById;
 
 		private readonly IAssetProvider _assetProvider;
@@ -90,8 +90,8 @@ namespace Code.Gameplay.StaticData
 			await LoadEnchantShopItem();
 			await LoadWeaponUpgradeShopItem();
 			await LoadWeaponStatUIEntryItem();
-			await LoadWeaponEnchantUIEntryItem();
-			await LoadWeaponEnchantStatUIEntryItem();
+			await LoadEnchantUIEntryItem();
+			await LoadEnchantStatUIEntryItem();
 		}
 
 		public AmmoConfig GetAmmoConfig(AmmoTypeId id)
@@ -190,20 +190,20 @@ namespace Code.Gameplay.StaticData
 			throw new Exception($"Weapon stat ui entry item config for {id} was not found");
 		}
 
-		public WeaponEnchantUIEntryConfig GetWeaponEnchantUIEntryItemConfig(WeaponEnchantUIEntryTypeId id)
+		public EnchantUIEntryConfig GetEnchantUIEntryItemConfig(EnchantUIEntryTypeId id)
 		{
-			if (_weaponEnchantUIEntryItemById.TryGetValue(id, out WeaponEnchantUIEntryConfig config))
+			if (_enchantUIEntryItemById.TryGetValue(id, out EnchantUIEntryConfig config))
 				return config;
 
-			throw new Exception($"Weapon enchant ui entry item config for {id} was not found");
+			throw new Exception($"Enchant ui entry item config for {id} was not found");
 		}
 
-		public WeaponEnchantStatUIEntryConfig GetWeaponEnchantStatUIEntryItemConfig(WeaponEnchantStatUIEntryTypeId id)
+		public EnchantStatUIEntryConfig GetEnchantStatUIEntryItemConfig(EnchantStatUIEntryTypeId id)
 		{
-			if (_weaponEnchantStatUIEntryItemById.TryGetValue(id, out WeaponEnchantStatUIEntryConfig config))
+			if (_weaponEnchantStatUIEntryItemById.TryGetValue(id, out EnchantStatUIEntryConfig config))
 				return config;
 
-			throw new Exception($"Weapon enchant stat ui entry item config for {id} was not found");
+			throw new Exception($"Enchant stat ui entry item config for {id} was not found");
 		}
 
 		public BalanceConfig GetBalance() =>
@@ -258,14 +258,14 @@ namespace Code.Gameplay.StaticData
 			_weaponStatUIEntryItemById = (await _assetProvider.LoadAll<WeaponStatUIEntryConfig>(WeaponStatUIEntryConfigLabel))
 				.ToDictionary(x => x.TypeId, x => x);
 
-		private async UniTask LoadWeaponEnchantUIEntryItem() =>
-			_weaponEnchantUIEntryItemById = 
-				(await _assetProvider.LoadAll<WeaponEnchantUIEntryConfig>(WeaponEnchantUIEntryConfigLabel))
+		private async UniTask LoadEnchantUIEntryItem() =>
+			_enchantUIEntryItemById = 
+				(await _assetProvider.LoadAll<EnchantUIEntryConfig>(EnchantUIEntryConfigLabel))
 				.ToDictionary(x => x.TypeId, x => x);
 
-		private async UniTask LoadWeaponEnchantStatUIEntryItem() =>
+		private async UniTask LoadEnchantStatUIEntryItem() =>
 			_weaponEnchantStatUIEntryItemById = 
-				(await _assetProvider.LoadAll<WeaponEnchantStatUIEntryConfig>(WeaponEnchantStatUIEntryConfigLabel))
+				(await _assetProvider.LoadAll<EnchantStatUIEntryConfig>(EnchantStatUIEntryConfigLabel))
 				.ToDictionary(x => x.TypeId, x => x);
 
 		private async UniTask LoadBalance() =>

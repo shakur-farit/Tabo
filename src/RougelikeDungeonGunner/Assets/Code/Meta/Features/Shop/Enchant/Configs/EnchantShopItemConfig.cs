@@ -1,4 +1,6 @@
-﻿using Code.Gameplay.Features.Statuses;
+﻿using System.Collections.Generic;
+using Code.Gameplay.Features.Statuses;
+using Code.Meta.Features.Shop.WeaponEnchantUIEntry.Configs;
 using UnityEngine;
 
 namespace Code.Meta.Features.Shop.WeaponStatUIEntry.Configs
@@ -11,5 +13,6 @@ namespace Code.Meta.Features.Shop.WeaponStatUIEntry.Configs
 		public Sprite Sprite;
 		[Range(1,10000)] public int Price;
 		public StatusSetup Enchnat;
+		public List<EnchantStatUIEntry> EnchantStatUIEntries;
 	}
 }

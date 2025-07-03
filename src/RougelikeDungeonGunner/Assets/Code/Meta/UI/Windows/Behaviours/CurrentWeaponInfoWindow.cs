@@ -1,24 +1,20 @@
 ﻿using Code.Gameplay.Features.Weapon.Configs;
 using Code.Gameplay.StaticData;
-using Code.Meta.Features.Shop.Weapon.Configs;
 using Code.Meta.UI.Windows.Service;
 using Code.Progress.Provider;
-using Code.Meta.Features.Shop.Upgrade.Services;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
-using Code.Gameplay.Common;
 using Code.Gameplay.Features.Statuses;
 using Code.Meta.Features.Shop.WeaponEnchantUIEntry.Behaviours;
 using Code.Meta.Features.Shop.WeaponStatUIEntry.Behaviours;
-using UnityEngine.Serialization;
 
 namespace Code.Meta.UI.Windows.Behaviours
 {
 	public class CurrentWeaponInfoWindow : BaseWindow
 	{
-		[FormerlySerializedAs("_statsHolder")] [SerializeField] private StatsUIHolder statsUIHolder;
-		[FormerlySerializedAs("_enchantsHolder")] [SerializeField] private EnchantsUIHolder enchantsUIHolder;
+		[SerializeField] private WeaponStatsUIHolder _weaponStatsUIHolder; 
+		[SerializeField] private EnchantsUIHolder _enchantsUIHolder;
 
 		[SerializeField] private Image _weaponIcon;
 		[SerializeField] private Button _closeButton;
@@ -58,13 +54,13 @@ namespace Code.Meta.UI.Windows.Behaviours
 		private void ShowStats()
 		{
 			foreach (WeaponStatUIEntry statUIEntry in _weaponConfig.StatsUIEntry)
-				statsUIHolder.CreateStatUIEntryItem(statUIEntry.StatUIEntryType, _weaponConfig);
+				_weaponStatsUIHolder.CreateStatUIEntryItem(statUIEntry.StatUIEntryType, _weaponConfig);
 		}
 
 		private void ShowEnchants()
 		{
 			foreach (StatusSetup setup in  _weaponConfig.StatusSetups)
-				enchantsUIHolder.CreateEnchantUIEntryItem(setup);
+				_enchantsUIHolder.CreateEnchantUIEntryItem(setup);
 		}
 
 		private void Close() =>

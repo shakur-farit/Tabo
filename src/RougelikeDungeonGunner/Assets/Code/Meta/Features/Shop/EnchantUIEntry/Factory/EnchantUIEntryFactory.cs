@@ -7,22 +7,22 @@ using Zenject;
 
 namespace Code.Meta.Features.Shop.WeaponEnchantUIEntry.Factory
 {
-	public class WeaponEnchantUIEntryFactory : IWeaponEnchantUIEntryFactory
+	public class EnchantUIEntryFactory : IEnchantUIEntryFactory
 	{
 		private readonly IInstantiator _instantiator;
 		private readonly IStaticDataService _staticDataService;
 
-		public WeaponEnchantUIEntryFactory(IInstantiator instantiator, IStaticDataService staticDataService)
+		public EnchantUIEntryFactory(IInstantiator instantiator, IStaticDataService staticDataService)
 		{
 			_instantiator = instantiator;
 			_staticDataService = staticDataService;
 		}
 
-		public void CreateWeaponEnchantUIEntryItem(WeaponEnchantUIEntryTypeId id, Transform parent, StatusSetup setup)
+		public void CreateWeaponEnchantUIEntryItem(EnchantUIEntryTypeId id, Transform parent, StatusSetup setup)
 		{
-			WeaponEnchantUIEntryConfig config = _staticDataService.GetWeaponEnchantUIEntryItemConfig(id);
-			WeaponEnchantUIEntryItem item = _instantiator
-				.InstantiatePrefabForComponent<WeaponEnchantUIEntryItem>(config.ViewPrefab, parent);
+			EnchantUIEntryConfig config = _staticDataService.GetEnchantUIEntryItemConfig(id);
+			EnchantUIEntryItem item = _instantiator
+				.InstantiatePrefabForComponent<EnchantUIEntryItem>(config.ViewPrefab, parent);
 
 			item.Setup(id ,config.Sprite, setup);
 		}

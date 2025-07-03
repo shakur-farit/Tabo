@@ -9,7 +9,7 @@ using Zenject;
 
 namespace Code.Meta.Features.Shop.WeaponStatUIEntry.Behaviours
 {
-	public class StatsUIHolder : MonoBehaviour
+	public class WeaponStatsUIHolder : MonoBehaviour
 	{
 		[SerializeField] private Transform _holder;
 

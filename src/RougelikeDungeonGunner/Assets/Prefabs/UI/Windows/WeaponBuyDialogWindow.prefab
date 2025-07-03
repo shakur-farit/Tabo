@@ -839,6 +839,7 @@ GameObject:
   - component: {fileID: 2149775613843054166}
   - component: {fileID: 2376608372231346082}
   - component: {fileID: 8851170615957792228}
+  - component: {fileID: 205377221950136399}
   m_Layer: 5
   m_Name: WeaponBuyDialogWindow
   m_TagString: Untagged
@@ -881,7 +882,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _closeButton: {fileID: 8416853858772892815}
   _buyButton: {fileID: 5163869900977586934}
-  _weaponToBuyShopItem: {fileID: 4451230603334298988}
+  weaponToBuyItem: {fileID: 205377221950136399}
   _statsUIHolder: {fileID: 8851170615957792228}
 --- !u!114 &8851170615957792228
 MonoBehaviour:
@@ -896,6 +897,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _holder: {fileID: 8355777922373837410}
+--- !u!114 &205377221950136399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4945148918330690640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c521782a5ca09b42acd4598c75393db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _icon: {fileID: 6405793439805340276}
+  _price: {fileID: 3404107746776499408}
 --- !u!1 &4952324215372150880
 GameObject:
   m_ObjectHideFlags: 0
@@ -905,7 +920,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5279646353487007672}
-  - component: {fileID: 4451230603334298988}
   - component: {fileID: 8506275927866346485}
   - component: {fileID: 6320020477444769595}
   m_Layer: 5
@@ -936,20 +950,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 350, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &4451230603334298988
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4952324215372150880}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c521782a5ca09b42acd4598c75393db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _icon: {fileID: 6405793439805340276}
-  _price: {fileID: 3404107746776499408}
 --- !u!222 &8506275927866346485
 CanvasRenderer:
   m_ObjectHideFlags: 0

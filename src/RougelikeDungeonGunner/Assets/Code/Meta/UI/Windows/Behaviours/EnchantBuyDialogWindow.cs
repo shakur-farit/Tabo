@@ -1,13 +1,11 @@
-﻿using Code.Gameplay.Features.Weapon.Configs;
-using Code.Gameplay.StaticData;
+﻿using Code.Gameplay.StaticData;
 using Code.Meta.Features.Shop.Upgrade.Services;
-using Code.Meta.Features.Shop.Weapon.Behaviours;
-using Code.Meta.Features.Shop.WeaponStatUIEntry.Behaviours;
+using Code.Meta.Features.Shop.WeaponEnchantUIEntry.Behaviours;
+using Code.Meta.Features.Shop.WeaponEnchantUIEntry.Configs;
 using Code.Meta.Features.Shop.WeaponStatUIEntry.Configs;
 using Code.Meta.UI.Windows.Service;
 using Code.Progress.Provider;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 using Zenject;
 
@@ -18,7 +16,7 @@ namespace Code.Meta.UI.Windows.Behaviours
 		[SerializeField] private Button _closeButton;
 		[SerializeField] private Button _buyButton;
 		[SerializeField] private EnchantToBuyItem _enchantToBuyItem;
-		[SerializeField] private StatsUIHolder _statsUIHolder;
+		[SerializeField] private EnchantStatsUIHolder _holder;
 
 		private IWindowService _windowService;
 		private IProgressProvider _progressProvider;
@@ -32,7 +30,7 @@ namespace Code.Meta.UI.Windows.Behaviours
 			IWeaponUpgradesCleaner upgradeCleaner,
 			IStaticDataService staticDataService)
 		{
-			Id = WindowId.WeaponBuyDialogWindow;
+			Id = WindowId.EnchantBuyDialogWindow;
 
 			_windowService = windowService;
 			_progressProvider = progressProvider;
@@ -42,7 +40,7 @@ namespace Code.Meta.UI.Windows.Behaviours
 
 		protected override void Initialize()
 		{
-			_buyButton.onClick.AddListener(BuyWeapon);
+			_buyButton.onClick.AddListener(BuyEnchant);
 			_closeButton.onClick.AddListener(CloseWindow);
 
 			_enchantToBuyItem.Setup(_progressProvider.ShopData.EnchantToBuyConfig);
@@ -50,7 +48,7 @@ namespace Code.Meta.UI.Windows.Behaviours
 			UpdateStatsEntry();
 		}
 
-		private void BuyWeapon()
+		private void BuyEnchant()
 		{
 			if (IsNotEnoughCoins())
 			{
@@ -64,25 +62,26 @@ namespace Code.Meta.UI.Windows.Behaviours
 		}
 
 		private void SubtractPrice() =>
-			_progressProvider.HeroData.CurrentCoinsCount -= _progressProvider.ShopData.WeaponToBuyConfig.Price;
+			_progressProvider.HeroData.CurrentCoinsCount -= _progressProvider.ShopData.EnchantToBuyConfig.Price;
 
 		private void CleanUpgrades() =>
 			_upgradeCleaner.CleanUpgrades();
 
 		private bool IsNotEnoughCoins() =>
-			_progressProvider.HeroData.CurrentCoinsCount < _progressProvider.ShopData.WeaponToBuyConfig.Price;
+			_progressProvider.HeroData.CurrentCoinsCount < _progressProvider.ShopData.EnchantToBuyConfig.Price;
 
 		private void CloseWindow() =>
-			_windowService.Close(WindowId.WeaponBuyDialogWindow);
+			_windowService.Close(WindowId.EnchantBuyDialogWindow);
 
 		private void UpdateStatsEntry()
 		{
-			//WeaponConfig weaponConfig =
-			//	_staticDataService
-			//		.GetWeaponConfig(_progressProvider.ShopData.EnchantToBuyConfig.TypeId);
+			EnchantShopItemConfig config =
+				_staticDataService.GetEnchantShopItemConfig(_progressProvider.ShopData.EnchantToBuyConfig.TypeId);
 
-			//foreach (WeaponStatUIEntry uiEntry in weaponConfig.StatsUIEntry)
-			//	_statsUIHolder.CreateStatUIEntryItem(uiEntry.StatUIEntryType, weaponConfig);
+			_progressProvider.WeaponData.SelectedEnchantUIStats = config.Enchnat;
+
+			foreach (EnchantStatUIEntry statUIEntry in config.EnchantStatUIEntries)
+				_holder.CreateStats(statUIEntry.TypeId);
 		}
 
 		private void OpenNotEnoughCoinsWindow() =>
