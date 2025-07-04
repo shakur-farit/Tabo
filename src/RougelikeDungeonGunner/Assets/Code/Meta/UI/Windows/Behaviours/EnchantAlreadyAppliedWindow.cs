@@ -5,7 +5,7 @@ using Zenject;
 
 namespace Code.Meta.UI.Windows.Behaviours
 {
-	public class NotEnoughCoinsWindow : BaseWindow
+	public class EnchantAlreadyAppliedWindow : BaseWindow
 	{
 		[SerializeField] private Button _closeButton;
 
@@ -14,7 +14,7 @@ namespace Code.Meta.UI.Windows.Behaviours
 		[Inject]
 		public void Constructor(IWindowService windowService)
 		{
-			Id = WindowId.NotEnoughCoinsWindow;
+			Id = WindowId.EnchantAlreadyAppliedWindow;
 
 			_windowService = windowService;
 		}
@@ -23,6 +23,6 @@ namespace Code.Meta.UI.Windows.Behaviours
 			_closeButton.onClick.AddListener(Close);
 
 		private void Close() =>
-			_windowService.Close(WindowId.NotEnoughCoinsWindow);
+			_windowService.Close(WindowId.EnchantAlreadyAppliedWindow);
 	}
 }

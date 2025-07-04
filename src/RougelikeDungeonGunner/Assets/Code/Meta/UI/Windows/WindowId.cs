@@ -15,6 +15,7 @@
 		CurrentWeaponInfoWindow = 10,
 		NotEnoughCoinsWindow = 11,
 		MaxValueReachedWindow = 12,
-		EnchantStatsWindow = 13
+		EnchantStatsWindow = 13,
+		EnchantAlreadyAppliedWindow = 14
 	}
 }

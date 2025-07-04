@@ -1,10 +1,13 @@
-﻿using Code.Gameplay.StaticData;
+﻿using Code.Gameplay.Features.Statuses;
+using Code.Gameplay.Features.Weapon.Configs;
+using Code.Gameplay.StaticData;
 using Code.Meta.Features.Shop.Upgrade.Services;
 using Code.Meta.Features.Shop.WeaponEnchantUIEntry.Behaviours;
 using Code.Meta.Features.Shop.WeaponEnchantUIEntry.Configs;
 using Code.Meta.Features.Shop.WeaponStatUIEntry.Configs;
 using Code.Meta.UI.Windows.Service;
 using Code.Progress.Provider;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
@@ -57,15 +60,26 @@ namespace Code.Meta.UI.Windows.Behaviours
 			}
 
 			SubtractPrice();
-			CleanUpgrades();
+			AddEnchant();
 			CloseWindow();
 		}
 
 		private void SubtractPrice() =>
 			_progressProvider.HeroData.CurrentCoinsCount -= _progressProvider.ShopData.EnchantToBuyConfig.Price;
 
-		private void CleanUpgrades() =>
-			_upgradeCleaner.CleanUpgrades();
+		private void AddEnchant()
+		{
+			WeaponConfig weaponConfig = _staticDataService.GetWeaponConfig(_progressProvider.HeroData.CurrentWeaponTypeId);
+			StatusSetup selectedEnchant = _progressProvider.WeaponData.SelectedEnchantUIStats;
+
+			if (weaponConfig.StatusSetups.Any(e => e.StatusTypeId == selectedEnchant.StatusTypeId))
+			{
+				_windowService.Open(WindowId.EnchantAlreadyAppliedWindow);
+				return;
+			}
+
+			weaponConfig.StatusSetups.Add(_progressProvider.WeaponData.SelectedEnchantUIStats);
+		}
 
 		private bool IsNotEnoughCoins() =>
 			_progressProvider.HeroData.CurrentCoinsCount < _progressProvider.ShopData.EnchantToBuyConfig.Price;
