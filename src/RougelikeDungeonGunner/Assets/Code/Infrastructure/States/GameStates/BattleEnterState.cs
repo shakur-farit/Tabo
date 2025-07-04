@@ -4,6 +4,7 @@ using Code.Infrastructure.States.StateMachine;
 using Code.Meta.UI.Windows;
 using Code.Meta.UI.Windows.Service;
 using Code.Progress.Provider;
+using UnityEngine;
 
 namespace Code.Infrastructure.States.GameStates
 {
