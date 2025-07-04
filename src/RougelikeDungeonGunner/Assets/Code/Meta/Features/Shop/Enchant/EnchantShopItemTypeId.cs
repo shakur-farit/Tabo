@@ -1,4 +1,4 @@
-﻿namespace Code.Meta.Features.Shop.WeaponStatUIEntry.Configs
+﻿namespace Code.Meta.Features.Shop.Enchant
 {
 	public enum EnchantShopItemTypeId
 	{

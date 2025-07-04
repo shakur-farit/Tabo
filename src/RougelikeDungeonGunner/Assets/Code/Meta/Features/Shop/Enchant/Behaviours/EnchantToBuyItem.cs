@@ -1,8 +1,9 @@
-﻿using TMPro;
+﻿using Code.Meta.Features.Shop.Enchant.Configs;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Code.Meta.Features.Shop.WeaponStatUIEntry.Configs
+namespace Code.Meta.Features.Shop.Enchant.Behaviours
 {
 	public class EnchantToBuyItem : MonoBehaviour
 	{

@@ -1,5 +1,6 @@
 ﻿using Code.Common.Extensions;
 using Code.Gameplay.Features.Statuses;
+using Code.Meta.Features.Shop.Enchant.Configs;
 using Code.Meta.UI.Windows;
 using Code.Meta.UI.Windows.Service;
 using Code.Progress.Provider;
@@ -8,7 +9,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
 
-namespace Code.Meta.Features.Shop.WeaponStatUIEntry.Configs
+namespace Code.Meta.Features.Shop.Enchant.Behaviours
 {
 	public class EnchantShopItem : MonoBehaviour
 	{

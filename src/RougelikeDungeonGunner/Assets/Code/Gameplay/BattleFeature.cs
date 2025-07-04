@@ -14,9 +14,9 @@ using Code.Gameplay.Features.Statuses;
 using Code.Gameplay.Features.TargetCollection;
 using Code.Gameplay.Features.Weapon;
 using Code.Gameplay.Input;
-using Code.Infrastructure;
 using Code.Infrastructure.Systems;
 using Code.Infrastructure.View;
+using UnityEngine;
 
 namespace Code.Gameplay
 {
@@ -47,6 +47,7 @@ namespace Code.Gameplay
 			Add(systems.Create<StatsFeature>());
 
 			Add(systems.Create<ProcessGameDestructedFeature>());
+			Add(systems.Create<ProcessInputDestructedFeature>());
 		}
 	}
 }

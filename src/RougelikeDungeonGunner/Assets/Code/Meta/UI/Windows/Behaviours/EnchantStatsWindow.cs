@@ -1,7 +1,7 @@
 ﻿using Code.Gameplay.StaticData;
-using Code.Meta.Features.Shop.WeaponEnchantUIEntry.Behaviours;
-using Code.Meta.Features.Shop.WeaponEnchantUIEntry.Configs;
-using Code.Meta.Features.Shop.WeaponEnchantUIEntry.Factory;
+using Code.Meta.Features.Shop.EnchantUIEntry.Behaviours;
+using Code.Meta.Features.Shop.EnchantUIEntry.Configs;
+using Code.Meta.Features.Shop.EnchantUIEntry.Factory;
 using Code.Meta.UI.Windows.Service;
 using Code.Progress.Provider;
 using UnityEngine;

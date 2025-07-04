@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
 using Code.Gameplay.Features.Statuses;
-using Code.Meta.Features.Shop.WeaponEnchantUIEntry.Behaviours;
+using Code.Meta.Features.Shop.EnchantUIEntry.Behaviours;
 using Code.Meta.Features.Shop.WeaponStatUIEntry.Behaviours;
 
 namespace Code.Meta.UI.Windows.Behaviours

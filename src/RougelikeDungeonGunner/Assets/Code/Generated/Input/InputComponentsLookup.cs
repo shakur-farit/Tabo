@@ -8,19 +8,22 @@
 //------------------------------------------------------------------------------
 public static class InputComponentsLookup {
 
-    public const int AxisInput = 0;
-    public const int Input = 1;
-    public const int MouseLeftButtonDown = 2;
+    public const int Destructed = 0;
+    public const int AxisInput = 1;
+    public const int Input = 2;
+    public const int MouseLeftButtonDown = 3;
 
-    public const int TotalComponents = 3;
+    public const int TotalComponents = 4;
 
     public static readonly string[] componentNames = {
+        "Destructed",
         "AxisInput",
         "Input",
         "MouseLeftButtonDown"
     };
 
     public static readonly System.Type[] componentTypes = {
+        typeof(Code.Common.Destructed),
         typeof(Code.Gameplay.Input.AxisInput),
         typeof(Code.Gameplay.Input.Input),
         typeof(Code.Gameplay.Input.MouseLeftButtonDown)

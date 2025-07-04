@@ -1,7 +1,7 @@
 ﻿using Code.Gameplay.Features.Statuses;
 using UnityEngine;
 
-namespace Code.Meta.Features.Shop.WeaponEnchantUIEntry.Factory
+namespace Code.Meta.Features.Shop.EnchantUIEntry.Factory
 {
 	public interface IEnchantUIEntryFactory
 	{

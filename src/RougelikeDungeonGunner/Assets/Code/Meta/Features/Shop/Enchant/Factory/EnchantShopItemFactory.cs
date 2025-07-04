@@ -1,8 +1,10 @@
 ﻿using Code.Gameplay.StaticData;
+using Code.Meta.Features.Shop.Enchant.Behaviours;
+using Code.Meta.Features.Shop.Enchant.Configs;
 using UnityEngine;
 using Zenject;
 
-namespace Code.Meta.Features.Shop.WeaponStatUIEntry.Configs
+namespace Code.Meta.Features.Shop.Enchant.Factory
 {
 	public class EnchantShopItemFactory : IEnchantShopItemFactory
 	{

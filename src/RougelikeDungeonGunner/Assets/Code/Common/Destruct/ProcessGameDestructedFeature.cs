@@ -1,5 +1,4 @@
 ﻿using Code.Common.Systems;
-using Code.Infrastructure;
 using Code.Infrastructure.Systems;
 
 namespace Code.Common

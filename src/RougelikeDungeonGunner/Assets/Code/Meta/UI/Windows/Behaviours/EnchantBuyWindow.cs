@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
 using Code.Common.Extensions;
+using Code.Meta.Features.Shop.Enchant;
+using Code.Meta.Features.Shop.Enchant.Factory;
 using Code.Meta.Features.Shop.WeaponStatUIEntry.Configs;
 using Code.Meta.UI.Windows.Service;
 using UnityEngine;

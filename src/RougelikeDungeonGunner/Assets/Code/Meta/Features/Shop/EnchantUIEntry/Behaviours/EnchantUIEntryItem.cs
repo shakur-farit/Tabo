@@ -8,7 +8,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
 
-namespace Code.Meta.Features.Shop.WeaponEnchantUIEntry.Behaviours
+namespace Code.Meta.Features.Shop.EnchantUIEntry.Behaviours
 {
 	public class EnchantUIEntryItem : MonoBehaviour
 	{

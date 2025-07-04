@@ -1,10 +1,10 @@
 ﻿using System;
 using Code.Gameplay.Features.Statuses;
-using Code.Meta.Features.Shop.WeaponEnchantUIEntry.Factory;
+using Code.Meta.Features.Shop.EnchantUIEntry.Factory;
 using UnityEngine;
 using Zenject;
 
-namespace Code.Meta.Features.Shop.WeaponEnchantUIEntry.Behaviours
+namespace Code.Meta.Features.Shop.EnchantUIEntry.Behaviours
 {
 	public class EnchantsUIHolder : MonoBehaviour
 	{

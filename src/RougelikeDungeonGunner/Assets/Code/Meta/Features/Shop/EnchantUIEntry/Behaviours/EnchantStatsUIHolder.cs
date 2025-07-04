@@ -1,9 +1,9 @@
-﻿using Code.Meta.Features.Shop.WeaponEnchantUIEntry.Factory;
+﻿using Code.Meta.Features.Shop.EnchantUIEntry.Factory;
 using Code.Progress.Provider;
 using UnityEngine;
 using Zenject;
 
-namespace Code.Meta.Features.Shop.WeaponEnchantUIEntry.Behaviours
+namespace Code.Meta.Features.Shop.EnchantUIEntry.Behaviours
 {
 	public class EnchantStatsUIHolder : MonoBehaviour
 	{

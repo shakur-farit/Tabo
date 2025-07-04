@@ -12,7 +12,7 @@ namespace Code.Gameplay.Features.Levels.Systems
 		private readonly IGroup<GameEntity> _levels;
 		private readonly List<GameEntity> _buffer = new(1);
 
-		public FinalizeProcessedLevelSystem(GameContext game, IGameStateMachine stateMachine)
+		public FinalizeProcessedLevelSystem(GameContext game, IGameStateMachine stateMachine, InputContext input)
 		{
 			_stateMachine = stateMachine;
 			_levels = game.GetGroup(GameMatcher

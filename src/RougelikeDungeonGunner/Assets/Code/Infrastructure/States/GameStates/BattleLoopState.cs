@@ -1,6 +1,7 @@
 using Code.Gameplay;
 using Code.Infrastructure.States.StateInfrastructure;
 using Code.Infrastructure.Systems;
+using UnityEngine;
 
 namespace Code.Infrastructure.States.GameStates
 {
@@ -10,11 +11,13 @@ namespace Code.Infrastructure.States.GameStates
 
 		private readonly ISystemsFactory _systemsFactory;
 		private readonly GameContext _gameContext;
+		private readonly InputContext _inputContext;
 
-		public BattleLoopState(ISystemsFactory systemsFactory, GameContext gameContext)
+		public BattleLoopState(ISystemsFactory systemsFactory, GameContext gameContext, InputContext inputContext)
 		{
 			_systemsFactory = systemsFactory;
 			_gameContext = gameContext;
+			_inputContext = inputContext;
 		}
 
 		public override void Enter()
@@ -44,6 +47,9 @@ namespace Code.Infrastructure.States.GameStates
 		private void DestructEntities()
 		{
 			foreach (GameEntity entity in _gameContext.GetEntities())
+				entity.isDestructed = true;
+
+			foreach (InputEntity entity in _inputContext.GetEntities())
 				entity.isDestructed = true;
 		}
 	}

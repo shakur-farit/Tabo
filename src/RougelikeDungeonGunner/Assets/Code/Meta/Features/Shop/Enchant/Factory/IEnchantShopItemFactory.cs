@@ -1,6 +1,7 @@
-﻿using UnityEngine;
+﻿using Code.Meta.Features.Shop.Enchant.Behaviours;
+using UnityEngine;
 
-namespace Code.Meta.Features.Shop.WeaponStatUIEntry.Configs
+namespace Code.Meta.Features.Shop.Enchant.Factory
 {
 	public interface IEnchantShopItemFactory
 	{

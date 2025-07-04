@@ -555,7 +555,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3160376798735061521}
   - component: {fileID: 3770753081083582400}
-  - component: {fileID: 2000841837764305761}
+  - component: {fileID: 6675882008545492502}
   m_Layer: 5
   m_Name: EnchantStatsWindow
   m_TagString: Untagged
@@ -597,9 +597,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae857db940123ea4884f6b5e0641dae1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _holder: {fileID: 2000841837764305761}
+  _holder: {fileID: 6675882008545492502}
   _closeButton: {fileID: 6772829225789676581}
---- !u!114 &2000841837764305761
+--- !u!114 &6675882008545492502
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

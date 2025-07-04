@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using Code.Common.Extensions;
 using Entitas;
-using UnityEngine;
 
 namespace Code.Gameplay.Features.Levels.Systems
 {

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Code.Meta.Features.Shop.WeaponEnchantUIEntry.Factory
+namespace Code.Meta.Features.Shop.EnchantUIEntry.Factory
 {
 	public interface IWeaponEnchantStatUIEntryFactory
 	{
