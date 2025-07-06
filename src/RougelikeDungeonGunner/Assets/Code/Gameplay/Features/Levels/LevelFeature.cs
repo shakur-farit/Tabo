@@ -1,7 +1,4 @@
-﻿using Code.Gameplay.Features.Hero.Systems;
-using Code.Gameplay.Features.Levels.Systems;
-using Code.Gameplay.Features.Weapon.Systems;
-using Code.Infrastructure;
+﻿using Code.Gameplay.Features.Levels.Systems;
 using Code.Infrastructure.Systems;
 
 namespace Code.Gameplay.Features.Levels
@@ -10,6 +7,7 @@ namespace Code.Gameplay.Features.Levels
 	{
 		public LevelFeature(ISystemsFactory systems)
 		{
+			Add(systems.Create<CalculateTimeToSpawnEnemiesSystem>());
 			Add(systems.Create<CalculateEnemiesInLevelSystem>());
 			Add(systems.Create<AddEnemyWaveWithCooldownSystem>());
 			Add(systems.Create<MarkLevelProcessedOnAllEnemiesDeadSystem>());

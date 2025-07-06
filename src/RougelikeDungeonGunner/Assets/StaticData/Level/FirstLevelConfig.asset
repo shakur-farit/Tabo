@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: FirstLevelConfig
   m_EditorClassIdentifier: 
   TypeId: 1
-  StartingTime: 0
+  StartingTime: 5
   TimeBetweenSpawnWaves: 10
   FinishingTime: 5
   EnvironmentSetups:

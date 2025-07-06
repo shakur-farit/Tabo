@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: SecondLevelConfig
   m_EditorClassIdentifier: 
   TypeId: 2
-  StartingTime: 0
+  StartingTime: 2
   TimeBetweenSpawnWaves: 5
-  FinishingTime: 0
+  FinishingTime: 3
   EnvironmentSetups:
   - Room: {fileID: 0}
     HeroStartPosition: {x: 0, y: 0}

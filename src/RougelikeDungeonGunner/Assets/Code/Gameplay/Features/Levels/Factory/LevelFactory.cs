@@ -5,7 +5,7 @@ using Code.Gameplay.Common.Random;
 using Code.Gameplay.Features.Levels.Configs;
 using Code.Gameplay.StaticData;
 using Code.Infrastructure.Identifiers;
-using UnityEngine;
+using Unity.VisualScripting.FullSerializer;
 
 namespace Code.Gameplay.Features.Levels.Factory
 {
@@ -42,9 +42,13 @@ namespace Code.Gameplay.Features.Levels.Factory
 						.AddEnemyWaves(config.EnemyWaves)
 						.AddSpawnedEnemyWaves(StartingEnemyWavesCount)
 						.AddEnvironmentSetup(config.EnvironmentSetups[randomIndex])
+						.AddStartingTime(config.StartingTime)
+						.AddStartingTimeLeft(config.StartingTime)
 						.AddCooldown(config.TimeBetweenSpawnWaves)
 						.AddCooldownLeft(config.TimeBetweenSpawnWaves)
 						.AddEnemiesInLevelCount(StartingEnemiesCount)
+						.AddFinishingTime(config.FinishingTime)
+						.AddFinishingTimeLeft(config.FinishingTime)
 						.With(x => x.isLevel = true)
 						.With(x => x.isEnvironmentSetupAvailable = true)
 						.With(x => x.isCooldownUp = true)

@@ -9,8 +9,7 @@ namespace Code.Gameplay.Features.Levels
 
 	[Game] public class StartingTime : IComponent { public float Value; }
 	[Game] public class StartingTimeLeft : IComponent { public float Value; }
-	[Game] public class TimeBetweenWaves : IComponent { public float Value; }
-	[Game] public class TimeBetweenWavesLeft : IComponent { public float Value; }
+	[Game] public class StartingTimeUp : IComponent { }
 	[Game] public class FinishingTime : IComponent { public float Value; }
 	[Game] public class FinishingTimeLeft : IComponent { public float Value; }
 

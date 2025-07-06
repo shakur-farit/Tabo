@@ -15,6 +15,7 @@ namespace Code.Gameplay.Features.Levels.Systems
 			_levels = game.GetGroup(GameMatcher
 				.AllOf(
 					GameMatcher.EnemyWaves,
+					GameMatcher.StartingTimeUp,
 					GameMatcher.CooldownUp));
 		}
 
