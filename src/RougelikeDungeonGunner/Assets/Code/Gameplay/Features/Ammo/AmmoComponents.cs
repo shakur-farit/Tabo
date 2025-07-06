@@ -1,5 +1,4 @@
-﻿using Code.Meta.Features.Hud.AmmoHolder.Behaviours;
-using Entitas;
+﻿using Entitas;
 
 namespace Code.Gameplay.Features.Ammo
 {
@@ -14,6 +13,4 @@ namespace Code.Gameplay.Features.Ammo
 	[Game] public class LongRangeBullet : IComponent { }
 	[Game] public class LaserBolt : IComponent { }
 	[Game] public class RocketMissile : IComponent { }
-
-	[Game] public class AmmoHolder : IComponent { public AmmoHolderBehaviour Value; }
 }

@@ -51,7 +51,4 @@ namespace Code.Gameplay.Features.Weapon
 	[Game] public class PlasmaGun : IComponent { }
 	[Game] public class LaserBlaster : IComponent { }
 	[Game] public class RocketLauncher : IComponent { }
-
-	[Game] public class WeaponHolder : IComponent { public WeaponHolderBehaviour Value; }
-	[Game] public class ReloadingAnimatorComponent : IComponent { public ReloadingAnimator Value; }
 }

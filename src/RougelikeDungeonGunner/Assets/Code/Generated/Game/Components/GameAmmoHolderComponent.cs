@@ -33,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Features.Ammo.AmmoHolder ammoHolder { get { return (Code.Gameplay.Features.Ammo.AmmoHolder)GetComponent(GameComponentsLookup.AmmoHolder); } }
+    public Code.Meta.Features.Hud.AmmoHolderComponent ammoHolder { get { return (Code.Meta.Features.Hud.AmmoHolderComponent)GetComponent(GameComponentsLookup.AmmoHolder); } }
     public Code.Meta.Features.Hud.AmmoHolder.Behaviours.AmmoHolderBehaviour AmmoHolder { get { return ammoHolder.Value; } }
     public bool hasAmmoHolder { get { return HasComponent(GameComponentsLookup.AmmoHolder); } }
 
     public GameEntity AddAmmoHolder(Code.Meta.Features.Hud.AmmoHolder.Behaviours.AmmoHolderBehaviour newValue) {
         var index = GameComponentsLookup.AmmoHolder;
-        var component = (Code.Gameplay.Features.Ammo.AmmoHolder)CreateComponent(index, typeof(Code.Gameplay.Features.Ammo.AmmoHolder));
+        var component = (Code.Meta.Features.Hud.AmmoHolderComponent)CreateComponent(index, typeof(Code.Meta.Features.Hud.AmmoHolderComponent));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceAmmoHolder(Code.Meta.Features.Hud.AmmoHolder.Behaviours.AmmoHolderBehaviour newValue) {
         var index = GameComponentsLookup.AmmoHolder;
-        var component = (Code.Gameplay.Features.Ammo.AmmoHolder)CreateComponent(index, typeof(Code.Gameplay.Features.Ammo.AmmoHolder));
+        var component = (Code.Meta.Features.Hud.AmmoHolderComponent)CreateComponent(index, typeof(Code.Meta.Features.Hud.AmmoHolderComponent));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;
