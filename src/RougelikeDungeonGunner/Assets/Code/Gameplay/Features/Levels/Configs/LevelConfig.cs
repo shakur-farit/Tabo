@@ -10,6 +10,7 @@ namespace Code.Gameplay.Features.Levels.Configs
 		[Range(0, 100)] public int StartingTime;
 		[Range(0, 100)] public int TimeBetweenSpawnWaves;
 		[Range(0, 100)] public int FinishingTime;
+		[Range(0, 100)] public float HeroSaveZoneRadius;
 		public List<EnvironmentSetup> EnvironmentSetups;
 		public List<EnemyWave> EnemyWaves;
 	}

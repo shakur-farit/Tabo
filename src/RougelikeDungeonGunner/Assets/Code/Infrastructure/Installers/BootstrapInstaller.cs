@@ -30,7 +30,7 @@ using Code.Infrastructure.Systems;
 using Code.Infrastructure.View.Factory;
 using Code.Meta.Features.Hud.AmmoHolder.Factory;
 using Code.Meta.Features.Hud.EnchantHolder.Factory;
-using Code.Meta.Features.Hud.HeartHolder.Factory;
+using Code.Meta.Features.Hud.HeroHeartHolder.Factory;
 using Code.Meta.Features.Shop.Enchant.Factory;
 using Code.Meta.Features.Shop.EnchantUIEntry.Factory;
 using Code.Meta.Features.Shop.Upgrade.Factory;

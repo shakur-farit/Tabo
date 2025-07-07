@@ -34,10 +34,10 @@ public sealed partial class GameMatcher {
 public partial class GameEntity {
 
     public Code.Meta.Features.Hud.HeartHolderComponent heartHolder { get { return (Code.Meta.Features.Hud.HeartHolderComponent)GetComponent(GameComponentsLookup.HeartHolder); } }
-    public Code.Meta.Features.Hud.HeartHolder.Behaviours.HeartHolder HeartHolder { get { return heartHolder.Value; } }
+    public Code.Meta.Features.Hud.HeroHeartHolder.Behaviours.HeartHolder HeartHolder { get { return heartHolder.Value; } }
     public bool hasHeartHolder { get { return HasComponent(GameComponentsLookup.HeartHolder); } }
 
-    public GameEntity AddHeartHolder(Code.Meta.Features.Hud.HeartHolder.Behaviours.HeartHolder newValue) {
+    public GameEntity AddHeartHolder(Code.Meta.Features.Hud.HeroHeartHolder.Behaviours.HeartHolder newValue) {
         var index = GameComponentsLookup.HeartHolder;
         var component = (Code.Meta.Features.Hud.HeartHolderComponent)CreateComponent(index, typeof(Code.Meta.Features.Hud.HeartHolderComponent));
         component.Value = newValue;
@@ -45,7 +45,7 @@ public partial class GameEntity {
         return this;
     }
 
-    public GameEntity ReplaceHeartHolder(Code.Meta.Features.Hud.HeartHolder.Behaviours.HeartHolder newValue) {
+    public GameEntity ReplaceHeartHolder(Code.Meta.Features.Hud.HeroHeartHolder.Behaviours.HeartHolder newValue) {
         var index = GameComponentsLookup.HeartHolder;
         var component = (Code.Meta.Features.Hud.HeartHolderComponent)CreateComponent(index, typeof(Code.Meta.Features.Hud.HeartHolderComponent));
         component.Value = newValue;

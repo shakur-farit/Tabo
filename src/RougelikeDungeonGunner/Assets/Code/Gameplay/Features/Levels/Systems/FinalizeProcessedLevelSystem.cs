@@ -2,18 +2,20 @@
 using Code.Gameplay.Common.Time;
 using Code.Infrastructure.States.GameStates;
 using Code.Infrastructure.States.StateMachine;
-using Cysharp.Threading.Tasks;
 using Entitas;
-using UnityEditorInternal;
 
 namespace Code.Gameplay.Features.Levels.Systems
 {
 	public class FinalizeProcessedLevelSystem : IExecuteSystem
 	{
+		private const string TimeText = "Time to level complete";
+
+		private readonly List<GameEntity> _buffer = new(1);
+
 		private readonly IGameStateMachine _stateMachine;
 		private readonly ITimeService _time;
 		private readonly IGroup<GameEntity> _levels;
-		private readonly List<GameEntity> _buffer = new(1);
+		private readonly IGroup<GameEntity> _holders;
 
 		public FinalizeProcessedLevelSystem(GameContext game, IGameStateMachine stateMachine, ITimeService time)
 		{
@@ -25,26 +27,28 @@ namespace Code.Gameplay.Features.Levels.Systems
 					GameMatcher.Processed,
 					GameMatcher.FinishingTimeLeft,
 					GameMatcher.FinishingTime));
+
+			_holders = game.GetGroup(GameMatcher
+				.AllOf(
+					GameMatcher.TimerHolder));
 		}
 
 		public void Execute()
 		{
-			FinalizeAsync().Forget();
-		}
-
-		private async UniTaskVoid FinalizeAsync()
-		{
 			foreach (GameEntity level in _levels.GetEntities(_buffer))
+			foreach (GameEntity holder in _holders)
 			{
 				if (level.FinishingTimeLeft <= 0)
 				{
 					level.ReplaceFinishingTimeLeft(level.FinishingTime);
 					level.isDestructed = true;
-					await _stateMachine.Enter<LevelCompleteState>();
+					holder.TimerHolder.HideTimeText();
+					_stateMachine.Enter<LevelCompleteState>();
 				}
 				else
 				{
 					level.ReplaceFinishingTimeLeft(level.FinishingTimeLeft - _time.DeltaTime);
+					holder.TimerHolder.UpdateTimeText(TimeText, level.FinishingTimeLeft);
 				}
 			}
 		}

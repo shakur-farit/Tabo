@@ -2,7 +2,7 @@
 using Code.Gameplay.Features.Hero.Systems;
 using Code.Infrastructure;
 using Code.Infrastructure.Systems;
-using Code.Meta.Features.Hud.HeartHolder.Systems;
+using Code.Meta.Features.Hud.HeroHeartHolder.Systems;
 
 namespace Code.Gameplay.Features.Hero
 {

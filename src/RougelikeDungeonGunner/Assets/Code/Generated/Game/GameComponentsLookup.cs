@@ -164,9 +164,10 @@ public static class GameComponentsLookup {
     public const int EnchantHolder = 153;
     public const int HeartHolder = 154;
     public const int ReloadingAnimator = 155;
-    public const int WeaponHolder = 156;
+    public const int TimerHolder = 156;
+    public const int WeaponHolder = 157;
 
-    public const int TotalComponents = 157;
+    public const int TotalComponents = 158;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -325,6 +326,7 @@ public static class GameComponentsLookup {
         "EnchantHolder",
         "HeartHolder",
         "ReloadingAnimator",
+        "TimerHolder",
         "WeaponHolder"
     };
 
@@ -485,6 +487,7 @@ public static class GameComponentsLookup {
         typeof(Code.Meta.Features.Hud.EnchantHolderComponent),
         typeof(Code.Meta.Features.Hud.HeartHolderComponent),
         typeof(Code.Meta.Features.Hud.ReloadingAnimatorComponent),
+        typeof(Code.Meta.Features.Hud.TimerHolderComponent),
         typeof(Code.Meta.Features.Hud.WeaponHolderComponent)
     };
 }

@@ -3,7 +3,7 @@ using Cysharp.Threading.Tasks;
 using UnityEngine;
 using Zenject;
 
-namespace Code.Meta.Features.Hud.HeartHolder.Factory
+namespace Code.Meta.Features.Hud.HeroHeartHolder.Factory
 {
 	public class HeartUIFactory : IHeartUIFactory
 	{

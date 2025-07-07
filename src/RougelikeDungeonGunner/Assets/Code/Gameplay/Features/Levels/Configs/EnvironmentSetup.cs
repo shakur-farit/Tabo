@@ -8,6 +8,8 @@ namespace Code.Gameplay.Features.Levels.Configs
 	public class EnvironmentSetup
 	{
 		public EntityBehaviour Room;
+		public Vector2 RoomHigherRightPosiiotn;
+		public Vector2 RoomLowerLeftPosiiotn;
 		public Vector2 HeroStartPosition;
 	}
 }
