@@ -1,5 +1,6 @@
 using System;
 using UnityEditor;
+using UnityEditor.Callbacks;
 using UnityEngine;
 
 namespace Code.NodeGraph.Editor
@@ -12,10 +13,8 @@ namespace Code.NodeGraph.Editor
 		private const int NodeBorder = 12;
 
 		private GUIStyle _roomNodeStyle;
-
-		[MenuItem("Room Node Graph Editor", menuItem = "Window/Dungeon Editor/Room Node Graph Editor")]
-		private static void OpenWindow() => 
-			GetWindow<RoomNodeGraphEditor>("Room Node Graph Editor");
+		private static RoomNodeGraph _currentNodeGraph;
+		private RoomNodeList _roomNodeList;
 
 		private void OnEnable()
 		{
@@ -30,6 +29,25 @@ namespace Code.NodeGraph.Editor
 			};
 
 			_roomNodeStyle.padding = new RectOffset(NodeBorder, NodeBorder, NodeBorder, NodeBorder);
+		}
+
+		[MenuItem("Room Node Graph Editor", menuItem = "Window/Dungeon Editor/Room Node Graph Editor")]
+		private static void OpenWindow() => 
+			GetWindow<RoomNodeGraphEditor>("Room Node Graph Editor");
+
+		[OnOpenAsset(0)]
+		public static bool IsDoubleClickAsset(int id, int line)
+		{
+			RoomNodeGraph roomNodeGraph = EditorUtility.InstanceIDToObject(id) as RoomNodeGraph;
+
+			if(roomNodeGraph == null)
+				return false;
+
+			OpenWindow();
+
+			_currentNodeGraph = roomNodeGraph;
+
+			return true;
 		}
 
 		private void OnGUI()
