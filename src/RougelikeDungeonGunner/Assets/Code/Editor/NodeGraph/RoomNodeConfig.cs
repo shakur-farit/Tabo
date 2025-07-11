@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Code.NodeGraph.Editor
 {
@@ -10,7 +9,6 @@ namespace Code.NodeGraph.Editor
 		public List<string> ParentRoomNodeIdList = new();
 		public List<string> ChildRoomNodeIdList = new();
 		public RoomNodeGraph RoomNodeGraph;
-		[FormerlySerializedAs("RoomNodeType")] public RoomNode roomNode;
-		[FormerlySerializedAs("RoomNodeTypeList")] public RoomNodeList roomNodeList;
+		public RoomNode roomNode;
 	}
 }

@@ -14,7 +14,6 @@ namespace Code.NodeGraph.Editor
 
 		private GUIStyle _roomNodeStyle;
 		private static RoomNodeGraph _currentNodeGraph;
-		private RoomNodeList _roomNodeList;
 
 		private void OnEnable()
 		{
@@ -29,6 +28,8 @@ namespace Code.NodeGraph.Editor
 			};
 
 			_roomNodeStyle.padding = new RectOffset(NodeBorder, NodeBorder, NodeBorder, NodeBorder);
+
+			
 		}
 
 		[MenuItem("Room Node Graph Editor", menuItem = "Window/Dungeon Editor/Room Node Graph Editor")]
@@ -52,9 +53,56 @@ namespace Code.NodeGraph.Editor
 
 		private void OnGUI()
 		{
-			GUILayout.BeginArea(new Rect(new Vector2(100f, 100f), new Vector2(NodeWidth, NodeHeight)), _roomNodeStyle);
-			EditorGUILayout.LabelField("Node 1");
-			GUILayout.EndArea();
+			if (_currentNodeGraph == null)
+				return;
+
+			ProcessEvents(Event.current);
+
+			//DrawRoomNodes();
+
+			if(GUI.changed)
+				Repaint();
+		}
+
+		private void ProcessEvents(Event currentEvent) => 
+			ProcessRoomNodeGraphEvents(currentEvent);
+
+		private void ProcessRoomNodeGraphEvents(Event currentEvent)
+		{
+			switch (currentEvent.type)
+			{
+				case EventType.MouseDown:
+					ProcessMouseDownEvent(currentEvent); 
+					break;
+
+				default:
+					break;
+			}
+		}
+
+		private void ProcessMouseDownEvent(Event currentEvent)
+		{
+			if (currentEvent.button == 1) 
+				ShowContextMenu(currentEvent.mousePosition);
+		}
+
+		private void ShowContextMenu(Vector2 mousePosition)
+		{
+			GenericMenu menu = new GenericMenu();
+			menu.AddItem(new GUIContent("Create Room Node"), false, CreateRoomNode, mousePosition);
+			menu.ShowAsContext();
+		}
+
+		private void CreateRoomNode(object mousePositionObject) => 
+			CreateRoomNode(mousePositionObject,  RoomNodeTypeId.Unknown);
+
+		private void CreateRoomNode(object mousePositionObject, RoomNodeTypeId roomNodeType)
+		{
+			Vector2 mousePosition = (Vector2)mousePositionObject;
+
+			RoomNode roomNode = new RoomNode();
+			_currentNodeGraph.RoomNodesList.Add(roomNode);
+			roomNode.Setup(new Rect(mousePosition, new Vector2(NodeWidth, NodeHeight)), _currentNodeGraph, roomNodeType);
 		}
 	}
 }

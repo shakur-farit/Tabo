@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d94a84c5d1417e4892e18d022b9632f, type: 3}
-  m_Name: LargeRoomNode
+  m_Script: {fileID: 11500000, guid: fd880d30533179d4b9e249e7f67724f6, type: 3}
+  m_Name: RoomNodeGraph
   m_EditorClassIdentifier: 
-  TypeId: 1
-  DisplayInEditor: 1
+  roomNodeList: {fileID: 0}
+  RoomNodeList: []

@@ -1,14 +1,27 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Code.NodeGraph.Editor
 {
 	[CreateAssetMenu(menuName = "Dungeon Gunner/Room Node Graph", fileName = "RoomNodeGraph")]
 	public class RoomNodeGraph : ScriptableObject
 	{
-		[FormerlySerializedAs("RoomNodeTypeList")] public RoomNodeList roomNodeList;
-		public List<RoomNodeConfig> RoomNodeList = new();
+		public List<RoomNode> RoomNodesList;
+		public List<RoomNodeConfig> RoomNodeConfigList = new();
 		public Dictionary<string, RoomNodeConfig> RoomNodeDictionary = new();
+	}
+
+	[Serializable]
+	public class RoomNode
+	{
+		public RoomNodeTypeId TypeId;
+		public bool DisplayInEditor;
+
+
+		public void Setup(Rect rect, RoomNodeGraph currentNodeGraph, RoomNodeTypeId roomNodeType)
+		{
+			
+		}
 	}
 }
