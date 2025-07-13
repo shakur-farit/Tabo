@@ -18,7 +18,7 @@ TagManager:
   - 
   - HeroUI
   - 
-  - 
+  - Collision
   - 
   - 
   - 
@@ -41,6 +41,21 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Ground
+    uniqueID: 2785709781
+    locked: 0
+  - name: Decoration1
+    uniqueID: 2080676545
+    locked: 0
+  - name: Decoration2
+    uniqueID: 2109957727
+    locked: 0
   - name: Instance
     uniqueID: 3730342647
+    locked: 0
+  - name: Front
+    uniqueID: 4238468585
+    locked: 0
+  - name: Collision
+    uniqueID: 2106508737
     locked: 0
