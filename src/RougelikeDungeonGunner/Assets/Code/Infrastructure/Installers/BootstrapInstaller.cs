@@ -9,6 +9,7 @@ using Code.Gameplay.Features.Ammo.Systems;
 using Code.Gameplay.Features.Effects.Factory;
 using Code.Gameplay.Features.Enchants.Factory;
 using Code.Gameplay.Features.Enemy.Factory;
+using Code.Gameplay.Features.Enemy.Systems;
 using Code.Gameplay.Features.Hero.Factory;
 using Code.Gameplay.Features.Levels.Factory;
 using Code.Gameplay.Features.Levels.Services;
@@ -36,7 +37,6 @@ using Code.Meta.Features.Shop.EnchantUIEntry.Factory;
 using Code.Meta.Features.Shop.Upgrade.Factory;
 using Code.Meta.Features.Shop.Upgrade.Services;
 using Code.Meta.Features.Shop.Weapon.Factory;
-using Code.Meta.Features.Shop.WeaponStatUIEntry.Configs;
 using Code.Meta.Features.Shop.WeaponStatUIEntry.Factory;
 using Code.Meta.UI.Windows.Factory;
 using Code.Meta.UI.Windows.Service;
@@ -122,6 +122,7 @@ namespace Code.Infrastructure.Installers
 			Container.Bind<IWeaponUpgrader>().To<WeaponUpgrader>().AsSingle();
 			Container.BindInterfacesAndSelfTo<WeaponUpgrades>().AsSingle();
 			Container.Bind<IAmmoDirectionProvider>().To<AmmoDirectionProvider>().AsSingle();
+			Container.Bind<IEnemySpawnPositionProvider>().To<EnemySpawnPositionProvider>().AsSingle();
 		}
 
 		private void BindGameplayFactories()

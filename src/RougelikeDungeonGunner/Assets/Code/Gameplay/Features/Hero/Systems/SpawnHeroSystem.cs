@@ -15,14 +15,14 @@ namespace Code.Gameplay.Features.Hero.Systems
 			_heroFactory = heroFactory;
 			_levels = game.GetGroup(GameMatcher
 				.AllOf(
-					GameMatcher.EnvironmentSetup,
+					GameMatcher.HeroStartPosition,
 					GameMatcher.EnvironmentSetupAvailable));
 		}
 
 		public void Execute()
 		{
 			foreach (GameEntity level in _levels)
-				_heroFactory.CreateHero(HeroTypeId.TheGeneral, level.EnvironmentSetup.HeroStartPosition);
+				_heroFactory.CreateHero(HeroTypeId.TheGeneral, level.HeroStartPosition);
 		}
 	}
 }

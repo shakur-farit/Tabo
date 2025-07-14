@@ -13,7 +13,6 @@ namespace Code.Gameplay.Features.Levels.Systems
 		{
 			_levels = game.GetGroup(GameMatcher
 				.AllOf(
-					GameMatcher.EnvironmentSetup,
 					GameMatcher.EnvironmentSetupAvailable));
 		}
 
@@ -21,7 +20,6 @@ namespace Code.Gameplay.Features.Levels.Systems
 		{
 			foreach (GameEntity level in _levels.GetEntities(_buffer))
 				level
-					.RemoveEnvironmentSetup()
 					.With(x => x.isEnvironmentSetupAvailable = false)
 					;
 		}

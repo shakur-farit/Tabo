@@ -5,7 +5,6 @@ using Code.Gameplay.Common.Random;
 using Code.Gameplay.Features.Levels.Configs;
 using Code.Gameplay.StaticData;
 using Code.Infrastructure.Identifiers;
-using Unity.VisualScripting.FullSerializer;
 
 namespace Code.Gameplay.Features.Levels.Factory
 {
@@ -36,12 +35,12 @@ namespace Code.Gameplay.Features.Levels.Factory
 				LevelConfig config = _staticDataService.GetLevelConfig(typeId);
 
 				int randomIndex = _random.Range(0, config.EnvironmentSetups.Count);
+				EnvironmentSetup environment = config.EnvironmentSetups[randomIndex];
 
 				return CreateEntity.Empty()
 						.AddId(_identifier.Next())
 						.AddEnemyWaves(config.EnemyWaves)
 						.AddSpawnedEnemyWaves(StartingEnemyWavesCount)
-						.AddEnvironmentSetup(config.EnvironmentSetups[randomIndex])
 						.AddStartingTime(config.StartingTime)
 						.AddStartingTimeLeft(config.StartingTime)
 						.AddCooldown(config.TimeBetweenSpawnWaves)
@@ -49,6 +48,10 @@ namespace Code.Gameplay.Features.Levels.Factory
 						.AddEnemiesInLevelCount(StartingEnemiesCount)
 						.AddFinishingTime(config.FinishingTime)
 						.AddFinishingTimeLeft(config.FinishingTime)
+						.AddRoomMinPosition(environment.RoomMinPosiiotn)
+						.AddRoomMaxPosition(environment.RoomMaxPosiiotn)
+						.AddHeroStartPosition(environment.HeroStartPosition)
+						.AddHeroSafeZoneRadius(config.HeroSaveZoneRadius)
 						.With(x => x.isLevel = true)
 						.With(x => x.isEnvironmentSetupAvailable = true)
 						.With(x => x.isCooldownUp = true)
