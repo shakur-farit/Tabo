@@ -13,15 +13,11 @@ MonoBehaviour:
   m_Name: FirstLevelConfig
   m_EditorClassIdentifier: 
   TypeId: 1
+  DungeonTypeOnLevel: 1
   StartingTime: 5
   TimeBetweenSpawnWaves: 10
   FinishingTime: 5
   HeroSaveZoneRadius: 0
-  EnvironmentSetups:
-  - Room: {fileID: 0}
-    RoomMinPosiiotn: {x: 0, y: 0}
-    RoomMaxPosiiotn: {x: 0, y: 0}
-    HeroStartPosition: {x: 0, y: 0}
   EnemyWaves:
   - EnemiesInWave:
     - EnemyTypeId: 2

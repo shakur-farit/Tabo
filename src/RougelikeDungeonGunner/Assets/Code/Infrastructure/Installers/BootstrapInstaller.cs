@@ -11,8 +11,8 @@ using Code.Gameplay.Features.Enchants.Factory;
 using Code.Gameplay.Features.Enemy.Factory;
 using Code.Gameplay.Features.Enemy.Systems;
 using Code.Gameplay.Features.Hero.Factory;
+using Code.Gameplay.Features.Levels;
 using Code.Gameplay.Features.Levels.Factory;
-using Code.Gameplay.Features.Levels.Services;
 using Code.Gameplay.Features.Loot.Factory;
 using Code.Gameplay.Features.Loot.Services;
 using Code.Gameplay.Features.Statuses.Applier;
@@ -114,7 +114,6 @@ namespace Code.Infrastructure.Installers
 		{
 			Container.Bind<IStaticDataService>().To<StaticDataService>().AsSingle();
 			Container.Bind<IStatusApplier>().To<StatusApplier>().AsSingle();
-			Container.Bind<ILevelEnvironmentService>().To<LevelEnvironmentService>().AsSingle();
 			Container.Bind<ILootRandomizerService>().To<LootRandomizerService>().AsSingle();
 			Container.Bind<IWeaponUpgradeValidator>().To<WeaponUpgradeValidator>().AsSingle();
 			Container.Bind<IWeaponStatsProvider>().To<WeaponStatsProvider>().AsSingle();
@@ -136,6 +135,7 @@ namespace Code.Infrastructure.Installers
 			Container.Bind<IEffectFactory>().To<EffectFactory>().AsSingle();
 			Container.Bind<IStatusFactory>().To<StatusFactory>().AsSingle();
 			Container.Bind<ILevelFactory>().To<LevelFactory>().AsSingle();
+			Container.Bind<IDungeonFactory>().To<DungeonFactory>().AsSingle();
 			Container.Bind<ILootFactory>().To<LootFactory>().AsSingle();
 			Container.Bind<IEnchantFactory>().To<EnchantFactory>().AsSingle();
 		}

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2863550217381986784}
   - component: {fileID: 6390910501267623108}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70,8 +70,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 468312769
-  m_SortingLayer: 0
+  m_SortingLayerID: -564624649
+  m_SortingLayer: 4
   m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: c3be09077243891458bdbf46a57d2e8a, type: 3}
   m_Color: {r: 0.74509805, g: 0.5454003, b: 0, a: 1}
@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 2719461292396719340}
   - component: {fileID: 2224264420142898566}
   - component: {fileID: 2308486921878832860}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Ammo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -151,7 +151,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.001877144}
@@ -165,7 +165,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6539570766999889727}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -183,7 +183,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &2243231872987813085
 MonoBehaviour:
   m_ObjectHideFlags: 0

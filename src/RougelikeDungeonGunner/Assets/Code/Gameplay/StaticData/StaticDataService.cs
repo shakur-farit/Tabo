@@ -41,6 +41,7 @@ namespace Code.Gameplay.StaticData
 		private const string EnemyConfigLabel = "EnemyConfig";
 		private const string HeroConfigLabel = "HeroConfig";
 		private const string LevelConfigLabel = "LevelConfig";
+		private const string DungeonConfigLabel = "DungeonConfig";
 		private const string LootConfigLabel = "LootConfig";
 		private const string EnchantConfigLabel = "EnchantConfig";
 		private const string WindowConfigLabel = "WindowConfig";
@@ -57,6 +58,7 @@ namespace Code.Gameplay.StaticData
 		private Dictionary<EnemyTypeId, EnemyConfig> _enemyById;
 		private Dictionary<HeroTypeId, HeroConfig> _heroById;
 		private Dictionary<LevelTypeId, LevelConfig> _levelById;
+		private Dictionary<DungeonTypeId, DungeonConfig> _dungeonById;
 		private Dictionary<LootTypeId, LootConfig> _lootById;
 		private Dictionary<EnchantTypeId, EnchantConfig> _enchantById;
 		private Dictionary<WindowId, WindowConfig> _windowById;
@@ -85,6 +87,7 @@ namespace Code.Gameplay.StaticData
 			await LoadEnemies();
 			await LoadHeroes();
 			await LoadLevels();
+			await LoadDungeons();
 			await LoadLoots();
 			await LoadEnchants();
 			await LoadWindows();
@@ -134,6 +137,14 @@ namespace Code.Gameplay.StaticData
 				return config;
 
 			throw new Exception($"Level config for {id} was not found");
+		}
+
+		public DungeonConfig GetDungeonConfig(DungeonTypeId id)
+		{
+			if (_dungeonById.TryGetValue(id, out DungeonConfig config))
+				return config;
+
+			throw new Exception($"Dungeon config for {id} was not found");
 		}
 
 		public LootConfig GetLootConfig(LootTypeId id)
@@ -229,6 +240,10 @@ namespace Code.Gameplay.StaticData
 
 		private async UniTask LoadLevels() =>
 			_levelById = (await _assetProvider.LoadAll<LevelConfig>(LevelConfigLabel))
+				.ToDictionary(x => x.TypeId, x => x);
+
+		private async UniTask LoadDungeons() =>
+			_dungeonById = (await _assetProvider.LoadAll<DungeonConfig>(DungeonConfigLabel))
 				.ToDictionary(x => x.TypeId, x => x);
 
 		private async UniTask LoadLoots() =>

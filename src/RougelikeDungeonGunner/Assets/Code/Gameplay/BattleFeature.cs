@@ -16,7 +16,6 @@ using Code.Gameplay.Features.Weapon;
 using Code.Gameplay.Input;
 using Code.Infrastructure.Systems;
 using Code.Infrastructure.View;
-using UnityEngine;
 
 namespace Code.Gameplay
 {
@@ -26,6 +25,7 @@ namespace Code.Gameplay
 		{
 			Add(systems.Create<InputFeature>());
 			Add(systems.Create<LevelFeature>());
+			Add(systems.Create<DungeonFeature>());
 			Add(systems.Create<BindViewFeature>());
 
 			Add(systems.Create<HeroFeature>());

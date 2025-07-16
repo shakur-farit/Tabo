@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2761384339142524827}
   - component: {fileID: 8197981886704639328}
   - component: {fileID: 7906569486838573893}
-  m_Layer: 11
+  m_Layer: 13
   m_Name: Tilemap5_Collision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13350,6 +13350,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1107499574310059573}
+  - component: {fileID: -7683677327530585464}
+  - component: {fileID: -6398119144975391487}
+  - component: {fileID: 1429415576563592546}
   m_Layer: 0
   m_Name: LevelOneRoom_3
   m_TagString: Untagged
@@ -13373,6 +13376,46 @@ Transform:
   - {fileID: 1916723858276023281}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-7683677327530585464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2884936308046869166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f995b7c574ebe654d91168f1183f0916, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-6398119144975391487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2884936308046869166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b8a654e6cfe0df4183acf3af6618ebe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EntityView: {fileID: -7683677327530585464}
+--- !u!114 &1429415576563592546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2884936308046869166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e0ea605693cd2c4cb52b5227e64ced4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EntityView: {fileID: -7683677327530585464}
+  _collisionTilemap: {fileID: 6081425461174057855}
+  _validSprite: {fileID: 21300000, guid: 1e100c655539c4940865adc0c42af0ee, type: 3}
 --- !u!1 &3926556546770647692
 GameObject:
   m_ObjectHideFlags: 0

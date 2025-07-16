@@ -26323,6 +26323,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2905241026972217924}
+  - component: {fileID: 1733638422461797998}
+  - component: {fileID: -8204421520586198299}
+  - component: {fileID: 6536516926206675333}
   m_Layer: 0
   m_Name: LevelOneRoom_1
   m_TagString: Untagged
@@ -26346,3 +26349,43 @@ Transform:
   - {fileID: 2035371686453626322}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1733638422461797998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7149179337646631958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f995b7c574ebe654d91168f1183f0916, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-8204421520586198299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7149179337646631958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b8a654e6cfe0df4183acf3af6618ebe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EntityView: {fileID: 1733638422461797998}
+--- !u!114 &6536516926206675333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7149179337646631958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e0ea605693cd2c4cb52b5227e64ced4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EntityView: {fileID: 1733638422461797998}
+  _collisionTilemap: {fileID: 1954060849539470681}
+  _validSprite: {fileID: 21300000, guid: 1e100c655539c4940865adc0c42af0ee, type: 3}

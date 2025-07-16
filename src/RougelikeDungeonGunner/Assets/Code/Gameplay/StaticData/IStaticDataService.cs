@@ -52,5 +52,6 @@ namespace Code.Gameplay.StaticData
     EnchantUIEntryConfig GetEnchantUIEntryItemConfig(EnchantUIEntryTypeId id);
     EnchantStatUIEntryConfig GetEnchantStatUIEntryItemConfig(EnchantStatUIEntryTypeId id);
     EnchantShopItemConfig GetEnchantShopItemConfig(EnchantShopItemTypeId id);
+    DungeonConfig GetDungeonConfig(DungeonTypeId id);
   }
 }

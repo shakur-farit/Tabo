@@ -1,4 +1,5 @@
-﻿using Code.Gameplay.Common.Random;
+﻿using System.Collections.Generic;
+using Code.Gameplay.Common.Random;
 using UnityEngine;
 
 namespace Code.Gameplay.Features.Enemy.Systems
@@ -10,23 +11,21 @@ namespace Code.Gameplay.Features.Enemy.Systems
 		public EnemySpawnPositionProvider(IRandomService random) => 
 			_random = random;
 
-		public Vector2 GetEnemyPosition(Vector2 roomMinPosition, Vector2 roomMaxPosition, Vector2 heroPosition, float safeZoneRadius)
+		public Vector2 GetEnemyPosition(Vector2 heroPosition, float safeZoneRadius, List<Vector2> validPositions)
 		{
-			const int maxAttempts = 100;
+			var position = GetRandomPosition(validPositions);
 
-			for (int i = 0; i < maxAttempts; i++)
-			{
-				Vector2 enemyPosition = GetRandomPosition(roomMinPosition, roomMaxPosition);
+			if (Vector2.Distance(position, heroPosition) > safeZoneRadius)
+				return position;
+				
 
-				if (Vector2.Distance(enemyPosition, heroPosition) > safeZoneRadius)
-					return enemyPosition;
-			}
-
-			return GetRandomPosition(roomMinPosition, roomMaxPosition);
+			return GetRandomPosition(validPositions);
 		}
 
-		private Vector2 GetRandomPosition(Vector2 min, Vector2 max) =>
-			new(_random.Range(min.x, max.x),
-				_random.Range(min.y, max.y));
+		private Vector2 GetRandomPosition(List<Vector2> validPositions)
+		{
+			int randomIndex = _random.Range(0, validPositions.Count);
+			return validPositions[randomIndex];
+		}
 	}
 }
