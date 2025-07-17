@@ -122,60 +122,62 @@ public static class GameComponentsLookup {
     public const int CollectTargetsContinuously = 111;
     public const int CollectTargetsInterval = 112;
     public const int CollectTargetsTimer = 113;
-    public const int LayerMask = 114;
-    public const int ProcessedTargets = 115;
-    public const int Radius = 116;
-    public const int ReadyToCollectTargets = 117;
-    public const int TargetsBuffer = 118;
-    public const int AutomaticPistol = 119;
-    public const int NewWeaponTypeId = 120;
-    public const int WeaponChangeable = 121;
-    public const int WeaponChangeRequested = 122;
-    public const int ClosestTargetPosition = 123;
-    public const int CurrentAmmoCount = 124;
-    public const int EffectSetups = 125;
-    public const int FirePositionTransform = 126;
-    public const int InfinityAmmo = 127;
-    public const int LaserBlaster = 128;
-    public const int Machinegun = 129;
-    public const int MagazineNotEmpty = 130;
-    public const int MagazineSize = 131;
-    public const int MaxPelletsDeviation = 132;
-    public const int MaxWeaponEnchantsCount = 133;
-    public const int MinPelletsDeviation = 134;
-    public const int MultiPellet = 135;
-    public const int Pierce = 136;
-    public const int Pistol = 137;
-    public const int PlasmaGun = 138;
-    public const int Precharged = 139;
-    public const int PrechargeTime = 140;
-    public const int PrechargeTimeLeft = 141;
-    public const int ReadyToShoot = 142;
-    public const int Reloading = 143;
-    public const int ReloadTime = 144;
-    public const int ReloadTimeLeft = 145;
-    public const int Revolver = 146;
-    public const int RocketLauncher = 147;
-    public const int Shooting = 148;
-    public const int Shot = 149;
-    public const int Shotgun = 150;
-    public const int Sniper = 151;
-    public const int StatusSetups = 152;
-    public const int Weapon = 153;
-    public const int WeaponEnchants = 154;
-    public const int WeaponOwnerId = 155;
-    public const int WeaponRotationAngle = 156;
-    public const int WeaponRotationPointTransform = 157;
-    public const int WeaponTypeId = 158;
-    public const int AmmoHolder = 159;
-    public const int CoinsHolder = 160;
-    public const int EnchantHolder = 161;
-    public const int HeartHolder = 162;
-    public const int ReloadingAnimator = 163;
-    public const int TimerHolder = 164;
-    public const int WeaponHolder = 165;
+    public const int CollisionLayerMask = 114;
+    public const int CollisionsBuffer = 115;
+    public const int ProcessedTargets = 116;
+    public const int Radius = 117;
+    public const int ReadyToCollectTargets = 118;
+    public const int TargetLayerMask = 119;
+    public const int TargetsBuffer = 120;
+    public const int AutomaticPistol = 121;
+    public const int NewWeaponTypeId = 122;
+    public const int WeaponChangeable = 123;
+    public const int WeaponChangeRequested = 124;
+    public const int ClosestTargetPosition = 125;
+    public const int CurrentAmmoCount = 126;
+    public const int EffectSetups = 127;
+    public const int FirePositionTransform = 128;
+    public const int InfinityAmmo = 129;
+    public const int LaserBlaster = 130;
+    public const int Machinegun = 131;
+    public const int MagazineNotEmpty = 132;
+    public const int MagazineSize = 133;
+    public const int MaxPelletsDeviation = 134;
+    public const int MaxWeaponEnchantsCount = 135;
+    public const int MinPelletsDeviation = 136;
+    public const int MultiPellet = 137;
+    public const int Pierce = 138;
+    public const int Pistol = 139;
+    public const int PlasmaGun = 140;
+    public const int Precharged = 141;
+    public const int PrechargeTime = 142;
+    public const int PrechargeTimeLeft = 143;
+    public const int ReadyToShoot = 144;
+    public const int Reloading = 145;
+    public const int ReloadTime = 146;
+    public const int ReloadTimeLeft = 147;
+    public const int Revolver = 148;
+    public const int RocketLauncher = 149;
+    public const int Shooting = 150;
+    public const int Shot = 151;
+    public const int Shotgun = 152;
+    public const int Sniper = 153;
+    public const int StatusSetups = 154;
+    public const int Weapon = 155;
+    public const int WeaponEnchants = 156;
+    public const int WeaponOwnerId = 157;
+    public const int WeaponRotationAngle = 158;
+    public const int WeaponRotationPointTransform = 159;
+    public const int WeaponTypeId = 160;
+    public const int AmmoHolder = 161;
+    public const int CoinsHolder = 162;
+    public const int EnchantHolder = 163;
+    public const int HeartHolder = 164;
+    public const int ReloadingAnimator = 165;
+    public const int TimerHolder = 166;
+    public const int WeaponHolder = 167;
 
-    public const int TotalComponents = 166;
+    public const int TotalComponents = 168;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -292,10 +294,12 @@ public static class GameComponentsLookup {
         "CollectTargetsContinuously",
         "CollectTargetsInterval",
         "CollectTargetsTimer",
-        "LayerMask",
+        "CollisionLayerMask",
+        "CollisionsBuffer",
         "ProcessedTargets",
         "Radius",
         "ReadyToCollectTargets",
+        "TargetLayerMask",
         "TargetsBuffer",
         "AutomaticPistol",
         "NewWeaponTypeId",
@@ -461,10 +465,12 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.TargetCollection.CollectTargetsContinuously),
         typeof(Code.Gameplay.Features.TargetCollection.CollectTargetsInterval),
         typeof(Code.Gameplay.Features.TargetCollection.CollectTargetsTimer),
-        typeof(Code.Gameplay.Features.TargetCollection.LayerMask),
+        typeof(Code.Gameplay.Features.TargetCollection.CollisionLayerMask),
+        typeof(Code.Gameplay.Features.TargetCollection.CollisionsBuffer),
         typeof(Code.Gameplay.Features.TargetCollection.ProcessedTargets),
         typeof(Code.Gameplay.Features.TargetCollection.Radius),
         typeof(Code.Gameplay.Features.TargetCollection.ReadyToCollectTargets),
+        typeof(Code.Gameplay.Features.TargetCollection.TargetLayerMask),
         typeof(Code.Gameplay.Features.TargetCollection.TargetsBuffer),
         typeof(Code.Gameplay.Features.Weapon.AutomaticPistol),
         typeof(Code.Gameplay.Features.Weapon.ChangeRequest.NewWeaponTypeId),

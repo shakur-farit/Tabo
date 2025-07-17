@@ -57,7 +57,7 @@ namespace Code.Gameplay.Features.Statuses.Factory
 				.AddWorldPosition(target.WorldPosition)
 				.AddTargetsBuffer(new List<int>(TargetsBufferSize))
 				.AddProcessedTargets(new List<int>(TargetsBufferSize))
-				.AddLayerMask(CollisionLayer.Enemy.AsMask())
+				.AddTargetLayerMask(CollisionLayer.Enemy.AsMask())
 				.With(x => x.isFlame = true)
 				.With(x => x.isReadyToCollectTargets = true)
 				.With(x => x.isCollectTargetsContinuously = true);

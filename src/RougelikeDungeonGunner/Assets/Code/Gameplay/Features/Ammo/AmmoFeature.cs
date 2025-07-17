@@ -33,6 +33,7 @@ namespace Code.Gameplay.Features.Ammo
 
 			Add(systems.Create<MarkAmmoProcessedOnWeaponFireRangeSystem>());
 			Add(systems.Create<MarkAmmoProcessedOnTargetLimitExceededSystem>());
+			Add(systems.Create<MarkAmmoProcessedOnCollideWithCollisionSystem>());
 			Add(systems.Create<FinalizeProcessedAmmoSystem>());
 		}
 	}

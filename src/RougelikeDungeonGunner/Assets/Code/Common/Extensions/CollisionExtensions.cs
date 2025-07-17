@@ -7,7 +7,7 @@ namespace Code.Common.Extensions
     Hero = 6,
     Enemy = 7,
     Collectable = 9,
-    Clicker = 10,
+    Collision = 13,
   }
   
   public static class CollisionExtensions

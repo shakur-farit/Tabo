@@ -19,7 +19,7 @@ namespace Code.Gameplay.Features.TargetCollection.Systems
 				.AllOf(
 					GameMatcher.TargetsBuffer,
 					GameMatcher.Radius,
-					GameMatcher.LayerMask,
+					GameMatcher.TargetLayerMask,
 					GameMatcher.WorldPosition,
 					GameMatcher.ReadyToCollectTargets)
 				.NoneOf(GameMatcher.TargetLimit));
@@ -38,7 +38,7 @@ namespace Code.Gameplay.Features.TargetCollection.Systems
 
 		private IEnumerable<int> TargetsInRadius(GameEntity entity) =>
 			_physicsService
-				.CircleCast(entity.WorldPosition, entity.Radius, entity.LayerMask)
+				.CircleCast(entity.WorldPosition, entity.Radius, entity.TargetLayerMask)
 				.Select(x => x.Id);
 	}
 }

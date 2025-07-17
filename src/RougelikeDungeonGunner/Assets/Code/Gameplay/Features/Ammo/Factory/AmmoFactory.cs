@@ -5,14 +5,13 @@ using Code.Common.Extensions;
 using Code.Gameplay.Features.Ammo.Configs;
 using Code.Gameplay.StaticData;
 using Code.Infrastructure.Identifiers;
-using Code.Meta.Features.Shop.Upgrade.Services;
 using UnityEngine;
 
 namespace Code.Gameplay.Features.Ammo.Factory
 {
 	public class AmmoFactory : IAmmoFactory
 	{
-		private const int TargetsBufferSize = 16;
+		private const int BufferSize = 16;
 		private const int NoLimit = 0;
 
 		private readonly IIdentifierService _identifier;
@@ -82,10 +81,12 @@ namespace Code.Gameplay.Features.Ammo.Factory
 					.AddViewPrefab(config.ViewPrefab)
 					.AddSpeed(stats.Speed)
 					.AddRadius(stats.ContactRadius)
-					.AddTargetsBuffer(new List<int>(TargetsBufferSize))
+					.AddTargetsBuffer(new List<int>(BufferSize))
+					.AddCollisionsBuffer(new List<int>(BufferSize))
 					.AddTargetLimit(NoLimit)
-					.AddProcessedTargets(new List<int>(TargetsBufferSize))
-					.AddLayerMask(CollisionLayer.Enemy.AsMask())
+					.AddProcessedTargets(new List<int>(BufferSize))
+					.AddTargetLayerMask(CollisionLayer.Enemy.AsMask())
+					.AddCollisionLayerMask(CollisionLayer.Collision.AsMask())
 					.With(x => x.isAmmo = true)
 					.With(x => x.isMovementAvailable = true)
 					.With(x => x.isReadyToCollectTargets = true)

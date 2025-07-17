@@ -20,7 +20,7 @@ namespace Code.Gameplay.Features.TargetCollection.Systems
 				.AllOf(
 					GameMatcher.TargetsBuffer,
 					GameMatcher.Radius,
-					GameMatcher.LayerMask,
+					GameMatcher.TargetLayerMask,
 					GameMatcher.WorldPosition,
 					GameMatcher.ReadyToCollectTargets,
 					GameMatcher.TargetLimit,
@@ -33,7 +33,7 @@ namespace Code.Gameplay.Features.TargetCollection.Systems
 			{
 				for (int i = 0; i < Math.Min(TargetsCountInRadius(entity), entity.TargetLimit); i++)
 				{
-					var targetId = _targetCastBuffer[i].Id;
+					int targetId = _targetCastBuffer[i].Id;
 
 					if (AlreadyProcessed(entity, targetId) == false)
 					{
@@ -52,7 +52,7 @@ namespace Code.Gameplay.Features.TargetCollection.Systems
 
 		private int TargetsCountInRadius(GameEntity entity) =>
 			_physicsService
-				.CircleCastNonAlloc(entity.WorldPosition, entity.Radius, entity.LayerMask, _targetCastBuffer);
+				.CircleCastNonAlloc(entity.WorldPosition, entity.Radius, entity.TargetLayerMask, _targetCastBuffer);
 
 		public void TearDown() => 
 			_targetCastBuffer = null;
