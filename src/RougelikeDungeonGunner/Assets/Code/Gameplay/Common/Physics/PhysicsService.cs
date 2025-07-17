@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Code.Common.Extensions;
 using Code.Gameplay.Common.Collisions;
 using UnityEngine;
 
@@ -56,23 +57,26 @@ namespace Code.Gameplay.Common.Physics
 
     public GameEntity LineCast(Vector2 start, Vector2 end, int layerMask)
     {
-      int hitCount = Physics2D.RaycastNonAlloc(start, end, Hits, layerMask);
+			int hitCount = Physics2D.LinecastNonAlloc(start, end, Hits, layerMask);
 
-      for (int i = 0; i < hitCount; i++)
-      {
-        RaycastHit2D hit = Hits[i];
-        if (hit.collider == null)
-          continue;
+			for (int i = 0; i < hitCount; i++)
+			{
+				RaycastHit2D hit = Hits[i];
+				if (hit.collider == null)
+					continue;
 
-        GameEntity entity = _collisionRegistry.Get<GameEntity>(hit.collider.GetInstanceID());
-        if (entity == null)
-          continue;
+				if (!hit.collider.Matches(layerMask))
+					continue;
 
-        return entity;
-      }
+				GameEntity entity = _collisionRegistry.Get<GameEntity>(hit.collider.GetInstanceID());
+				if (entity == null)
+					continue;
 
-      return null;
-    }
+				return entity;
+			}
+
+			return null;
+}
     
     public IEnumerable<GameEntity> CircleCast(Vector3 position, float radius, int layerMask) 
     {

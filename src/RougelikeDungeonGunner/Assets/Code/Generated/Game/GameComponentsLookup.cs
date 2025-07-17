@@ -119,11 +119,11 @@ public static class GameComponentsLookup {
     public const int StatusTypeId = 108;
     public const int TimeSinceLastTick = 109;
     public const int Unapplied = 110;
-    public const int CollectTargetsContinuously = 111;
-    public const int CollectTargetsInterval = 112;
-    public const int CollectTargetsTimer = 113;
-    public const int CollisionLayerMask = 114;
-    public const int CollisionsBuffer = 115;
+    public const int CastDistanceInFront = 111;
+    public const int CollectTargetsContinuously = 112;
+    public const int CollectTargetsInterval = 113;
+    public const int CollectTargetsTimer = 114;
+    public const int CollisionInFront = 115;
     public const int ProcessedTargets = 116;
     public const int Radius = 117;
     public const int ReadyToCollectTargets = 118;
@@ -291,11 +291,11 @@ public static class GameComponentsLookup {
         "StatusTypeId",
         "TimeSinceLastTick",
         "Unapplied",
+        "CastDistanceInFront",
         "CollectTargetsContinuously",
         "CollectTargetsInterval",
         "CollectTargetsTimer",
-        "CollisionLayerMask",
-        "CollisionsBuffer",
+        "CollisionInFront",
         "ProcessedTargets",
         "Radius",
         "ReadyToCollectTargets",
@@ -462,11 +462,11 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Statuses.StatusComponents.StatusTypeIdComponent),
         typeof(Code.Gameplay.Features.Statuses.StatusComponents.TimeSinceLastTick),
         typeof(Code.Gameplay.Features.Statuses.StatusComponents.Unapplied),
+        typeof(Code.Gameplay.Features.TargetCollection.CastDistanceInFront),
         typeof(Code.Gameplay.Features.TargetCollection.CollectTargetsContinuously),
         typeof(Code.Gameplay.Features.TargetCollection.CollectTargetsInterval),
         typeof(Code.Gameplay.Features.TargetCollection.CollectTargetsTimer),
-        typeof(Code.Gameplay.Features.TargetCollection.CollisionLayerMask),
-        typeof(Code.Gameplay.Features.TargetCollection.CollisionsBuffer),
+        typeof(Code.Gameplay.Features.TargetCollection.CollisionInFront),
         typeof(Code.Gameplay.Features.TargetCollection.ProcessedTargets),
         typeof(Code.Gameplay.Features.TargetCollection.Radius),
         typeof(Code.Gameplay.Features.TargetCollection.ReadyToCollectTargets),

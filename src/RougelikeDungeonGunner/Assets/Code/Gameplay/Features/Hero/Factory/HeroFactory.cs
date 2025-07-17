@@ -58,6 +58,7 @@ namespace Code.Gameplay.Features.Hero.Factory
 					.AddHeroTypeId(typeId)
 					.AddWorldPosition(at)
 					.AddDirection(Vector2.zero)
+					.AddCastDistanceInFront(0.5f)
 					.AddBaseStats(baseStats)
 					.AddStatModifiers(InitStats.EmptyStatDictionary())
 					.AddCurrentHp(baseStats[Stats.MaxHp])

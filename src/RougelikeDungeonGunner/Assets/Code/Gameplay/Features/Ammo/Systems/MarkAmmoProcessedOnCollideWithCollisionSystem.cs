@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using Entitas;
-using UnityEngine;
 
 namespace Code.Gameplay.Features.Ammo.Systems
 {
@@ -14,16 +13,14 @@ namespace Code.Gameplay.Features.Ammo.Systems
 			_ammo = game.GetGroup(GameMatcher
 				.AllOf(
 					GameMatcher.Ammo,
-					GameMatcher.CollisionsBuffer));
+					GameMatcher.CollisionInFront));
 		}
 
 		public void Execute()
 		{
 			foreach (GameEntity ammo in _ammo.GetEntities(_buffer))
-			foreach (int collision in ammo.CollisionsBuffer)
 			{
-				Debug.Log(collision);
-				//ammo.isProcessed = true;
+				ammo.isProcessed = true;
 			}
 		}
 	}
