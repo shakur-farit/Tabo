@@ -10,10 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c1e63b6f3ed00ab4199a855a53c43c20, type: 3}
-  m_Name: ShotgunBulletConfig
+  m_Name: ShotgunShellConfig
   m_EditorClassIdentifier: 
   TypeId: 3
   ViewPrefab: {fileID: 2243231872987813085, guid: a5967ca81ad889847ae902288d60c7a5, type: 3}
   Stats:
     Speed: 5
     ContactRadius: 0.1
+    ForwardCastDistance: 0.1
+    CastOriginOffset: 0.1

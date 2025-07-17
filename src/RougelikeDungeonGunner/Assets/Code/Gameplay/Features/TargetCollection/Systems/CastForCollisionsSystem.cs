@@ -18,7 +18,8 @@ namespace Code.Gameplay.Features.TargetCollection.Systems
 			_physicsService = physicsService;
 			_entities = game.GetGroup(GameMatcher
 				.AllOf(
-					GameMatcher.CastDistanceInFront,
+					GameMatcher.ForwardCastDistance,
+					GameMatcher.CastOriginOffset,
 					GameMatcher.WorldPosition,
 					GameMatcher.Direction));
 		}
@@ -31,8 +32,8 @@ namespace Code.Gameplay.Features.TargetCollection.Systems
 
 		private bool HasCollisionsInFront(GameEntity entity)
 		{
-			Vector2 start = entity.WorldPosition;
-			Vector2 end = start + entity.Direction.normalized * entity.CastDistanceInFront;
+			Vector2 start = new(entity.WorldPosition.x,entity.WorldPosition.y + entity.CastOriginOffset);
+			Vector2 end = start + entity.Direction.normalized * entity.ForwardCastDistance;
 
 			GameEntity collision = _physicsService.LineCast(start, end, CollisionLayer.Collision.AsMask());
 
