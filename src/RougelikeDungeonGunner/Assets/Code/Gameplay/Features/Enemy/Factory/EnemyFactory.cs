@@ -13,9 +13,6 @@ namespace Code.Gameplay.Features.Enemy.Factory
 {
 	public class EnemyFactory : IEnemyFactory
 	{
-		private const float AttackRadius = 0.5f;
-		private const float AttackInterval = 0.5f;
-		private const int TargetAmount = 1;
 		private const float AttackTimerStartValue = 0;
 
 		private readonly IIdentifierService _identifier;
@@ -58,7 +55,6 @@ namespace Code.Gameplay.Features.Enemy.Factory
 					.With(x => x[Stats.MaxHp] = config.MaxHp)
 					.With(x => x[Stats.Damage] = config.Damage)
 				;
-
 			return CreateEntity.Empty()
 					.AddId(_identifier.Next())
 					.AddEnemyTypeId(typeId)
@@ -70,15 +66,18 @@ namespace Code.Gameplay.Features.Enemy.Factory
 					.AddMaxHp(baseStats[Stats.MaxHp])
 					.AddEffectSetups(new List<EffectSetup> { EffectSetup.FormId(EffectTypeId.Damage, baseStats[Stats.Damage]) })
 					.AddSpeed(baseStats[Stats.Speed])
-					.AddTargetsBuffer(new List<int>(TargetAmount))
-					.AddRadius(AttackRadius)
-					.AddCollectTargetsInterval(AttackInterval)
+					.AddTargetsBuffer(new List<int>(config.TargetAmount))
+					.AddRadius(config.AttackRaduis)
+					.AddCollectTargetsInterval(config.AttackInterlal)
+					.AddForwardCastDistance(config.ForwardCastDistance)
+					.AddCastOriginOffset(config.CastOriginOffset)
 					.AddCollectTargetsTimer(AttackTimerStartValue)
 					.AddTargetLayerMask(CollisionLayer.Hero.AsMask())
 					.AddViewPrefab(config.ViewPrefab)
 					.With(x => x.isEnemy = true)
 					.With(x => x.isMovementAvailable = true)
 				;
+
 		}
 	}
 }

@@ -13,6 +13,11 @@ namespace Code.Gameplay.Features.Enemy.Configs
 		[Range(1, 100)] public int MaxHp;
 		[Range(0, 100)] public int Damage;
 		[Range(0, 100)] public int MovementSpeed;
+		[Range(0, 100)] public int TargetAmount;
+		[Range(0, 100)] public float AttackRaduis;
+		[Range(0, 100)] public float AttackInterlal;
+		[Range(0, 100)] public float ForwardCastDistance;
+		[Range(0, 100)] public float CastOriginOffset;
 
 		private void OnValidate()
 		{
