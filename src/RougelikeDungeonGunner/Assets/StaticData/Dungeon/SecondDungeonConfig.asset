@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dab77dcf273384641aa468d6f3f89602, type: 3}
+  m_Name: SecondDungeonConfig
+  m_EditorClassIdentifier: 
+  TypeId: 2
+  EnvironmentSetups:
+  - ViewPrefab: {fileID: -743074746319577026, guid: 0631e6e6f0194a34ba1c738c26dfbd18, type: 3}
+    HeroStartPosition: {x: 26.02, y: 0.36}
+  - ViewPrefab: {fileID: -288942039315954583, guid: 1d03ccc2f7105014ab96544340713d61, type: 3}
+    HeroStartPosition: {x: -42.28, y: -10.69}
+  - ViewPrefab: {fileID: 935917641888412009, guid: 39bdf850364284a4dbbea4506bf048a9, type: 3}
+    HeroStartPosition: {x: -42.83, y: -12.12}

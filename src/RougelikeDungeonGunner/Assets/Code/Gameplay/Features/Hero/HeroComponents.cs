@@ -1,6 +1,7 @@
 ﻿using Code.Gameplay.Features.Hero.Behaviours;
 using Code.Gameplay.Features.Weapon;
 using Entitas;
+using UnityEngine;
 
 namespace Code.Gameplay.Features.Hero
 {

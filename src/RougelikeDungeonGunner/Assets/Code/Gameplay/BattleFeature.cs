@@ -1,4 +1,5 @@
-﻿using Code.Common;
+﻿using Assets.Code.Gameplay.Features.AStar;
+using Code.Common;
 using Code.Gameplay.Features.Ammo;
 using Code.Gameplay.Features.CharacterStats;
 using Code.Gameplay.Features.EffectApplication;
@@ -27,6 +28,8 @@ namespace Code.Gameplay
 			Add(systems.Create<LevelFeature>());
 			Add(systems.Create<DungeonFeature>());
 			Add(systems.Create<BindViewFeature>());
+
+			Add(systems.Create<PathfindingFeature>());
 
 			Add(systems.Create<HeroFeature>());
 			Add(systems.Create<EnemyFeature>());

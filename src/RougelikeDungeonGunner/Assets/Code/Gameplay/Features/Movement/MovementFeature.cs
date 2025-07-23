@@ -1,5 +1,4 @@
 ﻿using Code.Gameplay.Features.Movement.Systems;
-using Code.Infrastructure;
 using Code.Infrastructure.Systems;
 
 namespace Code.Gameplay.Features.Movement

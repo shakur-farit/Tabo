@@ -23805,8 +23805,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e0ea605693cd2c4cb52b5227e64ced4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EntityView: {fileID: 0}
-  _collisionTilemap: {fileID: 0}
+  EntityView: {fileID: -743074746319577026}
+  _collisionTilemap: {fileID: 6081425461174057855}
   _validSprite: {fileID: 21300000, guid: 1e100c655539c4940865adc0c42af0ee, type: 3}
 --- !u!1 &3926556546770647692
 GameObject:

@@ -1,3 +1,4 @@
+using Assets.Code.Gameplay.Features.AStar;
 using Code.Common.EntityIndices;
 using Code.Gameplay.Cameras.Provider;
 using Code.Gameplay.Common.Collisions;
@@ -122,6 +123,7 @@ namespace Code.Infrastructure.Installers
 			Container.BindInterfacesAndSelfTo<WeaponUpgrades>().AsSingle();
 			Container.Bind<IAmmoDirectionProvider>().To<AmmoDirectionProvider>().AsSingle();
 			Container.Bind<IEnemySpawnPositionProvider>().To<EnemySpawnPositionProvider>().AsSingle();
+			Container.Bind<IAStarPathfinding>().To<AStarPathfinding>().AsSingle();
 		}
 
 		private void BindGameplayFactories()
