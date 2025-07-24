@@ -28,28 +28,28 @@ namespace Code.Gameplay.Features.Enemy.Systems
 				.AllOf(
 					GameMatcher.Hero,
 					GameMatcher.WorldPosition));
-
-			_dungeons = game.GetGroup(GameMatcher
-				.AllOf(
-					GameMatcher.Dungeon,
-					GameMatcher.ValidPositions));
 		}
 
 		public void Execute()
 		{
-			foreach (GameEntity dungeon in _dungeons)
 			foreach (GameEntity hero in _heroes)
 			foreach (GameEntity chaser in _chasers.GetEntities(_buffer))
 			{
 				if (_lastHeroPositions != hero.WorldPosition)
 				{
-					_pathfinding.Initialize(dungeon.ValidPositions);
+					Debug.Log(_lastHeroPositions != hero.WorldPosition);
 
-					List<Vector2> path = _pathfinding.FindPath(chaser.WorldPosition, hero.WorldPosition);
+						List<Vector2> path = _pathfinding.FindPath(chaser.WorldPosition, hero.WorldPosition);
+
+						Debug.Log($"path is null {path == null}");
+
+
+						if (path == null)
+						continue;
 
 					chaser.ReplacePath(path);
 
-					Debug.Log("Path found");
+					Debug.Log($"Path found {chaser.Path}");
 
 					_lastHeroPositions = hero.WorldPosition;
 				}

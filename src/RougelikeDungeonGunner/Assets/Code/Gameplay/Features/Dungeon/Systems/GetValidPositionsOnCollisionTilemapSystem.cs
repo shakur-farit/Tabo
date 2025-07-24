@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Assets.Code.Gameplay.Features.AStar;
 using Entitas;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -7,20 +8,29 @@ namespace Code.Gameplay.Features.Levels
 {
 	public class GetValidPositionsOnCollisionTilemapSystem : IExecuteSystem
 	{
+		private readonly List<GameEntity> _buffer = new(1);
+
+		private readonly IAStarPathfinding _pathfinding;
 		private readonly IGroup<GameEntity> _dungeons;
 
-		public GetValidPositionsOnCollisionTilemapSystem(GameContext game)
+		public GetValidPositionsOnCollisionTilemapSystem(GameContext game, IAStarPathfinding pathfinding)
 		{
+			_pathfinding = pathfinding;
 			_dungeons = game.GetGroup(GameMatcher
 				.AllOf(
 					GameMatcher.CollisionTilemap,
-					GameMatcher.ValidSprite));
+					GameMatcher.ValidSprite)
+				.NoneOf(GameMatcher.ValidPositions));
 		}
 
 		public void Execute()
 		{
-			foreach (GameEntity dungeon in _dungeons)
-				dungeon.ReplaceValidPositions(GetValidPositions(dungeon.CollisionTilemap, dungeon.ValidSprite));
+			foreach (GameEntity dungeon in _dungeons.GetEntities(_buffer))
+			{
+				dungeon.AddValidPositions(GetValidPositions(dungeon.CollisionTilemap, dungeon.ValidSprite));
+
+				_pathfinding.Initialize(dungeon.ValidPositions);
+			}
 		}
 
 		private List<Vector2> GetValidPositions(Tilemap collisionTilemap, Sprite validSprite)

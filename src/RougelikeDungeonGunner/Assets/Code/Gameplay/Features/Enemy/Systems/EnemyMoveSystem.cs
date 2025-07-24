@@ -29,12 +29,6 @@ namespace Code.Gameplay.Features.Enemy.Systems
 				if (Vector2.Distance(chaserPosition, enemy.Path[0]) < MinDistance)
 					enemy.Path.RemoveAt(0);
 
-				if (enemy.Path.Count == 0)
-				{
-					enemy.isMoving = false;
-					continue;
-				}
-
 				Vector2 target = enemy.Path[0];
 
 				Vector2 direction = (target - chaserPosition).normalized;
