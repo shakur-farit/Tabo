@@ -5,6 +5,6 @@ namespace Code.Gameplay.Features.Enemy.Systems
 {
 	public interface IEnemySpawnPositionProvider
 	{
-		Vector2 GetEnemyPosition(Vector2 heroPosition, float safeZoneRadius, List<Vector2> validPositions);
+		Vector2 GetEnemyPosition(Vector2 heroPosition, float safeZoneRadius, List<Vector2Int> validPositions);
 	}
 }

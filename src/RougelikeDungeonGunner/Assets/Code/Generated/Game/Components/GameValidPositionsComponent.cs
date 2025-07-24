@@ -34,10 +34,10 @@ public sealed partial class GameMatcher {
 public partial class GameEntity {
 
     public Code.Gameplay.Features.Levels.ValidPositions validPositions { get { return (Code.Gameplay.Features.Levels.ValidPositions)GetComponent(GameComponentsLookup.ValidPositions); } }
-    public System.Collections.Generic.List<UnityEngine.Vector2> ValidPositions { get { return validPositions.Value; } }
+    public System.Collections.Generic.List<UnityEngine.Vector2Int> ValidPositions { get { return validPositions.Value; } }
     public bool hasValidPositions { get { return HasComponent(GameComponentsLookup.ValidPositions); } }
 
-    public GameEntity AddValidPositions(System.Collections.Generic.List<UnityEngine.Vector2> newValue) {
+    public GameEntity AddValidPositions(System.Collections.Generic.List<UnityEngine.Vector2Int> newValue) {
         var index = GameComponentsLookup.ValidPositions;
         var component = (Code.Gameplay.Features.Levels.ValidPositions)CreateComponent(index, typeof(Code.Gameplay.Features.Levels.ValidPositions));
         component.Value = newValue;
@@ -45,7 +45,7 @@ public partial class GameEntity {
         return this;
     }
 
-    public GameEntity ReplaceValidPositions(System.Collections.Generic.List<UnityEngine.Vector2> newValue) {
+    public GameEntity ReplaceValidPositions(System.Collections.Generic.List<UnityEngine.Vector2Int> newValue) {
         var index = GameComponentsLookup.ValidPositions;
         var component = (Code.Gameplay.Features.Levels.ValidPositions)CreateComponent(index, typeof(Code.Gameplay.Features.Levels.ValidPositions));
         component.Value = newValue;

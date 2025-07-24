@@ -5,7 +5,7 @@ namespace Assets.Code.Gameplay.Features.AStar
 {
 	public interface IAStarPathfinding
 	{
-		void Initialize(List<Vector2> validPositions, float tileSize = 1f);
-		List<Vector2> FindPath(Vector2 start, Vector2 goal);
+		void Initialize(List<Vector2Int> validPositions, float tileSize = 1f);
+		List<Vector2Int> FindPath(Vector2Int start, Vector2Int goal);
 	}
 }

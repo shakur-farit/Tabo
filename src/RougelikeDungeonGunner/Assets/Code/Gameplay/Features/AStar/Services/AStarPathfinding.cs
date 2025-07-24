@@ -1,60 +1,50 @@
-﻿using System.Collections.Generic;
+﻿using Code.Progress.Data.Transient;
+using System.Collections.Generic;
 using System.Linq;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 namespace Assets.Code.Gameplay.Features.AStar
 {
 	public class AStarPathfinding : IAStarPathfinding
 	{
-		private HashSet<Vector2> _validPositions;
-		private float _tileSize;
+		private  HashSet<Vector2Int> _validPositions;
 
-		public void Initialize(List<Vector2> validPositions, float tileSize = 1f)
+		public void Initialize(List<Vector2Int> validPositions, float tileSize = 1) => 
+			_validPositions = new HashSet<Vector2Int>(validPositions);
+
+		public List<Vector2Int> FindPath(Vector2Int start, Vector2Int goal)
 		{
-			_validPositions = new HashSet<Vector2>(validPositions);
-			_tileSize = tileSize;
-		}
-
-		public List<Vector2> FindPath(Vector2 start, Vector2 goal)
-		{
-			List<PathNode> openSet = new List<PathNode>();
-			HashSet<Vector2> closedSet = new HashSet<Vector2>();
-
-			PathNode startNode = new(start) { HCost = Heuristic(start, goal) };
-			openSet.Add(startNode);
+			HashSet<Vector2Int> openSet = new() { start };
+			HashSet<Vector2Int> closedSet = new();
+			Dictionary<Vector2Int, Vector2Int> cameFrom = new();
+			Dictionary<Vector2Int, float> gScore = new() { [start] = 0 };
+			Dictionary<Vector2Int, float> fScore = new() { [start] = Heuristic(start, goal) };
 
 			while (openSet.Count > 0)
 			{
-				PathNode current = openSet.OrderBy(n => n.FCost).First();
+				Vector2Int current = openSet.OrderBy(n => fScore.GetValueOrDefault(n, float.MaxValue)).First();
 
-				if (Vector2.Distance(current.Position, goal) < _tileSize * 0.5f)
-					return ReconstructPath(current);
+				if (current == goal)
+					return ReconstructPath(cameFrom, current);
 
 				openSet.Remove(current);
-				closedSet.Add(current.Position);
+				closedSet.Add(current);
 
-				foreach (Vector2 neighborPos in GetNeighbors(current.Position))
+				foreach (Vector2Int neighbor in GetNeighbors(current))
 				{
-					if (closedSet.Contains(neighborPos))
+					if (!_validPositions.Contains(neighbor) || closedSet.Contains(neighbor))
 						continue;
 
-					float tentativeG = current.GCost + Vector2.Distance(current.Position, neighborPos);
+					float tentativeG = gScore[current] + GetDistance(current, neighbor);
 
-					PathNode neighbor = openSet.FirstOrDefault(n => n.Position == neighborPos);
-					if (neighbor == null)
+					if (tentativeG < gScore.GetValueOrDefault(neighbor, float.MaxValue))
 					{
-						neighbor = new PathNode(neighborPos)
-						{
-							GCost = tentativeG,
-							HCost = Heuristic(neighborPos, goal),
-							Parent = current
-						};
+						cameFrom[neighbor] = current;
+						gScore[neighbor] = tentativeG;
+						fScore[neighbor] = tentativeG + Heuristic(neighbor, goal);
 						openSet.Add(neighbor);
-					}
-					else if (tentativeG < neighbor.GCost)
-					{
-						neighbor.GCost = tentativeG;
-						neighbor.Parent = current;
 					}
 				}
 			}
@@ -62,41 +52,34 @@ namespace Assets.Code.Gameplay.Features.AStar
 			return null;
 		}
 
-		private float Heuristic(Vector2 a, Vector2 b) =>
-				Vector2.Distance(a, b);
-
-		private List<Vector2> GetNeighbors(Vector2 position)
+		private IEnumerable<Vector2Int> GetNeighbors(Vector2Int pos)
 		{
-			List<Vector2> neighbors = new();
-			Vector2[] directions =
-			{
-								Vector2.up,
-								Vector2.down,
-								Vector2.left,
-								Vector2.right,
-								new(1, 1),    
-								new(-1, 1),   
-								new(1, -1), 
-								new(-1, -1),
-						};
+			Vector2Int[] dirs = {
+			Vector2Int.up, Vector2Int.down,
+			Vector2Int.left, Vector2Int.right,
+			new(1, 1), new(1, -1), new(-1, 1), new(-1, -1)
+		};
 
-			foreach (Vector2 dir in directions)
+			foreach (var dir in dirs)
 			{
-				Vector2 neighbor = position + dir * _tileSize;
-				if (_validPositions.Contains(neighbor))
-					neighbors.Add(neighbor);
+				yield return pos + dir;
 			}
-
-			return neighbors;
 		}
 
-		private List<Vector2> ReconstructPath(PathNode node)
+		private float Heuristic(Vector2Int a, Vector2Int b) =>
+			Vector2Int.Distance(a, b);
+
+		private float GetDistance(Vector2Int a, Vector2Int b) =>
+			(a.x != b.x && a.y != b.y) ? 1.414f : 1f;
+
+		private List<Vector2Int> ReconstructPath(Dictionary<Vector2Int, Vector2Int> cameFrom, Vector2Int current)
 		{
-			List<Vector2> path = new List<Vector2>();
-			while (node != null)
+			List<Vector2Int> path = new() { current };
+
+			while (cameFrom.TryGetValue(current, out var prev))
 			{
-				path.Add(node.Position);
-				node = node.Parent;
+				path.Add(prev);
+				current = prev;
 			}
 
 			path.Reverse();

@@ -26,6 +26,12 @@ namespace Code.Gameplay.Features.Enemy.Systems
 			{
 				Vector2 chaserPosition = enemy.WorldPosition;
 
+				if (enemy.Path == null || enemy.Path.Count == 0)
+				{
+					enemy.isMoving = false;
+					continue;
+				}
+
 				if (Vector2.Distance(chaserPosition, enemy.Path[0]) < MinDistance)
 					enemy.Path.RemoveAt(0);
 

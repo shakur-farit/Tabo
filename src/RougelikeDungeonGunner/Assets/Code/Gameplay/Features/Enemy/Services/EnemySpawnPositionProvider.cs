@@ -11,7 +11,7 @@ namespace Code.Gameplay.Features.Enemy.Systems
 		public EnemySpawnPositionProvider(IRandomService random) => 
 			_random = random;
 
-		public Vector2 GetEnemyPosition(Vector2 heroPosition, float safeZoneRadius, List<Vector2> validPositions)
+		public Vector2 GetEnemyPosition(Vector2 heroPosition, float safeZoneRadius, List<Vector2Int> validPositions)
 		{
 			var position = GetRandomPosition(validPositions);
 
@@ -22,7 +22,7 @@ namespace Code.Gameplay.Features.Enemy.Systems
 			return GetRandomPosition(validPositions);
 		}
 
-		private Vector2 GetRandomPosition(List<Vector2> validPositions)
+		private Vector2 GetRandomPosition(List<Vector2Int> validPositions)
 		{
 			int randomIndex = _random.Range(0, validPositions.Count);
 			return validPositions[randomIndex];

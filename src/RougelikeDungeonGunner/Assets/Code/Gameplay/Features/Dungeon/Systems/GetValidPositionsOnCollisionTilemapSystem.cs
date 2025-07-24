@@ -33,16 +33,12 @@ namespace Code.Gameplay.Features.Levels
 			}
 		}
 
-		private List<Vector2> GetValidPositions(Tilemap collisionTilemap, Sprite validSprite)
+		private List<Vector2Int> GetValidPositions(Tilemap collisionTilemap, Sprite validSprite)
 		{
-			List<Vector2> validPositions = new();
+			List<Vector2Int> validPositions = new();
 
 			foreach (Vector3Int position3d in GetTilesMatchingSprite(collisionTilemap, validSprite))
-			{
-				Vector3 pos3d = collisionTilemap.CellToWorld(position3d);
-				Vector2 pos2d = new(pos3d.x, pos3d.y);
-				validPositions.Add(pos2d);
-			}
+				validPositions.Add((Vector2Int)position3d);
 
 			return validPositions;
 		}

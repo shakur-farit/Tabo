@@ -38,8 +38,11 @@ namespace Code.Gameplay.Features.Enemy.Systems
 				if (_lastHeroPositions != hero.WorldPosition)
 				{
 					Debug.Log(_lastHeroPositions != hero.WorldPosition);
+					Vector2Int chaserPosition = Vector2Int.FloorToInt(chaser.WorldPosition);
+					Vector2Int heroPosition = Vector2Int.FloorToInt(hero.WorldPosition);
 
-						List<Vector2> path = _pathfinding.FindPath(chaser.WorldPosition, hero.WorldPosition);
+
+						List<Vector2Int> path = _pathfinding.FindPath(chaserPosition, heroPosition);
 
 						Debug.Log($"path is null {path == null}");
 

@@ -55,7 +55,7 @@ namespace Code.Gameplay.Features.Enemy.Systems
 			}
 		}
 
-		private Vector2 GetPosition(Vector2 heroPosition, float safeZoneRadius, List<Vector2> validPositions) =>
+		private Vector2 GetPosition(Vector2 heroPosition, float safeZoneRadius, List<Vector2Int> validPositions) =>
 			_positionProvider.GetEnemyPosition(heroPosition, safeZoneRadius, validPositions);
 	}
 }
