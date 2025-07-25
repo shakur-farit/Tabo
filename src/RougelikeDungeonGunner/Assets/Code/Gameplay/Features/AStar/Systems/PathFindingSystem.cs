@@ -14,7 +14,7 @@ namespace Code.Gameplay.Features.Enemy.Systems
 		private readonly IAStarPathfinding _pathfinding;
 		private readonly IGroup<GameEntity> _chasers;
 		private readonly IGroup<GameEntity> _heroes;
-		private readonly IGroup<GameEntity> _dungeons;
+		private readonly IGroup<GameEntity> _pathfinders;
 
 		public PathFindingSystem(GameContext game, IAStarPathfinding pathfinding)
 		{
@@ -28,35 +28,43 @@ namespace Code.Gameplay.Features.Enemy.Systems
 				.AllOf(
 					GameMatcher.Hero,
 					GameMatcher.WorldPosition));
+
+			_pathfinders = game.GetGroup(GameMatcher
+				.AllOf(
+					GameMatcher.Pathfinder,
+					GameMatcher.MinDistanceForRepath,
+					GameMatcher.ValidPositions));
 		}
 
 		public void Execute()
 		{
 			foreach (GameEntity hero in _heroes)
+			foreach (GameEntity pathfinder in _pathfinders)
 			foreach (GameEntity chaser in _chasers.GetEntities(_buffer))
 			{
-				if (_lastHeroPositions != hero.WorldPosition)
+				if (IsHeroChangePosition(_lastHeroPositions, hero.WorldPosition, pathfinder.MinDistanceForRepath))
 				{
-					Debug.Log(_lastHeroPositions != hero.WorldPosition);
 					Vector2Int chaserPosition = Vector2Int.FloorToInt(chaser.WorldPosition);
 					Vector2Int heroPosition = Vector2Int.FloorToInt(hero.WorldPosition);
 
+					List<Vector2Int> path = _pathfinding
+						.FindPath(chaserPosition, heroPosition,new(pathfinder.ValidPositions));
 
-						List<Vector2Int> path = _pathfinding.FindPath(chaserPosition, heroPosition);
-
-						Debug.Log($"path is null {path == null}");
-
-
-						if (path == null)
+					if (path == null)
 						continue;
 
 					chaser.ReplacePath(path);
 
-					Debug.Log($"Path found {chaser.Path}");
-
 					_lastHeroPositions = hero.WorldPosition;
 				}
 			}
+		}
+
+		private bool IsHeroChangePosition(Vector2 lastPosition, Vector2 currentPosition, float minDistance)
+		{
+			float distance = Vector2.Distance(lastPosition, currentPosition);
+
+			return distance > minDistance;
 		}
 	}
 }

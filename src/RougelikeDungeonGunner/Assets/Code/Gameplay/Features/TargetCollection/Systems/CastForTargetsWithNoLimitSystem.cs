@@ -2,6 +2,7 @@
 using System.Linq;
 using Code.Gameplay.Common.Physics;
 using Entitas;
+using UnityEngine;
 
 namespace Code.Gameplay.Features.TargetCollection.Systems
 {
@@ -19,6 +20,7 @@ namespace Code.Gameplay.Features.TargetCollection.Systems
 				.AllOf(
 					GameMatcher.TargetsBuffer,
 					GameMatcher.Radius,
+					GameMatcher.CastOriginOffset,
 					GameMatcher.TargetLayerMask,
 					GameMatcher.WorldPosition,
 					GameMatcher.ReadyToCollectTargets)
@@ -36,9 +38,13 @@ namespace Code.Gameplay.Features.TargetCollection.Systems
 			}
 		}
 
-		private IEnumerable<int> TargetsInRadius(GameEntity entity) =>
-			_physicsService
-				.CircleCast(entity.WorldPosition, entity.Radius, entity.TargetLayerMask)
+		private IEnumerable<int> TargetsInRadius(GameEntity entity)
+		{
+			Vector2 center = new(entity.WorldPosition.x, entity.WorldPosition.y + entity.CastOriginOffset);
+
+			return _physicsService
+				.CircleCast(center, entity.Radius, entity.TargetLayerMask)
 				.Select(x => x.Id);
+		}
 	}
 }

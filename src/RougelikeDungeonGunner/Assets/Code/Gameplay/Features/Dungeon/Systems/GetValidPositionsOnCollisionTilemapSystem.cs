@@ -10,12 +10,10 @@ namespace Code.Gameplay.Features.Levels
 	{
 		private readonly List<GameEntity> _buffer = new(1);
 
-		private readonly IAStarPathfinding _pathfinding;
 		private readonly IGroup<GameEntity> _dungeons;
 
-		public GetValidPositionsOnCollisionTilemapSystem(GameContext game, IAStarPathfinding pathfinding)
+		public GetValidPositionsOnCollisionTilemapSystem(GameContext game)
 		{
-			_pathfinding = pathfinding;
 			_dungeons = game.GetGroup(GameMatcher
 				.AllOf(
 					GameMatcher.CollisionTilemap,
@@ -28,8 +26,6 @@ namespace Code.Gameplay.Features.Levels
 			foreach (GameEntity dungeon in _dungeons.GetEntities(_buffer))
 			{
 				dungeon.AddValidPositions(GetValidPositions(dungeon.CollisionTilemap, dungeon.ValidSprite));
-
-				_pathfinding.Initialize(dungeon.ValidPositions);
 			}
 		}
 

@@ -20,7 +20,6 @@ MonoBehaviour:
   Damage: 0
   MovementSpeed: 1
   TargetAmount: 1
-  AttackRaduis: 0.5
+  AttackRaduis: 1
   AttackInterlal: 3
-  ForwardCastDistance: 0.5
   CastOriginOffset: 0.5
