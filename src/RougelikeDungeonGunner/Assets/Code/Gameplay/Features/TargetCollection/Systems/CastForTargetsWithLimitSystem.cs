@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Code.Gameplay.Common.Physics;
 using Entitas;
+using UnityEngine;
 
 namespace Code.Gameplay.Features.TargetCollection.Systems
 {
@@ -22,6 +23,7 @@ namespace Code.Gameplay.Features.TargetCollection.Systems
 					GameMatcher.Radius,
 					GameMatcher.TargetLayerMask,
 					GameMatcher.WorldPosition,
+					GameMatcher.CastOriginOffset,
 					GameMatcher.ReadyToCollectTargets,
 					GameMatcher.TargetLimit,
 					GameMatcher.ProcessedTargets));
@@ -50,9 +52,14 @@ namespace Code.Gameplay.Features.TargetCollection.Systems
 		private bool AlreadyProcessed(GameEntity entity, int targetId) => 
 			entity.ProcessedTargets.Contains(targetId);
 
-		private int TargetsCountInRadius(GameEntity entity) =>
-			_physicsService
-				.CircleCastNonAlloc(entity.WorldPosition, entity.Radius, entity.TargetLayerMask, _targetCastBuffer);
+		private int TargetsCountInRadius(GameEntity entity)
+		{
+			Vector2 center = new(entity.WorldPosition.x, entity.WorldPosition.y + entity.CastOriginOffset);
+
+			return _physicsService
+				.CircleCastNonAlloc(center, entity.Radius, entity.TargetLayerMask,
+					_targetCastBuffer);
+		}
 
 		public void TearDown() => 
 			_targetCastBuffer = null;

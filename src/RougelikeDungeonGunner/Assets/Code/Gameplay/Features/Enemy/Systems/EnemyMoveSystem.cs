@@ -32,15 +32,15 @@ namespace Code.Gameplay.Features.Enemy.Systems
 					continue;
 				}
 
-				if (Vector2.Distance(chaserPosition, enemy.Path[0]) < MinDistance)
-					enemy.Path.RemoveAt(0);
-
 				Vector2 target = enemy.Path[0];
 
 				Vector2 direction = (target - chaserPosition).normalized;
 
 				enemy.ReplaceDirection(direction);
 				enemy.isMoving = true;
+
+				if (Vector2.Distance(chaserPosition, enemy.Path[0]) < MinDistance)
+					enemy.Path.RemoveAt(0);
 			}
 		}
 	}

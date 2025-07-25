@@ -7,6 +7,8 @@ namespace Code.Gameplay.Features.Enemy.Systems
 {
 	public class PathFindingSystem : IExecuteSystem
 	{
+		private const float DistanceForRepath = 1f;
+
 		private Vector3 _lastHeroPositions;
 
 		private readonly List<GameEntity> _buffer = new(32);
@@ -35,24 +37,19 @@ namespace Code.Gameplay.Features.Enemy.Systems
 			foreach (GameEntity hero in _heroes)
 			foreach (GameEntity chaser in _chasers.GetEntities(_buffer))
 			{
-				if (_lastHeroPositions != hero.WorldPosition)
+				float distance = Vector3.Distance(_lastHeroPositions, hero.WorldPosition);
+
+				if (distance > DistanceForRepath)
 				{
-					Debug.Log(_lastHeroPositions != hero.WorldPosition);
 					Vector2Int chaserPosition = Vector2Int.FloorToInt(chaser.WorldPosition);
 					Vector2Int heroPosition = Vector2Int.FloorToInt(hero.WorldPosition);
 
+					List<Vector2Int> path = _pathfinding.FindPath(chaserPosition, heroPosition);
 
-						List<Vector2Int> path = _pathfinding.FindPath(chaserPosition, heroPosition);
-
-						Debug.Log($"path is null {path == null}");
-
-
-						if (path == null)
+					if (path == null)
 						continue;
 
 					chaser.ReplacePath(path);
-
-					Debug.Log($"Path found {chaser.Path}");
 
 					_lastHeroPositions = hero.WorldPosition;
 				}

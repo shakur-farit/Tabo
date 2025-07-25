@@ -69,7 +69,6 @@ namespace Code.Gameplay.Features.Enemy.Factory
 					.AddTargetsBuffer(new List<int>(config.TargetAmount))
 					.AddRadius(config.AttackRaduis)
 					.AddCollectTargetsInterval(config.AttackInterlal)
-					.AddForwardCastDistance(config.ForwardCastDistance)
 					.AddCastOriginOffset(config.CastOriginOffset)
 					.AddCollectTargetsTimer(AttackTimerStartValue)
 					.AddTargetLayerMask(CollisionLayer.Hero.AsMask())
