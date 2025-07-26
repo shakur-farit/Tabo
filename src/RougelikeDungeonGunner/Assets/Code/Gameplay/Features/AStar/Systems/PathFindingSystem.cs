@@ -7,21 +7,21 @@ namespace Code.Gameplay.Features.Enemy.Systems
 {
 	public class PathFindingSystem : IExecuteSystem
 	{
-		private Vector3 _lastHeroPositions;
+		private readonly List<GameEntity> _chasersBuffer = new(32);
+		private readonly List<GameEntity> _pathfindersBuffer = new(1);
 
-		private readonly List<GameEntity> _buffer = new(32);
-
-		private readonly IAStarPathfinding _pathfinding;
+		private readonly IAStarPathfinder _pathfinding;
 		private readonly IGroup<GameEntity> _chasers;
 		private readonly IGroup<GameEntity> _heroes;
 		private readonly IGroup<GameEntity> _pathfinders;
 
-		public PathFindingSystem(GameContext game, IAStarPathfinding pathfinding)
+		public PathFindingSystem(GameContext game, IAStarPathfinder pathfinding)
 		{
 			_pathfinding = pathfinding;
 			_chasers = game.GetGroup(GameMatcher
 				.AllOf(
 					GameMatcher.Enemy,
+					GameMatcher.LastTargetPosition,
 					GameMatcher.WorldPosition));
 
 			_heroes = game.GetGroup(GameMatcher
@@ -33,29 +33,32 @@ namespace Code.Gameplay.Features.Enemy.Systems
 				.AllOf(
 					GameMatcher.Pathfinder,
 					GameMatcher.MinDistanceForRepath,
-					GameMatcher.ValidPositions));
+					GameMatcher.ValidPositions,
+					GameMatcher.PathfindingTimerUp,
+					GameMatcher.PathfinderInitialized));
 		}
 
 		public void Execute()
 		{
 			foreach (GameEntity hero in _heroes)
-			foreach (GameEntity pathfinder in _pathfinders)
-			foreach (GameEntity chaser in _chasers.GetEntities(_buffer))
+			foreach (GameEntity pathfinder in _pathfinders.GetEntities(_pathfindersBuffer))
+			foreach (GameEntity chaser in _chasers.GetEntities(_chasersBuffer))
 			{
-				if (IsHeroChangePosition(_lastHeroPositions, hero.WorldPosition, pathfinder.MinDistanceForRepath))
+				if (IsHeroChangePosition(chaser.LastTargetPosition, hero.WorldPosition, pathfinder.MinDistanceForRepath))
 				{
 					Vector2Int chaserPosition = Vector2Int.FloorToInt(chaser.WorldPosition);
 					Vector2Int heroPosition = Vector2Int.FloorToInt(hero.WorldPosition);
 
 					List<Vector2Int> path = _pathfinding
-						.FindPath(chaserPosition, heroPosition,new(pathfinder.ValidPositions));
+						.FindPath(chaserPosition, heroPosition);
 
 					if (path == null)
 						continue;
 
-					chaser.ReplacePath(path);
+					chaser.ReplacePendingPath(path);
 
-					_lastHeroPositions = hero.WorldPosition;
+					chaser.ReplaceLastTargetPosition(hero.WorldPosition);
+					pathfinder.isPathfindingTimerUp = false;
 				}
 			}
 		}

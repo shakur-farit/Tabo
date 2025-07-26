@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Assets.Code.Gameplay.Features.AStar;
 using Code.Common.Entity;
 using Code.Common.Extensions;
 using Entitas;
@@ -7,14 +8,16 @@ namespace Code.Gameplay.Features.Enemy.Systems
 {
 	public class CreatePathfinderSystem : IExecuteSystem
 	{
+		private readonly IPathfinderInitializer _pathfinder;
 		private const float MinDistanceForRepath = 1f;
 
 		private readonly List<GameEntity> _buffer = new(1);
 
 		private readonly IGroup<GameEntity> _dungeons;
 
-		public CreatePathfinderSystem(GameContext game)
+		public CreatePathfinderSystem(GameContext game, IPathfinderInitializer pathfinder)
 		{
+			_pathfinder = pathfinder;
 			_dungeons = game.GetGroup(GameMatcher
 				.AllOf(
 					GameMatcher.Dungeon,
@@ -29,6 +32,8 @@ namespace Code.Gameplay.Features.Enemy.Systems
 				CreateEntity.Empty()
 					.AddValidPositions(dungeon.ValidPositions)
 					.AddMinDistanceForRepath(MinDistanceForRepath)
+					.AddPathfindingIntervalTimer(2f)
+					.AddPathfindingTimerLeft(2f)
 					.With(x => x.isPathfinder = true);
 
 				dungeon.isPathfinderAvailable = true;

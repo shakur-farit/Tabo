@@ -59,6 +59,7 @@ namespace Code.Gameplay.Features.Enemy.Factory
 					.AddId(_identifier.Next())
 					.AddEnemyTypeId(typeId)
 					.AddWorldPosition(at)
+					.AddLastTargetPosition(default)
 					.AddDirection(Vector2.zero)
 					.AddBaseStats(baseStats)
 					.AddStatModifiers(InitStats.EmptyStatDictionary())

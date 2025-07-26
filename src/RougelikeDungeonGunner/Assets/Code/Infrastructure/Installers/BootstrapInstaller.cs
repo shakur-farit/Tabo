@@ -123,7 +123,7 @@ namespace Code.Infrastructure.Installers
 			Container.BindInterfacesAndSelfTo<WeaponUpgrades>().AsSingle();
 			Container.Bind<IAmmoDirectionProvider>().To<AmmoDirectionProvider>().AsSingle();
 			Container.Bind<IEnemySpawnPositionProvider>().To<EnemySpawnPositionProvider>().AsSingle();
-			Container.Bind<IAStarPathfinding>().To<AStarPathfinding>().AsSingle();
+			Container.BindInterfacesAndSelfTo<AStarPathfinder>().AsSingle();
 		}
 
 		private void BindGameplayFactories()
