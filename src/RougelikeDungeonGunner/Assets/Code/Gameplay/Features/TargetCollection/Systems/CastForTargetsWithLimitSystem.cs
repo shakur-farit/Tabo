@@ -21,9 +21,9 @@ namespace Code.Gameplay.Features.TargetCollection.Systems
 				.AllOf(
 					GameMatcher.TargetsBuffer,
 					GameMatcher.Radius,
+					GameMatcher.CastOriginOffset,
 					GameMatcher.TargetLayerMask,
 					GameMatcher.WorldPosition,
-					GameMatcher.CastOriginOffset,
 					GameMatcher.ReadyToCollectTargets,
 					GameMatcher.TargetLimit,
 					GameMatcher.ProcessedTargets));
@@ -57,8 +57,7 @@ namespace Code.Gameplay.Features.TargetCollection.Systems
 			Vector2 center = new(entity.WorldPosition.x, entity.WorldPosition.y + entity.CastOriginOffset);
 
 			return _physicsService
-				.CircleCastNonAlloc(center, entity.Radius, entity.TargetLayerMask,
-					_targetCastBuffer);
+				.CircleCastNonAlloc(center, entity.Radius, entity.TargetLayerMask, _targetCastBuffer);
 		}
 
 		public void TearDown() => 

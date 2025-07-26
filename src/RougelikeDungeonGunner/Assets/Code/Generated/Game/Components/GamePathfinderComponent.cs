@@ -8,17 +8,17 @@
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherPathfindingAvailable;
+    static Entitas.IMatcher<GameEntity> _matcherPathfinder;
 
-    public static Entitas.IMatcher<GameEntity> PathfindingAvailable {
+    public static Entitas.IMatcher<GameEntity> Pathfinder {
         get {
-            if (_matcherPathfindingAvailable == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.PathfindingAvailable);
+            if (_matcherPathfinder == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.Pathfinder);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherPathfindingAvailable = matcher;
+                _matcherPathfinder = matcher;
             }
 
-            return _matcherPathfindingAvailable;
+            return _matcherPathfinder;
         }
     }
 }
@@ -33,18 +33,18 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Assets.Code.Gameplay.Features.AStar.PathfindingAvailable pathfindingAvailableComponent = new Assets.Code.Gameplay.Features.AStar.PathfindingAvailable();
+    static readonly Assets.Code.Gameplay.Features.AStar.Pathfinder pathfinderComponent = new Assets.Code.Gameplay.Features.AStar.Pathfinder();
 
-    public bool isPathfindingAvailable {
-        get { return HasComponent(GameComponentsLookup.PathfindingAvailable); }
+    public bool isPathfinder {
+        get { return HasComponent(GameComponentsLookup.Pathfinder); }
         set {
-            if (value != isPathfindingAvailable) {
-                var index = GameComponentsLookup.PathfindingAvailable;
+            if (value != isPathfinder) {
+                var index = GameComponentsLookup.Pathfinder;
                 if (value) {
                     var componentPool = GetComponentPool(index);
                     var component = componentPool.Count > 0
                             ? componentPool.Pop()
-                            : pathfindingAvailableComponent;
+                            : pathfinderComponent;
 
                     AddComponent(index, component);
                 } else {

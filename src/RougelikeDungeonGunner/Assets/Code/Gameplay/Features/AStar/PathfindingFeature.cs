@@ -7,6 +7,7 @@ namespace Assets.Code.Gameplay.Features.AStar
 	{
 		public PathfindingFeature(ISystemsFactory systems)
 		{
+			Add(systems.Create<CreatePathfinderSystem>());
 			Add(systems.Create<PathFindingSystem>());
 		}
 	}

@@ -6,12 +6,7 @@ namespace Assets.Code.Gameplay.Features.AStar
 {
 	public class AStarPathfinding : IAStarPathfinding
 	{
-		private  HashSet<Vector2Int> _validPositions;
-
-		public void Initialize(List<Vector2Int> validPositions, float tileSize = 1) => 
-			_validPositions = new HashSet<Vector2Int>(validPositions);
-
-		public List<Vector2Int> FindPath(Vector2Int start, Vector2Int goal)
+		public List<Vector2Int> FindPath(Vector2Int start, Vector2Int goal, HashSet<Vector2Int> validPositions)
 		{
 			HashSet<Vector2Int> openSet = new() { start };
 			HashSet<Vector2Int> closedSet = new();
@@ -31,7 +26,7 @@ namespace Assets.Code.Gameplay.Features.AStar
 
 				foreach (Vector2Int neighbor in GetNeighbors(current))
 				{
-					if (!_validPositions.Contains(neighbor) || closedSet.Contains(neighbor))
+					if (!validPositions.Contains(neighbor) || closedSet.Contains(neighbor))
 						continue;
 
 					float tentativeG = gScore[current] + GetDistance(current, neighbor);

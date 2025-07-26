@@ -4,6 +4,8 @@ using UnityEngine;
 
 namespace Assets.Code.Gameplay.Features.AStar
 {
+	[Game] public class Pathfinder : IComponent { }
 	[Game] public class Path : IComponent { public List<Vector2Int> Value; }
-	[Game] public class PathfindingAvailable : IComponent { }
+	[Game] public class MinDistanceForRepath : IComponent { public float Value; }
+	[Game] public class PathfinderAvailable : IComponent { }
 }
