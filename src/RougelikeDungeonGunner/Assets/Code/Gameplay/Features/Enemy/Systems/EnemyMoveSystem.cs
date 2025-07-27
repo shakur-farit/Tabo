@@ -17,7 +17,7 @@ namespace Code.Gameplay.Features.Enemy.Systems
 			_enemies = game.GetGroup(GameMatcher
 				.AllOf(
 					GameMatcher.Enemy,
-					GameMatcher.PendingPath));
+					GameMatcher.Path));
 		}
 
 		public void Execute()
@@ -26,50 +26,22 @@ namespace Code.Gameplay.Features.Enemy.Systems
 			{
 				Vector2 chaserPosition = enemy.WorldPosition;
 
-				if (enemy.hasCurrentPath == false)
-					enemy.ReplaceCurrentPath(enemy.PendingPath);
-
-				if (enemy.CurrentPath.Count == 0 || enemy.CurrentPath == null)
+				if (enemy.Path.Count == 0 || enemy.Path == null)
 				{
 					enemy.isMoving = false;
 					continue;
 				}
 
-				Vector2 target = enemy.CurrentPath[0];
+				Vector2 target = enemy.Path[0];
 
 				Vector2 direction = (target - chaserPosition).normalized;
 
 				enemy.ReplaceDirection(direction);
 				enemy.isMoving = true;
 
-				if (Vector2.Distance(chaserPosition, enemy.CurrentPath[0]) < MinDistance)
-				{
-					enemy.CurrentPath.RemoveAt(0);
-
-					if (IsNewPathRequired(enemy.CurrentPath, enemy.PendingPath))
-						enemy.ReplaceCurrentPath(enemy.PendingPath);
-				}
+				if (Vector2.Distance(chaserPosition, enemy.Path[0]) < MinDistance) 
+					enemy.Path.RemoveAt(0);
 			}
-		}
-
-		private bool IsNewPathRequired(List<Vector2Int> current, List<Vector2Int> pending)
-		{
-			if (current == null || current.Count == 0)
-				return true;
-
-			int pendingCount = pending.Count;
-			int currentCount = current.Count;
-
-			if (pendingCount < currentCount)
-				return true;
-
-			for (int i = 0; i < currentCount; i++)
-			{
-				if (pending[pendingCount - currentCount + i] != current[i])
-					return true;
-			}
-
-			return false;
 		}
 	}
 }

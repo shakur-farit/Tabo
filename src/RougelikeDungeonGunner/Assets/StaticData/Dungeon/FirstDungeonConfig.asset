@@ -15,14 +15,4 @@ MonoBehaviour:
   TypeId: 1
   EnvironmentSetups:
   - ViewPrefab: {fileID: 1733638422461797998, guid: a6b40b0e359271b41a1105907003dd73, type: 3}
-    DungeonMinPosiiotn: {x: -1.27, y: -16.77}
-    DungeonMaxPosiiotn: {x: 26.59, y: 38.77}
-    HeroStartPosition: {x: 5.65, y: -10.21}
-  - ViewPrefab: {fileID: -492494168792496611, guid: cc796faa5ed6a174a9addbdd3ca9d416, type: 3}
-    DungeonMinPosiiotn: {x: -0.44, y: -16.84}
-    DungeonMaxPosiiotn: {x: 54.01, y: 11.91}
-    HeroStartPosition: {x: 49.05, y: 2.94}
-  - ViewPrefab: {fileID: -7683677327530585464, guid: b1a3fff8af3666941921d048fb061c0b, type: 3}
-    DungeonMinPosiiotn: {x: -0.04, y: -16.88}
-    DungeonMaxPosiiotn: {x: 60.06, y: 14.11}
-    HeroStartPosition: {x: 4.38, y: 2.57}
+    HeroStartPosition: {x: 5.86, y: 23.73}
