@@ -14,14 +14,17 @@ namespace Assets.Code.Gameplay.Features.AStar
 		public List<Vector2Int> FindPath(Vector2 start, Vector2Int goal)
 		{
 			Vector2Int startPosition = FindBestStartNode(start, goal);
+			Vector2Int goalPosition = _validPositions.Contains(goal)
+				? goal
+				: FindClosestValidPosition(goal);
 
-			if (startPosition == null || !_validPositions.Contains(startPosition) || !_validPositions.Contains(goal))
+			if (!_validPositions.Contains(startPosition) || !_validPositions.Contains(goalPosition))
 				return null;
 
 			PriorityQueue<Vector2Int> openSet = new();
 			Dictionary<Vector2Int, Vector2Int> cameFrom = new();
 			Dictionary<Vector2Int, float> gScore = new(){ [startPosition] = 0 };
-			Dictionary<Vector2Int, float> fScore = new(){ [startPosition] = Heuristic(startPosition, goal) };
+			Dictionary<Vector2Int, float> fScore = new(){ [startPosition] = Heuristic(startPosition, goalPosition) };
 
 			openSet.Enqueue(startPosition, fScore[startPosition]);
 			HashSet<Vector2Int> closedSet = new();
@@ -30,7 +33,7 @@ namespace Assets.Code.Gameplay.Features.AStar
 			{
 				Vector2Int current = openSet.Dequeue();
 
-				if (current == goal)
+				if (current == goalPosition)
 					return ReconstructPath(cameFrom, current);
 
 				closedSet.Add(current);
@@ -46,7 +49,7 @@ namespace Assets.Code.Gameplay.Features.AStar
 					{
 						cameFrom[neighbor] = current;
 						gScore[neighbor] = tentativeG;
-						float f = tentativeG + Heuristic(neighbor, goal);
+						float f = tentativeG + Heuristic(neighbor, goalPosition);
 						fScore[neighbor] = f;
 						openSet.Enqueue(neighbor, f);
 					}
@@ -114,6 +117,25 @@ namespace Assets.Code.Gameplay.Features.AStar
 			}
 
 			return bestNode;
+		}
+
+		private Vector2Int FindClosestValidPosition(Vector2Int target)
+		{
+			Vector2 targetWorld = (Vector2)target + new Vector2(0.5f, 0.5f);
+			Vector2Int closest = target;
+			float closestDistance = float.MaxValue;
+
+			foreach (Vector2Int pos in _validPositions)
+			{
+				float dist = Vector2.Distance((Vector2)pos + new Vector2(0.5f, 0.5f), targetWorld);
+				if (dist < closestDistance)
+				{
+					closestDistance = dist;
+					closest = pos;
+				}
+			}
+
+			return closest;
 		}
 	}
 }
