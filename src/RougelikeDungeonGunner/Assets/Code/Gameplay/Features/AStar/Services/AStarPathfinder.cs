@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Assets.Code.Gameplay.Features.AStar
@@ -10,29 +11,31 @@ namespace Assets.Code.Gameplay.Features.AStar
 		public void Initialize(List<Vector2Int> validPositions) => 
 			_validPositions = new HashSet<Vector2Int>(validPositions);
 
-		public List<Vector2Int> FindPath(Vector2Int start, Vector2Int goal)
+		public List<Vector2Int> FindPath(Vector2 start, Vector2Int goal)
 		{
-			if (!_validPositions.Contains(start) || !_validPositions.Contains(goal))
+			Vector2Int startPosition = FindBestStartNode(start, goal);
+
+			if (startPosition == null || !_validPositions.Contains(startPosition) || !_validPositions.Contains(goal))
 				return null;
 
-			var openSet = new PriorityQueue<Vector2Int>();
-			var cameFrom = new Dictionary<Vector2Int, Vector2Int>();
-			var gScore = new Dictionary<Vector2Int, float> { [start] = 0 };
-			var fScore = new Dictionary<Vector2Int, float> { [start] = Heuristic(start, goal) };
+			PriorityQueue<Vector2Int> openSet = new();
+			Dictionary<Vector2Int, Vector2Int> cameFrom = new();
+			Dictionary<Vector2Int, float> gScore = new(){ [startPosition] = 0 };
+			Dictionary<Vector2Int, float> fScore = new(){ [startPosition] = Heuristic(startPosition, goal) };
 
-			openSet.Enqueue(start, fScore[start]);
-			var closedSet = new HashSet<Vector2Int>();
+			openSet.Enqueue(startPosition, fScore[startPosition]);
+			HashSet<Vector2Int> closedSet = new();
 
 			while (openSet.Count > 0)
 			{
-				var current = openSet.Dequeue();
+				Vector2Int current = openSet.Dequeue();
 
 				if (current == goal)
 					return ReconstructPath(cameFrom, current);
 
 				closedSet.Add(current);
 
-				foreach (var neighbor in GetNeighbors(current))
+				foreach (Vector2Int neighbor in GetNeighbors(current))
 				{
 					if (!_validPositions.Contains(neighbor) || closedSet.Contains(neighbor))
 						continue;
@@ -73,20 +76,44 @@ namespace Assets.Code.Gameplay.Features.AStar
 								new(-1, -1)
 						};
 
-			foreach (var dir in directions)
+			foreach (Vector2Int dir in directions)
 				yield return pos + dir;
 		}
 
 		private List<Vector2Int> ReconstructPath(Dictionary<Vector2Int, Vector2Int> cameFrom, Vector2Int current)
 		{
 			List<Vector2Int> path = new() { current };
-			while (cameFrom.TryGetValue(current, out var prev))
+			while (cameFrom.TryGetValue(current, out Vector2Int prev))
 			{
 				path.Add(prev);
 				current = prev;
 			}
 			path.Reverse();
 			return path;
+		}
+
+		private Vector2Int FindBestStartNode(Vector2 startPosition, Vector2Int goal)
+		{
+			Vector2Int baseNode = Vector2Int.FloorToInt(startPosition);
+
+			List<Vector2Int> candidates = GetNeighbors(baseNode).Append(baseNode)
+				.Where(pos => _validPositions.Contains(pos))
+				.ToList();
+
+			Vector2Int bestNode = baseNode;
+			float bestDistance = float.MaxValue;
+
+			foreach (Vector2Int node in candidates)
+			{
+				float dist = Vector2Int.Distance(node, goal);
+				if (dist < bestDistance)
+				{
+					bestDistance = dist;
+					bestNode = node;
+				}
+			}
+
+			return bestNode;
 		}
 	}
 }

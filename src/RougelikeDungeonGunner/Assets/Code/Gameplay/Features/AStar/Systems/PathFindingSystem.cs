@@ -46,11 +46,10 @@ namespace Code.Gameplay.Features.Enemy.Systems
 			{
 				if (IsHeroChangePosition(chaser.LastTargetPosition, hero.WorldPosition, pathfinder.MinDistanceForRepath))
 				{
-					Vector2Int chaserPosition = Vector2Int.FloorToInt(chaser.WorldPosition);
 					Vector2Int heroPosition = Vector2Int.FloorToInt(hero.WorldPosition);
 
 					List<Vector2Int> path = _pathfinding
-						.FindPath(chaserPosition, heroPosition);
+						.FindPath(chaser.WorldPosition, heroPosition);
 
 					if (path == null)
 						continue;
