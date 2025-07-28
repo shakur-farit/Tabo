@@ -118,7 +118,7 @@ namespace Code.Gameplay.Features.Weapon.Factory
 					.AddWorldPosition(at)
 					.AddDirection(default)
 					.AddRadius(_statsProvider.GetFireRange(config))
-					.AddForwardCastDistance(1f)
+					.AddForwardCastDistance(1.2f)
 					.AddCastOriginOffset(0.5f)
 					.AddMinPelletsDeviation(_statsProvider.GetMinDeviation(config))
 					.AddMaxPelletsDeviation(_statsProvider.GetMaxDeviation(config))
