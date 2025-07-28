@@ -54,8 +54,6 @@ namespace Code.Gameplay.Features.Enemy.Systems
 					if (path == null)
 						continue;
 
-					DrawDebugPath(path[0], path, Color.yellow);
-
 					chaser.ReplacePath(path);
 
 					chaser.ReplaceLastTargetPosition(hero.WorldPosition);
@@ -69,17 +67,6 @@ namespace Code.Gameplay.Features.Enemy.Systems
 			float distance = Vector2.Distance(lastPosition, currentPosition);
 
 			return distance > minDistance;
-		}
-
-		private void DrawDebugPath(Vector2Int start, List<Vector2Int> path, Color color)
-		{
-			Vector3 from = (Vector2)start;
-			foreach (Vector2Int point in path)
-			{
-				Vector3 to = (Vector2)point;
-				Debug.DrawLine(from + Vector3.up * 0.2f, to + Vector3.up * 0.2f, color, 0.5f, false);
-				from = to;
-			}
 		}
 	}
 }

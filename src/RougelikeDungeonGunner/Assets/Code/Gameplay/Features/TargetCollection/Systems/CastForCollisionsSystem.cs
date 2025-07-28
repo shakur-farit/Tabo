@@ -2,6 +2,7 @@
 using Code.Common.Extensions;
 using Code.Gameplay.Common.Physics;
 using Entitas;
+using Unity.Burst.CompilerServices;
 using UnityEngine;
 
 namespace Code.Gameplay.Features.TargetCollection.Systems
@@ -34,6 +35,8 @@ namespace Code.Gameplay.Features.TargetCollection.Systems
 		{
 			Vector2 start = new(entity.WorldPosition.x,entity.WorldPosition.y + entity.CastOriginOffset);
 			Vector2 end = start + entity.Direction.normalized * entity.ForwardCastDistance;
+
+			Debug.DrawLine(start, end, Color.cyan, 0f, false);
 
 			GameEntity collision = _physicsService.LineCast(start, end, CollisionLayer.Collision.AsMask());
 

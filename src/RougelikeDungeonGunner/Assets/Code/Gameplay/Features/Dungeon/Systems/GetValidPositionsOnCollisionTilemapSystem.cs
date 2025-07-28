@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using Assets.Code.Gameplay.Features.AStar;
 using Entitas;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -36,8 +35,6 @@ namespace Code.Gameplay.Features.Levels
 			foreach (Vector3Int position3d in GetTilesMatchingSprite(collisionTilemap, validSprite))
 				validPositions.Add((Vector2Int)position3d);
 
-			DrawValidPositions(validPositions, Color.cyan);
-
 			return validPositions;
 		}
 
@@ -59,15 +56,6 @@ namespace Code.Gameplay.Features.Levels
 			}
 
 			return positions;
-		}
-
-		private void DrawValidPositions(List<Vector2Int> positions, Color color)
-		{
-			foreach (Vector2Int pos in positions)
-			{
-				Vector3 worldPos = new Vector3(pos.x + 0.5f, pos.y + 0.5f, 0); 
-				Debug.DrawRay(worldPos, Vector3.up * 0.25f, color.gamma, 60f);
-			}
 		}
 	}
 }
