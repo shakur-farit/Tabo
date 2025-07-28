@@ -10,7 +10,6 @@ namespace Code.Gameplay.Common
 	[Game] public class Id : IComponent { [PrimaryEntityIndex] public int Value; }
 	[Game] public class Damage : IComponent { public float Value; }
 
-	[Game] public class RigidbodyComponent : IComponent { public Rigidbody2D Value; }
 	[Game] public class TransformComponent : IComponent { public Transform Value; }
 	[Game] public class ParentTransform : IComponent { public Transform Value; }
 	[Game] public class SpriteRendererComponent : IComponent { public SpriteRenderer Value; }

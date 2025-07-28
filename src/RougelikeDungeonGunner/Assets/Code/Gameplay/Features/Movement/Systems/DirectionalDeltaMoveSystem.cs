@@ -16,7 +16,6 @@ namespace Code.Gameplay.Features.Movement.Systems
 				.AllOf(
 					GameMatcher.Speed,
 					GameMatcher.WorldPosition,
-					GameMatcher.Rigidbody,
 					GameMatcher.Direction,
 					GameMatcher.MovementAvailable,
 					GameMatcher.Moving)
@@ -26,12 +25,7 @@ namespace Code.Gameplay.Features.Movement.Systems
 		public void Execute()
 		{
 			foreach (GameEntity mover in _movers)
-			{
-				Vector2 moveDelta = mover.Direction * mover.Speed * _time.DeltaTime;
-				mover.Rigidbody.MovePosition(mover.Rigidbody.position + moveDelta);
-
-				mover.ReplaceWorldPosition(mover.Rigidbody.position);
-			}
+				mover.ReplaceWorldPosition((Vector2)mover.WorldPosition + mover.Direction * mover.Speed * _time.DeltaTime);
 		}
 	}
 }
