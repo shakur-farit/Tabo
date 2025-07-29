@@ -1,4 +1,5 @@
-﻿using Code.Infrastructure.View;
+﻿using Code.Gameplay.Features.TargetCollection;
+using Code.Infrastructure.View;
 using UnityEngine;
 
 namespace Code.Gameplay.Features.Enemy.Configs
@@ -17,7 +18,8 @@ namespace Code.Gameplay.Features.Enemy.Configs
 		[Range(0, 100)] public float AttackRaduis;
 		[Range(0, 100)] public float AttackInterlal;
 		[Range(0, 100)] public float CastOriginOffset;
-		
+		public CollisionCastSetup CastSetup;
+
 		private void OnValidate()
 		{
 			if(CurrentHp > MaxHp)

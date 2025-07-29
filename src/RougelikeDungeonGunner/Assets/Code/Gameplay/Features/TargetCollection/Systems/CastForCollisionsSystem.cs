@@ -21,6 +21,8 @@ namespace Code.Gameplay.Features.TargetCollection.Systems
 				.AllOf(
 					GameMatcher.ForwardCastDistance,
 					GameMatcher.CastOriginOffset,
+					GameMatcher.BoxCastWidth,
+					GameMatcher.BoxCastHeight,
 					GameMatcher.WorldPosition,
 					GameMatcher.Direction));
 		}
@@ -33,12 +35,30 @@ namespace Code.Gameplay.Features.TargetCollection.Systems
 
 		private bool HasCollisionsInFront(GameEntity entity)
 		{
-			Vector2 start = new(entity.WorldPosition.x,entity.WorldPosition.y + entity.CastOriginOffset);
-			Vector2 end = start + entity.Direction.normalized * entity.ForwardCastDistance;
+			Vector2 dir = entity.Direction.normalized;
 
-			Debug.DrawLine(start, end, Color.cyan, 0f, false);
+			Vector2 center = (Vector2)entity.WorldPosition + dir * entity.ForwardCastDistance * 0.5f + Vector2.up * entity.CastOriginOffset;
+			Vector2 halfSize = new(entity.BoxCastWidth * 0.5f, entity.BoxCastHeight * 0.5f);
 
-			GameEntity collision = _physicsService.LineCast(start, end, CollisionLayer.Collision.AsMask());
+			Vector2 lineStart;
+			Vector2 lineEnd;
+
+			if (Mathf.Abs(dir.x) > Mathf.Abs(dir.y))
+			{
+				float x = dir.x > 0 ? center.x + halfSize.x : center.x - halfSize.x;
+				lineStart = new Vector2(x, center.y - halfSize.y);
+				lineEnd = new Vector2(x, center.y + halfSize.y);
+			}
+			else
+			{
+				float y = dir.y > 0 ? center.y + halfSize.y : center.y - halfSize.y;
+				lineStart = new Vector2(center.x - halfSize.x, y);
+				lineEnd = new Vector2(center.x + halfSize.x, y);
+			}
+
+			Debug.DrawLine(lineStart, lineEnd, Color.magenta, 0f, false);
+
+			GameEntity collision = _physicsService.LineCast(lineStart, lineEnd, CollisionLayer.Collision.AsMask());
 
 			return collision != null;
 		}

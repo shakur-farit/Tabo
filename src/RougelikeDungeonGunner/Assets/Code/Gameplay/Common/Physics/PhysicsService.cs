@@ -135,8 +135,28 @@ namespace Code.Gameplay.Common.Physics
 
     public int OverlapCircle(Vector3 worldPos, float radius, Collider2D[] hits, int layerMask) =>
       Physics2D.OverlapCircleNonAlloc(worldPos, radius, hits, layerMask);
-    
-    private static void DrawDebug(Vector2 worldPos, float radius, float seconds, Color color)
+
+    public GameEntity BoxCast(Vector2 origin, Vector2 size, Vector2 direction, float distance, int layerMask)
+    {
+	    int hitCount = Physics2D.BoxCastNonAlloc(origin, size, 0f, direction.normalized, Hits, distance, layerMask);
+
+	    for (int i = 0; i < hitCount; i++)
+	    {
+		    RaycastHit2D hit = Hits[i];
+		    if (hit.collider == null)
+			    continue;
+
+		    GameEntity entity = _collisionRegistry.Get<GameEntity>(hit.collider.GetInstanceID());
+		    if (entity == null)
+			    continue;
+
+		    return entity;
+	    }
+
+	    return null;
+    }
+
+private static void DrawDebug(Vector2 worldPos, float radius, float seconds, Color color)
     {
       Debug.DrawRay(worldPos, radius * Vector3.up, color, seconds);
       Debug.DrawRay(worldPos, radius * Vector3.down, color, seconds);

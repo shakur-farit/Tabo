@@ -1,4 +1,5 @@
-﻿using Code.Infrastructure.View;
+﻿using Code.Gameplay.Features.TargetCollection;
+using Code.Infrastructure.View;
 using UnityEngine;
 
 namespace Code.Gameplay.Features.Ammo.Configs
@@ -10,5 +11,7 @@ namespace Code.Gameplay.Features.Ammo.Configs
 		public EntityBehaviour ViewPrefab;
 
 		public AmmoStats Stats;
+
+		public CollisionCastSetup CastSetup;
 	}
 }

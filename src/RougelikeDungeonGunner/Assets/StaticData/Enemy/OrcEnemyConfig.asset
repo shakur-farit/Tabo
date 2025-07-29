@@ -18,8 +18,13 @@ MonoBehaviour:
   CurrentHp: 2
   MaxHp: 20
   Damage: 0
-  MovementSpeed: 1
+  MovementSpeed: 0
   TargetAmount: 1
   AttackRaduis: 1
   AttackInterlal: 3
   CastOriginOffset: 0.5
+  CastSetup:
+    ForwardCastDistance: 0
+    CastOriginOffset: 0.5
+    Width: 1
+    Height: 1

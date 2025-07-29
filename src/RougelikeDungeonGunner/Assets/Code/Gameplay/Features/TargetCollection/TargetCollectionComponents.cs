@@ -10,6 +10,8 @@ namespace Code.Gameplay.Features.TargetCollection
 	[Game] public class Radius : IComponent { public float Value; }
 	[Game] public class ForwardCastDistance : IComponent { public float Value; }
 	[Game] public class CastOriginOffset : IComponent { public float Value; }
+	[Game] public class BoxCastWidth : IComponent { public float Value; }
+	[Game] public class BoxCastHeight : IComponent { public float Value; }
 	[Game] public class TargetLayerMask : IComponent { public int Value; }
 	[Game] public class ReadyToCollectTargets : IComponent { }
 	[Game] public class CollectTargetsContinuously : IComponent { }

@@ -27,6 +27,11 @@ MonoBehaviour:
     PelletCount: 1
     Accuracy: 90
     EnchantSlots: 0
+  CastSetup:
+    ForwardCastDistance: 0.5
+    CastOriginOffset: 0.5
+    Width: 1
+    Height: 0.2
   EffectSetups:
   - EffectTypeId: 1
     Value: 3

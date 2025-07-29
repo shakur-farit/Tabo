@@ -5,6 +5,7 @@ using Code.Common.Extensions;
 using Code.Gameplay.Features.CharacterStats;
 using Code.Gameplay.Features.Effects;
 using Code.Gameplay.Features.Enemy.Configs;
+using Code.Gameplay.Features.TargetCollection;
 using Code.Gameplay.StaticData;
 using Code.Infrastructure.Identifiers;
 using UnityEngine;
@@ -48,7 +49,7 @@ namespace Code.Gameplay.Features.Enemy.Factory
 		private GameEntity CreateEnemyEntity(EnemyTypeId typeId, Vector3 at)
 		{
 			EnemyConfig config = _staticDataService.GetEnemyConfig(typeId);
-
+			CollisionCastSetup castSetup = config.CastSetup;
 
 			Dictionary<Stats, float> baseStats = InitStats.EmptyStatDictionary()
 					.With(x => x[Stats.Speed] = config.MovementSpeed)
@@ -70,7 +71,9 @@ namespace Code.Gameplay.Features.Enemy.Factory
 					.AddTargetsBuffer(new List<int>(config.TargetAmount))
 					.AddRadius(config.AttackRaduis)
 					.AddCollectTargetsInterval(config.AttackInterlal)
-					.AddCastOriginOffset(config.CastOriginOffset)
+					.AddCastOriginOffset(castSetup.CastOriginOffset)
+					.AddBoxCastWidth(castSetup.Width)
+					.AddBoxCastHeight(castSetup.Height)
 					.AddCollectTargetsTimer(AttackTimerStartValue)
 					.AddTargetLayerMask(CollisionLayer.Hero.AsMask())
 					.AddViewPrefab(config.ViewPrefab)

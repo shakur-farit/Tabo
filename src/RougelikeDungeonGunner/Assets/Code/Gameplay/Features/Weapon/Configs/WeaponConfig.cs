@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Code.Gameplay.Features.Effects;
 using Code.Gameplay.Features.Statuses;
+using Code.Gameplay.Features.TargetCollection;
 using Code.Infrastructure.View;
 using Code.Meta.Features.Shop.Upgrade;
 using Code.Meta.Features.Shop.WeaponStatUIEntry;
@@ -18,6 +19,8 @@ namespace Code.Gameplay.Features.Weapon.Configs
 		public Vector2 FirePosition;
 
 		public WeaponStats Stats;
+
+		public CollisionCastSetup CastSetup;
 
 		public List<EffectSetup> EffectSetups;
 		public List<StatusSetup> StatusSetups;

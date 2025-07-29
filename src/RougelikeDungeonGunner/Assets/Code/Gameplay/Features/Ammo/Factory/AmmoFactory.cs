@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Code.Common.Entity;
 using Code.Common.Extensions;
 using Code.Gameplay.Features.Ammo.Configs;
+using Code.Gameplay.Features.TargetCollection;
 using Code.Gameplay.StaticData;
 using Code.Infrastructure.Identifiers;
 using UnityEngine;
@@ -73,6 +74,7 @@ namespace Code.Gameplay.Features.Ammo.Factory
 		{
 			AmmoConfig config = _staticDataService.GetAmmoConfig(ammoTypeId);
 			AmmoStats stats = config.Stats;
+			CollisionCastSetup castSetup = config.CastSetup;
 
 			return CreateEntity.Empty()
 					.AddId(_identifier.Next())
@@ -81,8 +83,10 @@ namespace Code.Gameplay.Features.Ammo.Factory
 					.AddViewPrefab(config.ViewPrefab)
 					.AddSpeed(stats.Speed)
 					.AddRadius(stats.ContactRadius)
-					.AddForwardCastDistance(stats.ForwardCastDistance)
-					.AddCastOriginOffset(stats.CastOriginOffset)
+					.AddForwardCastDistance(castSetup.ForwardCastDistance)
+					.AddCastOriginOffset(castSetup.CastOriginOffset)
+					.AddBoxCastWidth(castSetup.Width)
+					.AddBoxCastHeight(castSetup.Height)
 					.AddTargetsBuffer(new List<int>(BufferSize))
 					.AddTargetLimit(NoLimit)
 					.AddProcessedTargets(new List<int>(BufferSize))

@@ -7,6 +7,7 @@ using System;
 using Code.Gameplay.Features.Weapon.Configs;
 using Code.Meta.Features.Shop.Upgrade.Services;
 using UnityEngine;
+using Code.Gameplay.Features.TargetCollection;
 
 namespace Code.Gameplay.Features.Weapon.Factory
 {
@@ -108,6 +109,8 @@ namespace Code.Gameplay.Features.Weapon.Factory
 		private GameEntity CreateWeaponEntity(WeaponTypeId weaponTypeId, Transform parent, Vector2 at, int ownerId)
 		{
 			WeaponConfig config = _staticDataService.GetWeaponConfig(weaponTypeId);
+			CollisionCastSetup castSetup = config.CastSetup;
+
 
 			return CreateEntity.Empty()
 					.AddId(_identifier.Next())
@@ -118,8 +121,10 @@ namespace Code.Gameplay.Features.Weapon.Factory
 					.AddWorldPosition(at)
 					.AddDirection(default)
 					.AddRadius(_statsProvider.GetFireRange(config))
-					.AddForwardCastDistance(1.2f)
-					.AddCastOriginOffset(0.5f)
+					.AddForwardCastDistance(castSetup.CastOriginOffset)
+					.AddCastOriginOffset(castSetup.CastOriginOffset)
+					.AddBoxCastWidth(castSetup.Width)
+					.AddBoxCastHeight(castSetup.Height)
 					.AddMinPelletsDeviation(_statsProvider.GetMinDeviation(config))
 					.AddMaxPelletsDeviation(_statsProvider.GetMaxDeviation(config))
 					.AddCooldown(_statsProvider.GetCooldown(config))

@@ -22,5 +22,9 @@ MonoBehaviour:
   TargetAmount: 1
   AttackRaduis: 0.5
   AttackInterlal: 2
-  ForwardCastDistance: 0.5
   CastOriginOffset: 0.5
+  CastSetup:
+    ForwardCastDistance: 0
+    CastOriginOffset: 0.5
+    Width: 1
+    Height: 1

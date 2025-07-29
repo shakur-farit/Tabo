@@ -17,5 +17,8 @@ MonoBehaviour:
   Stats:
     Speed: 5
     ContactRadius: 0.1
+  CastSetup:
     ForwardCastDistance: 0.1
     CastOriginOffset: 0.1
+    Width: 0.1
+    Height: 0.1

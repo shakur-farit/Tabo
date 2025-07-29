@@ -7,6 +7,7 @@ using Code.Gameplay.StaticData;
 using UnityEngine;
 using System;
 using Code.Gameplay.Features.Hero.Configs;
+using Code.Gameplay.Features.TargetCollection;
 using Code.Gameplay.Features.Weapon;
 using Code.Progress.Provider;
 
@@ -47,6 +48,7 @@ namespace Code.Gameplay.Features.Hero.Factory
 		private GameEntity CreateHeroEntity(HeroTypeId typeId, Vector3 at)
 		{
 			HeroConfig config = _staticDataService.GetHeroConfig(HeroTypeId.TheGeneral);
+			CollisionCastSetup castSetup = config.CastSetup;
 
 			Dictionary<Stats, float> baseStats = InitStats.EmptyStatDictionary()
 					.With(x => x[Stats.Speed] = config.MovementSpeed)
@@ -58,8 +60,10 @@ namespace Code.Gameplay.Features.Hero.Factory
 					.AddHeroTypeId(typeId)
 					.AddWorldPosition(at)
 					.AddDirection(Vector2.zero)
-					.AddForwardCastDistance(config.ForwardCastDistance)
-					.AddCastOriginOffset(config.CastOriginOffset)
+					.AddForwardCastDistance(castSetup.ForwardCastDistance)
+					.AddCastOriginOffset(castSetup.CastOriginOffset)
+					.AddBoxCastWidth(castSetup.Width)
+					.AddBoxCastHeight(castSetup.Height)
 					.AddBaseStats(baseStats)
 					.AddStatModifiers(InitStats.EmptyStatDictionary())
 					.AddCurrentHp(baseStats[Stats.MaxHp])

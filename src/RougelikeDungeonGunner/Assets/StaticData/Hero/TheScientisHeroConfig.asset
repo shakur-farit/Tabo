@@ -20,3 +20,8 @@ MonoBehaviour:
   CurrentHp: 30
   MaxHp: 100
   MovementSpeed: 3
+  CastSetup:
+    ForwardCastDistance: 0.2
+    CastOriginOffset: 0.5
+    Width: 1
+    Height: 1
