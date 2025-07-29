@@ -1,5 +1,4 @@
 ﻿using Code.Gameplay.Features.TargetCollection.Systems;
-using Code.Infrastructure;
 using Code.Infrastructure.Systems;
 
 namespace Code.Gameplay.Features.TargetCollection
@@ -10,7 +9,8 @@ namespace Code.Gameplay.Features.TargetCollection
 		{
 			Add(systems.Create<CollectTargetsIntervalSystem>());
 			Add(systems.Create<CastForTargetsWithNoLimitSystem>());
-			Add(systems.Create<CastForCollisionsSystem>());
+			Add(systems.Create<CastBoxForCollisionsSystem>());
+			Add(systems.Create<CastLineForCollisionsSystem>());
 			Add(systems.Create<CastForTargetsWithLimitSystem>());
 
 			Add(systems.Create<CleanupTargetBuffersSystem>());

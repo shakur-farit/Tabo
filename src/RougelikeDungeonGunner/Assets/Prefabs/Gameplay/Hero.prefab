@@ -124,6 +124,7 @@ GameObject:
   - component: {fileID: 768738167734017431}
   - component: {fileID: 4684262127841336919}
   - component: {fileID: 3685837294793975416}
+  - component: {fileID: 3338662068384422632}
   m_Layer: 6
   m_Name: Hero
   m_TagString: Untagged
@@ -145,6 +146,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6415936365622873015}
+  - {fileID: 681850963194147206}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &3945861052911227128
@@ -286,6 +288,51 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EntityView: {fileID: 8254426112849521288}
   _weaponParent: {fileID: 6737803480724137076}
+--- !u!114 &3338662068384422632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2287838410393570457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 021a49b3f6fa9e1429206b7c2e24ed12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EntityView: {fileID: 8254426112849521288}
+  _startPosiotionTransform: {fileID: 681850963194147206}
+--- !u!1 &5348675366767817396
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 681850963194147206}
+  m_Layer: 6
+  m_Name: CastStartPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &681850963194147206
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5348675366767817396}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.6, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4461978698894393420}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5736893014964504900
 GameObject:
   m_ObjectHideFlags: 0

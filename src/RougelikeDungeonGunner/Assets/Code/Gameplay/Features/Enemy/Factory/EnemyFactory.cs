@@ -71,7 +71,6 @@ namespace Code.Gameplay.Features.Enemy.Factory
 					.AddTargetsBuffer(new List<int>(config.TargetAmount))
 					.AddRadius(config.AttackRaduis)
 					.AddCollectTargetsInterval(config.AttackInterlal)
-					.AddCastOriginOffset(castSetup.CastOriginOffset)
 					.AddBoxCastWidth(castSetup.Width)
 					.AddBoxCastHeight(castSetup.Height)
 					.AddCollectTargetsTimer(AttackTimerStartValue)

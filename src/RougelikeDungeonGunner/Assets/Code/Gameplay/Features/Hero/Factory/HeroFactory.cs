@@ -61,7 +61,6 @@ namespace Code.Gameplay.Features.Hero.Factory
 					.AddWorldPosition(at)
 					.AddDirection(Vector2.zero)
 					.AddForwardCastDistance(castSetup.ForwardCastDistance)
-					.AddCastOriginOffset(castSetup.CastOriginOffset)
 					.AddBoxCastWidth(castSetup.Width)
 					.AddBoxCastHeight(castSetup.Height)
 					.AddBaseStats(baseStats)

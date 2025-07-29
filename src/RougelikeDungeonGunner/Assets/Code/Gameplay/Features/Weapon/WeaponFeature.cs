@@ -26,6 +26,7 @@ namespace Code.Gameplay.Features.Weapon
 			Add(systems.Create<RotateWeaponAlongClosestTargetSystem>());
 			Add(systems.Create<WeaponDefaultRotateDirectionWithoutTargetSystem>());
 			Add(systems.Create<SetWeaponDirectionSystem>());
+			Add(systems.Create<PushBackHeroOnCollisionFrontWeaponSystem>());
 			Add(systems.Create<CalculateMultiPelletCountSystem>());
 			Add(systems.Create<SetReloadingByPressButtonSystem>());
 			Add(systems.Create<ReloadWeaponSystem>());

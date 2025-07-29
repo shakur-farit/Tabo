@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using Code.Gameplay.Common.Physics;
+﻿using Code.Gameplay.Common.Physics;
 using Entitas;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Code.Gameplay.Features.TargetCollection.Systems

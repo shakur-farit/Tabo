@@ -15,7 +15,7 @@ namespace Code.Gameplay.Features.TargetCollection.Systems
 
 		public void Cleanup()
 		{
-			foreach (GameEntity entity in _entities) 
+			foreach (GameEntity entity in _entities)
 				entity.TargetsBuffer.Clear();
 		}
 	}

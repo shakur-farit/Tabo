@@ -1,7 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using Code.Gameplay.Common.Physics;
+﻿using Code.Gameplay.Common.Physics;
 using Entitas;
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Code.Gameplay.Features.TargetCollection.Systems
@@ -49,7 +49,7 @@ namespace Code.Gameplay.Features.TargetCollection.Systems
 			}
 		}
 
-		private bool AlreadyProcessed(GameEntity entity, int targetId) => 
+		private bool AlreadyProcessed(GameEntity entity, int targetId) =>
 			entity.ProcessedTargets.Contains(targetId);
 
 		private int TargetsCountInRadius(GameEntity entity)
@@ -60,7 +60,7 @@ namespace Code.Gameplay.Features.TargetCollection.Systems
 				.CircleCastNonAlloc(center, entity.Radius, entity.TargetLayerMask, _targetCastBuffer);
 		}
 
-		public void TearDown() => 
+		public void TearDown() =>
 			_targetCastBuffer = null;
 	}
 }

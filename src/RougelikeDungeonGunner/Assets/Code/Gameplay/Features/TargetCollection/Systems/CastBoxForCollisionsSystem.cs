@@ -1,26 +1,25 @@
-﻿using System.Collections.Generic;
-using Code.Common.Extensions;
+﻿using Code.Common.Extensions;
 using Code.Gameplay.Common.Physics;
 using Entitas;
-using Unity.Burst.CompilerServices;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Code.Gameplay.Features.TargetCollection.Systems
 {
-	public class CastForCollisionsSystem : IExecuteSystem
+	public class CastBoxForCollisionsSystem : IExecuteSystem
 	{
 		private readonly List<GameEntity> _buffer = new(128);
 
 		private readonly IPhysicsService _physicsService;
 		private readonly IGroup<GameEntity> _entities;
 
-		public CastForCollisionsSystem(GameContext game, IPhysicsService physicsService)
+		public CastBoxForCollisionsSystem(GameContext game, IPhysicsService physicsService)
 		{
 			_physicsService = physicsService;
 			_entities = game.GetGroup(GameMatcher
 				.AllOf(
 					GameMatcher.ForwardCastDistance,
-					GameMatcher.CastOriginOffset,
+					GameMatcher.CastStartPositionTransform,
 					GameMatcher.BoxCastWidth,
 					GameMatcher.BoxCastHeight,
 					GameMatcher.WorldPosition,
@@ -37,7 +36,7 @@ namespace Code.Gameplay.Features.TargetCollection.Systems
 		{
 			Vector2 dir = entity.Direction.normalized;
 
-			Vector2 center = (Vector2)entity.WorldPosition + dir * entity.ForwardCastDistance * 0.5f + Vector2.up * entity.CastOriginOffset;
+			Vector2 center = (Vector2)entity.CastStartPositionTransform.position + dir * entity.ForwardCastDistance * 0.5f;
 			Vector2 halfSize = new(entity.BoxCastWidth * 0.5f, entity.BoxCastHeight * 0.5f);
 
 			Vector2 lineStart;
