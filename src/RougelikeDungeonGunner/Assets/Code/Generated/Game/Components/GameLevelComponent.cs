@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Code.Gameplay.Features.Level;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherLevel;
@@ -33,7 +36,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Levels.Level levelComponent = new Code.Gameplay.Features.Levels.Level();
+    static readonly Level levelComponent = new Level();
 
     public bool isLevel {
         get { return HasComponent(GameComponentsLookup.Level); }

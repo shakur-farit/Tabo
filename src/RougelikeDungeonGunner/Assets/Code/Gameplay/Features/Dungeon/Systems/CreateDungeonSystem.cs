@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
+using Code.Gameplay.Features.Dungeon.Factory;
 using Entitas;
 
-namespace Code.Gameplay.Features.Levels
+namespace Code.Gameplay.Features.Dungeon.Systems
 {
 	public class CreateDungeonSystem : IExecuteSystem
 	{

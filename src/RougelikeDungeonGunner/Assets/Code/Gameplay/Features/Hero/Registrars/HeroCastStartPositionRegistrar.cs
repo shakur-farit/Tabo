@@ -3,7 +3,7 @@ using Code.Infrastructure.View.Registrars;
 using UnityEngine;
 using Zenject;
 
-namespace Code.Gameplay.Features.Weapon.Registrars
+namespace Code.Gameplay.Features.Hero.Registrars
 {
 	public class HeroCastStartPositionRegistrar : EntityComponentRegistrar
 	{

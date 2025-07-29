@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Code.Gameplay.Features.Enemy.Factory;
-using Code.Gameplay.Features.Levels.Configs;
+using Code.Gameplay.Features.Enemy.Services;
+using Code.Gameplay.Features.Level.Configs;
 using Entitas;
 using UnityEngine;
 

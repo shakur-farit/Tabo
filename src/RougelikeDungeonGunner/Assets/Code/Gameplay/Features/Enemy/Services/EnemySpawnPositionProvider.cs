@@ -2,7 +2,7 @@
 using Code.Gameplay.Common.Random;
 using UnityEngine;
 
-namespace Code.Gameplay.Features.Enemy.Systems
+namespace Code.Gameplay.Features.Enemy.Services
 {
 	public class EnemySpawnPositionProvider : IEnemySpawnPositionProvider
 	{

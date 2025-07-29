@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
-using Assets.Code.Gameplay.Features.AStar;
 using Code.Common.Entity;
 using Code.Common.Extensions;
+using Code.Gameplay.Features.AStar.Services;
 using Entitas;
 
-namespace Code.Gameplay.Features.Enemy.Systems
+namespace Code.Gameplay.Features.AStar.Systems
 {
 	public class CreatePathfinderSystem : IExecuteSystem
 	{

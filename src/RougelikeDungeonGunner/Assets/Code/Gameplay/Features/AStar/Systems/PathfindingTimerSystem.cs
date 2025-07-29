@@ -2,7 +2,7 @@
 using Code.Gameplay.Common.Time;
 using Entitas;
 
-namespace Code.Gameplay.Features.Enemy.Systems
+namespace Code.Gameplay.Features.AStar.Systems
 {
 	public class PathfindingTimerSystem : IExecuteSystem
 	{

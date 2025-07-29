@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Assets.Code.Gameplay.Features.AStar
+namespace Code.Gameplay.Features.AStar.Services
 {
 	public class PathNode
 	{

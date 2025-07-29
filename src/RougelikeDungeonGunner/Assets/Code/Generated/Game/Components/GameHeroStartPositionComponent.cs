@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Code.Gameplay.Features.Dungeon;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherHeroStartPosition;
@@ -33,13 +36,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Features.Levels.HeroStartPosition heroStartPosition { get { return (Code.Gameplay.Features.Levels.HeroStartPosition)GetComponent(GameComponentsLookup.HeroStartPosition); } }
+    public HeroStartPosition heroStartPosition { get { return (HeroStartPosition)GetComponent(GameComponentsLookup.HeroStartPosition); } }
     public UnityEngine.Vector2 HeroStartPosition { get { return heroStartPosition.Value; } }
     public bool hasHeroStartPosition { get { return HasComponent(GameComponentsLookup.HeroStartPosition); } }
 
     public GameEntity AddHeroStartPosition(UnityEngine.Vector2 newValue) {
         var index = GameComponentsLookup.HeroStartPosition;
-        var component = (Code.Gameplay.Features.Levels.HeroStartPosition)CreateComponent(index, typeof(Code.Gameplay.Features.Levels.HeroStartPosition));
+        var component = (HeroStartPosition)CreateComponent(index, typeof(HeroStartPosition));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +50,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceHeroStartPosition(UnityEngine.Vector2 newValue) {
         var index = GameComponentsLookup.HeroStartPosition;
-        var component = (Code.Gameplay.Features.Levels.HeroStartPosition)CreateComponent(index, typeof(Code.Gameplay.Features.Levels.HeroStartPosition));
+        var component = (HeroStartPosition)CreateComponent(index, typeof(HeroStartPosition));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

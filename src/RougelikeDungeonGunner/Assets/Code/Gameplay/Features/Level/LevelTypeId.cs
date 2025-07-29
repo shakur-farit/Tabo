@@ -1,4 +1,4 @@
-﻿namespace Code.Gameplay.Features.Levels
+﻿namespace Code.Gameplay.Features.Level
 {
 	public enum LevelTypeId
 	{

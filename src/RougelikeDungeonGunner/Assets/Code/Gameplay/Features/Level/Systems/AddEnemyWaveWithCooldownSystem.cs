@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using Code.Gameplay.Features.Cooldowns;
-using Code.Gameplay.Features.Levels.Configs;
+using Code.Gameplay.Features.Level.Configs;
 using Entitas;
 
-namespace Code.Gameplay.Features.Levels.Systems
+namespace Code.Gameplay.Features.Level.Systems
 {
 	public class AddEnemyWaveWithCooldownSystem : IExecuteSystem
 	{

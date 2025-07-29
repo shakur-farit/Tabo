@@ -1,7 +1,7 @@
-﻿using Code.Gameplay.Features.Enemy.Systems;
+﻿using Code.Gameplay.Features.AStar.Systems;
 using Code.Infrastructure.Systems;
 
-namespace Assets.Code.Gameplay.Features.AStar
+namespace Code.Gameplay.Features.AStar
 {
 	public sealed class PathfindingFeature : Feature
 	{

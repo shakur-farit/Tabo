@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Code.Gameplay.Features.Level;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherEnemiesInLevelCount;
@@ -33,13 +36,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Features.Levels.EnemiesInLevelCount enemiesInLevelCount { get { return (Code.Gameplay.Features.Levels.EnemiesInLevelCount)GetComponent(GameComponentsLookup.EnemiesInLevelCount); } }
+    public EnemiesInLevelCount enemiesInLevelCount { get { return (EnemiesInLevelCount)GetComponent(GameComponentsLookup.EnemiesInLevelCount); } }
     public int EnemiesInLevelCount { get { return enemiesInLevelCount.Value; } }
     public bool hasEnemiesInLevelCount { get { return HasComponent(GameComponentsLookup.EnemiesInLevelCount); } }
 
     public GameEntity AddEnemiesInLevelCount(int newValue) {
         var index = GameComponentsLookup.EnemiesInLevelCount;
-        var component = (Code.Gameplay.Features.Levels.EnemiesInLevelCount)CreateComponent(index, typeof(Code.Gameplay.Features.Levels.EnemiesInLevelCount));
+        var component = (EnemiesInLevelCount)CreateComponent(index, typeof(EnemiesInLevelCount));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +50,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceEnemiesInLevelCount(int newValue) {
         var index = GameComponentsLookup.EnemiesInLevelCount;
-        var component = (Code.Gameplay.Features.Levels.EnemiesInLevelCount)CreateComponent(index, typeof(Code.Gameplay.Features.Levels.EnemiesInLevelCount));
+        var component = (EnemiesInLevelCount)CreateComponent(index, typeof(EnemiesInLevelCount));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

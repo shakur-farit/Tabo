@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Code.Gameplay.Features.Level;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherStartingTimeUp;
@@ -33,7 +36,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Levels.StartingTimeUp startingTimeUpComponent = new Code.Gameplay.Features.Levels.StartingTimeUp();
+    static readonly StartingTimeUp startingTimeUpComponent = new StartingTimeUp();
 
     public bool isStartingTimeUp {
         get { return HasComponent(GameComponentsLookup.StartingTimeUp); }

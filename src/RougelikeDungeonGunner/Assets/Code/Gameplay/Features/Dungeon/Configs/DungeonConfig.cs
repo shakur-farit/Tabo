@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Code.Infrastructure.View;
 using UnityEngine;
 
-namespace Code.Gameplay.Features.Levels
+namespace Code.Gameplay.Features.Dungeon.Configs
 {
 	[CreateAssetMenu(menuName = "Dungeon Gunner/Dungeon Config", fileName = "DungeonConfig")]
 	public class DungeonConfig : ScriptableObject

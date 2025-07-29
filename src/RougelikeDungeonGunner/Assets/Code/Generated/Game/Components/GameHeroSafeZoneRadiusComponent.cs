@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Code.Gameplay.Features.Level;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherHeroSafeZoneRadius;
@@ -33,13 +36,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Features.Levels.HeroSafeZoneRadius heroSafeZoneRadius { get { return (Code.Gameplay.Features.Levels.HeroSafeZoneRadius)GetComponent(GameComponentsLookup.HeroSafeZoneRadius); } }
+    public HeroSafeZoneRadius heroSafeZoneRadius { get { return (HeroSafeZoneRadius)GetComponent(GameComponentsLookup.HeroSafeZoneRadius); } }
     public float HeroSafeZoneRadius { get { return heroSafeZoneRadius.Value; } }
     public bool hasHeroSafeZoneRadius { get { return HasComponent(GameComponentsLookup.HeroSafeZoneRadius); } }
 
     public GameEntity AddHeroSafeZoneRadius(float newValue) {
         var index = GameComponentsLookup.HeroSafeZoneRadius;
-        var component = (Code.Gameplay.Features.Levels.HeroSafeZoneRadius)CreateComponent(index, typeof(Code.Gameplay.Features.Levels.HeroSafeZoneRadius));
+        var component = (HeroSafeZoneRadius)CreateComponent(index, typeof(HeroSafeZoneRadius));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +50,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceHeroSafeZoneRadius(float newValue) {
         var index = GameComponentsLookup.HeroSafeZoneRadius;
-        var component = (Code.Gameplay.Features.Levels.HeroSafeZoneRadius)CreateComponent(index, typeof(Code.Gameplay.Features.Levels.HeroSafeZoneRadius));
+        var component = (HeroSafeZoneRadius)CreateComponent(index, typeof(HeroSafeZoneRadius));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

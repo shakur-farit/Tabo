@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Entitas;
 
-namespace Code.Gameplay.Features.Ammo.Systems.Visuals
+namespace Code.Gameplay.Features.Ammo.Systems
 {
 	public class ApplyTargetLimitToAmmoSystem : ReactiveSystem<GameEntity>
 	{

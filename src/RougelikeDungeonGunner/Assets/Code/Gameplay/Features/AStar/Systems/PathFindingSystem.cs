@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
-using Assets.Code.Gameplay.Features.AStar;
+using Code.Gameplay.Features.AStar.Services;
 using Entitas;
 using UnityEngine;
 
-namespace Code.Gameplay.Features.Enemy.Systems
+namespace Code.Gameplay.Features.AStar.Systems
 {
 	public class PathFindingSystem : IExecuteSystem
 	{

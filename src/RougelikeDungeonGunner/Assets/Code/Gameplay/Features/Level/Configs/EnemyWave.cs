@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Code.Gameplay.Features.Enemy;
 using UnityEngine;
 
-namespace Code.Gameplay.Features.Levels.Configs
+namespace Code.Gameplay.Features.Level.Configs
 {
 	[Serializable]
 	public class EnemyWave

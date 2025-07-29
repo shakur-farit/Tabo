@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Code.Gameplay.Features.AStar;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherMinDistanceForRepath;
@@ -33,13 +36,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Assets.Code.Gameplay.Features.AStar.MinDistanceForRepath minDistanceForRepath { get { return (Assets.Code.Gameplay.Features.AStar.MinDistanceForRepath)GetComponent(GameComponentsLookup.MinDistanceForRepath); } }
+    public MinDistanceForRepath minDistanceForRepath { get { return (MinDistanceForRepath)GetComponent(GameComponentsLookup.MinDistanceForRepath); } }
     public float MinDistanceForRepath { get { return minDistanceForRepath.Value; } }
     public bool hasMinDistanceForRepath { get { return HasComponent(GameComponentsLookup.MinDistanceForRepath); } }
 
     public GameEntity AddMinDistanceForRepath(float newValue) {
         var index = GameComponentsLookup.MinDistanceForRepath;
-        var component = (Assets.Code.Gameplay.Features.AStar.MinDistanceForRepath)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.AStar.MinDistanceForRepath));
+        var component = (MinDistanceForRepath)CreateComponent(index, typeof(MinDistanceForRepath));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +50,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceMinDistanceForRepath(float newValue) {
         var index = GameComponentsLookup.MinDistanceForRepath;
-        var component = (Assets.Code.Gameplay.Features.AStar.MinDistanceForRepath)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.AStar.MinDistanceForRepath));
+        var component = (MinDistanceForRepath)CreateComponent(index, typeof(MinDistanceForRepath));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

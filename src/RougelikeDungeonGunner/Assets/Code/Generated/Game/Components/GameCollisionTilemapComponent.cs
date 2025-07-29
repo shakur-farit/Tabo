@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Code.Gameplay.Features.Dungeon;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherCollisionTilemap;
@@ -33,13 +36,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Features.Levels.CollisionTilemap collisionTilemap { get { return (Code.Gameplay.Features.Levels.CollisionTilemap)GetComponent(GameComponentsLookup.CollisionTilemap); } }
+    public CollisionTilemap collisionTilemap { get { return (CollisionTilemap)GetComponent(GameComponentsLookup.CollisionTilemap); } }
     public UnityEngine.Tilemaps.Tilemap CollisionTilemap { get { return collisionTilemap.Value; } }
     public bool hasCollisionTilemap { get { return HasComponent(GameComponentsLookup.CollisionTilemap); } }
 
     public GameEntity AddCollisionTilemap(UnityEngine.Tilemaps.Tilemap newValue) {
         var index = GameComponentsLookup.CollisionTilemap;
-        var component = (Code.Gameplay.Features.Levels.CollisionTilemap)CreateComponent(index, typeof(Code.Gameplay.Features.Levels.CollisionTilemap));
+        var component = (CollisionTilemap)CreateComponent(index, typeof(CollisionTilemap));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +50,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceCollisionTilemap(UnityEngine.Tilemaps.Tilemap newValue) {
         var index = GameComponentsLookup.CollisionTilemap;
-        var component = (Code.Gameplay.Features.Levels.CollisionTilemap)CreateComponent(index, typeof(Code.Gameplay.Features.Levels.CollisionTilemap));
+        var component = (CollisionTilemap)CreateComponent(index, typeof(CollisionTilemap));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

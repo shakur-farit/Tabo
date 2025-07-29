@@ -1,4 +1,4 @@
-﻿namespace Code.Gameplay.Features.Levels
+﻿namespace Code.Gameplay.Features.Dungeon.Factory
 {
 	public interface IDungeonFactory
 	{

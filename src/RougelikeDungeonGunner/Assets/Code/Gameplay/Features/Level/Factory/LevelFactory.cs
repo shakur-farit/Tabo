@@ -2,11 +2,11 @@
 using Code.Common.Entity;
 using Code.Common.Extensions;
 using Code.Gameplay.Common.Random;
-using Code.Gameplay.Features.Levels.Configs;
+using Code.Gameplay.Features.Level.Configs;
 using Code.Gameplay.StaticData;
 using Code.Infrastructure.Identifiers;
 
-namespace Code.Gameplay.Features.Levels.Factory
+namespace Code.Gameplay.Features.Level.Factory
 {
 	public class LevelFactory : ILevelFactory
 	{

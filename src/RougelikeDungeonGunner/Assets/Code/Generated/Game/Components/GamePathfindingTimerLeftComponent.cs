@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Code.Gameplay.Features.AStar;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherPathfindingTimerLeft;
@@ -33,13 +36,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Assets.Code.Gameplay.Features.AStar.PathfindingTimerLeft pathfindingTimerLeft { get { return (Assets.Code.Gameplay.Features.AStar.PathfindingTimerLeft)GetComponent(GameComponentsLookup.PathfindingTimerLeft); } }
+    public PathfindingTimerLeft pathfindingTimerLeft { get { return (PathfindingTimerLeft)GetComponent(GameComponentsLookup.PathfindingTimerLeft); } }
     public float PathfindingTimerLeft { get { return pathfindingTimerLeft.Value; } }
     public bool hasPathfindingTimerLeft { get { return HasComponent(GameComponentsLookup.PathfindingTimerLeft); } }
 
     public GameEntity AddPathfindingTimerLeft(float newValue) {
         var index = GameComponentsLookup.PathfindingTimerLeft;
-        var component = (Assets.Code.Gameplay.Features.AStar.PathfindingTimerLeft)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.AStar.PathfindingTimerLeft));
+        var component = (PathfindingTimerLeft)CreateComponent(index, typeof(PathfindingTimerLeft));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +50,7 @@ public partial class GameEntity {
 
     public GameEntity ReplacePathfindingTimerLeft(float newValue) {
         var index = GameComponentsLookup.PathfindingTimerLeft;
-        var component = (Assets.Code.Gameplay.Features.AStar.PathfindingTimerLeft)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.AStar.PathfindingTimerLeft));
+        var component = (PathfindingTimerLeft)CreateComponent(index, typeof(PathfindingTimerLeft));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

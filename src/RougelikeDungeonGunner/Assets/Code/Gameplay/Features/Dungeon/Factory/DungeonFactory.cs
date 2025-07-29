@@ -1,11 +1,12 @@
 ﻿using Code.Common.Entity;
 using Code.Common.Extensions;
 using Code.Gameplay.Common.Random;
+using Code.Gameplay.Features.Dungeon.Configs;
 using Code.Gameplay.StaticData;
 using Code.Infrastructure.Identifiers;
 using UnityEngine;
 
-namespace Code.Gameplay.Features.Levels
+namespace Code.Gameplay.Features.Dungeon.Factory
 {
 	public class DungeonFactory : IDungeonFactory
 	{

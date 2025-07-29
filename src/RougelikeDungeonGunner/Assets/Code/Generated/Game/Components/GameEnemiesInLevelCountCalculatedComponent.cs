@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Code.Gameplay.Features.Level;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherEnemiesInLevelCountCalculated;
@@ -33,7 +36,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Levels.EnemiesInLevelCountCalculated enemiesInLevelCountCalculatedComponent = new Code.Gameplay.Features.Levels.EnemiesInLevelCountCalculated();
+    static readonly EnemiesInLevelCountCalculated enemiesInLevelCountCalculatedComponent = new EnemiesInLevelCountCalculated();
 
     public bool isEnemiesInLevelCountCalculated {
         get { return HasComponent(GameComponentsLookup.EnemiesInLevelCountCalculated); }
