@@ -1,11 +1,9 @@
 ﻿using System.Collections.Generic;
 using Code.Common.Extensions;
-using Code.Gameplay.Common.Random;
 using Code.Gameplay.Features.Ammo.Factory;
 using Code.Gameplay.Features.Ammo.Services;
 using Code.Gameplay.Features.Cooldowns;
 using Entitas;
-using UnityEngine;
 
 namespace Code.Gameplay.Features.Ammo.Systems
 {
@@ -36,6 +34,7 @@ namespace Code.Gameplay.Features.Ammo.Systems
 					GameMatcher.MagazineNotEmpty,
 					GameMatcher.ClosestTargetPosition,
 					GameMatcher.Shooting,
+					GameMatcher.Precharged,
 					GameMatcher.ReadyToShoot));
 		}
 
@@ -44,13 +43,14 @@ namespace Code.Gameplay.Features.Ammo.Systems
 			foreach (GameEntity weapon in _weapons.GetEntities(_buffer))
 			{
 				_ammoFactory
-					.CreateAmmo(AmmoTypeId.Rifle, weapon.FirePositionTransform.position)
+					.CreateAmmo(AmmoTypeId.LaserBolt, weapon.FirePositionTransform.position)
 					.AddProducerId(weapon.Id)
 					.ReplaceDirection(_ammoDirectionProvider.GetDirection(weapon))
 					.With(x => x.isMoving = true);
 
 				weapon
 					.With(x => x.isShot = true)
+					.With(x => x.isPrecharged = false)
 					.PutOnCooldown(weapon.Cooldown);
 			}
 		}

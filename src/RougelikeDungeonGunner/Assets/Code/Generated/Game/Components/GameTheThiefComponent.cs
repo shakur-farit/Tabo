@@ -8,17 +8,17 @@
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherPathfinderAvailable;
+    static Entitas.IMatcher<GameEntity> _matcherTheThief;
 
-    public static Entitas.IMatcher<GameEntity> PathfinderAvailable {
+    public static Entitas.IMatcher<GameEntity> TheThief {
         get {
-            if (_matcherPathfinderAvailable == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.PathfinderAvailable);
+            if (_matcherTheThief == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.TheThief);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherPathfinderAvailable = matcher;
+                _matcherTheThief = matcher;
             }
 
-            return _matcherPathfinderAvailable;
+            return _matcherTheThief;
         }
     }
 }
@@ -33,18 +33,18 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.AStar.PathfinderAvailable pathfinderAvailableComponent = new Code.Gameplay.Features.AStar.PathfinderAvailable();
+    static readonly Code.Gameplay.Features.Hero.TheThief theThiefComponent = new Code.Gameplay.Features.Hero.TheThief();
 
-    public bool isPathfinderAvailable {
-        get { return HasComponent(GameComponentsLookup.PathfinderAvailable); }
+    public bool isTheThief {
+        get { return HasComponent(GameComponentsLookup.TheThief); }
         set {
-            if (value != isPathfinderAvailable) {
-                var index = GameComponentsLookup.PathfinderAvailable;
+            if (value != isTheThief) {
+                var index = GameComponentsLookup.TheThief;
                 if (value) {
                     var componentPool = GetComponentPool(index);
                     var component = componentPool.Count > 0
                             ? componentPool.Pop()
-                            : pathfinderAvailableComponent;
+                            : theThiefComponent;
 
                     AddComponent(index, component);
                 } else {

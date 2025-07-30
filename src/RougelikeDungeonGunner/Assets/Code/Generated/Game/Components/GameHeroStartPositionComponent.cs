@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Code.Gameplay.Features.Dungeon;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherHeroStartPosition;
@@ -36,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public HeroStartPosition heroStartPosition { get { return (HeroStartPosition)GetComponent(GameComponentsLookup.HeroStartPosition); } }
+    public Code.Gameplay.Features.Dungeon.HeroStartPosition heroStartPosition { get { return (Code.Gameplay.Features.Dungeon.HeroStartPosition)GetComponent(GameComponentsLookup.HeroStartPosition); } }
     public UnityEngine.Vector2 HeroStartPosition { get { return heroStartPosition.Value; } }
     public bool hasHeroStartPosition { get { return HasComponent(GameComponentsLookup.HeroStartPosition); } }
 
     public GameEntity AddHeroStartPosition(UnityEngine.Vector2 newValue) {
         var index = GameComponentsLookup.HeroStartPosition;
-        var component = (HeroStartPosition)CreateComponent(index, typeof(HeroStartPosition));
+        var component = (Code.Gameplay.Features.Dungeon.HeroStartPosition)CreateComponent(index, typeof(Code.Gameplay.Features.Dungeon.HeroStartPosition));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -50,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceHeroStartPosition(UnityEngine.Vector2 newValue) {
         var index = GameComponentsLookup.HeroStartPosition;
-        var component = (HeroStartPosition)CreateComponent(index, typeof(HeroStartPosition));
+        var component = (Code.Gameplay.Features.Dungeon.HeroStartPosition)CreateComponent(index, typeof(Code.Gameplay.Features.Dungeon.HeroStartPosition));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

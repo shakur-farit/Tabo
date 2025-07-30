@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Code.Gameplay.Features.Level;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherStartingTimeLeft;
@@ -36,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public StartingTimeLeft startingTimeLeft { get { return (StartingTimeLeft)GetComponent(GameComponentsLookup.StartingTimeLeft); } }
+    public Code.Gameplay.Features.Level.StartingTimeLeft startingTimeLeft { get { return (Code.Gameplay.Features.Level.StartingTimeLeft)GetComponent(GameComponentsLookup.StartingTimeLeft); } }
     public float StartingTimeLeft { get { return startingTimeLeft.Value; } }
     public bool hasStartingTimeLeft { get { return HasComponent(GameComponentsLookup.StartingTimeLeft); } }
 
     public GameEntity AddStartingTimeLeft(float newValue) {
         var index = GameComponentsLookup.StartingTimeLeft;
-        var component = (StartingTimeLeft)CreateComponent(index, typeof(StartingTimeLeft));
+        var component = (Code.Gameplay.Features.Level.StartingTimeLeft)CreateComponent(index, typeof(Code.Gameplay.Features.Level.StartingTimeLeft));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -50,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceStartingTimeLeft(float newValue) {
         var index = GameComponentsLookup.StartingTimeLeft;
-        var component = (StartingTimeLeft)CreateComponent(index, typeof(StartingTimeLeft));
+        var component = (Code.Gameplay.Features.Level.StartingTimeLeft)CreateComponent(index, typeof(Code.Gameplay.Features.Level.StartingTimeLeft));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

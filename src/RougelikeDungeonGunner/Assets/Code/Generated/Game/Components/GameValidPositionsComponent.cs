@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Code.Gameplay.Features.Dungeon;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherValidPositions;
@@ -36,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public ValidPositions validPositions { get { return (ValidPositions)GetComponent(GameComponentsLookup.ValidPositions); } }
+    public Code.Gameplay.Features.Dungeon.ValidPositions validPositions { get { return (Code.Gameplay.Features.Dungeon.ValidPositions)GetComponent(GameComponentsLookup.ValidPositions); } }
     public System.Collections.Generic.List<UnityEngine.Vector2Int> ValidPositions { get { return validPositions.Value; } }
     public bool hasValidPositions { get { return HasComponent(GameComponentsLookup.ValidPositions); } }
 
     public GameEntity AddValidPositions(System.Collections.Generic.List<UnityEngine.Vector2Int> newValue) {
         var index = GameComponentsLookup.ValidPositions;
-        var component = (ValidPositions)CreateComponent(index, typeof(ValidPositions));
+        var component = (Code.Gameplay.Features.Dungeon.ValidPositions)CreateComponent(index, typeof(Code.Gameplay.Features.Dungeon.ValidPositions));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -50,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceValidPositions(System.Collections.Generic.List<UnityEngine.Vector2Int> newValue) {
         var index = GameComponentsLookup.ValidPositions;
-        var component = (ValidPositions)CreateComponent(index, typeof(ValidPositions));
+        var component = (Code.Gameplay.Features.Dungeon.ValidPositions)CreateComponent(index, typeof(Code.Gameplay.Features.Dungeon.ValidPositions));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

@@ -1,4 +1,5 @@
 using System;
+using Code.Gameplay.Features.Hero;
 using Code.Gameplay.Features.Weapon;
 
 namespace Code.Progress.Data.Transient
@@ -7,7 +8,8 @@ namespace Code.Progress.Data.Transient
 	{
 		public event Action WeaponChanged;
 		public event Action CoinsChanged;
-
+		public HeroTypeId CurrentHeroTypeId;
+		
 		private WeaponTypeId _currentWeaponTypeId = WeaponTypeId.Unknown;
 		private int _currentCoinsCount;
 

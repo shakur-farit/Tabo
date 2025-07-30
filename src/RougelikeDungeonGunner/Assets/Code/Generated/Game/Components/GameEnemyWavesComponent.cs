@@ -6,10 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Code.Gameplay.Features.Level;
-using Code.Gameplay.Features.Level.Configs;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherEnemyWaves;
@@ -37,21 +33,21 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public EnemyWaves enemyWaves { get { return (EnemyWaves)GetComponent(GameComponentsLookup.EnemyWaves); } }
-    public System.Collections.Generic.List<EnemyWave> EnemyWaves { get { return enemyWaves.Value; } }
+    public Code.Gameplay.Features.Level.EnemyWaves enemyWaves { get { return (Code.Gameplay.Features.Level.EnemyWaves)GetComponent(GameComponentsLookup.EnemyWaves); } }
+    public System.Collections.Generic.List<Code.Gameplay.Features.Level.Configs.EnemyWave> EnemyWaves { get { return enemyWaves.Value; } }
     public bool hasEnemyWaves { get { return HasComponent(GameComponentsLookup.EnemyWaves); } }
 
-    public GameEntity AddEnemyWaves(System.Collections.Generic.List<EnemyWave> newValue) {
+    public GameEntity AddEnemyWaves(System.Collections.Generic.List<Code.Gameplay.Features.Level.Configs.EnemyWave> newValue) {
         var index = GameComponentsLookup.EnemyWaves;
-        var component = (EnemyWaves)CreateComponent(index, typeof(EnemyWaves));
+        var component = (Code.Gameplay.Features.Level.EnemyWaves)CreateComponent(index, typeof(Code.Gameplay.Features.Level.EnemyWaves));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
     }
 
-    public GameEntity ReplaceEnemyWaves(System.Collections.Generic.List<EnemyWave> newValue) {
+    public GameEntity ReplaceEnemyWaves(System.Collections.Generic.List<Code.Gameplay.Features.Level.Configs.EnemyWave> newValue) {
         var index = GameComponentsLookup.EnemyWaves;
-        var component = (EnemyWaves)CreateComponent(index, typeof(EnemyWaves));
+        var component = (Code.Gameplay.Features.Level.EnemyWaves)CreateComponent(index, typeof(Code.Gameplay.Features.Level.EnemyWaves));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

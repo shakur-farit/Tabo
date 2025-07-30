@@ -46,12 +46,6 @@ namespace Code.Gameplay.Features.Ammo.Systems
 		{
 			foreach (GameEntity weapon in _weapons.GetEntities(_buffer))
 			{
-				while (weapon.PrechargeTime > 0)
-				{
-					weapon.ReplacePrechargeTime(weapon.PrechargeTime - _time.DeltaTime);
-					Debug.Log(weapon.PrechargeTime);
-				}
-
 				_ammoFactory
 					.CreateAmmo(AmmoTypeId.LaserBolt, weapon.FirePositionTransform.position)
 					.AddProducerId(weapon.Id)
@@ -61,6 +55,8 @@ namespace Code.Gameplay.Features.Ammo.Systems
 				weapon
 					.With(x => x.isShot = true)
 					.PutOnCooldown(weapon.Cooldown);
+
+				Debug.Log("Here");
 			}
 		}
 	}

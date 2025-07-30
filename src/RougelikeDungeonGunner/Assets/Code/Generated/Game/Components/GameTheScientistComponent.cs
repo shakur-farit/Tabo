@@ -8,17 +8,17 @@
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherPathfinderAvailable;
+    static Entitas.IMatcher<GameEntity> _matcherTheScientist;
 
-    public static Entitas.IMatcher<GameEntity> PathfinderAvailable {
+    public static Entitas.IMatcher<GameEntity> TheScientist {
         get {
-            if (_matcherPathfinderAvailable == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.PathfinderAvailable);
+            if (_matcherTheScientist == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.TheScientist);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherPathfinderAvailable = matcher;
+                _matcherTheScientist = matcher;
             }
 
-            return _matcherPathfinderAvailable;
+            return _matcherTheScientist;
         }
     }
 }
@@ -33,18 +33,18 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.AStar.PathfinderAvailable pathfinderAvailableComponent = new Code.Gameplay.Features.AStar.PathfinderAvailable();
+    static readonly Code.Gameplay.Features.Hero.TheScientist theScientistComponent = new Code.Gameplay.Features.Hero.TheScientist();
 
-    public bool isPathfinderAvailable {
-        get { return HasComponent(GameComponentsLookup.PathfinderAvailable); }
+    public bool isTheScientist {
+        get { return HasComponent(GameComponentsLookup.TheScientist); }
         set {
-            if (value != isPathfinderAvailable) {
-                var index = GameComponentsLookup.PathfinderAvailable;
+            if (value != isTheScientist) {
+                var index = GameComponentsLookup.TheScientist;
                 if (value) {
                     var componentPool = GetComponentPool(index);
                     var component = componentPool.Count > 0
                             ? componentPool.Pop()
-                            : pathfinderAvailableComponent;
+                            : theScientistComponent;
 
                     AddComponent(index, component);
                 } else {

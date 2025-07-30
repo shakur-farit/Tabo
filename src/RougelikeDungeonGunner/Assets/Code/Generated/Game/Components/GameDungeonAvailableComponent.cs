@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Code.Gameplay.Features.Dungeon;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherDungeonAvailable;
@@ -36,7 +33,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly DungeonAvailable dungeonAvailableComponent = new DungeonAvailable();
+    static readonly Code.Gameplay.Features.Dungeon.DungeonAvailable dungeonAvailableComponent = new Code.Gameplay.Features.Dungeon.DungeonAvailable();
 
     public bool isDungeonAvailable {
         get { return HasComponent(GameComponentsLookup.DungeonAvailable); }

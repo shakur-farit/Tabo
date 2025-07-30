@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Code.Gameplay.Features.Level;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherFinishingTime;
@@ -36,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public FinishingTime finishingTime { get { return (FinishingTime)GetComponent(GameComponentsLookup.FinishingTime); } }
+    public Code.Gameplay.Features.Level.FinishingTime finishingTime { get { return (Code.Gameplay.Features.Level.FinishingTime)GetComponent(GameComponentsLookup.FinishingTime); } }
     public float FinishingTime { get { return finishingTime.Value; } }
     public bool hasFinishingTime { get { return HasComponent(GameComponentsLookup.FinishingTime); } }
 
     public GameEntity AddFinishingTime(float newValue) {
         var index = GameComponentsLookup.FinishingTime;
-        var component = (FinishingTime)CreateComponent(index, typeof(FinishingTime));
+        var component = (Code.Gameplay.Features.Level.FinishingTime)CreateComponent(index, typeof(Code.Gameplay.Features.Level.FinishingTime));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -50,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceFinishingTime(float newValue) {
         var index = GameComponentsLookup.FinishingTime;
-        var component = (FinishingTime)CreateComponent(index, typeof(FinishingTime));
+        var component = (Code.Gameplay.Features.Level.FinishingTime)CreateComponent(index, typeof(Code.Gameplay.Features.Level.FinishingTime));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

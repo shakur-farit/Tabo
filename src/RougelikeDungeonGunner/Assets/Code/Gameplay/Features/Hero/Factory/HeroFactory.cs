@@ -36,6 +36,10 @@ namespace Code.Gameplay.Features.Hero.Factory
 			{
 				case HeroTypeId.TheGeneral:
 					return CreateTheGeneral(typeId, at);
+				case HeroTypeId.TheScientist:
+					return CreateTheScientist(typeId, at);
+				case HeroTypeId.TheThief:
+					return CreateTheThief(typeId, at);
 			}
 
 			throw new Exception($"Hero with type id {typeId} does not exist");
@@ -44,10 +48,16 @@ namespace Code.Gameplay.Features.Hero.Factory
 		private GameEntity CreateTheGeneral(HeroTypeId typeId, Vector3 at) =>
 			CreateHeroEntity(typeId, at)
 				.With(x => x.isTheGeneral = true);
+		private GameEntity CreateTheScientist(HeroTypeId typeId, Vector3 at) =>
+			CreateHeroEntity(typeId, at)
+				.With(x => x.isTheScientist = true);
+		private GameEntity CreateTheThief(HeroTypeId typeId, Vector3 at) =>
+			CreateHeroEntity(typeId, at)
+				.With(x => x.isTheThief = true);
 
 		private GameEntity CreateHeroEntity(HeroTypeId typeId, Vector3 at)
 		{
-			HeroConfig config = _staticDataService.GetHeroConfig(HeroTypeId.TheGeneral);
+			HeroConfig config = _staticDataService.GetHeroConfig(typeId);
 			CollisionCastSetup castSetup = config.CastSetup;
 
 			Dictionary<Stats, float> baseStats = InitStats.EmptyStatDictionary()

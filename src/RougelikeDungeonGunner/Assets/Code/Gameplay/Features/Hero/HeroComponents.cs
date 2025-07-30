@@ -14,6 +14,8 @@ namespace Code.Gameplay.Features.Hero
 	[Game] public class Unweaponed : IComponent { }
 
 	[Game] public class TheGeneral : IComponent { }
+	[Game] public class TheScientist : IComponent { }
+	[Game] public class TheThief : IComponent { }
 
 	[Game] public class HeroAvailable : IComponent { }
 }

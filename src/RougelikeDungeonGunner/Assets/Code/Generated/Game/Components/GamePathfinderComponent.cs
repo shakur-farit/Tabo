@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Code.Gameplay.Features.AStar;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherPathfinder;
@@ -36,7 +33,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Pathfinder pathfinderComponent = new Pathfinder();
+    static readonly Code.Gameplay.Features.AStar.Pathfinder pathfinderComponent = new Code.Gameplay.Features.AStar.Pathfinder();
 
     public bool isPathfinder {
         get { return HasComponent(GameComponentsLookup.Pathfinder); }

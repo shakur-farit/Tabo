@@ -15,10 +15,10 @@ MonoBehaviour:
   TypeId: 5
   ViewPrefab: {fileID: 2243231872987813085, guid: a5967ca81ad889847ae902288d60c7a5, type: 3}
   Stats:
-    Speed: 10
+    Speed: 1
     ContactRadius: 0.1
   CastSetup:
+    CastStartPosiotion: {x: 0, y: 0}
     ForwardCastDistance: 0.1
-    CastOriginOffset: 0.1
     Width: 0.1
     Height: 0.1

@@ -6,10 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Code.Gameplay.Features.Dungeon;
-using Code.Gameplay.Features.Level;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherDungeonTypeOnLevel;
@@ -37,21 +33,21 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public DungeonTypeOnLevel dungeonTypeOnLevel { get { return (DungeonTypeOnLevel)GetComponent(GameComponentsLookup.DungeonTypeOnLevel); } }
-    public DungeonTypeId DungeonTypeOnLevel { get { return dungeonTypeOnLevel.Value; } }
+    public Code.Gameplay.Features.Level.DungeonTypeOnLevel dungeonTypeOnLevel { get { return (Code.Gameplay.Features.Level.DungeonTypeOnLevel)GetComponent(GameComponentsLookup.DungeonTypeOnLevel); } }
+    public Code.Gameplay.Features.Dungeon.DungeonTypeId DungeonTypeOnLevel { get { return dungeonTypeOnLevel.Value; } }
     public bool hasDungeonTypeOnLevel { get { return HasComponent(GameComponentsLookup.DungeonTypeOnLevel); } }
 
-    public GameEntity AddDungeonTypeOnLevel(DungeonTypeId newValue) {
+    public GameEntity AddDungeonTypeOnLevel(Code.Gameplay.Features.Dungeon.DungeonTypeId newValue) {
         var index = GameComponentsLookup.DungeonTypeOnLevel;
-        var component = (DungeonTypeOnLevel)CreateComponent(index, typeof(DungeonTypeOnLevel));
+        var component = (Code.Gameplay.Features.Level.DungeonTypeOnLevel)CreateComponent(index, typeof(Code.Gameplay.Features.Level.DungeonTypeOnLevel));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
     }
 
-    public GameEntity ReplaceDungeonTypeOnLevel(DungeonTypeId newValue) {
+    public GameEntity ReplaceDungeonTypeOnLevel(Code.Gameplay.Features.Dungeon.DungeonTypeId newValue) {
         var index = GameComponentsLookup.DungeonTypeOnLevel;
-        var component = (DungeonTypeOnLevel)CreateComponent(index, typeof(DungeonTypeOnLevel));
+        var component = (Code.Gameplay.Features.Level.DungeonTypeOnLevel)CreateComponent(index, typeof(Code.Gameplay.Features.Level.DungeonTypeOnLevel));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;
