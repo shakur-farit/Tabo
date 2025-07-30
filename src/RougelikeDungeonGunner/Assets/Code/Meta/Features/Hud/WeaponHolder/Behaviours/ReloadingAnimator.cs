@@ -66,7 +66,6 @@ namespace Code.Meta.Features.Hud.WeaponHolder.Behaviours
 			}
 			catch (OperationCanceledException)
 			{
-				Debug.Log("Reloading animation canceled");
 			}
 			finally
 			{

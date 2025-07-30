@@ -48,7 +48,6 @@ namespace Code.Meta.Features.Hud.HeroSelector.Behaviours
 				_currentIndex++;
 
 			UpdateHeroUI(_heroConfigs[_currentIndex]);
-			Debug.Log(_heroConfigs[_currentIndex].TypeId);
 			UpdateCurrentHero(_heroConfigs[_currentIndex].TypeId);
 			UpdateNavigationButtons();
 		}
@@ -59,7 +58,6 @@ namespace Code.Meta.Features.Hud.HeroSelector.Behaviours
 				_currentIndex--;
 
 			UpdateHeroUI(_heroConfigs[_currentIndex]);
-			Debug.Log(_heroConfigs[_currentIndex].TypeId);
 			UpdateCurrentHero(_heroConfigs[_currentIndex].TypeId);
 			UpdateNavigationButtons();
 		}

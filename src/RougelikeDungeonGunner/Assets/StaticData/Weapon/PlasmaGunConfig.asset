@@ -23,7 +23,7 @@ MonoBehaviour:
     ReloadTime: 0
     PrechargingTime: 5
     MagazineSize: 0
-    Pierce: 0
+    Pierce: 100
     PelletCount: 1
     Accuracy: 100
     EnchantSlots: 0

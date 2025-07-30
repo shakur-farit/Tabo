@@ -15,18 +15,15 @@ namespace Code.Gameplay.Features.Ammo.Systems
 
 		private readonly IAmmoFactory _ammoFactory;
 		private readonly IAmmoDirectionProvider _ammoDirectionProvider;
-		private readonly ITimeService _time;
 		private readonly IGroup<GameEntity> _weapons;
 
 		public CreatingOfPlasmaBoltSystem(
 			GameContext game,
 			IAmmoFactory ammoFactory,
-			IAmmoDirectionProvider ammoDirectionProvider,
-			ITimeService time)
+			IAmmoDirectionProvider ammoDirectionProvider)
 		{
 			_ammoFactory = ammoFactory;
 			_ammoDirectionProvider = ammoDirectionProvider;
-				_time = time;
 
 			_weapons = game.GetGroup(GameMatcher
 				.AllOf(
@@ -39,6 +36,7 @@ namespace Code.Gameplay.Features.Ammo.Systems
 					GameMatcher.MagazineNotEmpty,
 					GameMatcher.ClosestTargetPosition,
 					GameMatcher.Shooting,
+					GameMatcher.Precharged,
 					GameMatcher.ReadyToShoot));
 		}
 
@@ -54,9 +52,8 @@ namespace Code.Gameplay.Features.Ammo.Systems
 
 				weapon
 					.With(x => x.isShot = true)
+					.With(x => x.isPrecharged = false)
 					.PutOnCooldown(weapon.Cooldown);
-
-				Debug.Log("Here");
 			}
 		}
 	}
