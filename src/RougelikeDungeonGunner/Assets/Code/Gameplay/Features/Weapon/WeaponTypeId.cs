@@ -13,6 +13,8 @@
 		HeroLaserBlaster = 8,
 		HeroRocketLauncher = 9,
 		EnemyPistol = 10,
-		NoWeapon = 11
+		EnemyMachinegun = 11,
+		Force = 12,
+		NoWeapon = 13
 	}
 }

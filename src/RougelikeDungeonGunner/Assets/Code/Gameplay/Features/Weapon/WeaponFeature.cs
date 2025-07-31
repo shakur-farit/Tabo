@@ -19,24 +19,23 @@ namespace Code.Gameplay.Features.Weapon
 			Add(systems.Create<SetActiveTextOnInfinityAmmoSystem>());
 			Add(systems.Create<SetInactiveTextOnLimitedAmmoSystem>());
 			
-			Add(systems.Create<FindClosestTargetSystem>());
-			Add(systems.Create<RotateWeaponAlongClosestTargetSystem>());
-			Add(systems.Create<WeaponDefaultRotateDirectionWithoutTargetSystem>());
+			Add(systems.Create<FindClosestHeroTargetSystem>());
+			Add(systems.Create<RotateHeroWeaponAlongClosestTargetSystem>());
+			Add(systems.Create<HeroWeaponDefaultRotateDirectionWithoutTargetSystem>());
 			Add(systems.Create<SetWeaponDirectionSystem>());
 			Add(systems.Create<PushBackHeroOnCollisionFrontWeaponSystem>());
 			Add(systems.Create<CalculateMultiPelletCountSystem>());
-			Add(systems.Create<SetReloadingByPressButtonSystem>());
+			Add(systems.Create<SetHeroWeaponReloadingByPressButtonSystem>());
 			Add(systems.Create<ReloadWeaponSystem>());
 			
 			Add(systems.Create<StartWeaponReloadingAnimationSystem>());
 			Add(systems.Create<StartWeaponPrechargeAnimationSystem>());
 			 
 			Add(systems.Create<MarkWeaponReadyToShotSystem>());
-			Add(systems.Create<SetShootingByLeftMouseButtonInputSystem>());
+			Add(systems.Create<SetHeroWeaponShootingByLeftMouseButtonInputSystem>());
 			Add(systems.Create<PrechargeWeaponSystem>());
 
-			Add(systems.Create<CleanupClosestTargetSystem>());
-			Add(systems.Create<MarkDestructedUnparentedWeaponsSystem>());
+			Add(systems.Create<CleanupClosestHeroTargetSystem>());
 		}
 	}
 }

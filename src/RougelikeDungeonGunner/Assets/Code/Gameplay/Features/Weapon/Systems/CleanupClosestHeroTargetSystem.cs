@@ -3,12 +3,12 @@ using Entitas;
 
 namespace Code.Gameplay.Features.Weapon.Systems
 {
-	public class CleanupClosestTargetSystem : ICleanupSystem
+	public class CleanupClosestHeroTargetSystem : ICleanupSystem
 	{
 		private readonly IGroup<GameEntity> _targets;
 		private readonly List<GameEntity> _buffer = new(1);
 
-		public CleanupClosestTargetSystem(GameContext game)
+		public CleanupClosestHeroTargetSystem(GameContext game)
 		{
 			_targets = game.GetGroup(GameMatcher
 				.AllOf(

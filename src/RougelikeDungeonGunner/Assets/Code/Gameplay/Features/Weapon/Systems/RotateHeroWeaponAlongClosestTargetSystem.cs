@@ -3,12 +3,12 @@ using UnityEngine;
 
 namespace Code.Gameplay.Features.Weapon.Systems
 {
-	public class RotateWeaponAlongClosestTargetSystem : IExecuteSystem
+	public class RotateHeroWeaponAlongClosestTargetSystem : IExecuteSystem
 	{
 		private readonly IGroup<GameEntity> _weapons;
 		private readonly IGroup<GameEntity> _hero;
 
-		public RotateWeaponAlongClosestTargetSystem(GameContext game)
+		public RotateHeroWeaponAlongClosestTargetSystem(GameContext game)
 		{
 			_weapons = game.GetGroup(GameMatcher
 				.AllOf(

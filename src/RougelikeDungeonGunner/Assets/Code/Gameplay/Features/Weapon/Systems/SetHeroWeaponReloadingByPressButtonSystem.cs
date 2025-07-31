@@ -4,12 +4,12 @@ using UnityEngine;
 
 namespace Code.Gameplay.Features.Weapon.Systems
 {
-	public class SetReloadingByPressButtonSystem : IExecuteSystem
+	public class SetHeroWeaponReloadingByPressButtonSystem : IExecuteSystem
 	{
 		private readonly IGroup<GameEntity> _weapons;
 		private readonly List<GameEntity> _buffer = new(1);
 
-		public SetReloadingByPressButtonSystem(GameContext game)
+		public SetHeroWeaponReloadingByPressButtonSystem(GameContext game)
 		{
 			_weapons = game.GetGroup(GameMatcher
 				.AllOf(

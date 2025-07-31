@@ -549,6 +549,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - DungeonConfig
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e16f461f277603f439b4b42204d75fdc
+    m_Address: Assets/StaticData/Weapon/EnemyPistolConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponConfig
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 7128017d563554245a79368046c75e1a, type: 2}
   m_SchemaSet:

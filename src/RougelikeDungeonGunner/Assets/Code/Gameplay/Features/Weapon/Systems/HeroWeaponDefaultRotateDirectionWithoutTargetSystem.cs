@@ -3,11 +3,11 @@ using UnityEngine;
 
 namespace Code.Gameplay.Features.Weapon.Systems
 {
-	public class WeaponDefaultRotateDirectionWithoutTargetSystem : IExecuteSystem
+	public class HeroWeaponDefaultRotateDirectionWithoutTargetSystem : IExecuteSystem
 	{
 		private readonly IGroup<GameEntity> _weapons;
 
-		public WeaponDefaultRotateDirectionWithoutTargetSystem(GameContext game)
+		public HeroWeaponDefaultRotateDirectionWithoutTargetSystem(GameContext game)
 		{
 			_weapons = game.GetGroup(GameMatcher
 				.AllOf(

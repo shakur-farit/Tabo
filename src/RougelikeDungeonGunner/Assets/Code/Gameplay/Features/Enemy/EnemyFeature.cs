@@ -1,5 +1,4 @@
 ﻿using Code.Gameplay.Features.Enemy.Systems;
-using Code.Infrastructure;
 using Code.Infrastructure.Systems;
 
 namespace Code.Gameplay.Features.Enemy
@@ -12,6 +11,7 @@ namespace Code.Gameplay.Features.Enemy
 			Add(systems.Create<EnemyMoveSystem>());
 			Add(systems.Create<AnimateEnemyMovementSystem>());
 			Add(systems.Create<AnimateEnemyDirectionSystem>());
+			Add(systems.Create<CreateWeaponForEnemySystem>());
 			Add(systems.Create<EnemyDeathSystem>());
 			Add(systems.Create<DropLootOnEnemyDeadSystem>());
 			Add(systems.Create<FinalizeEnemyDeathProcessingSystem>());

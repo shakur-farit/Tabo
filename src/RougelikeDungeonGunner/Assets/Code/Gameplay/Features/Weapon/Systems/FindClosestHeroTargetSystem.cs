@@ -2,12 +2,12 @@
 
 namespace Code.Gameplay.Features.Weapon.Systems
 {
-	public class FindClosestTargetSystem : IExecuteSystem
+	public class FindClosestHeroTargetSystem : IExecuteSystem
 	{
 		private readonly IGroup<GameEntity> _targets;
 		private readonly IGroup<GameEntity> _weapons;
 
-		public FindClosestTargetSystem(GameContext game)
+		public FindClosestHeroTargetSystem(GameContext game)
 		{
 			_targets = game.GetGroup(GameMatcher
 				.AllOf(

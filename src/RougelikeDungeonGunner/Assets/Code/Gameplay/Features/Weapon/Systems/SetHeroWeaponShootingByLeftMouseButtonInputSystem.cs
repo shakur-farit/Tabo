@@ -2,12 +2,12 @@
 
 namespace Code.Gameplay.Features.Weapon.Systems
 {
-	public class SetShootingByLeftMouseButtonInputSystem : IExecuteSystem
+	public class SetHeroWeaponShootingByLeftMouseButtonInputSystem : IExecuteSystem
 	{
 		private readonly IGroup<GameEntity> _weapons;
 		private readonly IGroup<InputEntity> _inputs;
 
-		public SetShootingByLeftMouseButtonInputSystem(GameContext game, InputContext input)
+		public SetHeroWeaponShootingByLeftMouseButtonInputSystem(GameContext game, InputContext input)
 		{
 			_weapons = game.GetGroup(GameMatcher
 				.AllOf(
