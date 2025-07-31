@@ -87,7 +87,6 @@ namespace Code.Gameplay.Features.Ammo.Factory
 					.AddTargetsBuffer(new List<int>(BufferSize))
 					.AddTargetLimit(NoLimit)
 					.AddProcessedTargets(new List<int>(BufferSize))
-					.AddTargetLayerMask(CollisionLayer.Enemy.AsMask())
 					.With(x => x.isAmmo = true)
 					.With(x => x.isMovementAvailable = true)
 					.With(x => x.isReadyToCollectTargets = true)

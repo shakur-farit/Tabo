@@ -14,6 +14,7 @@ namespace Code.Meta.Features.Hud.WeaponHolder.Systems
 		protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context) =>
 			context.CreateCollector(GameMatcher.AllOf(
 					GameMatcher.Weapon,
+					GameMatcher.HeroWeapon,
 					GameMatcher.InfinityAmmo)
 				.Added());
 

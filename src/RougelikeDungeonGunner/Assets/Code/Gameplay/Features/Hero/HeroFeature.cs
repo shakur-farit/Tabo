@@ -17,7 +17,7 @@ namespace Code.Gameplay.Features.Hero
 			Add(systems.Create<CameraFollowHeroSystem>());
 			Add(systems.Create<AnimateHeroMovementSystem>());
 
-			Add(systems.Create<HeroWeaponiseSystem>());
+			Add(systems.Create<CreateWeaponForHeroSystem>());
 			Add(systems.Create<AnimateHeroAimingSystem>());
 
 			Add(systems.Create<UpdateHeartUIForHeroInHolderSystem>());

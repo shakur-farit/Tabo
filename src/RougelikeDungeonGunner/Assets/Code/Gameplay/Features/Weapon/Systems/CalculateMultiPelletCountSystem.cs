@@ -1,8 +1,6 @@
 ﻿using Code.Gameplay.Features.Weapon.Configs;
 using Code.Gameplay.StaticData;
-using Code.Progress.Provider;
 using Entitas;
-using UnityEngine;
 
 namespace Code.Gameplay.Features.Weapon.Systems
 {

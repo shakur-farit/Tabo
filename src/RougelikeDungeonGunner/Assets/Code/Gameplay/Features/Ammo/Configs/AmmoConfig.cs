@@ -1,4 +1,5 @@
-﻿using Code.Gameplay.Features.TargetCollection;
+﻿using Code.Gameplay.Features.Ammo.Factory;
+using Code.Gameplay.Features.TargetCollection;
 using Code.Infrastructure.View;
 using UnityEngine;
 
@@ -8,6 +9,7 @@ namespace Code.Gameplay.Features.Ammo.Configs
 	public class AmmoConfig : ScriptableObject
 	{
 		public AmmoTypeId TypeId;
+
 		public EntityBehaviour ViewPrefab;
 
 		public AmmoStats Stats;

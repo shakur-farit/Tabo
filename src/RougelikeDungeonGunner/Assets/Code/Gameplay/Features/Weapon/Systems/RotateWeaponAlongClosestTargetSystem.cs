@@ -13,6 +13,7 @@ namespace Code.Gameplay.Features.Weapon.Systems
 			_weapons = game.GetGroup(GameMatcher
 				.AllOf(
 					GameMatcher.Weapon,
+					GameMatcher.HeroWeapon,
 					GameMatcher.WeaponRotationPointTransform,
 					GameMatcher.ClosestTargetPosition));
 

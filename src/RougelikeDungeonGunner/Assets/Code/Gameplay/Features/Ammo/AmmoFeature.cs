@@ -12,15 +12,17 @@ namespace Code.Gameplay.Features.Ammo
 		{
 			Add(systems.Create<CooldownSystem>());
 
-			Add(systems.Create<CreatingOfPistolBulletSystem>());
-			Add(systems.Create<CreatingOfAutomaticPistolBulletSystem>());
-			Add(systems.Create<CreatingOfLaserBoltSystem>());
-			Add(systems.Create<CreatingOfMachinegunBulletSystem>());
-			Add(systems.Create<CreatingOfPlasmaBoltSystem>());
-			Add(systems.Create<CreatingOfRevolverBulletSystem>());
-			Add(systems.Create<CreatingOfShotgunBulletSystem>());
-			Add(systems.Create<CreatingOfRocketMissileSystem>());
-			Add(systems.Create<CreatingOfSniperBulletSystem>());
+			Add(systems.Create<CreateAmmoForHeroPistolSystem>());
+			Add(systems.Create<CreateAmmoForHeroAutomaticPistolSystem>());
+			Add(systems.Create<CreateAmmoForHeroLaserBlasterSystem>());
+			Add(systems.Create<CreateAmmoForHeroMachinegunSystem>());
+			Add(systems.Create<CreateAmmoForHeroPlasmaGunSystem>());
+			Add(systems.Create<CreateAmmoForHeroRevolverSystem>());
+			Add(systems.Create<CreateAmmoForHeroShotgunSystem>());
+			Add(systems.Create<CreateAmmoForHeroRocketLauncherSystem>());
+			Add(systems.Create<CreateAmmoForHeroSniperSystem>());
+
+			Add(systems.Create<SetTargetLayerMaskSystem>());
 
 			Add(systems.Create<ApplyTargetLimitToAmmoSystem>());
 			Add(systems.Create<ApplyEffectsToAmmoSystem>());

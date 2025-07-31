@@ -14,6 +14,7 @@ namespace Code.Gameplay.Features.Weapon.Systems
 			_weapons = game.GetGroup(GameMatcher
 				.AllOf(
 					GameMatcher.Weapon,
+					GameMatcher.HeroWeapon,
 					GameMatcher.MagazineSize,
 					GameMatcher.ReloadTime,
 					GameMatcher.ReloadTimeLeft)

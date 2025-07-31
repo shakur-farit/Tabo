@@ -3,14 +3,16 @@
 	public enum WeaponTypeId
 	{
 		Unknown = 0,
-		Pistol = 1,
-		Revolver = 2,
-		Shotgun = 3,
-		AutoPistol = 4,
-		Machinegun = 5,
-		Sniper = 6,
-		PlasmaGun = 7,
-		LaserBlaster = 8,
-		RocketLauncher = 9,
+		HeroPistol = 1,
+		HeroRevolver = 2,
+		HeroShotgun = 3,
+		HeroAutoPistol = 4,
+		HeroMachinegun = 5,
+		HeroSniper = 6,
+		HeroPlasmaGun = 7,
+		HeroLaserBlaster = 8,
+		HeroRocketLauncher = 9,
+		EnemyPistol = 10,
+		NoWeapon = 11
 	}
 }

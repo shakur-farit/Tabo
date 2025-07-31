@@ -2,7 +2,7 @@
 using Code.Gameplay.Features.Statuses;
 using Entitas;
 using System.Collections.Generic;
-using Code.Meta.Features.Hud.WeaponHolder.Behaviours;
+using Code.Gameplay.Features.Ammo.Factory;
 using UnityEngine;
 
 namespace Code.Gameplay.Features.Weapon
@@ -10,6 +10,9 @@ namespace Code.Gameplay.Features.Weapon
 	[Game] public class Weapon : IComponent { }
 	[Game] public class WeaponTypeIdComponent : IComponent { public WeaponTypeId Value; }
 	[Game] public class WeaponOwnerId : IComponent { public int Value; }
+	[Game] public class WeaponOwnerTypeIdComponent : IComponent { public WeaponOwnerTypeId Value; }
+	[Game] public class HeroWeapon : IComponent { }
+	[Game] public class EnemyWeapon : IComponent { }
 
 	[Game] public class ClosestTargetPosition : IComponent { public Vector3 Value; }
 
@@ -42,13 +45,14 @@ namespace Code.Gameplay.Features.Weapon
 	[Game] public class WeaponEnchants : IComponent { public Dictionary<int, StatusSetup> Value; }
 	[Game] public class MaxWeaponEnchantsCount : IComponent { public int Value; }
 
-	[Game] public class Pistol : IComponent { }
-	[Game] public class Revolver : IComponent { }
-	[Game] public class Shotgun : IComponent { }
-	[Game] public class AutomaticPistol : IComponent { }
-	[Game] public class Machinegun : IComponent { }
-	[Game] public class Sniper : IComponent { }
-	[Game] public class PlasmaGun : IComponent { }
-	[Game] public class LaserBlaster : IComponent { }
-	[Game] public class RocketLauncher : IComponent { }
+	[Game] public class HeroPistol : IComponent { }
+	[Game] public class HeroRevolver : IComponent { }
+	[Game] public class HeroShotgun : IComponent { }
+	[Game] public class HeroAutomaticPistol : IComponent { }
+	[Game] public class HeroMachinegun : IComponent { }
+	[Game] public class HeroSniper : IComponent { }
+	[Game] public class HeroPlasmaGun : IComponent { }
+	[Game] public class HeroLaserBlaster : IComponent { }
+	[Game] public class HeroRocketLauncher : IComponent { }
+	[Game] public class EnemyPistol : IComponent { }
 }

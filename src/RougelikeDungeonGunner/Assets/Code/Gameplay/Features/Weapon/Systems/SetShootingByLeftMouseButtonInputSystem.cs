@@ -11,7 +11,8 @@ namespace Code.Gameplay.Features.Weapon.Systems
 		{
 			_weapons = game.GetGroup(GameMatcher
 				.AllOf(
-					GameMatcher.Weapon));
+					GameMatcher.Weapon,
+					GameMatcher.HeroWeapon));
 
 			_inputs = input.GetGroup(InputMatcher
 				.AllOf(

@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using Code.Gameplay.Features.Ammo;
+using Code.Gameplay.Features.Ammo.Factory;
 using Code.Gameplay.Features.Effects;
 using Code.Gameplay.Features.Statuses;
 using Code.Gameplay.Features.TargetCollection;
@@ -14,6 +16,8 @@ namespace Code.Gameplay.Features.Weapon.Configs
 	public class WeaponConfig : ScriptableObject
 	{
 		public WeaponTypeId TypeId;
+		public AmmoTypeId AmmoTypeId;
+		public AmmoPatternTypeId PatternTypeId;
 		public EntityBehaviour ViewPrefab;
 		public Sprite Sprite;
 		public Vector2 FirePosition;

@@ -1,5 +1,4 @@
 ﻿using Code.Gameplay.Cameras.Systems;
-using Code.Gameplay.Features.Weapon.ChangeRequest;
 using Code.Gameplay.Features.Weapon.Systems;
 using Code.Infrastructure.Systems;
 using Code.Meta.Features.Hud.AmmoHolder.Systems;
@@ -11,8 +10,6 @@ namespace Code.Gameplay.Features.Weapon
 	{
 		public WeaponFeature(ISystemsFactory systems)
 		{
-			Add(systems.Create<WeaponChangeRequestFeature>());
-			Add(systems.Create<ChangeWeaponSystem>());
 			Add(systems.Create<ChangeCameraSizeByWeaponRangeSystem>());
 			
 			Add(systems.Create<UpdateWeaponIconInHolderSystem>());

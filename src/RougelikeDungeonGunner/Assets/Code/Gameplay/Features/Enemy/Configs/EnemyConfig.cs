@@ -1,4 +1,5 @@
 ﻿using Code.Gameplay.Features.TargetCollection;
+using Code.Gameplay.Features.Weapon;
 using Code.Infrastructure.View;
 using UnityEngine;
 
@@ -8,6 +9,7 @@ namespace Code.Gameplay.Features.Enemy.Configs
 	public class EnemyConfig : ScriptableObject
 	{
 		public EnemyTypeId TypeId;
+		public WeaponTypeId StartWeapon;
 		public EntityBehaviour ViewPrefab;
 		public RuntimeAnimatorController AnimatorController;
 		[Range(1, 100)] public int CurrentHp;
