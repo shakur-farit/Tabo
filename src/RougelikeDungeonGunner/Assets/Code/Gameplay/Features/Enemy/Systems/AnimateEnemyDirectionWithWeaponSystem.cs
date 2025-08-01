@@ -5,12 +5,12 @@ using UnityEngine;
 
 namespace Code.Gameplay.Features.Enemy.Systems
 {
-	public class AnimateEnemyDirectionSystem : IExecuteSystem
+	public class AnimateEnemyDirectionWithWeaponSystem : IExecuteSystem
 	{
 		private readonly IGroup<GameEntity> _enemies;
 		private readonly IGroup<GameEntity> _weapons;
 
-		public AnimateEnemyDirectionSystem(GameContext game)
+		public AnimateEnemyDirectionWithWeaponSystem(GameContext game)
 		{
 			_enemies = game.GetGroup(GameMatcher
 				.AllOf(

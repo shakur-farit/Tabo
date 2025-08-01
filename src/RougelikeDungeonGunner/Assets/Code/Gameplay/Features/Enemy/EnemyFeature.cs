@@ -10,7 +10,8 @@ namespace Code.Gameplay.Features.Enemy
 			Add(systems.Create<SpawnEnemiesSystem>());
 			Add(systems.Create<EnemyMoveSystem>());
 			Add(systems.Create<AnimateEnemyMovementSystem>());
-			Add(systems.Create<AnimateEnemyDirectionSystem>());
+			Add(systems.Create<AnimateEnemyDirectionWithWeaponSystem>());
+			Add(systems.Create<AnimateEnemyDirectionWithNoWeaponSystem>());
 			Add(systems.Create<CreateWeaponForEnemySystem>());
 			Add(systems.Create<EnemyDeathSystem>());
 			Add(systems.Create<DropLootOnEnemyDeadSystem>());
