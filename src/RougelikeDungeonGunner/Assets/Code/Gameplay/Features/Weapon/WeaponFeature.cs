@@ -21,6 +21,7 @@ namespace Code.Gameplay.Features.Weapon
 			
 			Add(systems.Create<FindClosestHeroTargetSystem>());
 			Add(systems.Create<RotateHeroWeaponAlongClosestTargetSystem>());
+			Add(systems.Create<RotateEnemyWeaponAlongHeroSystem>());
 			Add(systems.Create<HeroWeaponDefaultRotateDirectionWithoutTargetSystem>());
 			Add(systems.Create<SetWeaponDirectionSystem>());
 			Add(systems.Create<PushBackHeroOnCollisionFrontWeaponSystem>());
@@ -34,6 +35,8 @@ namespace Code.Gameplay.Features.Weapon
 			Add(systems.Create<MarkWeaponReadyToShotSystem>());
 			Add(systems.Create<SetHeroWeaponShootingByLeftMouseButtonInputSystem>());
 			Add(systems.Create<PrechargeWeaponSystem>());
+			
+			Add(systems.Create<MarkDestructWeaponWithoutOwnerSystem>());
 
 			Add(systems.Create<CleanupClosestHeroTargetSystem>());
 		}

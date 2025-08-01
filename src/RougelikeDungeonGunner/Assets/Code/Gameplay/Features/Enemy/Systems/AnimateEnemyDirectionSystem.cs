@@ -8,6 +8,7 @@ namespace Code.Gameplay.Features.Enemy.Systems
 	public class AnimateEnemyDirectionSystem : IExecuteSystem
 	{
 		private readonly IGroup<GameEntity> _enemies;
+		private readonly IGroup<GameEntity> _weapons;
 
 		public AnimateEnemyDirectionSystem(GameContext game)
 		{
@@ -15,15 +16,26 @@ namespace Code.Gameplay.Features.Enemy.Systems
 				.AllOf(
 					GameMatcher.Enemy,
 					GameMatcher.EnemyAnimator,
+					GameMatcher.Id,
 					GameMatcher.Direction)
 				.NoneOf(GameMatcher.Stunned));
+
+			_weapons = game.GetGroup(GameMatcher
+				.AllOf(
+					GameMatcher.EnemyWeapon,
+					GameMatcher.WeaponOwnerId,
+					GameMatcher.Direction));
 		}
 
 		public void Execute()
 		{
 			foreach (GameEntity enemy in _enemies)
+			foreach (GameEntity weapon in _weapons)
 			{
-				float angle = Mathf.Atan2(enemy.Direction.y, enemy.Direction.x) * Mathf.Rad2Deg;
+				if(enemy.Id != weapon.WeaponOwnerId)
+						continue;
+
+				float angle = Mathf.Atan2(weapon.Direction.y, weapon.Direction.x) * Mathf.Rad2Deg;
 
 				FacingDirection direction = GetDirectionEnum(angle);
 				enemy.EnemyAnimator.SetDirectionEnum(direction);

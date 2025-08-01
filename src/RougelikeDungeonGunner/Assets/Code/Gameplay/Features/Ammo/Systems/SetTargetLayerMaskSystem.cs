@@ -14,11 +14,13 @@ namespace Code.Gameplay.Features.Ammo.Systems
 		{
 			_ammo = game.GetGroup(GameMatcher
 				.AllOf(
-					GameMatcher.Ammo));
+					GameMatcher.Ammo,
+					GameMatcher.ProducerId));
 
 			_weapons = game.GetGroup(GameMatcher
 				.AllOf(
 					GameMatcher.Weapon,
+					GameMatcher.Id,
 					GameMatcher.WeaponOwnerTypeId));
 		}
 
@@ -27,9 +29,9 @@ namespace Code.Gameplay.Features.Ammo.Systems
 			foreach (GameEntity weapon in _weapons)
 			foreach (GameEntity ammo in _ammo)
 			{
-				if (weapon.WeaponOwnerTypeId == WeaponOwnerTypeId.Hero)
+				if (weapon.Id == ammo.ProducerId && weapon.WeaponOwnerTypeId == WeaponOwnerTypeId.Hero)
 					ammo.ReplaceTargetLayerMask(CollisionLayer.Enemy.AsMask());
-				else if (weapon.WeaponOwnerTypeId == WeaponOwnerTypeId.Enemy)
+				else if (weapon.Id == ammo.ProducerId && weapon.WeaponOwnerTypeId == WeaponOwnerTypeId.Enemy)
 					ammo.ReplaceTargetLayerMask(CollisionLayer.Hero.AsMask());
 			}
 		}
