@@ -39,7 +39,7 @@ namespace Code.Gameplay.Features.Weapon
 			
 			Add(systems.Create<MarkDestructWeaponWithoutOwnerSystem>());
 
-			Add(systems.Create<CleanupClosestHeroTargetSystem>());
+			Add(systems.Create<CleanupClosestTargetSystem>());
 		}
 	}
 }

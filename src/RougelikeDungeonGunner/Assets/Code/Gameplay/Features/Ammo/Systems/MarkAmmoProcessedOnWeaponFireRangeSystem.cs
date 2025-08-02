@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Entitas;
+using UnityEngine;
 
 namespace Code.Gameplay.Features.Ammo.Systems
 {
@@ -15,11 +16,13 @@ namespace Code.Gameplay.Features.Ammo.Systems
 			_ammo = game.GetGroup(GameMatcher
 				.AllOf(
 					GameMatcher.Ammo,
+					GameMatcher.ProducerId,
 					GameMatcher.WorldPosition));
 
 			_weapons = game.GetGroup(GameMatcher
 				.AllOf(
 					GameMatcher.Weapon,
+					GameMatcher.Id,
 					GameMatcher.Radius,
 					GameMatcher.FirePositionTransform));
 		}
@@ -29,6 +32,9 @@ namespace Code.Gameplay.Features.Ammo.Systems
 			foreach (GameEntity ammo in _ammo.GetEntities(_buffer))
 			foreach (GameEntity weapon in _weapons)
 			{
+				if (weapon.Id != ammo.ProducerId)
+					continue;
+
 				float distance = (ammo.WorldPosition - weapon.FirePositionTransform.position).magnitude;
 
 				if (distance > weapon.Radius)

@@ -13,12 +13,14 @@ namespace Code.Gameplay.Features.Ammo.Systems
 		{
 			_ammo = game.GetGroup(GameMatcher
 				.AllOf(
-					GameMatcher.Ammo)
+					GameMatcher.Ammo,
+					GameMatcher.ProducerId)
 				.NoneOf(GameMatcher.EffectSetups));
 
 			_weapons = game.GetGroup(GameMatcher
 				.AllOf(
 					GameMatcher.Weapon,
+					GameMatcher.Id,
 					GameMatcher.EffectSetups));
 		}
 
@@ -26,7 +28,8 @@ namespace Code.Gameplay.Features.Ammo.Systems
 		{
 			foreach (GameEntity weapon in _weapons)
 			foreach (GameEntity ammo in _ammo.GetEntities(_buffer))
-				ammo.AddEffectSetups(new(weapon.EffectSetups));
+				if (weapon.Id == ammo.ProducerId)
+					ammo.AddEffectSetups(new(weapon.EffectSetups));
 			// To avoid errors when modifying the list in the future,
 			// you should create new ones using new instead of directly copying.
 		}
