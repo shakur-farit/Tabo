@@ -29,9 +29,8 @@ namespace Code.Gameplay.Features.Ammo.Systems
 		{
 			foreach (GameEntity weapon in _weapons.GetEntities())
 			foreach (GameEntity ammo in ammunitions)
-			{
-				ammo.ReplaceTargetLimit(weapon.Pierce);
-			}
+				if (weapon.WeaponOwnerId == ammo.ProducerId)
+					ammo.ReplaceTargetLimit(weapon.Pierce);
 		}
 	}
 }

@@ -21,6 +21,7 @@ namespace Code.Gameplay.Features.Ammo
 			Add(systems.Create<CreateAmmoForHeroShotgunSystem>());
 			Add(systems.Create<CreateAmmoForHeroRocketLauncherSystem>());
 			Add(systems.Create<CreateAmmoForHeroSniperSystem>());
+			Add(systems.Create<CreateAmmoForEnemyPistolSystem>());
 
 			Add(systems.Create<SetTargetLayerMaskSystem>());
 

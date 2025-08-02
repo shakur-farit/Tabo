@@ -39,11 +39,14 @@ namespace Code.Gameplay.Features.Weapon.Factory
 				case WeaponOwnerTypeId.Hero:
 					return CreateHeroWeapon(weaponTypeId, parent, at, ownerId)
 						.AddWeaponOwnerTypeId(WeaponOwnerTypeId.Hero)
-						.With(x => x.isHeroWeapon = true);
+						.With(x => x.isHeroWeapon = true)
+						;
 				case WeaponOwnerTypeId.Enemy:
 					return CreateEnemyWeapon(weaponTypeId, parent, at, ownerId)
 						.AddWeaponOwnerTypeId(WeaponOwnerTypeId.Enemy)
-						.With(x => x.isEnemyWeapon= true);
+						.With(x => x.isEnemyWeapon= true)
+						.With(x => x.isShooting= true)
+						;
 				default:
 					return null;
 			}

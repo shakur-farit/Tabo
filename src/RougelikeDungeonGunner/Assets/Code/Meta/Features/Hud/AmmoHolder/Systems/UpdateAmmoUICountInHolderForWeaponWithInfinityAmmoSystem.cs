@@ -15,12 +15,12 @@ namespace Code.Meta.Features.Hud.AmmoHolder.Systems
 
 		protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context) =>
 			context.CreateCollector(GameMatcher.AllOf(
-					GameMatcher.Weapon,
+					GameMatcher.HeroWeapon,
 					GameMatcher.InfinityAmmo)
 				.Added());
 
 		protected override bool Filter(GameEntity weapons) =>
-			weapons.isWeapon && weapons.isInfinityAmmo;
+			weapons.isWeapon && weapons.isHeroWeapon && weapons.isInfinityAmmo;
 
 		protected override void Execute(List<GameEntity> weapons)
 		{

@@ -37,30 +37,6 @@ MonoBehaviour:
   EffectSetups:
   - EffectTypeId: 1
     Value: 1
-  StatusSetups:
-  - StatusTypeId: 1
-    Value: 5
-    StatusDuration: 3
-    Period: 1
-    Radius: 0
-  - StatusTypeId: 2
-    Value: -5
-    StatusDuration: 2
-    Period: 0
-    Radius: 0
-  AvailableUpgrades:
-  - UpgradeType: 8
-  - UpgradeType: 2
-  - UpgradeType: 6
-  - UpgradeType: 1
-  - UpgradeType: 7
-  - UpgradeType: 9
-  StatsUIEntry:
-  - StatUIEntryType: 10
-  - StatUIEntryType: 8
-  - StatUIEntryType: 2
-  - StatUIEntryType: 6
-  - StatUIEntryType: 9
-  - StatUIEntryType: 1
-  - StatUIEntryType: 7
-  - StatUIEntryType: 11
+  StatusSetups: []
+  AvailableUpgrades: []
+  StatsUIEntry: []

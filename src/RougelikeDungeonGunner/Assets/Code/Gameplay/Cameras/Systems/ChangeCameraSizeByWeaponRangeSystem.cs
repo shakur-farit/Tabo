@@ -15,11 +15,12 @@ namespace Code.Gameplay.Cameras.Systems
 		protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context) =>
 			context.CreateCollector(GameMatcher.AllOf(
 					GameMatcher.Weapon,
+					GameMatcher.HeroWeapon,
 					GameMatcher.Radius)
 				.Added());
 
 		protected override bool Filter(GameEntity weapons) =>
-			weapons.isWeapon && weapons.hasRadius;
+			weapons.isWeapon && weapons.isHeroWeapon && weapons.hasRadius;
 
 		protected override void Execute(List<GameEntity> weapons)
 		{

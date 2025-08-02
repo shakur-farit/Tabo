@@ -13,13 +13,13 @@ namespace Code.Meta.Features.Hud.AmmoHolder.Systems
 
 		protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context) =>
 			context.CreateCollector(GameMatcher.AllOf(
-					GameMatcher.Weapon,
+					GameMatcher.HeroWeapon,
 					GameMatcher.MagazineNotEmpty,
 					GameMatcher.MagazineSize)
 				.Added());
 
 		protected override bool Filter(GameEntity weapons) =>
-			weapons.isWeapon && weapons.hasMagazineSize && weapons.isMagazineNotEmpty;
+			weapons.isWeapon && weapons.isHeroWeapon && weapons.hasMagazineSize && weapons.isMagazineNotEmpty;
 
 		protected override void Execute(List<GameEntity> weapons)
 		{

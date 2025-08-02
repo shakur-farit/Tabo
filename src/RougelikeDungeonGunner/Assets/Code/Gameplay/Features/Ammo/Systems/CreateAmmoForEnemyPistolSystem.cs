@@ -4,11 +4,10 @@ using Code.Gameplay.Features.Ammo.Factory;
 using Code.Gameplay.Features.Ammo.Services;
 using Code.Gameplay.Features.Cooldowns;
 using Entitas;
-using UnityEngine;
 
 namespace Code.Gameplay.Features.Ammo.Systems
 {
-	public class CreateAmmoForHeroAutomaticPistolSystem : IExecuteSystem
+	public class CreateAmmoForEnemyPistolSystem : IExecuteSystem
 	{
 		private readonly List<GameEntity> _buffer = new(1);
 
@@ -16,17 +15,18 @@ namespace Code.Gameplay.Features.Ammo.Systems
 		private readonly IAmmoDirectionProvider _ammoDirectionProvider;
 		private readonly IGroup<GameEntity> _weapons;
 
-		public CreateAmmoForHeroAutomaticPistolSystem(
+		public CreateAmmoForEnemyPistolSystem(
 			GameContext game,
 			IAmmoFactory ammoFactory,
 			IAmmoDirectionProvider ammoDirectionProvider)
 		{
 			_ammoFactory = ammoFactory;
 			_ammoDirectionProvider = ammoDirectionProvider;
+			_ammoDirectionProvider = ammoDirectionProvider;
 
 			_weapons = game.GetGroup(GameMatcher
 				.AllOf(
-					GameMatcher.HeroAutomaticPistol,
+					GameMatcher.EnemyPistol,
 					GameMatcher.AmmoTypeId,
 					GameMatcher.MinPelletsDeviation,
 					GameMatcher.MaxPelletsDeviation,
@@ -34,7 +34,6 @@ namespace Code.Gameplay.Features.Ammo.Systems
 					GameMatcher.FirePositionTransform,
 					GameMatcher.WorldPosition,
 					GameMatcher.MagazineNotEmpty,
-					GameMatcher.CurrentAmmoCount,
 					GameMatcher.ClosestTargetPosition,
 					GameMatcher.Shooting,
 					GameMatcher.ReadyToShoot));
@@ -45,10 +44,10 @@ namespace Code.Gameplay.Features.Ammo.Systems
 			foreach (GameEntity weapon in _weapons.GetEntities(_buffer))
 			{
 				_ammoFactory
-						.CreateAmmo(weapon.AmmoTypeId, weapon.FirePositionTransform.position)
-						.AddProducerId(weapon.Id)
-						.ReplaceDirection(_ammoDirectionProvider.GetDirection(weapon))
-						.With(x => x.isMoving = true);
+					.CreateAmmo(weapon.AmmoTypeId, weapon.FirePositionTransform.position)
+					.AddProducerId(weapon.Id)
+					.ReplaceDirection(_ammoDirectionProvider.GetDirection(weapon))
+					.With(x => x.isMoving = true);
 
 				weapon
 					.With(x => x.isShot = true)

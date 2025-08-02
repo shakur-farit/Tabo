@@ -20,6 +20,7 @@ namespace Code.Gameplay.Features.Weapon
 			Add(systems.Create<SetInactiveTextOnLimitedAmmoSystem>());
 			
 			Add(systems.Create<FindClosestHeroTargetSystem>());
+			Add(systems.Create<FindClosestEnemyTargetSystem>());
 			Add(systems.Create<RotateHeroWeaponAlongClosestTargetSystem>());
 			Add(systems.Create<RotateEnemyWeaponAlongHeroSystem>());
 			Add(systems.Create<HeroWeaponDefaultRotateDirectionWithoutTargetSystem>());

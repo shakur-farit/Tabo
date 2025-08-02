@@ -19,7 +19,7 @@ namespace Code.Meta.Features.Hud.WeaponHolder.Systems
 				.Added());
 
 		protected override bool Filter(GameEntity weapons) =>
-			weapons.isWeapon && weapons.isInfinityAmmo;
+			weapons.isWeapon && weapons.isHeroWeapon && weapons.isInfinityAmmo;
 
 		protected override void Execute(List<GameEntity> weapons)
 		{

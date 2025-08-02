@@ -15,7 +15,6 @@ MonoBehaviour:
   TypeId: 4
   AmmoTypeId: 1
   PatternTypeId: 0
-  OwnerTypeId: 1
   ViewPrefab: {fileID: 3867516666948492017, guid: 69172fbde18e101418b3b1f7089f9a29, type: 3}
   Sprite: {fileID: 21300000, guid: a735f74a317b5f944929af56be472cb7, type: 3}
   FirePosition: {x: 0.9, y: 0.275}
@@ -38,12 +37,7 @@ MonoBehaviour:
   EffectSetups:
   - EffectTypeId: 1
     Value: 1
-  StatusSetups:
-  - StatusTypeId: 1
-    Value: 0
-    StatusDuration: 0
-    Period: 0
-    Radius: 0
+  StatusSetups: []
   AvailableUpgrades:
   - UpgradeType: 8
   - UpgradeType: 2

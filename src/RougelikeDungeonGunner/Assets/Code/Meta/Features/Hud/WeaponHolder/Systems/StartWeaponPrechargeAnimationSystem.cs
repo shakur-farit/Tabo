@@ -22,7 +22,7 @@ namespace Code.Meta.Features.Hud.WeaponHolder.Systems
 
 		protected override bool Filter(GameEntity weapons) =>
 			weapons.isWeapon && weapons.hasPrechargeTime && weapons.hasPrechargeTimeLeft && weapons.isReadyToShoot
-			&& weapons.isPrecharged == false;
+			&& weapons.isPrecharged && weapons.isHeroWeapon == false;
 
 		protected override void Execute(List<GameEntity> weapons)
 		{
