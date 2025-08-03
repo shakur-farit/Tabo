@@ -1,6 +1,7 @@
 ﻿using System;
 using Code.Gameplay.Features.Ammo.Factory;
 using Code.Gameplay.Features.TargetCollection;
+using Code.Gameplay.Features.Weapon.Configs;
 using UnityEngine;
 
 namespace Code.Gameplay.Features.Ammo.Services
@@ -12,25 +13,25 @@ namespace Code.Gameplay.Features.Ammo.Services
 		public AmmoSpawnPatternService(IAmmoFactory factory) => 
 			_factory = factory;
 
-		public void SpawnAmmoPattern(AmmoPatternTypeId patternType, AmmoTypeId ammoType,
+		public void SpawnAmmoPattern(AmmoPattern pattern, AmmoTypeId ammoType,
 			Vector3 origin, Vector3 forward, int producerId)
 		{
-			switch (patternType)
+			switch (pattern.PatternTypeId)
 			{
 				case AmmoPatternTypeId.Single:
 					CreateSingle(ammoType, origin, forward, producerId);
 					break;
 				case AmmoPatternTypeId.Circle:
-					CreateCircle(ammoType, origin, 8, forward, producerId);
+					CreateCircle(ammoType, origin, pattern.AmmoCount, forward, producerId, pattern.Raduis);
 					break;
 				case AmmoPatternTypeId.Triangle:
 					CreateTriangle(ammoType, origin, forward, producerId);
 					break;
 				case AmmoPatternTypeId.Star:
-					CreateStar(ammoType, origin, 12, producerId);
+					CreateStar(ammoType, origin, pattern.AmmoCount, producerId);
 					break;
 				default:
-					throw new ArgumentOutOfRangeException(nameof(patternType), $"Unsupported pattern type: {patternType}");
+					throw new ArgumentOutOfRangeException(nameof(pattern.PatternTypeId), $"Unsupported pattern type: {pattern.PatternTypeId}");
 			}
 		}
 
@@ -43,7 +44,7 @@ namespace Code.Gameplay.Features.Ammo.Services
 		}
 
 		private void CreateCircle(AmmoTypeId ammoType, Vector3 origin, int count, Vector3 forward, 
-			int producerId, float radius = 0.5f)
+			int producerId, float radius)
 		{
 			for (int i = 0; i < count; i++)
 			{

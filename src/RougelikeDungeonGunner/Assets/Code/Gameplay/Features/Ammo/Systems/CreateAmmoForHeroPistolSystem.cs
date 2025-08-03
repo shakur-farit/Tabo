@@ -29,7 +29,7 @@ namespace Code.Gameplay.Features.Ammo.Systems
 				.AllOf(
 					GameMatcher.HeroPistol,
 					GameMatcher.AmmoTypeId,
-					GameMatcher.AmmoPatternTypeId,
+					GameMatcher.AmmoPattern,
 					GameMatcher.MinPelletsDeviation,
 					GameMatcher.MaxPelletsDeviation,
 					GameMatcher.CooldownUp,
@@ -46,7 +46,7 @@ namespace Code.Gameplay.Features.Ammo.Systems
 			foreach (GameEntity weapon in _weapons.GetEntities(_buffer))
 			{
 				_spawnPatternService.SpawnAmmoPattern(
-					weapon.AmmoPatternTypeId, 
+					weapon.AmmoPattern, 
 					weapon.AmmoTypeId,
 					weapon.FirePositionTransform.position,
 					GetDirection(weapon), 

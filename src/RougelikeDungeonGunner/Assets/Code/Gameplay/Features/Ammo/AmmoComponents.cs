@@ -1,4 +1,4 @@
-﻿using Code.Gameplay.Features.Ammo.Factory;
+﻿using Code.Gameplay.Features.Weapon.Configs;
 using Entitas;
 
 namespace Code.Gameplay.Features.Ammo
@@ -14,7 +14,5 @@ namespace Code.Gameplay.Features.Ammo
 	[Game] public class LaserBolt : IComponent { }
 	[Game] public class RocketMissile : IComponent { }
 
-	[Game] public class AmmoPatternTypeIdComponent : IComponent { public AmmoPatternTypeId Value; }
-	[Game] public class AmmoCountInPattern : IComponent { public int Value; }
-	[Game] public class PatternRadius : IComponent { public float Value; }
+	[Game] public class AmmoPatternComponent : IComponent { public AmmoPattern Value; }
 }

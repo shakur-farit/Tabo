@@ -150,7 +150,7 @@ namespace Code.Gameplay.Features.Weapon.Factory
 					.AddId(_identifier.Next())
 					.AddWeaponTypeId(weaponTypeId)
 					.AddAmmoTypeId(config.AmmoTypeId)
-					.AddAmmoPatternTypeId(config.AmmoPattern.PatternTypeId)
+					.AddAmmoPattern(config.AmmoPattern)
 					.AddViewPrefab(config.ViewPrefab)
 					.AddViewParent(parent)
 					.AddWeaponOwnerId(ownerId)
@@ -166,10 +166,6 @@ namespace Code.Gameplay.Features.Weapon.Factory
 					.With(x => x.isReadyToCollectTargets = true)
 					.With(x => x.isMagazineNotEmpty = true)
 					.With(x => x.isReadyToShoot = true)
-					.With(x => x.AddAmmoCountInPattern(config.AmmoPattern.AmmoCount), 
-						when: config.AmmoPattern.PatternTypeId != AmmoPatternTypeId.Single)
-					.With(x => x.AddPatternRadius(config.AmmoPattern.Raduis),
-						when: config.AmmoPattern.PatternTypeId != AmmoPatternTypeId.Single)
 					.With(x => x.AddMultiPellet(config.Stats.PelletCount), when: config.Stats.PelletCount > 1)
 					.With(x => x.AddPrechargeTime(_statsProvider.GetPrechargingTime(config)),
 						when: _statsProvider.GetPrechargingTime(config) > 0)
