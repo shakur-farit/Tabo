@@ -10,10 +10,10 @@ namespace Code.Gameplay.Features.Ammo.Services
 		public AmmoDirectionProvider(IRandomService random) => 
 			_random = random;
 
-		public Vector3 GetDirection(GameEntity weapon)
+		public Vector3 GetDirection(float minPelletsDeviation, float maxPelletsDeviation, Vector3 direction)
 		{
-			float spreadAngle = _random.Range(weapon.MinPelletsDeviation, weapon.MaxPelletsDeviation);
-			return Quaternion.Euler(0, 0, spreadAngle) * weapon.FirePositionTransform.right;
+			float spreadAngle = _random.Range(minPelletsDeviation, maxPelletsDeviation);
+			return Quaternion.Euler(0, 0, spreadAngle) * direction;
 		}
 	}
 }

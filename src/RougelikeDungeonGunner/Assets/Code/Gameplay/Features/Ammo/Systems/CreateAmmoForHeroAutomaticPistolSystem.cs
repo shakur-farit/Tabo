@@ -47,7 +47,7 @@ namespace Code.Gameplay.Features.Ammo.Systems
 				_ammoFactory
 						.CreateAmmo(weapon.AmmoTypeId, weapon.FirePositionTransform.position)
 						.AddProducerId(weapon.Id)
-						.ReplaceDirection(_ammoDirectionProvider.GetDirection(weapon))
+						.ReplaceDirection(GetDirection(weapon))
 						.With(x => x.isMoving = true);
 
 				weapon
@@ -55,5 +55,13 @@ namespace Code.Gameplay.Features.Ammo.Systems
 					.PutOnCooldown(weapon.Cooldown);
 			}
 		}
+
+		private Vector3 GetDirection(GameEntity weapon) =>
+			_ammoDirectionProvider
+				.GetDirection(
+					weapon.MinPelletsDeviation,
+					weapon.MaxPelletsDeviation,
+					weapon.FirePositionTransform.right);
+
 	}
 }

@@ -12,16 +12,16 @@ namespace Code.Gameplay.Features.Ammo.Systems
 	{
 		private readonly List<GameEntity> _buffer = new(1);
 
-		private readonly IAmmoFactory _ammoFactory;
+		private readonly IAmmoSpawnPatternService _spawnPatternService;
 		private readonly IAmmoDirectionProvider _ammoDirectionProvider;
 		private readonly IGroup<GameEntity> _weapons;
 
 		public CreateAmmoForHeroPistolSystem(
 			GameContext game,
-			IAmmoFactory ammoFactory,
+			IAmmoSpawnPatternService spawnPatternService,
 			IAmmoDirectionProvider ammoDirectionProvider)
 		{
-			_ammoFactory = ammoFactory;
+			_spawnPatternService = spawnPatternService;
 			_ammoDirectionProvider = ammoDirectionProvider;
 			_ammoDirectionProvider = ammoDirectionProvider;
 
@@ -29,6 +29,7 @@ namespace Code.Gameplay.Features.Ammo.Systems
 				.AllOf(
 					GameMatcher.HeroPistol,
 					GameMatcher.AmmoTypeId,
+					GameMatcher.AmmoPatternTypeId,
 					GameMatcher.MinPelletsDeviation,
 					GameMatcher.MaxPelletsDeviation,
 					GameMatcher.CooldownUp,
@@ -44,16 +45,24 @@ namespace Code.Gameplay.Features.Ammo.Systems
 		{
 			foreach (GameEntity weapon in _weapons.GetEntities(_buffer))
 			{
-				_ammoFactory
-					.CreateAmmo(weapon.AmmoTypeId, weapon.FirePositionTransform.position)
-					.AddProducerId(weapon.Id)
-					.ReplaceDirection(_ammoDirectionProvider.GetDirection(weapon))
-					.With(x => x.isMoving = true);
+				_spawnPatternService.SpawnAmmoPattern(
+					weapon.AmmoPatternTypeId, 
+					weapon.AmmoTypeId,
+					weapon.FirePositionTransform.position,
+					GetDirection(weapon), 
+					weapon.Id);
 
 				weapon
 					.With(x => x.isShot = true)
 					.PutOnCooldown(weapon.Cooldown);
 			}
 		}
+
+		private Vector3 GetDirection(GameEntity weapon) => 
+			_ammoDirectionProvider
+				.GetDirection(
+					weapon.MinPelletsDeviation, 
+					weapon.MaxPelletsDeviation, 
+					weapon.FirePositionTransform.right);
 	}
 }

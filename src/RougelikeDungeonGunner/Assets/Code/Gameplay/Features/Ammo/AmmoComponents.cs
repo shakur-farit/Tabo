@@ -4,9 +4,7 @@ using Entitas;
 namespace Code.Gameplay.Features.Ammo
 {
 	[Game] public class Ammo : IComponent { }
-
 	[Game] public class AmmoTypeIdComponent : IComponent { public AmmoTypeId Value; }
-	[Game] public class AmmoPatternTypeIdComponent : IComponent { public AmmoPatternTypeId Value; }
 	[Game] public class TargetLimit : IComponent { public int Value; }
 
 	[Game] public class LightBullet : IComponent { }
@@ -15,4 +13,8 @@ namespace Code.Gameplay.Features.Ammo
 	[Game] public class LongRangeBullet : IComponent { }
 	[Game] public class LaserBolt : IComponent { }
 	[Game] public class RocketMissile : IComponent { }
+
+	[Game] public class AmmoPatternTypeIdComponent : IComponent { public AmmoPatternTypeId Value; }
+	[Game] public class AmmoCountInPattern : IComponent { public int Value; }
+	[Game] public class PatternRadius : IComponent { public float Value; }
 }

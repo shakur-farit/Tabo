@@ -17,7 +17,7 @@ namespace Code.Gameplay.Features.Weapon.Configs
 	{
 		public WeaponTypeId TypeId;
 		public AmmoTypeId AmmoTypeId;
-		public AmmoPatternTypeId PatternTypeId;
+		public AmmoPattern AmmoPattern;
 		public EntityBehaviour ViewPrefab;
 		public Sprite Sprite;
 		public Vector2 FirePosition;
@@ -60,5 +60,13 @@ namespace Code.Gameplay.Features.Weapon.Configs
 	public class WeaponStatUIEntry
 	{
 		public WeaponStatUIEntryTypeId StatUIEntryType;
+	}
+
+	[Serializable]
+	public class AmmoPattern
+	{
+		public AmmoPatternTypeId PatternTypeId;
+		public int AmmoCount;
+		public float Raduis;
 	}
 }

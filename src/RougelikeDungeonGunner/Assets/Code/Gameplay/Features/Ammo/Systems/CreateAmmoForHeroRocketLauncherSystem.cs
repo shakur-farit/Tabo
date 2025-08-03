@@ -4,6 +4,7 @@ using Code.Gameplay.Features.Ammo.Factory;
 using Code.Gameplay.Features.Ammo.Services;
 using Code.Gameplay.Features.Cooldowns;
 using Entitas;
+using UnityEngine;
 
 namespace Code.Gameplay.Features.Ammo.Systems
 {
@@ -44,7 +45,7 @@ namespace Code.Gameplay.Features.Ammo.Systems
 				_ammoFactory
 					.CreateAmmo(AmmoTypeId.RocketMissile, weapon.FirePositionTransform.position)
 					.AddProducerId(weapon.Id)
-					.ReplaceDirection(_ammoDirectionProvider.GetDirection(weapon))
+					.ReplaceDirection(GetDirection(weapon))
 					.With(x => x.isMoving = true);
 
 				weapon
@@ -52,5 +53,13 @@ namespace Code.Gameplay.Features.Ammo.Systems
 					.PutOnCooldown(weapon.Cooldown);
 			}
 		}
+
+		private Vector3 GetDirection(GameEntity weapon) =>
+			_ammoDirectionProvider
+				.GetDirection(
+					weapon.MinPelletsDeviation,
+					weapon.MaxPelletsDeviation,
+					weapon.FirePositionTransform.right);
+
 	}
 }

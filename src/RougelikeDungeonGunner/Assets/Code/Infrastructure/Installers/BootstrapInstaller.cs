@@ -123,6 +123,7 @@ namespace Code.Infrastructure.Installers
 			Container.Bind<IAmmoDirectionProvider>().To<AmmoDirectionProvider>().AsSingle();
 			Container.Bind<IEnemySpawnPositionProvider>().To<EnemySpawnPositionProvider>().AsSingle();
 			Container.BindInterfacesAndSelfTo<AStarPathfinder>().AsSingle();
+			Container.Bind<IAmmoSpawnPatternService>().To<AmmoSpawnPatternService>().AsSingle();
 		}
 
 		private void BindGameplayFactories()
