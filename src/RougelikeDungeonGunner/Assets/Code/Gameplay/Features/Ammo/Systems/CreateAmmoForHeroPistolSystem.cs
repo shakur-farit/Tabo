@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Code.Common.Entity;
 using Code.Common.Extensions;
 using Code.Gameplay.Features.Ammo.Services;
 using Code.Gameplay.Features.Cooldowns;
@@ -9,19 +10,18 @@ namespace Code.Gameplay.Features.Ammo.Systems
 {
 	public class CreateAmmoForHeroPistolSystem : IExecuteSystem
 	{
+		private readonly IAmmoPatternFactory _patternFactory;
 		private readonly List<GameEntity> _buffer = new(1);
 
-		private readonly IAmmoSpawnPatternService _spawnPatternService;
 		private readonly IAmmoDirectionProvider _ammoDirectionProvider;
 		private readonly IGroup<GameEntity> _weapons;
 
 		public CreateAmmoForHeroPistolSystem(
 			GameContext game,
-			IAmmoSpawnPatternService spawnPatternService,
+			IAmmoPatternFactory patternFactory,
 			IAmmoDirectionProvider ammoDirectionProvider)
 		{
-			_spawnPatternService = spawnPatternService;
-			_ammoDirectionProvider = ammoDirectionProvider;
+			_patternFactory = patternFactory;
 			_ammoDirectionProvider = ammoDirectionProvider;
 
 			_weapons = game.GetGroup(GameMatcher
@@ -44,12 +44,8 @@ namespace Code.Gameplay.Features.Ammo.Systems
 		{
 			foreach (GameEntity weapon in _weapons.GetEntities(_buffer))
 			{
-				_spawnPatternService.SpawnAmmoPattern(
-					weapon.AmmoPatternSetup, 
-					weapon.AmmoTypeId,
-					weapon.FirePositionTransform.position,
-					GetDirection(weapon), 
-					weapon.Id);
+				_patternFactory.CreatePattern(weapon.AmmoPatternSetup, weapon.AmmoTypeId,
+					weapon.FirePositionTransform.position, GetDirection(weapon));
 
 				weapon
 					.With(x => x.isShot = true)

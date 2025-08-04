@@ -4,6 +4,7 @@ using Code.Gameplay.Common.Collisions;
 using Code.Gameplay.Common.Physics;
 using Code.Gameplay.Common.Random;
 using Code.Gameplay.Common.Time;
+using Code.Gameplay.Features.Ammo;
 using Code.Gameplay.Features.Ammo.Factory;
 using Code.Gameplay.Features.Ammo.Services;
 using Code.Gameplay.Features.AStar.Services;
@@ -139,6 +140,7 @@ namespace Code.Infrastructure.Installers
 			Container.Bind<IDungeonFactory>().To<DungeonFactory>().AsSingle();
 			Container.Bind<ILootFactory>().To<LootFactory>().AsSingle();
 			Container.Bind<IEnchantFactory>().To<EnchantFactory>().AsSingle();
+			Container.Bind<IAmmoPatternFactory>().To<AmmoPatternFactory>().AsSingle();
 		}
 
 		private void BindUIFactories()
