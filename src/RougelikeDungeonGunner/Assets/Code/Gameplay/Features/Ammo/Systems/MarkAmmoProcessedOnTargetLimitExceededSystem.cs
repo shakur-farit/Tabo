@@ -22,12 +22,8 @@ namespace Code.Gameplay.Features.Ammo.Systems
 		{
 			foreach (GameEntity ammo in _ammo.GetEntities(_buffer))
 			{
-				if (ammo.ProcessedTargets.Count >= ammo.TargetLimit)
-				{
-					Debug.Log("MarkedProcesed" + ammo.ProcessedTargets.Count);
-
+				if (ammo.ProcessedTargets.Count >= ammo.TargetLimit) 
 					ammo.isProcessed = true;
-				}
 			}
 		}
 	}

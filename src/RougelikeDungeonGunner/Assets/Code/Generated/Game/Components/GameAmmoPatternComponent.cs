@@ -33,28 +33,24 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Features.Ammo.AmmoPatternComponent ammoPattern { get { return (Code.Gameplay.Features.Ammo.AmmoPatternComponent)GetComponent(GameComponentsLookup.AmmoPattern); } }
-    public Code.Gameplay.Features.Weapon.Configs.AmmoPattern AmmoPattern { get { return ammoPattern.Value; } }
-    public bool hasAmmoPattern { get { return HasComponent(GameComponentsLookup.AmmoPattern); } }
+    static readonly Code.Gameplay.Features.Ammo.AmmoPattern ammoPatternComponent = new Code.Gameplay.Features.Ammo.AmmoPattern();
 
-    public GameEntity AddAmmoPattern(Code.Gameplay.Features.Weapon.Configs.AmmoPattern newValue) {
-        var index = GameComponentsLookup.AmmoPattern;
-        var component = (Code.Gameplay.Features.Ammo.AmmoPatternComponent)CreateComponent(index, typeof(Code.Gameplay.Features.Ammo.AmmoPatternComponent));
-        component.Value = newValue;
-        AddComponent(index, component);
-        return this;
-    }
+    public bool isAmmoPattern {
+        get { return HasComponent(GameComponentsLookup.AmmoPattern); }
+        set {
+            if (value != isAmmoPattern) {
+                var index = GameComponentsLookup.AmmoPattern;
+                if (value) {
+                    var componentPool = GetComponentPool(index);
+                    var component = componentPool.Count > 0
+                            ? componentPool.Pop()
+                            : ammoPatternComponent;
 
-    public GameEntity ReplaceAmmoPattern(Code.Gameplay.Features.Weapon.Configs.AmmoPattern newValue) {
-        var index = GameComponentsLookup.AmmoPattern;
-        var component = (Code.Gameplay.Features.Ammo.AmmoPatternComponent)CreateComponent(index, typeof(Code.Gameplay.Features.Ammo.AmmoPatternComponent));
-        component.Value = newValue;
-        ReplaceComponent(index, component);
-        return this;
-    }
-
-    public GameEntity RemoveAmmoPattern() {
-        RemoveComponent(GameComponentsLookup.AmmoPattern);
-        return this;
+                    AddComponent(index, component);
+                } else {
+                    RemoveComponent(index);
+                }
+            }
+        }
     }
 }

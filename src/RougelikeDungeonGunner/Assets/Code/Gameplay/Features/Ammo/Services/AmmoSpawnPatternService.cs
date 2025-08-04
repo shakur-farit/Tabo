@@ -1,6 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using Code.Common.Entity;
 using Code.Gameplay.Features.Ammo.Factory;
-using Code.Gameplay.Features.TargetCollection;
 using Code.Gameplay.Features.Weapon.Configs;
 using UnityEngine;
 
@@ -13,37 +14,37 @@ namespace Code.Gameplay.Features.Ammo.Services
 		public AmmoSpawnPatternService(IAmmoFactory factory) => 
 			_factory = factory;
 
-		public void SpawnAmmoPattern(AmmoPattern pattern, AmmoTypeId ammoType,
+		public void SpawnAmmoPattern(AmmoPatternSetup patternSetup, AmmoTypeId ammoType,
 			Vector3 origin, Vector3 forward, int producerId)
 		{
-			switch (pattern.PatternTypeId)
+			switch (patternSetup.PatternTypeId)
 			{
 				case AmmoPatternTypeId.Single:
 					CreateSingle(ammoType, origin, forward, producerId);
 					break;
 				case AmmoPatternTypeId.Circle:
-					CreateCircle(ammoType, origin, pattern.AmmoCount, forward, producerId, pattern.Raduis);
+					CreateCircle(ammoType, origin, forward, patternSetup.AmmoCount, producerId, patternSetup.Raduis);
 					break;
 				case AmmoPatternTypeId.Triangle:
-					CreateTriangle(ammoType, origin, forward, producerId);
+					CreateTriangle(ammoType, origin, forward, patternSetup.AmmoCount, producerId, patternSetup.Raduis);
 					break;
 				case AmmoPatternTypeId.Star:
-					CreateStar(ammoType, origin, pattern.AmmoCount, producerId);
+					CreateStar(patternSetup, ammoType, origin, forward, producerId);
 					break;
 				default:
-					throw new ArgumentOutOfRangeException(nameof(pattern.PatternTypeId), $"Unsupported pattern type: {pattern.PatternTypeId}");
+					throw new ArgumentOutOfRangeException(nameof(patternSetup.PatternTypeId), $"Unsupported pattern type: {patternSetup.PatternTypeId}");
 			}
 		}
 
 		private void CreateSingle(AmmoTypeId ammoType, Vector3 origin, Vector3 forward, int producerId)
 		{
-			var ammo = _factory.CreateAmmo(ammoType, origin);
-			ammo.ReplaceDirection(forward);
+			GameEntity ammo = _factory.CreateAmmo(ammoType, origin);
+			ammo.ReplaceDirection(forward.normalized);
 			ammo.AddProducerId(producerId);
 			ammo.isMoving = true;
 		}
 
-		private void CreateCircle(AmmoTypeId ammoType, Vector3 origin, int count, Vector3 forward, 
+		private void CreateCircle(AmmoTypeId ammoType, Vector3 origin, Vector3 forward, int count, 
 			int producerId, float radius)
 		{
 			for (int i = 0; i < count; i++)
@@ -54,43 +55,87 @@ namespace Code.Gameplay.Features.Ammo.Services
 
 				Vector3 spawnPosition = origin + offset;
 
-				var ammo = _factory.CreateAmmo(ammoType, spawnPosition);
+				GameEntity ammo = _factory.CreateAmmo(ammoType, spawnPosition);
 				ammo.ReplaceDirection(forward.normalized);
 				ammo.AddProducerId(producerId);
 				ammo.isMoving = true;
 			}
 		}
-
-		private void CreateTriangle(AmmoTypeId ammoType, Vector3 origin, Vector3 forward, int producerId)
+		
+		private void CreateTriangle(AmmoTypeId ammoType, Vector3 origin, Vector3 forward, int count,
+			int producerId, float radius)
 		{
-			Vector3[] dirs = new[]
+			Vector3[] vertices = new Vector3[3];
+			
+			for (int i = 0; i < 3; i++)
 			{
-				Quaternion.Euler(0, 0, -15f) * forward,
-				forward,
-				Quaternion.Euler(0, 0, 15f) * forward
-			};
-
-			foreach (var dir in dirs)
-			{
-				var ammo = _factory.CreateAmmo(ammoType, origin);
-				ammo.ReplaceDirection(dir.normalized);
-				ammo.AddProducerId(producerId);
-				ammo.isMoving = true;
+				float angle = 120f * i - 90f;
+				Vector3 dir = Quaternion.Euler(0, 0, angle) * Vector3.up;
+				vertices[i] = origin + dir * radius;
 			}
-		}
 
-		private void CreateStar(AmmoTypeId ammoType, Vector3 origin, int count, int producerId)
-		{
+			float sideLength = Vector3.Distance(vertices[0], vertices[1]);
+			float perimeter = sideLength * 3;
+
+			float spacing = perimeter / count;
+
 			for (int i = 0; i < count; i++)
 			{
-				float angle = (360f / count) * i;
-				Vector3 dir = Quaternion.Euler(0, 0, angle) * Vector3.right;
+				float distanceAlongPerimeter = spacing * i;
 
-				var ammo = _factory.CreateAmmo(ammoType, origin);
-				ammo.ReplaceDirection(dir.normalized);
+				int sideIndex = (int)(distanceAlongPerimeter / sideLength);
+				float sidePos = (distanceAlongPerimeter % sideLength) / sideLength;
+
+				Vector3 spawnPos = Vector3.Lerp(vertices[sideIndex], vertices[(sideIndex + 1) % 3], sidePos);
+
+				GameEntity ammo = _factory.CreateAmmo(ammoType, spawnPos);
+				ammo.ReplaceDirection(forward.normalized);
 				ammo.AddProducerId(producerId);
 				ammo.isMoving = true;
 			}
+
+		}
+
+		private void CreateStar(AmmoPatternSetup setup, AmmoTypeId ammoType, 
+			Vector3 origin, Vector3 forward,	int producerId)
+		{
+			int branches = 6;
+			List<Transform> transforms = new();
+
+			for (int b = 0; b < branches; b++)
+			{
+				float baseAngle = (360f / branches) * b;
+				Vector3 branchDir = Quaternion.Euler(0, 0, baseAngle) * Vector3.right;
+
+				for (int p = 0; p < setup.AmmoCount; p++)
+				{
+					float t = (float)p / (setup.AmmoCount - 1);
+					float maxRadius = t * setup.Raduis;
+					float waveOffset = Mathf.Sin(t * Mathf.PI * setup.AmmoCount) * (setup.Raduis * 0.1f);
+
+					Vector3 offset = branchDir * (maxRadius + waveOffset);
+					Vector3 spawnPos = origin + offset;
+
+					GameEntity ammo = _factory.CreateAmmo(ammoType, spawnPos);
+					ammo.ReplaceDirection(forward.normalized);
+					ammo.AddProducerId(producerId);
+					ammo.isMoving = true;
+
+					transforms.Add(ammo.Transform);
+				}
+			}
+
+			//CreateAmmoPattern(transforms, setup, origin);
+		}
+
+		private void CreateAmmoPattern(List<Transform> transformsList, AmmoPatternSetup setup, Vector2 center)
+		{
+			CreateEntity.Empty()
+				.AddAmmoTransformsList(transformsList)
+				.AddRotateRadius(setup.Raduis)
+				.AddRotateSpeed(setup.RotateSpeed)
+				.AddPatternCenter(center)
+				;
 		}
 	}
 }

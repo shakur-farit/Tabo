@@ -9,6 +9,7 @@ using Code.Infrastructure.View;
 using Code.Meta.Features.Shop.Upgrade;
 using Code.Meta.Features.Shop.WeaponStatUIEntry;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Code.Gameplay.Features.Weapon.Configs
 {
@@ -17,7 +18,7 @@ namespace Code.Gameplay.Features.Weapon.Configs
 	{
 		public WeaponTypeId TypeId;
 		public AmmoTypeId AmmoTypeId;
-		public AmmoPattern AmmoPattern;
+		public AmmoPatternSetup AmmoPatternSetup;
 		public EntityBehaviour ViewPrefab;
 		public Sprite Sprite;
 		public Vector2 FirePosition;
@@ -63,10 +64,11 @@ namespace Code.Gameplay.Features.Weapon.Configs
 	}
 
 	[Serializable]
-	public class AmmoPattern
+	public class AmmoPatternSetup
 	{
 		public AmmoPatternTypeId PatternTypeId;
-		public int AmmoCount;
-		public float Raduis;
+		[Range(1, 50)] public int AmmoCount;
+		[Range(0.1f, 10f)] public float Raduis;
+		[Range(0f, 10f)] public float RotateSpeed;
 	}
 }

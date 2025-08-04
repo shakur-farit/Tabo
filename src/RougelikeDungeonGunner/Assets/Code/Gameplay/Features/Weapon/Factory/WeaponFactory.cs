@@ -1,10 +1,10 @@
 ﻿using Code.Common.Entity;
 using Code.Common.Extensions;
-using Code.Gameplay.Features.Cooldowns;
 using Code.Gameplay.StaticData;
 using Code.Infrastructure.Identifiers;
 using System;
 using Code.Gameplay.Features.Ammo.Factory;
+using Code.Gameplay.Features.Cooldowns;
 using Code.Gameplay.Features.Weapon.Configs;
 using Code.Meta.Features.Shop.Upgrade.Services;
 using UnityEngine;
@@ -150,7 +150,7 @@ namespace Code.Gameplay.Features.Weapon.Factory
 					.AddId(_identifier.Next())
 					.AddWeaponTypeId(weaponTypeId)
 					.AddAmmoTypeId(config.AmmoTypeId)
-					.AddAmmoPattern(config.AmmoPattern)
+					.AddAmmoPatternSetup(config.AmmoPatternSetup)
 					.AddViewPrefab(config.ViewPrefab)
 					.AddViewParent(parent)
 					.AddWeaponOwnerId(ownerId)
