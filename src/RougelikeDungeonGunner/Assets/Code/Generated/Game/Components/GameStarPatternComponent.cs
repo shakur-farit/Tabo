@@ -33,7 +33,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Ammo.StarPattern starPatternComponent = new Code.Gameplay.Features.Ammo.StarPattern();
+    static readonly Code.Gameplay.Features.AmmoPattern.StarPattern starPatternComponent = new Code.Gameplay.Features.AmmoPattern.StarPattern();
 
     public bool isStarPattern {
         get { return HasComponent(GameComponentsLookup.StarPattern); }

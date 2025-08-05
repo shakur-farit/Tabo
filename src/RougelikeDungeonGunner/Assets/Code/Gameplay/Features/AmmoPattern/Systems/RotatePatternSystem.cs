@@ -1,10 +1,8 @@
 ﻿using Code.Gameplay.Common.Time;
-using Code.Gameplay.Features.Effects;
 using Entitas;
 using UnityEngine;
-using static UnityEngine.UI.Image;
 
-namespace Code.Gameplay.Features.Ammo
+namespace Code.Gameplay.Features.AmmoPattern.Systems
 {
 	public class RotatePatternSystem : IExecuteSystem
 	{
@@ -19,8 +17,8 @@ namespace Code.Gameplay.Features.Ammo
 					GameMatcher.AmmoPattern,
 					GameMatcher.AmmoTransformsList,
 					GameMatcher.PatternCenter,
-					GameMatcher.RotateSpeed,
-					GameMatcher.RotateRadius));
+					GameMatcher.PatternRotateSpeed,
+					GameMatcher.PatternRadius));
 		}
 
 		public void Execute()
@@ -28,14 +26,14 @@ namespace Code.Gameplay.Features.Ammo
 			foreach (GameEntity pattern in _patterns)
 			{
 				float angleStep = 360f / pattern.AmmoTransformsList.Count;
-				float baseAngle = pattern.RotateSpeed * _time.DeltaTime;
+				float baseAngle = pattern.PatternRotateSpeed * _time.DeltaTime;
 
 				for (int i = 0; i < pattern.AmmoTransformsList.Count; i++)
 				{
 					float angle = baseAngle + angleStep * i;
 					float rad = angle * Mathf.Deg2Rad;
 
-					Vector3 offset = new Vector3(Mathf.Cos(rad), Mathf.Sin(rad), 0f) * pattern.RotateRadius;
+					Vector3 offset = new Vector3(Mathf.Cos(rad), Mathf.Sin(rad), 0f) * pattern.PatternRadius;
 					pattern.AmmoTransformsList[i].position = pattern.PatternCenter + offset;
 				}
 			}

@@ -1,5 +1,6 @@
 ﻿using Code.Common;
 using Code.Gameplay.Features.Ammo;
+using Code.Gameplay.Features.AmmoPattern;
 using Code.Gameplay.Features.AStar;
 using Code.Gameplay.Features.CharacterStats;
 using Code.Gameplay.Features.Dungeon;
@@ -40,8 +41,8 @@ namespace Code.Gameplay
 
 			Add(systems.Create<MovementFeature>());
 			Add(systems.Create<WeaponFeature>());
+			Add(systems.Create<AmmoPatternFeature>());
 			Add(systems.Create<AmmoFeature>());
-			Add(systems.Create<AmmoPattersFeature>());
 
 			Add(systems.Create<CollectTargetsFeature>());
 			Add(systems.Create<EffectApplicationFeature>());

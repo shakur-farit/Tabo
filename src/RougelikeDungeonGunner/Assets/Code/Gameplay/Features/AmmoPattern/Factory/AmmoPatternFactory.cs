@@ -1,13 +1,20 @@
 ﻿using System;
 using Code.Common.Entity;
 using Code.Common.Extensions;
+using Code.Gameplay.Features.Ammo;
 using Code.Gameplay.Features.Weapon.Configs;
+using Code.Infrastructure.Identifiers;
 using UnityEngine;
 
-namespace Code.Gameplay.Features.Ammo
+namespace Code.Gameplay.Features.AmmoPattern.Factory
 {
 	public class AmmoPatternFactory : IAmmoPatternFactory
 	{
+		private readonly IIdentifierService _identifier;
+
+		public AmmoPatternFactory(IIdentifierService identifier) => 
+			_identifier = identifier;
+
 		public GameEntity CreatePattern(AmmoPatternSetup patternSetup, AmmoTypeId ammoType,
 			Vector3 origin, Vector3 forward)
 		{
@@ -44,13 +51,16 @@ namespace Code.Gameplay.Features.Ammo
 
 		private GameEntity CreatePatternEntity(AmmoPatternSetup ammoPatternSetup, AmmoTypeId ammoTypeId, Vector3 origin, Vector3 forward) =>
 			CreateEntity.Empty()
+				.AddId(_identifier.Next())
 				.AddAmmoPatternSetup(ammoPatternSetup)
 				.AddAmmoTypeId(ammoTypeId)
 				.AddPatternCenter(origin)
 				.AddDirection(forward)
 				.AddPatternAmmoCount(ammoPatternSetup.AmmoCount)
-				.AddRotateRadius(ammoPatternSetup.Raduis)
-				.AddRotateSpeed(ammoPatternSetup.RotateSpeed)
-				.With(x => x.isAmmoPattern = true);
+				.AddPatternRadius(ammoPatternSetup.Raduis)
+				.AddPatternRotateSpeed(ammoPatternSetup.RotateSpeed)
+				.AddAmmoTransformsList(new())
+				.With(x => x.isAmmoPattern = true)
+				.With(x => x.isPatternEmpty = true);
 	}
 }

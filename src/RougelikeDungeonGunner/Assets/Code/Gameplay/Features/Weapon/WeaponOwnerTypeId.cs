@@ -1,4 +1,4 @@
-﻿namespace Code.Gameplay.Features.Ammo.Factory
+﻿namespace Code.Gameplay.Features.Weapon
 {
 	public enum WeaponOwnerTypeId
 	{

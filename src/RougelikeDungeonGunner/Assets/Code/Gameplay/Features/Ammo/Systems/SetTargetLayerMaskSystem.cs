@@ -1,5 +1,6 @@
 ﻿using Code.Common.Extensions;
 using Code.Gameplay.Features.Ammo.Factory;
+using Code.Gameplay.Features.Weapon;
 using Entitas;
 using UnityEngine;
 

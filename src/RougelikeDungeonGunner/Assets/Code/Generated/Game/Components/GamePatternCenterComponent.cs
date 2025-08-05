@@ -33,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Features.Ammo.PatternCenter patternCenter { get { return (Code.Gameplay.Features.Ammo.PatternCenter)GetComponent(GameComponentsLookup.PatternCenter); } }
+    public Code.Gameplay.Features.AmmoPattern.PatternCenter patternCenter { get { return (Code.Gameplay.Features.AmmoPattern.PatternCenter)GetComponent(GameComponentsLookup.PatternCenter); } }
     public UnityEngine.Vector3 PatternCenter { get { return patternCenter.Value; } }
     public bool hasPatternCenter { get { return HasComponent(GameComponentsLookup.PatternCenter); } }
 
     public GameEntity AddPatternCenter(UnityEngine.Vector3 newValue) {
         var index = GameComponentsLookup.PatternCenter;
-        var component = (Code.Gameplay.Features.Ammo.PatternCenter)CreateComponent(index, typeof(Code.Gameplay.Features.Ammo.PatternCenter));
+        var component = (Code.Gameplay.Features.AmmoPattern.PatternCenter)CreateComponent(index, typeof(Code.Gameplay.Features.AmmoPattern.PatternCenter));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplacePatternCenter(UnityEngine.Vector3 newValue) {
         var index = GameComponentsLookup.PatternCenter;
-        var component = (Code.Gameplay.Features.Ammo.PatternCenter)CreateComponent(index, typeof(Code.Gameplay.Features.Ammo.PatternCenter));
+        var component = (Code.Gameplay.Features.AmmoPattern.PatternCenter)CreateComponent(index, typeof(Code.Gameplay.Features.AmmoPattern.PatternCenter));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

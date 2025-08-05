@@ -7,6 +7,7 @@ using Code.Gameplay.Common.Time;
 using Code.Gameplay.Features.Ammo;
 using Code.Gameplay.Features.Ammo.Factory;
 using Code.Gameplay.Features.Ammo.Services;
+using Code.Gameplay.Features.AmmoPattern.Factory;
 using Code.Gameplay.Features.AStar.Services;
 using Code.Gameplay.Features.Dungeon.Factory;
 using Code.Gameplay.Features.Effects.Factory;
@@ -124,7 +125,6 @@ namespace Code.Infrastructure.Installers
 			Container.Bind<IAmmoDirectionProvider>().To<AmmoDirectionProvider>().AsSingle();
 			Container.Bind<IEnemySpawnPositionProvider>().To<EnemySpawnPositionProvider>().AsSingle();
 			Container.BindInterfacesAndSelfTo<AStarPathfinder>().AsSingle();
-			Container.Bind<IAmmoSpawnPatternService>().To<AmmoSpawnPatternService>().AsSingle();
 		}
 
 		private void BindGameplayFactories()

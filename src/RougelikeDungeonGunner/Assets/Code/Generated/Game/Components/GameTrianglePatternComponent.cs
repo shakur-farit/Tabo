@@ -33,7 +33,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Ammo.TrianglePattern trianglePatternComponent = new Code.Gameplay.Features.Ammo.TrianglePattern();
+    static readonly Code.Gameplay.Features.AmmoPattern.TrianglePattern trianglePatternComponent = new Code.Gameplay.Features.AmmoPattern.TrianglePattern();
 
     public bool isTrianglePattern {
         get { return HasComponent(GameComponentsLookup.TrianglePattern); }

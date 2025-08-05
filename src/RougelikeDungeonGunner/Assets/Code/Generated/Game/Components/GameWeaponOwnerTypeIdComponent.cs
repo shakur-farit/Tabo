@@ -34,10 +34,10 @@ public sealed partial class GameMatcher {
 public partial class GameEntity {
 
     public Code.Gameplay.Features.Weapon.WeaponOwnerTypeIdComponent weaponOwnerTypeId { get { return (Code.Gameplay.Features.Weapon.WeaponOwnerTypeIdComponent)GetComponent(GameComponentsLookup.WeaponOwnerTypeId); } }
-    public Code.Gameplay.Features.Ammo.Factory.WeaponOwnerTypeId WeaponOwnerTypeId { get { return weaponOwnerTypeId.Value; } }
+    public Code.Gameplay.Features.Weapon.WeaponOwnerTypeId WeaponOwnerTypeId { get { return weaponOwnerTypeId.Value; } }
     public bool hasWeaponOwnerTypeId { get { return HasComponent(GameComponentsLookup.WeaponOwnerTypeId); } }
 
-    public GameEntity AddWeaponOwnerTypeId(Code.Gameplay.Features.Ammo.Factory.WeaponOwnerTypeId newValue) {
+    public GameEntity AddWeaponOwnerTypeId(Code.Gameplay.Features.Weapon.WeaponOwnerTypeId newValue) {
         var index = GameComponentsLookup.WeaponOwnerTypeId;
         var component = (Code.Gameplay.Features.Weapon.WeaponOwnerTypeIdComponent)CreateComponent(index, typeof(Code.Gameplay.Features.Weapon.WeaponOwnerTypeIdComponent));
         component.Value = newValue;
@@ -45,7 +45,7 @@ public partial class GameEntity {
         return this;
     }
 
-    public GameEntity ReplaceWeaponOwnerTypeId(Code.Gameplay.Features.Ammo.Factory.WeaponOwnerTypeId newValue) {
+    public GameEntity ReplaceWeaponOwnerTypeId(Code.Gameplay.Features.Weapon.WeaponOwnerTypeId newValue) {
         var index = GameComponentsLookup.WeaponOwnerTypeId;
         var component = (Code.Gameplay.Features.Weapon.WeaponOwnerTypeIdComponent)CreateComponent(index, typeof(Code.Gameplay.Features.Weapon.WeaponOwnerTypeIdComponent));
         component.Value = newValue;

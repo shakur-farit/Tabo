@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Code.Gameplay.Features.Ammo;
 using Code.Gameplay.Features.Ammo.Factory;
+using Code.Gameplay.Features.AmmoPattern;
 using Code.Gameplay.Features.Effects;
 using Code.Gameplay.Features.Statuses;
 using Code.Gameplay.Features.TargetCollection;

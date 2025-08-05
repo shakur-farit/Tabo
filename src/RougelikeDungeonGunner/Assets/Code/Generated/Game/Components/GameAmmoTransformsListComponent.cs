@@ -33,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Features.Ammo.AmmoTransformsList ammoTransformsList { get { return (Code.Gameplay.Features.Ammo.AmmoTransformsList)GetComponent(GameComponentsLookup.AmmoTransformsList); } }
+    public Code.Gameplay.Features.AmmoPattern.AmmoTransformsList ammoTransformsList { get { return (Code.Gameplay.Features.AmmoPattern.AmmoTransformsList)GetComponent(GameComponentsLookup.AmmoTransformsList); } }
     public System.Collections.Generic.List<UnityEngine.Transform> AmmoTransformsList { get { return ammoTransformsList.Value; } }
     public bool hasAmmoTransformsList { get { return HasComponent(GameComponentsLookup.AmmoTransformsList); } }
 
     public GameEntity AddAmmoTransformsList(System.Collections.Generic.List<UnityEngine.Transform> newValue) {
         var index = GameComponentsLookup.AmmoTransformsList;
-        var component = (Code.Gameplay.Features.Ammo.AmmoTransformsList)CreateComponent(index, typeof(Code.Gameplay.Features.Ammo.AmmoTransformsList));
+        var component = (Code.Gameplay.Features.AmmoPattern.AmmoTransformsList)CreateComponent(index, typeof(Code.Gameplay.Features.AmmoPattern.AmmoTransformsList));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceAmmoTransformsList(System.Collections.Generic.List<UnityEngine.Transform> newValue) {
         var index = GameComponentsLookup.AmmoTransformsList;
-        var component = (Code.Gameplay.Features.Ammo.AmmoTransformsList)CreateComponent(index, typeof(Code.Gameplay.Features.Ammo.AmmoTransformsList));
+        var component = (Code.Gameplay.Features.AmmoPattern.AmmoTransformsList)CreateComponent(index, typeof(Code.Gameplay.Features.AmmoPattern.AmmoTransformsList));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;
