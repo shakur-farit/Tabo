@@ -14,6 +14,7 @@ namespace Code.Gameplay.Features.AmmoPattern
 	[Game] public class PatternRotateSpeed : IComponent { public float Value; }
 	[Game] public class PatternAmmoCount : IComponent { public int Value; }
 	[Game] public class PatternCenter : IComponent { public Vector3 Value; }
+	[Game] public class PatternCurrentAngle : IComponent { public float Value; }
 	[Game] public class PatternEmpty : IComponent { }
 
 	[Game] public class SinglePattern : IComponent { }

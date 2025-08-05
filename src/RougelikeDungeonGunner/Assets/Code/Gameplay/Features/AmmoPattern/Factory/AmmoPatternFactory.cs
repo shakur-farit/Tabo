@@ -21,7 +21,7 @@ namespace Code.Gameplay.Features.AmmoPattern.Factory
 			switch (patternSetup.PatternTypeId)
 			{
 				case AmmoPatternTypeId.Single:
-					return CreateSingle(patternSetup, ammoType, origin, forward);
+					return CreateSingle(ammoType, origin, forward);
 				case AmmoPatternTypeId.Circle:
 					return CreateCircle(patternSetup, ammoType, origin, forward);
 				case AmmoPatternTypeId.Triangle:
@@ -34,31 +34,39 @@ namespace Code.Gameplay.Features.AmmoPattern.Factory
 		}
 
 		private GameEntity CreateStar(AmmoPatternSetup patternSetup, AmmoTypeId ammoType, Vector3 origin, Vector3 forward) =>
-			CreatePatternEntity(patternSetup, ammoType, origin, forward)
+			CreatePatternEntity(ammoType, origin, forward)
+				.AddPatternRotateSpeed(patternSetup.RotateSpeed)
+				.AddPatternRadius(patternSetup.Raduis)
+				.AddPatternAmmoCount(patternSetup.AmmoCount)
+				.AddAmmoPatternSetup(patternSetup)
 				.With(x => x.isStarPattern = true);
 
 		private GameEntity CreateTriangle(AmmoPatternSetup patternSetup, AmmoTypeId ammoType, Vector3 origin, Vector3 forward) =>
-			CreatePatternEntity(patternSetup, ammoType, origin, forward)
+			CreatePatternEntity(ammoType, origin, forward)
+				.AddPatternRotateSpeed(patternSetup.RotateSpeed)
+				.AddPatternRadius(patternSetup.Raduis)
+				.AddPatternAmmoCount(patternSetup.AmmoCount)
+				.AddAmmoPatternSetup(patternSetup)
 				.With(x => x.isTrianglePattern = true);
 
 		private GameEntity CreateCircle(AmmoPatternSetup patternSetup, AmmoTypeId ammoType, Vector3 origin, Vector3 forward) =>
-			CreatePatternEntity(patternSetup, ammoType, origin, forward)
+			CreatePatternEntity(ammoType, origin, forward)
+				.AddPatternRotateSpeed(patternSetup.RotateSpeed)
+				.AddPatternRadius(patternSetup.Raduis)
+				.AddPatternAmmoCount(patternSetup.AmmoCount)
+				.AddAmmoPatternSetup(patternSetup)
 				.With(x => x.isCirclePattern = true);
 
-		private GameEntity CreateSingle(AmmoPatternSetup ammoPatternSetup, AmmoTypeId ammoType, Vector3 origin, Vector3 forward) => 
-			CreatePatternEntity(ammoPatternSetup, ammoType, origin, forward)
+		private GameEntity CreateSingle(AmmoTypeId ammoType, Vector3 origin, Vector3 forward) => 
+			CreatePatternEntity(ammoType, origin, forward)
 				.With(x => x.isSinglePattern = true);
 
-		private GameEntity CreatePatternEntity(AmmoPatternSetup ammoPatternSetup, AmmoTypeId ammoTypeId, Vector3 origin, Vector3 forward) =>
+		private GameEntity CreatePatternEntity(AmmoTypeId ammoTypeId, Vector3 origin, Vector3 forward) =>
 			CreateEntity.Empty()
 				.AddId(_identifier.Next())
-				.AddAmmoPatternSetup(ammoPatternSetup)
 				.AddAmmoTypeId(ammoTypeId)
 				.AddPatternCenter(origin)
 				.AddDirection(forward)
-				.AddPatternAmmoCount(ammoPatternSetup.AmmoCount)
-				.AddPatternRadius(ammoPatternSetup.Raduis)
-				.AddPatternRotateSpeed(ammoPatternSetup.RotateSpeed)
 				.AddAmmoTransformsList(new())
 				.With(x => x.isAmmoPattern = true)
 				.With(x => x.isPatternEmpty = true);

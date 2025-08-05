@@ -18,13 +18,19 @@ namespace Code.Gameplay.Features.AmmoPattern.Systems
 					GameMatcher.AmmoTransformsList,
 					GameMatcher.PatternCenter,
 					GameMatcher.PatternRotateSpeed,
-					GameMatcher.PatternRadius));
+					GameMatcher.PatternRadius)
+				.NoneOf(GameMatcher.PatternEmpty));
 		}
 
 		public void Execute()
 		{
 			foreach (GameEntity pattern in _patterns)
 			{
+				if(pattern.AmmoTransformsList.Count <= 0)
+					continue;
+
+				Debug.Log(pattern.AmmoTransformsList.Count);
+
 				float angleStep = 360f / pattern.AmmoTransformsList.Count;
 				float baseAngle = pattern.PatternRotateSpeed * _time.DeltaTime;
 

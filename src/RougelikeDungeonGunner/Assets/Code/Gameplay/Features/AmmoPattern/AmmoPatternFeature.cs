@@ -18,9 +18,7 @@ namespace Code.Gameplay.Features.AmmoPattern
 			Add(systems.Create<CreatePatternForHeroSniperSystem>());
 			Add(systems.Create<CreatePatternForEnemyPistolSystem>());
 
-			Add(systems.Create<MarkDestructEmptyPatternsSystem>());
-
-			//Add(systems.Create<RotatePatternSystem>());
+			Add(systems.Create<RotatePatternSystem>());
 		}
 	}
 }

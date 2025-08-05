@@ -1,4 +1,6 @@
-﻿using Entitas;
+﻿using System.Collections.Generic;
+using Entitas;
+using UnityEngine;
 
 namespace Code.Gameplay.Features.Ammo.Systems
 {
@@ -6,6 +8,7 @@ namespace Code.Gameplay.Features.Ammo.Systems
 	{
 		private readonly IGroup<GameEntity> _patterns;
 		private readonly IGroup<GameEntity> _ammo;
+		private readonly List<GameEntity> _buffer = new(64);
 
 		public RemoveProcessedAmmoFromPatternListSystem(GameContext game)
 		{
@@ -24,11 +27,17 @@ namespace Code.Gameplay.Features.Ammo.Systems
 
 		public void Execute()
 		{
-			foreach (GameEntity pattern in _patterns)
+			foreach (GameEntity pattern in _patterns.GetEntities(_buffer))
 			foreach (GameEntity ammo in _ammo)
 			{
 				if (pattern.Id == ammo.AmmoPatternId)
 					pattern.AmmoTransformsList.Remove(ammo.Transform);
+
+				if (pattern.AmmoTransformsList.Count <= 0)
+				{
+					pattern.isDestructed = true;
+					Debug.Log("Des");
+				}
 			}
 		}
 	}
