@@ -55,7 +55,11 @@ namespace Code.Gameplay.Features.AmmoPattern.Factory
 				.AddPatternRadius(patternSetup.Raduis)
 				.AddPatternAmmoCount(patternSetup.AmmoCount)
 				.AddAmmoPatternSetup(patternSetup)
-				.With(x => x.isCirclePattern = true);
+				.AddSpeed(5)
+				.With(x => x.isCirclePattern = true)
+				.With(x => x.isMovementAvailable = true)
+				.With(x => x.isLinerMovement = true)
+			;
 
 		private GameEntity CreateSingle(AmmoTypeId ammoType, Vector3 origin, Vector3 forward) => 
 			CreatePatternEntity(ammoType, origin, forward)
@@ -65,7 +69,7 @@ namespace Code.Gameplay.Features.AmmoPattern.Factory
 			CreateEntity.Empty()
 				.AddId(_identifier.Next())
 				.AddAmmoTypeId(ammoTypeId)
-				.AddPatternCenter(origin)
+				.AddWorldPosition(origin)
 				.AddDirection(forward)
 				.AddAmmoTransformsList(new())
 				.With(x => x.isAmmoPattern = true)

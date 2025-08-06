@@ -20,6 +20,7 @@ namespace Code.Gameplay.Features.Ammo
 
 			Add(systems.Create<AddAmmoTransformInListSystem>());
 
+			Add(systems.Create<SetAmmoOrbitCenterSystem>());
 			Add(systems.Create<SetTargetLayerMaskSystem>());
 
 			Add(systems.Create<ApplyTargetLimitToAmmoSystem>());

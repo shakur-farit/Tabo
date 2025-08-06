@@ -21,7 +21,7 @@ namespace Code.Gameplay.Features.Ammo.Systems
 					GameMatcher.Id,
 					GameMatcher.PatternEmpty,
 					GameMatcher.AmmoTypeId,
-					GameMatcher.PatternCenter,
+					GameMatcher.WorldPosition,
 					GameMatcher.Direction,
 					GameMatcher.ProducerId));
 		}
@@ -30,11 +30,13 @@ namespace Code.Gameplay.Features.Ammo.Systems
 		{
 			foreach (GameEntity pattern in _patterns.GetEntities(_buffer))
 			{
-				GameEntity ammo = _ammoFactory.CreateAmmo(pattern.AmmoTypeId, pattern.PatternCenter);
+				GameEntity ammo = _ammoFactory.CreateAmmo(pattern.AmmoTypeId, pattern.WorldPosition);
 				ammo
 					.AddProducerId(pattern.ProducerId)
 					.AddAmmoPatternId(pattern.Id)
-					.With(x => x.isMoving = true);
+					.With(x => x.isMoving = true)
+					.With(x => x.isLinerMovement = true)
+					;
 
 				ammo.ReplaceDirection(pattern.Direction);
 

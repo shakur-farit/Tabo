@@ -7,7 +7,8 @@ namespace Code.Gameplay.Features.Movement
 	{
 		public MovementFeature(ISystemsFactory systems)
 		{
-			Add(systems.Create<DirectionalDeltaMoveSystem>());
+			Add(systems.Create<LinerDirectionalMoveSystem>());
+			Add(systems.Create<OrbitDirectionalMoveSystem>());
 			Add(systems.Create<UpdateTransformPositionSystem>());
 			Add(systems.Create<UpdateChildrenPositionRelativeParentSystem>());
 		}

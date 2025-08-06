@@ -1,10 +1,8 @@
 ﻿using System.Collections.Generic;
 using Code.Common.Extensions;
 using Code.Gameplay.Features.Ammo.Factory;
-using Code.Gameplay.Features.Effects;
 using Entitas;
 using UnityEngine;
-using static UnityEngine.UI.Image;
 
 namespace Code.Gameplay.Features.Ammo.Systems
 {
@@ -24,7 +22,7 @@ namespace Code.Gameplay.Features.Ammo.Systems
 					GameMatcher.Id,
 					GameMatcher.PatternEmpty,
 					GameMatcher.AmmoTypeId,
-					GameMatcher.PatternCenter,
+					GameMatcher.WorldPosition,
 					GameMatcher.Direction,
 					GameMatcher.PatternAmmoCount,
 					GameMatcher.PatternRadius,
@@ -41,7 +39,7 @@ namespace Code.Gameplay.Features.Ammo.Systems
 				{
 					float angle = 120f * i - 90f;
 					Vector3 dir = Quaternion.Euler(0, 0, angle) * Vector3.up;
-					vertices[i] = pattern.PatternCenter + dir * pattern.PatternRadius;
+					vertices[i] = pattern.WorldPosition + dir * pattern.PatternRadius;
 				}
 
 				float sideLength = Vector3.Distance(vertices[0], vertices[1]);
@@ -62,7 +60,9 @@ namespace Code.Gameplay.Features.Ammo.Systems
 					ammo
 						.AddProducerId(pattern.ProducerId)
 						.AddAmmoPatternId(pattern.Id)
-						.With(x => x.isMoving = true);
+						.With(x => x.isMoving = true)
+						.With(x => x.isOrbitalMovement = true)
+						;
 
 					ammo.ReplaceDirection(pattern.Direction);
 				}

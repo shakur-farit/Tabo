@@ -36,8 +36,6 @@ namespace Code.Gameplay.Features.Ammo.Systems
 					pattern.AmmoTransformsList.Add(ammo.Transform);
 					ammo.isAddedInList = true;
 				}
-
-				Debug.Log(pattern.AmmoTransformsList.Count);
 			}
 		}
 	}

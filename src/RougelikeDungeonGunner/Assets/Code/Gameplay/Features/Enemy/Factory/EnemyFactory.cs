@@ -80,6 +80,7 @@ namespace Code.Gameplay.Features.Enemy.Factory
 					.With(x => x.AddCurrentWeaponTypeId(config.StartWeapon), when: config.StartWeapon != WeaponTypeId.NoWeapon)
 					.With(x => x.isEnemy = true)
 					.With(x => x.isMovementAvailable = true)
+					.With(x => x.isLinerMovement = true)
 					.With(x => x.isUnweaponed = true)
 				;
 

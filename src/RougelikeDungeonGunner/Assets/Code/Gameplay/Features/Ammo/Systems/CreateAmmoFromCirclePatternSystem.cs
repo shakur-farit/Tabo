@@ -22,7 +22,7 @@ namespace Code.Gameplay.Features.Ammo.Systems
 					GameMatcher.Id,
 					GameMatcher.PatternEmpty,
 					GameMatcher.AmmoTypeId,
-					GameMatcher.PatternCenter,
+					GameMatcher.WorldPosition,
 					GameMatcher.Direction,
 					GameMatcher.PatternAmmoCount,
 					GameMatcher.PatternRadius,
@@ -39,14 +39,21 @@ namespace Code.Gameplay.Features.Ammo.Systems
 					Vector3 offset = new Vector3(Mathf.Cos(angle * Mathf.Deg2Rad),
 						Mathf.Sin(angle * Mathf.Deg2Rad), 0f) * pattern.PatternRadius;
 
-					Vector3 spawnPosition = pattern.PatternCenter + offset;
+					Vector3 spawnPosition = pattern.WorldPosition + offset;
 
 					GameEntity ammo = _ammoFactory.CreateAmmo(pattern.AmmoTypeId, spawnPosition);
 					ammo
 						.AddProducerId(pattern.ProducerId)
 						.AddAmmoPatternId(pattern.Id)
-						.With(x => x.isMoving = true);
-					
+						.AddOrbitCenter(pattern.WorldPosition)
+						.AddOrbitRadius(pattern.PatternRadius)
+						.AddOrbitAngularSpeed(180)
+						.AddOrbitElapsedTime(0)
+						.AddOrbitInitialAngle(angle)
+						.With(x => x.isMoving = true)
+						.With(x => x.isOrbitalMovement = true)
+						;
+
 					ammo.ReplaceDirection(pattern.Direction);
 				}
 
