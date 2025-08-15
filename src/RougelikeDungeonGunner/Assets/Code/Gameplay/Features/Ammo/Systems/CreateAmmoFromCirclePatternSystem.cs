@@ -26,6 +26,7 @@ namespace Code.Gameplay.Features.Ammo.Systems
 					GameMatcher.Direction,
 					GameMatcher.PatternAmmoCount,
 					GameMatcher.PatternRadius,
+					GameMatcher.PatternRotateSpeed,
 					GameMatcher.ProducerId));
 		}
 
@@ -47,10 +48,11 @@ namespace Code.Gameplay.Features.Ammo.Systems
 						.AddAmmoPatternId(pattern.Id)
 						.AddOrbitCenter(pattern.WorldPosition)
 						.AddOrbitRadius(pattern.PatternRadius)
-						.AddOrbitAngularSpeed(180)
+						.AddOrbitAngularSpeed(pattern.PatternRotateSpeed)
 						.AddOrbitElapsedTime(0)
 						.AddOrbitInitialAngle(angle)
 						.With(x => x.isMoving = true)
+						.With(x => x.isMovementAvailable = true)
 						.With(x => x.isOrbitalMovement = true)
 						;
 

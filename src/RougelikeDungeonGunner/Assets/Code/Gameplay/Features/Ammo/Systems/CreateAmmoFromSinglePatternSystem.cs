@@ -22,6 +22,7 @@ namespace Code.Gameplay.Features.Ammo.Systems
 					GameMatcher.PatternEmpty,
 					GameMatcher.AmmoTypeId,
 					GameMatcher.WorldPosition,
+					GameMatcher.Speed,
 					GameMatcher.Direction,
 					GameMatcher.ProducerId));
 		}
@@ -34,6 +35,8 @@ namespace Code.Gameplay.Features.Ammo.Systems
 				ammo
 					.AddProducerId(pattern.ProducerId)
 					.AddAmmoPatternId(pattern.Id)
+					.AddSpeed(pattern.Speed)
+					.With(x => x.isMovementAvailable = true)
 					.With(x => x.isMoving = true)
 					.With(x => x.isLinerMovement = true)
 					;

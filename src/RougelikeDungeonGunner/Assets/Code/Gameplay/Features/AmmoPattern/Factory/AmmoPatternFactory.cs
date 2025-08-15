@@ -12,7 +12,7 @@ namespace Code.Gameplay.Features.AmmoPattern.Factory
 	{
 		private readonly IIdentifierService _identifier;
 
-		public AmmoPatternFactory(IIdentifierService identifier) => 
+		public AmmoPatternFactory(IIdentifierService identifier) =>
 			_identifier = identifier;
 
 		public GameEntity CreatePattern(AmmoPatternSetup patternSetup, AmmoTypeId ammoType,
@@ -21,7 +21,7 @@ namespace Code.Gameplay.Features.AmmoPattern.Factory
 			switch (patternSetup.PatternTypeId)
 			{
 				case AmmoPatternTypeId.Single:
-					return CreateSingle(ammoType, origin, forward);
+					return CreateSingle(patternSetup, ammoType, origin, forward);
 				case AmmoPatternTypeId.Circle:
 					return CreateCircle(patternSetup, ammoType, origin, forward);
 				case AmmoPatternTypeId.Triangle:
@@ -29,40 +29,51 @@ namespace Code.Gameplay.Features.AmmoPattern.Factory
 				case AmmoPatternTypeId.Star:
 					return CreateStar(patternSetup, ammoType, origin, forward);
 				default:
-					throw new ArgumentOutOfRangeException(nameof(patternSetup.PatternTypeId), $"Unsupported pattern type: {patternSetup.PatternTypeId}");
+					throw new ArgumentOutOfRangeException(nameof(patternSetup.PatternTypeId),
+						$"Unsupported pattern type: {patternSetup.PatternTypeId}");
 			}
 		}
 
-		private GameEntity CreateStar(AmmoPatternSetup patternSetup, AmmoTypeId ammoType, Vector3 origin, Vector3 forward) =>
+		private GameEntity CreateStar(AmmoPatternSetup patternSetup, AmmoTypeId ammoType, Vector3 origin,
+			Vector3 forward) =>
 			CreatePatternEntity(ammoType, origin, forward)
-				.AddPatternRotateSpeed(patternSetup.RotateSpeed)
+				.AddPatternRotateSpeed(patternSetup.RotationSpeed)
 				.AddPatternRadius(patternSetup.Raduis)
 				.AddPatternAmmoCount(patternSetup.AmmoCount)
 				.AddAmmoPatternSetup(patternSetup)
-				.With(x => x.isStarPattern = true);
+				.AddSpeed(patternSetup.MovementSpeed)
+				.With(x => x.isStarPattern = true)
+				.With(x => x.isMovementAvailable = true)
+				.With(x => x.isLinerMovement = true);
 
-		private GameEntity CreateTriangle(AmmoPatternSetup patternSetup, AmmoTypeId ammoType, Vector3 origin, Vector3 forward) =>
+		private GameEntity CreateTriangle(AmmoPatternSetup patternSetup, AmmoTypeId ammoType, Vector3 origin,
+			Vector3 forward) =>
 			CreatePatternEntity(ammoType, origin, forward)
-				.AddPatternRotateSpeed(patternSetup.RotateSpeed)
+				.AddPatternRotateSpeed(patternSetup.RotationSpeed)
 				.AddPatternRadius(patternSetup.Raduis)
 				.AddPatternAmmoCount(patternSetup.AmmoCount)
 				.AddAmmoPatternSetup(patternSetup)
-				.With(x => x.isTrianglePattern = true);
+				.AddSpeed(patternSetup.MovementSpeed)
+				.With(x => x.isTrianglePattern = true)
+				.With(x => x.isMovementAvailable = true)
+				.With(x => x.isLinerMovement = true);
 
-		private GameEntity CreateCircle(AmmoPatternSetup patternSetup, AmmoTypeId ammoType, Vector3 origin, Vector3 forward) =>
+		private GameEntity CreateCircle(AmmoPatternSetup patternSetup, AmmoTypeId ammoType, Vector3 origin,
+			Vector3 forward) =>
 			CreatePatternEntity(ammoType, origin, forward)
-				.AddPatternRotateSpeed(patternSetup.RotateSpeed)
+				.AddPatternRotateSpeed(patternSetup.RotationSpeed)
 				.AddPatternRadius(patternSetup.Raduis)
 				.AddPatternAmmoCount(patternSetup.AmmoCount)
 				.AddAmmoPatternSetup(patternSetup)
-				.AddSpeed(5)
+				.AddSpeed(patternSetup.MovementSpeed)
 				.With(x => x.isCirclePattern = true)
 				.With(x => x.isMovementAvailable = true)
-				.With(x => x.isLinerMovement = true)
-			;
+				.With(x => x.isLinerMovement = true);
 
-		private GameEntity CreateSingle(AmmoTypeId ammoType, Vector3 origin, Vector3 forward) => 
+		private GameEntity CreateSingle(AmmoPatternSetup patternSetup, AmmoTypeId ammoType, Vector3 origin,
+			Vector3 forward) =>
 			CreatePatternEntity(ammoType, origin, forward)
+				.AddSpeed(patternSetup.MovementSpeed)
 				.With(x => x.isSinglePattern = true);
 
 		private GameEntity CreatePatternEntity(AmmoTypeId ammoTypeId, Vector3 origin, Vector3 forward) =>

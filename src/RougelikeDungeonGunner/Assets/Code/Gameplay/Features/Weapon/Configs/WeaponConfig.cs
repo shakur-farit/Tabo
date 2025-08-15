@@ -9,6 +9,7 @@ using Code.Infrastructure.View;
 using Code.Meta.Features.Shop.Upgrade;
 using Code.Meta.Features.Shop.WeaponStatUIEntry;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Code.Gameplay.Features.Weapon.Configs
 {
@@ -68,6 +69,7 @@ namespace Code.Gameplay.Features.Weapon.Configs
 		public AmmoPatternTypeId PatternTypeId;
 		[Range(1, 50)] public int AmmoCount;
 		[Range(0.1f, 10f)] public float Raduis;
-		[Range(0f, 10f)] public float RotateSpeed;
+		[Range(0f, 10f)] public float RotationSpeed;
+		[Range(0f, 10f)] public float MovementSpeed;
 	}
 }
