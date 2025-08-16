@@ -42,6 +42,7 @@ namespace Code.Gameplay.Features.AmmoPattern.Factory
 				.AddPatternAmmoCount(patternSetup.AmmoCount)
 				.AddAmmoPatternSetup(patternSetup)
 				.AddSpeed(patternSetup.MovementSpeed)
+				.AddPatternBranches(patternSetup.Branches)
 				.With(x => x.isStarPattern = true)
 				.With(x => x.isMovementAvailable = true)
 				.With(x => x.isLinerMovement = true);

@@ -26,6 +26,8 @@ namespace Code.Gameplay.Features.Ammo.Systems
 					GameMatcher.Direction,
 					GameMatcher.PatternAmmoCount,
 					GameMatcher.PatternRadius,
+					GameMatcher.PatternRotateSpeed,
+					GameMatcher.PatternBranches,
 					GameMatcher.ProducerId));
 		}
 
@@ -33,11 +35,9 @@ namespace Code.Gameplay.Features.Ammo.Systems
 		{
 			foreach (GameEntity pattern in _patterns.GetEntities(_buffer))
 			{
-				int branches = 6;
-
-				for (int b = 0; b < branches; b++)
+				for (int b = 0; b < pattern.PatternBranches; b++)
 				{
-					float baseAngle = (360f / branches) * b;
+					float baseAngle = (360f / pattern.PatternBranches) * b;
 					Vector3 branchDir = Quaternion.Euler(0, 0, baseAngle) * Vector3.right;
 
 					for (int p = 0; p < pattern.PatternAmmoCount; p++)
@@ -49,11 +49,21 @@ namespace Code.Gameplay.Features.Ammo.Systems
 						Vector3 offset = branchDir * (maxRadius + waveOffset);
 						Vector3 spawnPos = pattern.WorldPosition + offset;
 
+						Vector3 direction = spawnPos - pattern.WorldPosition;
+						float radius = direction.magnitude;
+						float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+
 						GameEntity ammo = _ammoFactory.CreateAmmo(pattern.AmmoTypeId, spawnPos);
 						ammo
 							.AddProducerId(pattern.ProducerId)
 							.AddAmmoPatternId(pattern.Id)
+							.AddOrbitCenter(pattern.WorldPosition)
+							.AddOrbitRadius(radius)
+							.AddOrbitAngularSpeed(pattern.PatternRotateSpeed)
+							.AddOrbitElapsedTime(0)
+							.AddOrbitInitialAngle(angle)
 							.With(x => x.isMoving = true)
+							.With(x => x.isMovementAvailable = true)
 							.With(x => x.isOrbitalMovement = true)
 							;
 

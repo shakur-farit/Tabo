@@ -69,7 +69,8 @@ namespace Code.Gameplay.Features.Weapon.Configs
 		public AmmoPatternTypeId PatternTypeId;
 		[Range(1, 50)] public int AmmoCount;
 		[Range(0.1f, 10f)] public float Raduis;
-		[Range(0f, 10f)] public float RotationSpeed;
+		[Range(0f, 360f)] public float RotationSpeed;
 		[Range(0f, 10f)] public float MovementSpeed;
+		[Range(0, 10)] public int Branches;
 	}
 }

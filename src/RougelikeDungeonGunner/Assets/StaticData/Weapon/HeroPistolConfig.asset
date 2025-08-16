@@ -15,11 +15,12 @@ MonoBehaviour:
   TypeId: 1
   AmmoTypeId: 1
   AmmoPatternSetup:
-    PatternTypeId: 3
-    AmmoCount: 6
+    PatternTypeId: 4
+    AmmoCount: 3
     Raduis: 1
-    RotationSpeed: 6
+    RotationSpeed: 180
     MovementSpeed: 3
+    Branches: 5
   ViewPrefab: {fileID: 3867516666948492017, guid: 69172fbde18e101418b3b1f7089f9a29, type: 3}
   Sprite: {fileID: 21300000, guid: abbe40c4d6a803f42a7c4f53404a484d, type: 3}
   FirePosition: {x: 0.91, y: 0.3}
