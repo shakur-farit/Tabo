@@ -3,7 +3,6 @@ using Code.Common.Extensions;
 using Code.Gameplay.StaticData;
 using Code.Infrastructure.Identifiers;
 using System;
-using Code.Gameplay.Features.Ammo.Factory;
 using Code.Gameplay.Features.Cooldowns;
 using Code.Gameplay.Features.Weapon.Configs;
 using Code.Meta.Features.Shop.Upgrade.Services;
@@ -85,6 +84,8 @@ namespace Code.Gameplay.Features.Weapon.Factory
 			{
 				case WeaponTypeId.EnemyPistol:
 					return CreateEnemyPistol(weaponTypeId, parent, at, ownerId);
+				case WeaponTypeId.Force:
+					return CreateForce(weaponTypeId, parent, at, ownerId);
 			}
 
 			throw new Exception($"Weapon for {weaponTypeId} type was not found");
@@ -139,6 +140,10 @@ namespace Code.Gameplay.Features.Weapon.Factory
 			int ownerId) =>
 			CreateWeaponEntity(weaponTypeId, parent, at, ownerId)
 				.With(x => x.isEnemyPistol = true);
+
+		private GameEntity CreateForce(WeaponTypeId weaponTypeId, Transform parent, Vector2 at, int ownerId) =>
+			CreateWeaponEntity(weaponTypeId, parent, at, ownerId)
+				.With(x => x.isForce = true);
 
 		private GameEntity CreateWeaponEntity(WeaponTypeId weaponTypeId, Transform parent, Vector2 at, int ownerId)
 		{

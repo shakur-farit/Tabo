@@ -8,27 +8,27 @@ using UnityEngine;
 
 namespace Code.Gameplay.Features.AmmoPattern.Systems
 {
-	public class CreatePatternForHeroPistolSystem : IExecuteSystem
+	public class CreatePatternForForceSystem : IExecuteSystem
 	{
-		private readonly IAmmoPatternFactory _patternFactory;
 		private readonly List<GameEntity> _buffer = new(1);
 
+		private readonly IAmmoPatternFactory _patternFactory;
 		private readonly IAmmoDirectionProvider _ammoDirectionProvider;
 		private readonly IGroup<GameEntity> _weapons;
 
-		public CreatePatternForHeroPistolSystem(
+		public CreatePatternForForceSystem(
 			GameContext game,
 			IAmmoPatternFactory patternFactory,
 			IAmmoDirectionProvider ammoDirectionProvider)
 		{
 			_patternFactory = patternFactory;
 			_ammoDirectionProvider = ammoDirectionProvider;
+			_ammoDirectionProvider = ammoDirectionProvider;
 
 			_weapons = game.GetGroup(GameMatcher
 				.AllOf(
-					GameMatcher.HeroPistol,
+					GameMatcher.Force,
 					GameMatcher.AmmoTypeId,
-					GameMatcher.AmmoPatternSetup,
 					GameMatcher.MinPelletsDeviation,
 					GameMatcher.MaxPelletsDeviation,
 					GameMatcher.CooldownUp,
@@ -44,16 +44,11 @@ namespace Code.Gameplay.Features.AmmoPattern.Systems
 		{
 			foreach (GameEntity weapon in _weapons.GetEntities(_buffer))
 			{
-
-				Debug.Log(GetDirection(weapon));
-
 				GameEntity pattern = _patternFactory.CreatePattern(weapon.AmmoPatternSetup, weapon.AmmoTypeId,
 					weapon.FirePositionTransform.position, GetDirection(weapon));
 
 				pattern
-					.AddProducerId(weapon.Id)
-					.With(x => x.isMoving = true)
-					;
+					.AddProducerId(weapon.Id);
 
 				weapon
 					.With(x => x.isShot = true)
@@ -61,11 +56,12 @@ namespace Code.Gameplay.Features.AmmoPattern.Systems
 			}
 		}
 
-		private Vector3 GetDirection(GameEntity weapon) => 
+		private Vector3 GetDirection(GameEntity weapon) =>
 			_ammoDirectionProvider
 				.GetDirection(
-					weapon.MinPelletsDeviation, 
-					weapon.MaxPelletsDeviation, 
+					weapon.MinPelletsDeviation,
+					weapon.MaxPelletsDeviation,
 					weapon.FirePositionTransform.right);
+
 	}
 }

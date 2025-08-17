@@ -171,50 +171,51 @@ public static class GameComponentsLookup {
     public const int EnemyPistol = 160;
     public const int EnemyWeapon = 161;
     public const int FirePositionTransform = 162;
-    public const int HeroAutomaticPistol = 163;
-    public const int HeroLaserBlaster = 164;
-    public const int HeroMachinegun = 165;
-    public const int HeroPistol = 166;
-    public const int HeroPlasmaGun = 167;
-    public const int HeroRevolver = 168;
-    public const int HeroRocketLauncher = 169;
-    public const int HeroShotgun = 170;
-    public const int HeroSniper = 171;
-    public const int HeroWeapon = 172;
-    public const int InfinityAmmo = 173;
-    public const int MagazineNotEmpty = 174;
-    public const int MagazineSize = 175;
-    public const int MaxPelletsDeviation = 176;
-    public const int MaxWeaponEnchantsCount = 177;
-    public const int MinPelletsDeviation = 178;
-    public const int MultiPellet = 179;
-    public const int Pierce = 180;
-    public const int Precharged = 181;
-    public const int PrechargeTime = 182;
-    public const int PrechargeTimeLeft = 183;
-    public const int ReadyToShoot = 184;
-    public const int Reloading = 185;
-    public const int ReloadTime = 186;
-    public const int ReloadTimeLeft = 187;
-    public const int Shooting = 188;
-    public const int Shot = 189;
-    public const int StatusSetups = 190;
-    public const int Weapon = 191;
-    public const int WeaponEnchants = 192;
-    public const int WeaponOwnerId = 193;
-    public const int WeaponOwnerTypeId = 194;
-    public const int WeaponRotationAngle = 195;
-    public const int WeaponRotationPointTransform = 196;
-    public const int WeaponTypeId = 197;
-    public const int AmmoHolder = 198;
-    public const int CoinsHolder = 199;
-    public const int EnchantHolder = 200;
-    public const int HeartHolder = 201;
-    public const int ReloadingAnimator = 202;
-    public const int TimerHolder = 203;
-    public const int WeaponHolder = 204;
+    public const int Force = 163;
+    public const int HeroAutomaticPistol = 164;
+    public const int HeroLaserBlaster = 165;
+    public const int HeroMachinegun = 166;
+    public const int HeroPistol = 167;
+    public const int HeroPlasmaGun = 168;
+    public const int HeroRevolver = 169;
+    public const int HeroRocketLauncher = 170;
+    public const int HeroShotgun = 171;
+    public const int HeroSniper = 172;
+    public const int HeroWeapon = 173;
+    public const int InfinityAmmo = 174;
+    public const int MagazineNotEmpty = 175;
+    public const int MagazineSize = 176;
+    public const int MaxPelletsDeviation = 177;
+    public const int MaxWeaponEnchantsCount = 178;
+    public const int MinPelletsDeviation = 179;
+    public const int MultiPellet = 180;
+    public const int Pierce = 181;
+    public const int Precharged = 182;
+    public const int PrechargeTime = 183;
+    public const int PrechargeTimeLeft = 184;
+    public const int ReadyToShoot = 185;
+    public const int Reloading = 186;
+    public const int ReloadTime = 187;
+    public const int ReloadTimeLeft = 188;
+    public const int Shooting = 189;
+    public const int Shot = 190;
+    public const int StatusSetups = 191;
+    public const int Weapon = 192;
+    public const int WeaponEnchants = 193;
+    public const int WeaponOwnerId = 194;
+    public const int WeaponOwnerTypeId = 195;
+    public const int WeaponRotationAngle = 196;
+    public const int WeaponRotationPointTransform = 197;
+    public const int WeaponTypeId = 198;
+    public const int AmmoHolder = 199;
+    public const int CoinsHolder = 200;
+    public const int EnchantHolder = 201;
+    public const int HeartHolder = 202;
+    public const int ReloadingAnimator = 203;
+    public const int TimerHolder = 204;
+    public const int WeaponHolder = 205;
 
-    public const int TotalComponents = 205;
+    public const int TotalComponents = 206;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -380,6 +381,7 @@ public static class GameComponentsLookup {
         "EnemyPistol",
         "EnemyWeapon",
         "FirePositionTransform",
+        "Force",
         "HeroAutomaticPistol",
         "HeroLaserBlaster",
         "HeroMachinegun",
@@ -588,6 +590,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Weapon.EnemyPistol),
         typeof(Code.Gameplay.Features.Weapon.EnemyWeapon),
         typeof(Code.Gameplay.Features.Weapon.FirePositionTransform),
+        typeof(Code.Gameplay.Features.Weapon.Force),
         typeof(Code.Gameplay.Features.Weapon.HeroAutomaticPistol),
         typeof(Code.Gameplay.Features.Weapon.HeroLaserBlaster),
         typeof(Code.Gameplay.Features.Weapon.HeroMachinegun),

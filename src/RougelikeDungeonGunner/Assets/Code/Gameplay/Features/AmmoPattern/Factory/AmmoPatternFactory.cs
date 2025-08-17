@@ -18,6 +18,8 @@ namespace Code.Gameplay.Features.AmmoPattern.Factory
 		public GameEntity CreatePattern(AmmoPatternSetup patternSetup, AmmoTypeId ammoType,
 			Vector3 origin, Vector3 forward)
 		{
+			Debug.Log(patternSetup.MovementSpeed);
+
 			switch (patternSetup.PatternTypeId)
 			{
 				case AmmoPatternTypeId.Single:

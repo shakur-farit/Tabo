@@ -2,7 +2,6 @@
 using Code.Gameplay.Features.Statuses;
 using Entitas;
 using System.Collections.Generic;
-using Code.Gameplay.Features.Ammo.Factory;
 using UnityEngine;
 
 namespace Code.Gameplay.Features.Weapon
@@ -55,4 +54,5 @@ namespace Code.Gameplay.Features.Weapon
 	[Game] public class HeroLaserBlaster : IComponent { }
 	[Game] public class HeroRocketLauncher : IComponent { }
 	[Game] public class EnemyPistol : IComponent { }
+	[Game] public class Force : IComponent { }
 }

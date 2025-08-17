@@ -10,19 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 05c169df0c55d374fb648c370f9b7fea, type: 3}
-  m_Name: EnemyPistolConfig
+  m_Name: ForceConfig
   m_EditorClassIdentifier: 
-  TypeId: 10
+  TypeId: 12
   AmmoTypeId: 1
   AmmoPatternSetup:
-    PatternTypeId: 1
+    PatternTypeId: 2
     AmmoCount: 0
-    Raduis: 0
-    RotationSpeed: 0
+    Raduis: 1
+    RotationSpeed: 180
     MovementSpeed: 3
     Branches: 0
   ViewPrefab: {fileID: 3867516666948492017, guid: 69172fbde18e101418b3b1f7089f9a29, type: 3}
-  Sprite: {fileID: 21300000, guid: abbe40c4d6a803f42a7c4f53404a484d, type: 3}
+  Sprite: {fileID: 21300000, guid: 63ad0606bd6d665498cfcf954024039a, type: 3}
   FirePosition: {x: 0.91, y: 0.3}
   Stats:
     isInfinityAmmo: 1
