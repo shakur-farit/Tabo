@@ -84,8 +84,12 @@ namespace Code.Gameplay.Features.Weapon.Factory
 			{
 				case WeaponTypeId.EnemyPistol:
 					return CreateEnemyPistol(weaponTypeId, parent, at, ownerId);
-				case WeaponTypeId.Force:
-					return CreateForce(weaponTypeId, parent, at, ownerId);
+				case WeaponTypeId.CircleSigil:
+					return CircleSigil(weaponTypeId, parent, at, ownerId);
+				case WeaponTypeId.TriangleSigil:
+					return CircleSigil(weaponTypeId, parent, at, ownerId);
+				case WeaponTypeId.StarSigil:
+					return CircleSigil(weaponTypeId, parent, at, ownerId);
 			}
 
 			throw new Exception($"Weapon for {weaponTypeId} type was not found");
@@ -141,9 +145,17 @@ namespace Code.Gameplay.Features.Weapon.Factory
 			CreateWeaponEntity(weaponTypeId, parent, at, ownerId)
 				.With(x => x.isEnemyPistol = true);
 
-		private GameEntity CreateForce(WeaponTypeId weaponTypeId, Transform parent, Vector2 at, int ownerId) =>
+		private GameEntity CircleSigil(WeaponTypeId weaponTypeId, Transform parent, Vector2 at, int ownerId) =>
 			CreateWeaponEntity(weaponTypeId, parent, at, ownerId)
-				.With(x => x.isForce = true);
+				.With(x => x.isCircleSigil = true);
+
+		private GameEntity TriangleSigil(WeaponTypeId weaponTypeId, Transform parent, Vector2 at, int ownerId) =>
+			CreateWeaponEntity(weaponTypeId, parent, at, ownerId)
+				.With(x => x.isTriangleSigil = true);
+
+		private GameEntity StarSigil(WeaponTypeId weaponTypeId, Transform parent, Vector2 at, int ownerId) =>
+			CreateWeaponEntity(weaponTypeId, parent, at, ownerId)
+				.With(x => x.isStarSigil = true);
 
 		private GameEntity CreateWeaponEntity(WeaponTypeId weaponTypeId, Transform parent, Vector2 at, int ownerId)
 		{

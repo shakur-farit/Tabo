@@ -14,7 +14,9 @@
 		HeroRocketLauncher = 9,
 		EnemyPistol = 10,
 		EnemyMachinegun = 11,
-		Force = 12,
-		NoWeapon = 13
+		CircleSigil = 12,
+		TriangleSigil = 13,
+		StarSigil = 14,
+		NoWeapon = 15
 	}
 }

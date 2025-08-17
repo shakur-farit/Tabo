@@ -10,30 +10,30 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 05c169df0c55d374fb648c370f9b7fea, type: 3}
-  m_Name: HeroPistolConfig
+  m_Name: TriangleSigilConfig
   m_EditorClassIdentifier: 
-  TypeId: 1
+  TypeId: 13
   AmmoTypeId: 1
   AmmoPatternSetup:
-    PatternTypeId: 4
-    AmmoCount: 3
-    Raduis: 1
+    PatternTypeId: 3
+    AmmoCount: 9
+    Raduis: 2
     RotationSpeed: 180
     MovementSpeed: 3
-    Branches: 5
+    Branches: 0
   ViewPrefab: {fileID: 3867516666948492017, guid: 69172fbde18e101418b3b1f7089f9a29, type: 3}
-  Sprite: {fileID: 21300000, guid: abbe40c4d6a803f42a7c4f53404a484d, type: 3}
-  FirePosition: {x: 0.91, y: 0.3}
+  Sprite: {fileID: 0}
+  FirePosition: {x: 0, y: 0}
   Stats:
     isInfinityAmmo: 1
-    FireRange: 6
-    Cooldown: 1.2
+    FireRange: 8
+    Cooldown: 3
     ReloadTime: 0
     PrechargingTime: 0
     MagazineSize: 0
     Pierce: 1
     PelletCount: 1
-    Accuracy: 90
+    Accuracy: 100
     EnchantSlots: 0
   CastSetup:
     CastStartPosiotion: {x: 0, y: 0.2}
@@ -44,19 +44,5 @@ MonoBehaviour:
   - EffectTypeId: 1
     Value: 1
   StatusSetups: []
-  AvailableUpgrades:
-  - UpgradeType: 8
-  - UpgradeType: 2
-  - UpgradeType: 6
-  - UpgradeType: 1
-  - UpgradeType: 7
-  - UpgradeType: 9
-  StatsUIEntry:
-  - StatUIEntryType: 10
-  - StatUIEntryType: 8
-  - StatUIEntryType: 2
-  - StatUIEntryType: 6
-  - StatUIEntryType: 9
-  - StatUIEntryType: 1
-  - StatUIEntryType: 7
-  - StatUIEntryType: 11
+  AvailableUpgrades: []
+  StatsUIEntry: []

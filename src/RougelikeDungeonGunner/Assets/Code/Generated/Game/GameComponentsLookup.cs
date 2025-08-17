@@ -165,13 +165,13 @@ public static class GameComponentsLookup {
     public const int ReadyToCollectTargets = 154;
     public const int TargetLayerMask = 155;
     public const int TargetsBuffer = 156;
-    public const int ClosestTargetPosition = 157;
-    public const int CurrentAmmoCount = 158;
-    public const int EffectSetups = 159;
-    public const int EnemyPistol = 160;
-    public const int EnemyWeapon = 161;
-    public const int FirePositionTransform = 162;
-    public const int Force = 163;
+    public const int CircleSigil = 157;
+    public const int ClosestTargetPosition = 158;
+    public const int CurrentAmmoCount = 159;
+    public const int EffectSetups = 160;
+    public const int EnemyPistol = 161;
+    public const int EnemyWeapon = 162;
+    public const int FirePositionTransform = 163;
     public const int HeroAutomaticPistol = 164;
     public const int HeroLaserBlaster = 165;
     public const int HeroMachinegun = 166;
@@ -199,23 +199,25 @@ public static class GameComponentsLookup {
     public const int ReloadTimeLeft = 188;
     public const int Shooting = 189;
     public const int Shot = 190;
-    public const int StatusSetups = 191;
-    public const int Weapon = 192;
-    public const int WeaponEnchants = 193;
-    public const int WeaponOwnerId = 194;
-    public const int WeaponOwnerTypeId = 195;
-    public const int WeaponRotationAngle = 196;
-    public const int WeaponRotationPointTransform = 197;
-    public const int WeaponTypeId = 198;
-    public const int AmmoHolder = 199;
-    public const int CoinsHolder = 200;
-    public const int EnchantHolder = 201;
-    public const int HeartHolder = 202;
-    public const int ReloadingAnimator = 203;
-    public const int TimerHolder = 204;
-    public const int WeaponHolder = 205;
+    public const int StarSigil = 191;
+    public const int StatusSetups = 192;
+    public const int TriangleSigil = 193;
+    public const int Weapon = 194;
+    public const int WeaponEnchants = 195;
+    public const int WeaponOwnerId = 196;
+    public const int WeaponOwnerTypeId = 197;
+    public const int WeaponRotationAngle = 198;
+    public const int WeaponRotationPointTransform = 199;
+    public const int WeaponTypeId = 200;
+    public const int AmmoHolder = 201;
+    public const int CoinsHolder = 202;
+    public const int EnchantHolder = 203;
+    public const int HeartHolder = 204;
+    public const int ReloadingAnimator = 205;
+    public const int TimerHolder = 206;
+    public const int WeaponHolder = 207;
 
-    public const int TotalComponents = 206;
+    public const int TotalComponents = 208;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -375,13 +377,13 @@ public static class GameComponentsLookup {
         "ReadyToCollectTargets",
         "TargetLayerMask",
         "TargetsBuffer",
+        "CircleSigil",
         "ClosestTargetPosition",
         "CurrentAmmoCount",
         "EffectSetups",
         "EnemyPistol",
         "EnemyWeapon",
         "FirePositionTransform",
-        "Force",
         "HeroAutomaticPistol",
         "HeroLaserBlaster",
         "HeroMachinegun",
@@ -409,7 +411,9 @@ public static class GameComponentsLookup {
         "ReloadTimeLeft",
         "Shooting",
         "Shot",
+        "StarSigil",
         "StatusSetups",
+        "TriangleSigil",
         "Weapon",
         "WeaponEnchants",
         "WeaponOwnerId",
@@ -584,13 +588,13 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.TargetCollection.ReadyToCollectTargets),
         typeof(Code.Gameplay.Features.TargetCollection.TargetLayerMask),
         typeof(Code.Gameplay.Features.TargetCollection.TargetsBuffer),
+        typeof(Code.Gameplay.Features.Weapon.CircleSigil),
         typeof(Code.Gameplay.Features.Weapon.ClosestTargetPosition),
         typeof(Code.Gameplay.Features.Weapon.CurrentAmmoCount),
         typeof(Code.Gameplay.Features.Weapon.EffectSetups),
         typeof(Code.Gameplay.Features.Weapon.EnemyPistol),
         typeof(Code.Gameplay.Features.Weapon.EnemyWeapon),
         typeof(Code.Gameplay.Features.Weapon.FirePositionTransform),
-        typeof(Code.Gameplay.Features.Weapon.Force),
         typeof(Code.Gameplay.Features.Weapon.HeroAutomaticPistol),
         typeof(Code.Gameplay.Features.Weapon.HeroLaserBlaster),
         typeof(Code.Gameplay.Features.Weapon.HeroMachinegun),
@@ -618,7 +622,9 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Weapon.ReloadTimeLeft),
         typeof(Code.Gameplay.Features.Weapon.Shooting),
         typeof(Code.Gameplay.Features.Weapon.Shot),
+        typeof(Code.Gameplay.Features.Weapon.StarSigil),
         typeof(Code.Gameplay.Features.Weapon.StatusSetups),
+        typeof(Code.Gameplay.Features.Weapon.TriangleSigil),
         typeof(Code.Gameplay.Features.Weapon.Weapon),
         typeof(Code.Gameplay.Features.Weapon.WeaponEnchants),
         typeof(Code.Gameplay.Features.Weapon.WeaponOwnerId),

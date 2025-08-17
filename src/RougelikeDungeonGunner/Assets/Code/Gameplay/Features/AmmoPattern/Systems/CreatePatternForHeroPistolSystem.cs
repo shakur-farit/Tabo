@@ -51,9 +51,7 @@ namespace Code.Gameplay.Features.AmmoPattern.Systems
 					weapon.FirePositionTransform.position, GetDirection(weapon));
 
 				pattern
-					.AddProducerId(weapon.Id)
-					.With(x => x.isMoving = true)
-					;
+					.AddProducerId(weapon.Id);
 
 				weapon
 					.With(x => x.isShot = true)

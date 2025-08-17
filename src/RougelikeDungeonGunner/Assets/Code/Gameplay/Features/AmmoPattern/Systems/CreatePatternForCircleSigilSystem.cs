@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace Code.Gameplay.Features.AmmoPattern.Systems
 {
-	public class CreatePatternForForceSystem : IExecuteSystem
+	public class CreatePatternForCircleSigilSystem : IExecuteSystem
 	{
 		private readonly List<GameEntity> _buffer = new(1);
 
@@ -16,7 +16,7 @@ namespace Code.Gameplay.Features.AmmoPattern.Systems
 		private readonly IAmmoDirectionProvider _ammoDirectionProvider;
 		private readonly IGroup<GameEntity> _weapons;
 
-		public CreatePatternForForceSystem(
+		public CreatePatternForCircleSigilSystem(
 			GameContext game,
 			IAmmoPatternFactory patternFactory,
 			IAmmoDirectionProvider ammoDirectionProvider)
@@ -27,7 +27,7 @@ namespace Code.Gameplay.Features.AmmoPattern.Systems
 
 			_weapons = game.GetGroup(GameMatcher
 				.AllOf(
-					GameMatcher.Force,
+					GameMatcher.CircleSigil,
 					GameMatcher.AmmoTypeId,
 					GameMatcher.MinPelletsDeviation,
 					GameMatcher.MaxPelletsDeviation,
@@ -44,6 +44,7 @@ namespace Code.Gameplay.Features.AmmoPattern.Systems
 		{
 			foreach (GameEntity weapon in _weapons.GetEntities(_buffer))
 			{
+
 				GameEntity pattern = _patternFactory.CreatePattern(weapon.AmmoPatternSetup, weapon.AmmoTypeId,
 					weapon.FirePositionTransform.position, GetDirection(weapon));
 

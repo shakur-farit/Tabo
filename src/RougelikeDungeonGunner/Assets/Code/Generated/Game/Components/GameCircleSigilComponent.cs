@@ -8,17 +8,17 @@
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherForce;
+    static Entitas.IMatcher<GameEntity> _matcherCircleSigil;
 
-    public static Entitas.IMatcher<GameEntity> Force {
+    public static Entitas.IMatcher<GameEntity> CircleSigil {
         get {
-            if (_matcherForce == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.Force);
+            if (_matcherCircleSigil == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.CircleSigil);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherForce = matcher;
+                _matcherCircleSigil = matcher;
             }
 
-            return _matcherForce;
+            return _matcherCircleSigil;
         }
     }
 }
@@ -33,18 +33,18 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Weapon.Force forceComponent = new Code.Gameplay.Features.Weapon.Force();
+    static readonly Code.Gameplay.Features.Weapon.CircleSigil circleSigilComponent = new Code.Gameplay.Features.Weapon.CircleSigil();
 
-    public bool isForce {
-        get { return HasComponent(GameComponentsLookup.Force); }
+    public bool isCircleSigil {
+        get { return HasComponent(GameComponentsLookup.CircleSigil); }
         set {
-            if (value != isForce) {
-                var index = GameComponentsLookup.Force;
+            if (value != isCircleSigil) {
+                var index = GameComponentsLookup.CircleSigil;
                 if (value) {
                     var componentPool = GetComponentPool(index);
                     var component = componentPool.Count > 0
                             ? componentPool.Pop()
-                            : forceComponent;
+                            : circleSigilComponent;
 
                     AddComponent(index, component);
                 } else {

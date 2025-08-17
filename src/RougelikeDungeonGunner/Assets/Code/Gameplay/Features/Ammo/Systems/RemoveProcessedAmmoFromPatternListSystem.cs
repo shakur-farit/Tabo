@@ -33,11 +33,8 @@ namespace Code.Gameplay.Features.Ammo.Systems
 				if (pattern.Id == ammo.AmmoPatternId)
 					pattern.AmmoTransformsList.Remove(ammo.Transform);
 
-				if (pattern.AmmoTransformsList.Count <= 0)
-				{
+				if (pattern.AmmoTransformsList.Count <= 0) 
 					pattern.isDestructed = true;
-					Debug.Log("Des");
-				}
 			}
 		}
 	}

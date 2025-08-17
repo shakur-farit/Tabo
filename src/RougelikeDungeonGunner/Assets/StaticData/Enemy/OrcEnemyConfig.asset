@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: OrcEnemyConfig
   m_EditorClassIdentifier: 
   TypeId: 2
-  StartWeapon: 12
+  StartWeapon: 14
   ViewPrefab: {fileID: 8166552356577901019, guid: 9dc33cf00c86b7440a425de8b022c28a, type: 3}
   AnimatorController: {fileID: 9100000, guid: cf2b002105910e04a8f79c160b4602a0, type: 2}
   CurrentHp: 2

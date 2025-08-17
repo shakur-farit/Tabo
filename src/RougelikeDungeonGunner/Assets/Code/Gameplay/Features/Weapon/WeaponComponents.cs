@@ -54,5 +54,7 @@ namespace Code.Gameplay.Features.Weapon
 	[Game] public class HeroLaserBlaster : IComponent { }
 	[Game] public class HeroRocketLauncher : IComponent { }
 	[Game] public class EnemyPistol : IComponent { }
-	[Game] public class Force : IComponent { }
+	[Game] public class CircleSigil : IComponent { }
+	[Game] public class TriangleSigil : IComponent { }
+	[Game] public class StarSigil : IComponent { }
 }
