@@ -28,6 +28,8 @@ namespace Code.Gameplay.Features.AmmoPattern.Systems
 			_weapons = game.GetGroup(GameMatcher
 				.AllOf(
 					GameMatcher.HeroRevolver,
+					GameMatcher.AmmoTypeId,
+					GameMatcher.AmmoPatternSetup,
 					GameMatcher.MinPelletsDeviation,
 					GameMatcher.MaxPelletsDeviation,
 					GameMatcher.CooldownUp,

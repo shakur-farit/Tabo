@@ -14,12 +14,12 @@ namespace Code.Gameplay.Features.AmmoPattern
 			Add(systems.Create<CreatePatternForHeroPlasmaGunSystem>());
 			Add(systems.Create<CreatePatternForHeroRevolverSystem>());
 			Add(systems.Create<CreatePatternForHeroShotgunSystem>());
-			Add(systems.Create<CreatePatternForHeroRocketLauncherSystem>());
+			Add(systems.Create<CreatePatternForHeroBazukaSystem>());
 			Add(systems.Create<CreatePatternForHeroSniperSystem>());
 			Add(systems.Create<CreatePatternForEnemyPistolSystem>());
-			Add(systems.Create<CreatePatternForCircleSigilSystem>());
-			Add(systems.Create<CreatePatternForTriangleSigilSystem>());
-			Add(systems.Create<CreatePatternForStarSigilSystem>());
+			Add(systems.Create<CreatePatternForEnemyCircleSigilSystem>());
+			Add(systems.Create<CreatePatternForEnemyTriangleSigilSystem>());
+			Add(systems.Create<CreatePatternForEnemyStarSigilSystem>());
 		}
 	}
 }

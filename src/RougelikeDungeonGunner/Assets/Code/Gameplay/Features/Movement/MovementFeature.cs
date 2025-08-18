@@ -9,6 +9,7 @@ namespace Code.Gameplay.Features.Movement
 		{
 			Add(systems.Create<LinerDirectionalMoveSystem>());
 			Add(systems.Create<OrbitDirectionalMoveSystem>());
+			Add(systems.Create<FollowMoveSystem>());
 			Add(systems.Create<UpdateTransformPositionSystem>());
 			Add(systems.Create<UpdateChildrenPositionRelativeParentSystem>());
 		}

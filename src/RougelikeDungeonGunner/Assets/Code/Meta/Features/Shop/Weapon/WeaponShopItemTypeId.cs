@@ -11,6 +11,6 @@
 		Sniper = 6,
 		PlasmaGun = 7,
 		LaserBlaster = 8,
-		RocketLauncher = 9,
+		Bazuka = 9,
 	}
 }

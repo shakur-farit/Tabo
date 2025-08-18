@@ -44,9 +44,7 @@ namespace Code.Gameplay.Features.AmmoPattern.Factory
 				.AddSpeed(patternSetup.MovementSpeed)
 				.AddPatternBranches(patternSetup.Branches)
 				.With(x => x.isStarPattern = true)
-				.With(x => x.isMoving = true)
-				.With(x => x.isMovementAvailable = true)
-				.With(x => x.isLinerMovement = true);
+			;
 
 		private GameEntity CreateTriangle(AmmoPatternSetup patternSetup, AmmoTypeId ammoType, Vector3 origin,
 			Vector3 forward) =>
@@ -57,9 +55,7 @@ namespace Code.Gameplay.Features.AmmoPattern.Factory
 				.AddAmmoPatternSetup(patternSetup)
 				.AddSpeed(patternSetup.MovementSpeed)
 				.With(x => x.isTrianglePattern = true)
-				.With(x => x.isMoving = true)
-				.With(x => x.isMovementAvailable = true)
-				.With(x => x.isLinerMovement = true);
+			;
 
 		private GameEntity CreateCircle(AmmoPatternSetup patternSetup, AmmoTypeId ammoType, Vector3 origin,
 			Vector3 forward) =>
@@ -70,9 +66,7 @@ namespace Code.Gameplay.Features.AmmoPattern.Factory
 				.AddAmmoPatternSetup(patternSetup)
 				.AddSpeed(patternSetup.MovementSpeed)
 				.With(x => x.isCirclePattern = true)
-				.With(x => x.isMovementAvailable = true)
-				.With(x => x.isMoving = true)
-				.With(x => x.isLinerMovement = true);
+			;
 
 		private GameEntity CreateSingle(AmmoPatternSetup patternSetup, AmmoTypeId ammoType, Vector3 origin,
 			Vector3 forward) =>
@@ -88,6 +82,10 @@ namespace Code.Gameplay.Features.AmmoPattern.Factory
 				.AddDirection(forward)
 				.AddAmmoTransformsList(new())
 				.With(x => x.isAmmoPattern = true)
-				.With(x => x.isPatternEmpty = true);
+				.With(x => x.isPatternEmpty = true)
+				.With(x => x.isMovementAvailable = true)
+				.With(x => x.isMoving = true)
+				.With(x => x.isLinerMovement = true)
+			;
 	}
 }

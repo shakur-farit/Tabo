@@ -11,12 +11,15 @@
 		HeroSniper = 6,
 		HeroPlasmaGun = 7,
 		HeroLaserBlaster = 8,
-		HeroRocketLauncher = 9,
+		HeroBazuka = 9,
 		EnemyPistol = 10,
 		EnemyMachinegun = 11,
-		CircleSigil = 12,
-		TriangleSigil = 13,
-		StarSigil = 14,
-		NoWeapon = 15
+		HeroCircleSigil = 12,
+		HeroTriangleSigil = 13,
+		HeroStarSigil = 14,
+		EnemyCircleSigil = 15,
+		EnemyTriangleSigil = 16,
+		EnemyStarSigil = 17,
+		NoWeapon = 18
 	}
 }

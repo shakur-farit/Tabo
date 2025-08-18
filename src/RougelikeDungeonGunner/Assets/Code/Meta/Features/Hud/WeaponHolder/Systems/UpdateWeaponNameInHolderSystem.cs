@@ -31,8 +31,8 @@ namespace Code.Meta.Features.Hud.WeaponHolder.Systems
 
 		private string FormatWeaponTypeId(WeaponTypeId typeId)
 		{
-			string name = typeId.ToString();
-
+			string name = typeId.ToString().Substring("Hero".Length);
+		
 			return System.Text.RegularExpressions.Regex.Replace(name, "(?<!^)([A-Z])", " $1");
 		}
 	}

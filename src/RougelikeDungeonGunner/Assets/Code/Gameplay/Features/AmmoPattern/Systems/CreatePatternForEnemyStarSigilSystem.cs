@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace Code.Gameplay.Features.AmmoPattern.Systems
 {
-	public class CreatePatternForTriangleSigilSystem : IExecuteSystem
+	public class CreatePatternForEnemyStarSigilSystem : IExecuteSystem
 	{
 		private readonly List<GameEntity> _buffer = new(1);
 
@@ -16,7 +16,7 @@ namespace Code.Gameplay.Features.AmmoPattern.Systems
 		private readonly IAmmoDirectionProvider _ammoDirectionProvider;
 		private readonly IGroup<GameEntity> _weapons;
 
-		public CreatePatternForTriangleSigilSystem(
+		public CreatePatternForEnemyStarSigilSystem(
 			GameContext game,
 			IAmmoPatternFactory patternFactory,
 			IAmmoDirectionProvider ammoDirectionProvider)
@@ -27,7 +27,7 @@ namespace Code.Gameplay.Features.AmmoPattern.Systems
 
 			_weapons = game.GetGroup(GameMatcher
 				.AllOf(
-					GameMatcher.TriangleSigil,
+					GameMatcher.EnemyStarSigil,
 					GameMatcher.AmmoTypeId,
 					GameMatcher.MinPelletsDeviation,
 					GameMatcher.MaxPelletsDeviation,

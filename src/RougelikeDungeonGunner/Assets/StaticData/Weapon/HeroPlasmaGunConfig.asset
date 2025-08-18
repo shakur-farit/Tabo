@@ -14,8 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TypeId: 7
   AmmoTypeId: 5
-  PatternTypeId: 0
-  OwnerTypeId: 1
+  AmmoPatternSetup:
+    PatternTypeId: 1
+    AmmoCount: 0
+    Raduis: 0
+    RotationSpeed: 0
+    MovementSpeed: 7
+    Branches: 0
   ViewPrefab: {fileID: 3867516666948492017, guid: 69172fbde18e101418b3b1f7089f9a29, type: 3}
   Sprite: {fileID: 21300000, guid: a9d9372b640a67a4dae1cdbb59e3b919, type: 3}
   FirePosition: {x: 1.03, y: 0.245}

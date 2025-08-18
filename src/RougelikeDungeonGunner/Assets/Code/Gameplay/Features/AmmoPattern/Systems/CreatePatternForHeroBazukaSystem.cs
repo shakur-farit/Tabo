@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace Code.Gameplay.Features.AmmoPattern.Systems
 {
-	public class CreatePatternForHeroRocketLauncherSystem : IExecuteSystem
+	public class CreatePatternForHeroBazukaSystem : IExecuteSystem
 	{
 		private readonly List<GameEntity> _buffer = new(1);
 
@@ -16,7 +16,7 @@ namespace Code.Gameplay.Features.AmmoPattern.Systems
 		private readonly IAmmoDirectionProvider _ammoDirectionProvider;
 		private readonly IGroup<GameEntity> _weapons;
 
-		public CreatePatternForHeroRocketLauncherSystem(
+		public CreatePatternForHeroBazukaSystem(
 			GameContext game,
 			IAmmoPatternFactory patternFactory,
 			IAmmoDirectionProvider ammoDirectionProvider)

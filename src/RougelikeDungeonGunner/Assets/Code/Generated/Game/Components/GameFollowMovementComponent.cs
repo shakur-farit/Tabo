@@ -8,17 +8,17 @@
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherStarSigil;
+    static Entitas.IMatcher<GameEntity> _matcherFollowMovement;
 
-    public static Entitas.IMatcher<GameEntity> StarSigil {
+    public static Entitas.IMatcher<GameEntity> FollowMovement {
         get {
-            if (_matcherStarSigil == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.StarSigil);
+            if (_matcherFollowMovement == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.FollowMovement);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherStarSigil = matcher;
+                _matcherFollowMovement = matcher;
             }
 
-            return _matcherStarSigil;
+            return _matcherFollowMovement;
         }
     }
 }
@@ -33,18 +33,18 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Weapon.StarSigil starSigilComponent = new Code.Gameplay.Features.Weapon.StarSigil();
+    static readonly Code.Gameplay.Features.Movement.FollowMovement followMovementComponent = new Code.Gameplay.Features.Movement.FollowMovement();
 
-    public bool isStarSigil {
-        get { return HasComponent(GameComponentsLookup.StarSigil); }
+    public bool isFollowMovement {
+        get { return HasComponent(GameComponentsLookup.FollowMovement); }
         set {
-            if (value != isStarSigil) {
-                var index = GameComponentsLookup.StarSigil;
+            if (value != isFollowMovement) {
+                var index = GameComponentsLookup.FollowMovement;
                 if (value) {
                     var componentPool = GetComponentPool(index);
                     var component = componentPool.Count > 0
                             ? componentPool.Pop()
-                            : starSigilComponent;
+                            : followMovementComponent;
 
                     AddComponent(index, component);
                 } else {

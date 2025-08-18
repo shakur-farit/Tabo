@@ -44,9 +44,6 @@ namespace Code.Gameplay.Features.AmmoPattern.Systems
 		{
 			foreach (GameEntity weapon in _weapons.GetEntities(_buffer))
 			{
-
-				Debug.Log(GetDirection(weapon));
-
 				GameEntity pattern = _patternFactory.CreatePattern(weapon.AmmoPatternSetup, weapon.AmmoTypeId,
 					weapon.FirePositionTransform.position, GetDirection(weapon));
 

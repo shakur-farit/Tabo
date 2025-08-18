@@ -8,17 +8,17 @@
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherTriangleSigil;
+    static Entitas.IMatcher<GameEntity> _matcherEnemyStarSigil;
 
-    public static Entitas.IMatcher<GameEntity> TriangleSigil {
+    public static Entitas.IMatcher<GameEntity> EnemyStarSigil {
         get {
-            if (_matcherTriangleSigil == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.TriangleSigil);
+            if (_matcherEnemyStarSigil == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.EnemyStarSigil);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherTriangleSigil = matcher;
+                _matcherEnemyStarSigil = matcher;
             }
 
-            return _matcherTriangleSigil;
+            return _matcherEnemyStarSigil;
         }
     }
 }
@@ -33,18 +33,18 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Weapon.TriangleSigil triangleSigilComponent = new Code.Gameplay.Features.Weapon.TriangleSigil();
+    static readonly Code.Gameplay.Features.Weapon.EnemyStarSigil enemyStarSigilComponent = new Code.Gameplay.Features.Weapon.EnemyStarSigil();
 
-    public bool isTriangleSigil {
-        get { return HasComponent(GameComponentsLookup.TriangleSigil); }
+    public bool isEnemyStarSigil {
+        get { return HasComponent(GameComponentsLookup.EnemyStarSigil); }
         set {
-            if (value != isTriangleSigil) {
-                var index = GameComponentsLookup.TriangleSigil;
+            if (value != isEnemyStarSigil) {
+                var index = GameComponentsLookup.EnemyStarSigil;
                 if (value) {
                     var componentPool = GetComponentPool(index);
                     var component = componentPool.Count > 0
                             ? componentPool.Pop()
-                            : triangleSigilComponent;
+                            : enemyStarSigilComponent;
 
                     AddComponent(index, component);
                 } else {

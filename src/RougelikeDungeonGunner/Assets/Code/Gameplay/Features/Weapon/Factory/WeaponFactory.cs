@@ -71,7 +71,7 @@ namespace Code.Gameplay.Features.Weapon.Factory
 					return CreateHeroAutomaticPistol(weaponTypeId, parent, at, ownerId);
 				case WeaponTypeId.HeroPlasmaGun:
 					return CreateHeroPlasmaGun(weaponTypeId, parent, at, ownerId);
-				case WeaponTypeId.HeroRocketLauncher:
+				case WeaponTypeId.HeroBazuka:
 					return CreateHeroRocketLauncher(weaponTypeId, parent, at, ownerId);
 			}
 
@@ -84,12 +84,12 @@ namespace Code.Gameplay.Features.Weapon.Factory
 			{
 				case WeaponTypeId.EnemyPistol:
 					return CreateEnemyPistol(weaponTypeId, parent, at, ownerId);
-				case WeaponTypeId.CircleSigil:
-					return CircleSigil(weaponTypeId, parent, at, ownerId);
-				case WeaponTypeId.TriangleSigil:
-					return CircleSigil(weaponTypeId, parent, at, ownerId);
-				case WeaponTypeId.StarSigil:
-					return CircleSigil(weaponTypeId, parent, at, ownerId);
+				case WeaponTypeId.EnemyCircleSigil:
+					return EnemyCircleSigil(weaponTypeId, parent, at, ownerId);
+				case WeaponTypeId.EnemyTriangleSigil:
+					return EnemyTriangleSigil(weaponTypeId, parent, at, ownerId);
+				case WeaponTypeId.EnemyStarSigil:
+					return EnemyStarSigil(weaponTypeId, parent, at, ownerId);
 			}
 
 			throw new Exception($"Weapon for {weaponTypeId} type was not found");
@@ -145,17 +145,17 @@ namespace Code.Gameplay.Features.Weapon.Factory
 			CreateWeaponEntity(weaponTypeId, parent, at, ownerId)
 				.With(x => x.isEnemyPistol = true);
 
-		private GameEntity CircleSigil(WeaponTypeId weaponTypeId, Transform parent, Vector2 at, int ownerId) =>
+		private GameEntity EnemyCircleSigil(WeaponTypeId weaponTypeId, Transform parent, Vector2 at, int ownerId) =>
 			CreateWeaponEntity(weaponTypeId, parent, at, ownerId)
-				.With(x => x.isCircleSigil = true);
+				.With(x => x.isEnemyCircleSigil = true);
 
-		private GameEntity TriangleSigil(WeaponTypeId weaponTypeId, Transform parent, Vector2 at, int ownerId) =>
+		private GameEntity EnemyTriangleSigil(WeaponTypeId weaponTypeId, Transform parent, Vector2 at, int ownerId) =>
 			CreateWeaponEntity(weaponTypeId, parent, at, ownerId)
-				.With(x => x.isTriangleSigil = true);
+				.With(x => x.isEnemyTriangleSigil = true);
 
-		private GameEntity StarSigil(WeaponTypeId weaponTypeId, Transform parent, Vector2 at, int ownerId) =>
+		private GameEntity EnemyStarSigil(WeaponTypeId weaponTypeId, Transform parent, Vector2 at, int ownerId) =>
 			CreateWeaponEntity(weaponTypeId, parent, at, ownerId)
-				.With(x => x.isStarSigil = true);
+				.With(x => x.isEnemyStarSigil = true);
 
 		private GameEntity CreateWeaponEntity(WeaponTypeId weaponTypeId, Transform parent, Vector2 at, int ownerId)
 		{

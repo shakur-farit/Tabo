@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 05c169df0c55d374fb648c370f9b7fea, type: 3}
-  m_Name: StarSigilConfig
+  m_Name: EnemyCircleSigilConfig
   m_EditorClassIdentifier: 
-  TypeId: 14
+  TypeId: 15
   AmmoTypeId: 1
   AmmoPatternSetup:
-    PatternTypeId: 4
-    AmmoCount: 4
-    Raduis: 3
-    RotationSpeed: 90
+    PatternTypeId: 2
+    AmmoCount: 9
+    Raduis: 2
+    RotationSpeed: 180
     MovementSpeed: 3
-    Branches: 5
+    Branches: 0
   ViewPrefab: {fileID: 3867516666948492017, guid: 69172fbde18e101418b3b1f7089f9a29, type: 3}
   Sprite: {fileID: 0}
   FirePosition: {x: 0, y: 0}

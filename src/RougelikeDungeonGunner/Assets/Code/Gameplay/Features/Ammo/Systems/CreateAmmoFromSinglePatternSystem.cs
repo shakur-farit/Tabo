@@ -35,10 +35,10 @@ namespace Code.Gameplay.Features.Ammo.Systems
 				ammo
 					.AddProducerId(pattern.ProducerId)
 					.AddAmmoPatternId(pattern.Id)
-					.AddSpeed(pattern.Speed)
+					.AddFollowTargetId(pattern.Id)
 					.With(x => x.isMovementAvailable = true)
 					.With(x => x.isMoving = true)
-					.With(x => x.isLinerMovement = true)
+					.With(x => x.isFollowMovement = true)
 					;
 
 				ammo.ReplaceDirection(pattern.Direction);

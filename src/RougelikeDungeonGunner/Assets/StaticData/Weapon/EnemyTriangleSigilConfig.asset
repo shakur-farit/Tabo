@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 05c169df0c55d374fb648c370f9b7fea, type: 3}
-  m_Name: TriangleSigilConfig
+  m_Name: EnemyTriangleSigilConfig
   m_EditorClassIdentifier: 
-  TypeId: 13
+  TypeId: 16
   AmmoTypeId: 1
   AmmoPatternSetup:
     PatternTypeId: 3

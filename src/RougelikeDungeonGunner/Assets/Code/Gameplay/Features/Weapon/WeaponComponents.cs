@@ -53,8 +53,11 @@ namespace Code.Gameplay.Features.Weapon
 	[Game] public class HeroPlasmaGun : IComponent { }
 	[Game] public class HeroLaserBlaster : IComponent { }
 	[Game] public class HeroRocketLauncher : IComponent { }
+	[Game] public class HeroCircleSigil : IComponent { }
+	[Game] public class HeroTriangleSigil : IComponent { }
+	[Game] public class HeroStarSigil : IComponent { }
 	[Game] public class EnemyPistol : IComponent { }
-	[Game] public class CircleSigil : IComponent { }
-	[Game] public class TriangleSigil : IComponent { }
-	[Game] public class StarSigil : IComponent { }
+	[Game] public class EnemyCircleSigil : IComponent { }
+	[Game] public class EnemyTriangleSigil : IComponent { }
+	[Game] public class EnemyStarSigil : IComponent { }
 }
