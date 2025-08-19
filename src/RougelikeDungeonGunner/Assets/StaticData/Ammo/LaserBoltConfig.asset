@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TypeId: 5
   ViewPrefab: {fileID: 2243231872987813085, guid: a5967ca81ad889847ae902288d60c7a5, type: 3}
+  Sprite: {fileID: 21300000, guid: e36e8bbd18074d341b170885ac002038, type: 3}
+  Color: {r: 1, g: 1, b: 1, a: 1}
   Stats:
-    Speed: 10
     ContactRadius: 0.1
   CastSetup:
     CastStartPosiotion: {x: 0, y: 0}

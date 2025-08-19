@@ -9,11 +9,10 @@ namespace Code.Gameplay.Features.Ammo.Configs
 	public class AmmoConfig : ScriptableObject
 	{
 		public AmmoTypeId TypeId;
-
 		public EntityBehaviour ViewPrefab;
-
+		public Sprite Sprite;
+		public Color Color;
 		public AmmoStats Stats;
-
 		public CollisionCastSetup CastSetup;
 	}
 }

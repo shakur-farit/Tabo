@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 2224264420142898566}
   - component: {fileID: 2308486921878832860}
   - component: {fileID: 4598200908293275991}
+  - component: {fileID: 7336446336226078460}
   m_Layer: 8
   m_Name: Ammo
   m_TagString: Untagged
@@ -283,3 +284,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EntityView: {fileID: 2243231872987813085}
   _startPosiotionTransform: {fileID: 1537330521457639526}
+--- !u!114 &7336446336226078460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6539570766999889727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2439f0e738d44a4fac3c9279d9ae3c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EntityView: {fileID: 2243231872987813085}
+  _spriteRenderer: {fileID: 6390910501267623108}
