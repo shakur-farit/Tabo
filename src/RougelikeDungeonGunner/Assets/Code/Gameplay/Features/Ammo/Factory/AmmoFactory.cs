@@ -40,6 +40,11 @@ namespace Code.Gameplay.Features.Ammo.Factory
 					return CreateLaserBolt(ammoTypeId, at);
 				case AmmoTypeId.RocketMissile:
 					return CreateRocketMissile(ammoTypeId, at);
+				case AmmoTypeId.EnemyBullet:
+					return CreateEnemyBullet(ammoTypeId, at);
+				case AmmoTypeId.SigilAmmo:
+					return CreateSigilAmmo(ammoTypeId, at);
+
 			}
 
 			throw new Exception($"Ammo for {ammoTypeId} type was not found");
@@ -69,6 +74,14 @@ namespace Code.Gameplay.Features.Ammo.Factory
 		private GameEntity CreateRocketMissile(AmmoTypeId ammoTypeId, Vector3 at) =>
 			CreateAmmoEntity(ammoTypeId, at)
 				.With(x => x.isRocketMissile = true);
+
+		private GameEntity CreateEnemyBullet(AmmoTypeId ammoTypeId, Vector3 at) =>
+			CreateAmmoEntity(ammoTypeId, at)
+				.With(x => x.isEnemyBullet = true);
+
+		private GameEntity CreateSigilAmmo(AmmoTypeId ammoTypeId, Vector3 at) =>
+			CreateAmmoEntity(ammoTypeId, at)
+				.With(x => x.isSigilAmmo = true);
 
 		private GameEntity CreateAmmoEntity(AmmoTypeId ammoTypeId, Vector3 at)
 		{

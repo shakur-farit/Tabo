@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: EnemyStarSigilConfig
   m_EditorClassIdentifier: 
   TypeId: 17
-  AmmoTypeId: 1
+  AmmoTypeId: 8
   AmmoPatternSetup:
     PatternTypeId: 4
     AmmoCount: 4

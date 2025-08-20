@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: EnemyCircleSigilConfig
   m_EditorClassIdentifier: 
   TypeId: 15
-  AmmoTypeId: 1
+  AmmoTypeId: 8
   AmmoPatternSetup:
     PatternTypeId: 2
     AmmoCount: 9

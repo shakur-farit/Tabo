@@ -40,6 +40,7 @@ namespace Code.Gameplay
 			Add(systems.Create<LootFeature>());
 
 			Add(systems.Create<MovementFeature>());
+			Add(systems.Create<RotateFeature>());
 			Add(systems.Create<WeaponFeature>());
 			Add(systems.Create<AmmoPatternFeature>());
 			Add(systems.Create<AmmoFeature>());

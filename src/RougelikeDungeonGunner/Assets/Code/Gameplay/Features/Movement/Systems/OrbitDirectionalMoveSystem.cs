@@ -15,7 +15,6 @@ namespace Code.Gameplay.Features.Movement.Systems
 
 			_entities = game.GetGroup(GameMatcher.AllOf(
 				GameMatcher.WorldPosition,
-				GameMatcher.Direction,
 				GameMatcher.MovementAvailable,
 				GameMatcher.Moving,
 				GameMatcher.OrbitalMovement,

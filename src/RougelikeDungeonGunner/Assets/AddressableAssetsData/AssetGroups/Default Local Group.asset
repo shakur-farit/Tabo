@@ -573,6 +573,18 @@ MonoBehaviour:
     m_SerializedLabels:
     - WeaponConfig
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5e568a4610103ee498aad52ae2908772
+    m_Address: Assets/StaticData/Ammo/EnemyBulletConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AmmoConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b3cae28d607078846afeaaf999092661
+    m_Address: Assets/StaticData/Ammo/SigilConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AmmoConfig
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 7128017d563554245a79368046c75e1a, type: 2}
   m_SchemaSet:

@@ -8,6 +8,8 @@
 		ShotgunShell = 3,
 		LongRange = 4,
 		LaserBolt = 5,
-		RocketMissile = 6
+		RocketMissile = 6,
+		EnemyBullet = 7,
+		SigilAmmo = 8
 	}
 }

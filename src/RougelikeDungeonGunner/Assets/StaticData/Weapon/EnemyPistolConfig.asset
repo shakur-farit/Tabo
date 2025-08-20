@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: EnemyPistolConfig
   m_EditorClassIdentifier: 
   TypeId: 10
-  AmmoTypeId: 1
+  AmmoTypeId: 7
   AmmoPatternSetup:
     PatternTypeId: 1
     AmmoCount: 0

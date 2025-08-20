@@ -36,12 +36,10 @@ namespace Code.Gameplay.Features.Ammo.Systems
 					.AddProducerId(pattern.ProducerId)
 					.AddAmmoPatternId(pattern.Id)
 					.AddFollowTargetId(pattern.Id)
-					.With(x => x.isMovementAvailable = true)
 					.With(x => x.isMoving = true)
+					.With(x => x.isMovementAvailable = true)
 					.With(x => x.isFollowMovement = true)
 					;
-
-				ammo.ReplaceDirection(pattern.Direction);
 
 				pattern.isPatternEmpty = false;
 			}

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: EnemyTriangleSigilConfig
   m_EditorClassIdentifier: 
   TypeId: 16
-  AmmoTypeId: 1
+  AmmoTypeId: 8
   AmmoPatternSetup:
     PatternTypeId: 3
     AmmoCount: 9
