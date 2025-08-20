@@ -2,10 +2,7 @@
 using System.Collections.Generic;
 using Code.Common.Entity;
 using Code.Common.Extensions;
-using Code.Gameplay.Features.Effects;
 using Code.Infrastructure.Identifiers;
-using TMPro.EditorUtilities;
-using UnityEngine;
 
 namespace Code.Gameplay.Features.Statuses.Factory
 {
@@ -32,6 +29,8 @@ namespace Code.Gameplay.Features.Statuses.Factory
 					return CreateFreezeStatus(setup, producerId, targetId);
 				case StatusTypeId.Flame:
 					return CreateFlameStatus(setup, producerId, targetId);
+				case StatusTypeId.Explosive:
+					return CreateExplosiveStatus(setup, producerId, targetId);
 			}
 			
 			throw new Exception($"Status with type id {setup.StatusTypeId} does not exist");
@@ -59,6 +58,21 @@ namespace Code.Gameplay.Features.Statuses.Factory
 				.AddProcessedTargets(new List<int>(TargetsBufferSize))
 				.AddTargetLayerMask(CollisionLayer.Enemy.AsMask())
 				.With(x => x.isFlame = true)
+				.With(x => x.isReadyToCollectTargets = true)
+				.With(x => x.isCollectTargetsContinuously = true)
+				.AddSelfDestructedTimer(1);
+		}
+
+		private GameEntity CreateExplosiveStatus(StatusSetup setup, int producerId, int targetId)
+		{
+			GameEntity target = _game.GetEntityWithId(targetId);
+
+			return CreateStatusEntity(setup, producerId)
+				.AddWorldPosition(target.WorldPosition)
+				.AddTargetsBuffer(new List<int>(TargetsBufferSize))
+				.AddProcessedTargets(new List<int>(TargetsBufferSize))
+				.AddTargetLayerMask(CollisionLayer.Enemy.AsMask())
+				.With(x => x.isExplosive = true)
 				.With(x => x.isReadyToCollectTargets = true)
 				.With(x => x.isCollectTargetsContinuously = true);
 		}

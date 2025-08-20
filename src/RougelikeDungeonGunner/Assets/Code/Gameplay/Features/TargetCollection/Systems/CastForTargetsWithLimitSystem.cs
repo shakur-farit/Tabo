@@ -21,7 +21,6 @@ namespace Code.Gameplay.Features.TargetCollection.Systems
 				.AllOf(
 					GameMatcher.TargetsBuffer,
 					GameMatcher.Radius,
-					GameMatcher.CastStartPositionTransform,
 					GameMatcher.TargetLayerMask,
 					GameMatcher.WorldPosition,
 					GameMatcher.ReadyToCollectTargets,
@@ -54,7 +53,10 @@ namespace Code.Gameplay.Features.TargetCollection.Systems
 
 		private int TargetsCountInRadius(GameEntity entity)
 		{
-			Vector2 center = entity.CastStartPositionTransform.position;
+			Vector2 center = entity.WorldPosition;
+
+			if (entity.hasCastStartPositionTransform)
+				center = entity.CastStartPositionTransform.position;
 
 			return _physicsService
 				.CircleCastNonAlloc(center, entity.Radius, entity.TargetLayerMask, _targetCastBuffer);

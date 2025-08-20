@@ -31,6 +31,8 @@ namespace Code.Gameplay.Features.Enchants.Factory
 					return CreateFreezeEnchant(setup, producerId);
 				case StatusTypeId.Flame:
 					return CreateFlameEnchant(setup, producerId);
+				case StatusTypeId.Explosive:
+					return CreateExplosiveEnchant(setup, producerId);
 			}
 
 			throw new Exception($"Enchant for {setup.StatusTypeId} type was not found");
@@ -49,6 +51,11 @@ namespace Code.Gameplay.Features.Enchants.Factory
 		private GameEntity CreateFlameEnchant(StatusSetup setup, int producerId) =>
 			CreateEnchantEntity(setup, EnchantTypeId.FlameEnchant, producerId)
 				.With(x => x.isFlameEnchant = true)
+		;
+
+		private GameEntity CreateExplosiveEnchant(StatusSetup setup, int producerId) =>
+			CreateEnchantEntity(setup, EnchantTypeId.ExplosiveEnchant, producerId)
+				.With(x => x.isExplosiveEnchant = true)
 		;
 
 		private GameEntity CreateEnchantEntity(StatusSetup setup, EnchantTypeId typeId, int producerId)

@@ -18,12 +18,12 @@ namespace Code.Gameplay.Features.Statuses.Systems
 			_statuses = game.GetGroup(GameMatcher
 				.AllOf(
 					GameMatcher.Status,
+					GameMatcher.Poison,
 					GameMatcher.Period,
 					GameMatcher.EffectValue,
 					GameMatcher.TimeSinceLastTick,
 					GameMatcher.ProducerId,
-					GameMatcher.TargetId)
-				.NoneOf(GameMatcher.Radius));
+					GameMatcher.TargetId));
 		}
 
 		public void Execute()

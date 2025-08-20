@@ -8,9 +8,9 @@ namespace Code.Gameplay.Features.Statuses.Systems
 		private readonly IGroup<GameEntity> _statuses;
 		private List<GameEntity> _buffer = new(32);
 
-		public CleanupUnappliedStatusesSystem(GameContext Game)
+		public CleanupUnappliedStatusesSystem(GameContext game)
 		{
-			_statuses = Game.GetGroup(GameMatcher
+			_statuses = game.GetGroup(GameMatcher
 				.AllOf(GameMatcher.Status,
 					GameMatcher.Unapplied));
 		}

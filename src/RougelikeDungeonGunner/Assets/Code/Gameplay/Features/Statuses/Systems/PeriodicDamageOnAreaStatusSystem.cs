@@ -18,6 +18,7 @@ namespace Code.Gameplay.Features.Statuses.Systems
 			_statuses = game.GetGroup(GameMatcher
 				.AllOf(
 					GameMatcher.Status,
+					GameMatcher.Flame,
 					GameMatcher.Period,
 					GameMatcher.EffectValue,
 					GameMatcher.TimeSinceLastTick,

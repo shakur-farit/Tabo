@@ -5,6 +5,7 @@
 		Unknown = 0,
 		PoisonEnchant = 1,
 		FreezeEnchant = 2,
-		FlameEnchant = 3
+		FlameEnchant = 3,
+		ExplosiveEnchant = 4,
 	}
 }

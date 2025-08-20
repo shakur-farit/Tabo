@@ -20,7 +20,6 @@ namespace Code.Gameplay.Features.TargetCollection.Systems
 				.AllOf(
 					GameMatcher.TargetsBuffer,
 					GameMatcher.Radius,
-					GameMatcher.CastStartPositionTransform,
 					GameMatcher.TargetLayerMask,
 					GameMatcher.WorldPosition,
 					GameMatcher.ReadyToCollectTargets)
@@ -40,7 +39,10 @@ namespace Code.Gameplay.Features.TargetCollection.Systems
 
 		private IEnumerable<int> TargetsInRadius(GameEntity entity)
 		{
-			Vector2 center = entity.CastStartPositionTransform.position;
+			Vector2 center = entity.WorldPosition;
+
+			if (entity.hasCastStartPositionTransform)
+				 center = entity.CastStartPositionTransform.position;
 
 			return _physicsService
 				.CircleCast(center, entity.Radius, entity.TargetLayerMask)

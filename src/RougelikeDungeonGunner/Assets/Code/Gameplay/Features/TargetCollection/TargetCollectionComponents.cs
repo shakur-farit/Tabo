@@ -17,4 +17,5 @@ namespace Code.Gameplay.Features.TargetCollection
 	[Game] public class ReadyToCollectTargets : IComponent { }
 	[Game] public class CollectTargetsContinuously : IComponent { }
 	[Game] public class CollisionInFront : IComponent { }
+	[Game] public class Reached : IComponent { }
 }

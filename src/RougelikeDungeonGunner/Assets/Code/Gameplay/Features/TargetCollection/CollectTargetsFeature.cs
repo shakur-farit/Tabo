@@ -13,6 +13,8 @@ namespace Code.Gameplay.Features.TargetCollection
 			Add(systems.Create<CastLineForCollisionsSystem>());
 			Add(systems.Create<CastForTargetsWithLimitSystem>());
 
+			Add(systems.Create<MarkReachedSystem>());
+
 			Add(systems.Create<CleanupTargetBuffersSystem>());
 		}
 	}

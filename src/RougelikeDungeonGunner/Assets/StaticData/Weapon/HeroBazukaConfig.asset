@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 05c169df0c55d374fb648c370f9b7fea, type: 3}
-  m_Name: HeroRocketLauncherConfig
+  m_Name: HeroBazukaConfig
   m_EditorClassIdentifier: 
   TypeId: 9
   AmmoTypeId: 6
@@ -34,16 +34,19 @@ MonoBehaviour:
     Pierce: 1
     PelletCount: 1
     Accuracy: 100
-    EnchantSlots: 0
+    EnchantSlots: 1
   CastSetup:
     CastStartPosiotion: {x: 0, y: 0.2}
     ForwardCastDistance: 1
     Width: 0
     Height: 0
-  EffectSetups:
-  - EffectTypeId: 1
-    Value: 25
-  StatusSetups: []
+  EffectSetups: []
+  StatusSetups:
+  - StatusTypeId: 4
+    Value: 10
+    StatusDuration: 0
+    Period: 0
+    Radius: 3
   AvailableUpgrades:
   - UpgradeType: 8
   - UpgradeType: 1

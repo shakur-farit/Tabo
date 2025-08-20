@@ -16,7 +16,6 @@ namespace Code.Gameplay.Features.TargetCollection.Systems
 			_time = time;
 			_entities = game.GetGroup(GameMatcher
 				.AllOf(
-					GameMatcher.TargetsBuffer,
 					GameMatcher.CollectTargetsInterval,
 					GameMatcher.CollectTargetsTimer));
 		}

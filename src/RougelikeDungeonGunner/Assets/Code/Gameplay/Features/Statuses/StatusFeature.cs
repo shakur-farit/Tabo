@@ -13,6 +13,7 @@ namespace Code.Gameplay.Features.Statuses
 			Add(systems.Create<PeriodicDamageStatusSystem>());
 			Add(systems.Create<PeriodicDamageOnAreaStatusSystem>());
 			Add(systems.Create<ApplyFreezeStatusSystem>());
+			Add(systems.Create<DamageOnAreaStatusSystem>());
 
 			Add(systems.Create<StatusVisualsFeature>());
 
