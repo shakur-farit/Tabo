@@ -31,10 +31,12 @@ namespace Code.Gameplay.Features.Ammo.Systems
 			foreach (GameEntity ammo in _ammo)
 			{
 				if (pattern.Id == ammo.AmmoPatternId)
+				{
 					pattern.AmmoTransformsList.Remove(ammo.Transform);
 
-				if (pattern.AmmoTransformsList.Count <= 0) 
-					pattern.isDestructed = true;
+					if (pattern.AmmoTransformsList.Count <= 0)
+						pattern.isDestructed = true;
+				}
 			}
 		}
 	}

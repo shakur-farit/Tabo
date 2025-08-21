@@ -16,8 +16,8 @@ MonoBehaviour:
   AmmoTypeId: 8
   AmmoPatternSetup:
     PatternTypeId: 4
-    AmmoCount: 4
-    Raduis: 3
+    AmmoCount: 3
+    Raduis: 2
     RotationSpeed: 90
     MovementSpeed: 3
     Branches: 5

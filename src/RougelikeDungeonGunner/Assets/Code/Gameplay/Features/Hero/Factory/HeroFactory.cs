@@ -75,7 +75,7 @@ namespace Code.Gameplay.Features.Hero.Factory
 					.AddBoxCastHeight(castSetup.Height)
 					.AddBaseStats(baseStats)
 					.AddStatModifiers(InitStats.EmptyStatDictionary())
-					.AddCurrentHp(baseStats[Stats.MaxHp])
+					.AddCurrentHp(config.CurrentHp)
 					.AddMaxHp(baseStats[Stats.MaxHp])
 					.AddSpeed(baseStats[Stats.Speed])
 					.AddViewPrefab(config.ViewPrefab)

@@ -74,6 +74,8 @@ namespace Code.Gameplay.Features.Ammo.Systems
 						.With(x => x.isMovementAvailable = true)
 						.With(x => x.isOrbitalMovement = true)
 						;
+
+					ammo.ReplaceDirection(pattern.Direction);
 				}
 
 				pattern.isPatternEmpty = false;

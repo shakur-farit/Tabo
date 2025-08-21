@@ -41,6 +41,8 @@ namespace Code.Gameplay.Features.Ammo.Systems
 					.With(x => x.isFollowMovement = true)
 					;
 
+				ammo.ReplaceDirection(pattern.Direction);
+
 				pattern.isPatternEmpty = false;
 			}
 		}

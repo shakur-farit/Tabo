@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: HedusaEnemyConfig
   m_EditorClassIdentifier: 
   TypeId: 1
-  StartWeapon: 13
+  StartWeapon: 17
   ViewPrefab: {fileID: 8166552356577901019, guid: 9dc33cf00c86b7440a425de8b022c28a, type: 3}
   AnimatorController: {fileID: 9100000, guid: 19b6ff9fbadc74e479b63068d33eb245, type: 2}
   CurrentHp: 5
   MaxHp: 20
   Damage: 0
-  MovementSpeed: 2
+  MovementSpeed: 1
   TargetAmount: 1
   AttackRaduis: 0.5
   AttackInterlal: 2

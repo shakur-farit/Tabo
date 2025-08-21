@@ -29,6 +29,9 @@ namespace Code.Meta.Features.Shop.EnchantUIEntry.Behaviours
 				case StatusTypeId.Flame:
 					_factory.CreateWeaponEnchantUIEntryItem(EnchantUIEntryTypeId.Flame, _holder, setup);
 					break;
+				case StatusTypeId.Explosive:
+					_factory.CreateWeaponEnchantUIEntryItem(EnchantUIEntryTypeId.Explosive, _holder, setup);
+					break;
 				default:
 					throw new Exception($"Enchant UI entry with type id {setup.StatusTypeId} does not exist");
 			}

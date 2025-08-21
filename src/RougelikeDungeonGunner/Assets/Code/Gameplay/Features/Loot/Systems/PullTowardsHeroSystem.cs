@@ -31,6 +31,7 @@ namespace Code.Gameplay.Features.Loot.Systems
 				pullable.ReplaceSpeed(PullableMovementSpeed);
 				pullable.isMoving = true;
 				pullable.isMovementAvailable = true;
+				pullable.isLinerMovement = true;
 			}
 		}
 	}

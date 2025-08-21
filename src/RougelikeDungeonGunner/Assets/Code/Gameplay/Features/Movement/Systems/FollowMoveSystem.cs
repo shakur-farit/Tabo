@@ -1,4 +1,5 @@
 ﻿using Entitas;
+using UnityEngine;
 
 namespace Code.Gameplay.Features.Movement.Systems
 {
@@ -24,6 +25,11 @@ namespace Code.Gameplay.Features.Movement.Systems
 			foreach (GameEntity follower in _followers)
 			{
 				GameEntity target = _game.GetEntityWithId(follower.FollowTargetId);
+
+				if (target == null)
+				{
+					Debug.Log("Target is null");
+				}
 
 				if (target != null && target.hasWorldPosition)
 				{

@@ -90,6 +90,7 @@ namespace Code.Infrastructure.Installers
 			Container.BindInterfacesAndSelfTo<BattleEnterState>().AsSingle();
 			Container.BindInterfacesAndSelfTo<BattleLoopState>().AsSingle();
 			Container.BindInterfacesAndSelfTo<LevelCompleteState>().AsSingle();
+			Container.BindInterfacesAndSelfTo<GameOverState>().AsSingle();
 		}
 
 		private void BindContexts()

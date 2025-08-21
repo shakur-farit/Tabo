@@ -20,5 +20,5 @@ MonoBehaviour:
   HeroSaveZoneRadius: 0
   EnemyWaves:
   - EnemiesInWave:
-    - EnemyTypeId: 2
+    - EnemyTypeId: 1
       Amount: 3

@@ -15,11 +15,13 @@ namespace Code.Gameplay.Features.Weapon.Systems
 				.AllOf(
 					GameMatcher.Weapon,
 					GameMatcher.EnemyWeapon,
+					GameMatcher.WeaponOwnerId,
 					GameMatcher.WeaponRotationPointTransform));
 
 			_enemies = game.GetGroup(GameMatcher
 				.AllOf(
 					GameMatcher.Enemy,
+					GameMatcher.Id,
 					GameMatcher.WorldPosition));
 
 			_hero = game.GetGroup(GameMatcher
@@ -34,6 +36,9 @@ namespace Code.Gameplay.Features.Weapon.Systems
 			foreach (GameEntity hero in _hero)
 			foreach (GameEntity weapon in _weapons)
 			{
+				if (weapon.WeaponOwnerId != enemy.Id)
+					continue;
+
 				Vector3 targetPosition = hero.WorldPosition;
 
 				RotateWeapon(targetPosition, weapon, enemy);

@@ -18,10 +18,8 @@ namespace Code.Gameplay.Features.Ammo.Systems
 
 		public void Execute()
 		{
-			foreach (GameEntity ammo in _ammo.GetEntities(_buffer))
-			{
+			foreach (GameEntity ammo in _ammo.GetEntities(_buffer)) 
 				ammo.isProcessed = true;
-			}
 		}
 	}
 }

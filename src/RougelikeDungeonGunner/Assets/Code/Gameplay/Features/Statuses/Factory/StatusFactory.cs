@@ -59,8 +59,7 @@ namespace Code.Gameplay.Features.Statuses.Factory
 				.AddTargetLayerMask(CollisionLayer.Enemy.AsMask())
 				.With(x => x.isFlame = true)
 				.With(x => x.isReadyToCollectTargets = true)
-				.With(x => x.isCollectTargetsContinuously = true)
-				.AddSelfDestructedTimer(1);
+				.With(x => x.isCollectTargetsContinuously = true);
 		}
 
 		private GameEntity CreateExplosiveStatus(StatusSetup setup, int producerId, int targetId)
