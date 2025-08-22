@@ -19,6 +19,7 @@ namespace Code.Gameplay.Features.Hero.Systems
 			_weapons = game.GetGroup(GameMatcher
 				.AllOf(
 					GameMatcher.Weapon,
+					GameMatcher.HeroWeapon,
 					GameMatcher.CollisionInFront));
 		}
 

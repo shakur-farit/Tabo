@@ -15,6 +15,8 @@ namespace Code.Gameplay.Features.Hero
 			Add(systems.Create<SetCollisionInFrontFromWeaponSystem>());
 			Add(systems.Create<CameraFollowHeroSystem>());
 
+			Add(systems.Create<PushBackHeroOnCollisionSystem>());
+
 			Add(systems.Create<AnimateHeroMovementSystem>());
 			Add(systems.Create<CreateWeaponForHeroSystem>());
 			Add(systems.Create<AnimateHeroAimingSystem>());
