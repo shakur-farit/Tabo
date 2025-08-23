@@ -33,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Features.TargetCollection.ForwardCastDistance forwardCastDistance { get { return (Code.Gameplay.Features.TargetCollection.ForwardCastDistance)GetComponent(GameComponentsLookup.ForwardCastDistance); } }
+    public Code.Gameplay.Features.Collection.ForwardCastDistance forwardCastDistance { get { return (Code.Gameplay.Features.Collection.ForwardCastDistance)GetComponent(GameComponentsLookup.ForwardCastDistance); } }
     public float ForwardCastDistance { get { return forwardCastDistance.Value; } }
     public bool hasForwardCastDistance { get { return HasComponent(GameComponentsLookup.ForwardCastDistance); } }
 
     public GameEntity AddForwardCastDistance(float newValue) {
         var index = GameComponentsLookup.ForwardCastDistance;
-        var component = (Code.Gameplay.Features.TargetCollection.ForwardCastDistance)CreateComponent(index, typeof(Code.Gameplay.Features.TargetCollection.ForwardCastDistance));
+        var component = (Code.Gameplay.Features.Collection.ForwardCastDistance)CreateComponent(index, typeof(Code.Gameplay.Features.Collection.ForwardCastDistance));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceForwardCastDistance(float newValue) {
         var index = GameComponentsLookup.ForwardCastDistance;
-        var component = (Code.Gameplay.Features.TargetCollection.ForwardCastDistance)CreateComponent(index, typeof(Code.Gameplay.Features.TargetCollection.ForwardCastDistance));
+        var component = (Code.Gameplay.Features.Collection.ForwardCastDistance)CreateComponent(index, typeof(Code.Gameplay.Features.Collection.ForwardCastDistance));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

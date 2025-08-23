@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using Code.Gameplay.Features.Ammo;
 using Code.Gameplay.Features.AmmoPattern;
+using Code.Gameplay.Features.Collection;
 using Code.Gameplay.Features.Effects;
 using Code.Gameplay.Features.Statuses;
-using Code.Gameplay.Features.TargetCollection;
 using Code.Infrastructure.View;
 using Code.Meta.Features.Shop.Upgrade;
 using Code.Meta.Features.Shop.WeaponStatUIEntry;

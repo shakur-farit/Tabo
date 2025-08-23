@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Code.Common.Entity;
 using Code.Common.Extensions;
 using Code.Gameplay.Features.Ammo.Configs;
-using Code.Gameplay.Features.TargetCollection;
+using Code.Gameplay.Features.Collection;
 using Code.Gameplay.StaticData;
 using Code.Infrastructure.Identifiers;
 using UnityEngine;

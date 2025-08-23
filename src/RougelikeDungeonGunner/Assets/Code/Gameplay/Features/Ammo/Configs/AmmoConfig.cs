@@ -1,5 +1,5 @@
 ﻿using Code.Gameplay.Features.Ammo.Factory;
-using Code.Gameplay.Features.TargetCollection;
+using Code.Gameplay.Features.Collection;
 using Code.Infrastructure.View;
 using UnityEngine;
 

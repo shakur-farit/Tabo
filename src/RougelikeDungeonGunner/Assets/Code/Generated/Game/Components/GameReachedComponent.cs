@@ -33,7 +33,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.TargetCollection.Reached reachedComponent = new Code.Gameplay.Features.TargetCollection.Reached();
+    static readonly Code.Gameplay.Features.Collection.Reached reachedComponent = new Code.Gameplay.Features.Collection.Reached();
 
     public bool isReached {
         get { return HasComponent(GameComponentsLookup.Reached); }

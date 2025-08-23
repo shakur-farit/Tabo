@@ -1,4 +1,4 @@
-﻿using Code.Gameplay.Features.TargetCollection;
+﻿using Code.Gameplay.Features.Collection;
 using Code.Gameplay.Features.Weapon;
 using Code.Infrastructure.View;
 using UnityEngine;

@@ -3,6 +3,7 @@ using Code.Gameplay.Features.Ammo;
 using Code.Gameplay.Features.AmmoPattern;
 using Code.Gameplay.Features.AStar;
 using Code.Gameplay.Features.CharacterStats;
+using Code.Gameplay.Features.Collection;
 using Code.Gameplay.Features.Dungeon;
 using Code.Gameplay.Features.EffectApplication;
 using Code.Gameplay.Features.Effects;
@@ -14,7 +15,6 @@ using Code.Gameplay.Features.Lifetime;
 using Code.Gameplay.Features.Loot;
 using Code.Gameplay.Features.Movement;
 using Code.Gameplay.Features.Statuses;
-using Code.Gameplay.Features.TargetCollection;
 using Code.Gameplay.Features.Weapon;
 using Code.Gameplay.Input;
 using Code.Infrastructure.Systems;
@@ -45,7 +45,7 @@ namespace Code.Gameplay
 			Add(systems.Create<AmmoPatternFeature>());
 			Add(systems.Create<AmmoFeature>());
 
-			Add(systems.Create<CollectTargetsFeature>());
+			Add(systems.Create<CollectFeature>());
 			Add(systems.Create<EffectApplicationFeature>());
 
 			Add(systems.Create<EnchantFeature>());

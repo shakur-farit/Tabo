@@ -33,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Features.TargetCollection.BoxCastHeight boxCastHeight { get { return (Code.Gameplay.Features.TargetCollection.BoxCastHeight)GetComponent(GameComponentsLookup.BoxCastHeight); } }
+    public Code.Gameplay.Features.Collection.BoxCastHeight boxCastHeight { get { return (Code.Gameplay.Features.Collection.BoxCastHeight)GetComponent(GameComponentsLookup.BoxCastHeight); } }
     public float BoxCastHeight { get { return boxCastHeight.Value; } }
     public bool hasBoxCastHeight { get { return HasComponent(GameComponentsLookup.BoxCastHeight); } }
 
     public GameEntity AddBoxCastHeight(float newValue) {
         var index = GameComponentsLookup.BoxCastHeight;
-        var component = (Code.Gameplay.Features.TargetCollection.BoxCastHeight)CreateComponent(index, typeof(Code.Gameplay.Features.TargetCollection.BoxCastHeight));
+        var component = (Code.Gameplay.Features.Collection.BoxCastHeight)CreateComponent(index, typeof(Code.Gameplay.Features.Collection.BoxCastHeight));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceBoxCastHeight(float newValue) {
         var index = GameComponentsLookup.BoxCastHeight;
-        var component = (Code.Gameplay.Features.TargetCollection.BoxCastHeight)CreateComponent(index, typeof(Code.Gameplay.Features.TargetCollection.BoxCastHeight));
+        var component = (Code.Gameplay.Features.Collection.BoxCastHeight)CreateComponent(index, typeof(Code.Gameplay.Features.Collection.BoxCastHeight));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Code.Gameplay.Features.TargetCollection;
+using Code.Gameplay.Features.Collection;
 using Entitas;
 
 namespace Code.Gameplay.Features.Ammo.Systems

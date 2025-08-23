@@ -16,6 +16,7 @@ namespace Code.Gameplay.Features.Hero.Systems
 					GameMatcher.Hero,
 					GameMatcher.Direction,
 					GameMatcher.WorldPosition,
+					GameMatcher.CollisionNormal,
 					GameMatcher.CollisionInFront));
 		}
 
@@ -23,18 +24,9 @@ namespace Code.Gameplay.Features.Hero.Systems
 		{
 			foreach (GameEntity hero in _heroes)
 			{
-				Vector2 dir = hero.Direction.normalized;
-
-				Vector2 collisionNormal = 
-					Mathf.Abs(dir.x) > Mathf.Abs(dir.y) ? 
-						new Vector2(dir.x > 0 ? -1f : 1f, 0f) : 
-						new Vector2(0f, dir.y > 0 ? -1f : 1f);
-
-				Vector3 pushBack = (collisionNormal * PushBackDistancePerFrame);
+				Vector3 pushBack = hero.CollisionNormal * PushBackDistancePerFrame;
 
 				hero.ReplaceWorldPosition(hero.WorldPosition + pushBack);
-
-				Debug.DrawLine(hero.WorldPosition, hero.WorldPosition + pushBack, Color.red, 0f, false);
 			}
 		}
 	}

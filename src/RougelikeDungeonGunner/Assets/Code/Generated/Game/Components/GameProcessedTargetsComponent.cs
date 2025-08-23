@@ -33,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Features.TargetCollection.ProcessedTargets processedTargets { get { return (Code.Gameplay.Features.TargetCollection.ProcessedTargets)GetComponent(GameComponentsLookup.ProcessedTargets); } }
+    public Code.Gameplay.Features.Collection.ProcessedTargets processedTargets { get { return (Code.Gameplay.Features.Collection.ProcessedTargets)GetComponent(GameComponentsLookup.ProcessedTargets); } }
     public System.Collections.Generic.List<int> ProcessedTargets { get { return processedTargets.Value; } }
     public bool hasProcessedTargets { get { return HasComponent(GameComponentsLookup.ProcessedTargets); } }
 
     public GameEntity AddProcessedTargets(System.Collections.Generic.List<int> newValue) {
         var index = GameComponentsLookup.ProcessedTargets;
-        var component = (Code.Gameplay.Features.TargetCollection.ProcessedTargets)CreateComponent(index, typeof(Code.Gameplay.Features.TargetCollection.ProcessedTargets));
+        var component = (Code.Gameplay.Features.Collection.ProcessedTargets)CreateComponent(index, typeof(Code.Gameplay.Features.Collection.ProcessedTargets));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceProcessedTargets(System.Collections.Generic.List<int> newValue) {
         var index = GameComponentsLookup.ProcessedTargets;
-        var component = (Code.Gameplay.Features.TargetCollection.ProcessedTargets)CreateComponent(index, typeof(Code.Gameplay.Features.TargetCollection.ProcessedTargets));
+        var component = (Code.Gameplay.Features.Collection.ProcessedTargets)CreateComponent(index, typeof(Code.Gameplay.Features.Collection.ProcessedTargets));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

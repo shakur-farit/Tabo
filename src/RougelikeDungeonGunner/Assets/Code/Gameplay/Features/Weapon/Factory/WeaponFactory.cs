@@ -3,11 +3,11 @@ using Code.Common.Extensions;
 using Code.Gameplay.StaticData;
 using Code.Infrastructure.Identifiers;
 using System;
+using Code.Gameplay.Features.Collection;
 using Code.Gameplay.Features.Cooldowns;
 using Code.Gameplay.Features.Weapon.Configs;
 using Code.Meta.Features.Shop.Upgrade.Services;
 using UnityEngine;
-using Code.Gameplay.Features.TargetCollection;
 
 namespace Code.Gameplay.Features.Weapon.Factory
 {
