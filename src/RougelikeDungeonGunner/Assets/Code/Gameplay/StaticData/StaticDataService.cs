@@ -46,6 +46,7 @@ namespace Code.Gameplay.StaticData
 		private const string DungeonConfigLabel = "DungeonConfig";
 		private const string LootConfigLabel = "LootConfig";
 		private const string EnchantConfigLabel = "EnchantConfig";
+		private const string AuraConfigLabel = "AuraConfig";
 		private const string WindowConfigLabel = "WindowConfig";
 		private const string WeaponShopItemConfigLabel = "WeaponShopItemConfig";
 		private const string EnchantShopItemConfigLabel = "EnchantShopItemConfig";
@@ -63,12 +64,14 @@ namespace Code.Gameplay.StaticData
 		private Dictionary<DungeonTypeId, DungeonConfig> _dungeonById;
 		private Dictionary<LootTypeId, LootConfig> _lootById;
 		private Dictionary<EnchantTypeId, EnchantConfig> _enchantById;
+		private Dictionary<AuraTypeId, AuraConfig> _auraById;
 		private Dictionary<WindowId, WindowConfig> _windowById;
 		private Dictionary<WeaponShopItemTypeId, WeaponShopItemConfig> _weaponShopItemById;
 		private Dictionary<WeaponUpgradeTypeId, WeaponUpgradeShopItemConfig> _weaponUpgradeShopItemById;
 		private Dictionary<WeaponStatUIEntryTypeId, WeaponStatUIEntryConfig> _weaponStatUIEntryItemById;
 		private Dictionary<EnchantShopItemTypeId, EnchantShopItemConfig> _enchantShopItemById;
 		private Dictionary<EnchantUIEntryTypeId, EnchantUIEntryConfig> _enchantUIEntryItemById;
+
 
 		private Dictionary<EnchantStatUIEntryTypeId, EnchantStatUIEntryConfig>
 			_weaponEnchantStatUIEntryItemById;
@@ -77,6 +80,7 @@ namespace Code.Gameplay.StaticData
 
 		public IEnumerable<LootConfig> GetAllLootConfigs() => _lootById.Values;
 		public IEnumerable<HeroConfig> GetAllHeroConfigs() => _heroById.Values;
+
 
 		public StaticDataService(IAssetProvider assetProvider) =>
 			_assetProvider = assetProvider;
@@ -92,6 +96,7 @@ namespace Code.Gameplay.StaticData
 			await LoadDungeons();
 			await LoadLoots();
 			await LoadEnchants();
+			await LoadAura();
 			await LoadWindows();
 			await LoadWeaponShopItem();
 			await LoadEnchantShopItem();
@@ -163,6 +168,14 @@ namespace Code.Gameplay.StaticData
 				return config;
 
 			throw new Exception($"Enchant config for {id} was not found");
+		}
+
+		public AuraConfig GetAuraConfig(AuraTypeId id)
+		{
+			if (_auraById.TryGetValue(id, out AuraConfig config))
+				return config;
+
+			throw new Exception($"Aura config for {id} was not found");
 		}
 
 		public WindowConfig GetWindowConfig(WindowId id)
@@ -254,6 +267,10 @@ namespace Code.Gameplay.StaticData
 
 		private async UniTask LoadEnchants() =>
 			_enchantById = (await _assetProvider.LoadAll<EnchantConfig>(EnchantConfigLabel))
+				.ToDictionary(x => x.TypeId, x => x);
+
+		private async UniTask LoadAura() =>
+			_auraById = (await _assetProvider.LoadAll<AuraConfig>(AuraConfigLabel))
 				.ToDictionary(x => x.TypeId, x => x);
 
 		private async UniTask LoadWindows() =>

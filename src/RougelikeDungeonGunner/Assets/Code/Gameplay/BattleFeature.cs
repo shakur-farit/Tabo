@@ -52,6 +52,7 @@ namespace Code.Gameplay
 			Add(systems.Create<EffectsFeature>());
 			Add(systems.Create<StatusFeature>());
 			Add(systems.Create<StatsFeature>());
+			Add(systems.Create<AuraFeature>());
 
 			Add(systems.Create<ProcessGameDestructedFeature>());
 			Add(systems.Create<ProcessInputDestructedFeature>());

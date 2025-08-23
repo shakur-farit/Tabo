@@ -1,5 +1,4 @@
-﻿using Code.Gameplay.Features.Weapon.Configs;
-using Entitas;
+﻿using Entitas;
 
 namespace Code.Gameplay.Features.Ammo
 {
