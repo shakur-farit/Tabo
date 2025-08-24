@@ -6,6 +6,7 @@ using Code.Gameplay.Features.CharacterStats;
 using Code.Gameplay.StaticData;
 using UnityEngine;
 using System;
+using Code.Gameplay.Features.Ammo;
 using Code.Gameplay.Features.Collection;
 using Code.Gameplay.Features.Hero.Configs;
 using Code.Gameplay.Features.Weapon;
@@ -82,10 +83,12 @@ namespace Code.Gameplay.Features.Hero.Factory
 					.AddCoins(_progressProvider.HeroData.CurrentCoinsCount)
 					.AddPickupRadius(PickupRadius)
 					.AddCurrentWeaponTypeId(CurrentWeapon(config))
+					.AddAuraTypeId(AuraTypeId.Shield)
 					.With(x => x.isHero = true)
 					.With(x => x.isMovementAvailable = true)
 					.With(x => x.isLinerMovement = true)
 					.With(x => x.isUnweaponed = true)
+					.With(x => x.isAuraPickedUp = true)
 				;
 		}
 

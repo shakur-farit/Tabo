@@ -155,90 +155,92 @@ public static class GameComponentsLookup {
     public const int Pulling = 144;
     public const int Direction = 145;
     public const int FollowMovement = 146;
-    public const int FollowTargetId = 147;
-    public const int LinerMovement = 148;
-    public const int MovementAvailable = 149;
-    public const int Moving = 150;
-    public const int OrbitalMovement = 151;
-    public const int OrbitAngularSpeed = 152;
-    public const int OrbitCenter = 153;
-    public const int OrbitElapsedTime = 154;
-    public const int OrbitInitialAngle = 155;
-    public const int OrbitRadius = 156;
-    public const int Rotating = 157;
-    public const int RotationAngle = 158;
-    public const int RotationAvailable = 159;
-    public const int Speed = 160;
-    public const int Affected = 161;
-    public const int Applied = 162;
-    public const int ApplierStatusLink = 163;
-    public const int Explosive = 164;
-    public const int Flame = 165;
-    public const int Freeze = 166;
-    public const int Period = 167;
-    public const int Poison = 168;
-    public const int Status = 169;
-    public const int StatusDuration = 170;
-    public const int StatusTimeLeft = 171;
-    public const int StatusTypeId = 172;
-    public const int TimeSinceLastTick = 173;
-    public const int Unapplied = 174;
-    public const int ClosestTargetPosition = 175;
-    public const int CurrentAmmoCount = 176;
-    public const int EffectSetups = 177;
-    public const int EnemyCircleSigil = 178;
-    public const int EnemyPistol = 179;
-    public const int EnemyStarSigil = 180;
-    public const int EnemyTriangleSigil = 181;
-    public const int EnemyWeapon = 182;
-    public const int FirePositionTransform = 183;
-    public const int HeroAutomaticPistol = 184;
-    public const int HeroCircleSigil = 185;
-    public const int HeroLaserBlaster = 186;
-    public const int HeroMachinegun = 187;
-    public const int HeroPistol = 188;
-    public const int HeroPlasmaGun = 189;
-    public const int HeroRevolver = 190;
-    public const int HeroRocketLauncher = 191;
-    public const int HeroShotgun = 192;
-    public const int HeroSniper = 193;
-    public const int HeroStarSigil = 194;
-    public const int HeroTriangleSigil = 195;
-    public const int HeroWeapon = 196;
-    public const int InfinityAmmo = 197;
-    public const int MagazineNotEmpty = 198;
-    public const int MagazineSize = 199;
-    public const int MaxPelletsDeviation = 200;
-    public const int MaxWeaponEnchantsCount = 201;
-    public const int MinPelletsDeviation = 202;
-    public const int MultiPellet = 203;
-    public const int Pierce = 204;
-    public const int Precharged = 205;
-    public const int PrechargeTime = 206;
-    public const int PrechargeTimeLeft = 207;
-    public const int ReadyToShoot = 208;
-    public const int Reloading = 209;
-    public const int ReloadTime = 210;
-    public const int ReloadTimeLeft = 211;
-    public const int Shooting = 212;
-    public const int Shot = 213;
-    public const int StatusSetups = 214;
-    public const int Weapon = 215;
-    public const int WeaponEnchants = 216;
-    public const int WeaponOwnerId = 217;
-    public const int WeaponOwnerTypeId = 218;
-    public const int WeaponRotationAngle = 219;
-    public const int WeaponRotationPointTransform = 220;
-    public const int WeaponTypeId = 221;
-    public const int AmmoHolder = 222;
-    public const int CoinsHolder = 223;
-    public const int EnchantHolder = 224;
-    public const int HeartHolder = 225;
-    public const int ReloadingAnimator = 226;
-    public const int TimerHolder = 227;
-    public const int WeaponHolder = 228;
+    public const int FollowMovementXAxisOffset = 147;
+    public const int FollowMovementYAxisOffset = 148;
+    public const int FollowTargetId = 149;
+    public const int LinerMovement = 150;
+    public const int MovementAvailable = 151;
+    public const int Moving = 152;
+    public const int OrbitalMovement = 153;
+    public const int OrbitAngularSpeed = 154;
+    public const int OrbitCenter = 155;
+    public const int OrbitElapsedTime = 156;
+    public const int OrbitInitialAngle = 157;
+    public const int OrbitRadius = 158;
+    public const int Rotating = 159;
+    public const int RotationAngle = 160;
+    public const int RotationAvailable = 161;
+    public const int Speed = 162;
+    public const int Affected = 163;
+    public const int Applied = 164;
+    public const int ApplierStatusLink = 165;
+    public const int Explosive = 166;
+    public const int Flame = 167;
+    public const int Freeze = 168;
+    public const int Period = 169;
+    public const int Poison = 170;
+    public const int Status = 171;
+    public const int StatusDuration = 172;
+    public const int StatusTimeLeft = 173;
+    public const int StatusTypeId = 174;
+    public const int TimeSinceLastTick = 175;
+    public const int Unapplied = 176;
+    public const int ClosestTargetPosition = 177;
+    public const int CurrentAmmoCount = 178;
+    public const int EffectSetups = 179;
+    public const int EnemyCircleSigil = 180;
+    public const int EnemyPistol = 181;
+    public const int EnemyStarSigil = 182;
+    public const int EnemyTriangleSigil = 183;
+    public const int EnemyWeapon = 184;
+    public const int FirePositionTransform = 185;
+    public const int HeroAutomaticPistol = 186;
+    public const int HeroCircleSigil = 187;
+    public const int HeroLaserBlaster = 188;
+    public const int HeroMachinegun = 189;
+    public const int HeroPistol = 190;
+    public const int HeroPlasmaGun = 191;
+    public const int HeroRevolver = 192;
+    public const int HeroRocketLauncher = 193;
+    public const int HeroShotgun = 194;
+    public const int HeroSniper = 195;
+    public const int HeroStarSigil = 196;
+    public const int HeroTriangleSigil = 197;
+    public const int HeroWeapon = 198;
+    public const int InfinityAmmo = 199;
+    public const int MagazineNotEmpty = 200;
+    public const int MagazineSize = 201;
+    public const int MaxPelletsDeviation = 202;
+    public const int MaxWeaponEnchantsCount = 203;
+    public const int MinPelletsDeviation = 204;
+    public const int MultiPellet = 205;
+    public const int Pierce = 206;
+    public const int Precharged = 207;
+    public const int PrechargeTime = 208;
+    public const int PrechargeTimeLeft = 209;
+    public const int ReadyToShoot = 210;
+    public const int Reloading = 211;
+    public const int ReloadTime = 212;
+    public const int ReloadTimeLeft = 213;
+    public const int Shooting = 214;
+    public const int Shot = 215;
+    public const int StatusSetups = 216;
+    public const int Weapon = 217;
+    public const int WeaponEnchants = 218;
+    public const int WeaponOwnerId = 219;
+    public const int WeaponOwnerTypeId = 220;
+    public const int WeaponRotationAngle = 221;
+    public const int WeaponRotationPointTransform = 222;
+    public const int WeaponTypeId = 223;
+    public const int AmmoHolder = 224;
+    public const int CoinsHolder = 225;
+    public const int EnchantHolder = 226;
+    public const int HeartHolder = 227;
+    public const int ReloadingAnimator = 228;
+    public const int TimerHolder = 229;
+    public const int WeaponHolder = 230;
 
-    public const int TotalComponents = 229;
+    public const int TotalComponents = 231;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -388,6 +390,8 @@ public static class GameComponentsLookup {
         "Pulling",
         "Direction",
         "FollowMovement",
+        "FollowMovementXAxisOffset",
+        "FollowMovementYAxisOffset",
         "FollowTargetId",
         "LinerMovement",
         "MovementAvailable",
@@ -620,6 +624,8 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Loot.LootComponents.Pulling),
         typeof(Code.Gameplay.Features.Movement.Direction),
         typeof(Code.Gameplay.Features.Movement.FollowMovement),
+        typeof(Code.Gameplay.Features.Movement.FollowMovementXAxisOffset),
+        typeof(Code.Gameplay.Features.Movement.FollowMovementYAxisOffset),
         typeof(Code.Gameplay.Features.Movement.FollowTargetId),
         typeof(Code.Gameplay.Features.Movement.LinerMovement),
         typeof(Code.Gameplay.Features.Movement.MovementAvailable),

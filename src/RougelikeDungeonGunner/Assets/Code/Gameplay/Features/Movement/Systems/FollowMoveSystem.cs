@@ -1,5 +1,4 @@
 ﻿using Entitas;
-using UnityEngine;
 
 namespace Code.Gameplay.Features.Movement.Systems
 {
@@ -16,8 +15,9 @@ namespace Code.Gameplay.Features.Movement.Systems
 				GameMatcher.WorldPosition,
 				GameMatcher.FollowTargetId,
 				GameMatcher.MovementAvailable,
-				GameMatcher.Moving             
-			));
+				GameMatcher.Moving)
+				.NoneOf(GameMatcher.FollowMovementYAxisOffset,
+			GameMatcher.FollowMovementXAxisOffset));
 		}
 
 		public void Execute()
@@ -26,15 +26,8 @@ namespace Code.Gameplay.Features.Movement.Systems
 			{
 				GameEntity target = _game.GetEntityWithId(follower.FollowTargetId);
 
-				if (target == null)
-				{
-					Debug.Log("Target is null");
-				}
-
-				if (target != null && target.hasWorldPosition)
-				{
+				if (target != null && target.hasWorldPosition) 
 					follower.ReplaceWorldPosition(target.WorldPosition);
-				}
 			}
 		}
 	}

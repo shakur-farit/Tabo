@@ -615,6 +615,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - WindowConfig
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 96dffef92a293904292e6ceff92634c6
+    m_Address: Assets/StaticData/Aura/ShieldConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AuraConfig
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 7128017d563554245a79368046c75e1a, type: 2}
   m_SchemaSet:

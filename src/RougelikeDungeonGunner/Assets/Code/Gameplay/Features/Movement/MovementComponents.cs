@@ -11,6 +11,8 @@ namespace Code.Gameplay.Features.Movement
 	[Game] public class OrbitElapsedTime : IComponent { public float Value; }
 	[Game] public class OrbitInitialAngle : IComponent { public float Value; }
 	[Game] public class FollowTargetId : IComponent { public int Value; }
+	[Game] public class FollowMovementYAxisOffset : IComponent { public float Value; }
+	[Game] public class FollowMovementXAxisOffset : IComponent { public float Value; }
 	[Game] public class Moving : IComponent { }
 	[Game] public class MovementAvailable : IComponent { }
 	[Game] public class LinerMovement : IComponent { }

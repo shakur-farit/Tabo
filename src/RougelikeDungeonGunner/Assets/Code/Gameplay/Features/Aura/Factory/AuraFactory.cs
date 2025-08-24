@@ -20,6 +20,8 @@ namespace Code.Gameplay.Features.Ammo
 
 		public GameEntity CreateAura(AuraTypeId typeId, Vector3 at)
 		{
+			Debug.Log("Create");
+
 			switch (typeId)
 			{
 				case AuraTypeId.Shield:
@@ -48,7 +50,8 @@ namespace Code.Gameplay.Features.Ammo
 					.AddWorldPosition(at)
 					.AddAuraTypeId(typeId)
 					.AddAuraRadius(config.Radius)
-					.AddEffectSetups(new())
+					.AddEffectSetups(config.EffectSetups)
+					.AddViewPrefab(config.ViewPrefab)
 					.With(x => x.isAura = true)
 					.With(x => x.isMovementAvailable = true)
 					.With(x => x.isFollowMovement = true)
