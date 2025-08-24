@@ -28,6 +28,9 @@ namespace Code.Gameplay.Features.Effects.Systems
 				if(target.isDead)
 					continue;
 
+				if(target.isShieldApplied)
+					continue;
+
 				target.ReplaceCurrentHp(target.CurrentHp - effect.EffectValue);
 
 				if(target.hasDamageTakenAnimator)

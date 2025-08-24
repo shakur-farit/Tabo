@@ -8,17 +8,17 @@
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherAuraPickedUp;
+    static Entitas.IMatcher<GameEntity> _matcherShieldApplied;
 
-    public static Entitas.IMatcher<GameEntity> AuraPickedUp {
+    public static Entitas.IMatcher<GameEntity> ShieldApplied {
         get {
-            if (_matcherAuraPickedUp == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.AuraPickedUp);
+            if (_matcherShieldApplied == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.ShieldApplied);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherAuraPickedUp = matcher;
+                _matcherShieldApplied = matcher;
             }
 
-            return _matcherAuraPickedUp;
+            return _matcherShieldApplied;
         }
     }
 }
@@ -33,18 +33,18 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Ammo.AuraPickedUp auraPickedUpComponent = new Code.Gameplay.Features.Ammo.AuraPickedUp();
+    static readonly Code.Gameplay.Features.Ammo.ShieldApplied shieldAppliedComponent = new Code.Gameplay.Features.Ammo.ShieldApplied();
 
-    public bool isAuraPickedUp {
-        get { return HasComponent(GameComponentsLookup.AuraPickedUp); }
+    public bool isShieldApplied {
+        get { return HasComponent(GameComponentsLookup.ShieldApplied); }
         set {
-            if (value != isAuraPickedUp) {
-                var index = GameComponentsLookup.AuraPickedUp;
+            if (value != isShieldApplied) {
+                var index = GameComponentsLookup.ShieldApplied;
                 if (value) {
                     var componentPool = GetComponentPool(index);
                     var component = componentPool.Count > 0
                             ? componentPool.Pop()
-                            : auraPickedUpComponent;
+                            : shieldAppliedComponent;
 
                     AddComponent(index, component);
                 } else {

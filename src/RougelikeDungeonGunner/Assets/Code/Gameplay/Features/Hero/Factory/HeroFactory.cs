@@ -88,7 +88,7 @@ namespace Code.Gameplay.Features.Hero.Factory
 					.With(x => x.isMovementAvailable = true)
 					.With(x => x.isLinerMovement = true)
 					.With(x => x.isUnweaponed = true)
-					.With(x => x.isAuraPickedUp = true)
+					.With(x => x.isRequestAura = true)
 				;
 		}
 

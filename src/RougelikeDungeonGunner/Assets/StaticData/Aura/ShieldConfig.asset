@@ -18,4 +18,6 @@ MonoBehaviour:
   Radius: 0
   Duration: 0
   Period: 0
+  Durability: 5
   EffectSetups: []
+  StatusSetups: []

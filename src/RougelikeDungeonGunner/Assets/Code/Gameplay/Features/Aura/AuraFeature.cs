@@ -6,7 +6,7 @@ namespace Code.Gameplay.Features.Ammo
 	{
 		public AuraFeature(ISystemsFactory systems)
 		{
-			Add(systems.Create<ApplyAuraSystem>());
+			Add(systems.Create<CreateAuraSystem>());
 		}
 	}
 }

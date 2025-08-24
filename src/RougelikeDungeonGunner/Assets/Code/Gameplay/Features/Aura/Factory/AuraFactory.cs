@@ -35,7 +35,7 @@ namespace Code.Gameplay.Features.Ammo
 
 		private GameEntity CreateHealingAura(AuraTypeId typeId, Vector3 at) => 
 			CreateAuraEntity(typeId, at)
-				.With(x => x.isHealingAura = true);
+				.With(x=> x.isHealingAura = true);
 
 		private GameEntity CreateShield(AuraTypeId typeId, Vector3 at) => 
 			CreateAuraEntity(typeId, at)
@@ -50,8 +50,10 @@ namespace Code.Gameplay.Features.Ammo
 					.AddWorldPosition(at)
 					.AddAuraTypeId(typeId)
 					.AddAuraRadius(config.Radius)
-					.AddEffectSetups(config.EffectSetups)
 					.AddViewPrefab(config.ViewPrefab)
+					.With(x => x.AddCurrentHp(config.Durability), when: config.Durability > 0)
+					.With(x => x.AddEffectSetups(config.EffectSetups), when: config.EffectSetups != null)
+					.With(x => x.AddStatusSetups(config.StatusSetups), when: config.StatusSetups != null)
 					.With(x => x.isAura = true)
 					.With(x => x.isMovementAvailable = true)
 					.With(x => x.isFollowMovement = true)

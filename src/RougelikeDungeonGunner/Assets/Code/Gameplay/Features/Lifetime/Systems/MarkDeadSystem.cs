@@ -13,8 +13,7 @@ namespace Code.Gameplay.Features.Lifetime.Systems
 		{
 			_entities = game.GetGroup(GameMatcher
 				.AllOf(
-					GameMatcher.CurrentHp,
-					GameMatcher.MaxHp)
+					GameMatcher.CurrentHp)
 				.NoneOf(GameMatcher.Dead));
 		}
 
