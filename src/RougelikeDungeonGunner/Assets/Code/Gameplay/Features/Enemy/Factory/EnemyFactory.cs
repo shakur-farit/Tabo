@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Code.Common.Entity;
 using Code.Common.Extensions;
+using Code.Gameplay.Features.Ammo;
 using Code.Gameplay.Features.CharacterStats;
 using Code.Gameplay.Features.Collection;
 using Code.Gameplay.Features.Effects;
@@ -41,7 +42,10 @@ namespace Code.Gameplay.Features.Enemy.Factory
 
 		private GameEntity CreateOrc(EnemyTypeId typeId, Vector3 at) =>
 			CreateEnemyEntity(typeId, at)
-				.With(x => x.isOrc = true);
+				.AddAuraTypeId(AuraTypeId.Shield)
+				.With(x => x.isOrc = true)
+				.With(x => x.isRequestAura = true)
+			;
 
 		private GameEntity CreateHedusa(EnemyTypeId typeId, Vector3 at) =>
 			CreateEnemyEntity(typeId, at)

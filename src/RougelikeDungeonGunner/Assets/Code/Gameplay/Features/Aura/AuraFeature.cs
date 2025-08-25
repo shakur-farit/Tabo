@@ -6,7 +6,11 @@ namespace Code.Gameplay.Features.Ammo
 	{
 		public AuraFeature(ISystemsFactory systems)
 		{
-			Add(systems.Create<CreateAuraSystem>());
+			Add(systems.Create<CreateAuraForHeroSystem>());
+			Add(systems.Create<CreateAuraForEnemySystem>());
+			Add(systems.Create<SetAuraSizeSystem>());
+
+			Add(systems.Create<MarkDestroyDeadShieldSystem>());
 		}
 	}
 }

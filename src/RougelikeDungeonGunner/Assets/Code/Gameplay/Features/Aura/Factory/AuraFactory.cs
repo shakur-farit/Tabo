@@ -20,8 +20,6 @@ namespace Code.Gameplay.Features.Ammo
 
 		public GameEntity CreateAura(AuraTypeId typeId, Vector3 at)
 		{
-			Debug.Log("Create");
-
 			switch (typeId)
 			{
 				case AuraTypeId.Shield:
