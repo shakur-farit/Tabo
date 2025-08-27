@@ -6,11 +6,16 @@ namespace Code.Gameplay.Features.Ammo
 	{
 		public AuraFeature(ISystemsFactory systems)
 		{
-			Add(systems.Create<CreateAuraForHeroSystem>());
-			Add(systems.Create<CreateAuraForEnemySystem>());
+			Add(systems.Create<CreateShieldForHeroSystem>());
+			Add(systems.Create<CreateHealingAuraForHeroSystem>());
+			Add(systems.Create<CreateShieldForEnemySystem>());
+			Add(systems.Create<CreateHealingAuraForEnemySystem>());
 			Add(systems.Create<SetAuraSizeSystem>());
+			Add(systems.Create<AuraDurationTickSystem>());
+			//Add(systems.Create<AuraPeriodTickSystem>());
 
 			Add(systems.Create<MarkDestroyDeadShieldSystem>());
+			Add(systems.Create<MarkDestroyProcessedHealingAuraSystem>());
 		}
 	}
 }

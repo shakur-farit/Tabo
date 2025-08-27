@@ -22,3 +22,5 @@ MonoBehaviour:
   - EnemiesInWave:
     - EnemyTypeId: 2
       Amount: 1
+    - EnemyTypeId: 1
+      Amount: 1

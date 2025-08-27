@@ -4,7 +4,7 @@ using Entitas;
 
 namespace Code.Gameplay.Features.Ammo
 {
-	public class CreateAuraForHeroSystem : IExecuteSystem
+	public class CreateHealingAuraForEnemySystem : IExecuteSystem
 	{
 		private const float YAxisOffset = 0.5f;
 
@@ -13,33 +13,36 @@ namespace Code.Gameplay.Features.Ammo
 		private readonly IAuraFactory _auraFactory;
 		private readonly IGroup<GameEntity> _requesters;
 
-		public CreateAuraForHeroSystem(GameContext game, IAuraFactory auraFactory)
+		public CreateHealingAuraForEnemySystem(GameContext game, IAuraFactory auraFactory)
 		{
 			_auraFactory = auraFactory;
 			_requesters = game.GetGroup(GameMatcher
 				.AllOf(
-					GameMatcher.RequestAura,
-					GameMatcher.Hero,
+					GameMatcher.RequestHealingAura,
+					GameMatcher.Enemy,
 					GameMatcher.Id,
-					GameMatcher.WorldPosition,
-					GameMatcher.AuraTypeId));
+					GameMatcher.WorldPosition));
 		}
 
 		public void Execute()
 		{
 			foreach (GameEntity requester in _requesters.GetEntities(_buffer))
 			{
-				GameEntity aura = _auraFactory.CreateAura(requester.AuraTypeId, requester.WorldPosition)
+				GameEntity aura = _auraFactory.CreateAura(AuraTypeId.Healing, requester.WorldPosition);
+				
+				aura
 					.AddFollowTargetId(requester.Id)
 					.AddFollowMovementYAxisOffset(YAxisOffset)
-					.AddProducerId(requester.Id);
-
-				aura.ViewPrefab.gameObject.layer = (int)CollisionLayer.Hero;
+					.AddProducerId(requester.Id)
+					.AddTargetsBuffer(new())
+					.AddTargetLayerMask(CollisionLayer.Enemy.AsMask())
+					.AddRadius(aura.AuraRadius)
+					.With(x => x.isReadyToCollectTargets = true)
+					;
 
 				requester
-					.RemoveAuraTypeId()
-					.With(x => x.isRequestAura = false)
-					.With(x => x.isShieldApplied = true)
+					.With(x => x.isRequestHealingAura = false)
+					.With(x => x.isHealingAuraApplied = true)
 					;
 			}
 		}

@@ -1,8 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Code.Gameplay.Features.Effects;
 using Code.Gameplay.Features.Statuses;
 using Code.Infrastructure.View;
 using UnityEngine;
+using Zenject;
 
 namespace Code.Gameplay.Features.Ammo
 {
@@ -14,7 +16,7 @@ namespace Code.Gameplay.Features.Ammo
 		public Sprite Sprite;
 		public float Radius;
 		public float Duration;
-		public float Period;
+		public float Interval;
 		public int Durability;
 		public List<EffectSetup> EffectSetups;
 		public List<StatusSetup> StatusSetups;

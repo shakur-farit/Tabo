@@ -83,12 +83,10 @@ namespace Code.Gameplay.Features.Hero.Factory
 					.AddCoins(_progressProvider.HeroData.CurrentCoinsCount)
 					.AddPickupRadius(PickupRadius)
 					.AddCurrentWeaponTypeId(CurrentWeapon(config))
-					.AddAuraTypeId(AuraTypeId.Shield)
 					.With(x => x.isHero = true)
 					.With(x => x.isMovementAvailable = true)
 					.With(x => x.isLinerMovement = true)
 					.With(x => x.isUnweaponed = true)
-					.With(x => x.isRequestAura = true)
 				;
 		}
 

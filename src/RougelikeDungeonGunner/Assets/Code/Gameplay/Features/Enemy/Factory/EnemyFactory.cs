@@ -42,14 +42,13 @@ namespace Code.Gameplay.Features.Enemy.Factory
 
 		private GameEntity CreateOrc(EnemyTypeId typeId, Vector3 at) =>
 			CreateEnemyEntity(typeId, at)
-				.AddAuraTypeId(AuraTypeId.Shield)
-				.With(x => x.isOrc = true)
-				.With(x => x.isRequestAura = true)
-			;
+				.With(x => x.isOrc = true);
 
 		private GameEntity CreateHedusa(EnemyTypeId typeId, Vector3 at) =>
 			CreateEnemyEntity(typeId, at)
-				.With(x => x.isHedusa = true);
+				.With(x => x.isHedusa = true)
+				.With(x => x.isRequestHealingAura= true)
+			;
 
 		private GameEntity CreateEnemyEntity(EnemyTypeId typeId, Vector3 at)
 		{

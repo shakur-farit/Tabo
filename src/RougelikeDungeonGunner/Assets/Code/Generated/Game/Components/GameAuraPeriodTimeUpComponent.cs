@@ -8,17 +8,17 @@
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherRequestAura;
+    static Entitas.IMatcher<GameEntity> _matcherAuraPeriodTimeUp;
 
-    public static Entitas.IMatcher<GameEntity> RequestAura {
+    public static Entitas.IMatcher<GameEntity> AuraPeriodTimeUp {
         get {
-            if (_matcherRequestAura == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.RequestAura);
+            if (_matcherAuraPeriodTimeUp == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.AuraPeriodTimeUp);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherRequestAura = matcher;
+                _matcherAuraPeriodTimeUp = matcher;
             }
 
-            return _matcherRequestAura;
+            return _matcherAuraPeriodTimeUp;
         }
     }
 }
@@ -33,18 +33,18 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Ammo.RequestAura requestAuraComponent = new Code.Gameplay.Features.Ammo.RequestAura();
+    static readonly Code.Gameplay.Features.Ammo.AuraPeriodTimeUp auraPeriodTimeUpComponent = new Code.Gameplay.Features.Ammo.AuraPeriodTimeUp();
 
-    public bool isRequestAura {
-        get { return HasComponent(GameComponentsLookup.RequestAura); }
+    public bool isAuraPeriodTimeUp {
+        get { return HasComponent(GameComponentsLookup.AuraPeriodTimeUp); }
         set {
-            if (value != isRequestAura) {
-                var index = GameComponentsLookup.RequestAura;
+            if (value != isAuraPeriodTimeUp) {
+                var index = GameComponentsLookup.AuraPeriodTimeUp;
                 if (value) {
                     var componentPool = GetComponentPool(index);
                     var component = componentPool.Count > 0
                             ? componentPool.Pop()
-                            : requestAuraComponent;
+                            : auraPeriodTimeUpComponent;
 
                     AddComponent(index, component);
                 } else {
