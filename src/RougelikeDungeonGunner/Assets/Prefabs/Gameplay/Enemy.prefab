@@ -154,9 +154,9 @@ GameObject:
   - component: {fileID: 2865671190086617213}
   - component: {fileID: 7506000045583834391}
   - component: {fileID: 2039340167127211488}
+  - component: {fileID: 2373738829275189948}
   - component: {fileID: 8526994447061613267}
   - component: {fileID: 4320597656362753033}
-  - component: {fileID: 2373738829275189948}
   m_Layer: 7
   m_Name: Enemy
   m_TagString: Untagged
@@ -320,6 +320,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EntityView: {fileID: 8166552356577901019}
   _weaponParent: {fileID: 4132434493230474911}
+--- !u!114 &2373738829275189948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5438004444555498043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcb188d0a426f144e8dae5ac7d7da21a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EntityView: {fileID: 8166552356577901019}
+  _startPosiotionTransform: {fileID: 8200429432522173711}
 --- !u!114 &8526994447061613267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -351,20 +365,6 @@ MonoBehaviour:
   FreezeColor: {r: 0.44705883, g: 0.84313726, b: 0.99215686, a: 1}
   PoisonColor: {r: 0.41568628, g: 0.9843137, b: 0.49803922, a: 1}
   PoisonColorIntensity: 0.412
---- !u!114 &2373738829275189948
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5438004444555498043}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dcb188d0a426f144e8dae5ac7d7da21a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EntityView: {fileID: 8166552356577901019}
-  _startPosiotionTransform: {fileID: 8200429432522173711}
 --- !u!1 &7187357344701163008
 GameObject:
   m_ObjectHideFlags: 0
