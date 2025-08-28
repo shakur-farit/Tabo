@@ -44,11 +44,11 @@ MonoBehaviour:
   - EffectTypeId: 1
     Value: 1
   StatusSetups:
-  - StatusTypeId: 4
+  - StatusTypeId: 1
     Value: 5
-    StatusDuration: 0
-    Period: 0
-    Radius: 3
+    StatusDuration: 5
+    Period: 2
+    Radius: 0
   AvailableUpgrades:
   - UpgradeType: 8
   - UpgradeType: 2

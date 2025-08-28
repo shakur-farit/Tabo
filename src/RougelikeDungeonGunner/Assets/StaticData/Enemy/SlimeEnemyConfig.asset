@@ -10,21 +10,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4918d858ae4269f4eb851105c3fd703d, type: 3}
-  m_Name: HedusaEnemyConfig
+  m_Name: SlimeEnemyConfig
   m_EditorClassIdentifier: 
-  TypeId: 1
+  TypeId: 5
   StartWeapon: 18
   ViewPrefab: {fileID: 8166552356577901019, guid: 9dc33cf00c86b7440a425de8b022c28a, type: 3}
-  AnimatorController: {fileID: 9100000, guid: 19b6ff9fbadc74e479b63068d33eb245, type: 2}
-  CurrentHp: 5
-  MaxHp: 5
+  AnimatorController: {fileID: 9100000, guid: a0ee566a387dcf744a5564ef5baa059e, type: 2}
+  CurrentHp: 15
+  MaxHp: 40
   Damage: 1
   MovementSpeed: 3
   TargetAmount: 1
   AttackRaduis: 1
-  AttackInterlal: 2
+  AttackInterlal: 3
   CastSetup:
     CastStartPosiotion: {x: 0, y: 0.6}
     ForwardCastDistance: 0
     Width: 1
     Height: 1
+  StatusSetups:
+  - StatusTypeId: 1
+    Value: 3
+    StatusDuration: 5
+    Period: 1
+    Radius: 0

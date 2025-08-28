@@ -10,19 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4918d858ae4269f4eb851105c3fd703d, type: 3}
-  m_Name: HedusaEnemyConfig
+  m_Name: GrimonkEnemyConfig
   m_EditorClassIdentifier: 
-  TypeId: 1
-  StartWeapon: 18
+  TypeId: 3
+  StartWeapon: 10
   ViewPrefab: {fileID: 8166552356577901019, guid: 9dc33cf00c86b7440a425de8b022c28a, type: 3}
-  AnimatorController: {fileID: 9100000, guid: 19b6ff9fbadc74e479b63068d33eb245, type: 2}
-  CurrentHp: 5
-  MaxHp: 5
-  Damage: 1
-  MovementSpeed: 3
+  AnimatorController: {fileID: 9100000, guid: 944ecbb1810696b4a8a6781ac1e002a5, type: 2}
+  CurrentHp: 10
+  MaxHp: 20
+  Damage: 0
+  MovementSpeed: 1
   TargetAmount: 1
   AttackRaduis: 1
-  AttackInterlal: 2
+  AttackInterlal: 3
   CastSetup:
     CastStartPosiotion: {x: 0, y: 0.6}
     ForwardCastDistance: 0

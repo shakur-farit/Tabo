@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using Code.Common.Entity;
 using Code.Common.Extensions;
-using Code.Gameplay.Features.Ammo;
 using Code.Gameplay.Features.CharacterStats;
 using Code.Gameplay.Features.Collection;
 using Code.Gameplay.Features.Effects;
@@ -35,10 +34,34 @@ namespace Code.Gameplay.Features.Enemy.Factory
 					return CreateOrc(typeId, at);
 				case EnemyTypeId.Hedusa:
 					return CreateHedusa(typeId, at);
+				case EnemyTypeId.Grimonk:
+					return CreateGrimonk(typeId, at);
+				case EnemyTypeId.MudRock:
+					return CreateMudRock(typeId, at);
+				case EnemyTypeId.Slime:
+					return CreateSlime(typeId, at);
+				case EnemyTypeId.Slizzard:
+					return CreateSlizzard(typeId, at);
 			}
 
 			throw new Exception($"Enemy with type id {typeId} does not exist");
 		}
+
+		private GameEntity CreateGrimonk(EnemyTypeId typeId, Vector3 at) => 
+			CreateEnemyEntity(typeId, at)
+				.With(x => x.isGrimonk = true);
+
+		private GameEntity CreateMudRock(EnemyTypeId typeId, Vector3 at) => 
+			CreateEnemyEntity(typeId, at)
+				.With(x => x.isMudRock = true);
+
+		private GameEntity CreateSlime(EnemyTypeId typeId, Vector3 at) => 
+			CreateEnemyEntity(typeId, at)
+				.With(x => x.isSlime = true);
+
+		private GameEntity CreateSlizzard(EnemyTypeId typeId, Vector3 at) => 
+			CreateEnemyEntity(typeId, at)
+				.With(x => x.isSlizzard = true);
 
 		private GameEntity CreateOrc(EnemyTypeId typeId, Vector3 at) =>
 			CreateEnemyEntity(typeId, at)
@@ -70,7 +93,8 @@ namespace Code.Gameplay.Features.Enemy.Factory
 					.AddStatModifiers(InitStats.EmptyStatDictionary())
 					.AddCurrentHp(config.CurrentHp)
 					.AddMaxHp(baseStats[Stats.MaxHp])
-					.AddEffectSetups(new List<EffectSetup> { EffectSetup.FormId(EffectTypeId.Damage, baseStats[Stats.Damage]) })
+					.AddEffectSetups(new List<EffectSetup> 
+						{ EffectSetup.FormId(EffectTypeId.Damage, baseStats[Stats.Damage]) })
 					.AddSpeed(baseStats[Stats.Speed])
 					.AddBoxCastWidth(castSetup.Width)
 					.AddBoxCastHeight(castSetup.Height)
@@ -80,13 +104,15 @@ namespace Code.Gameplay.Features.Enemy.Factory
 					.AddCollectTargetsTimer(AttackTimerStartValue)
 					.AddTargetLayerMask(CollisionLayer.Hero.AsMask())
 					.AddViewPrefab(config.ViewPrefab)
-					.With(x => x.AddCurrentWeaponTypeId(config.StartWeapon), when: config.StartWeapon != WeaponTypeId.NoWeapon)
+					.With(x => x.AddCurrentWeaponTypeId(config.StartWeapon),
+						when: config.StartWeapon != WeaponTypeId.NoWeapon)
+					.With(x => x.AddStatusSetups(config.StatusSetups), 
+						when: config.StatusSetups.IsNullOrEmpty() == false)
 					.With(x => x.isEnemy = true)
 					.With(x => x.isMovementAvailable = true)
 					.With(x => x.isLinerMovement = true)
 					.With(x => x.isUnweaponed = true)
 				;
-
 		}
 	}
 }

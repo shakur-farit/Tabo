@@ -6,10 +6,8 @@ namespace Code.Gameplay.Common.Visuals.StatusVisuals
 	{
 		public StatusVisuals StatusVisuals;
 
-		public override void RegisterComponents()
-		{
+		public override void RegisterComponents() => 
 			Entity.AddStatusVisuals(StatusVisuals);
-		}
 
 		public override void UnregisterComponents()
 		{

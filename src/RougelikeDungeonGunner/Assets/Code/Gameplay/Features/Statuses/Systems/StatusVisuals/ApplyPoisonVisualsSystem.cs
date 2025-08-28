@@ -13,11 +13,12 @@ namespace Code.Gameplay.Features.Statuses.Systems.StatusVisuals
 		protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context) => 
 			context.CreateCollector(GameMatcher.Poison.Added());
 
-		protected override bool Filter(GameEntity entity) => entity.isStatus && entity.isPoison && entity.hasTargetId;
+		protected override bool Filter(GameEntity entity) => 
+			entity.isStatus && entity.isPoison && entity.hasTargetId;
 
 		protected override void Execute(List<GameEntity> statuses)
 		{
-			foreach (var status in statuses)
+			foreach (GameEntity status in statuses)
 			{
 				GameEntity target = status.Target();
 

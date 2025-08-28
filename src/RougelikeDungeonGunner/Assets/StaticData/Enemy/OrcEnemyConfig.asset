@@ -13,17 +13,16 @@ MonoBehaviour:
   m_Name: OrcEnemyConfig
   m_EditorClassIdentifier: 
   TypeId: 2
-  StartWeapon: 10
+  StartWeapon: 18
   ViewPrefab: {fileID: 8166552356577901019, guid: 9dc33cf00c86b7440a425de8b022c28a, type: 3}
   AnimatorController: {fileID: 9100000, guid: cf2b002105910e04a8f79c160b4602a0, type: 2}
-  CurrentHp: 2
-  MaxHp: 20
-  Damage: 1
-  MovementSpeed: 0
+  CurrentHp: 10
+  MaxHp: 10
+  Damage: 2
+  MovementSpeed: 2
   TargetAmount: 1
   AttackRaduis: 1
   AttackInterlal: 3
-  CastOriginOffset: 0.5
   CastSetup:
     CastStartPosiotion: {x: 0, y: 0.6}
     ForwardCastDistance: 0

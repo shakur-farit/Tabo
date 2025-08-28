@@ -1,4 +1,6 @@
-﻿using Code.Gameplay.Features.Collection;
+﻿using System.Collections.Generic;
+using Code.Gameplay.Features.Collection;
+using Code.Gameplay.Features.Statuses;
 using Code.Gameplay.Features.Weapon;
 using Code.Infrastructure.View;
 using UnityEngine;
@@ -19,8 +21,8 @@ namespace Code.Gameplay.Features.Enemy.Configs
 		[Range(0, 100)] public int TargetAmount;
 		[Range(0, 100)] public float AttackRaduis;
 		[Range(0, 100)] public float AttackInterlal;
-		[Range(0, 100)] public float CastOriginOffset;
 		public CollisionCastSetup CastSetup;
+		public List<StatusSetup> StatusSetups;
 
 		private void OnValidate()
 		{

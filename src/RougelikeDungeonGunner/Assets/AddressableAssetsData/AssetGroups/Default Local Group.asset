@@ -627,6 +627,30 @@ MonoBehaviour:
     m_SerializedLabels:
     - AuraConfig
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0c65797b660e5c54c9848396564f8906
+    m_Address: Assets/StaticData/Enemy/GrimonkEnemyConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EnemyConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e19b5d23f916ab04985875c2ae2f461d
+    m_Address: Assets/StaticData/Enemy/SlizzardEnemyConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EnemyConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a7be0d4a1bdfeaa4ab161e34acd5db70
+    m_Address: Assets/StaticData/Enemy/MudRockEnemyConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EnemyConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a0286cfb9cc8edb4cba5e4c75967aaef
+    m_Address: Assets/StaticData/Enemy/SlimeEnemyConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EnemyConfig
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 7128017d563554245a79368046c75e1a, type: 2}
   m_SchemaSet:

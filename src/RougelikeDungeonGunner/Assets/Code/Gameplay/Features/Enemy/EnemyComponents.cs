@@ -12,4 +12,8 @@ namespace Code.Gameplay.Features.Enemy
 
 	[Game] public class Orc : IComponent { }
 	[Game] public class Hedusa : IComponent { }
+	[Game] public class Grimonk : IComponent { }
+	[Game] public class MudRock : IComponent { }
+	[Game] public class Slime : IComponent { }
+	[Game] public class Slizzard : IComponent { }
 }

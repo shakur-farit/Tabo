@@ -31,7 +31,7 @@ namespace Code.Gameplay.Common.Visuals.StatusVisuals
 
 		public void ApplyPoison()
 		{
-			_renderer.material.SetColor(ColorProperty, PoisonColor);
+			_renderer.material.color = PoisonColor;
 			_renderer.material.SetFloat(ColorIntensityProperty, PoisonColorIntensity);
 		}
 
