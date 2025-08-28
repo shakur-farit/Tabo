@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Code.Common.Entity;
 using Code.Common.Extensions;
+using Code.Gameplay.Features.Ammo;
 using Code.Gameplay.Features.CharacterStats;
 using Code.Gameplay.Features.Collection;
 using Code.Gameplay.Features.Effects;
@@ -83,6 +84,7 @@ namespace Code.Gameplay.Features.Enemy.Factory
 					.With(x => x[Stats.MaxHp] = config.MaxHp)
 					.With(x => x[Stats.Damage] = config.Damage)
 				;
+
 			return CreateEntity.Empty()
 					.AddId(_identifier.Next())
 					.AddEnemyTypeId(typeId)
@@ -104,6 +106,7 @@ namespace Code.Gameplay.Features.Enemy.Factory
 					.AddCollectTargetsTimer(AttackTimerStartValue)
 					.AddTargetLayerMask(CollisionLayer.Hero.AsMask())
 					.AddViewPrefab(config.ViewPrefab)
+					.AddAuraRequest(config.StartAura)
 					.With(x => x.AddCurrentWeaponTypeId(config.StartWeapon),
 						when: config.StartWeapon != WeaponTypeId.NoWeapon)
 					.With(x => x.AddStatusSetups(config.StatusSetups), 

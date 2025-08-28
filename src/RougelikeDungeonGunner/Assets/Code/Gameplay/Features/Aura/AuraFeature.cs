@@ -12,7 +12,6 @@ namespace Code.Gameplay.Features.Ammo
 			Add(systems.Create<CreateHealingAuraForEnemySystem>());
 			Add(systems.Create<SetAuraSizeSystem>());
 			Add(systems.Create<AuraDurationTickSystem>());
-			//Add(systems.Create<AuraPeriodTickSystem>());
 
 			Add(systems.Create<MarkDestroyDeadShieldSystem>());
 			Add(systems.Create<MarkDestroyProcessedHealingAuraSystem>());

@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TypeId: 3
   StartWeapon: 10
+  StartAura: 3
   ViewPrefab: {fileID: 8166552356577901019, guid: 9dc33cf00c86b7440a425de8b022c28a, type: 3}
   AnimatorController: {fileID: 9100000, guid: 944ecbb1810696b4a8a6781ac1e002a5, type: 2}
   CurrentHp: 10
@@ -28,3 +29,4 @@ MonoBehaviour:
     ForwardCastDistance: 0
     Width: 1
     Height: 1
+  StatusSetups: []

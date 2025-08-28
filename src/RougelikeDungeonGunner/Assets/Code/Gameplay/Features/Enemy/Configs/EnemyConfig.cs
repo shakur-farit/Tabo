@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Code.Gameplay.Features.Ammo;
 using Code.Gameplay.Features.Collection;
 using Code.Gameplay.Features.Statuses;
 using Code.Gameplay.Features.Weapon;
@@ -12,6 +13,7 @@ namespace Code.Gameplay.Features.Enemy.Configs
 	{
 		public EnemyTypeId TypeId;
 		public WeaponTypeId StartWeapon;
+		public AuraTypeId StartAura;
 		public EntityBehaviour ViewPrefab;
 		public RuntimeAnimatorController AnimatorController;
 		[Range(1, 100)] public int CurrentHp;

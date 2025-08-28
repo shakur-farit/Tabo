@@ -4,6 +4,7 @@
 	{
 		Unknown = 0,
 		Healing = 1,
-		Shield = 2
+		Shield = 2,
+		NoAura = 3
 	}
 }
