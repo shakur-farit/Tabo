@@ -10,7 +10,7 @@ namespace Code.Gameplay.Features.Loot.Systems
 		private readonly IGroup<GameEntity> _collected;
 		private readonly IGroup<GameEntity> _heroes;
 
-		public CollectEffectItemSystem(GameContext game , IEffectFactory effectFactory)
+		public CollectEffectItemSystem(GameContext game, IEffectFactory effectFactory)
 		{
 			_effectFactory = effectFactory;
 			_collected = game.GetGroup(GameMatcher
@@ -21,17 +21,15 @@ namespace Code.Gameplay.Features.Loot.Systems
 			_heroes = game.GetGroup(GameMatcher
 				.AllOf(
 					GameMatcher.Hero,
-					GameMatcher.Id,
-					GameMatcher.WorldPosition));
+					GameMatcher.Id));
 		}
 
 		public void Execute()
 		{
-			foreach (GameEntity hero in _heroes)
 			foreach (GameEntity collected in _collected)
-			{
-
-			}
+			foreach (GameEntity hero in _heroes)
+			foreach (EffectSetup setup in collected.EffectSetups)
+				_effectFactory.CreateEffect(setup, hero.Id, hero.Id);
 		}
 	}
 }

@@ -15,9 +15,9 @@ MonoBehaviour:
   TypeId: 2
   ViewPrefab: {fileID: 2243231872987813085, guid: 91a093a87f9e3e34f88473127302053e, type: 3}
   Sprite: {fileID: 0}
-  Radius: 6
+  Radius: 2
   Duration: 0
-  Period: 0
+  Interval: 0
   Durability: 5
   EffectSetups: []
   StatusSetups: []

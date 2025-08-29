@@ -24,7 +24,7 @@ namespace Code.Gameplay.Features.Loot.Systems
 
 			_weapons = game.GetGroup(GameMatcher
 				.AllOf(
-					GameMatcher.Weapon,
+					GameMatcher.HeroWeapon,
 					GameMatcher.Id));
 		}
 

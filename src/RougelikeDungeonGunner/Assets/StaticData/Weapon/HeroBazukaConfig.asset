@@ -19,7 +19,7 @@ MonoBehaviour:
     AmmoCount: 0
     Raduis: 0
     RotationSpeed: 0
-    MovementSpeed: 5
+    MovementSpeed: 6
     Branches: 0
   ViewPrefab: {fileID: 3867516666948492017, guid: 69172fbde18e101418b3b1f7089f9a29, type: 3}
   Sprite: {fileID: 21300000, guid: f4a1e113145591f45bfacfc7d7bf80c5, type: 3}

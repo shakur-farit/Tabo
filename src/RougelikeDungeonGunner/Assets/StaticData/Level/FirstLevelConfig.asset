@@ -15,10 +15,12 @@ MonoBehaviour:
   TypeId: 1
   DungeonTypeOnLevel: 1
   StartingTime: 5
-  TimeBetweenSpawnWaves: 10
+  TimeBetweenSpawnWaves: 30
   FinishingTime: 5
   HeroSaveZoneRadius: 0
   EnemyWaves:
   - EnemiesInWave:
-    - EnemyTypeId: 6
-      Amount: 1
+    - EnemyTypeId: 1
+      Amount: 4
+    - EnemyTypeId: 2
+      Amount: 2

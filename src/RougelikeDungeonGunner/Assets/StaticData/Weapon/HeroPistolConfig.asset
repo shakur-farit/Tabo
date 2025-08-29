@@ -34,7 +34,7 @@ MonoBehaviour:
     Pierce: 1
     PelletCount: 1
     Accuracy: 90
-    EnchantSlots: 3
+    EnchantSlots: 1
   CastSetup:
     CastStartPosiotion: {x: 0, y: 0.2}
     ForwardCastDistance: 1
@@ -43,12 +43,7 @@ MonoBehaviour:
   EffectSetups:
   - EffectTypeId: 1
     Value: 1
-  StatusSetups:
-  - StatusTypeId: 1
-    Value: 5
-    StatusDuration: 5
-    Period: 2
-    Radius: 0
+  StatusSetups: []
   AvailableUpgrades:
   - UpgradeType: 8
   - UpgradeType: 2

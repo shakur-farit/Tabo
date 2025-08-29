@@ -29,6 +29,9 @@ namespace Code.Gameplay.Features.Effects.Systems
 				if (target.isDead)
 					continue;
 
+				if(target.isShield)
+					continue;
+
 				if (target.hasMaxHp && target.hasCurrentHp)
 					target.ReplaceCurrentHp(
 						Mathf.Min(target.CurrentHp + effect.EffectValue, target.MaxHp));

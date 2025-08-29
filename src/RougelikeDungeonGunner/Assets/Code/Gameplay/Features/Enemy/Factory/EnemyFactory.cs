@@ -70,9 +70,7 @@ namespace Code.Gameplay.Features.Enemy.Factory
 
 		private GameEntity CreateHedusa(EnemyTypeId typeId, Vector3 at) =>
 			CreateEnemyEntity(typeId, at)
-				.With(x => x.isHedusa = true)
-				.With(x => x.isRequestHealingAura= true)
-			;
+				.With(x => x.isHedusa = true);
 
 		private GameEntity CreateEnemyEntity(EnemyTypeId typeId, Vector3 at)
 		{
