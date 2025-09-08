@@ -1,7 +1,7 @@
 # 🔫 Tabo — 2D Top-Down Roguelike Shooter
 
 <p align="center">
-  <img src="screenshot.png" alt="Game Screenshot" width="600"/>
+  <img width="300" height="300" alt="Main" src="https://github.com/user-attachments/assets/33ed46d6-7509-4eb6-9605-b6cf78f1a446"/>
 </p>
 
 ## 🎮 Description
@@ -49,8 +49,8 @@ After each round, players can visit the shop to:
 
 ## 📸 Screenshots
 <p align="center">
-  <img src="screenshot1.png" alt="Screenshot 1" width="45%"/>
-  <img src="screenshot2.png" alt="Screenshot 2" width="45%"/>
+ <img width="30%" height="30%" alt="Screen_1" src="https://github.com/user-attachments/assets/a6946919-9082-49c1-ae56-23a849e930e8" />
+<img width="30%" height="30%" alt="Screen_2" src="https://github.com/user-attachments/assets/d6d02569-9c5a-43da-ac7d-edfbeb62c697" />
 </p>
 
 ---
