@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48b5c4b1ea511f04ab2357898e2af0b0, type: 3}
+  m_Name: FireRangeUpgradeItemConfig
+  m_EditorClassIdentifier: 
+  TypeId: 1
+  ViewPrefab: {fileID: 7083903999039623076, guid: 22360a836992e1745b52372bf0669319, type: 3}
+  Price: 20
+  UpgradeValue: 0.5

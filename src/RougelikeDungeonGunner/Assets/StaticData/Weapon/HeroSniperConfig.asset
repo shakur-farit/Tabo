@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05c169df0c55d374fb648c370f9b7fea, type: 3}
+  m_Name: HeroSniperConfig
+  m_EditorClassIdentifier: 
+  TypeId: 6
+  AmmoTypeId: 4
+  AmmoPatternSetup:
+    PatternTypeId: 1
+    AmmoCount: 0
+    Raduis: 0
+    RotationSpeed: 0
+    MovementSpeed: 13
+    Branches: 0
+  ViewPrefab: {fileID: 3867516666948492017, guid: 69172fbde18e101418b3b1f7089f9a29, type: 3}
+  Sprite: {fileID: 21300000, guid: 7e70ae1621ea16746be436ae77e38ce9, type: 3}
+  FirePosition: {x: 1.515, y: 0.21}
+  Stats:
+    isInfinityAmmo: 0
+    FireRange: 13
+    Cooldown: 2
+    ReloadTime: 3
+    PrechargingTime: 0
+    MagazineSize: 5
+    Pierce: 3
+    PelletCount: 1
+    Accuracy: 100
+    EnchantSlots: 0
+  CastSetup:
+    CastStartPosiotion: {x: 0, y: 0.2}
+    ForwardCastDistance: 1
+    Width: 0
+    Height: 0
+  EffectSetups:
+  - EffectTypeId: 1
+    Value: 10
+  StatusSetups:
+  - StatusTypeId: 2
+    Value: -5
+    StatusDuration: 0
+    Period: 0
+    Radius: 0
+  AvailableUpgrades:
+  - UpgradeType: 8
+  - UpgradeType: 2
+  - UpgradeType: 1
+  - UpgradeType: 5
+  - UpgradeType: 3
+  - UpgradeType: 7
+  - UpgradeType: 9
+  StatsUIEntry:
+  - StatUIEntryType: 8
+  - StatUIEntryType: 2
+  - StatUIEntryType: 3
+  - StatUIEntryType: 5
+  - StatUIEntryType: 6
+  - StatUIEntryType: 9
+  - StatUIEntryType: 1
+  - StatUIEntryType: 7
+  - StatUIEntryType: 11

@@ -1,0 +1,38 @@
+﻿using System.Collections.Generic;
+using Code.Gameplay.Features.Statuses;
+using Entitas;
+
+namespace Code.Gameplay.Features.Ammo.Systems
+{
+	public class ApplyStatusesToAmmoSystem : IExecuteSystem
+	{
+		private readonly IGroup<GameEntity> _ammo;
+		private readonly IGroup<GameEntity> _weapons;
+		private readonly List<GameEntity> _buffer = new(32);
+
+		public ApplyStatusesToAmmoSystem(GameContext game)
+		{
+			_ammo = game.GetGroup(GameMatcher
+				.AllOf(
+					GameMatcher.Ammo,
+					GameMatcher.ProducerId)
+				.NoneOf(GameMatcher.StatusSetups));
+
+			_weapons = game.GetGroup(GameMatcher
+				.AllOf(
+					GameMatcher.Weapon,
+					GameMatcher.Id,
+					GameMatcher.StatusSetups));
+		}
+
+		public void Execute()
+		{
+			foreach (GameEntity weapon in _weapons)
+			foreach (GameEntity ammo in _ammo.GetEntities(_buffer))
+				if (weapon.Id == ammo.ProducerId)
+					ammo.AddStatusSetups(new(weapon.StatusSetups));
+			// To avoid errors when modifying the list in the future,
+			// you should create new ones using new instead of directly copying.
+		}
+	}
+}

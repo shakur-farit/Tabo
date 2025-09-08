@@ -1,0 +1,659 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Default Local Group
+  m_EditorClassIdentifier: 
+  m_GroupName: Default Local Group
+  m_Data:
+    m_SerializedData: []
+  m_GUID: f40428f047dc54a46b8184ab91599836
+  m_SerializeEntries:
+  - m_GUID: 5802e3c5436790f4084542f8f877fee9
+    m_Address: PistolBulletConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AmmoConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7fbfd3fde618ccd4991e5c32283c67dc
+    m_Address: Assets/StaticData/Weapon/RocketLauncherConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 510a3ff03a5d48c44a9b595f8c11d399
+    m_Address: OrcEnemyConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EnemyConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1f61dfbee185d8c4587f6dfc5b70cf0f
+    m_Address: GeneralHeroConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f4c6d79a3245a464ebebcfc94b3d358f
+    m_Address: Assets/StaticData/Weapon/LaserBlasterConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 961760fdfc1250249b0c36224bfb7b64
+    m_Address: Assets/StaticData/Weapon/PlasmaGunConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 98b6f329838e8d54c95361b5f9f2a751
+    m_Address: Assets/StaticData/Weapon/SniperConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3d7b10246e491a34b98dd3f9fb8c3981
+    m_Address: Assets/StaticData/Weapon/MachinegunConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a0b4841403061ff41b7bcb7af75503e8
+    m_Address: Assets/StaticData/Weapon/AutomaticPistolConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 58a6dad192979f4439c6a556c5049e4a
+    m_Address: Assets/StaticData/Weapon/ShotgunConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e90590364b9a31d4894c85db7f986b26
+    m_Address: Assets/StaticData/Weapon/RevolverConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0b48c2f69e921be4ba7e0738e79f1ec6
+    m_Address: Assets/StaticData/Weapon/PistolConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 213aea623c3d1324abb728997dfa301f
+    m_Address: Assets/StaticData/Bullet/MachinegunBulletConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AmmoConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ce933f3e8f7a0f049a341ad5fef29f24
+    m_Address: Assets/StaticData/Bullet/SniperBulletConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AmmoConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b36bcb66a4d27a94a982e18c3fac5f2a
+    m_Address: Assets/StaticData/Bullet/ShotgunBulletConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AmmoConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0a4c32d5e61c67241913dbd669159c1a
+    m_Address: Assets/StaticData/Bullet/LaserBoltConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AmmoConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4dd6ed5a8ee0ced478ab47fe77597445
+    m_Address: Assets/StaticData/Level/LevelConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - LevelConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2070fde95a5b563429e9f23c4c89ce29
+    m_Address: Assets/StaticData/Enemy/HedusaEnemyConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EnemyConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 72eff5acdc5f9634495a00734c14617a
+    m_Address: Assets/StaticData/Level/SecondLevelConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - LevelConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e1d7da7e71c63da49a48f4906eb40c6f
+    m_Address: Assets/StaticData/Loot/CoinLootConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - LootConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fe162be36f6908343bcd63fcd7df688d
+    m_Address: Assets/StaticData/Loot/HealLootConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - LootConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 072e112ac3cbb0248b551fc3d205e2b4
+    m_Address: Assets/StaticData/Loot/PoisonItemLootConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - LootConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7444911f8c0304b46b96cd017b8815ba
+    m_Address: Assets/StaticData/Loot/FreezeEnchantItemLootConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - LootConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7993d4a8896a5c342bf032cb07e112ad
+    m_Address: Assets/StaticData/Enchnat/PoisonEnchantConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EnchantConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: db4a55f200ee97f45aac81fea1c76395
+    m_Address: Assets/StaticData/Enchnat/FreezeEnchantConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EnchantConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a3f95b58579c2be419b32bbd0e1a45db
+    m_Address: Assets/StaticData/Enchnat/ExplosionEnchantConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EnchantConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 17afb457c40697b4aa71daa220a84045
+    m_Address: Assets/StaticData/Loot/ExplosionEnchantItemLootConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - LootConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a555b7b9f2de57243b6438ff7bbf3186
+    m_Address: AmmoUI
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 59096cb5e43950644b670f5b0f92f29d
+    m_Address: HeartUI
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0bd5fd3948ad10b45a9d7175a106683a
+    m_Address: UIRoot
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9cac8341406b37b4bbf1a0c42bb3a121
+    m_Address: Assets/StaticData/Window/MainMenuWindowConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WindowConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8ed21c78f2aa56849ac7cce6b77be104
+    m_Address: Assets/StaticData/Hero/TheScientisHeroConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9013bc64c784f1c4cb380fadd883f85c
+    m_Address: Assets/StaticData/Hero/TheThiefHeroConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 18b656a26093e844091eac1ed1695a71
+    m_Address: Assets/StaticData/Window/HudConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WindowConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cb2dfc2551c746641b7a9abc95d36433
+    m_Address: Assets/StaticData/Window/LevelCompleteWindowConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WindowConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6306e093a4e755f4580fc39d95a99059
+    m_Address: Assets/StaticData/Shop/Weapon/PistolItemConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponShopItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d7b14f0459868ab4094b91d2a01e23d0
+    m_Address: Assets/StaticData/Shop/Weapon/LaserBlasterItemConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponShopItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 092ffeb3b696ab549b6d3d9312536817
+    m_Address: Assets/StaticData/Shop/Weapon/MachinegunItemConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponShopItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1184a1357b1952a49b39ef7fb9c9f862
+    m_Address: Assets/StaticData/Shop/Weapon/ShotgunItemConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponShopItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c815bbc413724e348acebcd05cc05189
+    m_Address: Assets/StaticData/Shop/Weapon/SniperItemConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponShopItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ba6f7193f65ce01449ef3954de34356f
+    m_Address: Assets/StaticData/Shop/Upgrade/UpgradeItemConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponUpgradeShopItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e69a30b632eb7ae4ab02e65973d32831
+    m_Address: Assets/StaticData/Window/WeaponUpgradeWindowConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WindowConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c6a4b9a90c5526243b544c298c8fc62f
+    m_Address: Assets/StaticData/Window/WeaponBuyWindowConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WindowConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a9d1eafde73b1cc42b2bd7b98d3b385f
+    m_Address: Assets/StaticData/Window/EnchantBuyWindowConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WindowConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3c1e8a68055d39c41b6a732e24b47e5d
+    m_Address: Assets/StaticData/Window/WeaponBuyDialogWindowConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WindowConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8c1d35139c943f34d816396d022dde47
+    m_Address: Assets/StaticData/Shop/Upgrade/FireRangeWeaponUpgradeItemConfig 1.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponUpgradeShopItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f8a4ee29daa4dc44481c0fe8ca09bbed
+    m_Address: Assets/StaticData/Shop/Upgrade/CooldownWeaponUpgradeItemConfig 2.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponUpgradeShopItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 85ca8616071b4cd499969ace316fa7ff
+    m_Address: Assets/StaticData/Shop/Upgrade/CooldownWeaponUpgradeItemConfig 3.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponUpgradeShopItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 10fc081cb1c79c84ab89bca12b918660
+    m_Address: Assets/StaticData/Shop/Upgrade/CooldownWeaponUpgradeItemConfig 4.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponUpgradeShopItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: eebf926802b2c364db7d1d4e5e1400e0
+    m_Address: Assets/StaticData/Shop/Upgrade/CooldownWeaponUpgradeItemConfig 5.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponUpgradeShopItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: af9b416a80159f1419d7455ae91f6cec
+    m_Address: Assets/StaticData/Shop/Upgrade/CooldownWeaponUpgradeItemConfig 6.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponUpgradeShopItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 468966ebed3ced34caf1e38776b3ca22
+    m_Address: BalanceConfig
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 312bcb5fd1b96fe408fa0332d485d46a
+    m_Address: Assets/StaticData/Shop/Upgrade/DamageUpgradeItemConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponUpgradeShopItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d62e29931b5cccc45bacbe1a1be6ab3c
+    m_Address: Assets/StaticData/Shop/Upgrade/PierceUpgradeItemConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponUpgradeShopItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9bc893af4b9df2241987011a2e5226b9
+    m_Address: Assets/StaticData/Bullet/RocketMissleConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AmmoConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 62f9fa358eb7cba4aac058d10c4aed92
+    m_Address: Assets/StaticData/Shop/Weapon/AutomaticPistolItemConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponShopItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 06e7a74b7791f2e4c91ef3cc1c9214f4
+    m_Address: Assets/StaticData/Shop/Weapon/PlasmaGunItemConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponShopItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c96b3ed6067df4548979f138e4099016
+    m_Address: Assets/StaticData/Shop/Weapon/RevolverItemConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponShopItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3e8d3ae8acd36d24f9520aad1b65e794
+    m_Address: Assets/StaticData/Shop/Weapon/RocketLaunchertemConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponShopItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e5e28de55772379428cba7fcb75d8800
+    m_Address: Assets/StaticData/Shop/WeaponStatUIEntry/FireRangeWeaponStatUIEntryConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponStatUIEntryConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cfc1f08a5fc41b04b8a215150c78d3d1
+    m_Address: Assets/StaticData/Shop/WeaponStatUIEntry/FireRangeWeaponStatUIEntryConfig
+      2.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponStatUIEntryConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9e9a5c95bf08c2149a13e69adcafc994
+    m_Address: Assets/StaticData/Shop/WeaponStatUIEntry/FireRangeWeaponStatUIEntryConfig
+      3.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponStatUIEntryConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 89758b79be18d76489a50685468220f3
+    m_Address: Assets/StaticData/Shop/WeaponStatUIEntry/FireRangeWeaponStatUIEntryConfig
+      4.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponStatUIEntryConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fff8984789533fb46bdf3b7589297a2d
+    m_Address: Assets/StaticData/Shop/WeaponStatUIEntry/FireRangeWeaponStatUIEntryConfig
+      5.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponStatUIEntryConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 56bd3cbdb71dd2e45955d4c71763245d
+    m_Address: Assets/StaticData/Shop/WeaponStatUIEntry/FireRangeWeaponStatUIEntryConfig
+      6.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponStatUIEntryConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4691b37493b46ef42a3fd7a9986f2937
+    m_Address: Assets/StaticData/Shop/WeaponStatUIEntry/FireRangeWeaponStatUIEntryConfig
+      7.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponStatUIEntryConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f532051e96453b349b6039a08b2df88d
+    m_Address: Assets/StaticData/Shop/WeaponStatUIEntry/FireRangeWeaponStatUIEntryConfig
+      8.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponStatUIEntryConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 59243be24faeff8438f6583ab5b4a145
+    m_Address: Assets/StaticData/Shop/WeaponStatUIEntry/FireRangeWeaponStatUIEntryConfig
+      1.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponStatUIEntryConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 05c12c5dc410e2c40b18a22c00927963
+    m_Address: Assets/StaticData/Shop/WeaponStatUIEntry/InfinityAmmoWeaponStatUIEntryConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponStatUIEntryConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 09cf82f2d3e5a9f49a23835d79f9f131
+    m_Address: Assets/StaticData/Shop/WeaponStatUIEntry/PelletCountWeaponStatUIEntryConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponStatUIEntryConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 17f4d54a7090cd441873ee56fc02d622
+    m_Address: Assets/StaticData/Window/NotEnoughCoinsWindowConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WindowConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a640e1cc0de88374abdac7aa8500d1e1
+    m_Address: Assets/StaticData/Window/MaxValueReachedWindowConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WindowConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f7bb8d664e0479a41973d310aefb5561
+    m_Address: Assets/StaticData/Window/CurrentWeaponInfoWindowConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WindowConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7ed525e23257d044697f2b91b420f778
+    m_Address: Assets/StaticData/WeaponInformation/WeaponEnchantUIEntry/FreezeUIEntryConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EnchantUIEntryConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c5208cd2ff1908f409549b528d722a71
+    m_Address: Assets/StaticData/WeaponInformation/WeaponEnchantUIEntry/FlameUIEntryConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EnchantUIEntryConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 157335dbbe7b6f64ba9baab694a96c10
+    m_Address: Assets/StaticData/WeaponInformation/WeaponEnchantUIEntry/PoisonUIEntryConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EnchantUIEntryConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0b1b3ed9d6664da4a91705e4d1b6cdd5
+    m_Address: Assets/StaticData/Window/EnchantStatsWindowConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WindowConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8b6f1a3b05a02224b933aabf70452b05
+    m_Address: Assets/StaticData/WeaponInformation/WeaponEnchantUIEntry/EnchantStat/PoidonStatUIEntryConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EnchantStatUIEntryConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5198daad3a9960e4ebbcda3875a20f03
+    m_Address: Assets/StaticData/WeaponInformation/WeaponEnchantUIEntry/EnchantStat/FreezeStatUIEntryConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EnchantStatUIEntryConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fa139cd7df8b1e44abf2422de4ad2bde
+    m_Address: Assets/StaticData/WeaponInformation/WeaponEnchantUIEntry/EnchantStat/DurationStatUIEntryConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EnchantStatUIEntryConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1610237afa8961649b290ed7f8b110bb
+    m_Address: Assets/StaticData/WeaponInformation/WeaponEnchantUIEntry/EnchantStat/PeriodStatUIEntryConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EnchantStatUIEntryConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ccd04f42387118041b5424e5910c2d58
+    m_Address: Assets/StaticData/Shop/Enchant/PoisonEnchantToBuyItemConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EnchantShopItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d982089271f54114ab094fc8a99af95b
+    m_Address: Assets/StaticData/Shop/Enchant/FlameEnchantToBuyItemConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EnchantShopItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a11088f558fa98d4b877d9c393a1e285
+    m_Address: Assets/StaticData/Shop/Enchant/FreezeEnchantToBuyItemConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EnchantShopItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8ec2c97b620fc4d4ab21292d91542ebf
+    m_Address: Assets/StaticData/Window/EnchantBuyDialogueWindowConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WindowConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c5da1bb32a357af4495a18eaebe3adcc
+    m_Address: Assets/StaticData/Window/EnchantAlreadyAppliedWindowConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WindowConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6fe228a0575349f46b755e980d23efc7
+    m_Address: Assets/StaticData/Dungeon/FirstDungeonConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - DungeonConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f7e20afeeb0f1c54c8c0b158815cb2e2
+    m_Address: Assets/StaticData/Dungeon/SecondDungeonConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - DungeonConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e16f461f277603f439b4b42204d75fdc
+    m_Address: Assets/StaticData/Weapon/EnemyPistolConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0331b5e39840b60408c703459431d9db
+    m_Address: Assets/StaticData/Weapon/ForceConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e77409e7de887aa4ca49caacd84ed068
+    m_Address: Assets/StaticData/Weapon/TriangleSigilConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9ff87f4fa64026643871c601526d80f8
+    m_Address: Assets/StaticData/Weapon/StarSigilConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5e568a4610103ee498aad52ae2908772
+    m_Address: Assets/StaticData/Ammo/EnemyBulletConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AmmoConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b3cae28d607078846afeaaf999092661
+    m_Address: Assets/StaticData/Ammo/SigilConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AmmoConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d8d6952c2c82dac42aa806fc64daceda
+    m_Address: Assets/StaticData/Enchnat/ExplosiveEnchantConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EnchantConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9108f5aa9c92a0f43802ddba430cd68f
+    m_Address: Assets/StaticData/Loot/ExplosiveEnchantItemLootConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - LootConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0a678af8a87f49f4bb9dceda2aefe7d3
+    m_Address: Assets/StaticData/Shop/Enchant/ExplosiveEnchantToBuyItemConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EnchantShopItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 773b54fd5388fab408025a1e95b87dc9
+    m_Address: Assets/StaticData/WeaponInformation/WeaponEnchantUIEntry/ExplosiveUIEntryConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EnchantUIEntryConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c6e72e95ee26f17459648ff4ecfc95e9
+    m_Address: Assets/StaticData/Window/GameOverWindowConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WindowConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 96dffef92a293904292e6ceff92634c6
+    m_Address: Assets/StaticData/Aura/ShieldConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AuraConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 26d9769fe704f704ab041fec3ecb3609
+    m_Address: Assets/StaticData/Aura/HealingAuraConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AuraConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0c65797b660e5c54c9848396564f8906
+    m_Address: Assets/StaticData/Enemy/GrimonkEnemyConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EnemyConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e19b5d23f916ab04985875c2ae2f461d
+    m_Address: Assets/StaticData/Enemy/SlizzardEnemyConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EnemyConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a7be0d4a1bdfeaa4ab161e34acd5db70
+    m_Address: Assets/StaticData/Enemy/MudRockEnemyConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EnemyConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a0286cfb9cc8edb4cba5e4c75967aaef
+    m_Address: Assets/StaticData/Enemy/SlimeEnemyConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EnemyConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 7128017d563554245a79368046c75e1a, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 7e2b05bd6784e91449dd569076999917, type: 2}
+    - {fileID: 11400000, guid: fd508f5c0c71b8c4e8dd7999dd014557, type: 2}

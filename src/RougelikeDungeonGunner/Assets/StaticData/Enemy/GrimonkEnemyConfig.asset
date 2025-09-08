@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4918d858ae4269f4eb851105c3fd703d, type: 3}
+  m_Name: GrimonkEnemyConfig
+  m_EditorClassIdentifier: 
+  TypeId: 3
+  StartWeapon: 10
+  StartAura: 3
+  ViewPrefab: {fileID: 8166552356577901019, guid: 9dc33cf00c86b7440a425de8b022c28a, type: 3}
+  AnimatorController: {fileID: 9100000, guid: 944ecbb1810696b4a8a6781ac1e002a5, type: 2}
+  CurrentHp: 10
+  MaxHp: 20
+  Damage: 0
+  MovementSpeed: 1
+  TargetAmount: 1
+  AttackRaduis: 1
+  AttackInterlal: 3
+  CastSetup:
+    CastStartPosiotion: {x: 0, y: 0.6}
+    ForwardCastDistance: 0
+    Width: 1
+    Height: 1
+  StatusSetups: []

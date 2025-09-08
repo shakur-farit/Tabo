@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05c169df0c55d374fb648c370f9b7fea, type: 3}
+  m_Name: EnemyStarSigilConfig
+  m_EditorClassIdentifier: 
+  TypeId: 17
+  AmmoTypeId: 8
+  AmmoPatternSetup:
+    PatternTypeId: 4
+    AmmoCount: 3
+    Raduis: 2
+    RotationSpeed: 90
+    MovementSpeed: 3
+    Branches: 5
+  ViewPrefab: {fileID: 3867516666948492017, guid: 69172fbde18e101418b3b1f7089f9a29, type: 3}
+  Sprite: {fileID: 0}
+  FirePosition: {x: 0, y: 0}
+  Stats:
+    isInfinityAmmo: 1
+    FireRange: 8
+    Cooldown: 3
+    ReloadTime: 0
+    PrechargingTime: 0
+    MagazineSize: 0
+    Pierce: 1
+    PelletCount: 1
+    Accuracy: 100
+    EnchantSlots: 0
+  CastSetup:
+    CastStartPosiotion: {x: 0, y: 0.2}
+    ForwardCastDistance: 1
+    Width: 0
+    Height: 0
+  EffectSetups:
+  - EffectTypeId: 1
+    Value: 1
+  StatusSetups: []
+  AvailableUpgrades: []
+  StatsUIEntry: []
