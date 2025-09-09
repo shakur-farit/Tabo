@@ -38,12 +38,15 @@ After each round, players can visit the shop to:
 3. Click **Build**.
 4. Run the generated executable.
 
+### Play on Itch.io
+1. Click on link: [Tabo](https://shakur-farit.itch.io/dungeon-gunner)
+2. Click on "Run Game"
+   
 ---
 
 ## 🎯 Controls
 - ⬆️⬇️⬅️➡️ — Movement  
-- 🖱️ Left Click — Shoot  
-- 🎹 ESC — Pause  
+- 🖱️ Left Click — Shoot   
 
 ---
 
