@@ -63,7 +63,7 @@ After each round, players can visit the shop to:
 **Farit Shakur / Mare**  
 - GitHub: [Shakur Farit](https://github.com/shakur-farit)
 - Itch.io: [Shakur Farit](https://shakur-farit.itch.io)
-- Telegram: [Mareplay](https://t.me/@Mareplay)  
+- Telegram: [Mareplay](https://t.me/Mareplay)  
 
 ---
 
