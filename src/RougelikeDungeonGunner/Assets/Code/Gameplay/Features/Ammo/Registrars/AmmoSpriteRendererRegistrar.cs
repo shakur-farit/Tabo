@@ -6,7 +6,7 @@ using Zenject;
 
 namespace Code.Gameplay.Features.Ammo.Registrars
 {
-	public class AmmoSpriteRenderer : EntityComponentRegistrar
+	public class AmmoSpriteRendererRegistrar : EntityComponentRegistrar
 	{
 		[SerializeField] private SpriteRenderer _spriteRenderer;
 
@@ -21,7 +21,7 @@ namespace Code.Gameplay.Features.Ammo.Registrars
 			AmmoConfig config = _staticDataService.GetAmmoConfig(Entity.AmmoTypeId);
 
 			_spriteRenderer.sprite = config.Sprite;
-			_spriteRenderer.color = config.Color;
+			_spriteRenderer.material = config.Material;
 			
 			Entity.AddSpriteRenderer(_spriteRenderer);
 		}

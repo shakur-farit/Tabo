@@ -7,6 +7,11 @@ namespace Code.Gameplay.Features.Enchants.Behaviours
 	public class EnchantVisualEffect : MonoBehaviour
 	{
 		[SerializeField] private SpriteRenderer _spriteRenderer;
+		[SerializeField] private Material _poisonMaterial;
+		[SerializeField] private Material _freezeMaterial;
+		[SerializeField] private Material _flameMaterial;
+		[SerializeField] private Material _combineMaterial;
+		[SerializeField] private Material _otherEnchantsMaterial;
 
 		private readonly HashSet<StatusTypeId> _activeEnchantTypes = new();
 
@@ -14,19 +19,19 @@ namespace Code.Gameplay.Features.Enchants.Behaviours
 		{
 			_activeEnchantTypes.Add(typeId);
 
-			_spriteRenderer.color = _activeEnchantTypes.Count > 1 
-				? Color.cyan 
+			_spriteRenderer.material = _activeEnchantTypes.Count > 1 
+				? _combineMaterial
 				: GetColorForType(typeId);
 		}
 
-		private Color GetColorForType(StatusTypeId typeId)
+		private Material GetColorForType(StatusTypeId typeId)
 		{
 			return typeId switch
 			{
-				StatusTypeId.Poison => Color.green,
-				StatusTypeId.Freeze => Color.blue,
-				StatusTypeId.Flame => Color.red,
-				_ => Color.white
+				StatusTypeId.Poison => _poisonMaterial,
+				StatusTypeId.Freeze => _freezeMaterial,
+				StatusTypeId.Flame => _flameMaterial,
+				_ => _otherEnchantsMaterial
 			};
 		}
 	}

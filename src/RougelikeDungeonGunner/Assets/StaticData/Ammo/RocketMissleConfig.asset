@@ -15,7 +15,7 @@ MonoBehaviour:
   TypeId: 6
   ViewPrefab: {fileID: 2243231872987813085, guid: a5967ca81ad889847ae902288d60c7a5, type: 3}
   Sprite: {fileID: 21300000, guid: 903a95884ae4a6441b6c6c32252e8bd6, type: 3}
-  Color: {r: 1, g: 1, b: 1, a: 1}
+  Material: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   Stats:
     ContactRadius: 0.1
   CastSetup:

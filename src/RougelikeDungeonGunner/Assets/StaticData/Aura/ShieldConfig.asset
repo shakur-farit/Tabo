@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TypeId: 2
   ViewPrefab: {fileID: 2243231872987813085, guid: 91a093a87f9e3e34f88473127302053e, type: 3}
-  Sprite: {fileID: 0}
-  Radius: 2
+  Sprite: {fileID: 21300000, guid: 11973df2a51797b4cb083bbcd083baea, type: 3}
+  Material: {fileID: 2100000, guid: 90955287dd811e948bfed124dc4caa38, type: 2}
+  Alpha: 0.15
+  Radius: 1
   Duration: 0
   Interval: 0
   Durability: 5
