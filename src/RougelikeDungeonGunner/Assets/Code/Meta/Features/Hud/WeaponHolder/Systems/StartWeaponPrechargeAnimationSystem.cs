@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Entitas;
+using UnityEngine;
 
 namespace Code.Meta.Features.Hud.WeaponHolder.Systems
 {
@@ -22,7 +23,7 @@ namespace Code.Meta.Features.Hud.WeaponHolder.Systems
 
 		protected override bool Filter(GameEntity weapons) =>
 			weapons.isWeapon && weapons.hasPrechargeTime && weapons.hasPrechargeTimeLeft && weapons.isReadyToShoot
-			&& weapons.isPrecharged && weapons.isHeroWeapon == false;
+			&& weapons.isHeroWeapon && weapons.isPrecharged == false;
 
 		protected override void Execute(List<GameEntity> weapons)
 		{

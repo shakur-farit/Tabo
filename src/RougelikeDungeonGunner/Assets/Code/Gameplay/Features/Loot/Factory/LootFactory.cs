@@ -30,6 +30,7 @@ namespace Code.Gameplay.Features.Loot.Factory
 					.With(x => x.AddCoins(config.CoinValue), when: config.CoinValue > 0)
 					.With(x => x.AddEffectSetups(config.EffectSetups), when: config.EffectSetups.IsNullOrEmpty() == false)
 					.With(x => x.AddStatusSetups(config.StatusSetups), when: config.StatusSetups.IsNullOrEmpty() == false)
+					.With(x => x.isShield = true, when: typeId == LootTypeId.ShieldItem)
 					.With(x => x.isPullable = true)
 				;
 		}

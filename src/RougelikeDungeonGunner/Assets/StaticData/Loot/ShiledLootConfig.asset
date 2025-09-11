@@ -10,18 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 58ad05875d303c14da9f16618bcda545, type: 3}
-  m_Name: FlameEnchantItemLootConfig
+  m_Name: ShiledLootConfig
   m_EditorClassIdentifier: 
-  TypeId: 6
+  TypeId: 3
   ViewPrefab: {fileID: 4494103209788103135, guid: c97df207954ad734eaf0eab1d27c9f42, type: 3}
-  Sprite: {fileID: 2429076500916345128, guid: fffb5af430ee93e419736e35d44043a2, type: 3}
-  DropChanceWeight: 0
+  Sprite: {fileID: 21300000, guid: 11973df2a51797b4cb083bbcd083baea, type: 3}
+  DropChanceWeight: 30
   EnemyTypeFilter: 
   CoinValue: 0
   EffectSetups: []
-  StatusSetups:
-  - StatusTypeId: 3
-    Value: 1
-    StatusDuration: 3
-    Period: 1
-    Radius: 2
+  StatusSetups: []

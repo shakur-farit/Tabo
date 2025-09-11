@@ -15,7 +15,7 @@ MonoBehaviour:
   TypeId: 1
   ViewPrefab: {fileID: 4494103209788103135, guid: c97df207954ad734eaf0eab1d27c9f42, type: 3}
   Sprite: {fileID: 21300000, guid: daabc6ae20154244f8ef8dd7e5973c4f, type: 3}
-  DropChanceWeight: 30
+  DropChanceWeight: 0
   EnemyTypeFilter: 
   CoinValue: 100
   EffectSetups: []
