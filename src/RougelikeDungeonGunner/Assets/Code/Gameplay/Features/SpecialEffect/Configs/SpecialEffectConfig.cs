@@ -36,7 +36,7 @@ namespace Code.Gameplay.Features.Loot
 		public float StartSize;
 		public float GravityModifire;
 		public ParticleSystemSimulationSpace SimulationSpace;
-		public float MaxParticles;
+		public int MaxParticles;
 		public ParticleSystemStopAction StopAction;
 		public ParticleSystemCullingMode CullingMode;
 	}
@@ -44,6 +44,7 @@ namespace Code.Gameplay.Features.Loot
 	[Serializable]
 	public class ParticleSetupEmission
 	{
+		public bool Enabled;
 		public float RateOverTime;
 		public List<ParticleEmissionBurst> Bursts;
 	}
@@ -55,12 +56,12 @@ namespace Code.Gameplay.Features.Loot
 		public ParticleSystem.MinMaxCurve Count;
 		public int Cycles;
 		public float Interval;
-		public float Probability;
 	}
 
 	[Serializable]
 	public class ParticleSetupShape
 	{
+		public bool Enabled;
 		public ParticleSystemShapeType Shape;
 		public float Angle;
 		public float Radius;
@@ -69,6 +70,7 @@ namespace Code.Gameplay.Features.Loot
 	[Serializable]
 	public class ParticleSetupVelocityOverLifetime
 	{
+		public bool Enabled;
 		public ParticleSystem.MinMaxCurve LinerX;
 		public ParticleSystem.MinMaxCurve LinerY;
 		public ParticleSystem.MinMaxCurve LinerZ;
@@ -77,21 +79,26 @@ namespace Code.Gameplay.Features.Loot
 	[Serializable]
 	public class ParticleSetupColorOverLifetime
 	{
+		public bool Enabled;
 		public ParticleSystem.MinMaxGradient Color;
 	}
 
 	[Serializable]
 	public class ParticleSetupRotationOverLifetime
 	{
-		public ParticleSystem.MinMaxCurve AngularVelocity;
+		public bool Enabled;
+		public ParticleSystem.MinMaxCurve AngularVelocityX;
+		public ParticleSystem.MinMaxCurve AngularVelocityY;
+		public ParticleSystem.MinMaxCurve AngularVelocityZ;
 	}
 
 	[Serializable]
 	public class ParticleSetupNoise
 	{
+		public bool Enabled;
 		public ParticleSystem.MinMaxCurve Strength;
 		public float Frequency;
-		public float Octaves;
+		public int Octaves;
 		public ParticleSystemNoiseQuality Quality;
 		public ParticleSystem.MinMaxCurve PositionAmount;
 	}
@@ -99,13 +106,15 @@ namespace Code.Gameplay.Features.Loot
 	[Serializable]
 	public class ParticleSetupTextureSheetAnimation
 	{
+		public bool Enabled;
 		public ParticleSystemAnimationMode Mode;
-		public Sprite Sprite;
+		public List<Sprite> Sprites;
 	}
 
 	[Serializable]
 	public class ParticleSetupRenderer
 	{
+		public bool Enabled;
 		public Material Material;
 	}
 }

@@ -1,6 +1,4 @@
-﻿using System;
-using Code.Infrastructure.Systems;
-using Code.Infrastructure.View;
+﻿using Code.Infrastructure.Systems;
 
 namespace Code.Gameplay.Features.Loot
 {
@@ -9,6 +7,7 @@ namespace Code.Gameplay.Features.Loot
 		public SpecialEffectFeature(ISystemsFactory systems)
 		{
 			Add(systems.Create<CreateSpecialEffectSystem>());
+			Add(systems.Create<SetupParticleSystemForSpecialEffectSystem>());
 		}
 	}
 }
