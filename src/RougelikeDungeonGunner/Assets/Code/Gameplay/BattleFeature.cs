@@ -44,6 +44,7 @@ namespace Code.Gameplay
 			Add(systems.Create<WeaponFeature>());
 			Add(systems.Create<AmmoPatternFeature>());
 			Add(systems.Create<AmmoFeature>());
+			Add(systems.Create<SpecialEffectFeature>());
 
 			Add(systems.Create<CollectFeature>());
 			Add(systems.Create<EffectApplicationFeature>());

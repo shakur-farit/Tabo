@@ -5,6 +5,7 @@ using Code.Infrastructure.Identifiers;
 using System;
 using Code.Gameplay.Features.Collection;
 using Code.Gameplay.Features.Cooldowns;
+using Code.Gameplay.Features.Loot;
 using Code.Gameplay.Features.Weapon.Configs;
 using Code.Meta.Features.Shop.Upgrade.Services;
 using UnityEngine;
@@ -202,6 +203,8 @@ namespace Code.Gameplay.Features.Weapon.Factory
 						when: _effectsProvider.GetEffects(config).IsNullOrEmpty() == false)
 					.With(x => x.AddStatusSetups(config.StatusSetups),
 						when: config.StatusSetups.IsNullOrEmpty() == false)
+					.With(x => x.AddSpecialEffectTypeId(config.SpecialEffectTypeId), 
+						when: config.SpecialEffectTypeId != SpecialEffectTypeId.NoSpecialEffect)
 					.PutOnCooldown()
 				;
 		}

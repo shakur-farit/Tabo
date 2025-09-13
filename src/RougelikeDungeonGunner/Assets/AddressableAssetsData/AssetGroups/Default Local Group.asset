@@ -657,6 +657,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - LootConfig
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 855d936df80b0f2409e12e37f5dfd9a3
+    m_Address: Assets/StaticData/WeaponSpecialEffect/SmokeWeaponSpecialEffectConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SpecialEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 7128017d563554245a79368046c75e1a, type: 2}
   m_SchemaSet:

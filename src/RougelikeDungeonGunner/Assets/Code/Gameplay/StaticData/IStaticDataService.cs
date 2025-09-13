@@ -56,5 +56,6 @@ namespace Code.Gameplay.StaticData
     EnchantShopItemConfig GetEnchantShopItemConfig(EnchantShopItemTypeId id);
     DungeonConfig GetDungeonConfig(DungeonTypeId id);
     AuraConfig GetAuraConfig(AuraTypeId id);
+    SpecialEffectConfig GetSpecialEffectConfig(SpecialEffectTypeId typeId);
   }
 }

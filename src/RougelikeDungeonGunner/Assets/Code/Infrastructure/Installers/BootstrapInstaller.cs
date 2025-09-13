@@ -16,6 +16,7 @@ using Code.Gameplay.Features.Enemy.Factory;
 using Code.Gameplay.Features.Enemy.Services;
 using Code.Gameplay.Features.Hero.Factory;
 using Code.Gameplay.Features.Level.Factory;
+using Code.Gameplay.Features.Loot;
 using Code.Gameplay.Features.Loot.Factory;
 using Code.Gameplay.Features.Loot.Services;
 using Code.Gameplay.Features.Statuses.Applier;
@@ -142,6 +143,7 @@ namespace Code.Infrastructure.Installers
 			Container.Bind<ILootFactory>().To<LootFactory>().AsSingle();
 			Container.Bind<IEnchantFactory>().To<EnchantFactory>().AsSingle();
 			Container.Bind<IAuraFactory>().To<AuraFactory>().AsSingle();
+			Container.Bind<ISpecialEffectsFactory>().To<SpecialEffectsFactory>().AsSingle();
 			Container.Bind<IAmmoPatternFactory>().To<AmmoPatternFactory>().AsSingle();
 		}
 

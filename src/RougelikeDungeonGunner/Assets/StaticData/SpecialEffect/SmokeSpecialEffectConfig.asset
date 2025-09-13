@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b6e6f5ca1cc54bc4da457a73056372d7, type: 3}
-  m_Name: SmokeWeaponSpecialEffectConfig
+  m_Name: SmokeSpecialEffectConfig
   m_EditorClassIdentifier: 
   TypeId: 1
-  ViewPrefab: {fileID: 0}
+  ViewPrefab: {fileID: 6244926618751341932, guid: cc3396cc27aa0444aaaf6b2225429e7e, type: 3}
   ParticleSetup:
     Main:
       Duration: 0.5
@@ -228,5 +228,6 @@ MonoBehaviour:
         m_ConstantMax: 0.04
     TextureSheetAnimation:
       Mode: 1
+      Sprite: {fileID: 21300000, guid: ecf6e010769abce4cb1e7c60e0f3b3d8, type: 3}
     Renderer:
       Material: {fileID: 2100000, guid: c1368499fdf39ea4687698e7f4aa2cf1, type: 2}

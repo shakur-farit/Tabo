@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Code.Common;
+using Code.Gameplay.Common;
 using Code.Gameplay.Features.Ammo;
 using Code.Gameplay.Features.Ammo.Configs;
 using Code.Gameplay.Features.Dungeon;
@@ -47,6 +48,7 @@ namespace Code.Gameplay.StaticData
 		private const string LootConfigLabel = "LootConfig";
 		private const string EnchantConfigLabel = "EnchantConfig";
 		private const string AuraConfigLabel = "AuraConfig";
+		private const string SpecialEffectConfigLabel = "SpecialEffectConfig";
 		private const string WindowConfigLabel = "WindowConfig";
 		private const string WeaponShopItemConfigLabel = "WeaponShopItemConfig";
 		private const string EnchantShopItemConfigLabel = "EnchantShopItemConfig";
@@ -71,8 +73,7 @@ namespace Code.Gameplay.StaticData
 		private Dictionary<WeaponStatUIEntryTypeId, WeaponStatUIEntryConfig> _weaponStatUIEntryItemById;
 		private Dictionary<EnchantShopItemTypeId, EnchantShopItemConfig> _enchantShopItemById;
 		private Dictionary<EnchantUIEntryTypeId, EnchantUIEntryConfig> _enchantUIEntryItemById;
-
-
+		private Dictionary<SpecialEffectTypeId, SpecialEffectConfig> _specialEffectById;
 		private Dictionary<EnchantStatUIEntryTypeId, EnchantStatUIEntryConfig>
 			_weaponEnchantStatUIEntryItemById;
 
@@ -97,6 +98,7 @@ namespace Code.Gameplay.StaticData
 			await LoadLoots();
 			await LoadEnchants();
 			await LoadAura();
+			await LoadSpecialEffects();
 			await LoadWindows();
 			await LoadWeaponShopItem();
 			await LoadEnchantShopItem();
@@ -176,6 +178,14 @@ namespace Code.Gameplay.StaticData
 				return config;
 
 			throw new Exception($"Aura config for {id} was not found");
+		}
+
+		public SpecialEffectConfig GetSpecialEffectConfig(SpecialEffectTypeId id)
+		{
+			if (_specialEffectById.TryGetValue(id, out SpecialEffectConfig config))
+				return config;
+
+			throw new Exception($"Special effect config for {id} was not found");
 		}
 
 		public WindowConfig GetWindowConfig(WindowId id)
@@ -267,6 +277,11 @@ namespace Code.Gameplay.StaticData
 
 		private async UniTask LoadEnchants() =>
 			_enchantById = (await _assetProvider.LoadAll<EnchantConfig>(EnchantConfigLabel))
+				.ToDictionary(x => x.TypeId, x => x);
+
+		private async UniTask LoadSpecialEffects() =>
+			_specialEffectById =
+				(await _assetProvider.LoadAll<SpecialEffectConfig>(SpecialEffectConfigLabel))
 				.ToDictionary(x => x.TypeId, x => x);
 
 		private async UniTask LoadAura() =>
