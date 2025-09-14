@@ -14,7 +14,7 @@ namespace Code.Gameplay.Features.Weapon.Systems
 				.AllOf(
 					GameMatcher.Weapon,
 					GameMatcher.HeroWeapon,
-					GameMatcher.WeaponRotationPointTransform,
+					GameMatcher.RotationPointTransform,
 					GameMatcher.ClosestTargetPosition));
 
 			_hero = game.GetGroup(GameMatcher
@@ -39,7 +39,7 @@ namespace Code.Gameplay.Features.Weapon.Systems
 			Vector3 direction = (closestTargetPosition - hero.WorldPosition)
 				.normalized;
 			float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-			weapon.WeaponRotationPointTransform.rotation = Quaternion.Euler(0, 0, angle);
+			weapon.RotationPointTransform.rotation = Quaternion.Euler(0, 0, angle);
 
 			weapon.ReplaceWeaponRotationAngle(angle);
 		}

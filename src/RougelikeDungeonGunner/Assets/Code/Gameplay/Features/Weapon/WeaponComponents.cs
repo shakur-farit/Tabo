@@ -16,7 +16,7 @@ namespace Code.Gameplay.Features.Weapon
 	[Game] public class ClosestTargetPosition : IComponent { public Vector3 Value; }
 
 	[Game] public class FirePositionTransform : IComponent { public Transform Value; }
-	[Game] public class WeaponRotationPointTransform : IComponent { public Transform Value; }
+	[Game] public class RotationPointTransform : IComponent { public Transform Value; }
 	[Game] public class WeaponRotationAngle : IComponent { public float Value; }
 
 	[Game] public class ReloadTime : IComponent { public float Value; }

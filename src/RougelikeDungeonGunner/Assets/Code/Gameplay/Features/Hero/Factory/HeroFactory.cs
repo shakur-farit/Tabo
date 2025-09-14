@@ -7,6 +7,7 @@ using Code.Gameplay.StaticData;
 using UnityEngine;
 using System;
 using Code.Gameplay.Features.Ammo;
+using Code.Gameplay.Features.Aura;
 using Code.Gameplay.Features.Collection;
 using Code.Gameplay.Features.Hero.Configs;
 using Code.Gameplay.Features.Weapon;

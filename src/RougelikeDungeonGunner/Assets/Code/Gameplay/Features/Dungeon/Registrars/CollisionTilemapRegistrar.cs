@@ -18,8 +18,11 @@ namespace Code.Gameplay.Features.Dungeon.Registrars
 
 		public override void UnregisterComponents()
 		{
-			if(Entity.hasCollisionTilemap)
+			if (Entity.hasCollisionTilemap)
 				Entity.RemoveCollisionTilemap();
+
+			if(Entity.hasValidSprite)
+				Entity.RemoveValidSprite();
 		}
 	}
 }

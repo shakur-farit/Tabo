@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Entitas;
 
-namespace Code.Gameplay.Features.Ammo
+namespace Code.Gameplay.Features.Aura.Systems
 {
 	public class MarkDestroyDeadShieldSystem : IExecuteSystem
 	{

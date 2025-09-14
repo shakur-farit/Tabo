@@ -9,8 +9,7 @@ namespace Code.Meta.Features.Hud.CoinsHolder.Registrar
 		[SerializeField] private CoinsHolderBehaviour _coinsHolder;
 
 		public override void RegisterComponents() =>
-			Entity
-				.AddCoinsHolder(_coinsHolder);
+			Entity.AddCoinsHolder(_coinsHolder);
 
 		public override void UnregisterComponents()
 		{

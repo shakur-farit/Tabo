@@ -5,6 +5,7 @@ using Code.Gameplay.Features.AmmoPattern;
 using Code.Gameplay.Features.Collection;
 using Code.Gameplay.Features.Effects;
 using Code.Gameplay.Features.Loot;
+using Code.Gameplay.Features.SpecialEffect;
 using Code.Gameplay.Features.Statuses;
 using Code.Infrastructure.View;
 using Code.Meta.Features.Shop.Upgrade;

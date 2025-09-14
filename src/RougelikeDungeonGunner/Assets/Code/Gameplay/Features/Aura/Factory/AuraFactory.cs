@@ -1,11 +1,12 @@
 ﻿using System;
 using Code.Common.Entity;
 using Code.Common.Extensions;
+using Code.Gameplay.Features.Aura.Configs;
 using Code.Gameplay.StaticData;
 using Code.Infrastructure.Identifiers;
 using UnityEngine;
 
-namespace Code.Gameplay.Features.Ammo
+namespace Code.Gameplay.Features.Aura.Factory
 {
 	public class AuraFactory : IAuraFactory
 	{

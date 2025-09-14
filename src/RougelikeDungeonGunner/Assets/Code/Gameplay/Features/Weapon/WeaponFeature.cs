@@ -16,6 +16,10 @@ namespace Code.Gameplay.Features.Weapon
 			Add(systems.Create<UpdateWeaponNameInHolderSystem>());
 			Add(systems.Create<UpdateAmmoUICountInHolderOnCreateOrReloadWeaponSystem>());
 			Add(systems.Create<UpdateAmmoUICountInHolderForWeaponWithInfinityAmmoSystem>());
+
+			Add(systems.Create<SetWeaponCastStartLocalPositionSystem>());
+			Add(systems.Create<SetWeaponFireLocalPositionSystem>());
+			Add(systems.Create<SetWeaponSpriteSystem>());
 			Add(systems.Create<SetActiveTextOnInfinityAmmoSystem>());
 			Add(systems.Create<SetInactiveTextOnLimitedAmmoSystem>());
 			

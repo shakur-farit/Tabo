@@ -13,7 +13,7 @@ namespace Code.Gameplay.Features.Weapon.Systems
 				.AllOf(
 					GameMatcher.Weapon,
 					GameMatcher.HeroWeapon,
-					GameMatcher.WeaponRotationPointTransform)
+					GameMatcher.RotationPointTransform)
 				.NoneOf(GameMatcher.ClosestTargetPosition));
 		}
 
@@ -21,7 +21,7 @@ namespace Code.Gameplay.Features.Weapon.Systems
 		{
 			foreach (GameEntity weapon in _weapons)
 			{
-				weapon.WeaponRotationPointTransform.rotation = Quaternion.Euler(0, 0, 0);
+				weapon.RotationPointTransform.rotation = Quaternion.Euler(0, 0, 0);
 
 				weapon.ReplaceWeaponRotationAngle(default);
 			}

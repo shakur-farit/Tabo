@@ -1,7 +1,7 @@
 ﻿using Entitas;
 using UnityEngine;
 
-namespace Code.Gameplay.Features.Movement
+namespace Code.Gameplay.Features.Rotation.Systems
 {
 	public class RotateAlongDirectionSystem : IExecuteSystem
 	{

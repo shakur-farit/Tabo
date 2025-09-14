@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Code.Gameplay.Features.SpecialEffect;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherSmoke;
@@ -33,7 +36,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Loot.Smoke smokeComponent = new Code.Gameplay.Features.Loot.Smoke();
+    static readonly Smoke smokeComponent = new Smoke();
 
     public bool isSmoke {
         get { return HasComponent(GameComponentsLookup.Smoke); }

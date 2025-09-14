@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Code.Gameplay.Features.Aura;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherRequestShield;
@@ -33,7 +36,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Ammo.RequestShield requestShieldComponent = new Code.Gameplay.Features.Ammo.RequestShield();
+    static readonly RequestShield requestShieldComponent = new RequestShield();
 
     public bool isRequestShield {
         get { return HasComponent(GameComponentsLookup.RequestShield); }

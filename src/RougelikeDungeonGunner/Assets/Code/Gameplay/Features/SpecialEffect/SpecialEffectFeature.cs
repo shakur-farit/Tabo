@@ -1,6 +1,7 @@
-﻿using Code.Infrastructure.Systems;
+﻿using Code.Gameplay.Features.SpecialEffect.Systems;
+using Code.Infrastructure.Systems;
 
-namespace Code.Gameplay.Features.Loot
+namespace Code.Gameplay.Features.SpecialEffect
 {
 	public sealed class SpecialEffectFeature : Feature
 	{

@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
 using Code.Common.Extensions;
+using Code.Gameplay.Features.Aura.Factory;
 using Entitas;
 
-namespace Code.Gameplay.Features.Ammo
+namespace Code.Gameplay.Features.Aura.Systems
 {
 	public class CreateHealingAuraForHeroSystem : IExecuteSystem
 	{

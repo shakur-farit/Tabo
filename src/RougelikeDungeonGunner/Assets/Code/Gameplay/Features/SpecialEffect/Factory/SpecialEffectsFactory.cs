@@ -1,10 +1,12 @@
 ﻿using System;
 using Code.Common.Entity;
+using Code.Common.Extensions;
+using Code.Gameplay.Features.SpecialEffect.Configs;
 using Code.Gameplay.StaticData;
 using Code.Infrastructure.Identifiers;
 using UnityEngine;
 
-namespace Code.Gameplay.Features.Loot
+namespace Code.Gameplay.Features.SpecialEffect.Factory
 {
 	public class SpecialEffectsFactory : ISpecialEffectsFactory
 	{
@@ -19,8 +21,6 @@ namespace Code.Gameplay.Features.Loot
 
 		public GameEntity CreateSpecialEffect(SpecialEffectTypeId typeId, Vector3 at)
 		{
-			Debug.Log("sfx");
-
 			switch (typeId)
 			{
 				case SpecialEffectTypeId.Smoke:
@@ -41,8 +41,11 @@ namespace Code.Gameplay.Features.Loot
 
 			return CreateEntity.Empty()
 				.AddId(_identifier.Next())
+				.AddSpecialEffectTypeId(typeId)
 				.AddWorldPosition(at)
-				.AddViewPrefab(config.ViewPrefab);
+				.AddViewPrefab(config.ViewPrefab)
+				.With(x => x.isSpecialEffect = true)
+				;
 		}
 	}
 }

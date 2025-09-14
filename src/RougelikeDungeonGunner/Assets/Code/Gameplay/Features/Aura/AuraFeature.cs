@@ -1,6 +1,7 @@
-﻿using Code.Infrastructure.Systems;
+﻿using Code.Gameplay.Features.Aura.Systems;
+using Code.Infrastructure.Systems;
 
-namespace Code.Gameplay.Features.Ammo
+namespace Code.Gameplay.Features.Aura
 {
 	public sealed class AuraFeature : Feature
 	{
@@ -11,6 +12,9 @@ namespace Code.Gameplay.Features.Ammo
 			Add(systems.Create<CreateShieldForEnemySystem>());
 			Add(systems.Create<CreateHealingAuraForEnemySystem>());
 			Add(systems.Create<SetAuraSizeSystem>());
+			Add(systems.Create<SetAuraSpriteSystem>());
+			Add(systems.Create<SetAuraMaterialSystem>());
+			Add(systems.Create<SetAuraColorSystem>());
 			Add(systems.Create<AuraDurationTickSystem>());
 
 			Add(systems.Create<MarkDestroyDeadShieldSystem>());

@@ -20,7 +20,7 @@ namespace Code.Gameplay.Features.Weapon.Systems
 					GameMatcher.Weapon,
 					GameMatcher.EnemyWeapon,
 					GameMatcher.Radius,
-					GameMatcher.WeaponRotationPointTransform));
+					GameMatcher.RotationPointTransform));
 		}
 
 		public void Execute()
@@ -31,7 +31,7 @@ namespace Code.Gameplay.Features.Weapon.Systems
 
 				foreach (GameEntity target in _targets)
 				{
-					float distance = (target.WorldPosition - weapon.WeaponRotationPointTransform.position).magnitude;
+					float distance = (target.WorldPosition - weapon.RotationPointTransform.position).magnitude;
 
 					if (distance <= weapon.Radius && distance < closestDistance)
 					{

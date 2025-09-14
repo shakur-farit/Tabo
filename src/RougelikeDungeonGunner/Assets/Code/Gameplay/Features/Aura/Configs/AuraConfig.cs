@@ -4,7 +4,7 @@ using Code.Gameplay.Features.Statuses;
 using Code.Infrastructure.View;
 using UnityEngine;
 
-namespace Code.Gameplay.Features.Ammo
+namespace Code.Gameplay.Features.Aura.Configs
 {
 	[CreateAssetMenu(menuName = "Dungeon Gunner/Aura Config", fileName = "AuraConfig")]
 	public class AuraConfig : ScriptableObject

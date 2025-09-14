@@ -1,4 +1,5 @@
 ﻿using Code.Gameplay.Features.Ammo;
+using Code.Gameplay.Features.Aura;
 using Code.Gameplay.Features.Collection;
 using Code.Gameplay.Features.Weapon;
 using Code.Infrastructure.View;

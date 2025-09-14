@@ -1,7 +1,7 @@
 ﻿using Entitas;
 using UnityEngine;
 
-namespace Code.Gameplay.Features.Ammo
+namespace Code.Gameplay.Features.Aura.Systems
 {
 	public class SetAuraSizeSystem : IExecuteSystem
 	{

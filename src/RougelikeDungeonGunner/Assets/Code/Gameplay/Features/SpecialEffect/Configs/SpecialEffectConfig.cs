@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using Code.Infrastructure.View;
 using UnityEngine;
+using UnityEngine.Serialization;
 
-namespace Code.Gameplay.Features.Loot
+namespace Code.Gameplay.Features.SpecialEffect.Configs
 {
 	[CreateAssetMenu(menuName = "Dungeon Gunner/Special Effect Config", fileName = "SpecialEffectConfig")]
 	public class SpecialEffectConfig : ScriptableObject
@@ -65,6 +66,9 @@ namespace Code.Gameplay.Features.Loot
 		public ParticleSystemShapeType Shape;
 		public float Angle;
 		public float Radius;
+		public float RadiusThickness;
+		public ParticleSystemShapeMultiModeValue ArcMode;
+		public float ArcSpread;
 	}
 
 	[Serializable]
@@ -74,6 +78,7 @@ namespace Code.Gameplay.Features.Loot
 		public ParticleSystem.MinMaxCurve LinerX;
 		public ParticleSystem.MinMaxCurve LinerY;
 		public ParticleSystem.MinMaxCurve LinerZ;
+		public ParticleSystem.MinMaxCurve SpeedModifier;
 	}
 
 	[Serializable]

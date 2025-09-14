@@ -6,6 +6,7 @@ using System;
 using Code.Gameplay.Features.Collection;
 using Code.Gameplay.Features.Cooldowns;
 using Code.Gameplay.Features.Loot;
+using Code.Gameplay.Features.SpecialEffect;
 using Code.Gameplay.Features.Weapon.Configs;
 using Code.Meta.Features.Shop.Upgrade.Services;
 using UnityEngine;

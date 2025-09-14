@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Code.Gameplay.Features.Loot
+namespace Code.Gameplay.Features.SpecialEffect.Factory
 {
 	public interface ISpecialEffectsFactory
 	{

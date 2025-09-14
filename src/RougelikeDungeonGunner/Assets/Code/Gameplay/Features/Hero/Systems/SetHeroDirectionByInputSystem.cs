@@ -1,4 +1,5 @@
-﻿using Entitas;
+﻿using Code.Gameplay.Features.Enemy.Configs;
+using Entitas;
 
 namespace Code.Gameplay.Features.Hero.Systems
 {

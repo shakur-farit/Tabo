@@ -2,7 +2,7 @@
 using Code.Gameplay.Common.Time;
 using Entitas;
 
-namespace Code.Gameplay.Features.Ammo
+namespace Code.Gameplay.Features.Aura.Systems
 {
 	public class AuraDurationTickSystem : IExecuteSystem
 	{

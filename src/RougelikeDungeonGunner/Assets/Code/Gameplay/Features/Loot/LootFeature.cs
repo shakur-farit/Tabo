@@ -1,5 +1,4 @@
 ﻿using Code.Gameplay.Features.Loot.Systems;
-using Code.Infrastructure;
 using Code.Infrastructure.Systems;
 using Code.Meta.Features.Hud.CoinsHolder.Systems;
 
@@ -9,6 +8,8 @@ namespace Code.Gameplay.Features.Loot
 	{
 		public LootFeature(ISystemsFactory systems)
 		{
+			Add(systems.Create<SetLootSpriteSystem>());
+
 			Add(systems.Create<CastForPullableSystem>());
 
 			Add(systems.Create<PullTowardsHeroSystem>());

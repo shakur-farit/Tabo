@@ -26,6 +26,7 @@ MonoBehaviour:
       StopAction: 1
       CullingMode: 3
     Emission:
+      Enabled: 1
       RateOverTime: 100
       Bursts:
       - Time: 0
@@ -48,12 +49,13 @@ MonoBehaviour:
           m_ConstantMax: 30
         Cycles: 1
         Interval: 0.01
-        Probability: 1
     Shape:
+      Enabled: 1
       Shape: 4
       Angle: 80
       Radius: 0.04
     VelocityOverLifetime:
+      Enabled: 1
       LinerX:
         m_Mode: 3
         m_CurveMultiplier: 0
@@ -106,6 +108,7 @@ MonoBehaviour:
         m_ConstantMin: 0
         m_ConstantMax: 0
     ColorOverLifetime:
+      Enabled: 1
       Color:
         m_Mode: 1
         m_GradientMin:
@@ -171,7 +174,8 @@ MonoBehaviour:
         m_ColorMin: {r: 0, g: 0, b: 0, a: 0}
         m_ColorMax: {r: 0, g: 0, b: 0, a: 0}
     RotationOverLifetime:
-      AngularVelocity:
+      Enabled: 1
+      AngularVelocityX:
         m_Mode: 0
         m_CurveMultiplier: 0
         m_CurveMin:
@@ -188,7 +192,42 @@ MonoBehaviour:
           m_RotationOrder: 4
         m_ConstantMin: 0
         m_ConstantMax: 180
+      AngularVelocityY:
+        m_Mode: 0
+        m_CurveMultiplier: 0
+        m_CurveMin:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        m_CurveMax:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        m_ConstantMin: 0
+        m_ConstantMax: 180
+      AngularVelocityZ:
+        m_Mode: 0
+        m_CurveMultiplier: 0
+        m_CurveMin:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        m_CurveMax:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        m_ConstantMin: 0
+        m_ConstantMax: 0
     Noise:
+      Enabled: 1
       Strength:
         m_Mode: 0
         m_CurveMultiplier: 0
@@ -227,7 +266,10 @@ MonoBehaviour:
         m_ConstantMin: 0
         m_ConstantMax: 0.04
     TextureSheetAnimation:
+      Enabled: 1
       Mode: 1
-      Sprite: {fileID: 21300000, guid: ecf6e010769abce4cb1e7c60e0f3b3d8, type: 3}
+      Sprites:
+      - {fileID: 21300000, guid: ecf6e010769abce4cb1e7c60e0f3b3d8, type: 3}
     Renderer:
+      Enabled: 1
       Material: {fileID: 2100000, guid: c1368499fdf39ea4687698e7f4aa2cf1, type: 2}

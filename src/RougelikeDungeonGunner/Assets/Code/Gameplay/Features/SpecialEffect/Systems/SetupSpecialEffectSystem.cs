@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
+using Code.Gameplay.Features.SpecialEffect.Configs;
 using Code.Gameplay.StaticData;
 using Entitas;
 using UnityEngine;
 
-namespace Code.Gameplay.Features.Loot
+namespace Code.Gameplay.Features.SpecialEffect.Systems
 {
 	public class SetupParticleSystemForSpecialEffectSystem : ReactiveSystem<GameEntity>
 	{
@@ -18,25 +19,34 @@ namespace Code.Gameplay.Features.Loot
 			return context.CreateCollector(GameMatcher.AllOf(
 					GameMatcher.SpecialEffect,
 					GameMatcher.SpecialEffectTypeId,
+					GameMatcher.ParticleSystemRenderer,
 					GameMatcher.ParticleSystem)
 				.Added());
 		}
 
 		protected override bool Filter(GameEntity specialEffects) => 
-			specialEffects.isSpecialEffect && specialEffects.hasSpecialEffectTypeId && specialEffects.hasParticleSystem;
+			specialEffects.isSpecialEffect 
+			&& specialEffects.hasSpecialEffectTypeId 
+			&& specialEffects.hasParticleSystem
+			&& specialEffects.hasParticleSystemRenderer;
 
 		protected override void Execute(List<GameEntity> specialEffects)
 		{
 			foreach (GameEntity specialEffect in specialEffects)
 			{
+				specialEffect.ParticleSystem.Stop();
 
 				SetupParticleSystem(
 					specialEffect.ParticleSystem,
+					specialEffect.ParticleSystemRenderer,
 					_staticDataService.GetSpecialEffectConfig(specialEffect.SpecialEffectTypeId));
+
+				specialEffect.ParticleSystem.Play();
 			}
 		}
 
-		private void SetupParticleSystem(ParticleSystem particleSystem, SpecialEffectConfig config)
+		private void SetupParticleSystem(ParticleSystem particleSystem, 
+			ParticleSystemRenderer particleSystemRenderer, SpecialEffectConfig config)
 		{
 			ParticleSetup setup = config.ParticleSetup;
 
@@ -48,6 +58,7 @@ namespace Code.Gameplay.Features.Loot
 			SetupRotationOverLifetimeModule(particleSystem,setup);
 			SetupNoiseModule(particleSystem,setup);
 			SetupTextureSheetAnimationModule(particleSystem,setup);
+			SetupRendererModule(particleSystemRenderer, setup);
 		}
 
 		private void SetupMainModule(ParticleSystem particleSystem, ParticleSetup setup)
@@ -98,6 +109,9 @@ namespace Code.Gameplay.Features.Loot
 			systemShape.shapeType = setupShape.Shape;
 			systemShape.angle = setupShape.Angle;
 			systemShape.radius = setupShape.Radius;
+			systemShape.radiusThickness = setupShape.RadiusThickness;
+			systemShape.arcMode = setupShape.ArcMode;
+			systemShape.arcSpread = setupShape.ArcSpread;
 		}
 
 		private void SetupVelocityOverLifetimeModule(ParticleSystem particleSystem, ParticleSetup setup)
@@ -109,6 +123,7 @@ namespace Code.Gameplay.Features.Loot
 			systemVelocityOverLifetime.x = setupVelocityOverLifetime.LinerX;
 			systemVelocityOverLifetime.y = setupVelocityOverLifetime.LinerY;
 			systemVelocityOverLifetime.z = setupVelocityOverLifetime.LinerZ;
+			systemVelocityOverLifetime.speedModifier = setupVelocityOverLifetime.SpeedModifier;
 		}
 
 		private void SetupColorOverLifetimeModule(ParticleSystem particleSystem, ParticleSetup setup)

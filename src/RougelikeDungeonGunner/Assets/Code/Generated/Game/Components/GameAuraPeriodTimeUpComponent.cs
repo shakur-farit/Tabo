@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Code.Gameplay.Features.Aura;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherAuraPeriodTimeUp;
@@ -33,7 +36,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Ammo.AuraPeriodTimeUp auraPeriodTimeUpComponent = new Code.Gameplay.Features.Ammo.AuraPeriodTimeUp();
+    static readonly AuraPeriodTimeUp auraPeriodTimeUpComponent = new AuraPeriodTimeUp();
 
     public bool isAuraPeriodTimeUp {
         get { return HasComponent(GameComponentsLookup.AuraPeriodTimeUp); }

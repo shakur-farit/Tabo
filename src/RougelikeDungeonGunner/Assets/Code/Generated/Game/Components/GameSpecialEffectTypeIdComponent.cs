@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Code.Gameplay.Features.SpecialEffect;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherSpecialEffectTypeId;
@@ -33,21 +36,21 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Features.Loot.SpecialEffectTypeIdComponent specialEffectTypeId { get { return (Code.Gameplay.Features.Loot.SpecialEffectTypeIdComponent)GetComponent(GameComponentsLookup.SpecialEffectTypeId); } }
-    public Code.Gameplay.Features.Loot.SpecialEffectTypeId SpecialEffectTypeId { get { return specialEffectTypeId.Value; } }
+    public SpecialEffectTypeIdComponent specialEffectTypeId { get { return (SpecialEffectTypeIdComponent)GetComponent(GameComponentsLookup.SpecialEffectTypeId); } }
+    public SpecialEffectTypeId SpecialEffectTypeId { get { return specialEffectTypeId.Value; } }
     public bool hasSpecialEffectTypeId { get { return HasComponent(GameComponentsLookup.SpecialEffectTypeId); } }
 
-    public GameEntity AddSpecialEffectTypeId(Code.Gameplay.Features.Loot.SpecialEffectTypeId newValue) {
+    public GameEntity AddSpecialEffectTypeId(SpecialEffectTypeId newValue) {
         var index = GameComponentsLookup.SpecialEffectTypeId;
-        var component = (Code.Gameplay.Features.Loot.SpecialEffectTypeIdComponent)CreateComponent(index, typeof(Code.Gameplay.Features.Loot.SpecialEffectTypeIdComponent));
+        var component = (SpecialEffectTypeIdComponent)CreateComponent(index, typeof(SpecialEffectTypeIdComponent));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
     }
 
-    public GameEntity ReplaceSpecialEffectTypeId(Code.Gameplay.Features.Loot.SpecialEffectTypeId newValue) {
+    public GameEntity ReplaceSpecialEffectTypeId(SpecialEffectTypeId newValue) {
         var index = GameComponentsLookup.SpecialEffectTypeId;
-        var component = (Code.Gameplay.Features.Loot.SpecialEffectTypeIdComponent)CreateComponent(index, typeof(Code.Gameplay.Features.Loot.SpecialEffectTypeIdComponent));
+        var component = (SpecialEffectTypeIdComponent)CreateComponent(index, typeof(SpecialEffectTypeIdComponent));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

@@ -1,4 +1,4 @@
-﻿namespace Code.Gameplay.Features.Ammo
+﻿namespace Code.Gameplay.Features.Aura
 {
 	public enum AuraTypeId
 	{

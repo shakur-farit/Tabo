@@ -4899,6 +4899,7 @@ GameObject:
   - component: {fileID: 8701506688930854304}
   - component: {fileID: 2183183120376608140}
   - component: {fileID: 6244926618751341932}
+  - component: {fileID: 8278118926734922745}
   m_Layer: 0
   m_Name: SFX
   m_TagString: Untagged
@@ -4947,3 +4948,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f995b7c574ebe654d91168f1183f0916, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8278118926734922745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9126710399240088047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bca20d606c4705b4eab71fe5b10199d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EntityView: {fileID: 6244926618751341932}
+  _particleSystem: {fileID: 4119310809776717062}
+  _particleSystemRenderer: {fileID: 3075619582667188114}

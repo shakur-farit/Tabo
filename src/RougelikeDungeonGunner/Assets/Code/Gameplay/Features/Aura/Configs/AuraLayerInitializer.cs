@@ -1,7 +1,7 @@
 ﻿using Code.Infrastructure.View;
 using UnityEngine;
 
-namespace Code.Gameplay.Features.Ammo
+namespace Code.Gameplay.Features.Aura.Configs
 {
 	public class AuraLayerInitializer : MonoBehaviour
 	{

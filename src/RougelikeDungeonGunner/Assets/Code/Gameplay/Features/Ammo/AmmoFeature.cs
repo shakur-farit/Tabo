@@ -1,6 +1,5 @@
 ﻿using Code.Gameplay.Features.Ammo.Systems;
 using Code.Gameplay.Features.Ammo.Systems.Visuals;
-using Code.Gameplay.Features.AmmoPattern.Systems;
 using Code.Gameplay.Features.Cooldowns.Systems;
 using Code.Infrastructure.Systems;
 using Code.Meta.Features.Hud.AmmoHolder.Systems;
@@ -17,6 +16,11 @@ namespace Code.Gameplay.Features.Ammo
 			Add(systems.Create<CreateAmmoFromCirclePatternSystem>());
 			Add(systems.Create<CreateAmmoFromTrianglePatternSystem>());
 			Add(systems.Create<CreateAmmoFromStarPatternSystem>());
+
+			Add(systems.Create<SetAmmoCastStartLocalPositionSystem>());
+			Add(systems.Create<SetAmmoSpriteSystem>());
+			Add(systems.Create<SetAmmoMaterialSystem>());
+			Add(systems.Create<SetAmmoTrailSystem>());
 
 			Add(systems.Create<AddAmmoTransformInListSystem>());
 

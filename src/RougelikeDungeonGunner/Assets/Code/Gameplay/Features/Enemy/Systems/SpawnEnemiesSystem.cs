@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Code.Gameplay.Features.Enemy.Behaviours;
 using Code.Gameplay.Features.Enemy.Factory;
 using Code.Gameplay.Features.Enemy.Services;
 using Code.Gameplay.Features.Level.Configs;

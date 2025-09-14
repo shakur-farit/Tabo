@@ -16,7 +16,7 @@ namespace Code.Gameplay.Features.Weapon.Systems
 					GameMatcher.Weapon,
 					GameMatcher.EnemyWeapon,
 					GameMatcher.WeaponOwnerId,
-					GameMatcher.WeaponRotationPointTransform));
+					GameMatcher.RotationPointTransform));
 
 			_enemies = game.GetGroup(GameMatcher
 				.AllOf(
@@ -50,7 +50,7 @@ namespace Code.Gameplay.Features.Weapon.Systems
 			Vector3 direction = (targetPosition - enemy.WorldPosition)
 				.normalized;
 			float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-			weapon.WeaponRotationPointTransform.rotation = Quaternion.Euler(0, 0, angle);
+			weapon.RotationPointTransform.rotation = Quaternion.Euler(0, 0, angle);
 
 			weapon.ReplaceWeaponRotationAngle(angle);
 		}

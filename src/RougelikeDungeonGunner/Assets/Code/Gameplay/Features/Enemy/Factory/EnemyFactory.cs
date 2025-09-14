@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Code.Common.Entity;
 using Code.Common.Extensions;
 using Code.Gameplay.Features.Ammo;
+using Code.Gameplay.Features.Aura;
 using Code.Gameplay.Features.CharacterStats;
 using Code.Gameplay.Features.Collection;
 using Code.Gameplay.Features.Effects;

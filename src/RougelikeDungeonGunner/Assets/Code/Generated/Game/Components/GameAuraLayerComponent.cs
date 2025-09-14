@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Code.Gameplay.Features.Aura;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherAuraLayer;
@@ -33,13 +36,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Features.Ammo.AuraLayer auraLayer { get { return (Code.Gameplay.Features.Ammo.AuraLayer)GetComponent(GameComponentsLookup.AuraLayer); } }
+    public AuraLayer auraLayer { get { return (AuraLayer)GetComponent(GameComponentsLookup.AuraLayer); } }
     public int AuraLayer { get { return auraLayer.Value; } }
     public bool hasAuraLayer { get { return HasComponent(GameComponentsLookup.AuraLayer); } }
 
     public GameEntity AddAuraLayer(int newValue) {
         var index = GameComponentsLookup.AuraLayer;
-        var component = (Code.Gameplay.Features.Ammo.AuraLayer)CreateComponent(index, typeof(Code.Gameplay.Features.Ammo.AuraLayer));
+        var component = (AuraLayer)CreateComponent(index, typeof(AuraLayer));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +50,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceAuraLayer(int newValue) {
         var index = GameComponentsLookup.AuraLayer;
-        var component = (Code.Gameplay.Features.Ammo.AuraLayer)CreateComponent(index, typeof(Code.Gameplay.Features.Ammo.AuraLayer));
+        var component = (AuraLayer)CreateComponent(index, typeof(AuraLayer));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

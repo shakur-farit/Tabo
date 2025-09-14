@@ -9,7 +9,6 @@ namespace Code.Gameplay.Features.Loot.Systems
 		private readonly IGroup<GameEntity> _pullables;
 		private readonly IGroup<GameEntity> _heroes;
 
-
 		public CollectWhenNearToHeroSystem(GameContext game)
 		{
 			_pullables = game.GetGroup(GameMatcher

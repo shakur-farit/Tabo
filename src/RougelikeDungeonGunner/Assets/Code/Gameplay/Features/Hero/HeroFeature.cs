@@ -11,8 +11,11 @@ namespace Code.Gameplay.Features.Hero
 		{
 			Add(systems.Create<SpawnHeroSystem>());
 
+			Add(systems.Create<SetHeroCastStartLocalPositionSystem>());
+			Add(systems.Create<SetHeroRuntimeAnimatorControllerSystem>());
 			Add(systems.Create<SetHeroDirectionByInputSystem>());
 			Add(systems.Create<SetCollisionInFrontFromWeaponSystem>());
+
 			Add(systems.Create<CameraFollowHeroSystem>());
 
 			Add(systems.Create<PushBackHeroOnCollisionSystem>());

@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 2243231872987813085}
   - component: {fileID: 2719461292396719340}
   - component: {fileID: 17674371396010513}
-  - component: {fileID: 4952210436001151603}
+  - component: {fileID: 3433660090685235469}
   m_Layer: 0
   m_Name: Aura
   m_TagString: Untagged
@@ -222,7 +222,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _entityBehaviour: {fileID: 2243231872987813085}
---- !u!114 &4952210436001151603
+--- !u!114 &3433660090685235469
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -231,7 +231,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6539570766999889727}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ce6e308e76cd224d91d9fd91732704b, type: 3}
+  m_Script: {fileID: 11500000, guid: 4eee636bc49e97940b7239e9da120b4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   EntityView: {fileID: 2243231872987813085}

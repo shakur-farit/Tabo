@@ -1,8 +1,7 @@
-﻿using Code.Infrastructure.View.Registrars;
-using Entitas;
+﻿using Entitas;
 using UnityEngine;
 
-namespace Code.Gameplay.Features.Ammo
+namespace Code.Gameplay.Features.Aura
 {
 	[Game] public class Aura : IComponent { }
 	[Game] public class AuraTypeIdComponent : IComponent { public AuraTypeId Value; }

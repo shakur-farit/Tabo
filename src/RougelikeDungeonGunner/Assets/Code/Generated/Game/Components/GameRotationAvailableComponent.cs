@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Code.Gameplay.Features.Rotation;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherRotationAvailable;
@@ -33,7 +36,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Movement.RotationAvailable rotationAvailableComponent = new Code.Gameplay.Features.Movement.RotationAvailable();
+    static readonly RotationAvailable rotationAvailableComponent = new RotationAvailable();
 
     public bool isRotationAvailable {
         get { return HasComponent(GameComponentsLookup.RotationAvailable); }

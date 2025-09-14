@@ -14,6 +14,8 @@ namespace Code.Gameplay.Common
 	[Game] public class ParentTransform : IComponent { public Transform Value; }
 	[Game] public class SpriteRendererComponent : IComponent { public SpriteRenderer Value; }
 	[Game] public class TrailRendererComponent : IComponent { public TrailRenderer Value; }
+	[Game] public class ParticleSystemComponent : IComponent { public ParticleSystem Value; }
+	[Game] public class ParticleSystemRendererComponent : IComponent { public ParticleSystemRenderer Value; }
 	[Game] public class DamageTakenAnimatorComponent : IComponent { public IDamageTakenAnimator Value; }
 	[Game] public class StatusVisualsComponent : IComponent { public IStatusVisuals Value; }
 	[Game] public class ColorComponent : IComponent { public Color Value; }

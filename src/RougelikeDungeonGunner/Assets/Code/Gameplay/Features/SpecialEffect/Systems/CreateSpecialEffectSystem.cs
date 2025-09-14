@@ -1,7 +1,7 @@
-﻿using Code.Gameplay.Features.Statuses;
+﻿using Code.Gameplay.Features.SpecialEffect.Factory;
 using Entitas;
 
-namespace Code.Gameplay.Features.Loot
+namespace Code.Gameplay.Features.SpecialEffect.Systems
 {
 	public class CreateSpecialEffectSystem : IExecuteSystem
 	{

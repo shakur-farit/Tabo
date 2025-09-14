@@ -11,19 +11,8 @@ namespace Code.Gameplay.Features.Hero.Registrars
 	{
 		[SerializeField] public HeroAnimator _heroAnimator;
 
-		private IStaticDataService _staticDataService;
-
-		[Inject]
-		public void Constructor(IStaticDataService staticDataService) => 
-			_staticDataService = staticDataService;
-
 		public override void RegisterComponents()
 		{
-			HeroTypeId typeId = Entity.HeroTypeId;
-			HeroConfig config = _staticDataService.GetHeroConfig(typeId);
-
-			_heroAnimator.SetRuntimeAnimatorController(config.AnimatorController);
-
 			Entity
 				.AddHeroAnimator(_heroAnimator)
 				.AddDamageTakenAnimator(_heroAnimator);

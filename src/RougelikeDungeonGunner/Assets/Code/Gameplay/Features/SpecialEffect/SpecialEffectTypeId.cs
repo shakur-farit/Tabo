@@ -1,9 +1,10 @@
-﻿namespace Code.Gameplay.Features.Loot
+﻿namespace Code.Gameplay.Features.SpecialEffect
 {
 	public enum SpecialEffectTypeId
 	{
 		Unknown = 0,
 		Smoke = 1,
-		NoSpecialEffect = 2
+		Flash = 2,
+		NoSpecialEffect = 3
 	}
 }
