@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using Code.Infrastructure.View;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Code.Gameplay.Features.SpecialEffect.Configs
 {
@@ -21,7 +20,9 @@ namespace Code.Gameplay.Features.SpecialEffect.Configs
 		public ParticleSetupEmission Emission;
 		public ParticleSetupShape Shape;
 		public ParticleSetupVelocityOverLifetime VelocityOverLifetime;
+		public ParticleSetupLimitVelocityOverLifetime LimitVelocityOverLifetime;
 		public ParticleSetupColorOverLifetime ColorOverLifetime;
+		public ParticleSetupSizeOverLifetime SizeOverLifetime;
 		public ParticleSetupRotationOverLifetime RotationOverLifetime;
 		public ParticleSetupNoise Noise;
 		public ParticleSetupTextureSheetAnimation TextureSheetAnimation;
@@ -82,6 +83,15 @@ namespace Code.Gameplay.Features.SpecialEffect.Configs
 	}
 
 	[Serializable]
+	public class ParticleSetupLimitVelocityOverLifetime
+	{
+		public bool Enabled;
+		public ParticleSystem.MinMaxCurve Speed;
+		public float Dampen;
+		public ParticleSystem.MinMaxCurve Drag;
+	}
+
+	[Serializable]
 	public class ParticleSetupColorOverLifetime
 	{
 		public bool Enabled;
@@ -89,12 +99,17 @@ namespace Code.Gameplay.Features.SpecialEffect.Configs
 	}
 
 	[Serializable]
+	public class ParticleSetupSizeOverLifetime
+	{
+		public bool Enabled;
+		public ParticleSystem.MinMaxCurve Size;
+	}
+
+	[Serializable]
 	public class ParticleSetupRotationOverLifetime
 	{
 		public bool Enabled;
-		public ParticleSystem.MinMaxCurve AngularVelocityX;
-		public ParticleSystem.MinMaxCurve AngularVelocityY;
-		public ParticleSystem.MinMaxCurve AngularVelocityZ;
+		public ParticleSystem.MinMaxCurve AngularVelocity;
 	}
 
 	[Serializable]
@@ -103,9 +118,14 @@ namespace Code.Gameplay.Features.SpecialEffect.Configs
 		public bool Enabled;
 		public ParticleSystem.MinMaxCurve Strength;
 		public float Frequency;
+		public ParticleSystem.MinMaxCurve ScrollSpeed;
+		public bool Damping;
 		public int Octaves;
+		public float OctavesScale;
 		public ParticleSystemNoiseQuality Quality;
 		public ParticleSystem.MinMaxCurve PositionAmount;
+		public ParticleSystem.MinMaxCurve RotationAmount;
+		public ParticleSystem.MinMaxCurve SizeAmount;
 	}
 
 	[Serializable]

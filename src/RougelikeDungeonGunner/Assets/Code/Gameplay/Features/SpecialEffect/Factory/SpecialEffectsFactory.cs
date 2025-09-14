@@ -1,5 +1,4 @@
-﻿using System;
-using Code.Common.Entity;
+﻿using Code.Common.Entity;
 using Code.Common.Extensions;
 using Code.Gameplay.Features.SpecialEffect.Configs;
 using Code.Gameplay.StaticData;
@@ -20,22 +19,6 @@ namespace Code.Gameplay.Features.SpecialEffect.Factory
 		}
 
 		public GameEntity CreateSpecialEffect(SpecialEffectTypeId typeId, Vector3 at)
-		{
-			switch (typeId)
-			{
-				case SpecialEffectTypeId.Smoke:
-					return CreateSmoke(typeId, at);
-			}
-
-			throw new Exception($"Special effect for {typeId} type was not found");
-		}
-
-		private GameEntity CreateSmoke(SpecialEffectTypeId typeId, Vector3 at)
-		{
-			return CreateSpecialEffectEntity(typeId, at);
-		}
-
-		private GameEntity CreateSpecialEffectEntity(SpecialEffectTypeId typeId, Vector3 at)
 		{
 			SpecialEffectConfig config = _staticDataService.GetSpecialEffectConfig(typeId);
 

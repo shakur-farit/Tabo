@@ -22,9 +22,7 @@ namespace Code.Gameplay.Features.SpecialEffect.Systems
 		public void Execute()
 		{
 			foreach (GameEntity weapon in _weapons)
-			{
 				_factory.CreateSpecialEffect(weapon.SpecialEffectTypeId, weapon.FirePositionTransform.position);
-			}
 		}
 	}
 }

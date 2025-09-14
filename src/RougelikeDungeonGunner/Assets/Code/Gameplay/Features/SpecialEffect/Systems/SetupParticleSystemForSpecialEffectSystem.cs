@@ -54,7 +54,9 @@ namespace Code.Gameplay.Features.SpecialEffect.Systems
 			SetupEmissionModule(particleSystem, setup);
 			SetupShapeModule(particleSystem,setup);
 			SetupVelocityOverLifetimeModule(particleSystem, setup);
+			SetupLimitVelocityOverLifetimeModule(particleSystem, setup);
 			SetupColorOverLifetimeModule(particleSystem, setup);
+			SetupSizeOverLifetimeModule(particleSystem, setup);
 			SetupRotationOverLifetimeModule(particleSystem,setup);
 			SetupNoiseModule(particleSystem,setup);
 			SetupTextureSheetAnimationModule(particleSystem,setup);
@@ -126,6 +128,18 @@ namespace Code.Gameplay.Features.SpecialEffect.Systems
 			systemVelocityOverLifetime.speedModifier = setupVelocityOverLifetime.SpeedModifier;
 		}
 
+		private void SetupLimitVelocityOverLifetimeModule(ParticleSystem particleSystem, ParticleSetup setup)
+		{
+			ParticleSystem.LimitVelocityOverLifetimeModule systemLimitVelocityOverLifetime = particleSystem.limitVelocityOverLifetime;
+			ParticleSetupLimitVelocityOverLifetime setupLimitVelocityOverLifetime = setup.LimitVelocityOverLifetime;
+
+			systemLimitVelocityOverLifetime.enabled = setupLimitVelocityOverLifetime.Enabled;
+			systemLimitVelocityOverLifetime.limit = setupLimitVelocityOverLifetime.Speed;
+			systemLimitVelocityOverLifetime.dampen = setupLimitVelocityOverLifetime.Dampen;
+			systemLimitVelocityOverLifetime.drag = setupLimitVelocityOverLifetime.Drag;
+
+		}
+
 		private void SetupColorOverLifetimeModule(ParticleSystem particleSystem, ParticleSetup setup)
 		{
 			ParticleSystem.ColorOverLifetimeModule systemColorOverLifetime = particleSystem.colorOverLifetime;
@@ -135,15 +149,22 @@ namespace Code.Gameplay.Features.SpecialEffect.Systems
 			systemColorOverLifetime.color = setupColorOverLifetime.Color;
 		}
 
+		private void SetupSizeOverLifetimeModule(ParticleSystem particleSystem, ParticleSetup setup)
+		{
+			ParticleSystem.SizeOverLifetimeModule systemSizeOverLifetime = particleSystem.sizeOverLifetime;
+			ParticleSetupSizeOverLifetime setupSizeOverLifetime = setup.SizeOverLifetime;
+
+			systemSizeOverLifetime.enabled = setupSizeOverLifetime.Enabled;
+			systemSizeOverLifetime.size = setupSizeOverLifetime.Size;
+		}
+
 		private void SetupRotationOverLifetimeModule(ParticleSystem particleSystem, ParticleSetup setup)
 		{
 			ParticleSystem.RotationOverLifetimeModule systemRotationOverLifetime = particleSystem.rotationOverLifetime;
 			ParticleSetupRotationOverLifetime setupRotationOverLifetime = setup.RotationOverLifetime;
 
 			systemRotationOverLifetime.enabled = setupRotationOverLifetime.Enabled;
-			systemRotationOverLifetime.x = setupRotationOverLifetime.AngularVelocityX;
-			systemRotationOverLifetime.y = setupRotationOverLifetime.AngularVelocityY;
-			systemRotationOverLifetime.z = setupRotationOverLifetime.AngularVelocityZ;
+			systemRotationOverLifetime.z = setupRotationOverLifetime.AngularVelocity;
 		}
 
 		private void SetupNoiseModule(ParticleSystem particleSystem, ParticleSetup setup)
@@ -154,9 +175,14 @@ namespace Code.Gameplay.Features.SpecialEffect.Systems
 			systemNoise.enabled = setupNoise.Enabled;
 			systemNoise.strength = setupNoise.Strength;
 			systemNoise.frequency = setupNoise.Frequency;
+			systemNoise.scrollSpeed = setupNoise.ScrollSpeed;
+			systemNoise.damping = setupNoise.Damping;
 			systemNoise.octaveCount = setupNoise.Octaves;
+			systemNoise.octaveScale = setupNoise.OctavesScale;
 			systemNoise.quality = setupNoise.Quality;
 			systemNoise.positionAmount = setupNoise.PositionAmount;
+			systemNoise.rotationAmount = setupNoise.RotationAmount;
+			systemNoise.sizeAmount = setupNoise.SizeAmount;
 		}
 
 		private void SetupTextureSheetAnimationModule(ParticleSystem particleSystem, ParticleSetup setup)
