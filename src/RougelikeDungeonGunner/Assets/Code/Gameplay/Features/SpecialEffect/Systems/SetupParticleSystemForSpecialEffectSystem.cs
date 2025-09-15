@@ -112,6 +112,7 @@ namespace Code.Gameplay.Features.SpecialEffect.Systems
 			systemShape.angle = setupShape.Angle;
 			systemShape.radius = setupShape.Radius;
 			systemShape.radiusThickness = setupShape.RadiusThickness;
+			systemShape.arc = setupShape.Arc;
 			systemShape.arcMode = setupShape.ArcMode;
 			systemShape.arcSpread = setupShape.ArcSpread;
 		}

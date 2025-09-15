@@ -68,6 +68,7 @@ namespace Code.Gameplay.Features.SpecialEffect.Configs
 		public float Angle;
 		public float Radius;
 		public float RadiusThickness;
+		public int Arc;
 		public ParticleSystemShapeMultiModeValue ArcMode;
 		public float ArcSpread;
 	}

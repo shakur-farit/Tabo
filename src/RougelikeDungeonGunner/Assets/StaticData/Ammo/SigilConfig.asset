@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: SigilConfig
   m_EditorClassIdentifier: 
   TypeId: 8
+  CollideSpecialEffectTypeId: 9
   ViewPrefab: {fileID: 2243231872987813085, guid: a5967ca81ad889847ae902288d60c7a5, type: 3}
   Sprite: {fileID: 21300000, guid: e36e8bbd18074d341b170885ac002038, type: 3}
   Material: {fileID: 2100000, guid: 5dceff0f64a88b949a3db290b8082010, type: 2}
@@ -23,3 +24,8 @@ MonoBehaviour:
     ForwardCastDistance: 0.1
     Width: 0.1
     Height: 0.1
+  TrailSetup:
+    Material: {fileID: 0}
+    Time: 0
+    StartWidth: 0
+    EndWidth: 0

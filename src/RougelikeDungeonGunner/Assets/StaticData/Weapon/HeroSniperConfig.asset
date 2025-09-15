@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TypeId: 6
   AmmoTypeId: 4
+  SpecialEffectTypeId: 1
   AmmoPatternSetup:
     PatternTypeId: 1
     AmmoCount: 0

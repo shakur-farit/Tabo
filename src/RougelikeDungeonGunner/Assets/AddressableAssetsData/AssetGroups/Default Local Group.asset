@@ -669,6 +669,48 @@ MonoBehaviour:
     m_SerializedLabels:
     - SpecialEffectConfig
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 168644b3b737f3047b0a8efd71241698
+    m_Address: Assets/StaticData/SpecialEffect/BlueFlashSpecialEffectConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SpecialEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f6d9bbe6bdbc18548aa1764bc2ea20ee
+    m_Address: Assets/StaticData/SpecialEffect/SmokeTrailSpecialEffectConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SpecialEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3551050427b065b46ae64c80830780d0
+    m_Address: Assets/StaticData/SpecialEffect/HitSpecialEffectConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SpecialEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a029c8a99d115a44dac63df587287414
+    m_Address: Assets/StaticData/SpecialEffect/RedFlashSpecialEffectConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SpecialEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e8f4911a760b7cb44b8d4c1646735728
+    m_Address: Assets/StaticData/SpecialEffect/BlueHitSpecialEffectConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SpecialEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8c4dc0797b0124345b7ca04b43b86608
+    m_Address: Assets/StaticData/SpecialEffect/RedHitSpecialEffectConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SpecialEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8178800550e00594282d6fcde4733096
+    m_Address: Assets/StaticData/SpecialEffect/PurpleHitSpecialEffectConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SpecialEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 7128017d563554245a79368046c75e1a, type: 2}
   m_SchemaSet:

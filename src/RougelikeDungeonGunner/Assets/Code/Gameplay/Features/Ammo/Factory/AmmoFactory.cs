@@ -4,6 +4,7 @@ using Code.Common.Entity;
 using Code.Common.Extensions;
 using Code.Gameplay.Features.Ammo.Configs;
 using Code.Gameplay.Features.Collection;
+using Code.Gameplay.Features.SpecialEffect;
 using Code.Gameplay.StaticData;
 using Code.Infrastructure.Identifiers;
 using UnityEngine;
@@ -99,6 +100,8 @@ namespace Code.Gameplay.Features.Ammo.Factory
 					.AddTargetsBuffer(new List<int>(BufferSize))
 					.AddTargetLimit(NoLimit)
 					.AddProcessedTargets(new List<int>(BufferSize))
+					.With(x => x.AddSpecialEffectTypeId(config.CollideSpecialEffectTypeId),
+						when: config.CollideSpecialEffectTypeId != SpecialEffectTypeId.NoSpecialEffect)
 					.With(x => x.isAmmo = true)
 					.With(x => x.isReadyToCollectTargets = true)
 					.With(x => x.isCollectTargetsContinuously = true)

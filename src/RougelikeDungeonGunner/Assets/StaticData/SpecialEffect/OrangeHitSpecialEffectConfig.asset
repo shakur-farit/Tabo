@@ -10,24 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b6e6f5ca1cc54bc4da457a73056372d7, type: 3}
-  m_Name: SmokeSpecialEffectConfig
+  m_Name: OrangeHitSpecialEffectConfig
   m_EditorClassIdentifier: 
-  TypeId: 1
+  TypeId: 6
   ViewPrefab: {fileID: 6244926618751341932, guid: cc3396cc27aa0444aaaf6b2225429e7e, type: 3}
   ParticleSetup:
     Main:
       Duration: 0.5
-      StartLifetime: 1.1
-      StartSpeed: 0.4
-      StartSize: 0.2
+      StartLifetime: 0.5
+      StartSpeed: 3.5
+      StartSize: 0.35
       GravityModifire: -0.01
       SimulationSpace: 1
-      MaxParticles: 100
+      MaxParticles: 25
       StopAction: 1
       CullingMode: 3
     Emission:
       Enabled: 1
-      RateOverTime: 100
+      RateOverTime: 0
       Bursts:
       - Time: 0
         Count:
@@ -46,18 +46,18 @@ MonoBehaviour:
             m_PostInfinity: 0
             m_RotationOrder: 0
           m_ConstantMin: 0
-          m_ConstantMax: 30
+          m_ConstantMax: 10
         Cycles: 1
         Interval: 0.01
     Shape:
       Enabled: 1
-      Shape: 4
-      Angle: 80
-      Radius: 0.04
-      RadiusThickness: 0
+      Shape: 10
+      Angle: 0
+      Radius: 0.2
+      RadiusThickness: 0.2
       Arc: 360
-      ArcMode: 0
-      ArcSpread: 0
+      ArcMode: 3
+      ArcSpread: 0.01
     VelocityOverLifetime:
       Enabled: 1
       LinerX:
@@ -75,8 +75,8 @@ MonoBehaviour:
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
-        m_ConstantMin: -0.06
-        m_ConstantMax: 0.2
+        m_ConstantMin: 0
+        m_ConstantMax: 1
       LinerY:
         m_Mode: 3
         m_CurveMultiplier: 0
@@ -92,8 +92,8 @@ MonoBehaviour:
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
-        m_ConstantMin: -0.03
-        m_ConstantMax: 0.03
+        m_ConstantMin: 0
+        m_ConstantMax: 1
       LinerZ:
         m_Mode: 3
         m_CurveMultiplier: 0
@@ -110,29 +110,10 @@ MonoBehaviour:
           m_PostInfinity: 2
           m_RotationOrder: 4
         m_ConstantMin: 0
-        m_ConstantMax: 0
-      SpeedModifier:
-        m_Mode: 0
-        m_CurveMultiplier: 0
-        m_CurveMin:
-          serializedVersion: 2
-          m_Curve: []
-          m_PreInfinity: 2
-          m_PostInfinity: 2
-          m_RotationOrder: 4
-        m_CurveMax:
-          serializedVersion: 2
-          m_Curve: []
-          m_PreInfinity: 2
-          m_PostInfinity: 2
-          m_RotationOrder: 4
-        m_ConstantMin: 0
         m_ConstantMax: 1
-    LimitVelocityOverLifetime:
-      Enabled: 0
-      Speed:
-        m_Mode: 0
-        m_CurveMultiplier: 0
+      SpeedModifier:
+        m_Mode: 1
+        m_CurveMultiplier: 1
         m_CurveMin:
           serializedVersion: 2
           m_Curve: []
@@ -141,13 +122,68 @@ MonoBehaviour:
           m_RotationOrder: 4
         m_CurveMax:
           serializedVersion: 2
-          m_Curve: []
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          - serializedVersion: 3
+            time: 0.35
+            value: 0.2
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
         m_ConstantMin: 0
         m_ConstantMax: 0
-      Dampen: 0
+    LimitVelocityOverLifetime:
+      Enabled: 1
+      Speed:
+        m_Mode: 1
+        m_CurveMultiplier: 0.7
+        m_CurveMin:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        m_CurveMax:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 1
+            inSlope: -2
+            outSlope: -2
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          - serializedVersion: 3
+            time: 0.9
+            value: 0.25
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        m_ConstantMin: 0
+        m_ConstantMax: 0
+      Dampen: 0.8
       Drag:
         m_Mode: 0
         m_CurveMultiplier: 0
@@ -164,7 +200,7 @@ MonoBehaviour:
           m_PostInfinity: 2
           m_RotationOrder: 4
         m_ConstantMin: 0
-        m_ConstantMax: 0
+        m_ConstantMax: 0.2
     ColorOverLifetime:
       Enabled: 1
       Color:
@@ -201,25 +237,25 @@ MonoBehaviour:
           m_NumAlphaKeys: 2
         m_GradientMax:
           serializedVersion: 2
-          key0: {r: 0.6415094, g: 0.6415094, b: 0.6415094, a: 1}
-          key1: {r: 0.754717, g: 0.754717, b: 0.754717, a: 0.6901961}
-          key2: {r: 0.8490566, g: 0.8370417, b: 0.8370417, a: 0.22352941}
-          key3: {r: 1, g: 1, b: 1, a: 0}
-          key4: {r: 0, g: 0, b: 0, a: 0}
+          key0: {r: 0.4264151, g: 0.4264151, b: 0.4264151, a: 0.8980392}
+          key1: {r: 0.89433956, g: 0.31868333, b: 0.26830178, a: 1}
+          key2: {r: 0.5773585, g: 0.5471432, b: 0.54358846, a: 0}
+          key3: {r: 0.7660377, g: 0.7660377, b: 0.7660377, a: 0}
+          key4: {r: 1, g: 1, b: 1, a: 0}
           key5: {r: 0, g: 0, b: 0, a: 0}
           key6: {r: 0, g: 0, b: 0, a: 0}
           key7: {r: 0, g: 0, b: 0, a: 0}
           ctime0: 0
-          ctime1: 16769
-          ctime2: 36623
-          ctime3: 65535
-          ctime4: 0
+          ctime1: 11488
+          ctime2: 31226
+          ctime3: 51117
+          ctime4: 65535
           ctime5: 0
           ctime6: 0
           ctime7: 0
           atime0: 0
-          atime1: 33924
-          atime2: 65535
+          atime1: 65535
+          atime2: 0
           atime3: 0
           atime4: 0
           atime5: 0
@@ -227,15 +263,15 @@ MonoBehaviour:
           atime7: 0
           m_Mode: 0
           m_ColorSpace: -1
-          m_NumColorKeys: 4
-          m_NumAlphaKeys: 3
+          m_NumColorKeys: 5
+          m_NumAlphaKeys: 2
         m_ColorMin: {r: 0, g: 0, b: 0, a: 0}
         m_ColorMax: {r: 0, g: 0, b: 0, a: 0}
     SizeOverLifetime:
-      Enabled: 0
+      Enabled: 1
       Size:
-        m_Mode: 0
-        m_CurveMultiplier: 0
+        m_Mode: 1
+        m_CurveMultiplier: 1
         m_CurveMin:
           serializedVersion: 2
           m_Curve: []
@@ -244,7 +280,25 @@ MonoBehaviour:
           m_RotationOrder: 4
         m_CurveMax:
           serializedVersion: 2
-          m_Curve: []
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 1
+            inSlope: -2
+            outSlope: -2
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          - serializedVersion: 3
+            time: 0.95
+            value: 0.1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
@@ -268,7 +322,7 @@ MonoBehaviour:
           m_PostInfinity: 2
           m_RotationOrder: 4
         m_ConstantMin: 0
-        m_ConstantMax: 180
+        m_ConstantMax: 70
     Noise:
       Enabled: 1
       Strength:
@@ -287,8 +341,8 @@ MonoBehaviour:
           m_PostInfinity: 2
           m_RotationOrder: 4
         m_ConstantMin: 0
-        m_ConstantMax: 0.09
-      Frequency: 0.33
+        m_ConstantMax: 2
+      Frequency: 2.3
       ScrollSpeed:
         m_Mode: 0
         m_CurveMultiplier: 0
@@ -305,10 +359,10 @@ MonoBehaviour:
           m_PostInfinity: 2
           m_RotationOrder: 4
         m_ConstantMin: 0
-        m_ConstantMax: 0
+        m_ConstantMax: 2
       Damping: 0
       Octaves: 2
-      OctavesScale: 0
+      OctavesScale: 1.2
       Quality: 1
       PositionAmount:
         m_Mode: 0
@@ -326,7 +380,7 @@ MonoBehaviour:
           m_PostInfinity: 2
           m_RotationOrder: 4
         m_ConstantMin: 0
-        m_ConstantMax: 0.04
+        m_ConstantMax: 1
       RotationAmount:
         m_Mode: 0
         m_CurveMultiplier: 0
@@ -343,7 +397,7 @@ MonoBehaviour:
           m_PostInfinity: 2
           m_RotationOrder: 4
         m_ConstantMin: 0
-        m_ConstantMax: 0
+        m_ConstantMax: 50
       SizeAmount:
         m_Mode: 0
         m_CurveMultiplier: 0
@@ -360,12 +414,12 @@ MonoBehaviour:
           m_PostInfinity: 2
           m_RotationOrder: 4
         m_ConstantMin: 0
-        m_ConstantMax: 0
+        m_ConstantMax: 0.2
     TextureSheetAnimation:
       Enabled: 1
       Mode: 1
       Sprites:
-      - {fileID: 21300000, guid: ecf6e010769abce4cb1e7c60e0f3b3d8, type: 3}
+      - {fileID: 21300000, guid: bb7ccf2391a6a544ab96e81e36b6a0ed, type: 3}
     Renderer:
       Enabled: 1
-      Material: {fileID: 2100000, guid: c1368499fdf39ea4687698e7f4aa2cf1, type: 2}
+      Material: {fileID: 2100000, guid: 6f2b97540fc06164c932cb2bfc0db6de, type: 2}

@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b6e6f5ca1cc54bc4da457a73056372d7, type: 3}
-  m_Name: SmokeSpecialEffectConfig
+  m_Name: SmokeTrailSpecialEffectConfig
   m_EditorClassIdentifier: 
-  TypeId: 1
+  TypeId: 5
   ViewPrefab: {fileID: 6244926618751341932, guid: cc3396cc27aa0444aaaf6b2225429e7e, type: 3}
   ParticleSetup:
     Main:
       Duration: 0.5
-      StartLifetime: 1.1
-      StartSpeed: 0.4
-      StartSize: 0.2
-      GravityModifire: -0.01
+      StartLifetime: 2
+      StartSpeed: 0.1
+      StartSize: 0.4
+      GravityModifire: -0.02
       SimulationSpace: 1
       MaxParticles: 100
       StopAction: 1
@@ -51,13 +51,13 @@ MonoBehaviour:
         Interval: 0.01
     Shape:
       Enabled: 1
-      Shape: 4
-      Angle: 80
-      Radius: 0.04
-      RadiusThickness: 0
-      Arc: 360
-      ArcMode: 0
-      ArcSpread: 0
+      Shape: 2
+      Angle: 0
+      Radius: 2
+      RadiusThickness: 1
+      Arc: 40
+      ArcMode: 3
+      ArcSpread: 0.2
     VelocityOverLifetime:
       Enabled: 1
       LinerX:
@@ -75,8 +75,8 @@ MonoBehaviour:
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
-        m_ConstantMin: -0.06
-        m_ConstantMax: 0.2
+        m_ConstantMin: -0.3
+        m_ConstantMax: 2.3
       LinerY:
         m_Mode: 3
         m_CurveMultiplier: 0
@@ -92,8 +92,8 @@ MonoBehaviour:
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
-        m_ConstantMin: -0.03
-        m_ConstantMax: 0.03
+        m_ConstantMin: -0.3
+        m_ConstantMax: 0.3
       LinerZ:
         m_Mode: 3
         m_CurveMultiplier: 0
@@ -201,9 +201,9 @@ MonoBehaviour:
           m_NumAlphaKeys: 2
         m_GradientMax:
           serializedVersion: 2
-          key0: {r: 0.6415094, g: 0.6415094, b: 0.6415094, a: 1}
-          key1: {r: 0.754717, g: 0.754717, b: 0.754717, a: 0.6901961}
-          key2: {r: 0.8490566, g: 0.8370417, b: 0.8370417, a: 0.22352941}
+          key0: {r: 1, g: 1, b: 1, a: 1}
+          key1: {r: 0.90188676, g: 0.86896783, b: 0.34543958, a: 0.6901961}
+          key2: {r: 0.5018867, g: 0.5018867, b: 0.5018867, a: 0.22352941}
           key3: {r: 1, g: 1, b: 1, a: 0}
           key4: {r: 0, g: 0, b: 0, a: 0}
           key5: {r: 0, g: 0, b: 0, a: 0}
@@ -287,8 +287,8 @@ MonoBehaviour:
           m_PostInfinity: 2
           m_RotationOrder: 4
         m_ConstantMin: 0
-        m_ConstantMax: 0.09
-      Frequency: 0.33
+        m_ConstantMax: 0.5
+      Frequency: 0.5
       ScrollSpeed:
         m_Mode: 0
         m_CurveMultiplier: 0
@@ -306,9 +306,9 @@ MonoBehaviour:
           m_RotationOrder: 4
         m_ConstantMin: 0
         m_ConstantMax: 0
-      Damping: 0
+      Damping: 1
       Octaves: 2
-      OctavesScale: 0
+      OctavesScale: 2
       Quality: 1
       PositionAmount:
         m_Mode: 0

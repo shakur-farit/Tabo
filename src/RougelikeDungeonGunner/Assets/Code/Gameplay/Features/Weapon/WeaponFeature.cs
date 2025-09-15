@@ -12,17 +12,17 @@ namespace Code.Gameplay.Features.Weapon
 		{
 			Add(systems.Create<ChangeCameraSizeByWeaponRangeSystem>());
 			
-			Add(systems.Create<UpdateWeaponIconInHolderSystem>());
-			Add(systems.Create<UpdateWeaponNameInHolderSystem>());
-			Add(systems.Create<UpdateAmmoUICountInHolderOnCreateOrReloadWeaponSystem>());
-			Add(systems.Create<UpdateAmmoUICountInHolderForWeaponWithInfinityAmmoSystem>());
-
 			Add(systems.Create<SetWeaponCastStartLocalPositionSystem>());
 			Add(systems.Create<SetWeaponFireLocalPositionSystem>());
 			Add(systems.Create<SetWeaponSpriteSystem>());
 			Add(systems.Create<SetActiveTextOnInfinityAmmoSystem>());
 			Add(systems.Create<SetInactiveTextOnLimitedAmmoSystem>());
-			
+
+			Add(systems.Create<UpdateWeaponIconInHolderSystem>());
+			Add(systems.Create<UpdateWeaponNameInHolderSystem>());
+			Add(systems.Create<UpdateAmmoUICountInHolderOnCreateOrReloadWeaponSystem>());
+			Add(systems.Create<UpdateAmmoUICountInHolderForWeaponWithInfinityAmmoSystem>());
+
 			Add(systems.Create<FindClosestHeroTargetSystem>());
 			Add(systems.Create<FindClosestEnemyTargetSystem>());
 			Add(systems.Create<RotateHeroWeaponAlongClosestTargetSystem>());

@@ -1,5 +1,6 @@
 ﻿using System;
 using Code.Gameplay.Features.Collection;
+using Code.Gameplay.Features.SpecialEffect;
 using Code.Infrastructure.View;
 using UnityEngine;
 
@@ -9,6 +10,7 @@ namespace Code.Gameplay.Features.Ammo.Configs
 	public class AmmoConfig : ScriptableObject
 	{
 		public AmmoTypeId TypeId;
+		public SpecialEffectTypeId CollideSpecialEffectTypeId;
 		public EntityBehaviour ViewPrefab;
 		public Sprite Sprite;
 		public Material Material;
