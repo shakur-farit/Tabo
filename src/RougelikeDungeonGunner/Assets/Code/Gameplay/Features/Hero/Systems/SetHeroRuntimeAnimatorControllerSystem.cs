@@ -17,9 +17,9 @@ namespace Code.Gameplay.Features.Hero.Systems
 		protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
 		{
 			return context.CreateCollector(GameMatcher.AllOf(
-					GameMatcher.Enemy,
-					GameMatcher.EnemyTypeId,
-					GameMatcher.EnemyAnimator)
+					GameMatcher.Hero,
+					GameMatcher.HeroTypeId,
+					GameMatcher.HeroAnimator)
 				.Added());
 		}
 

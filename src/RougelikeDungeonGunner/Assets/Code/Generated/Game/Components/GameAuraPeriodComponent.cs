@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Code.Gameplay.Features.Aura;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherAuraPeriod;
@@ -36,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public AuraPeriod auraPeriod { get { return (AuraPeriod)GetComponent(GameComponentsLookup.AuraPeriod); } }
+    public Code.Gameplay.Features.Aura.AuraPeriod auraPeriod { get { return (Code.Gameplay.Features.Aura.AuraPeriod)GetComponent(GameComponentsLookup.AuraPeriod); } }
     public float AuraPeriod { get { return auraPeriod.Value; } }
     public bool hasAuraPeriod { get { return HasComponent(GameComponentsLookup.AuraPeriod); } }
 
     public GameEntity AddAuraPeriod(float newValue) {
         var index = GameComponentsLookup.AuraPeriod;
-        var component = (AuraPeriod)CreateComponent(index, typeof(AuraPeriod));
+        var component = (Code.Gameplay.Features.Aura.AuraPeriod)CreateComponent(index, typeof(Code.Gameplay.Features.Aura.AuraPeriod));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -50,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceAuraPeriod(float newValue) {
         var index = GameComponentsLookup.AuraPeriod;
-        var component = (AuraPeriod)CreateComponent(index, typeof(AuraPeriod));
+        var component = (Code.Gameplay.Features.Aura.AuraPeriod)CreateComponent(index, typeof(Code.Gameplay.Features.Aura.AuraPeriod));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;
