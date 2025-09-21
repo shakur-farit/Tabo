@@ -10,9 +10,9 @@ namespace Code.Gameplay.Features.Ammo.Configs
 	public class AmmoConfig : ScriptableObject
 	{
 		public AmmoTypeId TypeId;
-		public SpecialEffectTypeId CollideSpecialEffectTypeId;
-		public EntityBehaviour ViewPrefab;
-		public Sprite Sprite;
+    public SpecialEffectTypeId CollideSpecialEffectTypeId;
+    public EntityBehaviour ViewPrefab;
+    public Sprite Sprite;
 		public Material Material;
 		public AmmoStats Stats;
 		public CollisionCastSetup CastSetup;

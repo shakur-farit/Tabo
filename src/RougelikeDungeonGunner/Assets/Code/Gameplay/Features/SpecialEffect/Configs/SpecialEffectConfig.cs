@@ -8,5 +8,6 @@ namespace Code.Gameplay.Features.SpecialEffect.Configs
 	{
 		public SpecialEffectTypeId TypeId;
 		public EntityBehaviour ViewPrefab;
-	}
+    [Range(0.1f, 3f)] public float Lifetime;
+  }
 }

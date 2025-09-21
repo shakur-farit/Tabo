@@ -12,6 +12,7 @@
 		BlueHit = 7,
 		RedHit = 8,
 		PurpleHit = 9,
-		NoSpecialEffect = 7
+		Explosion = 10,
+		NoSpecialEffect = 11
 	}
 }

@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b6e6f5ca1cc54bc4da457a73056372d7, type: 3}
-  m_Name: OrangeFlashSpecialEffectConfig
+  m_Name: ExplosionSpecialEffectConfig
   m_EditorClassIdentifier: 
-  TypeId: 2
-  ViewPrefab: {fileID: 6244926618751341932, guid: 891378bf5d8e9764ca809aae1ae52ab1, type: 3}
+  TypeId: 10
+  ViewPrefab: {fileID: 6244926618751341932, guid: 2c83d712dcebfc442a0049a37673f9a4, type: 3}
   Lifetime: 1
