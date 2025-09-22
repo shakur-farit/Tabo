@@ -1,4 +1,4 @@
-﻿using Code.Common.Extensions;
+﻿using Assets.Code.Common.Extensions;
 using Entitas;
 
 namespace Assets.Code.Gameplay.Features.CharacterStats.Systems

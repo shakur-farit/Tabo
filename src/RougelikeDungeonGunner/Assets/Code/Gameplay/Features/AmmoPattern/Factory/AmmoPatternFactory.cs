@@ -1,9 +1,9 @@
 ﻿using System;
+using Assets.Code.Common.Extensions;
 using Assets.Code.Gameplay.Features.Ammo;
 using Assets.Code.Gameplay.Features.Weapon.Configs;
 using Assets.Code.Infrastructure.Identifiers;
 using Code.Common.Entity;
-using Code.Common.Extensions;
 using UnityEngine;
 
 namespace Assets.Code.Gameplay.Features.AmmoPattern.Factory

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Assets.Code.Common.Extensions;
 using Assets.Code.Gameplay.Features.Aura;
 using Assets.Code.Gameplay.Features.CharacterStats;
 using Assets.Code.Gameplay.Features.Collection;
@@ -7,9 +8,8 @@ using Assets.Code.Gameplay.Features.Hero.Configs;
 using Assets.Code.Gameplay.Features.Weapon;
 using Assets.Code.Gameplay.StaticData;
 using Assets.Code.Infrastructure.Identifiers;
+using Assets.Code.Progress.Provider;
 using Code.Common.Entity;
-using Code.Common.Extensions;
-using Code.Progress.Provider;
 using UnityEngine;
 
 namespace Assets.Code.Gameplay.Features.Hero.Factory

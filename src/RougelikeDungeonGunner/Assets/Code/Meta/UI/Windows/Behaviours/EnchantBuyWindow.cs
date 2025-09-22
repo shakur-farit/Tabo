@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
+using Assets.Code.Common.Utilities;
 using Assets.Code.Meta.Features.Shop.Enchant;
 using Assets.Code.Meta.Features.Shop.Enchant.Factory;
 using Assets.Code.Meta.UI.Windows.Service;
-using Code.Common.Extensions;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;

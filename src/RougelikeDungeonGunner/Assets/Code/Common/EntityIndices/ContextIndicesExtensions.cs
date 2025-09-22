@@ -5,7 +5,7 @@ using Assets.Code.Gameplay.Features.Statuses;
 using Assets.Code.Gameplay.Features.Statuses.Indexing;
 using Entitas;
 
-namespace Code.Common.EntityIndices
+namespace Assets.Code.Common.EntityIndices
 {
 	public static class ContextIndicesExtensions
 	{

@@ -1,4 +1,4 @@
-namespace Code.Progress.Data.Transient
+namespace Assets.Code.Progress.Data.Transient
 {
 	public class TransientData
 	{

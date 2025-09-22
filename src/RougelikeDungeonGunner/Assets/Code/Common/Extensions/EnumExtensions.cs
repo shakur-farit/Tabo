@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 
-namespace Code.Common.Extensions
+namespace Assets.Code.Common.Extensions
 {
 	public static class EnumExtensions
 	{

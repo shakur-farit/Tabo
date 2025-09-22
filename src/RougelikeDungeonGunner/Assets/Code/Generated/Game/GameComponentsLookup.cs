@@ -7,6 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using Assets.Code.Common;
 using Assets.Code.Gameplay.Common;
 using Assets.Code.Gameplay.Features.Ammo;
 using Assets.Code.Gameplay.Features.AmmoPattern;
@@ -539,14 +540,14 @@ public static class GameComponentsLookup {
     };
 
     public static readonly System.Type[] componentTypes = {
-        typeof(Code.Common.Destructed),
-        typeof(Code.Common.Parented),
-        typeof(Code.Common.SelfDestructedTimer),
-        typeof(Code.Common.Unparented),
-        typeof(Code.Common.View),
-        typeof(Code.Common.ViewParent),
-        typeof(Code.Common.ViewPath),
-        typeof(Code.Common.ViewPrefab),
+        typeof(Destructed),
+        typeof(Parented),
+        typeof(SelfDestructedTimer),
+        typeof(Unparented),
+        typeof(View),
+        typeof(ViewParent),
+        typeof(ViewPath),
+        typeof(ViewPrefab),
         typeof(ColorComponent),
         typeof(Damage),
         typeof(DamageTakenAnimatorComponent),

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Code.Common.Extensions
+namespace Assets.Code.Common.Utilities
 {
 	public static class EnumUtility
 	{

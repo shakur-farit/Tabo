@@ -6,7 +6,7 @@ using Assets.Code.Gameplay.Features.Statuses.Indexing;
 using Entitas;
 using Zenject;
 
-namespace Code.Common.EntityIndices
+namespace Assets.Code.Common.EntityIndices
 {
 	public class GameEntityIndices : IInitializable
 	{

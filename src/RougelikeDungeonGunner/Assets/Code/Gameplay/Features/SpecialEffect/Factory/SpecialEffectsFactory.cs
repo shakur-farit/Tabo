@@ -1,8 +1,8 @@
-﻿using Assets.Code.Gameplay.Features.SpecialEffect.Configs;
+﻿using Assets.Code.Common.Extensions;
+using Assets.Code.Gameplay.Features.SpecialEffect.Configs;
 using Assets.Code.Gameplay.StaticData;
 using Assets.Code.Infrastructure.Identifiers;
 using Code.Common.Entity;
-using Code.Common.Extensions;
 using UnityEngine;
 
 namespace Assets.Code.Gameplay.Features.SpecialEffect.Factory

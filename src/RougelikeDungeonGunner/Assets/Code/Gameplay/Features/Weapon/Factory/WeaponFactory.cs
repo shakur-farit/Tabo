@@ -1,4 +1,5 @@
 ﻿using System;
+using Assets.Code.Common.Extensions;
 using Assets.Code.Gameplay.Features.Collection;
 using Assets.Code.Gameplay.Features.Cooldowns;
 using Assets.Code.Gameplay.Features.SpecialEffect;
@@ -7,7 +8,6 @@ using Assets.Code.Gameplay.StaticData;
 using Assets.Code.Infrastructure.Identifiers;
 using Assets.Code.Meta.Features.Shop.Upgrade.Services;
 using Code.Common.Entity;
-using Code.Common.Extensions;
 using UnityEngine;
 
 namespace Assets.Code.Gameplay.Features.Weapon.Factory

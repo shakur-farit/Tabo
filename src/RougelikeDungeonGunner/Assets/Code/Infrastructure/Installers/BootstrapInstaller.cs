@@ -1,3 +1,4 @@
+using Assets.Code.Common.EntityIndices;
 using Assets.Code.Gameplay.Cameras.Provider;
 using Assets.Code.Gameplay.Common.Collisions;
 using Assets.Code.Gameplay.Common.Physics;
@@ -42,8 +43,7 @@ using Assets.Code.Meta.Features.Shop.Weapon.Factory;
 using Assets.Code.Meta.Features.Shop.WeaponStatUIEntry.Factory;
 using Assets.Code.Meta.UI.Windows.Factory;
 using Assets.Code.Meta.UI.Windows.Service;
-using Code.Common.EntityIndices;
-using Code.Progress.Provider;
+using Assets.Code.Progress.Provider;
 using Zenject;
 
 namespace Assets.Code.Infrastructure.Installers

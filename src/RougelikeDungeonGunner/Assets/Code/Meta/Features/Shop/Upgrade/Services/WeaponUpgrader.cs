@@ -1,7 +1,7 @@
 ﻿using Assets.Code.Meta.Features.Shop.Upgrade.Configs;
 using Assets.Code.Meta.UI.Windows;
 using Assets.Code.Meta.UI.Windows.Service;
-using Code.Progress.Provider;
+using Assets.Code.Progress.Provider;
 
 namespace Assets.Code.Meta.Features.Shop.Upgrade.Services
 {

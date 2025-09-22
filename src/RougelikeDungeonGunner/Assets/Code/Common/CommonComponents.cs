@@ -2,7 +2,7 @@
 using Entitas;
 using UnityEngine;
 
-namespace Code.Common
+namespace Assets.Code.Common
 {
 	[Game] public class View : IComponent { public IEntityView Value; }
 	[Game] public class ViewPath : IComponent { public string Value; }

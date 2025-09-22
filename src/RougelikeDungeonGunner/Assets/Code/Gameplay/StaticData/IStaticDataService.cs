@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Assets.Code.Common.Balance;
 using Assets.Code.Gameplay.Features.Ammo;
 using Assets.Code.Gameplay.Features.Ammo.Configs;
 using Assets.Code.Gameplay.Features.Aura;

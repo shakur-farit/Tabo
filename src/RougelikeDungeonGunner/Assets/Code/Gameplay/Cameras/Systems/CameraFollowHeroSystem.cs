@@ -1,5 +1,5 @@
-﻿using Assets.Code.Gameplay.Cameras.Provider;
-using Code.Common.Extensions;
+﻿using Assets.Code.Common.Extensions;
+using Assets.Code.Gameplay.Cameras.Provider;
 using Entitas;
 
 namespace Assets.Code.Gameplay.Cameras.Systems

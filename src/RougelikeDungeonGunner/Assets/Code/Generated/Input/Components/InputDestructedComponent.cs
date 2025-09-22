@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Assets.Code.Common;
+
 public sealed partial class InputMatcher {
 
     static Entitas.IMatcher<InputEntity> _matcherDestructed;
@@ -43,7 +46,7 @@ public partial class InputEntity : IDestructedEntity { }
 //------------------------------------------------------------------------------
 public partial class InputEntity {
 
-    static readonly Code.Common.Destructed destructedComponent = new Code.Common.Destructed();
+    static readonly Destructed destructedComponent = new Destructed();
 
     public bool isDestructed {
         get { return HasComponent(InputComponentsLookup.Destructed); }

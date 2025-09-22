@@ -1,7 +1,7 @@
 ﻿using Assets.Code.Infrastructure.States.GameStates;
 using Assets.Code.Infrastructure.States.StateMachine;
 using Assets.Code.Meta.UI.Windows.Service;
-using Code.Progress.Provider;
+using Assets.Code.Progress.Provider;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;

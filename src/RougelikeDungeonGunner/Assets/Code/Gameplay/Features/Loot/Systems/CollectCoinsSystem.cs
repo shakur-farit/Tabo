@@ -1,4 +1,4 @@
-﻿using Code.Progress.Provider;
+﻿using Assets.Code.Progress.Provider;
 using Entitas;
 
 namespace Assets.Code.Gameplay.Features.Loot.Systems

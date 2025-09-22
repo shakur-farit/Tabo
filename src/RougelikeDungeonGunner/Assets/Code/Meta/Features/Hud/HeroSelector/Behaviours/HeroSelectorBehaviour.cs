@@ -3,7 +3,7 @@ using System.Linq;
 using Assets.Code.Gameplay.Features.Hero;
 using Assets.Code.Gameplay.Features.Hero.Configs;
 using Assets.Code.Gameplay.StaticData;
-using Code.Progress.Provider;
+using Assets.Code.Progress.Provider;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;

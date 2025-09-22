@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
+using Assets.Code.Common.Extensions;
 using Assets.Code.Gameplay.Common.Collisions;
-using Code.Common.Extensions;
 using UnityEngine;
 
 namespace Assets.Code.Gameplay.Common.Physics

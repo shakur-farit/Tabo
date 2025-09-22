@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
+using Assets.Code.Common.Utilities;
 using Assets.Code.Meta.Features.Shop.Weapon;
 using Assets.Code.Meta.Features.Shop.Weapon.Behaviours;
 using Assets.Code.Meta.Features.Shop.Weapon.Factory;
 using Assets.Code.Meta.UI.Windows.Service;
-using Code.Common.Extensions;
-using Code.Progress.Provider;
+using Assets.Code.Progress.Provider;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;

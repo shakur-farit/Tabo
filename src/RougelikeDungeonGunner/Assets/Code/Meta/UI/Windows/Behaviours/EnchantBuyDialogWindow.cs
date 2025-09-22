@@ -8,7 +8,7 @@ using Assets.Code.Meta.Features.Shop.EnchantUIEntry.Behaviours;
 using Assets.Code.Meta.Features.Shop.EnchantUIEntry.Configs;
 using Assets.Code.Meta.Features.Shop.Upgrade.Services;
 using Assets.Code.Meta.UI.Windows.Service;
-using Code.Progress.Provider;
+using Assets.Code.Progress.Provider;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;

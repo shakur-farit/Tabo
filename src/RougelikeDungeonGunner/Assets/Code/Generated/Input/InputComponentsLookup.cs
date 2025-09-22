@@ -7,6 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using Assets.Code.Common;
 using Assets.Code.Gameplay.Input;
 
 public static class InputComponentsLookup {
@@ -26,7 +27,7 @@ public static class InputComponentsLookup {
     };
 
     public static readonly System.Type[] componentTypes = {
-        typeof(Code.Common.Destructed),
+        typeof(Destructed),
         typeof(AxisInput),
         typeof(Input),
         typeof(MouseLeftButtonDown)

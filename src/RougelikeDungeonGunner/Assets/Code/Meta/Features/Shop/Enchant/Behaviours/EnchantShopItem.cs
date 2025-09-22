@@ -1,9 +1,9 @@
-﻿using Assets.Code.Gameplay.Features.Statuses;
+﻿using Assets.Code.Common.Extensions;
+using Assets.Code.Gameplay.Features.Statuses;
 using Assets.Code.Meta.Features.Shop.Enchant.Configs;
 using Assets.Code.Meta.UI.Windows;
 using Assets.Code.Meta.UI.Windows.Service;
-using Code.Common.Extensions;
-using Code.Progress.Provider;
+using Assets.Code.Progress.Provider;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;

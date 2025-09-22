@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using Assets.Code.Gameplay.Features.Weapon;
-using Code.Progress.Provider;
+using Assets.Code.Progress.Provider;
 
 namespace Assets.Code.Meta.Features.Shop.Upgrade.Services
 {

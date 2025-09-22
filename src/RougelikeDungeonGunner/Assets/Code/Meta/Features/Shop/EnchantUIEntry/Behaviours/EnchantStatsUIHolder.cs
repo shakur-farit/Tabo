@@ -1,5 +1,5 @@
 ﻿using Assets.Code.Meta.Features.Shop.EnchantUIEntry.Factory;
-using Code.Progress.Provider;
+using Assets.Code.Progress.Provider;
 using UnityEngine;
 using Zenject;
 

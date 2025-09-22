@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
+using Assets.Code.Common.Extensions;
 using Assets.Code.Gameplay.Features.Aura.Factory;
-using Code.Common.Extensions;
 using Entitas;
 
 namespace Assets.Code.Gameplay.Features.Aura.Systems

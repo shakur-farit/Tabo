@@ -1,4 +1,4 @@
-namespace Code.Progress.Data.Progress
+namespace Assets.Code.Progress.Data.Progress
 {
 	public class ProgressData
 	{

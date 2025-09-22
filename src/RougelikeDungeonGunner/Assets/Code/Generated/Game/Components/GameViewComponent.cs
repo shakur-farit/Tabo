@@ -7,6 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using Assets.Code.Common;
 using Assets.Code.Infrastructure.View;
 
 public sealed partial class GameMatcher {
@@ -36,13 +37,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Common.View view { get { return (Code.Common.View)GetComponent(GameComponentsLookup.View); } }
+    public View view { get { return (View)GetComponent(GameComponentsLookup.View); } }
     public IEntityView View { get { return view.Value; } }
     public bool hasView { get { return HasComponent(GameComponentsLookup.View); } }
 
     public GameEntity AddView(IEntityView newValue) {
         var index = GameComponentsLookup.View;
-        var component = (Code.Common.View)CreateComponent(index, typeof(Code.Common.View));
+        var component = (View)CreateComponent(index, typeof(View));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -50,7 +51,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceView(IEntityView newValue) {
         var index = GameComponentsLookup.View;
-        var component = (Code.Common.View)CreateComponent(index, typeof(Code.Common.View));
+        var component = (View)CreateComponent(index, typeof(View));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

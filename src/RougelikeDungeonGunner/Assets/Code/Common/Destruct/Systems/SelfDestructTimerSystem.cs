@@ -2,7 +2,7 @@
 using Assets.Code.Gameplay.Common.Time;
 using Entitas;
 
-namespace Code.Common.Systems
+namespace Assets.Code.Common.Destruct.Systems
 {
 	public class SelfDestructTimerSystem : IExecuteSystem
 	{

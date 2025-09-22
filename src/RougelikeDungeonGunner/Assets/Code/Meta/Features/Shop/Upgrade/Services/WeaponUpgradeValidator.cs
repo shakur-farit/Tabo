@@ -1,9 +1,10 @@
-﻿using Assets.Code.Gameplay.Features.Weapon;
+﻿using Assets.Code.Common.Balance;
+using Assets.Code.Gameplay.Features.Weapon;
 using Assets.Code.Gameplay.Features.Weapon.Configs;
 using Assets.Code.Gameplay.StaticData;
 using Assets.Code.Meta.Features.Shop.Upgrade.Configs;
+using Assets.Code.Progress.Provider;
 using Code.Common;
-using Code.Progress.Provider;
 
 namespace Assets.Code.Meta.Features.Shop.Upgrade.Services
 {

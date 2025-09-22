@@ -3,7 +3,7 @@ using Assets.Code.Infrastructure.States.StateInfrastructure;
 using Assets.Code.Infrastructure.States.StateMachine;
 using Assets.Code.Meta.UI.Windows;
 using Assets.Code.Meta.UI.Windows.Service;
-using Code.Progress.Provider;
+using Assets.Code.Progress.Provider;
 
 namespace Assets.Code.Infrastructure.States.GameStates
 {

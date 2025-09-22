@@ -1,7 +1,7 @@
-﻿using Assets.Code.Infrastructure.Systems;
-using Code.Common.Systems;
+﻿using Assets.Code.Common.Destruct.Systems;
+using Assets.Code.Infrastructure.Systems;
 
-namespace Code.Common
+namespace Assets.Code.Common.Destruct
 {
 	public sealed class ProcessInputDestructedFeature : Feature
 	{

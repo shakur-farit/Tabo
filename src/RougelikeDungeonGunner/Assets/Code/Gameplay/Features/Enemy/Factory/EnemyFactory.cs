@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Assets.Code.Common.Extensions;
 using Assets.Code.Gameplay.Features.Aura;
 using Assets.Code.Gameplay.Features.CharacterStats;
 using Assets.Code.Gameplay.Features.Collection;
@@ -9,7 +10,6 @@ using Assets.Code.Gameplay.Features.Weapon;
 using Assets.Code.Gameplay.StaticData;
 using Assets.Code.Infrastructure.Identifiers;
 using Code.Common.Entity;
-using Code.Common.Extensions;
 using UnityEngine;
 
 namespace Assets.Code.Gameplay.Features.Enemy.Factory

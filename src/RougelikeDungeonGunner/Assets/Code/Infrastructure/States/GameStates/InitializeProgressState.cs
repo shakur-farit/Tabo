@@ -1,8 +1,8 @@
 using Assets.Code.Infrastructure.States.StateInfrastructure;
 using Assets.Code.Infrastructure.States.StateMachine;
-using Code.Progress.Data.Progress;
-using Code.Progress.Data.Transient;
-using Code.Progress.Provider;
+using Assets.Code.Progress.Data.Progress;
+using Assets.Code.Progress.Data.Transient;
+using Assets.Code.Progress.Provider;
 
 namespace Assets.Code.Infrastructure.States.GameStates
 {

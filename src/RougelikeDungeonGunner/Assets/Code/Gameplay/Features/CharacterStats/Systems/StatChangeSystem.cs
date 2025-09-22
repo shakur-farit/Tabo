@@ -1,4 +1,4 @@
-﻿using Code.Common.EntityIndices;
+﻿using Assets.Code.Common.EntityIndices;
 using Entitas;
 
 namespace Assets.Code.Gameplay.Features.CharacterStats.Systems

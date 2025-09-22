@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using Assets.Code.Gameplay.Features.Hero.Factory;
-using Code.Progress.Provider;
+using Assets.Code.Progress.Provider;
 using Entitas;
 
 namespace Assets.Code.Gameplay.Features.Hero.Systems

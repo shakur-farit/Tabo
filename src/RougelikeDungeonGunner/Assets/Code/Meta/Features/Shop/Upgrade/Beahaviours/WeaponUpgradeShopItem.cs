@@ -1,13 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Assets.Code.Common.Extensions;
 using Assets.Code.Gameplay.Features.Effects;
 using Assets.Code.Gameplay.Features.Weapon;
 using Assets.Code.Gameplay.Features.Weapon.Configs;
 using Assets.Code.Gameplay.StaticData;
 using Assets.Code.Meta.Features.Shop.Upgrade.Configs;
 using Assets.Code.Meta.Features.Shop.Upgrade.Services;
-using Code.Common.Extensions;
-using Code.Progress.Provider;
+using Assets.Code.Progress.Provider;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;

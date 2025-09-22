@@ -2,7 +2,7 @@ using System;
 using Assets.Code.Gameplay.Features.Hero;
 using Assets.Code.Gameplay.Features.Weapon;
 
-namespace Code.Progress.Data.Transient
+namespace Assets.Code.Progress.Data.Transient
 {
 	public class HeroData
 	{
