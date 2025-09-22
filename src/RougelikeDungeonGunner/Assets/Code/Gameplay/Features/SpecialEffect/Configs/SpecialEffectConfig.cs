@@ -1,7 +1,7 @@
-﻿using Code.Infrastructure.View;
+﻿using Assets.Code.Infrastructure.View;
 using UnityEngine;
 
-namespace Code.Gameplay.Features.SpecialEffect.Configs
+namespace Assets.Code.Gameplay.Features.SpecialEffect.Configs
 {
 	[CreateAssetMenu(menuName = "Dungeon Gunner/Special Effect Config", fileName = "SpecialEffectConfig")]
 	public class SpecialEffectConfig : ScriptableObject

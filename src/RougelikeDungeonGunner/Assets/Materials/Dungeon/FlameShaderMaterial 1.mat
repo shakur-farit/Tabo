@@ -55,12 +55,12 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _DissolveAmount: 10.71
-    - _DissolveScale: 3.45
+    - _DissolveAmount: 8.6
+    - _DissolveScale: 4.43
     - _Distortion: -0.12
-    - _DistortionScale: 6.12
+    - _DistortionScale: 5.68
     m_Colors:
-    - _DissolveSpeed: {r: -0.33, g: -1, b: 0, a: 0}
+    - _DissolveSpeed: {r: -0.09, g: -1, b: 0, a: 0}
     - _EmmissionColor: {r: 766.9961, g: 128.50197, b: 0, a: 1}
     - _Speed: {r: 0.4, g: -2.5, b: 0, a: 0}
   m_BuildTextureStacks: []
