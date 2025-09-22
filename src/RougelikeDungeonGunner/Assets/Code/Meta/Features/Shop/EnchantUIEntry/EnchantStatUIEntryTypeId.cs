@@ -1,4 +1,4 @@
-﻿namespace Code.Meta.Features.Shop.EnchantUIEntry
+﻿namespace Assets.Code.Meta.Features.Shop.EnchantUIEntry
 {
 	public enum EnchantStatUIEntryTypeId
 	{

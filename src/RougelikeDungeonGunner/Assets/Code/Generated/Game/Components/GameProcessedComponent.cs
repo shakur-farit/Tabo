@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Assets.Code.Gameplay.Common;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherProcessed;
@@ -33,7 +36,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Common.Processed processedComponent = new Code.Gameplay.Common.Processed();
+    static readonly Processed processedComponent = new Processed();
 
     public bool isProcessed {
         get { return HasComponent(GameComponentsLookup.Processed); }

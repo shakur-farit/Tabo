@@ -1,6 +1,6 @@
-﻿using Code.Infrastructure.View.Registrars;
+﻿using Assets.Code.Infrastructure.View.Registrars;
 
-namespace Code.Gameplay.Common.Registrars
+namespace Assets.Code.Gameplay.Common.Registrars
 {
 	public class TransformRegistrar : EntityComponentRegistrar
 	{

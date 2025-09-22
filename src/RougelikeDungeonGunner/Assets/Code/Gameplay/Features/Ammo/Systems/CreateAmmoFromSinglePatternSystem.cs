@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
+using Assets.Code.Gameplay.Features.Ammo.Factory;
 using Code.Common.Extensions;
-using Code.Gameplay.Features.Ammo.Factory;
 using Entitas;
 
-namespace Code.Gameplay.Features.Ammo.Systems
+namespace Assets.Code.Gameplay.Features.Ammo.Systems
 {
 	public class CreateAmmoFromSinglePatternSystem : IExecuteSystem
 	{

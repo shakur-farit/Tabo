@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Assets.Code.Gameplay.Features.Weapon;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherFirePositionTransform;
@@ -33,13 +36,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Features.Weapon.FirePositionTransform firePositionTransform { get { return (Code.Gameplay.Features.Weapon.FirePositionTransform)GetComponent(GameComponentsLookup.FirePositionTransform); } }
+    public FirePositionTransform firePositionTransform { get { return (FirePositionTransform)GetComponent(GameComponentsLookup.FirePositionTransform); } }
     public UnityEngine.Transform FirePositionTransform { get { return firePositionTransform.Value; } }
     public bool hasFirePositionTransform { get { return HasComponent(GameComponentsLookup.FirePositionTransform); } }
 
     public GameEntity AddFirePositionTransform(UnityEngine.Transform newValue) {
         var index = GameComponentsLookup.FirePositionTransform;
-        var component = (Code.Gameplay.Features.Weapon.FirePositionTransform)CreateComponent(index, typeof(Code.Gameplay.Features.Weapon.FirePositionTransform));
+        var component = (FirePositionTransform)CreateComponent(index, typeof(FirePositionTransform));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +50,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceFirePositionTransform(UnityEngine.Transform newValue) {
         var index = GameComponentsLookup.FirePositionTransform;
-        var component = (Code.Gameplay.Features.Weapon.FirePositionTransform)CreateComponent(index, typeof(Code.Gameplay.Features.Weapon.FirePositionTransform));
+        var component = (FirePositionTransform)CreateComponent(index, typeof(FirePositionTransform));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

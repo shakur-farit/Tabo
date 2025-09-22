@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Assets.Code.Gameplay.Features.Weapon;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherMultiPellet;
@@ -33,13 +36,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Features.Weapon.MultiPellet multiPellet { get { return (Code.Gameplay.Features.Weapon.MultiPellet)GetComponent(GameComponentsLookup.MultiPellet); } }
+    public MultiPellet multiPellet { get { return (MultiPellet)GetComponent(GameComponentsLookup.MultiPellet); } }
     public int MultiPellet { get { return multiPellet.Value; } }
     public bool hasMultiPellet { get { return HasComponent(GameComponentsLookup.MultiPellet); } }
 
     public GameEntity AddMultiPellet(int newValue) {
         var index = GameComponentsLookup.MultiPellet;
-        var component = (Code.Gameplay.Features.Weapon.MultiPellet)CreateComponent(index, typeof(Code.Gameplay.Features.Weapon.MultiPellet));
+        var component = (MultiPellet)CreateComponent(index, typeof(MultiPellet));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +50,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceMultiPellet(int newValue) {
         var index = GameComponentsLookup.MultiPellet;
-        var component = (Code.Gameplay.Features.Weapon.MultiPellet)CreateComponent(index, typeof(Code.Gameplay.Features.Weapon.MultiPellet));
+        var component = (MultiPellet)CreateComponent(index, typeof(MultiPellet));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Code.Meta
+namespace Assets.Code.Meta
 {
 	public class WeaponUpgradeHolder : MonoBehaviour
 	{

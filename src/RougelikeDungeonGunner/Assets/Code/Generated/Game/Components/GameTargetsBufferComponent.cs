@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Assets.Code.Gameplay.Features.Collection;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherTargetsBuffer;
@@ -33,13 +36,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Features.Collection.TargetsBuffer targetsBuffer { get { return (Code.Gameplay.Features.Collection.TargetsBuffer)GetComponent(GameComponentsLookup.TargetsBuffer); } }
+    public TargetsBuffer targetsBuffer { get { return (TargetsBuffer)GetComponent(GameComponentsLookup.TargetsBuffer); } }
     public System.Collections.Generic.List<int> TargetsBuffer { get { return targetsBuffer.Value; } }
     public bool hasTargetsBuffer { get { return HasComponent(GameComponentsLookup.TargetsBuffer); } }
 
     public GameEntity AddTargetsBuffer(System.Collections.Generic.List<int> newValue) {
         var index = GameComponentsLookup.TargetsBuffer;
-        var component = (Code.Gameplay.Features.Collection.TargetsBuffer)CreateComponent(index, typeof(Code.Gameplay.Features.Collection.TargetsBuffer));
+        var component = (TargetsBuffer)CreateComponent(index, typeof(TargetsBuffer));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +50,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceTargetsBuffer(System.Collections.Generic.List<int> newValue) {
         var index = GameComponentsLookup.TargetsBuffer;
-        var component = (Code.Gameplay.Features.Collection.TargetsBuffer)CreateComponent(index, typeof(Code.Gameplay.Features.Collection.TargetsBuffer));
+        var component = (TargetsBuffer)CreateComponent(index, typeof(TargetsBuffer));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

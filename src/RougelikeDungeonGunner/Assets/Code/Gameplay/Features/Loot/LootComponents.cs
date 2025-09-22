@@ -1,7 +1,6 @@
-﻿using Code.Meta.Features.Hud.CoinsHolder.Behaviours;
-using Entitas;
+﻿using Entitas;
 
-namespace Code.Gameplay.Features.Loot
+namespace Assets.Code.Gameplay.Features.Loot
 {
 	public class LootComponents
 	{

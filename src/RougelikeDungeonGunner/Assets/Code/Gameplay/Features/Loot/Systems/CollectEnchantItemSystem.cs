@@ -1,10 +1,9 @@
 ﻿using System.Collections.Generic;
-using Code.Gameplay.Features.Enchants.Factory;
-using Code.Gameplay.Features.Statuses;
+using Assets.Code.Gameplay.Features.Enchants.Factory;
+using Assets.Code.Gameplay.Features.Statuses;
 using Entitas;
-using UnityEngine;
 
-namespace Code.Gameplay.Features.Loot.Systems
+namespace Assets.Code.Gameplay.Features.Loot.Systems
 {
 	public class CollectEnchantItemSystem : IExecuteSystem
 	{

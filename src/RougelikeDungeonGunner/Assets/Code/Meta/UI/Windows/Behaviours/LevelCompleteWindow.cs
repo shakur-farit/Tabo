@@ -1,13 +1,13 @@
-﻿using Code.Infrastructure.States.GameStates;
-using Code.Infrastructure.States.StateMachine;
-using Code.Meta.UI.Windows.Service;
+﻿using Assets.Code.Infrastructure.States.GameStates;
+using Assets.Code.Infrastructure.States.StateMachine;
+using Assets.Code.Meta.UI.Windows.Service;
 using Code.Progress.Provider;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
 
-namespace Code.Meta.UI.Windows.Behaviours
+namespace Assets.Code.Meta.UI.Windows.Behaviours
 {
 	public class LevelCompleteWindow : BaseWindow
 	{

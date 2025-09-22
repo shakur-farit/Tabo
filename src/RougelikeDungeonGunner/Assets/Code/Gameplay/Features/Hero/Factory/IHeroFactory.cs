@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Code.Gameplay.Features.Hero.Factory
+namespace Assets.Code.Gameplay.Features.Hero.Factory
 {
 	public interface IHeroFactory
 	{

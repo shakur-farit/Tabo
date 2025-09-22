@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Linq;
-using Code.Gameplay.Features.Effects;
-using Code.Gameplay.Features.Weapon.Configs;
-using Code.Meta.Features.Shop.Upgrade.Services;
-using Code.Meta.Features.Shop.WeaponStatUIEntry.Factory;
+using Assets.Code.Gameplay.Features.Effects;
+using Assets.Code.Gameplay.Features.Weapon.Configs;
+using Assets.Code.Meta.Features.Shop.Upgrade.Services;
+using Assets.Code.Meta.Features.Shop.WeaponStatUIEntry.Factory;
 using UnityEngine;
 using Zenject;
 
-namespace Code.Meta.Features.Shop.WeaponStatUIEntry.Behaviours
+namespace Assets.Code.Meta.Features.Shop.WeaponStatUIEntry.Behaviours
 {
 	public class WeaponStatsUIHolder : MonoBehaviour
 	{

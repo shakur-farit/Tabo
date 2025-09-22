@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Assets.Code.Gameplay.Features.Loot;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherPullable;
@@ -33,7 +36,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Loot.LootComponents.Pullable pullableComponent = new Code.Gameplay.Features.Loot.LootComponents.Pullable();
+    static readonly LootComponents.Pullable pullableComponent = new LootComponents.Pullable();
 
     public bool isPullable {
         get { return HasComponent(GameComponentsLookup.Pullable); }

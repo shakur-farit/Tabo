@@ -1,7 +1,7 @@
-﻿using Code.Infrastructure.View;
+﻿using Assets.Code.Infrastructure.View;
 using UnityEngine;
 
-namespace Code.Gameplay.Features.Aura.Configs
+namespace Assets.Code.Gameplay.Features.Aura.Configs
 {
 	public class AuraLayerInitializer : MonoBehaviour
 	{

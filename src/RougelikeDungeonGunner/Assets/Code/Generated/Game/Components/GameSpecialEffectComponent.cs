@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Assets.Code.Gameplay.Features.SpecialEffect;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherSpecialEffect;
@@ -33,7 +36,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.SpecialEffect.SpecialEffect specialEffectComponent = new Code.Gameplay.Features.SpecialEffect.SpecialEffect();
+    static readonly SpecialEffect specialEffectComponent = new SpecialEffect();
 
     public bool isSpecialEffect {
         get { return HasComponent(GameComponentsLookup.SpecialEffect); }

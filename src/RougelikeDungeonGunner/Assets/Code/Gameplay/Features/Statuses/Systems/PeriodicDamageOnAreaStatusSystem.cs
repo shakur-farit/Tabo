@@ -1,9 +1,9 @@
-﻿using Code.Gameplay.Common.Time;
-using Code.Gameplay.Features.Effects;
-using Code.Gameplay.Features.Effects.Factory;
+﻿using Assets.Code.Gameplay.Common.Time;
+using Assets.Code.Gameplay.Features.Effects;
+using Assets.Code.Gameplay.Features.Effects.Factory;
 using Entitas;
 
-namespace Code.Gameplay.Features.Statuses.Systems
+namespace Assets.Code.Gameplay.Features.Statuses.Systems
 {
 	public class PeriodicDamageOnAreaStatusSystem : IExecuteSystem
 	{

@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
-using Code.Gameplay.Features.Statuses;
-using Code.Meta.Features.Shop.EnchantUIEntry.Configs;
+using Assets.Code.Gameplay.Features.Statuses;
+using Assets.Code.Meta.Features.Shop.EnchantUIEntry.Configs;
 using UnityEngine;
 
-namespace Code.Meta.Features.Shop.Enchant.Configs
+namespace Assets.Code.Meta.Features.Shop.Enchant.Configs
 {
 	[CreateAssetMenu(menuName = "Dungeon Gunner/Shop/Enchant Item Config", fileName = "EnchantItemConfig")]
 	public class EnchantShopItemConfig : ScriptableObject

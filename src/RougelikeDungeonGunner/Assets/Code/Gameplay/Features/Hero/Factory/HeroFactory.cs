@@ -1,19 +1,18 @@
-﻿using Code.Common.Entity;
-using Code.Common.Extensions;
-using Code.Infrastructure.Identifiers;
+﻿using System;
 using System.Collections.Generic;
-using Code.Gameplay.Features.CharacterStats;
-using Code.Gameplay.StaticData;
-using UnityEngine;
-using System;
-using Code.Gameplay.Features.Ammo;
-using Code.Gameplay.Features.Aura;
-using Code.Gameplay.Features.Collection;
-using Code.Gameplay.Features.Hero.Configs;
-using Code.Gameplay.Features.Weapon;
+using Assets.Code.Gameplay.Features.Aura;
+using Assets.Code.Gameplay.Features.CharacterStats;
+using Assets.Code.Gameplay.Features.Collection;
+using Assets.Code.Gameplay.Features.Hero.Configs;
+using Assets.Code.Gameplay.Features.Weapon;
+using Assets.Code.Gameplay.StaticData;
+using Assets.Code.Infrastructure.Identifiers;
+using Code.Common.Entity;
+using Code.Common.Extensions;
 using Code.Progress.Provider;
+using UnityEngine;
 
-namespace Code.Gameplay.Features.Hero.Factory
+namespace Assets.Code.Gameplay.Features.Hero.Factory
 {
 	public class HeroFactory : IHeroFactory
 	{

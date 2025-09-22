@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Assets.Code.Gameplay.Features.Movement;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherFollowMovement;
@@ -33,7 +36,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Movement.FollowMovement followMovementComponent = new Code.Gameplay.Features.Movement.FollowMovement();
+    static readonly FollowMovement followMovementComponent = new FollowMovement();
 
     public bool isFollowMovement {
         get { return HasComponent(GameComponentsLookup.FollowMovement); }

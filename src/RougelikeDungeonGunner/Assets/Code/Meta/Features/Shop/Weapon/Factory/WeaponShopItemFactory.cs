@@ -1,11 +1,10 @@
-﻿using Code.Gameplay.StaticData;
-using Code.Meta.Features.Shop.Weapon.Behaviours;
-using Code.Meta.Features.Shop.Weapon.Configs;
+﻿using Assets.Code.Gameplay.StaticData;
+using Assets.Code.Meta.Features.Shop.Weapon.Behaviours;
+using Assets.Code.Meta.Features.Shop.Weapon.Configs;
 using UnityEngine;
 using Zenject;
-using static UnityEditor.Progress;
 
-namespace Code.Meta.Features.Shop.Weapon.Factory
+namespace Assets.Code.Meta.Features.Shop.Weapon.Factory
 {
 	public class WeaponShopItemFactory : IWeaponShopItemFactory
 	{

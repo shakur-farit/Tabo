@@ -1,7 +1,7 @@
-﻿using Code.Common;
-using Code.Infrastructure.Systems;
+﻿using Assets.Code.Infrastructure.Systems;
+using Code.Common;
 
-namespace Code.Meta
+namespace Assets.Code.Meta
 {
 	public sealed class HomeScreenFeature : Feature
 	{

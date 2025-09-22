@@ -1,7 +1,7 @@
-using Code.Infrastructure.States.StateInfrastructure;
+using Assets.Code.Infrastructure.States.StateInfrastructure;
 using Cysharp.Threading.Tasks;
 
-namespace Code.Infrastructure.States.StateMachine
+namespace Assets.Code.Infrastructure.States.StateMachine
 {
 	public interface IGameStateMachine
 	{

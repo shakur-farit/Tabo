@@ -1,6 +1,6 @@
 ﻿using Entitas;
 
-namespace Code.Gameplay.Features.Loot.Systems
+namespace Assets.Code.Gameplay.Features.Loot.Systems
 {
 	public class CollectWhenNearToHeroSystem : IExecuteSystem
 	{

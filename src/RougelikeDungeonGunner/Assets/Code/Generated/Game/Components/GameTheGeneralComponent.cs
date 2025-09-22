@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Assets.Code.Gameplay.Features.Hero;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherTheGeneral;
@@ -33,7 +36,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Hero.TheGeneral theGeneralComponent = new Code.Gameplay.Features.Hero.TheGeneral();
+    static readonly TheGeneral theGeneralComponent = new TheGeneral();
 
     public bool isTheGeneral {
         get { return HasComponent(GameComponentsLookup.TheGeneral); }

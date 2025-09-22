@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Assets.Code.Gameplay.Features.Aura;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherAuraRadius;
@@ -33,13 +36,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Features.Aura.AuraRadius auraRadius { get { return (Code.Gameplay.Features.Aura.AuraRadius)GetComponent(GameComponentsLookup.AuraRadius); } }
+    public AuraRadius auraRadius { get { return (AuraRadius)GetComponent(GameComponentsLookup.AuraRadius); } }
     public float AuraRadius { get { return auraRadius.Value; } }
     public bool hasAuraRadius { get { return HasComponent(GameComponentsLookup.AuraRadius); } }
 
     public GameEntity AddAuraRadius(float newValue) {
         var index = GameComponentsLookup.AuraRadius;
-        var component = (Code.Gameplay.Features.Aura.AuraRadius)CreateComponent(index, typeof(Code.Gameplay.Features.Aura.AuraRadius));
+        var component = (AuraRadius)CreateComponent(index, typeof(AuraRadius));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +50,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceAuraRadius(float newValue) {
         var index = GameComponentsLookup.AuraRadius;
-        var component = (Code.Gameplay.Features.Aura.AuraRadius)CreateComponent(index, typeof(Code.Gameplay.Features.Aura.AuraRadius));
+        var component = (AuraRadius)CreateComponent(index, typeof(AuraRadius));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

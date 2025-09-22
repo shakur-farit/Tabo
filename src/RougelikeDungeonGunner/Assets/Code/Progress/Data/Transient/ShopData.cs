@@ -1,5 +1,5 @@
-using Code.Meta.Features.Shop.Enchant.Configs;
-using Code.Meta.Features.Shop.Weapon.Configs;
+using Assets.Code.Meta.Features.Shop.Enchant.Configs;
+using Assets.Code.Meta.Features.Shop.Weapon.Configs;
 
 namespace Code.Progress.Data.Transient
 {

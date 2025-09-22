@@ -1,10 +1,10 @@
-﻿using Code.Gameplay.Features.Effects;
-using Code.Gameplay.Features.Statuses;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using Assets.Code.Gameplay.Features.Effects;
+using Assets.Code.Gameplay.Features.Statuses;
 using UnityEngine;
 
-namespace Code.Gameplay.Features.Weapon.Configs
+namespace Assets.Code.Gameplay.Features.Weapon.Configs
 {
 	[Serializable]
 	public class WeaponLevel

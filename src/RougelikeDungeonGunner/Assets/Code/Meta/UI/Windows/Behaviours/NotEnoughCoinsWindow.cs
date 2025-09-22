@@ -1,9 +1,9 @@
-﻿using Code.Meta.UI.Windows.Service;
+﻿using Assets.Code.Meta.UI.Windows.Service;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
 
-namespace Code.Meta.UI.Windows.Behaviours
+namespace Assets.Code.Meta.UI.Windows.Behaviours
 {
 	public class NotEnoughCoinsWindow : BaseWindow
 	{

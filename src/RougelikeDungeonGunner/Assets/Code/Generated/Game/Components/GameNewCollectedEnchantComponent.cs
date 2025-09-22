@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Assets.Code.Gameplay.Features.Enchants;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherNewCollectedEnchant;
@@ -33,7 +36,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Enchants.NewCollectedEnchant newCollectedEnchantComponent = new Code.Gameplay.Features.Enchants.NewCollectedEnchant();
+    static readonly NewCollectedEnchant newCollectedEnchantComponent = new NewCollectedEnchant();
 
     public bool isNewCollectedEnchant {
         get { return HasComponent(GameComponentsLookup.NewCollectedEnchant); }

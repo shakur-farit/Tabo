@@ -1,9 +1,9 @@
-﻿using Code.Infrastructure.AssetManagement;
+﻿using Assets.Code.Infrastructure.AssetManagement;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 using Zenject;
 
-namespace Code.Meta.Features.Hud.HeroHeartHolder.Factory
+namespace Assets.Code.Meta.Features.Hud.HeroHeartHolder.Factory
 {
 	public class HeartUIFactory : IHeartUIFactory
 	{

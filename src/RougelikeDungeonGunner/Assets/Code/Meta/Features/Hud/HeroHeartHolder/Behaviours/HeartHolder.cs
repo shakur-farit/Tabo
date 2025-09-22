@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
-using Code.Meta.Features.Hud.HeroHeartHolder.Factory;
+using Assets.Code.Meta.Features.Hud.HeroHeartHolder.Factory;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 using Zenject;
 
-namespace Code.Meta.Features.Hud.HeroHeartHolder.Behaviours
+namespace Assets.Code.Meta.Features.Hud.HeroHeartHolder.Behaviours
 {
 	public class HeartHolder : MonoBehaviour
 	{

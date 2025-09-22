@@ -1,4 +1,4 @@
-﻿using Code.Infrastructure.View;
+﻿using Assets.Code.Infrastructure.View;
 using Entitas;
 using UnityEngine;
 

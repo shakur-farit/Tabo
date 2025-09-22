@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Assets.Code.Gameplay.Features.Cooldowns;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherCooldownLeft;
@@ -33,13 +36,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Features.Cooldowns.CooldownLeft cooldownLeft { get { return (Code.Gameplay.Features.Cooldowns.CooldownLeft)GetComponent(GameComponentsLookup.CooldownLeft); } }
+    public CooldownLeft cooldownLeft { get { return (CooldownLeft)GetComponent(GameComponentsLookup.CooldownLeft); } }
     public float CooldownLeft { get { return cooldownLeft.Value; } }
     public bool hasCooldownLeft { get { return HasComponent(GameComponentsLookup.CooldownLeft); } }
 
     public GameEntity AddCooldownLeft(float newValue) {
         var index = GameComponentsLookup.CooldownLeft;
-        var component = (Code.Gameplay.Features.Cooldowns.CooldownLeft)CreateComponent(index, typeof(Code.Gameplay.Features.Cooldowns.CooldownLeft));
+        var component = (CooldownLeft)CreateComponent(index, typeof(CooldownLeft));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +50,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceCooldownLeft(float newValue) {
         var index = GameComponentsLookup.CooldownLeft;
-        var component = (Code.Gameplay.Features.Cooldowns.CooldownLeft)CreateComponent(index, typeof(Code.Gameplay.Features.Cooldowns.CooldownLeft));
+        var component = (CooldownLeft)CreateComponent(index, typeof(CooldownLeft));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

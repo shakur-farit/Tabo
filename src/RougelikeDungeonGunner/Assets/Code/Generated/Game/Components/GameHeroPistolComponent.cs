@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Assets.Code.Gameplay.Features.Weapon;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherHeroPistol;
@@ -33,7 +36,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Weapon.HeroPistol heroPistolComponent = new Code.Gameplay.Features.Weapon.HeroPistol();
+    static readonly HeroPistol heroPistolComponent = new HeroPistol();
 
     public bool isHeroPistol {
         get { return HasComponent(GameComponentsLookup.HeroPistol); }

@@ -1,7 +1,7 @@
 ﻿using Entitas;
 using UnityEngine;
 
-namespace Code.Gameplay.Features.Weapon.Systems
+namespace Assets.Code.Gameplay.Features.Weapon.Systems
 {
 	public class PushBackHeroOnCollisionFrontWeaponSystem : IExecuteSystem
 	{

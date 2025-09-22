@@ -1,6 +1,6 @@
 ﻿using Entitas;
 
-namespace Code.Gameplay.Features.Effects
+namespace Assets.Code.Gameplay.Features.Effects
 {
 	[Game] public class Effect : IComponent { }
 	[Game] public class ProducerId : IComponent { public int Value; }

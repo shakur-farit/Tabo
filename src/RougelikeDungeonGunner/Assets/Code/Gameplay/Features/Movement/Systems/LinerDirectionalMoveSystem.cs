@@ -1,9 +1,8 @@
-﻿using Code.Gameplay.Common.Time;
+﻿using Assets.Code.Gameplay.Common.Time;
 using Entitas;
-using ModestTree;
 using UnityEngine;
 
-namespace Code.Gameplay.Features.Movement.Systems
+namespace Assets.Code.Gameplay.Features.Movement.Systems
 {
 	public class LinerDirectionalMoveSystem : IExecuteSystem
 	{

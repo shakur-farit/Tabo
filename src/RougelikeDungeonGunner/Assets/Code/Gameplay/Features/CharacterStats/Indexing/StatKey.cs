@@ -1,4 +1,4 @@
-﻿namespace Code.Gameplay.Features.CharacterStats.Indexing
+﻿namespace Assets.Code.Gameplay.Features.CharacterStats.Indexing
 {
 	public struct StatKey
 	{

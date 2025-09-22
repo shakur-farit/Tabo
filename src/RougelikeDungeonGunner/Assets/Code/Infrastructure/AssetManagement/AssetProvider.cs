@@ -1,11 +1,11 @@
-﻿using Cysharp.Threading.Tasks;
+﻿using System;
 using System.Collections.Generic;
-using System;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 
-namespace Code.Infrastructure.AssetManagement
+namespace Assets.Code.Infrastructure.AssetManagement
 {
   public class AssetProvider : IAssetProvider
   {

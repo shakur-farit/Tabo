@@ -6,6 +6,10 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Assets.Code.Meta.Features.Hud;
+using Assets.Code.Meta.Features.Hud.WeaponHolder.Behaviours;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherReloadingAnimator;
@@ -33,21 +37,21 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Meta.Features.Hud.ReloadingAnimatorComponent reloadingAnimator { get { return (Code.Meta.Features.Hud.ReloadingAnimatorComponent)GetComponent(GameComponentsLookup.ReloadingAnimator); } }
-    public Code.Meta.Features.Hud.WeaponHolder.Behaviours.ReloadingAnimator ReloadingAnimator { get { return reloadingAnimator.Value; } }
+    public ReloadingAnimatorComponent reloadingAnimator { get { return (ReloadingAnimatorComponent)GetComponent(GameComponentsLookup.ReloadingAnimator); } }
+    public ReloadingAnimator ReloadingAnimator { get { return reloadingAnimator.Value; } }
     public bool hasReloadingAnimator { get { return HasComponent(GameComponentsLookup.ReloadingAnimator); } }
 
-    public GameEntity AddReloadingAnimator(Code.Meta.Features.Hud.WeaponHolder.Behaviours.ReloadingAnimator newValue) {
+    public GameEntity AddReloadingAnimator(ReloadingAnimator newValue) {
         var index = GameComponentsLookup.ReloadingAnimator;
-        var component = (Code.Meta.Features.Hud.ReloadingAnimatorComponent)CreateComponent(index, typeof(Code.Meta.Features.Hud.ReloadingAnimatorComponent));
+        var component = (ReloadingAnimatorComponent)CreateComponent(index, typeof(ReloadingAnimatorComponent));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
     }
 
-    public GameEntity ReplaceReloadingAnimator(Code.Meta.Features.Hud.WeaponHolder.Behaviours.ReloadingAnimator newValue) {
+    public GameEntity ReplaceReloadingAnimator(ReloadingAnimator newValue) {
         var index = GameComponentsLookup.ReloadingAnimator;
-        var component = (Code.Meta.Features.Hud.ReloadingAnimatorComponent)CreateComponent(index, typeof(Code.Meta.Features.Hud.ReloadingAnimatorComponent));
+        var component = (ReloadingAnimatorComponent)CreateComponent(index, typeof(ReloadingAnimatorComponent));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

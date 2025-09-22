@@ -1,6 +1,6 @@
 ﻿using Entitas;
 
-namespace Code.Gameplay.Features.Enemy.Systems
+namespace Assets.Code.Gameplay.Features.Enemy.Systems
 {
 	public class AnimateEnemyMovementSystem : IExecuteSystem
 	{

@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
-using Code.Gameplay.Features.Ammo.Configs;
-using Code.Gameplay.StaticData;
+using Assets.Code.Gameplay.Features.Ammo.Configs;
+using Assets.Code.Gameplay.StaticData;
 using Entitas;
 
-namespace Code.Gameplay.Features.Ammo.Systems
+namespace Assets.Code.Gameplay.Features.Ammo.Systems
 {
 	public class SetAmmoTrailSystem : ReactiveSystem<GameEntity>
 	{

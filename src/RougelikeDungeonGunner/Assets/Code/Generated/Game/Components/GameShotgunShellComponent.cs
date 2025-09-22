@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Assets.Code.Gameplay.Features.Ammo;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherShotgunShell;
@@ -33,7 +36,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Ammo.ShotgunShell shotgunShellComponent = new Code.Gameplay.Features.Ammo.ShotgunShell();
+    static readonly ShotgunShell shotgunShellComponent = new ShotgunShell();
 
     public bool isShotgunShell {
         get { return HasComponent(GameComponentsLookup.ShotgunShell); }

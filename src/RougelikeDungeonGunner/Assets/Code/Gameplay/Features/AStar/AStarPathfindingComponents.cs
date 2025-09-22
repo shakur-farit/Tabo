@@ -2,7 +2,7 @@
 using Entitas;
 using UnityEngine;
 
-namespace Code.Gameplay.Features.AStar
+namespace Assets.Code.Gameplay.Features.AStar
 {
 	[Game] public class Pathfinder : IComponent { }
 	[Game] public class Path : IComponent { public List<Vector2Int> Value; }

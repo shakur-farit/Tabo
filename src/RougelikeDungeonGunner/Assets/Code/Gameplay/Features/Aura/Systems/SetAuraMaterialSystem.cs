@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using Code.Gameplay.StaticData;
+using Assets.Code.Gameplay.StaticData;
 using Entitas;
 
-namespace Code.Gameplay.Features.Aura.Systems
+namespace Assets.Code.Gameplay.Features.Aura.Systems
 {
 	public class SetAuraMaterialSystem : ReactiveSystem<GameEntity>
 	{

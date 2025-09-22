@@ -1,8 +1,8 @@
-﻿using Code.Gameplay.Features.Statuses;
-using Code.Gameplay.Features.Statuses.Applier;
+﻿using Assets.Code.Gameplay.Features.Statuses;
+using Assets.Code.Gameplay.Features.Statuses.Applier;
 using Entitas;
 
-namespace Code.Gameplay.Features.EffectApplication.Systems
+namespace Assets.Code.Gameplay.Features.EffectApplication.Systems
 {
 	public class ApplyStatusesOnTargetsSystem : IExecuteSystem
 	{

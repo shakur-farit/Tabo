@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Assets.Code.Gameplay.Features.Enchants;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherEnchantUI;
@@ -33,7 +36,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Enchants.EnchantUIComponent enchantUIComponent = new Code.Gameplay.Features.Enchants.EnchantUIComponent();
+    static readonly EnchantUIComponent enchantUIComponent = new EnchantUIComponent();
 
     public bool isEnchantUI {
         get { return HasComponent(GameComponentsLookup.EnchantUI); }

@@ -1,8 +1,8 @@
-﻿using Code.Common.Extensions;
-using Code.Gameplay.Cameras.Provider;
+﻿using Assets.Code.Gameplay.Cameras.Provider;
+using Code.Common.Extensions;
 using Entitas;
 
-namespace Code.Gameplay.Cameras.Systems
+namespace Assets.Code.Gameplay.Cameras.Systems
 {
 	public class CameraFollowHeroSystem : IExecuteSystem
 	{

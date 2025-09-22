@@ -1,12 +1,12 @@
 ﻿using System.Collections.Generic;
+using Assets.Code.Gameplay.Features.Ammo.Services;
+using Assets.Code.Gameplay.Features.AmmoPattern.Factory;
+using Assets.Code.Gameplay.Features.Cooldowns;
 using Code.Common.Extensions;
-using Code.Gameplay.Features.Ammo.Services;
-using Code.Gameplay.Features.AmmoPattern.Factory;
-using Code.Gameplay.Features.Cooldowns;
 using Entitas;
 using UnityEngine;
 
-namespace Code.Gameplay.Features.AmmoPattern.Systems
+namespace Assets.Code.Gameplay.Features.AmmoPattern.Systems
 {
 	public class CreatePatternForEnemyStarSigilSystem : IExecuteSystem
 	{

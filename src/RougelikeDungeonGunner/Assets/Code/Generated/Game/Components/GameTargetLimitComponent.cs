@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Assets.Code.Gameplay.Features.Ammo;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherTargetLimit;
@@ -33,13 +36,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Features.Ammo.TargetLimit targetLimit { get { return (Code.Gameplay.Features.Ammo.TargetLimit)GetComponent(GameComponentsLookup.TargetLimit); } }
+    public TargetLimit targetLimit { get { return (TargetLimit)GetComponent(GameComponentsLookup.TargetLimit); } }
     public int TargetLimit { get { return targetLimit.Value; } }
     public bool hasTargetLimit { get { return HasComponent(GameComponentsLookup.TargetLimit); } }
 
     public GameEntity AddTargetLimit(int newValue) {
         var index = GameComponentsLookup.TargetLimit;
-        var component = (Code.Gameplay.Features.Ammo.TargetLimit)CreateComponent(index, typeof(Code.Gameplay.Features.Ammo.TargetLimit));
+        var component = (TargetLimit)CreateComponent(index, typeof(TargetLimit));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +50,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceTargetLimit(int newValue) {
         var index = GameComponentsLookup.TargetLimit;
-        var component = (Code.Gameplay.Features.Ammo.TargetLimit)CreateComponent(index, typeof(Code.Gameplay.Features.Ammo.TargetLimit));
+        var component = (TargetLimit)CreateComponent(index, typeof(TargetLimit));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

@@ -1,4 +1,4 @@
-﻿namespace Code.Gameplay.Features.Cooldowns
+﻿namespace Assets.Code.Gameplay.Features.Cooldowns
 {
 	public static class CooldownEntityExtensions
 	{

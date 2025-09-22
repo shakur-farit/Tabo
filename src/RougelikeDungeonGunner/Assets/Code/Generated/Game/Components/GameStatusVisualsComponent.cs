@@ -6,6 +6,10 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Assets.Code.Gameplay.Common;
+using Assets.Code.Gameplay.Common.Visuals.StatusVisuals;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherStatusVisuals;
@@ -33,21 +37,21 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Common.StatusVisualsComponent statusVisuals { get { return (Code.Gameplay.Common.StatusVisualsComponent)GetComponent(GameComponentsLookup.StatusVisuals); } }
-    public Code.Gameplay.Common.Visuals.StatusVisuals.IStatusVisuals StatusVisuals { get { return statusVisuals.Value; } }
+    public StatusVisualsComponent statusVisuals { get { return (StatusVisualsComponent)GetComponent(GameComponentsLookup.StatusVisuals); } }
+    public IStatusVisuals StatusVisuals { get { return statusVisuals.Value; } }
     public bool hasStatusVisuals { get { return HasComponent(GameComponentsLookup.StatusVisuals); } }
 
-    public GameEntity AddStatusVisuals(Code.Gameplay.Common.Visuals.StatusVisuals.IStatusVisuals newValue) {
+    public GameEntity AddStatusVisuals(IStatusVisuals newValue) {
         var index = GameComponentsLookup.StatusVisuals;
-        var component = (Code.Gameplay.Common.StatusVisualsComponent)CreateComponent(index, typeof(Code.Gameplay.Common.StatusVisualsComponent));
+        var component = (StatusVisualsComponent)CreateComponent(index, typeof(StatusVisualsComponent));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
     }
 
-    public GameEntity ReplaceStatusVisuals(Code.Gameplay.Common.Visuals.StatusVisuals.IStatusVisuals newValue) {
+    public GameEntity ReplaceStatusVisuals(IStatusVisuals newValue) {
         var index = GameComponentsLookup.StatusVisuals;
-        var component = (Code.Gameplay.Common.StatusVisualsComponent)CreateComponent(index, typeof(Code.Gameplay.Common.StatusVisualsComponent));
+        var component = (StatusVisualsComponent)CreateComponent(index, typeof(StatusVisualsComponent));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

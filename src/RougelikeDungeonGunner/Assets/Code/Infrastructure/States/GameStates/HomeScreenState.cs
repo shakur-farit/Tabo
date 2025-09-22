@@ -1,8 +1,8 @@
-using Code.Infrastructure.States.StateInfrastructure;
-using Code.Infrastructure.Systems;
-using Code.Meta;
+using Assets.Code.Infrastructure.States.StateInfrastructure;
+using Assets.Code.Infrastructure.Systems;
+using Assets.Code.Meta;
 
-namespace Code.Infrastructure.States.GameStates
+namespace Assets.Code.Infrastructure.States.GameStates
 {
 	public class HomeScreenState : EndOfFrameExitState
 	{

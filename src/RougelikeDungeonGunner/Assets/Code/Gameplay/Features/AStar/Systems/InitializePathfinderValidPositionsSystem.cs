@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using Code.Gameplay.Features.AStar.Services;
+using Assets.Code.Gameplay.Features.AStar.Services;
 using Entitas;
 
-namespace Code.Gameplay.Features.AStar.Systems
+namespace Assets.Code.Gameplay.Features.AStar.Systems
 {
 	public class InitializePathfinderValidPositionsSystem : IExecuteSystem
 	{

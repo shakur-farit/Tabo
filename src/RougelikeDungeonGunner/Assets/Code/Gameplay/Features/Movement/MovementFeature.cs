@@ -1,7 +1,7 @@
-﻿using Code.Gameplay.Features.Movement.Systems;
-using Code.Infrastructure.Systems;
+﻿using Assets.Code.Gameplay.Features.Movement.Systems;
+using Assets.Code.Infrastructure.Systems;
 
-namespace Code.Gameplay.Features.Movement
+namespace Assets.Code.Gameplay.Features.Movement
 {
 	public sealed class MovementFeature : Feature
 	{

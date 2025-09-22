@@ -1,6 +1,6 @@
 ﻿using Entitas;
 
-namespace Code.Gameplay.Features.Ammo.Systems
+namespace Assets.Code.Gameplay.Features.Ammo.Systems
 {
 	public class SetAmmoOrbitCenterSystem : IExecuteSystem
 	{

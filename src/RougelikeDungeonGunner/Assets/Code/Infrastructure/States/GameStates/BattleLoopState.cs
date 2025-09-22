@@ -1,9 +1,8 @@
-using Code.Gameplay;
-using Code.Infrastructure.States.StateInfrastructure;
-using Code.Infrastructure.Systems;
-using UnityEngine;
+using Assets.Code.Gameplay;
+using Assets.Code.Infrastructure.States.StateInfrastructure;
+using Assets.Code.Infrastructure.Systems;
 
-namespace Code.Infrastructure.States.GameStates
+namespace Assets.Code.Infrastructure.States.GameStates
 {
 	public class BattleLoopState : EndOfFrameExitState
 	{

@@ -1,7 +1,7 @@
-﻿using Code.Gameplay.Features.AmmoPattern.Systems;
-using Code.Infrastructure.Systems;
+﻿using Assets.Code.Gameplay.Features.AmmoPattern.Systems;
+using Assets.Code.Infrastructure.Systems;
 
-namespace Code.Gameplay.Features.AmmoPattern
+namespace Assets.Code.Gameplay.Features.AmmoPattern
 {
 	public sealed class AmmoPatternFeature : Feature
 	{

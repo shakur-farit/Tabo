@@ -1,11 +1,10 @@
 ﻿using System.Collections.Generic;
-using Code.Gameplay.Features.Ammo.Factory;
-using Code.Gameplay.Features.Weapon;
-using Code.Gameplay.Features.Weapon.Factory;
+using Assets.Code.Gameplay.Features.Weapon;
+using Assets.Code.Gameplay.Features.Weapon.Factory;
 using Entitas;
 using UnityEngine;
 
-namespace Code.Gameplay.Features.Hero.Systems
+namespace Assets.Code.Gameplay.Features.Hero.Systems
 {
 	public class CreateWeaponForHeroSystem : IExecuteSystem
 	{

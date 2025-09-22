@@ -1,8 +1,7 @@
 ﻿using System.Collections.Generic;
-using Code.Gameplay.Features.Statuses;
 using Entitas;
 
-namespace Code.Gameplay.Features.Ammo.Systems
+namespace Assets.Code.Gameplay.Features.Ammo.Systems
 {
 	public class ApplyStatusesToAmmoSystem : IExecuteSystem
 	{

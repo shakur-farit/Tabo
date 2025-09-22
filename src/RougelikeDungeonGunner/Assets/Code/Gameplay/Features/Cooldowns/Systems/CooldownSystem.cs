@@ -1,10 +1,8 @@
 ﻿using System.Collections.Generic;
-using Code.Gameplay.Common.Time;
-using Code.Gameplay.Features.Weapon;
+using Assets.Code.Gameplay.Common.Time;
 using Entitas;
-using UnityEngine;
 
-namespace Code.Gameplay.Features.Cooldowns.Systems
+namespace Assets.Code.Gameplay.Features.Cooldowns.Systems
 {
 	public class CooldownSystem : IExecuteSystem
 	{

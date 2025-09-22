@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Code.Gameplay.Common.Visuals.StatusVisuals
+namespace Assets.Code.Gameplay.Common.Visuals.StatusVisuals
 {
 	public class StatusVisuals : MonoBehaviour, IStatusVisuals
 	{

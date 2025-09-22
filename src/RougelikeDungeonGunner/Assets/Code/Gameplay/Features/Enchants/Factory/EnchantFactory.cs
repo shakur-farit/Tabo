@@ -1,14 +1,13 @@
-﻿using Code.Common.Entity;
-using Code.Common.Extensions;
-using Code.Gameplay.Features.Enchants.Configs;
-using Code.Gameplay.StaticData;
-using Code.Infrastructure.Identifiers;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using Code.Gameplay.Features.Statuses;
-using UnityEngine;
+using Assets.Code.Gameplay.Features.Enchants.Configs;
+using Assets.Code.Gameplay.Features.Statuses;
+using Assets.Code.Gameplay.StaticData;
+using Assets.Code.Infrastructure.Identifiers;
+using Code.Common.Entity;
+using Code.Common.Extensions;
 
-namespace Code.Gameplay.Features.Enchants.Factory
+namespace Assets.Code.Gameplay.Features.Enchants.Factory
 {
 	public class EnchantFactory : IEnchantFactory
 	{

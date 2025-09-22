@@ -1,8 +1,8 @@
-﻿using Code.Gameplay.Features.Enchants;
-using Code.Meta.Features.Hud.EnchantHolder.Behaviours;
+﻿using Assets.Code.Gameplay.Features.Enchants;
+using Assets.Code.Meta.Features.Hud.EnchantHolder.Behaviours;
 using UnityEngine;
 
-namespace Code.Meta.Features.Hud.EnchantHolder.Factory
+namespace Assets.Code.Meta.Features.Hud.EnchantHolder.Factory
 {
 	public interface IEnchantUIFactory
 	{

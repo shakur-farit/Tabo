@@ -1,7 +1,7 @@
-﻿using Code.Gameplay.Features.Level.Systems;
-using Code.Infrastructure.Systems;
+﻿using Assets.Code.Gameplay.Features.Level.Systems;
+using Assets.Code.Infrastructure.Systems;
 
-namespace Code.Gameplay.Features.Level
+namespace Assets.Code.Gameplay.Features.Level
 {
 	public sealed class LevelFeature : Feature
 	{

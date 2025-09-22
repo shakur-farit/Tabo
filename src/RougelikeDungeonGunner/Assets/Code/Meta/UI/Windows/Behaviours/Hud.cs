@@ -1,6 +1,6 @@
 ﻿using Zenject;
 
-namespace Code.Meta.UI.Windows.Behaviours
+namespace Assets.Code.Meta.UI.Windows.Behaviours
 {
 	public class Hud : BaseWindow
 	{

@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Assets.Code.Gameplay.Features.AmmoPattern;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherAmmoPatternId;
@@ -33,13 +36,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Features.AmmoPattern.AmmoPatternId ammoPatternId { get { return (Code.Gameplay.Features.AmmoPattern.AmmoPatternId)GetComponent(GameComponentsLookup.AmmoPatternId); } }
+    public AmmoPatternId ammoPatternId { get { return (AmmoPatternId)GetComponent(GameComponentsLookup.AmmoPatternId); } }
     public int AmmoPatternId { get { return ammoPatternId.Value; } }
     public bool hasAmmoPatternId { get { return HasComponent(GameComponentsLookup.AmmoPatternId); } }
 
     public GameEntity AddAmmoPatternId(int newValue) {
         var index = GameComponentsLookup.AmmoPatternId;
-        var component = (Code.Gameplay.Features.AmmoPattern.AmmoPatternId)CreateComponent(index, typeof(Code.Gameplay.Features.AmmoPattern.AmmoPatternId));
+        var component = (AmmoPatternId)CreateComponent(index, typeof(AmmoPatternId));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +50,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceAmmoPatternId(int newValue) {
         var index = GameComponentsLookup.AmmoPatternId;
-        var component = (Code.Gameplay.Features.AmmoPattern.AmmoPatternId)CreateComponent(index, typeof(Code.Gameplay.Features.AmmoPattern.AmmoPatternId));
+        var component = (AmmoPatternId)CreateComponent(index, typeof(AmmoPatternId));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

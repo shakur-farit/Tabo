@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using Code.Gameplay.Common.Time;
+using Assets.Code.Gameplay.Common.Time;
 using Entitas;
 
-namespace Code.Gameplay.Features.Aura.Systems
+namespace Assets.Code.Gameplay.Features.Aura.Systems
 {
 	public class AuraDurationTickSystem : IExecuteSystem
 	{

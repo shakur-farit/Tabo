@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Assets.Code.Gameplay.Features.Effects;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherDamageEffect;
@@ -33,7 +36,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Effects.DamageEffect damageEffectComponent = new Code.Gameplay.Features.Effects.DamageEffect();
+    static readonly DamageEffect damageEffectComponent = new DamageEffect();
 
     public bool isDamageEffect {
         get { return HasComponent(GameComponentsLookup.DamageEffect); }

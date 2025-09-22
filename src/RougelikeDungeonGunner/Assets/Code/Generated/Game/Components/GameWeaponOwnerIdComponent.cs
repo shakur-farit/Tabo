@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Assets.Code.Gameplay.Features.Weapon;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherWeaponOwnerId;
@@ -33,13 +36,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Features.Weapon.WeaponOwnerId weaponOwnerId { get { return (Code.Gameplay.Features.Weapon.WeaponOwnerId)GetComponent(GameComponentsLookup.WeaponOwnerId); } }
+    public WeaponOwnerId weaponOwnerId { get { return (WeaponOwnerId)GetComponent(GameComponentsLookup.WeaponOwnerId); } }
     public int WeaponOwnerId { get { return weaponOwnerId.Value; } }
     public bool hasWeaponOwnerId { get { return HasComponent(GameComponentsLookup.WeaponOwnerId); } }
 
     public GameEntity AddWeaponOwnerId(int newValue) {
         var index = GameComponentsLookup.WeaponOwnerId;
-        var component = (Code.Gameplay.Features.Weapon.WeaponOwnerId)CreateComponent(index, typeof(Code.Gameplay.Features.Weapon.WeaponOwnerId));
+        var component = (WeaponOwnerId)CreateComponent(index, typeof(WeaponOwnerId));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +50,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceWeaponOwnerId(int newValue) {
         var index = GameComponentsLookup.WeaponOwnerId;
-        var component = (Code.Gameplay.Features.Weapon.WeaponOwnerId)CreateComponent(index, typeof(Code.Gameplay.Features.Weapon.WeaponOwnerId));
+        var component = (WeaponOwnerId)CreateComponent(index, typeof(WeaponOwnerId));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

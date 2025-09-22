@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
-using Code.Gameplay.Features.Hero.Configs;
-using Code.Gameplay.StaticData;
+using Assets.Code.Gameplay.Features.Hero.Configs;
+using Assets.Code.Gameplay.StaticData;
 using Entitas;
 
-namespace Code.Gameplay.Features.Hero.Systems
+namespace Assets.Code.Gameplay.Features.Hero.Systems
 {
 	public class SetHeroRuntimeAnimatorControllerSystem : ReactiveSystem<GameEntity>
 	{

@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Assets.Code.Gameplay.Common;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherParticleSystemRenderer;
@@ -33,13 +36,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Common.ParticleSystemRendererComponent particleSystemRenderer { get { return (Code.Gameplay.Common.ParticleSystemRendererComponent)GetComponent(GameComponentsLookup.ParticleSystemRenderer); } }
+    public ParticleSystemRendererComponent particleSystemRenderer { get { return (ParticleSystemRendererComponent)GetComponent(GameComponentsLookup.ParticleSystemRenderer); } }
     public UnityEngine.ParticleSystemRenderer ParticleSystemRenderer { get { return particleSystemRenderer.Value; } }
     public bool hasParticleSystemRenderer { get { return HasComponent(GameComponentsLookup.ParticleSystemRenderer); } }
 
     public GameEntity AddParticleSystemRenderer(UnityEngine.ParticleSystemRenderer newValue) {
         var index = GameComponentsLookup.ParticleSystemRenderer;
-        var component = (Code.Gameplay.Common.ParticleSystemRendererComponent)CreateComponent(index, typeof(Code.Gameplay.Common.ParticleSystemRendererComponent));
+        var component = (ParticleSystemRendererComponent)CreateComponent(index, typeof(ParticleSystemRendererComponent));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +50,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceParticleSystemRenderer(UnityEngine.ParticleSystemRenderer newValue) {
         var index = GameComponentsLookup.ParticleSystemRenderer;
-        var component = (Code.Gameplay.Common.ParticleSystemRendererComponent)CreateComponent(index, typeof(Code.Gameplay.Common.ParticleSystemRendererComponent));
+        var component = (ParticleSystemRendererComponent)CreateComponent(index, typeof(ParticleSystemRendererComponent));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

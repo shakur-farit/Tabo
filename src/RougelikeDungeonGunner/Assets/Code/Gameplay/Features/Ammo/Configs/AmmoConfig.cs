@@ -1,10 +1,10 @@
 ﻿using System;
-using Code.Gameplay.Features.Collection;
-using Code.Gameplay.Features.SpecialEffect;
-using Code.Infrastructure.View;
+using Assets.Code.Gameplay.Features.Collection;
+using Assets.Code.Gameplay.Features.SpecialEffect;
+using Assets.Code.Infrastructure.View;
 using UnityEngine;
 
-namespace Code.Gameplay.Features.Ammo.Configs
+namespace Assets.Code.Gameplay.Features.Ammo.Configs
 {
 	[CreateAssetMenu(menuName = "Dungeon Gunner/Ammo Config", fileName = "AmmoConfig")]
 	public class AmmoConfig : ScriptableObject

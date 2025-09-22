@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
-using Code.Gameplay.Features.Enemy.Configs;
-using Code.Gameplay.StaticData;
+using Assets.Code.Gameplay.Features.Enemy.Configs;
+using Assets.Code.Gameplay.StaticData;
 using Entitas;
 
-namespace Code.Gameplay.Features.Enemy.Systems
+namespace Assets.Code.Gameplay.Features.Enemy.Systems
 {
 	public class SetEnemyRuntimeAnimatorControllerSystem : ReactiveSystem<GameEntity>
 	{

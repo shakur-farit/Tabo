@@ -1,6 +1,6 @@
 using System;
-using Code.Gameplay.Features.Hero;
-using Code.Gameplay.Features.Weapon;
+using Assets.Code.Gameplay.Features.Hero;
+using Assets.Code.Gameplay.Features.Weapon;
 
 namespace Code.Progress.Data.Transient
 {

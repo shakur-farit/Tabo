@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using Code.Gameplay.Features.CharacterStats;
-using Code.Gameplay.Features.CharacterStats.Indexing;
-using Code.Gameplay.Features.Statuses;
-using Code.Gameplay.Features.Statuses.Indexing;
+using Assets.Code.Gameplay.Features.CharacterStats;
+using Assets.Code.Gameplay.Features.CharacterStats.Indexing;
+using Assets.Code.Gameplay.Features.Statuses;
+using Assets.Code.Gameplay.Features.Statuses.Indexing;
 using Entitas;
 
 namespace Code.Common.EntityIndices

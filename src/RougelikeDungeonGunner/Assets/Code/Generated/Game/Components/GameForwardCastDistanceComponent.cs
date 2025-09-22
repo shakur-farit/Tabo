@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Assets.Code.Gameplay.Features.Collection;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherForwardCastDistance;
@@ -33,13 +36,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Features.Collection.ForwardCastDistance forwardCastDistance { get { return (Code.Gameplay.Features.Collection.ForwardCastDistance)GetComponent(GameComponentsLookup.ForwardCastDistance); } }
+    public ForwardCastDistance forwardCastDistance { get { return (ForwardCastDistance)GetComponent(GameComponentsLookup.ForwardCastDistance); } }
     public float ForwardCastDistance { get { return forwardCastDistance.Value; } }
     public bool hasForwardCastDistance { get { return HasComponent(GameComponentsLookup.ForwardCastDistance); } }
 
     public GameEntity AddForwardCastDistance(float newValue) {
         var index = GameComponentsLookup.ForwardCastDistance;
-        var component = (Code.Gameplay.Features.Collection.ForwardCastDistance)CreateComponent(index, typeof(Code.Gameplay.Features.Collection.ForwardCastDistance));
+        var component = (ForwardCastDistance)CreateComponent(index, typeof(ForwardCastDistance));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +50,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceForwardCastDistance(float newValue) {
         var index = GameComponentsLookup.ForwardCastDistance;
-        var component = (Code.Gameplay.Features.Collection.ForwardCastDistance)CreateComponent(index, typeof(Code.Gameplay.Features.Collection.ForwardCastDistance));
+        var component = (ForwardCastDistance)CreateComponent(index, typeof(ForwardCastDistance));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

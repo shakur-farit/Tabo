@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Assets.Code.Gameplay.Features.Enemy;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherGrimonk;
@@ -33,7 +36,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Enemy.Grimonk grimonkComponent = new Code.Gameplay.Features.Enemy.Grimonk();
+    static readonly Grimonk grimonkComponent = new Grimonk();
 
     public bool isGrimonk {
         get { return HasComponent(GameComponentsLookup.Grimonk); }

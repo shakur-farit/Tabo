@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Assets.Code.Gameplay.Features.Statuses;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherAffected;
@@ -33,7 +36,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Statuses.StatusComponents.Affected affectedComponent = new Code.Gameplay.Features.Statuses.StatusComponents.Affected();
+    static readonly StatusComponents.Affected affectedComponent = new StatusComponents.Affected();
 
     public bool isAffected {
         get { return HasComponent(GameComponentsLookup.Affected); }

@@ -1,7 +1,7 @@
 ﻿using Code.Progress.Provider;
 using Entitas;
 
-namespace Code.Gameplay.Features.Loot.Systems
+namespace Assets.Code.Gameplay.Features.Loot.Systems
 {
 	public class CollectCoinsSystem : IExecuteSystem
 	{

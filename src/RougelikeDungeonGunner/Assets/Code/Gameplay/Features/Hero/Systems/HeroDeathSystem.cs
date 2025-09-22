@@ -1,11 +1,9 @@
 ﻿using System.Collections.Generic;
-using Code.Infrastructure.States.GameStates;
-using Code.Infrastructure.States.StateMachine;
-using Code.Meta.UI.Windows;
-using Code.Meta.UI.Windows.Service;
+using Assets.Code.Infrastructure.States.GameStates;
+using Assets.Code.Infrastructure.States.StateMachine;
 using Entitas;
 
-namespace Code.Gameplay.Features.Hero.Systems
+namespace Assets.Code.Gameplay.Features.Hero.Systems
 {
 	public class HeroDeathSystem : IExecuteSystem
 	{

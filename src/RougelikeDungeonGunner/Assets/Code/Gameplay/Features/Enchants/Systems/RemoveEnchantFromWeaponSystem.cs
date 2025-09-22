@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Entitas;
 
-namespace Code.Gameplay.Features.Enchants.Systems
+namespace Assets.Code.Gameplay.Features.Enchants.Systems
 {
 	public class RemoveEnchantFromWeaponSystem : ReactiveSystem<GameEntity>
 	{

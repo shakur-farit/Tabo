@@ -1,14 +1,14 @@
-﻿using Code.Gameplay.StaticData;
-using Code.Meta.Features.Shop.EnchantUIEntry.Behaviours;
-using Code.Meta.Features.Shop.EnchantUIEntry.Configs;
-using Code.Meta.Features.Shop.EnchantUIEntry.Factory;
-using Code.Meta.UI.Windows.Service;
+﻿using Assets.Code.Gameplay.StaticData;
+using Assets.Code.Meta.Features.Shop.EnchantUIEntry.Behaviours;
+using Assets.Code.Meta.Features.Shop.EnchantUIEntry.Configs;
+using Assets.Code.Meta.Features.Shop.EnchantUIEntry.Factory;
+using Assets.Code.Meta.UI.Windows.Service;
 using Code.Progress.Provider;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
 
-namespace Code.Meta.UI.Windows.Behaviours
+namespace Assets.Code.Meta.UI.Windows.Behaviours
 {
 	public class EnchantStatsWindow : BaseWindow
 	{

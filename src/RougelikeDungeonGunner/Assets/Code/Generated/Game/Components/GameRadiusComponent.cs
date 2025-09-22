@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Assets.Code.Gameplay.Features.Collection;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherRadius;
@@ -33,13 +36,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Features.Collection.Radius radius { get { return (Code.Gameplay.Features.Collection.Radius)GetComponent(GameComponentsLookup.Radius); } }
+    public Radius radius { get { return (Radius)GetComponent(GameComponentsLookup.Radius); } }
     public float Radius { get { return radius.Value; } }
     public bool hasRadius { get { return HasComponent(GameComponentsLookup.Radius); } }
 
     public GameEntity AddRadius(float newValue) {
         var index = GameComponentsLookup.Radius;
-        var component = (Code.Gameplay.Features.Collection.Radius)CreateComponent(index, typeof(Code.Gameplay.Features.Collection.Radius));
+        var component = (Radius)CreateComponent(index, typeof(Radius));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +50,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceRadius(float newValue) {
         var index = GameComponentsLookup.Radius;
-        var component = (Code.Gameplay.Features.Collection.Radius)CreateComponent(index, typeof(Code.Gameplay.Features.Collection.Radius));
+        var component = (Radius)CreateComponent(index, typeof(Radius));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

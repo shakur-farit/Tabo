@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Assets.Code.Gameplay.Input;
+
 public static class InputComponentsLookup {
 
     public const int Destructed = 0;
@@ -24,8 +27,8 @@ public static class InputComponentsLookup {
 
     public static readonly System.Type[] componentTypes = {
         typeof(Code.Common.Destructed),
-        typeof(Code.Gameplay.Input.AxisInput),
-        typeof(Code.Gameplay.Input.Input),
-        typeof(Code.Gameplay.Input.MouseLeftButtonDown)
+        typeof(AxisInput),
+        typeof(Input),
+        typeof(MouseLeftButtonDown)
     };
 }

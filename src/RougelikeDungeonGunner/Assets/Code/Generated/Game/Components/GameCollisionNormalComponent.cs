@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Assets.Code.Gameplay.Features.Collection;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherCollisionNormal;
@@ -33,13 +36,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Features.Collection.CollisionNormal collisionNormal { get { return (Code.Gameplay.Features.Collection.CollisionNormal)GetComponent(GameComponentsLookup.CollisionNormal); } }
+    public CollisionNormal collisionNormal { get { return (CollisionNormal)GetComponent(GameComponentsLookup.CollisionNormal); } }
     public UnityEngine.Vector2 CollisionNormal { get { return collisionNormal.Value; } }
     public bool hasCollisionNormal { get { return HasComponent(GameComponentsLookup.CollisionNormal); } }
 
     public GameEntity AddCollisionNormal(UnityEngine.Vector2 newValue) {
         var index = GameComponentsLookup.CollisionNormal;
-        var component = (Code.Gameplay.Features.Collection.CollisionNormal)CreateComponent(index, typeof(Code.Gameplay.Features.Collection.CollisionNormal));
+        var component = (CollisionNormal)CreateComponent(index, typeof(CollisionNormal));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +50,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceCollisionNormal(UnityEngine.Vector2 newValue) {
         var index = GameComponentsLookup.CollisionNormal;
-        var component = (Code.Gameplay.Features.Collection.CollisionNormal)CreateComponent(index, typeof(Code.Gameplay.Features.Collection.CollisionNormal));
+        var component = (CollisionNormal)CreateComponent(index, typeof(CollisionNormal));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

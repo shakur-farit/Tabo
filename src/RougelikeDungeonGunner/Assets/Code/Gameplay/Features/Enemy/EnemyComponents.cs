@@ -1,8 +1,8 @@
-﻿using Code.Gameplay.Features.Enemy.Behaviours;
+﻿using Assets.Code.Gameplay.Features.Enemy.Behaviours;
 using Entitas;
 using UnityEngine;
 
-namespace Code.Gameplay.Features.Enemy
+namespace Assets.Code.Gameplay.Features.Enemy
 {
 	[Game] public class Enemy : IComponent { }
 	[Game] public class EnemyTypeIdComponent : IComponent { public EnemyTypeId Value; }

@@ -6,6 +6,10 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Assets.Code.Meta.Features.Hud;
+using Assets.Code.Meta.Features.Hud.HeroHeartHolder.Behaviours;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherHeartHolder;
@@ -33,21 +37,21 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Meta.Features.Hud.HeartHolderComponent heartHolder { get { return (Code.Meta.Features.Hud.HeartHolderComponent)GetComponent(GameComponentsLookup.HeartHolder); } }
-    public Code.Meta.Features.Hud.HeroHeartHolder.Behaviours.HeartHolder HeartHolder { get { return heartHolder.Value; } }
+    public HeartHolderComponent heartHolder { get { return (HeartHolderComponent)GetComponent(GameComponentsLookup.HeartHolder); } }
+    public HeartHolder HeartHolder { get { return heartHolder.Value; } }
     public bool hasHeartHolder { get { return HasComponent(GameComponentsLookup.HeartHolder); } }
 
-    public GameEntity AddHeartHolder(Code.Meta.Features.Hud.HeroHeartHolder.Behaviours.HeartHolder newValue) {
+    public GameEntity AddHeartHolder(HeartHolder newValue) {
         var index = GameComponentsLookup.HeartHolder;
-        var component = (Code.Meta.Features.Hud.HeartHolderComponent)CreateComponent(index, typeof(Code.Meta.Features.Hud.HeartHolderComponent));
+        var component = (HeartHolderComponent)CreateComponent(index, typeof(HeartHolderComponent));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
     }
 
-    public GameEntity ReplaceHeartHolder(Code.Meta.Features.Hud.HeroHeartHolder.Behaviours.HeartHolder newValue) {
+    public GameEntity ReplaceHeartHolder(HeartHolder newValue) {
         var index = GameComponentsLookup.HeartHolder;
-        var component = (Code.Meta.Features.Hud.HeartHolderComponent)CreateComponent(index, typeof(Code.Meta.Features.Hud.HeartHolderComponent));
+        var component = (HeartHolderComponent)CreateComponent(index, typeof(HeartHolderComponent));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

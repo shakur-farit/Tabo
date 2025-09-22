@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Entitas;
 
-namespace Code.Gameplay.Features.Enemy.Systems
+namespace Assets.Code.Gameplay.Features.Enemy.Systems
 {
 	public class FinalizeEnemyDeathProcessingSystem : IExecuteSystem
 	{

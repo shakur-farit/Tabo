@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Code.Gameplay.Features.Statuses.Indexing
+namespace Assets.Code.Gameplay.Features.Statuses.Indexing
 {
 	public class StatusKeyEqualityComparer : IEqualityComparer<StatusKey>
 	{

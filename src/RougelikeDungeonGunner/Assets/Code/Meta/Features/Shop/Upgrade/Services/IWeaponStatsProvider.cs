@@ -1,6 +1,6 @@
-﻿using Code.Gameplay.Features.Weapon.Configs;
+﻿using Assets.Code.Gameplay.Features.Weapon.Configs;
 
-namespace Code.Meta.Features.Shop.Upgrade.Services
+namespace Assets.Code.Meta.Features.Shop.Upgrade.Services
 {
 	public interface IWeaponStatsProvider
 	{

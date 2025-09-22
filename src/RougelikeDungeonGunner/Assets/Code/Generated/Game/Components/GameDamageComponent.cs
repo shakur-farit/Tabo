@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Assets.Code.Gameplay.Common;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherDamage;
@@ -33,13 +36,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Common.Damage damage { get { return (Code.Gameplay.Common.Damage)GetComponent(GameComponentsLookup.Damage); } }
+    public Damage damage { get { return (Damage)GetComponent(GameComponentsLookup.Damage); } }
     public float Damage { get { return damage.Value; } }
     public bool hasDamage { get { return HasComponent(GameComponentsLookup.Damage); } }
 
     public GameEntity AddDamage(float newValue) {
         var index = GameComponentsLookup.Damage;
-        var component = (Code.Gameplay.Common.Damage)CreateComponent(index, typeof(Code.Gameplay.Common.Damage));
+        var component = (Damage)CreateComponent(index, typeof(Damage));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +50,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceDamage(float newValue) {
         var index = GameComponentsLookup.Damage;
-        var component = (Code.Gameplay.Common.Damage)CreateComponent(index, typeof(Code.Gameplay.Common.Damage));
+        var component = (Damage)CreateComponent(index, typeof(Damage));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using Code.Gameplay.Features.Statuses;
+using Assets.Code.Gameplay.Features.Statuses;
 using Entitas;
 
-namespace Code.Gameplay.Features.Enchants.Systems
+namespace Assets.Code.Gameplay.Features.Enchants.Systems
 {
 	public class MarkEnchantAlreadyHeldSystem : IExecuteSystem
 	{

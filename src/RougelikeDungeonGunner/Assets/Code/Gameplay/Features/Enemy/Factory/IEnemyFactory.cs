@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Code.Gameplay.Features.Enemy.Factory
+namespace Assets.Code.Gameplay.Features.Enemy.Factory
 {
 	public interface IEnemyFactory
 	{

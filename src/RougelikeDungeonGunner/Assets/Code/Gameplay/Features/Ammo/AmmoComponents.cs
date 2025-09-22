@@ -1,7 +1,6 @@
 ﻿using Entitas;
-using UnityEngine;
 
-namespace Code.Gameplay.Features.Ammo
+namespace Assets.Code.Gameplay.Features.Ammo
 {
 	[Game] public class Ammo : IComponent { }
 	[Game] public class AmmoTypeIdComponent : IComponent { public AmmoTypeId Value; }

@@ -2,7 +2,7 @@
 using Entitas;
 using UnityEngine;
 
-namespace Code.Gameplay.Features.Enemy.Systems
+namespace Assets.Code.Gameplay.Features.Enemy.Systems
 {
 	public class EnemyMoveSystem : IExecuteSystem
 	{

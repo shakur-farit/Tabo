@@ -1,7 +1,7 @@
-﻿using Code.Gameplay.Features.Aura.Systems;
-using Code.Infrastructure.Systems;
+﻿using Assets.Code.Gameplay.Features.Aura.Systems;
+using Assets.Code.Infrastructure.Systems;
 
-namespace Code.Gameplay.Features.Aura
+namespace Assets.Code.Gameplay.Features.Aura
 {
 	public sealed class AuraFeature : Feature
 	{

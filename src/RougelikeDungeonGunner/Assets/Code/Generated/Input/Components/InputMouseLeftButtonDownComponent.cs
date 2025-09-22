@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Assets.Code.Gameplay.Input;
+
 public sealed partial class InputMatcher {
 
     static Entitas.IMatcher<InputEntity> _matcherMouseLeftButtonDown;
@@ -33,7 +36,7 @@ public sealed partial class InputMatcher {
 //------------------------------------------------------------------------------
 public partial class InputEntity {
 
-    static readonly Code.Gameplay.Input.MouseLeftButtonDown mouseLeftButtonDownComponent = new Code.Gameplay.Input.MouseLeftButtonDown();
+    static readonly MouseLeftButtonDown mouseLeftButtonDownComponent = new MouseLeftButtonDown();
 
     public bool isMouseLeftButtonDown {
         get { return HasComponent(InputComponentsLookup.MouseLeftButtonDown); }

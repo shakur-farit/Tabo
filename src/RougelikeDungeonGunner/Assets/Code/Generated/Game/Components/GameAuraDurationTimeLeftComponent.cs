@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Assets.Code.Gameplay.Features.Aura;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherAuraDurationTimeLeft;
@@ -33,13 +36,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Features.Aura.AuraDurationTimeLeft auraDurationTimeLeft { get { return (Code.Gameplay.Features.Aura.AuraDurationTimeLeft)GetComponent(GameComponentsLookup.AuraDurationTimeLeft); } }
+    public AuraDurationTimeLeft auraDurationTimeLeft { get { return (AuraDurationTimeLeft)GetComponent(GameComponentsLookup.AuraDurationTimeLeft); } }
     public float AuraDurationTimeLeft { get { return auraDurationTimeLeft.Value; } }
     public bool hasAuraDurationTimeLeft { get { return HasComponent(GameComponentsLookup.AuraDurationTimeLeft); } }
 
     public GameEntity AddAuraDurationTimeLeft(float newValue) {
         var index = GameComponentsLookup.AuraDurationTimeLeft;
-        var component = (Code.Gameplay.Features.Aura.AuraDurationTimeLeft)CreateComponent(index, typeof(Code.Gameplay.Features.Aura.AuraDurationTimeLeft));
+        var component = (AuraDurationTimeLeft)CreateComponent(index, typeof(AuraDurationTimeLeft));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +50,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceAuraDurationTimeLeft(float newValue) {
         var index = GameComponentsLookup.AuraDurationTimeLeft;
-        var component = (Code.Gameplay.Features.Aura.AuraDurationTimeLeft)CreateComponent(index, typeof(Code.Gameplay.Features.Aura.AuraDurationTimeLeft));
+        var component = (AuraDurationTimeLeft)CreateComponent(index, typeof(AuraDurationTimeLeft));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using Code.Gameplay.Features.Collection;
+using Assets.Code.Gameplay.Features.Collection;
 using Entitas;
 
-namespace Code.Gameplay.Features.Ammo.Systems
+namespace Assets.Code.Gameplay.Features.Ammo.Systems
 {
 	public class FinalizeProcessedAmmoSystem : IExecuteSystem
 	{

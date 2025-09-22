@@ -1,7 +1,7 @@
 ﻿using Entitas;
 using Entitas.CodeGeneration.Attributes;
 
-namespace Code.Gameplay.Features.Statuses
+namespace Assets.Code.Gameplay.Features.Statuses
 {
 	public class StatusComponents
 	{

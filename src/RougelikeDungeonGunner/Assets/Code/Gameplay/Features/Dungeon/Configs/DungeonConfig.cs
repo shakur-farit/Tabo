@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using Code.Infrastructure.View;
+using Assets.Code.Infrastructure.View;
 using UnityEngine;
 
-namespace Code.Gameplay.Features.Dungeon.Configs
+namespace Assets.Code.Gameplay.Features.Dungeon.Configs
 {
 	[CreateAssetMenu(menuName = "Dungeon Gunner/Dungeon Config", fileName = "DungeonConfig")]
 	public class DungeonConfig : ScriptableObject

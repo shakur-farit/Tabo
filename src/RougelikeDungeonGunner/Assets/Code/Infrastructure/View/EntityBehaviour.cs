@@ -1,9 +1,9 @@
-using Code.Gameplay.Common.Collisions;
-using Code.Infrastructure.View.Registrars;
+using Assets.Code.Gameplay.Common.Collisions;
+using Assets.Code.Infrastructure.View.Registrars;
 using UnityEngine;
 using Zenject;
 
-namespace Code.Infrastructure.View
+namespace Assets.Code.Infrastructure.View
 {
 	public class EntityBehaviour : MonoBehaviour, IEntityView
 	{

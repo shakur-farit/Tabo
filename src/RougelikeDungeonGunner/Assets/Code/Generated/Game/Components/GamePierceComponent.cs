@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Assets.Code.Gameplay.Features.Weapon;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherPierce;
@@ -33,13 +36,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Features.Weapon.Pierce pierce { get { return (Code.Gameplay.Features.Weapon.Pierce)GetComponent(GameComponentsLookup.Pierce); } }
+    public Pierce pierce { get { return (Pierce)GetComponent(GameComponentsLookup.Pierce); } }
     public int Pierce { get { return pierce.Value; } }
     public bool hasPierce { get { return HasComponent(GameComponentsLookup.Pierce); } }
 
     public GameEntity AddPierce(int newValue) {
         var index = GameComponentsLookup.Pierce;
-        var component = (Code.Gameplay.Features.Weapon.Pierce)CreateComponent(index, typeof(Code.Gameplay.Features.Weapon.Pierce));
+        var component = (Pierce)CreateComponent(index, typeof(Pierce));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +50,7 @@ public partial class GameEntity {
 
     public GameEntity ReplacePierce(int newValue) {
         var index = GameComponentsLookup.Pierce;
-        var component = (Code.Gameplay.Features.Weapon.Pierce)CreateComponent(index, typeof(Code.Gameplay.Features.Weapon.Pierce));
+        var component = (Pierce)CreateComponent(index, typeof(Pierce));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

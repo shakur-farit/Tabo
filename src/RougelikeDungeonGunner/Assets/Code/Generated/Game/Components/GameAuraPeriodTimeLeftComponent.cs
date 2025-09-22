@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Assets.Code.Gameplay.Features.Aura;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherAuraPeriodTimeLeft;
@@ -33,13 +36,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Features.Aura.AuraPeriodTimeLeft auraPeriodTimeLeft { get { return (Code.Gameplay.Features.Aura.AuraPeriodTimeLeft)GetComponent(GameComponentsLookup.AuraPeriodTimeLeft); } }
+    public AuraPeriodTimeLeft auraPeriodTimeLeft { get { return (AuraPeriodTimeLeft)GetComponent(GameComponentsLookup.AuraPeriodTimeLeft); } }
     public float AuraPeriodTimeLeft { get { return auraPeriodTimeLeft.Value; } }
     public bool hasAuraPeriodTimeLeft { get { return HasComponent(GameComponentsLookup.AuraPeriodTimeLeft); } }
 
     public GameEntity AddAuraPeriodTimeLeft(float newValue) {
         var index = GameComponentsLookup.AuraPeriodTimeLeft;
-        var component = (Code.Gameplay.Features.Aura.AuraPeriodTimeLeft)CreateComponent(index, typeof(Code.Gameplay.Features.Aura.AuraPeriodTimeLeft));
+        var component = (AuraPeriodTimeLeft)CreateComponent(index, typeof(AuraPeriodTimeLeft));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +50,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceAuraPeriodTimeLeft(float newValue) {
         var index = GameComponentsLookup.AuraPeriodTimeLeft;
-        var component = (Code.Gameplay.Features.Aura.AuraPeriodTimeLeft)CreateComponent(index, typeof(Code.Gameplay.Features.Aura.AuraPeriodTimeLeft));
+        var component = (AuraPeriodTimeLeft)CreateComponent(index, typeof(AuraPeriodTimeLeft));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

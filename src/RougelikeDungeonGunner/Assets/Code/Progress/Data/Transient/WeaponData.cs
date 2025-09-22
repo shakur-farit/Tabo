@@ -1,5 +1,5 @@
-using Code.Gameplay.Features.Statuses;
-using Code.Meta.Features.Shop.EnchantUIEntry;
+using Assets.Code.Gameplay.Features.Statuses;
+using Assets.Code.Meta.Features.Shop.EnchantUIEntry;
 
 namespace Code.Progress.Data.Transient
 {

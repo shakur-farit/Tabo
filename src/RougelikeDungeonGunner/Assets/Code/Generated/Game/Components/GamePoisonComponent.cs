@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Assets.Code.Gameplay.Features.Statuses;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherPoison;
@@ -33,7 +36,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Statuses.StatusComponents.Poison poisonComponent = new Code.Gameplay.Features.Statuses.StatusComponents.Poison();
+    static readonly StatusComponents.Poison poisonComponent = new StatusComponents.Poison();
 
     public bool isPoison {
         get { return HasComponent(GameComponentsLookup.Poison); }

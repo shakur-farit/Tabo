@@ -1,12 +1,11 @@
 ﻿using System.Collections.Generic;
-using Code.Gameplay.Features.Enemy.Behaviours;
-using Code.Gameplay.Features.Enemy.Factory;
-using Code.Gameplay.Features.Enemy.Services;
-using Code.Gameplay.Features.Level.Configs;
+using Assets.Code.Gameplay.Features.Enemy.Factory;
+using Assets.Code.Gameplay.Features.Enemy.Services;
+using Assets.Code.Gameplay.Features.Level.Configs;
 using Entitas;
 using UnityEngine;
 
-namespace Code.Gameplay.Features.Enemy.Systems
+namespace Assets.Code.Gameplay.Features.Enemy.Systems
 {
 	public class SpawnEnemiesSystem : IExecuteSystem
 	{

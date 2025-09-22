@@ -1,10 +1,7 @@
-﻿using Code.Gameplay.Features.Ammo.Configs;
-using Code.Gameplay.StaticData;
-using Code.Infrastructure.View.Registrars;
+﻿using Assets.Code.Infrastructure.View.Registrars;
 using UnityEngine;
-using Zenject;
 
-namespace Code.Gameplay.Features.Ammo.Registrars
+namespace Assets.Code.Gameplay.Common.Registrars
 {
 	public class TrailRendererRegistrar : EntityComponentRegistrar
 	{

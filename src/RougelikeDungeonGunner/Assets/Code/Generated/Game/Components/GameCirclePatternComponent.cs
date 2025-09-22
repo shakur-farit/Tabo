@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Assets.Code.Gameplay.Features.AmmoPattern;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherCirclePattern;
@@ -33,7 +36,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.AmmoPattern.CirclePattern circlePatternComponent = new Code.Gameplay.Features.AmmoPattern.CirclePattern();
+    static readonly CirclePattern circlePatternComponent = new CirclePattern();
 
     public bool isCirclePattern {
         get { return HasComponent(GameComponentsLookup.CirclePattern); }

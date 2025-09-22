@@ -1,9 +1,7 @@
-﻿using Code.Gameplay.Features.Enchants.Behaviours;
-using Code.Meta.Features.Hud.EnchantHolder.Behaviours;
+﻿using Assets.Code.Gameplay.Features.Enchants.Behaviours;
 using Entitas;
-using UnityEngine;
 
-namespace Code.Gameplay.Features.Enchants
+namespace Assets.Code.Gameplay.Features.Enchants
 {
 	[Game] public class Enchant : IComponent { }
 	[Game] public class EnchantTypeIdComponent : IComponent { public EnchantTypeId Value; }

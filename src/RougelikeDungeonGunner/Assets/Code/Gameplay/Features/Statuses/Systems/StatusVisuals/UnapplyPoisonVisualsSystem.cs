@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using Code.Gameplay.Features.Effects;
+using Assets.Code.Gameplay.Features.Effects;
 using Entitas;
 
-namespace Code.Gameplay.Features.Statuses.Systems.StatusVisuals
+namespace Assets.Code.Gameplay.Features.Statuses.Systems.StatusVisuals
 {
 	public class UnapplyPoisonVisualsSystem : ReactiveSystem<GameEntity>
 	{

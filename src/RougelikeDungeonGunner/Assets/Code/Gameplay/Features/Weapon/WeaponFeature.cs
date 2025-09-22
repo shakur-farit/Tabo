@@ -1,10 +1,10 @@
-﻿using Code.Gameplay.Cameras.Systems;
-using Code.Gameplay.Features.Weapon.Systems;
-using Code.Infrastructure.Systems;
-using Code.Meta.Features.Hud.AmmoHolder.Systems;
-using Code.Meta.Features.Hud.WeaponHolder.Systems;
+﻿using Assets.Code.Gameplay.Cameras.Systems;
+using Assets.Code.Gameplay.Features.Weapon.Systems;
+using Assets.Code.Infrastructure.Systems;
+using Assets.Code.Meta.Features.Hud.AmmoHolder.Systems;
+using Assets.Code.Meta.Features.Hud.WeaponHolder.Systems;
 
-namespace Code.Gameplay.Features.Weapon
+namespace Assets.Code.Gameplay.Features.Weapon
 {
 	public sealed class WeaponFeature : Feature
 	{

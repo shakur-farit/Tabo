@@ -1,8 +1,8 @@
 using System.Collections.Generic;
-using Code.Infrastructure.View.Factory;
+using Assets.Code.Infrastructure.View.Factory;
 using Entitas;
 
-namespace Code.Infrastructure.View.Systems
+namespace Assets.Code.Infrastructure.View.Systems
 {
 	public class BindEntityViewFromPathSystem : IExecuteSystem
 	{

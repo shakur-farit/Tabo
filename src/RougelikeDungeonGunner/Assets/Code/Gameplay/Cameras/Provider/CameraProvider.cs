@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Code.Gameplay.Cameras.Provider
+namespace Assets.Code.Gameplay.Cameras.Provider
 {
 	public class CameraProvider : ICameraProvider
 	{

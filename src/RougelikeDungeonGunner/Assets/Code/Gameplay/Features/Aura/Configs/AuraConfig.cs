@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
-using Code.Gameplay.Features.Effects;
-using Code.Gameplay.Features.Statuses;
-using Code.Infrastructure.View;
+using Assets.Code.Gameplay.Features.Effects;
+using Assets.Code.Gameplay.Features.Statuses;
+using Assets.Code.Infrastructure.View;
 using UnityEngine;
 
-namespace Code.Gameplay.Features.Aura.Configs
+namespace Assets.Code.Gameplay.Features.Aura.Configs
 {
 	[CreateAssetMenu(menuName = "Dungeon Gunner/Aura Config", fileName = "AuraConfig")]
 	public class AuraConfig : ScriptableObject

@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Assets.Code.Gameplay.Features.Weapon;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherMaxPelletsDeviation;
@@ -33,13 +36,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Features.Weapon.MaxPelletsDeviation maxPelletsDeviation { get { return (Code.Gameplay.Features.Weapon.MaxPelletsDeviation)GetComponent(GameComponentsLookup.MaxPelletsDeviation); } }
+    public MaxPelletsDeviation maxPelletsDeviation { get { return (MaxPelletsDeviation)GetComponent(GameComponentsLookup.MaxPelletsDeviation); } }
     public float MaxPelletsDeviation { get { return maxPelletsDeviation.Value; } }
     public bool hasMaxPelletsDeviation { get { return HasComponent(GameComponentsLookup.MaxPelletsDeviation); } }
 
     public GameEntity AddMaxPelletsDeviation(float newValue) {
         var index = GameComponentsLookup.MaxPelletsDeviation;
-        var component = (Code.Gameplay.Features.Weapon.MaxPelletsDeviation)CreateComponent(index, typeof(Code.Gameplay.Features.Weapon.MaxPelletsDeviation));
+        var component = (MaxPelletsDeviation)CreateComponent(index, typeof(MaxPelletsDeviation));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +50,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceMaxPelletsDeviation(float newValue) {
         var index = GameComponentsLookup.MaxPelletsDeviation;
-        var component = (Code.Gameplay.Features.Weapon.MaxPelletsDeviation)CreateComponent(index, typeof(Code.Gameplay.Features.Weapon.MaxPelletsDeviation));
+        var component = (MaxPelletsDeviation)CreateComponent(index, typeof(MaxPelletsDeviation));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

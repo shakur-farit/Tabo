@@ -1,9 +1,9 @@
 ﻿using System;
+using Assets.Code.Infrastructure.Identifiers;
 using Code.Common.Entity;
 using Code.Common.Extensions;
-using Code.Infrastructure.Identifiers;
 
-namespace Code.Gameplay.Features.Effects.Factory
+namespace Assets.Code.Gameplay.Features.Effects.Factory
 {
 	public class EffectFactory : IEffectFactory
 	{

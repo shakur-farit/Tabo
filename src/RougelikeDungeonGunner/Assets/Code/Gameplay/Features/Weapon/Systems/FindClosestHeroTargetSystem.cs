@@ -1,6 +1,6 @@
 ﻿using Entitas;
 
-namespace Code.Gameplay.Features.Weapon.Systems
+namespace Assets.Code.Gameplay.Features.Weapon.Systems
 {
 	public class FindClosestHeroTargetSystem : IExecuteSystem
 	{

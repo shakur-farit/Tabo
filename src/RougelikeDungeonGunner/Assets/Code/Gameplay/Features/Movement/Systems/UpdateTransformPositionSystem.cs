@@ -1,6 +1,6 @@
 ﻿using Entitas;
 
-namespace Code.Gameplay.Features.Movement.Systems
+namespace Assets.Code.Gameplay.Features.Movement.Systems
 {
 	public class UpdateTransformPositionSystem : IExecuteSystem
 	{

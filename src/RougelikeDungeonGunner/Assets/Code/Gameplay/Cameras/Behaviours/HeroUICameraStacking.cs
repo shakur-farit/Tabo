@@ -1,9 +1,9 @@
-using Code.Gameplay.Cameras.Provider;
+using Assets.Code.Gameplay.Cameras.Provider;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using Zenject;
 
-namespace Code.Gameplay.Cameras.Behaviours
+namespace Assets.Code.Gameplay.Cameras.Behaviours
 {
 	public class HeroUICameraStacking : MonoBehaviour
 	{

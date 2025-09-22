@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Assets.Code.Gameplay.Features.Hero;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherUnweaponed;
@@ -33,7 +36,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Hero.Unweaponed unweaponedComponent = new Code.Gameplay.Features.Hero.Unweaponed();
+    static readonly Unweaponed unweaponedComponent = new Unweaponed();
 
     public bool isUnweaponed {
         get { return HasComponent(GameComponentsLookup.Unweaponed); }

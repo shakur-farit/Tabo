@@ -1,7 +1,7 @@
-﻿using Code.Gameplay.Features.Weapon;
+﻿using Assets.Code.Gameplay.Features.Weapon;
 using UnityEngine;
 
-namespace Code.Meta.Features.Shop.Weapon.Configs
+namespace Assets.Code.Meta.Features.Shop.Weapon.Configs
 {
 	[CreateAssetMenu(menuName = "Dungeon Gunner/Shop/Weapon Item Config", fileName = "WeaponItemConfig")]
 	public class WeaponShopItemConfig : ScriptableObject

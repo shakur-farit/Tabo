@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
-using Code.Gameplay.Features.Dungeon;
-using Code.Gameplay.Features.Level.Configs;
+using Assets.Code.Gameplay.Features.Dungeon;
+using Assets.Code.Gameplay.Features.Level.Configs;
 using Entitas;
 
-namespace Code.Gameplay.Features.Level
+namespace Assets.Code.Gameplay.Features.Level
 {
 	[Game] public class LevelTypeIdComponent : IComponent { public LevelTypeId Value; }
 	[Game] public class DungeonTypeOnLevel : IComponent { public DungeonTypeId Value; }

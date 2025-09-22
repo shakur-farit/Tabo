@@ -1,7 +1,7 @@
-using Code.Infrastructure.Systems;
-using Code.Infrastructure.View.Systems;
+using Assets.Code.Infrastructure.Systems;
+using Assets.Code.Infrastructure.View.Systems;
 
-namespace Code.Infrastructure.View
+namespace Assets.Code.Infrastructure.View
 {
 	public sealed class BindViewFeature : Feature
 	{

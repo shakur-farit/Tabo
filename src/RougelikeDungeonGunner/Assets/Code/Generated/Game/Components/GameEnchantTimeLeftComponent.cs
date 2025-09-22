@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Assets.Code.Gameplay.Features.Enchants;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherEnchantTimeLeft;
@@ -33,13 +36,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Features.Enchants.EnchantTimeLeft enchantTimeLeft { get { return (Code.Gameplay.Features.Enchants.EnchantTimeLeft)GetComponent(GameComponentsLookup.EnchantTimeLeft); } }
+    public EnchantTimeLeft enchantTimeLeft { get { return (EnchantTimeLeft)GetComponent(GameComponentsLookup.EnchantTimeLeft); } }
     public float EnchantTimeLeft { get { return enchantTimeLeft.Value; } }
     public bool hasEnchantTimeLeft { get { return HasComponent(GameComponentsLookup.EnchantTimeLeft); } }
 
     public GameEntity AddEnchantTimeLeft(float newValue) {
         var index = GameComponentsLookup.EnchantTimeLeft;
-        var component = (Code.Gameplay.Features.Enchants.EnchantTimeLeft)CreateComponent(index, typeof(Code.Gameplay.Features.Enchants.EnchantTimeLeft));
+        var component = (EnchantTimeLeft)CreateComponent(index, typeof(EnchantTimeLeft));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +50,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceEnchantTimeLeft(float newValue) {
         var index = GameComponentsLookup.EnchantTimeLeft;
-        var component = (Code.Gameplay.Features.Enchants.EnchantTimeLeft)CreateComponent(index, typeof(Code.Gameplay.Features.Enchants.EnchantTimeLeft));
+        var component = (EnchantTimeLeft)CreateComponent(index, typeof(EnchantTimeLeft));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

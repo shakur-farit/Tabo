@@ -1,10 +1,10 @@
-﻿using Code.Gameplay.Features.Ammo.Systems;
-using Code.Gameplay.Features.Ammo.Systems.Visuals;
-using Code.Gameplay.Features.Cooldowns.Systems;
-using Code.Infrastructure.Systems;
-using Code.Meta.Features.Hud.AmmoHolder.Systems;
+﻿using Assets.Code.Gameplay.Features.Ammo.Systems;
+using Assets.Code.Gameplay.Features.Ammo.Systems.Visuals;
+using Assets.Code.Gameplay.Features.Cooldowns.Systems;
+using Assets.Code.Infrastructure.Systems;
+using Assets.Code.Meta.Features.Hud.AmmoHolder.Systems;
 
-namespace Code.Gameplay.Features.Ammo
+namespace Assets.Code.Gameplay.Features.Ammo
 {
 	public sealed class AmmoFeature : Feature
 	{

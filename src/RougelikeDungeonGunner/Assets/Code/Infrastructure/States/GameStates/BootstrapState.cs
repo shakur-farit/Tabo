@@ -1,9 +1,9 @@
-using Code.Infrastructure.AssetManagement;
-using Code.Infrastructure.States.StateInfrastructure;
-using Code.Infrastructure.States.StateMachine;
+using Assets.Code.Infrastructure.AssetManagement;
+using Assets.Code.Infrastructure.States.StateInfrastructure;
+using Assets.Code.Infrastructure.States.StateMachine;
 using Cysharp.Threading.Tasks;
 
-namespace Code.Infrastructure.States.GameStates
+namespace Assets.Code.Infrastructure.States.GameStates
 {
 	public class BootstrapState : SimpleState
 	{

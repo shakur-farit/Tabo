@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Assets.Code.Gameplay.Features.Enemy;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherLastTargetPosition;
@@ -33,13 +36,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Features.Enemy.LastTargetPosition lastTargetPosition { get { return (Code.Gameplay.Features.Enemy.LastTargetPosition)GetComponent(GameComponentsLookup.LastTargetPosition); } }
+    public LastTargetPosition lastTargetPosition { get { return (LastTargetPosition)GetComponent(GameComponentsLookup.LastTargetPosition); } }
     public UnityEngine.Vector3 LastTargetPosition { get { return lastTargetPosition.Value; } }
     public bool hasLastTargetPosition { get { return HasComponent(GameComponentsLookup.LastTargetPosition); } }
 
     public GameEntity AddLastTargetPosition(UnityEngine.Vector3 newValue) {
         var index = GameComponentsLookup.LastTargetPosition;
-        var component = (Code.Gameplay.Features.Enemy.LastTargetPosition)CreateComponent(index, typeof(Code.Gameplay.Features.Enemy.LastTargetPosition));
+        var component = (LastTargetPosition)CreateComponent(index, typeof(LastTargetPosition));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +50,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceLastTargetPosition(UnityEngine.Vector3 newValue) {
         var index = GameComponentsLookup.LastTargetPosition;
-        var component = (Code.Gameplay.Features.Enemy.LastTargetPosition)CreateComponent(index, typeof(Code.Gameplay.Features.Enemy.LastTargetPosition));
+        var component = (LastTargetPosition)CreateComponent(index, typeof(LastTargetPosition));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

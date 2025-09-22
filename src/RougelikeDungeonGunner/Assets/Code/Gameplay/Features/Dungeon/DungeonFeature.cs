@@ -1,7 +1,7 @@
-﻿using Code.Gameplay.Features.Dungeon.Systems;
-using Code.Infrastructure.Systems;
+﻿using Assets.Code.Gameplay.Features.Dungeon.Systems;
+using Assets.Code.Infrastructure.Systems;
 
-namespace Code.Gameplay.Features.Dungeon
+namespace Assets.Code.Gameplay.Features.Dungeon
 {
 	public sealed class DungeonFeature : Feature
 	{

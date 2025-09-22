@@ -1,7 +1,7 @@
-﻿using Code.Gameplay.Common.Random;
+﻿using Assets.Code.Gameplay.Common.Random;
 using UnityEngine;
 
-namespace Code.Gameplay.Features.Ammo.Services
+namespace Assets.Code.Gameplay.Features.Ammo.Services
 {
 	public class AmmoDirectionProvider : IAmmoDirectionProvider
 	{

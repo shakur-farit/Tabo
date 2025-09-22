@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
+using Assets.Code.Gameplay.Features.Aura.Factory;
 using Code.Common.Extensions;
-using Code.Gameplay.Features.Aura.Factory;
 using Entitas;
 
-namespace Code.Gameplay.Features.Aura.Systems
+namespace Assets.Code.Gameplay.Features.Aura.Systems
 {
 	public class CreateShieldForHeroSystem : IExecuteSystem
 	{

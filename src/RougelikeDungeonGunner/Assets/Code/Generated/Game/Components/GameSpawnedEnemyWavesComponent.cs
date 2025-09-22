@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Assets.Code.Gameplay.Features.Level;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherSpawnedEnemyWaves;
@@ -33,13 +36,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Features.Level.SpawnedEnemyWaves spawnedEnemyWaves { get { return (Code.Gameplay.Features.Level.SpawnedEnemyWaves)GetComponent(GameComponentsLookup.SpawnedEnemyWaves); } }
+    public SpawnedEnemyWaves spawnedEnemyWaves { get { return (SpawnedEnemyWaves)GetComponent(GameComponentsLookup.SpawnedEnemyWaves); } }
     public int SpawnedEnemyWaves { get { return spawnedEnemyWaves.Value; } }
     public bool hasSpawnedEnemyWaves { get { return HasComponent(GameComponentsLookup.SpawnedEnemyWaves); } }
 
     public GameEntity AddSpawnedEnemyWaves(int newValue) {
         var index = GameComponentsLookup.SpawnedEnemyWaves;
-        var component = (Code.Gameplay.Features.Level.SpawnedEnemyWaves)CreateComponent(index, typeof(Code.Gameplay.Features.Level.SpawnedEnemyWaves));
+        var component = (SpawnedEnemyWaves)CreateComponent(index, typeof(SpawnedEnemyWaves));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +50,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceSpawnedEnemyWaves(int newValue) {
         var index = GameComponentsLookup.SpawnedEnemyWaves;
-        var component = (Code.Gameplay.Features.Level.SpawnedEnemyWaves)CreateComponent(index, typeof(Code.Gameplay.Features.Level.SpawnedEnemyWaves));
+        var component = (SpawnedEnemyWaves)CreateComponent(index, typeof(SpawnedEnemyWaves));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

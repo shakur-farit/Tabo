@@ -1,7 +1,7 @@
 ﻿using Code.Common.Extensions;
 using Entitas;
 
-namespace Code.Gameplay.Features.CharacterStats.Systems
+namespace Assets.Code.Gameplay.Features.CharacterStats.Systems
 {
 	public class ApplySpeedFromStatsSystem : IExecuteSystem
 	{

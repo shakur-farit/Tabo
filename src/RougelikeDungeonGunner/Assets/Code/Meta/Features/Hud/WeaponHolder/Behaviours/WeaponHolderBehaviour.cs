@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Code.Meta.Features.Hud.WeaponHolder.Behaviours
+namespace Assets.Code.Meta.Features.Hud.WeaponHolder.Behaviours
 {
 	public class WeaponHolderBehaviour : MonoBehaviour
 	{

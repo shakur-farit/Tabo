@@ -1,4 +1,4 @@
-﻿namespace Code.Gameplay.Features.CharacterStats
+﻿namespace Assets.Code.Gameplay.Features.CharacterStats
 {
 	public enum Stats
 	{

@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Assets.Code.Gameplay.Features.Movement;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherOrbitRadius;
@@ -33,13 +36,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Features.Movement.OrbitRadius orbitRadius { get { return (Code.Gameplay.Features.Movement.OrbitRadius)GetComponent(GameComponentsLookup.OrbitRadius); } }
+    public OrbitRadius orbitRadius { get { return (OrbitRadius)GetComponent(GameComponentsLookup.OrbitRadius); } }
     public float OrbitRadius { get { return orbitRadius.Value; } }
     public bool hasOrbitRadius { get { return HasComponent(GameComponentsLookup.OrbitRadius); } }
 
     public GameEntity AddOrbitRadius(float newValue) {
         var index = GameComponentsLookup.OrbitRadius;
-        var component = (Code.Gameplay.Features.Movement.OrbitRadius)CreateComponent(index, typeof(Code.Gameplay.Features.Movement.OrbitRadius));
+        var component = (OrbitRadius)CreateComponent(index, typeof(OrbitRadius));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +50,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceOrbitRadius(float newValue) {
         var index = GameComponentsLookup.OrbitRadius;
-        var component = (Code.Gameplay.Features.Movement.OrbitRadius)CreateComponent(index, typeof(Code.Gameplay.Features.Movement.OrbitRadius));
+        var component = (OrbitRadius)CreateComponent(index, typeof(OrbitRadius));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

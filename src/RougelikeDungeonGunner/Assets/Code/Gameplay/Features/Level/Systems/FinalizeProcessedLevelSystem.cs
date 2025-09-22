@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
-using Code.Gameplay.Common.Time;
-using Code.Infrastructure.States.GameStates;
-using Code.Infrastructure.States.StateMachine;
+using Assets.Code.Gameplay.Common.Time;
+using Assets.Code.Infrastructure.States.GameStates;
+using Assets.Code.Infrastructure.States.StateMachine;
 using Entitas;
 
-namespace Code.Gameplay.Features.Level.Systems
+namespace Assets.Code.Gameplay.Features.Level.Systems
 {
 	public class FinalizeProcessedLevelSystem : IExecuteSystem
 	{

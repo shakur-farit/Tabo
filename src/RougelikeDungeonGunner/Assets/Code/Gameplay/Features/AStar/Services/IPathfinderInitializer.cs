@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace Code.Gameplay.Features.AStar.Services
+namespace Assets.Code.Gameplay.Features.AStar.Services
 {
 	public interface IPathfinderInitializer
 	{

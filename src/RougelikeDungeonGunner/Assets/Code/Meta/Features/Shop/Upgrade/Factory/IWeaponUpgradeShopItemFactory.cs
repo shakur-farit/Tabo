@@ -1,7 +1,7 @@
-﻿using Code.Meta.Features.Shop.Upgrade.Beahaviours;
+﻿using Assets.Code.Meta.Features.Shop.Upgrade.Beahaviours;
 using UnityEngine;
 
-namespace Code.Meta.Features.Shop.Upgrade.Factory
+namespace Assets.Code.Meta.Features.Shop.Upgrade.Factory
 {
 	public interface IWeaponUpgradeShopItemFactory
 	{

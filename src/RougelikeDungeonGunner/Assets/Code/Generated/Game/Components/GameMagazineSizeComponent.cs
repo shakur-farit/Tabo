@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Assets.Code.Gameplay.Features.Weapon;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherMagazineSize;
@@ -33,13 +36,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Features.Weapon.MagazineSize magazineSize { get { return (Code.Gameplay.Features.Weapon.MagazineSize)GetComponent(GameComponentsLookup.MagazineSize); } }
+    public MagazineSize magazineSize { get { return (MagazineSize)GetComponent(GameComponentsLookup.MagazineSize); } }
     public int MagazineSize { get { return magazineSize.Value; } }
     public bool hasMagazineSize { get { return HasComponent(GameComponentsLookup.MagazineSize); } }
 
     public GameEntity AddMagazineSize(int newValue) {
         var index = GameComponentsLookup.MagazineSize;
-        var component = (Code.Gameplay.Features.Weapon.MagazineSize)CreateComponent(index, typeof(Code.Gameplay.Features.Weapon.MagazineSize));
+        var component = (MagazineSize)CreateComponent(index, typeof(MagazineSize));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +50,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceMagazineSize(int newValue) {
         var index = GameComponentsLookup.MagazineSize;
-        var component = (Code.Gameplay.Features.Weapon.MagazineSize)CreateComponent(index, typeof(Code.Gameplay.Features.Weapon.MagazineSize));
+        var component = (MagazineSize)CreateComponent(index, typeof(MagazineSize));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

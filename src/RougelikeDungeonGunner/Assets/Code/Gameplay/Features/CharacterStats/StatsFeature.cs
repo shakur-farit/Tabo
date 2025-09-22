@@ -1,8 +1,7 @@
-﻿using Code.Gameplay.Features.CharacterStats.Systems;
-using Code.Infrastructure;
-using Code.Infrastructure.Systems;
+﻿using Assets.Code.Gameplay.Features.CharacterStats.Systems;
+using Assets.Code.Infrastructure.Systems;
 
-namespace Code.Gameplay.Features.CharacterStats
+namespace Assets.Code.Gameplay.Features.CharacterStats
 {
 	public sealed class StatsFeature : Feature
 	{

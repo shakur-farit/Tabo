@@ -1,19 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using Assets.Code.Gameplay.Features.Aura;
+using Assets.Code.Gameplay.Features.CharacterStats;
+using Assets.Code.Gameplay.Features.Collection;
+using Assets.Code.Gameplay.Features.Effects;
+using Assets.Code.Gameplay.Features.Enemy.Configs;
+using Assets.Code.Gameplay.Features.Weapon;
+using Assets.Code.Gameplay.StaticData;
+using Assets.Code.Infrastructure.Identifiers;
 using Code.Common.Entity;
 using Code.Common.Extensions;
-using Code.Gameplay.Features.Ammo;
-using Code.Gameplay.Features.Aura;
-using Code.Gameplay.Features.CharacterStats;
-using Code.Gameplay.Features.Collection;
-using Code.Gameplay.Features.Effects;
-using Code.Gameplay.Features.Enemy.Configs;
-using Code.Gameplay.Features.Weapon;
-using Code.Gameplay.StaticData;
-using Code.Infrastructure.Identifiers;
 using UnityEngine;
 
-namespace Code.Gameplay.Features.Enemy.Factory
+namespace Assets.Code.Gameplay.Features.Enemy.Factory
 {
 	public class EnemyFactory : IEnemyFactory
 	{

@@ -1,7 +1,7 @@
-﻿using Code.Meta.Features.Shop.WeaponStatUIEntry.Behaviours;
+﻿using Assets.Code.Meta.Features.Shop.WeaponStatUIEntry.Behaviours;
 using UnityEngine;
 
-namespace Code.Meta.Features.Shop.WeaponStatUIEntry.Factory
+namespace Assets.Code.Meta.Features.Shop.WeaponStatUIEntry.Factory
 {
 	public interface IWeaponStatUIEntryItemFactory
 	{

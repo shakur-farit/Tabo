@@ -1,7 +1,7 @@
-﻿using Code.Gameplay.Features.Rotation.Systems;
-using Code.Infrastructure.Systems;
+﻿using Assets.Code.Gameplay.Features.Rotation.Systems;
+using Assets.Code.Infrastructure.Systems;
 
-namespace Code.Gameplay.Features.Rotation
+namespace Assets.Code.Gameplay.Features.Rotation
 {
 	public sealed class RotateFeature : Feature
 	{

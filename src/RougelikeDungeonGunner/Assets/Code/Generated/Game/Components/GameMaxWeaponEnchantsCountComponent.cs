@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Assets.Code.Gameplay.Features.Weapon;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherMaxWeaponEnchantsCount;
@@ -33,13 +36,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Features.Weapon.MaxWeaponEnchantsCount maxWeaponEnchantsCount { get { return (Code.Gameplay.Features.Weapon.MaxWeaponEnchantsCount)GetComponent(GameComponentsLookup.MaxWeaponEnchantsCount); } }
+    public MaxWeaponEnchantsCount maxWeaponEnchantsCount { get { return (MaxWeaponEnchantsCount)GetComponent(GameComponentsLookup.MaxWeaponEnchantsCount); } }
     public int MaxWeaponEnchantsCount { get { return maxWeaponEnchantsCount.Value; } }
     public bool hasMaxWeaponEnchantsCount { get { return HasComponent(GameComponentsLookup.MaxWeaponEnchantsCount); } }
 
     public GameEntity AddMaxWeaponEnchantsCount(int newValue) {
         var index = GameComponentsLookup.MaxWeaponEnchantsCount;
-        var component = (Code.Gameplay.Features.Weapon.MaxWeaponEnchantsCount)CreateComponent(index, typeof(Code.Gameplay.Features.Weapon.MaxWeaponEnchantsCount));
+        var component = (MaxWeaponEnchantsCount)CreateComponent(index, typeof(MaxWeaponEnchantsCount));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +50,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceMaxWeaponEnchantsCount(int newValue) {
         var index = GameComponentsLookup.MaxWeaponEnchantsCount;
-        var component = (Code.Gameplay.Features.Weapon.MaxWeaponEnchantsCount)CreateComponent(index, typeof(Code.Gameplay.Features.Weapon.MaxWeaponEnchantsCount));
+        var component = (MaxWeaponEnchantsCount)CreateComponent(index, typeof(MaxWeaponEnchantsCount));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

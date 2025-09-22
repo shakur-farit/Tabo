@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using Assets.Code.Infrastructure.Identifiers;
 using Code.Common.Entity;
 using Code.Common.Extensions;
-using Code.Infrastructure.Identifiers;
 
-namespace Code.Gameplay.Features.Statuses.Factory
+namespace Assets.Code.Gameplay.Features.Statuses.Factory
 {
 	public class StatusFactory : IStatusFactory
 	{

@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Assets.Code.Gameplay.Features.Weapon;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherPrecharged;
@@ -33,7 +36,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Weapon.Precharged prechargedComponent = new Code.Gameplay.Features.Weapon.Precharged();
+    static readonly Precharged prechargedComponent = new Precharged();
 
     public bool isPrecharged {
         get { return HasComponent(GameComponentsLookup.Precharged); }

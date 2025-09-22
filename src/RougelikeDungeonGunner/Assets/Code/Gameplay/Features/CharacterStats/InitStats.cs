@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Code.Gameplay.Features.CharacterStats
+namespace Assets.Code.Gameplay.Features.CharacterStats
 {
 	public static class InitStats
 	{

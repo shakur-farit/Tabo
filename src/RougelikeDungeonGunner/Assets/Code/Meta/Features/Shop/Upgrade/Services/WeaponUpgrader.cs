@@ -1,9 +1,9 @@
-﻿using Code.Meta.Features.Shop.Upgrade.Configs;
-using Code.Meta.UI.Windows;
-using Code.Meta.UI.Windows.Service;
+﻿using Assets.Code.Meta.Features.Shop.Upgrade.Configs;
+using Assets.Code.Meta.UI.Windows;
+using Assets.Code.Meta.UI.Windows.Service;
 using Code.Progress.Provider;
 
-namespace Code.Meta.Features.Shop.Upgrade.Services
+namespace Assets.Code.Meta.Features.Shop.Upgrade.Services
 {
 	public class WeaponUpgrader : IWeaponUpgrader
 	{

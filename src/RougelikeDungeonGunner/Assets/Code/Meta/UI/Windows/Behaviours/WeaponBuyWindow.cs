@@ -1,15 +1,15 @@
-﻿using Code.Meta.Features.Shop.Weapon.Behaviours;
-using Code.Meta.UI.Windows.Service;
-using Code.Progress.Provider;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Assets.Code.Meta.Features.Shop.Weapon;
+using Assets.Code.Meta.Features.Shop.Weapon.Behaviours;
+using Assets.Code.Meta.Features.Shop.Weapon.Factory;
+using Assets.Code.Meta.UI.Windows.Service;
 using Code.Common.Extensions;
-using Code.Meta.Features.Shop.Weapon;
-using Code.Meta.Features.Shop.Weapon.Factory;
+using Code.Progress.Provider;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
 
-namespace Code.Meta.UI.Windows.Behaviours
+namespace Assets.Code.Meta.UI.Windows.Behaviours
 {
 	public class WeaponBuyWindow : BaseWindow
 	{

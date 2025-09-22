@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Assets.Code.Gameplay.Features.Aura;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherShield;
@@ -33,7 +36,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Aura.Shield shieldComponent = new Code.Gameplay.Features.Aura.Shield();
+    static readonly Shield shieldComponent = new Shield();
 
     public bool isShield {
         get { return HasComponent(GameComponentsLookup.Shield); }

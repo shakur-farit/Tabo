@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using Code.Gameplay.Common.Physics;
+using Assets.Code.Gameplay.Common.Physics;
 using Entitas;
 using UnityEngine;
 
-namespace Code.Gameplay.Features.Collection.Systems
+namespace Assets.Code.Gameplay.Features.Collection.Systems
 {
 	public class CastForTargetsWithLimitSystem : IExecuteSystem, ITearDownSystem
 	{

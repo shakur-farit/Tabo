@@ -2,7 +2,7 @@
 using TMPro;
 using UnityEngine;
 
-namespace Code.Meta.Features.Shop.WeaponStatUIEntry.Behaviours
+namespace Assets.Code.Meta.Features.Shop.WeaponStatUIEntry.Behaviours
 {
 	public class WeaponStatUIEntryItem : MonoBehaviour
 	{

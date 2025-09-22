@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using Code.Gameplay.Common.Time;
+using Assets.Code.Gameplay.Common.Time;
 using Entitas;
 
-namespace Code.Gameplay.Features.Weapon.Systems
+namespace Assets.Code.Gameplay.Features.Weapon.Systems
 {
 	public class ReloadWeaponSystem : IExecuteSystem
 	{

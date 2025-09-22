@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using Code.Gameplay.Features.Statuses;
+using Assets.Code.Gameplay.Features.Statuses;
 using UnityEngine;
 
-namespace Code.Gameplay.Features.Enchants.Behaviours
+namespace Assets.Code.Gameplay.Features.Enchants.Behaviours
 {
 	public class EnchantVisualEffect : MonoBehaviour
 	{

@@ -1,15 +1,15 @@
-﻿using Code.Gameplay.Features.Weapon.Configs;
-using Code.Gameplay.StaticData;
-using Code.Meta.UI.Windows.Service;
+﻿using Assets.Code.Gameplay.Features.Statuses;
+using Assets.Code.Gameplay.Features.Weapon.Configs;
+using Assets.Code.Gameplay.StaticData;
+using Assets.Code.Meta.Features.Shop.EnchantUIEntry.Behaviours;
+using Assets.Code.Meta.Features.Shop.WeaponStatUIEntry.Behaviours;
+using Assets.Code.Meta.UI.Windows.Service;
 using Code.Progress.Provider;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
-using Code.Gameplay.Features.Statuses;
-using Code.Meta.Features.Shop.EnchantUIEntry.Behaviours;
-using Code.Meta.Features.Shop.WeaponStatUIEntry.Behaviours;
 
-namespace Code.Meta.UI.Windows.Behaviours
+namespace Assets.Code.Meta.UI.Windows.Behaviours
 {
 	public class CurrentWeaponInfoWindow : BaseWindow
 	{

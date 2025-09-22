@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Code.Gameplay.Features.Aura.Factory
+namespace Assets.Code.Gameplay.Features.Aura.Factory
 {
 	public interface IAuraFactory
 	{

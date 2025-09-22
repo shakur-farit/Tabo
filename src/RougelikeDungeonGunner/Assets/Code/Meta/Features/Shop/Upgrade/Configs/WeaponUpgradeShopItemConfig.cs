@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Code.Meta.Features.Shop.Upgrade.Configs
+namespace Assets.Code.Meta.Features.Shop.Upgrade.Configs
 {
 	[CreateAssetMenu(menuName = "Dungeon Gunner/Shop/Weapon Upgrade Item Config", fileName = "WeaponUpgradeItemConfig")]
 	public class WeaponUpgradeShopItemConfig : ScriptableObject

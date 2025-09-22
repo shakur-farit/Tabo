@@ -1,10 +1,10 @@
-﻿using Code.Gameplay.Features.Effects;
-using Code.Gameplay.Features.Statuses;
+﻿using System.Collections.Generic;
+using Assets.Code.Gameplay.Features.Effects;
+using Assets.Code.Gameplay.Features.Statuses;
 using Entitas;
-using System.Collections.Generic;
 using UnityEngine;
 
-namespace Code.Gameplay.Features.Weapon
+namespace Assets.Code.Gameplay.Features.Weapon
 {
 	[Game] public class Weapon : IComponent { }
 	[Game] public class WeaponTypeIdComponent : IComponent { public WeaponTypeId Value; }

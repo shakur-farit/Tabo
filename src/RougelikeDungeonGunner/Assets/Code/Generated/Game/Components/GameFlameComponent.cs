@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Assets.Code.Gameplay.Features.Statuses;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherFlame;
@@ -33,7 +36,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Statuses.StatusComponents.Flame flameComponent = new Code.Gameplay.Features.Statuses.StatusComponents.Flame();
+    static readonly StatusComponents.Flame flameComponent = new StatusComponents.Flame();
 
     public bool isFlame {
         get { return HasComponent(GameComponentsLookup.Flame); }

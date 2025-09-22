@@ -1,9 +1,8 @@
-﻿using Code.Gameplay.Features.Hero.Behaviours;
-using Code.Gameplay.Features.Weapon;
+﻿using Assets.Code.Gameplay.Features.Hero.Behaviours;
+using Assets.Code.Gameplay.Features.Weapon;
 using Entitas;
-using UnityEngine;
 
-namespace Code.Gameplay.Features.Hero
+namespace Assets.Code.Gameplay.Features.Hero
 {
 	[Game] public class Hero : IComponent {}
 	[Game] public class HeroAnimatorComponent : IComponent { public HeroAnimator Value; }

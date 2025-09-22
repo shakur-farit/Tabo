@@ -1,9 +1,9 @@
-using Code.Infrastructure.States.StateInfrastructure;
-using Code.Infrastructure.States.StateMachine;
-using Code.Meta.UI.Windows;
-using Code.Meta.UI.Windows.Service;
+using Assets.Code.Infrastructure.States.StateInfrastructure;
+using Assets.Code.Infrastructure.States.StateMachine;
+using Assets.Code.Meta.UI.Windows;
+using Assets.Code.Meta.UI.Windows.Service;
 
-namespace Code.Infrastructure.States.GameStates
+namespace Assets.Code.Infrastructure.States.GameStates
 {
 	public class HomeScreenEnterState : SimpleState
 	{

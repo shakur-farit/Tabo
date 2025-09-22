@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Assets.Code.Gameplay.Features.Enemy;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherSlime;
@@ -33,7 +36,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Enemy.Slime slimeComponent = new Code.Gameplay.Features.Enemy.Slime();
+    static readonly Slime slimeComponent = new Slime();
 
     public bool isSlime {
         get { return HasComponent(GameComponentsLookup.Slime); }

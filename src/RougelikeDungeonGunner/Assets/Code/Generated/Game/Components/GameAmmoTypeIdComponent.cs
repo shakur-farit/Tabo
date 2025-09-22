@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Assets.Code.Gameplay.Features.Ammo;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherAmmoTypeId;
@@ -33,21 +36,21 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Features.Ammo.AmmoTypeIdComponent ammoTypeId { get { return (Code.Gameplay.Features.Ammo.AmmoTypeIdComponent)GetComponent(GameComponentsLookup.AmmoTypeId); } }
-    public Code.Gameplay.Features.Ammo.AmmoTypeId AmmoTypeId { get { return ammoTypeId.Value; } }
+    public AmmoTypeIdComponent ammoTypeId { get { return (AmmoTypeIdComponent)GetComponent(GameComponentsLookup.AmmoTypeId); } }
+    public AmmoTypeId AmmoTypeId { get { return ammoTypeId.Value; } }
     public bool hasAmmoTypeId { get { return HasComponent(GameComponentsLookup.AmmoTypeId); } }
 
-    public GameEntity AddAmmoTypeId(Code.Gameplay.Features.Ammo.AmmoTypeId newValue) {
+    public GameEntity AddAmmoTypeId(AmmoTypeId newValue) {
         var index = GameComponentsLookup.AmmoTypeId;
-        var component = (Code.Gameplay.Features.Ammo.AmmoTypeIdComponent)CreateComponent(index, typeof(Code.Gameplay.Features.Ammo.AmmoTypeIdComponent));
+        var component = (AmmoTypeIdComponent)CreateComponent(index, typeof(AmmoTypeIdComponent));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
     }
 
-    public GameEntity ReplaceAmmoTypeId(Code.Gameplay.Features.Ammo.AmmoTypeId newValue) {
+    public GameEntity ReplaceAmmoTypeId(AmmoTypeId newValue) {
         var index = GameComponentsLookup.AmmoTypeId;
-        var component = (Code.Gameplay.Features.Ammo.AmmoTypeIdComponent)CreateComponent(index, typeof(Code.Gameplay.Features.Ammo.AmmoTypeIdComponent));
+        var component = (AmmoTypeIdComponent)CreateComponent(index, typeof(AmmoTypeIdComponent));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

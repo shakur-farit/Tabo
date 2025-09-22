@@ -1,8 +1,7 @@
-﻿using Code.Gameplay.Features.Effects.Systems;
-using Code.Infrastructure;
-using Code.Infrastructure.Systems;
+﻿using Assets.Code.Gameplay.Features.Effects.Systems;
+using Assets.Code.Infrastructure.Systems;
 
-namespace Code.Gameplay.Features.Effects
+namespace Assets.Code.Gameplay.Features.Effects
 {
 	public sealed class EffectsFeature : Feature
 	{

@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Assets.Code.Gameplay.Common;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherSpriteRenderer;
@@ -33,13 +36,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Common.SpriteRendererComponent spriteRenderer { get { return (Code.Gameplay.Common.SpriteRendererComponent)GetComponent(GameComponentsLookup.SpriteRenderer); } }
+    public SpriteRendererComponent spriteRenderer { get { return (SpriteRendererComponent)GetComponent(GameComponentsLookup.SpriteRenderer); } }
     public UnityEngine.SpriteRenderer SpriteRenderer { get { return spriteRenderer.Value; } }
     public bool hasSpriteRenderer { get { return HasComponent(GameComponentsLookup.SpriteRenderer); } }
 
     public GameEntity AddSpriteRenderer(UnityEngine.SpriteRenderer newValue) {
         var index = GameComponentsLookup.SpriteRenderer;
-        var component = (Code.Gameplay.Common.SpriteRendererComponent)CreateComponent(index, typeof(Code.Gameplay.Common.SpriteRendererComponent));
+        var component = (SpriteRendererComponent)CreateComponent(index, typeof(SpriteRendererComponent));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +50,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceSpriteRenderer(UnityEngine.SpriteRenderer newValue) {
         var index = GameComponentsLookup.SpriteRenderer;
-        var component = (Code.Gameplay.Common.SpriteRendererComponent)CreateComponent(index, typeof(Code.Gameplay.Common.SpriteRendererComponent));
+        var component = (SpriteRendererComponent)CreateComponent(index, typeof(SpriteRendererComponent));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

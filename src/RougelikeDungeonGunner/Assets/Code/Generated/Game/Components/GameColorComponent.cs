@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Assets.Code.Gameplay.Common;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherColor;
@@ -33,13 +36,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Common.ColorComponent color { get { return (Code.Gameplay.Common.ColorComponent)GetComponent(GameComponentsLookup.Color); } }
+    public ColorComponent color { get { return (ColorComponent)GetComponent(GameComponentsLookup.Color); } }
     public UnityEngine.Color Color { get { return color.Value; } }
     public bool hasColor { get { return HasComponent(GameComponentsLookup.Color); } }
 
     public GameEntity AddColor(UnityEngine.Color newValue) {
         var index = GameComponentsLookup.Color;
-        var component = (Code.Gameplay.Common.ColorComponent)CreateComponent(index, typeof(Code.Gameplay.Common.ColorComponent));
+        var component = (ColorComponent)CreateComponent(index, typeof(ColorComponent));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +50,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceColor(UnityEngine.Color newValue) {
         var index = GameComponentsLookup.Color;
-        var component = (Code.Gameplay.Common.ColorComponent)CreateComponent(index, typeof(Code.Gameplay.Common.ColorComponent));
+        var component = (ColorComponent)CreateComponent(index, typeof(ColorComponent));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

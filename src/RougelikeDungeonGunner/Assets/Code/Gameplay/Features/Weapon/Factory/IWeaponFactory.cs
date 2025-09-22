@@ -1,7 +1,6 @@
-﻿using Code.Gameplay.Features.Ammo.Factory;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Code.Gameplay.Features.Weapon.Factory
+namespace Assets.Code.Gameplay.Features.Weapon.Factory
 {
 	public interface IWeaponFactory
 	{

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Entitas;
 
-namespace Code.Gameplay.Features.Effects.Systems
+namespace Assets.Code.Gameplay.Features.Effects.Systems
 {
 	public class CleanupProcessedEffectsSystem : ICleanupSystem
 	{

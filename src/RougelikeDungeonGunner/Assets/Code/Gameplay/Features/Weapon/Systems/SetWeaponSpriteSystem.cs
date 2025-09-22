@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using Code.Gameplay.StaticData;
+using Assets.Code.Gameplay.StaticData;
 using Entitas;
 
-namespace Code.Gameplay.Features.Weapon.Systems
+namespace Assets.Code.Gameplay.Features.Weapon.Systems
 {
 	public class SetWeaponSpriteSystem : ReactiveSystem<GameEntity>
 	{

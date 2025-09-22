@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Assets.Code.Gameplay.Features.Movement;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherOrbitCenter;
@@ -33,13 +36,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Features.Movement.OrbitCenter orbitCenter { get { return (Code.Gameplay.Features.Movement.OrbitCenter)GetComponent(GameComponentsLookup.OrbitCenter); } }
+    public OrbitCenter orbitCenter { get { return (OrbitCenter)GetComponent(GameComponentsLookup.OrbitCenter); } }
     public UnityEngine.Vector3 OrbitCenter { get { return orbitCenter.Value; } }
     public bool hasOrbitCenter { get { return HasComponent(GameComponentsLookup.OrbitCenter); } }
 
     public GameEntity AddOrbitCenter(UnityEngine.Vector3 newValue) {
         var index = GameComponentsLookup.OrbitCenter;
-        var component = (Code.Gameplay.Features.Movement.OrbitCenter)CreateComponent(index, typeof(Code.Gameplay.Features.Movement.OrbitCenter));
+        var component = (OrbitCenter)CreateComponent(index, typeof(OrbitCenter));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +50,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceOrbitCenter(UnityEngine.Vector3 newValue) {
         var index = GameComponentsLookup.OrbitCenter;
-        var component = (Code.Gameplay.Features.Movement.OrbitCenter)CreateComponent(index, typeof(Code.Gameplay.Features.Movement.OrbitCenter));
+        var component = (OrbitCenter)CreateComponent(index, typeof(OrbitCenter));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

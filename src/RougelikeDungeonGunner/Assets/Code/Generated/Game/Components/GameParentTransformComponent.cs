@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Assets.Code.Gameplay.Common;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherParentTransform;
@@ -33,13 +36,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Common.ParentTransform parentTransform { get { return (Code.Gameplay.Common.ParentTransform)GetComponent(GameComponentsLookup.ParentTransform); } }
+    public ParentTransform parentTransform { get { return (ParentTransform)GetComponent(GameComponentsLookup.ParentTransform); } }
     public UnityEngine.Transform ParentTransform { get { return parentTransform.Value; } }
     public bool hasParentTransform { get { return HasComponent(GameComponentsLookup.ParentTransform); } }
 
     public GameEntity AddParentTransform(UnityEngine.Transform newValue) {
         var index = GameComponentsLookup.ParentTransform;
-        var component = (Code.Gameplay.Common.ParentTransform)CreateComponent(index, typeof(Code.Gameplay.Common.ParentTransform));
+        var component = (ParentTransform)CreateComponent(index, typeof(ParentTransform));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +50,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceParentTransform(UnityEngine.Transform newValue) {
         var index = GameComponentsLookup.ParentTransform;
-        var component = (Code.Gameplay.Common.ParentTransform)CreateComponent(index, typeof(Code.Gameplay.Common.ParentTransform));
+        var component = (ParentTransform)CreateComponent(index, typeof(ParentTransform));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

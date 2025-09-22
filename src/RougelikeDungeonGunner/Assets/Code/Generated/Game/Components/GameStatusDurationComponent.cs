@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Assets.Code.Gameplay.Features.Statuses;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherStatusDuration;
@@ -33,13 +36,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Features.Statuses.StatusComponents.StatusDuration statusDuration { get { return (Code.Gameplay.Features.Statuses.StatusComponents.StatusDuration)GetComponent(GameComponentsLookup.StatusDuration); } }
+    public StatusComponents.StatusDuration statusDuration { get { return (StatusComponents.StatusDuration)GetComponent(GameComponentsLookup.StatusDuration); } }
     public float StatusDuration { get { return statusDuration.Value; } }
     public bool hasStatusDuration { get { return HasComponent(GameComponentsLookup.StatusDuration); } }
 
     public GameEntity AddStatusDuration(float newValue) {
         var index = GameComponentsLookup.StatusDuration;
-        var component = (Code.Gameplay.Features.Statuses.StatusComponents.StatusDuration)CreateComponent(index, typeof(Code.Gameplay.Features.Statuses.StatusComponents.StatusDuration));
+        var component = (StatusComponents.StatusDuration)CreateComponent(index, typeof(StatusComponents.StatusDuration));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +50,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceStatusDuration(float newValue) {
         var index = GameComponentsLookup.StatusDuration;
-        var component = (Code.Gameplay.Features.Statuses.StatusComponents.StatusDuration)CreateComponent(index, typeof(Code.Gameplay.Features.Statuses.StatusComponents.StatusDuration));
+        var component = (StatusComponents.StatusDuration)CreateComponent(index, typeof(StatusComponents.StatusDuration));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

@@ -1,4 +1,4 @@
-﻿namespace Code.Gameplay.Features.SpecialEffect
+﻿namespace Assets.Code.Gameplay.Features.SpecialEffect
 {
 	public enum SpecialEffectTypeId
 	{

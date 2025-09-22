@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Assets.Code.Gameplay.Features.Collection;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherCastStartPositionTransform;
@@ -33,13 +36,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Features.Collection.CastStartPositionTransform castStartPositionTransform { get { return (Code.Gameplay.Features.Collection.CastStartPositionTransform)GetComponent(GameComponentsLookup.CastStartPositionTransform); } }
+    public CastStartPositionTransform castStartPositionTransform { get { return (CastStartPositionTransform)GetComponent(GameComponentsLookup.CastStartPositionTransform); } }
     public UnityEngine.Transform CastStartPositionTransform { get { return castStartPositionTransform.Value; } }
     public bool hasCastStartPositionTransform { get { return HasComponent(GameComponentsLookup.CastStartPositionTransform); } }
 
     public GameEntity AddCastStartPositionTransform(UnityEngine.Transform newValue) {
         var index = GameComponentsLookup.CastStartPositionTransform;
-        var component = (Code.Gameplay.Features.Collection.CastStartPositionTransform)CreateComponent(index, typeof(Code.Gameplay.Features.Collection.CastStartPositionTransform));
+        var component = (CastStartPositionTransform)CreateComponent(index, typeof(CastStartPositionTransform));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +50,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceCastStartPositionTransform(UnityEngine.Transform newValue) {
         var index = GameComponentsLookup.CastStartPositionTransform;
-        var component = (Code.Gameplay.Features.Collection.CastStartPositionTransform)CreateComponent(index, typeof(Code.Gameplay.Features.Collection.CastStartPositionTransform));
+        var component = (CastStartPositionTransform)CreateComponent(index, typeof(CastStartPositionTransform));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

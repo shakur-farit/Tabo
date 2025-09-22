@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Assets.Code.Gameplay.Features.AmmoPattern;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherPatternAmmoCount;
@@ -33,13 +36,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Features.AmmoPattern.PatternAmmoCount patternAmmoCount { get { return (Code.Gameplay.Features.AmmoPattern.PatternAmmoCount)GetComponent(GameComponentsLookup.PatternAmmoCount); } }
+    public PatternAmmoCount patternAmmoCount { get { return (PatternAmmoCount)GetComponent(GameComponentsLookup.PatternAmmoCount); } }
     public int PatternAmmoCount { get { return patternAmmoCount.Value; } }
     public bool hasPatternAmmoCount { get { return HasComponent(GameComponentsLookup.PatternAmmoCount); } }
 
     public GameEntity AddPatternAmmoCount(int newValue) {
         var index = GameComponentsLookup.PatternAmmoCount;
-        var component = (Code.Gameplay.Features.AmmoPattern.PatternAmmoCount)CreateComponent(index, typeof(Code.Gameplay.Features.AmmoPattern.PatternAmmoCount));
+        var component = (PatternAmmoCount)CreateComponent(index, typeof(PatternAmmoCount));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +50,7 @@ public partial class GameEntity {
 
     public GameEntity ReplacePatternAmmoCount(int newValue) {
         var index = GameComponentsLookup.PatternAmmoCount;
-        var component = (Code.Gameplay.Features.AmmoPattern.PatternAmmoCount)CreateComponent(index, typeof(Code.Gameplay.Features.AmmoPattern.PatternAmmoCount));
+        var component = (PatternAmmoCount)CreateComponent(index, typeof(PatternAmmoCount));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

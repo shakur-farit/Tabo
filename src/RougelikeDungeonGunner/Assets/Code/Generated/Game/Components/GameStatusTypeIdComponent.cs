@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Assets.Code.Gameplay.Features.Statuses;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherStatusTypeId;
@@ -33,21 +36,21 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Features.Statuses.StatusComponents.StatusTypeIdComponent statusTypeId { get { return (Code.Gameplay.Features.Statuses.StatusComponents.StatusTypeIdComponent)GetComponent(GameComponentsLookup.StatusTypeId); } }
-    public Code.Gameplay.Features.Statuses.StatusTypeId StatusTypeId { get { return statusTypeId.Value; } }
+    public StatusComponents.StatusTypeIdComponent statusTypeId { get { return (StatusComponents.StatusTypeIdComponent)GetComponent(GameComponentsLookup.StatusTypeId); } }
+    public StatusTypeId StatusTypeId { get { return statusTypeId.Value; } }
     public bool hasStatusTypeId { get { return HasComponent(GameComponentsLookup.StatusTypeId); } }
 
-    public GameEntity AddStatusTypeId(Code.Gameplay.Features.Statuses.StatusTypeId newValue) {
+    public GameEntity AddStatusTypeId(StatusTypeId newValue) {
         var index = GameComponentsLookup.StatusTypeId;
-        var component = (Code.Gameplay.Features.Statuses.StatusComponents.StatusTypeIdComponent)CreateComponent(index, typeof(Code.Gameplay.Features.Statuses.StatusComponents.StatusTypeIdComponent));
+        var component = (StatusComponents.StatusTypeIdComponent)CreateComponent(index, typeof(StatusComponents.StatusTypeIdComponent));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
     }
 
-    public GameEntity ReplaceStatusTypeId(Code.Gameplay.Features.Statuses.StatusTypeId newValue) {
+    public GameEntity ReplaceStatusTypeId(StatusTypeId newValue) {
         var index = GameComponentsLookup.StatusTypeId;
-        var component = (Code.Gameplay.Features.Statuses.StatusComponents.StatusTypeIdComponent)CreateComponent(index, typeof(Code.Gameplay.Features.Statuses.StatusComponents.StatusTypeIdComponent));
+        var component = (StatusComponents.StatusTypeIdComponent)CreateComponent(index, typeof(StatusComponents.StatusTypeIdComponent));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

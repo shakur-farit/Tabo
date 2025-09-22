@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Assets.Code.Gameplay.Features.Movement;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherLinerMovement;
@@ -33,7 +36,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Movement.LinerMovement linerMovementComponent = new Code.Gameplay.Features.Movement.LinerMovement();
+    static readonly LinerMovement linerMovementComponent = new LinerMovement();
 
     public bool isLinerMovement {
         get { return HasComponent(GameComponentsLookup.LinerMovement); }

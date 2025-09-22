@@ -1,8 +1,8 @@
-﻿using Code.Gameplay.Common.Time;
+﻿using Assets.Code.Gameplay.Common.Time;
 using Entitas;
 using UnityEngine;
 
-namespace Code.Gameplay.Features.Movement.Systems
+namespace Assets.Code.Gameplay.Features.Movement.Systems
 {
 	public class OrbitDirectionalMoveSystem : IExecuteSystem
 	{

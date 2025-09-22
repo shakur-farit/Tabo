@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Code.Gameplay.Common.Physics;
+using Assets.Code.Gameplay.Common.Physics;
 using Entitas;
 using UnityEngine;
 
-namespace Code.Gameplay.Features.Collection.Systems
+namespace Assets.Code.Gameplay.Features.Collection.Systems
 {
 	public class CastForTargetsWithNoLimitSystem : IExecuteSystem
 	{

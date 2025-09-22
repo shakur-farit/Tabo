@@ -2,7 +2,7 @@
 using System.Linq;
 using UnityEngine;
 
-namespace Code.Gameplay.Features.AStar.Services
+namespace Assets.Code.Gameplay.Features.AStar.Services
 {
 	public class AStarPathfinder : IAStarPathfinder, IPathfinderInitializer
 	{

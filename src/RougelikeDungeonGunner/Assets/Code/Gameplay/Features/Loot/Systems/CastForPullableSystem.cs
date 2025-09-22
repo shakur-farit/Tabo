@@ -1,9 +1,8 @@
-﻿using Code.Common.Extensions;
-using Code.Gameplay.Common.Physics;
+﻿using Assets.Code.Gameplay.Common.Physics;
+using Code.Common.Extensions;
 using Entitas;
-using UnityEngine;
 
-namespace Code.Gameplay.Features.Loot.Systems
+namespace Assets.Code.Gameplay.Features.Loot.Systems
 {
 	public class CastForPullableSystem : IExecuteSystem
 	{

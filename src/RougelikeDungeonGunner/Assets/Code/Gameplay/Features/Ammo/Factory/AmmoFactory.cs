@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using Assets.Code.Gameplay.Features.Ammo.Configs;
+using Assets.Code.Gameplay.Features.Collection;
+using Assets.Code.Gameplay.Features.SpecialEffect;
+using Assets.Code.Gameplay.StaticData;
+using Assets.Code.Infrastructure.Identifiers;
 using Code.Common.Entity;
 using Code.Common.Extensions;
-using Code.Gameplay.Features.Ammo.Configs;
-using Code.Gameplay.Features.Collection;
-using Code.Gameplay.Features.SpecialEffect;
-using Code.Gameplay.StaticData;
-using Code.Infrastructure.Identifiers;
 using UnityEngine;
 
-namespace Code.Gameplay.Features.Ammo.Factory
+namespace Assets.Code.Gameplay.Features.Ammo.Factory
 {
 	public class AmmoFactory : IAmmoFactory
 	{

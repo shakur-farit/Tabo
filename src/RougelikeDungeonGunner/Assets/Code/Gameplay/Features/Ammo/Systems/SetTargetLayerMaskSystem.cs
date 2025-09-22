@@ -1,8 +1,8 @@
-﻿using Code.Common.Extensions;
-using Code.Gameplay.Features.Weapon;
+﻿using Assets.Code.Gameplay.Features.Weapon;
+using Code.Common.Extensions;
 using Entitas;
 
-namespace Code.Gameplay.Features.Ammo.Systems
+namespace Assets.Code.Gameplay.Features.Ammo.Systems
 {
 	public class SetTargetLayerMaskSystem : IExecuteSystem
 	{

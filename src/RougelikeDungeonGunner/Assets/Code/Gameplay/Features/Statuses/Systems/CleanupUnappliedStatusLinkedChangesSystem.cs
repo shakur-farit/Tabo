@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Entitas;
 
-namespace Code.Gameplay.Features.Statuses.Systems
+namespace Assets.Code.Gameplay.Features.Statuses.Systems
 {
 	public class CleanupUnappliedStatusLinkedChangesSystem : ICleanupSystem
 	{

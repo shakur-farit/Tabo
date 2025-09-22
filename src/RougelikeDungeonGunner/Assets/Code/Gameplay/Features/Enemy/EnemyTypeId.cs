@@ -1,4 +1,4 @@
-﻿namespace Code.Gameplay.Features.Enemy
+﻿namespace Assets.Code.Gameplay.Features.Enemy
 {
   public enum EnemyTypeId
   {

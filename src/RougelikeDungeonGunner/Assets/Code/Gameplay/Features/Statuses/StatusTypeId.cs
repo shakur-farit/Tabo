@@ -1,4 +1,4 @@
-﻿namespace Code.Gameplay.Features.Statuses
+﻿namespace Assets.Code.Gameplay.Features.Statuses
 {
 	public enum StatusTypeId
 	{

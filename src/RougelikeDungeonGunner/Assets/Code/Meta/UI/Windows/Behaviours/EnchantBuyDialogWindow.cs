@@ -1,20 +1,19 @@
-﻿using Code.Gameplay.Features.Statuses;
-using Code.Gameplay.Features.Weapon.Configs;
-using Code.Gameplay.StaticData;
-using Code.Meta.Features.Shop.Upgrade.Services;
-using Code.Meta.Features.Shop.WeaponStatUIEntry.Configs;
-using Code.Meta.UI.Windows.Service;
+﻿using System.Linq;
+using Assets.Code.Gameplay.Features.Statuses;
+using Assets.Code.Gameplay.Features.Weapon.Configs;
+using Assets.Code.Gameplay.StaticData;
+using Assets.Code.Meta.Features.Shop.Enchant.Behaviours;
+using Assets.Code.Meta.Features.Shop.Enchant.Configs;
+using Assets.Code.Meta.Features.Shop.EnchantUIEntry.Behaviours;
+using Assets.Code.Meta.Features.Shop.EnchantUIEntry.Configs;
+using Assets.Code.Meta.Features.Shop.Upgrade.Services;
+using Assets.Code.Meta.UI.Windows.Service;
 using Code.Progress.Provider;
-using System.Linq;
-using Code.Meta.Features.Shop.Enchant.Behaviours;
-using Code.Meta.Features.Shop.Enchant.Configs;
-using Code.Meta.Features.Shop.EnchantUIEntry.Behaviours;
-using Code.Meta.Features.Shop.EnchantUIEntry.Configs;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
 
-namespace Code.Meta.UI.Windows.Behaviours
+namespace Assets.Code.Meta.UI.Windows.Behaviours
 {
 	public class EnchantBuyDialogWindow : BaseWindow
 	{

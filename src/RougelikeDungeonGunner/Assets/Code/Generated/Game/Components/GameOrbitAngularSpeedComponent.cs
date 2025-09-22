@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Assets.Code.Gameplay.Features.Movement;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherOrbitAngularSpeed;
@@ -33,13 +36,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Features.Movement.OrbitAngularSpeed orbitAngularSpeed { get { return (Code.Gameplay.Features.Movement.OrbitAngularSpeed)GetComponent(GameComponentsLookup.OrbitAngularSpeed); } }
+    public OrbitAngularSpeed orbitAngularSpeed { get { return (OrbitAngularSpeed)GetComponent(GameComponentsLookup.OrbitAngularSpeed); } }
     public float OrbitAngularSpeed { get { return orbitAngularSpeed.Value; } }
     public bool hasOrbitAngularSpeed { get { return HasComponent(GameComponentsLookup.OrbitAngularSpeed); } }
 
     public GameEntity AddOrbitAngularSpeed(float newValue) {
         var index = GameComponentsLookup.OrbitAngularSpeed;
-        var component = (Code.Gameplay.Features.Movement.OrbitAngularSpeed)CreateComponent(index, typeof(Code.Gameplay.Features.Movement.OrbitAngularSpeed));
+        var component = (OrbitAngularSpeed)CreateComponent(index, typeof(OrbitAngularSpeed));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +50,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceOrbitAngularSpeed(float newValue) {
         var index = GameComponentsLookup.OrbitAngularSpeed;
-        var component = (Code.Gameplay.Features.Movement.OrbitAngularSpeed)CreateComponent(index, typeof(Code.Gameplay.Features.Movement.OrbitAngularSpeed));
+        var component = (OrbitAngularSpeed)CreateComponent(index, typeof(OrbitAngularSpeed));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

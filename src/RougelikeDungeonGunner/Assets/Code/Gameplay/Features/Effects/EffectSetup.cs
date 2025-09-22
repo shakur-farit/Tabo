@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Code.Gameplay.Features.Effects
+namespace Assets.Code.Gameplay.Features.Effects
 {
 	[Serializable]
 	public class EffectSetup

@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
+using Assets.Code.Gameplay.Common.Collisions;
 using Code.Common.Extensions;
-using Code.Gameplay.Common.Collisions;
 using UnityEngine;
 
-namespace Code.Gameplay.Common.Physics
+namespace Assets.Code.Gameplay.Common.Physics
 {
   public class PhysicsService : IPhysicsService
   {

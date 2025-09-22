@@ -1,7 +1,7 @@
-﻿using Code.Gameplay.Common.Direction;
+﻿using Assets.Code.Gameplay.Common.Direction;
 using Entitas;
 
-namespace Code.Gameplay.Features.Hero.Systems
+namespace Assets.Code.Gameplay.Features.Hero.Systems
 {
 	public class AnimateHeroAimingSystem : IExecuteSystem
 	{

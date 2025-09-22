@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Assets.Code.Gameplay.Features.Movement;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherOrbitElapsedTime;
@@ -33,13 +36,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Features.Movement.OrbitElapsedTime orbitElapsedTime { get { return (Code.Gameplay.Features.Movement.OrbitElapsedTime)GetComponent(GameComponentsLookup.OrbitElapsedTime); } }
+    public OrbitElapsedTime orbitElapsedTime { get { return (OrbitElapsedTime)GetComponent(GameComponentsLookup.OrbitElapsedTime); } }
     public float OrbitElapsedTime { get { return orbitElapsedTime.Value; } }
     public bool hasOrbitElapsedTime { get { return HasComponent(GameComponentsLookup.OrbitElapsedTime); } }
 
     public GameEntity AddOrbitElapsedTime(float newValue) {
         var index = GameComponentsLookup.OrbitElapsedTime;
-        var component = (Code.Gameplay.Features.Movement.OrbitElapsedTime)CreateComponent(index, typeof(Code.Gameplay.Features.Movement.OrbitElapsedTime));
+        var component = (OrbitElapsedTime)CreateComponent(index, typeof(OrbitElapsedTime));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +50,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceOrbitElapsedTime(float newValue) {
         var index = GameComponentsLookup.OrbitElapsedTime;
-        var component = (Code.Gameplay.Features.Movement.OrbitElapsedTime)CreateComponent(index, typeof(Code.Gameplay.Features.Movement.OrbitElapsedTime));
+        var component = (OrbitElapsedTime)CreateComponent(index, typeof(OrbitElapsedTime));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Assets.Code.Gameplay.Features.AmmoPattern;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherPatternCurrentAngle;
@@ -33,13 +36,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Features.AmmoPattern.PatternCurrentAngle patternCurrentAngle { get { return (Code.Gameplay.Features.AmmoPattern.PatternCurrentAngle)GetComponent(GameComponentsLookup.PatternCurrentAngle); } }
+    public PatternCurrentAngle patternCurrentAngle { get { return (PatternCurrentAngle)GetComponent(GameComponentsLookup.PatternCurrentAngle); } }
     public float PatternCurrentAngle { get { return patternCurrentAngle.Value; } }
     public bool hasPatternCurrentAngle { get { return HasComponent(GameComponentsLookup.PatternCurrentAngle); } }
 
     public GameEntity AddPatternCurrentAngle(float newValue) {
         var index = GameComponentsLookup.PatternCurrentAngle;
-        var component = (Code.Gameplay.Features.AmmoPattern.PatternCurrentAngle)CreateComponent(index, typeof(Code.Gameplay.Features.AmmoPattern.PatternCurrentAngle));
+        var component = (PatternCurrentAngle)CreateComponent(index, typeof(PatternCurrentAngle));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +50,7 @@ public partial class GameEntity {
 
     public GameEntity ReplacePatternCurrentAngle(float newValue) {
         var index = GameComponentsLookup.PatternCurrentAngle;
-        var component = (Code.Gameplay.Features.AmmoPattern.PatternCurrentAngle)CreateComponent(index, typeof(Code.Gameplay.Features.AmmoPattern.PatternCurrentAngle));
+        var component = (PatternCurrentAngle)CreateComponent(index, typeof(PatternCurrentAngle));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

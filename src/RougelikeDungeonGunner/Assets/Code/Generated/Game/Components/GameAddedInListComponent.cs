@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Assets.Code.Gameplay.Features.AmmoPattern;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherAddedInList;
@@ -33,7 +36,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.AmmoPattern.AddedInList addedInListComponent = new Code.Gameplay.Features.AmmoPattern.AddedInList();
+    static readonly AddedInList addedInListComponent = new AddedInList();
 
     public bool isAddedInList {
         get { return HasComponent(GameComponentsLookup.AddedInList); }

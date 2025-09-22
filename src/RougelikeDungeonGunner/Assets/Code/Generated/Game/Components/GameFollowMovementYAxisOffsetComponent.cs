@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Assets.Code.Gameplay.Features.Movement;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherFollowMovementYAxisOffset;
@@ -33,13 +36,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Features.Movement.FollowMovementYAxisOffset followMovementYAxisOffset { get { return (Code.Gameplay.Features.Movement.FollowMovementYAxisOffset)GetComponent(GameComponentsLookup.FollowMovementYAxisOffset); } }
+    public FollowMovementYAxisOffset followMovementYAxisOffset { get { return (FollowMovementYAxisOffset)GetComponent(GameComponentsLookup.FollowMovementYAxisOffset); } }
     public float FollowMovementYAxisOffset { get { return followMovementYAxisOffset.Value; } }
     public bool hasFollowMovementYAxisOffset { get { return HasComponent(GameComponentsLookup.FollowMovementYAxisOffset); } }
 
     public GameEntity AddFollowMovementYAxisOffset(float newValue) {
         var index = GameComponentsLookup.FollowMovementYAxisOffset;
-        var component = (Code.Gameplay.Features.Movement.FollowMovementYAxisOffset)CreateComponent(index, typeof(Code.Gameplay.Features.Movement.FollowMovementYAxisOffset));
+        var component = (FollowMovementYAxisOffset)CreateComponent(index, typeof(FollowMovementYAxisOffset));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +50,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceFollowMovementYAxisOffset(float newValue) {
         var index = GameComponentsLookup.FollowMovementYAxisOffset;
-        var component = (Code.Gameplay.Features.Movement.FollowMovementYAxisOffset)CreateComponent(index, typeof(Code.Gameplay.Features.Movement.FollowMovementYAxisOffset));
+        var component = (FollowMovementYAxisOffset)CreateComponent(index, typeof(FollowMovementYAxisOffset));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

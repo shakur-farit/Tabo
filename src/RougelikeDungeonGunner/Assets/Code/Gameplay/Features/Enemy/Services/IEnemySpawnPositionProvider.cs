@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace Code.Gameplay.Features.Enemy.Services
+namespace Assets.Code.Gameplay.Features.Enemy.Services
 {
 	public interface IEnemySpawnPositionProvider
 	{

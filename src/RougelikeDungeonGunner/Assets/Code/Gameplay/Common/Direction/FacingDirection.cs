@@ -1,4 +1,4 @@
-﻿namespace Code.Gameplay.Common.Direction
+﻿namespace Assets.Code.Gameplay.Common.Direction
 {
 	public enum FacingDirection
 	{

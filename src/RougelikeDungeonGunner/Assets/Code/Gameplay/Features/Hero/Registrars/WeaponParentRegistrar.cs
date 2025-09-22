@@ -1,7 +1,7 @@
-﻿using Code.Infrastructure.View.Registrars;
+﻿using Assets.Code.Infrastructure.View.Registrars;
 using UnityEngine;
 
-namespace Code.Gameplay.Features.Hero.Registrars
+namespace Assets.Code.Gameplay.Features.Hero.Registrars
 {
 	public class WeaponParentRegistrar : EntityComponentRegistrar
 	{

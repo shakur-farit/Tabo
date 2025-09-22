@@ -1,7 +1,7 @@
-﻿using Code.Gameplay.Features.Enemy.Systems;
-using Code.Infrastructure.Systems;
+﻿using Assets.Code.Gameplay.Features.Enemy.Systems;
+using Assets.Code.Infrastructure.Systems;
 
-namespace Code.Gameplay.Features.Enemy
+namespace Assets.Code.Gameplay.Features.Enemy
 {
 	public sealed class EnemyFeature : Feature
 	{

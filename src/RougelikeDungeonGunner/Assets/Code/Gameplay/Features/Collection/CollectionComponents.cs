@@ -2,7 +2,7 @@
 using Entitas;
 using UnityEngine;
 
-namespace Code.Gameplay.Features.Collection
+namespace Assets.Code.Gameplay.Features.Collection
 {
 	[Game] public class TargetsBuffer : IComponent { public List<int> Value; }
 	[Game] public class ProcessedTargets : IComponent { public List<int> Value; }

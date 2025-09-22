@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Assets.Code.Gameplay.Features.Collection;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherCollectTargetsInterval;
@@ -33,13 +36,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Features.Collection.CollectTargetsInterval collectTargetsInterval { get { return (Code.Gameplay.Features.Collection.CollectTargetsInterval)GetComponent(GameComponentsLookup.CollectTargetsInterval); } }
+    public CollectTargetsInterval collectTargetsInterval { get { return (CollectTargetsInterval)GetComponent(GameComponentsLookup.CollectTargetsInterval); } }
     public float CollectTargetsInterval { get { return collectTargetsInterval.Value; } }
     public bool hasCollectTargetsInterval { get { return HasComponent(GameComponentsLookup.CollectTargetsInterval); } }
 
     public GameEntity AddCollectTargetsInterval(float newValue) {
         var index = GameComponentsLookup.CollectTargetsInterval;
-        var component = (Code.Gameplay.Features.Collection.CollectTargetsInterval)CreateComponent(index, typeof(Code.Gameplay.Features.Collection.CollectTargetsInterval));
+        var component = (CollectTargetsInterval)CreateComponent(index, typeof(CollectTargetsInterval));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +50,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceCollectTargetsInterval(float newValue) {
         var index = GameComponentsLookup.CollectTargetsInterval;
-        var component = (Code.Gameplay.Features.Collection.CollectTargetsInterval)CreateComponent(index, typeof(Code.Gameplay.Features.Collection.CollectTargetsInterval));
+        var component = (CollectTargetsInterval)CreateComponent(index, typeof(CollectTargetsInterval));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

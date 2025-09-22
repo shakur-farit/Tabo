@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using Code.Gameplay.Common.Random;
+using Assets.Code.Gameplay.Common.Random;
 using UnityEngine;
 
-namespace Code.Gameplay.Features.Enemy.Services
+namespace Assets.Code.Gameplay.Features.Enemy.Services
 {
 	public class EnemySpawnPositionProvider : IEnemySpawnPositionProvider
 	{

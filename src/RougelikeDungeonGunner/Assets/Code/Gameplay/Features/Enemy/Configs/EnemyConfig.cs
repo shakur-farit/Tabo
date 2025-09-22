@@ -1,13 +1,12 @@
 ﻿using System.Collections.Generic;
-using Code.Gameplay.Features.Ammo;
-using Code.Gameplay.Features.Aura;
-using Code.Gameplay.Features.Collection;
-using Code.Gameplay.Features.Statuses;
-using Code.Gameplay.Features.Weapon;
-using Code.Infrastructure.View;
+using Assets.Code.Gameplay.Features.Aura;
+using Assets.Code.Gameplay.Features.Collection;
+using Assets.Code.Gameplay.Features.Statuses;
+using Assets.Code.Gameplay.Features.Weapon;
+using Assets.Code.Infrastructure.View;
 using UnityEngine;
 
-namespace Code.Gameplay.Features.Enemy.Configs
+namespace Assets.Code.Gameplay.Features.Enemy.Configs
 {
 	[CreateAssetMenu(menuName = "Dungeon Gunner/Enemy Config", fileName = "EnemyConfig")]
 	public class EnemyConfig : ScriptableObject

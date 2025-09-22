@@ -1,7 +1,6 @@
-﻿using System.Collections.Generic;
-using Code.Gameplay.Features.Weapon;
+﻿using Assets.Code.Gameplay.Features.Weapon;
 
-namespace Code.Meta.Features.Shop.Upgrade.Services
+namespace Assets.Code.Meta.Features.Shop.Upgrade.Services
 {
 	public interface IWeaponUpgradesProvider
 	{
