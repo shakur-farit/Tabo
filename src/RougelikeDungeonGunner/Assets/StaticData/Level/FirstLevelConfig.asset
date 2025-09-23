@@ -17,7 +17,7 @@ MonoBehaviour:
   StartingTime: 5
   TimeBetweenSpawnWaves: 30
   FinishingTime: 5
-  HeroSaveZoneRadius: 0
+  HeroSaveZoneRadius: 5
   EnemyWaves:
   - EnemiesInWave:
     - EnemyTypeId: 1

@@ -19,11 +19,8 @@ namespace Assets.Code.Gameplay.Input.Systems
 
 		public void Execute()
 		{
-			foreach (InputEntity input in _inputs)
-			{
+			foreach (InputEntity input in _inputs) 
 				input.isEscButtonDown = _inputService.GetEscButtonDown();
-				Debug.Log(input.isEscButtonDown);
-			}
 		}
 	}
 }

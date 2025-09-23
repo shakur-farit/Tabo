@@ -29,13 +29,11 @@ namespace Assets.Code.Gameplay.Input
 			{
 				if (input.isPaused)
 				{
-					Debug.Log("unpaused");
 					_time.StartTime();
 					input.isPaused = false;
 				}
 				else
 				{
-					Debug.Log("paused");
 					_time.StopTime();
 					input.isPaused = true;
 				}

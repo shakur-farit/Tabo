@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TypeId: 3
   ViewPrefab: {fileID: 4494103209788103135, guid: c97df207954ad734eaf0eab1d27c9f42, type: 3}
-  Sprite: {fileID: 21300000, guid: 11973df2a51797b4cb083bbcd083baea, type: 3}
+  Sprite: {fileID: 21300000, guid: 737efa2dc4b0c7b45acb1105b94ecd15, type: 3}
   DropChanceWeight: 30
   EnemyTypeFilter: 
   CoinValue: 0
