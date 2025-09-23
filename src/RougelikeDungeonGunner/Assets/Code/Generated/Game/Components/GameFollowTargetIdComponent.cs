@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Assets.Code.Gameplay.Features.Movement;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherFollowTargetId;
@@ -36,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public FollowTargetId followTargetId { get { return (FollowTargetId)GetComponent(GameComponentsLookup.FollowTargetId); } }
+    public Assets.Code.Gameplay.Features.Movement.FollowTargetId followTargetId { get { return (Assets.Code.Gameplay.Features.Movement.FollowTargetId)GetComponent(GameComponentsLookup.FollowTargetId); } }
     public int FollowTargetId { get { return followTargetId.Value; } }
     public bool hasFollowTargetId { get { return HasComponent(GameComponentsLookup.FollowTargetId); } }
 
     public GameEntity AddFollowTargetId(int newValue) {
         var index = GameComponentsLookup.FollowTargetId;
-        var component = (FollowTargetId)CreateComponent(index, typeof(FollowTargetId));
+        var component = (Assets.Code.Gameplay.Features.Movement.FollowTargetId)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Movement.FollowTargetId));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -50,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceFollowTargetId(int newValue) {
         var index = GameComponentsLookup.FollowTargetId;
-        var component = (FollowTargetId)CreateComponent(index, typeof(FollowTargetId));
+        var component = (Assets.Code.Gameplay.Features.Movement.FollowTargetId)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Movement.FollowTargetId));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Assets.Code.Gameplay.Features.Weapon;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherClosestTargetPosition;
@@ -36,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public ClosestTargetPosition closestTargetPosition { get { return (ClosestTargetPosition)GetComponent(GameComponentsLookup.ClosestTargetPosition); } }
+    public Assets.Code.Gameplay.Features.Weapon.ClosestTargetPosition closestTargetPosition { get { return (Assets.Code.Gameplay.Features.Weapon.ClosestTargetPosition)GetComponent(GameComponentsLookup.ClosestTargetPosition); } }
     public UnityEngine.Vector3 ClosestTargetPosition { get { return closestTargetPosition.Value; } }
     public bool hasClosestTargetPosition { get { return HasComponent(GameComponentsLookup.ClosestTargetPosition); } }
 
     public GameEntity AddClosestTargetPosition(UnityEngine.Vector3 newValue) {
         var index = GameComponentsLookup.ClosestTargetPosition;
-        var component = (ClosestTargetPosition)CreateComponent(index, typeof(ClosestTargetPosition));
+        var component = (Assets.Code.Gameplay.Features.Weapon.ClosestTargetPosition)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Weapon.ClosestTargetPosition));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -50,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceClosestTargetPosition(UnityEngine.Vector3 newValue) {
         var index = GameComponentsLookup.ClosestTargetPosition;
-        var component = (ClosestTargetPosition)CreateComponent(index, typeof(ClosestTargetPosition));
+        var component = (Assets.Code.Gameplay.Features.Weapon.ClosestTargetPosition)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Weapon.ClosestTargetPosition));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

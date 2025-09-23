@@ -6,10 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Assets.Code.Gameplay.Features.Effects;
-using Assets.Code.Gameplay.Features.Weapon;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherEffectSetups;
@@ -37,21 +33,21 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public EffectSetups effectSetups { get { return (EffectSetups)GetComponent(GameComponentsLookup.EffectSetups); } }
-    public System.Collections.Generic.List<EffectSetup> EffectSetups { get { return effectSetups.Value; } }
+    public Assets.Code.Gameplay.Features.Weapon.EffectSetups effectSetups { get { return (Assets.Code.Gameplay.Features.Weapon.EffectSetups)GetComponent(GameComponentsLookup.EffectSetups); } }
+    public System.Collections.Generic.List<Assets.Code.Gameplay.Features.Effects.EffectSetup> EffectSetups { get { return effectSetups.Value; } }
     public bool hasEffectSetups { get { return HasComponent(GameComponentsLookup.EffectSetups); } }
 
-    public GameEntity AddEffectSetups(System.Collections.Generic.List<EffectSetup> newValue) {
+    public GameEntity AddEffectSetups(System.Collections.Generic.List<Assets.Code.Gameplay.Features.Effects.EffectSetup> newValue) {
         var index = GameComponentsLookup.EffectSetups;
-        var component = (EffectSetups)CreateComponent(index, typeof(EffectSetups));
+        var component = (Assets.Code.Gameplay.Features.Weapon.EffectSetups)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Weapon.EffectSetups));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
     }
 
-    public GameEntity ReplaceEffectSetups(System.Collections.Generic.List<EffectSetup> newValue) {
+    public GameEntity ReplaceEffectSetups(System.Collections.Generic.List<Assets.Code.Gameplay.Features.Effects.EffectSetup> newValue) {
         var index = GameComponentsLookup.EffectSetups;
-        var component = (EffectSetups)CreateComponent(index, typeof(EffectSetups));
+        var component = (Assets.Code.Gameplay.Features.Weapon.EffectSetups)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Weapon.EffectSetups));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

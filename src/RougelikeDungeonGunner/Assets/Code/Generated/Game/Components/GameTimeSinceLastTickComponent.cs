@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Assets.Code.Gameplay.Features.Statuses;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherTimeSinceLastTick;
@@ -36,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public StatusComponents.TimeSinceLastTick timeSinceLastTick { get { return (StatusComponents.TimeSinceLastTick)GetComponent(GameComponentsLookup.TimeSinceLastTick); } }
+    public Assets.Code.Gameplay.Features.Statuses.StatusComponents.TimeSinceLastTick timeSinceLastTick { get { return (Assets.Code.Gameplay.Features.Statuses.StatusComponents.TimeSinceLastTick)GetComponent(GameComponentsLookup.TimeSinceLastTick); } }
     public float TimeSinceLastTick { get { return timeSinceLastTick.Value; } }
     public bool hasTimeSinceLastTick { get { return HasComponent(GameComponentsLookup.TimeSinceLastTick); } }
 
     public GameEntity AddTimeSinceLastTick(float newValue) {
         var index = GameComponentsLookup.TimeSinceLastTick;
-        var component = (StatusComponents.TimeSinceLastTick)CreateComponent(index, typeof(StatusComponents.TimeSinceLastTick));
+        var component = (Assets.Code.Gameplay.Features.Statuses.StatusComponents.TimeSinceLastTick)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Statuses.StatusComponents.TimeSinceLastTick));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -50,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceTimeSinceLastTick(float newValue) {
         var index = GameComponentsLookup.TimeSinceLastTick;
-        var component = (StatusComponents.TimeSinceLastTick)CreateComponent(index, typeof(StatusComponents.TimeSinceLastTick));
+        var component = (Assets.Code.Gameplay.Features.Statuses.StatusComponents.TimeSinceLastTick)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Statuses.StatusComponents.TimeSinceLastTick));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

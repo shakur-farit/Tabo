@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Assets.Code.Gameplay.Features.Weapon;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherReloading;
@@ -36,7 +33,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Reloading reloadingComponent = new Reloading();
+    static readonly Assets.Code.Gameplay.Features.Weapon.Reloading reloadingComponent = new Assets.Code.Gameplay.Features.Weapon.Reloading();
 
     public bool isReloading {
         get { return HasComponent(GameComponentsLookup.Reloading); }

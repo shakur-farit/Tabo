@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Assets.Code.Gameplay.Features.Lifetime;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherCurrentHp;
@@ -36,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public CurrentHp currentHp { get { return (CurrentHp)GetComponent(GameComponentsLookup.CurrentHp); } }
+    public Assets.Code.Gameplay.Features.Lifetime.CurrentHp currentHp { get { return (Assets.Code.Gameplay.Features.Lifetime.CurrentHp)GetComponent(GameComponentsLookup.CurrentHp); } }
     public float CurrentHp { get { return currentHp.Value; } }
     public bool hasCurrentHp { get { return HasComponent(GameComponentsLookup.CurrentHp); } }
 
     public GameEntity AddCurrentHp(float newValue) {
         var index = GameComponentsLookup.CurrentHp;
-        var component = (CurrentHp)CreateComponent(index, typeof(CurrentHp));
+        var component = (Assets.Code.Gameplay.Features.Lifetime.CurrentHp)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Lifetime.CurrentHp));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -50,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceCurrentHp(float newValue) {
         var index = GameComponentsLookup.CurrentHp;
-        var component = (CurrentHp)CreateComponent(index, typeof(CurrentHp));
+        var component = (Assets.Code.Gameplay.Features.Lifetime.CurrentHp)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Lifetime.CurrentHp));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

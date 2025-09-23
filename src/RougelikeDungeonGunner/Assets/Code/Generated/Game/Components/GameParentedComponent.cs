@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Assets.Code.Common;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherParented;
@@ -36,7 +33,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Parented parentedComponent = new Parented();
+    static readonly Assets.Code.Common.Parented parentedComponent = new Assets.Code.Common.Parented();
 
     public bool isParented {
         get { return HasComponent(GameComponentsLookup.Parented); }

@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Assets.Code.Gameplay.Features.Cooldowns;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherCooldownUp;
@@ -36,7 +33,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly CooldownUp cooldownUpComponent = new CooldownUp();
+    static readonly Assets.Code.Gameplay.Features.Cooldowns.CooldownUp cooldownUpComponent = new Assets.Code.Gameplay.Features.Cooldowns.CooldownUp();
 
     public bool isCooldownUp {
         get { return HasComponent(GameComponentsLookup.CooldownUp); }

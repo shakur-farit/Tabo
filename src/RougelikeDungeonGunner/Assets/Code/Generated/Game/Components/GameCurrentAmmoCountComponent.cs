@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Assets.Code.Gameplay.Features.Weapon;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherCurrentAmmoCount;
@@ -36,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public CurrentAmmoCount currentAmmoCount { get { return (CurrentAmmoCount)GetComponent(GameComponentsLookup.CurrentAmmoCount); } }
+    public Assets.Code.Gameplay.Features.Weapon.CurrentAmmoCount currentAmmoCount { get { return (Assets.Code.Gameplay.Features.Weapon.CurrentAmmoCount)GetComponent(GameComponentsLookup.CurrentAmmoCount); } }
     public int CurrentAmmoCount { get { return currentAmmoCount.Value; } }
     public bool hasCurrentAmmoCount { get { return HasComponent(GameComponentsLookup.CurrentAmmoCount); } }
 
     public GameEntity AddCurrentAmmoCount(int newValue) {
         var index = GameComponentsLookup.CurrentAmmoCount;
-        var component = (CurrentAmmoCount)CreateComponent(index, typeof(CurrentAmmoCount));
+        var component = (Assets.Code.Gameplay.Features.Weapon.CurrentAmmoCount)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Weapon.CurrentAmmoCount));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -50,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceCurrentAmmoCount(int newValue) {
         var index = GameComponentsLookup.CurrentAmmoCount;
-        var component = (CurrentAmmoCount)CreateComponent(index, typeof(CurrentAmmoCount));
+        var component = (Assets.Code.Gameplay.Features.Weapon.CurrentAmmoCount)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Weapon.CurrentAmmoCount));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

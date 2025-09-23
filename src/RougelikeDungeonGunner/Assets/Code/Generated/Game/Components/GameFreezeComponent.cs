@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Assets.Code.Gameplay.Features.Statuses;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherFreeze;
@@ -36,7 +33,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly StatusComponents.Freeze freezeComponent = new StatusComponents.Freeze();
+    static readonly Assets.Code.Gameplay.Features.Statuses.StatusComponents.Freeze freezeComponent = new Assets.Code.Gameplay.Features.Statuses.StatusComponents.Freeze();
 
     public bool isFreeze {
         get { return HasComponent(GameComponentsLookup.Freeze); }

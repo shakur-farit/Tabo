@@ -6,30 +6,32 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Assets.Code.Common;
-using Assets.Code.Gameplay.Input;
-
 public static class InputComponentsLookup {
 
     public const int Destructed = 0;
     public const int AxisInput = 1;
-    public const int Input = 2;
-    public const int MouseLeftButtonDown = 3;
+    public const int EscButtonDown = 2;
+    public const int Input = 3;
+    public const int MouseLeftButtonDown = 4;
+    public const int Paused = 5;
 
-    public const int TotalComponents = 4;
+    public const int TotalComponents = 6;
 
     public static readonly string[] componentNames = {
         "Destructed",
         "AxisInput",
+        "EscButtonDown",
         "Input",
-        "MouseLeftButtonDown"
+        "MouseLeftButtonDown",
+        "Paused"
     };
 
     public static readonly System.Type[] componentTypes = {
-        typeof(Destructed),
-        typeof(AxisInput),
-        typeof(Input),
-        typeof(MouseLeftButtonDown)
+        typeof(Assets.Code.Common.Destructed),
+        typeof(Assets.Code.Gameplay.Input.AxisInput),
+        typeof(Assets.Code.Gameplay.Input.EscButtonDown),
+        typeof(Assets.Code.Gameplay.Input.Input),
+        typeof(Assets.Code.Gameplay.Input.MouseLeftButtonDown),
+        typeof(Assets.Code.Gameplay.Input.Paused)
     };
 }

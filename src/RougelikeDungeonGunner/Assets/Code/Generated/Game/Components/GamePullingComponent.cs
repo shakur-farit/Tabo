@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Assets.Code.Gameplay.Features.Loot;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherPulling;
@@ -36,7 +33,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly LootComponents.Pulling pullingComponent = new LootComponents.Pulling();
+    static readonly Assets.Code.Gameplay.Features.Loot.LootComponents.Pulling pullingComponent = new Assets.Code.Gameplay.Features.Loot.LootComponents.Pulling();
 
     public bool isPulling {
         get { return HasComponent(GameComponentsLookup.Pulling); }

@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Assets.Code.Gameplay.Features.Weapon;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherMagazineNotEmpty;
@@ -36,7 +33,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly MagazineNotEmpty magazineNotEmptyComponent = new MagazineNotEmpty();
+    static readonly Assets.Code.Gameplay.Features.Weapon.MagazineNotEmpty magazineNotEmptyComponent = new Assets.Code.Gameplay.Features.Weapon.MagazineNotEmpty();
 
     public bool isMagazineNotEmpty {
         get { return HasComponent(GameComponentsLookup.MagazineNotEmpty); }

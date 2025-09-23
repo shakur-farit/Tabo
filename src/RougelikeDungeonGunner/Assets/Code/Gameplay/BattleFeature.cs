@@ -22,7 +22,6 @@ using Assets.Code.Gameplay.Features.Weapon;
 using Assets.Code.Gameplay.Input;
 using Assets.Code.Infrastructure.Systems;
 using Assets.Code.Infrastructure.View;
-using Code.Common;
 
 namespace Assets.Code.Gameplay
 {
@@ -58,6 +57,8 @@ namespace Assets.Code.Gameplay
 			Add(systems.Create<StatusFeature>());
 			Add(systems.Create<StatsFeature>());
 			Add(systems.Create<AuraFeature>());
+
+			Add(systems.Create<PauseFeature>());
 
 			Add(systems.Create<ProcessGameDestructedFeature>());
 			Add(systems.Create<ProcessInputDestructedFeature>());

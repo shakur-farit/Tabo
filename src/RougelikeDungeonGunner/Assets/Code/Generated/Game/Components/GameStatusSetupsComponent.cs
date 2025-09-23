@@ -6,10 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Assets.Code.Gameplay.Features.Statuses;
-using Assets.Code.Gameplay.Features.Weapon;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherStatusSetups;
@@ -37,21 +33,21 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public StatusSetups statusSetups { get { return (StatusSetups)GetComponent(GameComponentsLookup.StatusSetups); } }
-    public System.Collections.Generic.List<StatusSetup> StatusSetups { get { return statusSetups.Value; } }
+    public Assets.Code.Gameplay.Features.Weapon.StatusSetups statusSetups { get { return (Assets.Code.Gameplay.Features.Weapon.StatusSetups)GetComponent(GameComponentsLookup.StatusSetups); } }
+    public System.Collections.Generic.List<Assets.Code.Gameplay.Features.Statuses.StatusSetup> StatusSetups { get { return statusSetups.Value; } }
     public bool hasStatusSetups { get { return HasComponent(GameComponentsLookup.StatusSetups); } }
 
-    public GameEntity AddStatusSetups(System.Collections.Generic.List<StatusSetup> newValue) {
+    public GameEntity AddStatusSetups(System.Collections.Generic.List<Assets.Code.Gameplay.Features.Statuses.StatusSetup> newValue) {
         var index = GameComponentsLookup.StatusSetups;
-        var component = (StatusSetups)CreateComponent(index, typeof(StatusSetups));
+        var component = (Assets.Code.Gameplay.Features.Weapon.StatusSetups)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Weapon.StatusSetups));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
     }
 
-    public GameEntity ReplaceStatusSetups(System.Collections.Generic.List<StatusSetup> newValue) {
+    public GameEntity ReplaceStatusSetups(System.Collections.Generic.List<Assets.Code.Gameplay.Features.Statuses.StatusSetup> newValue) {
         var index = GameComponentsLookup.StatusSetups;
-        var component = (StatusSetups)CreateComponent(index, typeof(StatusSetups));
+        var component = (Assets.Code.Gameplay.Features.Weapon.StatusSetups)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Weapon.StatusSetups));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

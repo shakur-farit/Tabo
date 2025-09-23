@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Assets.Code.Gameplay.Features.Weapon;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherMaxPelletsDeviation;
@@ -36,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public MaxPelletsDeviation maxPelletsDeviation { get { return (MaxPelletsDeviation)GetComponent(GameComponentsLookup.MaxPelletsDeviation); } }
+    public Assets.Code.Gameplay.Features.Weapon.MaxPelletsDeviation maxPelletsDeviation { get { return (Assets.Code.Gameplay.Features.Weapon.MaxPelletsDeviation)GetComponent(GameComponentsLookup.MaxPelletsDeviation); } }
     public float MaxPelletsDeviation { get { return maxPelletsDeviation.Value; } }
     public bool hasMaxPelletsDeviation { get { return HasComponent(GameComponentsLookup.MaxPelletsDeviation); } }
 
     public GameEntity AddMaxPelletsDeviation(float newValue) {
         var index = GameComponentsLookup.MaxPelletsDeviation;
-        var component = (MaxPelletsDeviation)CreateComponent(index, typeof(MaxPelletsDeviation));
+        var component = (Assets.Code.Gameplay.Features.Weapon.MaxPelletsDeviation)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Weapon.MaxPelletsDeviation));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -50,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceMaxPelletsDeviation(float newValue) {
         var index = GameComponentsLookup.MaxPelletsDeviation;
-        var component = (MaxPelletsDeviation)CreateComponent(index, typeof(MaxPelletsDeviation));
+        var component = (Assets.Code.Gameplay.Features.Weapon.MaxPelletsDeviation)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Weapon.MaxPelletsDeviation));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

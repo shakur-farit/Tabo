@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Assets.Code.Gameplay.Features.Movement;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherMovementAvailable;
@@ -36,7 +33,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly MovementAvailable movementAvailableComponent = new MovementAvailable();
+    static readonly Assets.Code.Gameplay.Features.Movement.MovementAvailable movementAvailableComponent = new Assets.Code.Gameplay.Features.Movement.MovementAvailable();
 
     public bool isMovementAvailable {
         get { return HasComponent(GameComponentsLookup.MovementAvailable); }

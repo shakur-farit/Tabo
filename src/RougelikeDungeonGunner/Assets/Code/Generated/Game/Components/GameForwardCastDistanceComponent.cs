@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Assets.Code.Gameplay.Features.Collection;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherForwardCastDistance;
@@ -36,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public ForwardCastDistance forwardCastDistance { get { return (ForwardCastDistance)GetComponent(GameComponentsLookup.ForwardCastDistance); } }
+    public Assets.Code.Gameplay.Features.Collection.ForwardCastDistance forwardCastDistance { get { return (Assets.Code.Gameplay.Features.Collection.ForwardCastDistance)GetComponent(GameComponentsLookup.ForwardCastDistance); } }
     public float ForwardCastDistance { get { return forwardCastDistance.Value; } }
     public bool hasForwardCastDistance { get { return HasComponent(GameComponentsLookup.ForwardCastDistance); } }
 
     public GameEntity AddForwardCastDistance(float newValue) {
         var index = GameComponentsLookup.ForwardCastDistance;
-        var component = (ForwardCastDistance)CreateComponent(index, typeof(ForwardCastDistance));
+        var component = (Assets.Code.Gameplay.Features.Collection.ForwardCastDistance)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Collection.ForwardCastDistance));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -50,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceForwardCastDistance(float newValue) {
         var index = GameComponentsLookup.ForwardCastDistance;
-        var component = (ForwardCastDistance)CreateComponent(index, typeof(ForwardCastDistance));
+        var component = (Assets.Code.Gameplay.Features.Collection.ForwardCastDistance)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Collection.ForwardCastDistance));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

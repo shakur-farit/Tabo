@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Assets.Code.Gameplay.Features.Loot;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherPickupRadius;
@@ -36,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public LootComponents.PickupRadius pickupRadius { get { return (LootComponents.PickupRadius)GetComponent(GameComponentsLookup.PickupRadius); } }
+    public Assets.Code.Gameplay.Features.Loot.LootComponents.PickupRadius pickupRadius { get { return (Assets.Code.Gameplay.Features.Loot.LootComponents.PickupRadius)GetComponent(GameComponentsLookup.PickupRadius); } }
     public float PickupRadius { get { return pickupRadius.Value; } }
     public bool hasPickupRadius { get { return HasComponent(GameComponentsLookup.PickupRadius); } }
 
     public GameEntity AddPickupRadius(float newValue) {
         var index = GameComponentsLookup.PickupRadius;
-        var component = (LootComponents.PickupRadius)CreateComponent(index, typeof(LootComponents.PickupRadius));
+        var component = (Assets.Code.Gameplay.Features.Loot.LootComponents.PickupRadius)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Loot.LootComponents.PickupRadius));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -50,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplacePickupRadius(float newValue) {
         var index = GameComponentsLookup.PickupRadius;
-        var component = (LootComponents.PickupRadius)CreateComponent(index, typeof(LootComponents.PickupRadius));
+        var component = (Assets.Code.Gameplay.Features.Loot.LootComponents.PickupRadius)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Loot.LootComponents.PickupRadius));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

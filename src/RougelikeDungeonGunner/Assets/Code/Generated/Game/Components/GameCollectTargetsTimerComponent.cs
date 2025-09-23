@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Assets.Code.Gameplay.Features.Collection;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherCollectTargetsTimer;
@@ -36,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public CollectTargetsTimer collectTargetsTimer { get { return (CollectTargetsTimer)GetComponent(GameComponentsLookup.CollectTargetsTimer); } }
+    public Assets.Code.Gameplay.Features.Collection.CollectTargetsTimer collectTargetsTimer { get { return (Assets.Code.Gameplay.Features.Collection.CollectTargetsTimer)GetComponent(GameComponentsLookup.CollectTargetsTimer); } }
     public float CollectTargetsTimer { get { return collectTargetsTimer.Value; } }
     public bool hasCollectTargetsTimer { get { return HasComponent(GameComponentsLookup.CollectTargetsTimer); } }
 
     public GameEntity AddCollectTargetsTimer(float newValue) {
         var index = GameComponentsLookup.CollectTargetsTimer;
-        var component = (CollectTargetsTimer)CreateComponent(index, typeof(CollectTargetsTimer));
+        var component = (Assets.Code.Gameplay.Features.Collection.CollectTargetsTimer)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Collection.CollectTargetsTimer));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -50,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceCollectTargetsTimer(float newValue) {
         var index = GameComponentsLookup.CollectTargetsTimer;
-        var component = (CollectTargetsTimer)CreateComponent(index, typeof(CollectTargetsTimer));
+        var component = (Assets.Code.Gameplay.Features.Collection.CollectTargetsTimer)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Collection.CollectTargetsTimer));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

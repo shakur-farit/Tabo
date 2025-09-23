@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Assets.Code.Gameplay.Features.Hero;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherHeroAvailable;
@@ -36,7 +33,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly HeroAvailable heroAvailableComponent = new HeroAvailable();
+    static readonly Assets.Code.Gameplay.Features.Hero.HeroAvailable heroAvailableComponent = new Assets.Code.Gameplay.Features.Hero.HeroAvailable();
 
     public bool isHeroAvailable {
         get { return HasComponent(GameComponentsLookup.HeroAvailable); }

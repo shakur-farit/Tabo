@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Assets.Code.Gameplay.Features.Loot;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherCoins;
@@ -36,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public LootComponents.Coins coins { get { return (LootComponents.Coins)GetComponent(GameComponentsLookup.Coins); } }
+    public Assets.Code.Gameplay.Features.Loot.LootComponents.Coins coins { get { return (Assets.Code.Gameplay.Features.Loot.LootComponents.Coins)GetComponent(GameComponentsLookup.Coins); } }
     public int Coins { get { return coins.Value; } }
     public bool hasCoins { get { return HasComponent(GameComponentsLookup.Coins); } }
 
     public GameEntity AddCoins(int newValue) {
         var index = GameComponentsLookup.Coins;
-        var component = (LootComponents.Coins)CreateComponent(index, typeof(LootComponents.Coins));
+        var component = (Assets.Code.Gameplay.Features.Loot.LootComponents.Coins)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Loot.LootComponents.Coins));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -50,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceCoins(int newValue) {
         var index = GameComponentsLookup.Coins;
-        var component = (LootComponents.Coins)CreateComponent(index, typeof(LootComponents.Coins));
+        var component = (Assets.Code.Gameplay.Features.Loot.LootComponents.Coins)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Loot.LootComponents.Coins));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

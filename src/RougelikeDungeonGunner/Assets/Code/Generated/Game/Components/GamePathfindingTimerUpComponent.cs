@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Assets.Code.Gameplay.Features.AStar;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherPathfindingTimerUp;
@@ -36,7 +33,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly PathfindingTimerUp pathfindingTimerUpComponent = new PathfindingTimerUp();
+    static readonly Assets.Code.Gameplay.Features.AStar.PathfindingTimerUp pathfindingTimerUpComponent = new Assets.Code.Gameplay.Features.AStar.PathfindingTimerUp();
 
     public bool isPathfindingTimerUp {
         get { return HasComponent(GameComponentsLookup.PathfindingTimerUp); }

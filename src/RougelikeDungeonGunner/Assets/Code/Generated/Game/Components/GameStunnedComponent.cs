@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Assets.Code.Gameplay.Common;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherStunned;
@@ -36,7 +33,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Stunned stunnedComponent = new Stunned();
+    static readonly Assets.Code.Gameplay.Common.Stunned stunnedComponent = new Assets.Code.Gameplay.Common.Stunned();
 
     public bool isStunned {
         get { return HasComponent(GameComponentsLookup.Stunned); }

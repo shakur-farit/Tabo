@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Assets.Code.Gameplay.Features.Collection;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherReached;
@@ -36,7 +33,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Reached reachedComponent = new Reached();
+    static readonly Assets.Code.Gameplay.Features.Collection.Reached reachedComponent = new Assets.Code.Gameplay.Features.Collection.Reached();
 
     public bool isReached {
         get { return HasComponent(GameComponentsLookup.Reached); }

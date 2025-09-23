@@ -6,10 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Assets.Code.Gameplay.Features.Enchants;
-using Assets.Code.Gameplay.Features.Enchants.Behaviours;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherEnchantVisualEffect;
@@ -37,21 +33,21 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public EnchantVisualEffectComponent enchantVisualEffect { get { return (EnchantVisualEffectComponent)GetComponent(GameComponentsLookup.EnchantVisualEffect); } }
-    public EnchantVisualEffect EnchantVisualEffect { get { return enchantVisualEffect.Value; } }
+    public Assets.Code.Gameplay.Features.Enchants.EnchantVisualEffectComponent enchantVisualEffect { get { return (Assets.Code.Gameplay.Features.Enchants.EnchantVisualEffectComponent)GetComponent(GameComponentsLookup.EnchantVisualEffect); } }
+    public Assets.Code.Gameplay.Features.Enchants.Behaviours.EnchantVisualEffect EnchantVisualEffect { get { return enchantVisualEffect.Value; } }
     public bool hasEnchantVisualEffect { get { return HasComponent(GameComponentsLookup.EnchantVisualEffect); } }
 
-    public GameEntity AddEnchantVisualEffect(EnchantVisualEffect newValue) {
+    public GameEntity AddEnchantVisualEffect(Assets.Code.Gameplay.Features.Enchants.Behaviours.EnchantVisualEffect newValue) {
         var index = GameComponentsLookup.EnchantVisualEffect;
-        var component = (EnchantVisualEffectComponent)CreateComponent(index, typeof(EnchantVisualEffectComponent));
+        var component = (Assets.Code.Gameplay.Features.Enchants.EnchantVisualEffectComponent)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Enchants.EnchantVisualEffectComponent));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
     }
 
-    public GameEntity ReplaceEnchantVisualEffect(EnchantVisualEffect newValue) {
+    public GameEntity ReplaceEnchantVisualEffect(Assets.Code.Gameplay.Features.Enchants.Behaviours.EnchantVisualEffect newValue) {
         var index = GameComponentsLookup.EnchantVisualEffect;
-        var component = (EnchantVisualEffectComponent)CreateComponent(index, typeof(EnchantVisualEffectComponent));
+        var component = (Assets.Code.Gameplay.Features.Enchants.EnchantVisualEffectComponent)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Enchants.EnchantVisualEffectComponent));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

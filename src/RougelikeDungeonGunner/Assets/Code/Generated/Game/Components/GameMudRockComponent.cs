@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Assets.Code.Gameplay.Features.Enemy;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherMudRock;
@@ -36,7 +33,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly MudRock mudRockComponent = new MudRock();
+    static readonly Assets.Code.Gameplay.Features.Enemy.MudRock mudRockComponent = new Assets.Code.Gameplay.Features.Enemy.MudRock();
 
     public bool isMudRock {
         get { return HasComponent(GameComponentsLookup.MudRock); }

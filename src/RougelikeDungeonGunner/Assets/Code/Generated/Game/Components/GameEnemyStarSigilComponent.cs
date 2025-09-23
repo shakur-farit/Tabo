@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Assets.Code.Gameplay.Features.Weapon;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherEnemyStarSigil;
@@ -36,7 +33,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly EnemyStarSigil enemyStarSigilComponent = new EnemyStarSigil();
+    static readonly Assets.Code.Gameplay.Features.Weapon.EnemyStarSigil enemyStarSigilComponent = new Assets.Code.Gameplay.Features.Weapon.EnemyStarSigil();
 
     public bool isEnemyStarSigil {
         get { return HasComponent(GameComponentsLookup.EnemyStarSigil); }

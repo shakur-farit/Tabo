@@ -11,6 +11,7 @@ namespace Assets.Code.Gameplay.Input
 
 			Add(systems.Create<EmitAxisInputSystem>());
 			Add(systems.Create<EmitLeftMouseButtonInputSystem>());
+			Add(systems.Create<EmitEscButtonInputSystem>());
 		}
 	}
 }

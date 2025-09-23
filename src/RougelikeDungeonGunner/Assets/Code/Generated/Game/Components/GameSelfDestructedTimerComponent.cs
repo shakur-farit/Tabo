@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Assets.Code.Common;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherSelfDestructedTimer;
@@ -36,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public SelfDestructedTimer selfDestructedTimer { get { return (SelfDestructedTimer)GetComponent(GameComponentsLookup.SelfDestructedTimer); } }
+    public Assets.Code.Common.SelfDestructedTimer selfDestructedTimer { get { return (Assets.Code.Common.SelfDestructedTimer)GetComponent(GameComponentsLookup.SelfDestructedTimer); } }
     public float SelfDestructedTimer { get { return selfDestructedTimer.Value; } }
     public bool hasSelfDestructedTimer { get { return HasComponent(GameComponentsLookup.SelfDestructedTimer); } }
 
     public GameEntity AddSelfDestructedTimer(float newValue) {
         var index = GameComponentsLookup.SelfDestructedTimer;
-        var component = (SelfDestructedTimer)CreateComponent(index, typeof(SelfDestructedTimer));
+        var component = (Assets.Code.Common.SelfDestructedTimer)CreateComponent(index, typeof(Assets.Code.Common.SelfDestructedTimer));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -50,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceSelfDestructedTimer(float newValue) {
         var index = GameComponentsLookup.SelfDestructedTimer;
-        var component = (SelfDestructedTimer)CreateComponent(index, typeof(SelfDestructedTimer));
+        var component = (Assets.Code.Common.SelfDestructedTimer)CreateComponent(index, typeof(Assets.Code.Common.SelfDestructedTimer));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

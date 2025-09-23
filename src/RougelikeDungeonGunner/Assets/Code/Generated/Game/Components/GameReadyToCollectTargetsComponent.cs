@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Assets.Code.Gameplay.Features.Collection;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherReadyToCollectTargets;
@@ -36,7 +33,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly ReadyToCollectTargets readyToCollectTargetsComponent = new ReadyToCollectTargets();
+    static readonly Assets.Code.Gameplay.Features.Collection.ReadyToCollectTargets readyToCollectTargetsComponent = new Assets.Code.Gameplay.Features.Collection.ReadyToCollectTargets();
 
     public bool isReadyToCollectTargets {
         get { return HasComponent(GameComponentsLookup.ReadyToCollectTargets); }

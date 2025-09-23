@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Assets.Code.Gameplay.Features.Enchants;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherEnchantAlreadyHeld;
@@ -36,7 +33,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly EnchantAlreadyHeld enchantAlreadyHeldComponent = new EnchantAlreadyHeld();
+    static readonly Assets.Code.Gameplay.Features.Enchants.EnchantAlreadyHeld enchantAlreadyHeldComponent = new Assets.Code.Gameplay.Features.Enchants.EnchantAlreadyHeld();
 
     public bool isEnchantAlreadyHeld {
         get { return HasComponent(GameComponentsLookup.EnchantAlreadyHeld); }

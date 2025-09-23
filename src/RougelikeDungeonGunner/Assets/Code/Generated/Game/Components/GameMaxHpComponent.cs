@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Assets.Code.Gameplay.Features.Lifetime;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherMaxHp;
@@ -36,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public MaxHp maxHp { get { return (MaxHp)GetComponent(GameComponentsLookup.MaxHp); } }
+    public Assets.Code.Gameplay.Features.Lifetime.MaxHp maxHp { get { return (Assets.Code.Gameplay.Features.Lifetime.MaxHp)GetComponent(GameComponentsLookup.MaxHp); } }
     public float MaxHp { get { return maxHp.Value; } }
     public bool hasMaxHp { get { return HasComponent(GameComponentsLookup.MaxHp); } }
 
     public GameEntity AddMaxHp(float newValue) {
         var index = GameComponentsLookup.MaxHp;
-        var component = (MaxHp)CreateComponent(index, typeof(MaxHp));
+        var component = (Assets.Code.Gameplay.Features.Lifetime.MaxHp)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Lifetime.MaxHp));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -50,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceMaxHp(float newValue) {
         var index = GameComponentsLookup.MaxHp;
-        var component = (MaxHp)CreateComponent(index, typeof(MaxHp));
+        var component = (Assets.Code.Gameplay.Features.Lifetime.MaxHp)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Lifetime.MaxHp));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

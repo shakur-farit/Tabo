@@ -6,10 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Assets.Code.Gameplay.Features.Statuses;
-using Assets.Code.Gameplay.Features.Weapon;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherWeaponEnchants;
@@ -37,21 +33,21 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public WeaponEnchants weaponEnchants { get { return (WeaponEnchants)GetComponent(GameComponentsLookup.WeaponEnchants); } }
-    public System.Collections.Generic.Dictionary<int, StatusSetup> WeaponEnchants { get { return weaponEnchants.Value; } }
+    public Assets.Code.Gameplay.Features.Weapon.WeaponEnchants weaponEnchants { get { return (Assets.Code.Gameplay.Features.Weapon.WeaponEnchants)GetComponent(GameComponentsLookup.WeaponEnchants); } }
+    public System.Collections.Generic.Dictionary<int, Assets.Code.Gameplay.Features.Statuses.StatusSetup> WeaponEnchants { get { return weaponEnchants.Value; } }
     public bool hasWeaponEnchants { get { return HasComponent(GameComponentsLookup.WeaponEnchants); } }
 
-    public GameEntity AddWeaponEnchants(System.Collections.Generic.Dictionary<int, StatusSetup> newValue) {
+    public GameEntity AddWeaponEnchants(System.Collections.Generic.Dictionary<int, Assets.Code.Gameplay.Features.Statuses.StatusSetup> newValue) {
         var index = GameComponentsLookup.WeaponEnchants;
-        var component = (WeaponEnchants)CreateComponent(index, typeof(WeaponEnchants));
+        var component = (Assets.Code.Gameplay.Features.Weapon.WeaponEnchants)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Weapon.WeaponEnchants));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
     }
 
-    public GameEntity ReplaceWeaponEnchants(System.Collections.Generic.Dictionary<int, StatusSetup> newValue) {
+    public GameEntity ReplaceWeaponEnchants(System.Collections.Generic.Dictionary<int, Assets.Code.Gameplay.Features.Statuses.StatusSetup> newValue) {
         var index = GameComponentsLookup.WeaponEnchants;
-        var component = (WeaponEnchants)CreateComponent(index, typeof(WeaponEnchants));
+        var component = (Assets.Code.Gameplay.Features.Weapon.WeaponEnchants)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Weapon.WeaponEnchants));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

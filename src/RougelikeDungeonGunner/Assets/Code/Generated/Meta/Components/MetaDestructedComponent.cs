@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Assets.Code.Common;
-
 public sealed partial class MetaMatcher {
 
     static Entitas.IMatcher<MetaEntity> _matcherDestructed;
@@ -46,7 +43,7 @@ public partial class MetaEntity : IDestructedEntity { }
 //------------------------------------------------------------------------------
 public partial class MetaEntity {
 
-    static readonly Destructed destructedComponent = new Destructed();
+    static readonly Assets.Code.Common.Destructed destructedComponent = new Assets.Code.Common.Destructed();
 
     public bool isDestructed {
         get { return HasComponent(MetaComponentsLookup.Destructed); }

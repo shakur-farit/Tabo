@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Assets.Code.Gameplay.Features.Lifetime;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherProcessingDeath;
@@ -36,7 +33,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly ProcessingDeath processingDeathComponent = new ProcessingDeath();
+    static readonly Assets.Code.Gameplay.Features.Lifetime.ProcessingDeath processingDeathComponent = new Assets.Code.Gameplay.Features.Lifetime.ProcessingDeath();
 
     public bool isProcessingDeath {
         get { return HasComponent(GameComponentsLookup.ProcessingDeath); }

@@ -6,10 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Assets.Code.Gameplay.Common;
-using Assets.Code.Gameplay.Features.Statuses;
-
 public partial class Contexts : Entitas.IContexts {
 
     public static Contexts sharedInstance {
@@ -72,12 +68,12 @@ public partial class Contexts {
         game.AddEntityIndex(new Entitas.EntityIndex<GameEntity, int>(
             ApplierStatusLink,
             game.GetGroup(GameMatcher.ApplierStatusLink),
-            (e, c) => ((StatusComponents.ApplierStatusLink)c).Value));
+            (e, c) => ((Assets.Code.Gameplay.Features.Statuses.StatusComponents.ApplierStatusLink)c).Value));
 
         game.AddEntityIndex(new Entitas.PrimaryEntityIndex<GameEntity, int>(
             Id,
             game.GetGroup(GameMatcher.Id),
-            (e, c) => ((Id)c).Value));
+            (e, c) => ((Assets.Code.Gameplay.Common.Id)c).Value));
     }
 }
 

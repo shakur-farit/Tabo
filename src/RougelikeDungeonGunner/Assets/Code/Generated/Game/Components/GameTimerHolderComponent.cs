@@ -6,10 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Assets.Code.Meta.Features.Hud;
-using Assets.Code.Meta.Features.Hud.LevelTimerHolder.Behaviours;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherTimerHolder;
@@ -37,21 +33,21 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public TimerHolderComponent timerHolder { get { return (TimerHolderComponent)GetComponent(GameComponentsLookup.TimerHolder); } }
-    public TimerHolder TimerHolder { get { return timerHolder.Value; } }
+    public Assets.Code.Meta.Features.Hud.TimerHolderComponent timerHolder { get { return (Assets.Code.Meta.Features.Hud.TimerHolderComponent)GetComponent(GameComponentsLookup.TimerHolder); } }
+    public Assets.Code.Meta.Features.Hud.LevelTimerHolder.Behaviours.TimerHolder TimerHolder { get { return timerHolder.Value; } }
     public bool hasTimerHolder { get { return HasComponent(GameComponentsLookup.TimerHolder); } }
 
-    public GameEntity AddTimerHolder(TimerHolder newValue) {
+    public GameEntity AddTimerHolder(Assets.Code.Meta.Features.Hud.LevelTimerHolder.Behaviours.TimerHolder newValue) {
         var index = GameComponentsLookup.TimerHolder;
-        var component = (TimerHolderComponent)CreateComponent(index, typeof(TimerHolderComponent));
+        var component = (Assets.Code.Meta.Features.Hud.TimerHolderComponent)CreateComponent(index, typeof(Assets.Code.Meta.Features.Hud.TimerHolderComponent));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
     }
 
-    public GameEntity ReplaceTimerHolder(TimerHolder newValue) {
+    public GameEntity ReplaceTimerHolder(Assets.Code.Meta.Features.Hud.LevelTimerHolder.Behaviours.TimerHolder newValue) {
         var index = GameComponentsLookup.TimerHolder;
-        var component = (TimerHolderComponent)CreateComponent(index, typeof(TimerHolderComponent));
+        var component = (Assets.Code.Meta.Features.Hud.TimerHolderComponent)CreateComponent(index, typeof(Assets.Code.Meta.Features.Hud.TimerHolderComponent));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

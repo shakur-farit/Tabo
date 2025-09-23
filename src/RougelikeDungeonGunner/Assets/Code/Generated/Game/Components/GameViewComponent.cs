@@ -6,10 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Assets.Code.Common;
-using Assets.Code.Infrastructure.View;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherView;
@@ -37,21 +33,21 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public View view { get { return (View)GetComponent(GameComponentsLookup.View); } }
-    public IEntityView View { get { return view.Value; } }
+    public Assets.Code.Common.View view { get { return (Assets.Code.Common.View)GetComponent(GameComponentsLookup.View); } }
+    public Assets.Code.Infrastructure.View.IEntityView View { get { return view.Value; } }
     public bool hasView { get { return HasComponent(GameComponentsLookup.View); } }
 
-    public GameEntity AddView(IEntityView newValue) {
+    public GameEntity AddView(Assets.Code.Infrastructure.View.IEntityView newValue) {
         var index = GameComponentsLookup.View;
-        var component = (View)CreateComponent(index, typeof(View));
+        var component = (Assets.Code.Common.View)CreateComponent(index, typeof(Assets.Code.Common.View));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
     }
 
-    public GameEntity ReplaceView(IEntityView newValue) {
+    public GameEntity ReplaceView(Assets.Code.Infrastructure.View.IEntityView newValue) {
         var index = GameComponentsLookup.View;
-        var component = (View)CreateComponent(index, typeof(View));
+        var component = (Assets.Code.Common.View)CreateComponent(index, typeof(Assets.Code.Common.View));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

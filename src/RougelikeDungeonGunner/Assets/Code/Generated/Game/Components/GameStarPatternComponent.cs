@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Assets.Code.Gameplay.Features.AmmoPattern;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherStarPattern;
@@ -36,7 +33,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly StarPattern starPatternComponent = new StarPattern();
+    static readonly Assets.Code.Gameplay.Features.AmmoPattern.StarPattern starPatternComponent = new Assets.Code.Gameplay.Features.AmmoPattern.StarPattern();
 
     public bool isStarPattern {
         get { return HasComponent(GameComponentsLookup.StarPattern); }

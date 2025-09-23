@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Assets.Code.Gameplay.Features.Aura;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherAuraLayerMask;
@@ -36,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public AuraLayerMask auraLayerMask { get { return (AuraLayerMask)GetComponent(GameComponentsLookup.AuraLayerMask); } }
+    public Assets.Code.Gameplay.Features.Aura.AuraLayerMask auraLayerMask { get { return (Assets.Code.Gameplay.Features.Aura.AuraLayerMask)GetComponent(GameComponentsLookup.AuraLayerMask); } }
     public UnityEngine.LayerMask AuraLayerMask { get { return auraLayerMask.Value; } }
     public bool hasAuraLayerMask { get { return HasComponent(GameComponentsLookup.AuraLayerMask); } }
 
     public GameEntity AddAuraLayerMask(UnityEngine.LayerMask newValue) {
         var index = GameComponentsLookup.AuraLayerMask;
-        var component = (AuraLayerMask)CreateComponent(index, typeof(AuraLayerMask));
+        var component = (Assets.Code.Gameplay.Features.Aura.AuraLayerMask)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Aura.AuraLayerMask));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -50,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceAuraLayerMask(UnityEngine.LayerMask newValue) {
         var index = GameComponentsLookup.AuraLayerMask;
-        var component = (AuraLayerMask)CreateComponent(index, typeof(AuraLayerMask));
+        var component = (Assets.Code.Gameplay.Features.Aura.AuraLayerMask)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Aura.AuraLayerMask));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

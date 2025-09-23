@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Assets.Code.Gameplay.Features.AmmoPattern;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherPatternRadius;
@@ -36,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public PatternRadius patternRadius { get { return (PatternRadius)GetComponent(GameComponentsLookup.PatternRadius); } }
+    public Assets.Code.Gameplay.Features.AmmoPattern.PatternRadius patternRadius { get { return (Assets.Code.Gameplay.Features.AmmoPattern.PatternRadius)GetComponent(GameComponentsLookup.PatternRadius); } }
     public float PatternRadius { get { return patternRadius.Value; } }
     public bool hasPatternRadius { get { return HasComponent(GameComponentsLookup.PatternRadius); } }
 
     public GameEntity AddPatternRadius(float newValue) {
         var index = GameComponentsLookup.PatternRadius;
-        var component = (PatternRadius)CreateComponent(index, typeof(PatternRadius));
+        var component = (Assets.Code.Gameplay.Features.AmmoPattern.PatternRadius)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.AmmoPattern.PatternRadius));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -50,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplacePatternRadius(float newValue) {
         var index = GameComponentsLookup.PatternRadius;
-        var component = (PatternRadius)CreateComponent(index, typeof(PatternRadius));
+        var component = (Assets.Code.Gameplay.Features.AmmoPattern.PatternRadius)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.AmmoPattern.PatternRadius));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

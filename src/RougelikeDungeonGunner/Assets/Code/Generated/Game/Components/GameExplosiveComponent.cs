@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Assets.Code.Gameplay.Features.Statuses;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherExplosive;
@@ -36,7 +33,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly StatusComponents.Explosive explosiveComponent = new StatusComponents.Explosive();
+    static readonly Assets.Code.Gameplay.Features.Statuses.StatusComponents.Explosive explosiveComponent = new Assets.Code.Gameplay.Features.Statuses.StatusComponents.Explosive();
 
     public bool isExplosive {
         get { return HasComponent(GameComponentsLookup.Explosive); }

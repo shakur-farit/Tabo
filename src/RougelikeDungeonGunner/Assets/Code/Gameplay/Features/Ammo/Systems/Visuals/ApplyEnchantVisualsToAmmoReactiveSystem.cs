@@ -8,7 +8,6 @@ namespace Assets.Code.Gameplay.Features.Ammo.Systems.Visuals
 	{
 		public ApplyEnchantVisualsToAmmoReactiveSystem(GameContext context) : base(context)
 		{
-
 		} 
 
 		protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)

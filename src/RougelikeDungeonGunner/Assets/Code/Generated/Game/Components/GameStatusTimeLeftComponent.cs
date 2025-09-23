@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Assets.Code.Gameplay.Features.Statuses;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherStatusTimeLeft;
@@ -36,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public StatusComponents.StatusTimeLeft statusTimeLeft { get { return (StatusComponents.StatusTimeLeft)GetComponent(GameComponentsLookup.StatusTimeLeft); } }
+    public Assets.Code.Gameplay.Features.Statuses.StatusComponents.StatusTimeLeft statusTimeLeft { get { return (Assets.Code.Gameplay.Features.Statuses.StatusComponents.StatusTimeLeft)GetComponent(GameComponentsLookup.StatusTimeLeft); } }
     public float StatusTimeLeft { get { return statusTimeLeft.Value; } }
     public bool hasStatusTimeLeft { get { return HasComponent(GameComponentsLookup.StatusTimeLeft); } }
 
     public GameEntity AddStatusTimeLeft(float newValue) {
         var index = GameComponentsLookup.StatusTimeLeft;
-        var component = (StatusComponents.StatusTimeLeft)CreateComponent(index, typeof(StatusComponents.StatusTimeLeft));
+        var component = (Assets.Code.Gameplay.Features.Statuses.StatusComponents.StatusTimeLeft)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Statuses.StatusComponents.StatusTimeLeft));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -50,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceStatusTimeLeft(float newValue) {
         var index = GameComponentsLookup.StatusTimeLeft;
-        var component = (StatusComponents.StatusTimeLeft)CreateComponent(index, typeof(StatusComponents.StatusTimeLeft));
+        var component = (Assets.Code.Gameplay.Features.Statuses.StatusComponents.StatusTimeLeft)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Statuses.StatusComponents.StatusTimeLeft));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

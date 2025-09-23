@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Assets.Code.Gameplay.Features.Movement;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherOrbitalMovement;
@@ -36,7 +33,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly OrbitalMovement orbitalMovementComponent = new OrbitalMovement();
+    static readonly Assets.Code.Gameplay.Features.Movement.OrbitalMovement orbitalMovementComponent = new Assets.Code.Gameplay.Features.Movement.OrbitalMovement();
 
     public bool isOrbitalMovement {
         get { return HasComponent(GameComponentsLookup.OrbitalMovement); }

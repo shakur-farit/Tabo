@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Assets.Code.Gameplay.Features.AmmoPattern;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherPatternEmpty;
@@ -36,7 +33,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly PatternEmpty patternEmptyComponent = new PatternEmpty();
+    static readonly Assets.Code.Gameplay.Features.AmmoPattern.PatternEmpty patternEmptyComponent = new Assets.Code.Gameplay.Features.AmmoPattern.PatternEmpty();
 
     public bool isPatternEmpty {
         get { return HasComponent(GameComponentsLookup.PatternEmpty); }

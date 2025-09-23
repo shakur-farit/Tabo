@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Assets.Code.Gameplay.Features.Statuses;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherApplied;
@@ -36,7 +33,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly StatusComponents.Applied appliedComponent = new StatusComponents.Applied();
+    static readonly Assets.Code.Gameplay.Features.Statuses.StatusComponents.Applied appliedComponent = new Assets.Code.Gameplay.Features.Statuses.StatusComponents.Applied();
 
     public bool isApplied {
         get { return HasComponent(GameComponentsLookup.Applied); }

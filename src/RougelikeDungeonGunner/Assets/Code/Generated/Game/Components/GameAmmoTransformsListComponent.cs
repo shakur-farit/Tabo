@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Assets.Code.Gameplay.Features.AmmoPattern;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherAmmoTransformsList;
@@ -36,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public AmmoTransformsList ammoTransformsList { get { return (AmmoTransformsList)GetComponent(GameComponentsLookup.AmmoTransformsList); } }
+    public Assets.Code.Gameplay.Features.AmmoPattern.AmmoTransformsList ammoTransformsList { get { return (Assets.Code.Gameplay.Features.AmmoPattern.AmmoTransformsList)GetComponent(GameComponentsLookup.AmmoTransformsList); } }
     public System.Collections.Generic.List<UnityEngine.Transform> AmmoTransformsList { get { return ammoTransformsList.Value; } }
     public bool hasAmmoTransformsList { get { return HasComponent(GameComponentsLookup.AmmoTransformsList); } }
 
     public GameEntity AddAmmoTransformsList(System.Collections.Generic.List<UnityEngine.Transform> newValue) {
         var index = GameComponentsLookup.AmmoTransformsList;
-        var component = (AmmoTransformsList)CreateComponent(index, typeof(AmmoTransformsList));
+        var component = (Assets.Code.Gameplay.Features.AmmoPattern.AmmoTransformsList)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.AmmoPattern.AmmoTransformsList));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -50,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceAmmoTransformsList(System.Collections.Generic.List<UnityEngine.Transform> newValue) {
         var index = GameComponentsLookup.AmmoTransformsList;
-        var component = (AmmoTransformsList)CreateComponent(index, typeof(AmmoTransformsList));
+        var component = (Assets.Code.Gameplay.Features.AmmoPattern.AmmoTransformsList)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.AmmoPattern.AmmoTransformsList));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

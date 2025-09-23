@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Assets.Code.Gameplay.Features.Weapon;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherHeroTriangleSigil;
@@ -36,7 +33,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly HeroTriangleSigil heroTriangleSigilComponent = new HeroTriangleSigil();
+    static readonly Assets.Code.Gameplay.Features.Weapon.HeroTriangleSigil heroTriangleSigilComponent = new Assets.Code.Gameplay.Features.Weapon.HeroTriangleSigil();
 
     public bool isHeroTriangleSigil {
         get { return HasComponent(GameComponentsLookup.HeroTriangleSigil); }

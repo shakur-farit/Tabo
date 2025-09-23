@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Assets.Code.Gameplay.Features.Collection;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherProcessedTargets;
@@ -36,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public ProcessedTargets processedTargets { get { return (ProcessedTargets)GetComponent(GameComponentsLookup.ProcessedTargets); } }
+    public Assets.Code.Gameplay.Features.Collection.ProcessedTargets processedTargets { get { return (Assets.Code.Gameplay.Features.Collection.ProcessedTargets)GetComponent(GameComponentsLookup.ProcessedTargets); } }
     public System.Collections.Generic.List<int> ProcessedTargets { get { return processedTargets.Value; } }
     public bool hasProcessedTargets { get { return HasComponent(GameComponentsLookup.ProcessedTargets); } }
 
     public GameEntity AddProcessedTargets(System.Collections.Generic.List<int> newValue) {
         var index = GameComponentsLookup.ProcessedTargets;
-        var component = (ProcessedTargets)CreateComponent(index, typeof(ProcessedTargets));
+        var component = (Assets.Code.Gameplay.Features.Collection.ProcessedTargets)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Collection.ProcessedTargets));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -50,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceProcessedTargets(System.Collections.Generic.List<int> newValue) {
         var index = GameComponentsLookup.ProcessedTargets;
-        var component = (ProcessedTargets)CreateComponent(index, typeof(ProcessedTargets));
+        var component = (Assets.Code.Gameplay.Features.Collection.ProcessedTargets)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Collection.ProcessedTargets));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

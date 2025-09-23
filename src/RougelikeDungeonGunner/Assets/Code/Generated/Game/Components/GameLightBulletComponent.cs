@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Assets.Code.Gameplay.Features.Ammo;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherLightBullet;
@@ -36,7 +33,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly LightBullet lightBulletComponent = new LightBullet();
+    static readonly Assets.Code.Gameplay.Features.Ammo.LightBullet lightBulletComponent = new Assets.Code.Gameplay.Features.Ammo.LightBullet();
 
     public bool isLightBullet {
         get { return HasComponent(GameComponentsLookup.LightBullet); }

@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Assets.Code.Gameplay.Common;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherTrailRenderer;
@@ -36,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public TrailRendererComponent trailRenderer { get { return (TrailRendererComponent)GetComponent(GameComponentsLookup.TrailRenderer); } }
+    public Assets.Code.Gameplay.Common.TrailRendererComponent trailRenderer { get { return (Assets.Code.Gameplay.Common.TrailRendererComponent)GetComponent(GameComponentsLookup.TrailRenderer); } }
     public UnityEngine.TrailRenderer TrailRenderer { get { return trailRenderer.Value; } }
     public bool hasTrailRenderer { get { return HasComponent(GameComponentsLookup.TrailRenderer); } }
 
     public GameEntity AddTrailRenderer(UnityEngine.TrailRenderer newValue) {
         var index = GameComponentsLookup.TrailRenderer;
-        var component = (TrailRendererComponent)CreateComponent(index, typeof(TrailRendererComponent));
+        var component = (Assets.Code.Gameplay.Common.TrailRendererComponent)CreateComponent(index, typeof(Assets.Code.Gameplay.Common.TrailRendererComponent));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -50,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceTrailRenderer(UnityEngine.TrailRenderer newValue) {
         var index = GameComponentsLookup.TrailRenderer;
-        var component = (TrailRendererComponent)CreateComponent(index, typeof(TrailRendererComponent));
+        var component = (Assets.Code.Gameplay.Common.TrailRendererComponent)CreateComponent(index, typeof(Assets.Code.Gameplay.Common.TrailRendererComponent));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

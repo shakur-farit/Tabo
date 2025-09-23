@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Assets.Code.Gameplay.Features.Collection;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherCollisionInFront;
@@ -36,7 +33,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly CollisionInFront collisionInFrontComponent = new CollisionInFront();
+    static readonly Assets.Code.Gameplay.Features.Collection.CollisionInFront collisionInFrontComponent = new Assets.Code.Gameplay.Features.Collection.CollisionInFront();
 
     public bool isCollisionInFront {
         get { return HasComponent(GameComponentsLookup.CollisionInFront); }

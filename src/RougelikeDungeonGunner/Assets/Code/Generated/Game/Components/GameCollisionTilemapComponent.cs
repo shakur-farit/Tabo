@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Assets.Code.Gameplay.Features.Dungeon;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherCollisionTilemap;
@@ -36,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public CollisionTilemap collisionTilemap { get { return (CollisionTilemap)GetComponent(GameComponentsLookup.CollisionTilemap); } }
+    public Assets.Code.Gameplay.Features.Dungeon.CollisionTilemap collisionTilemap { get { return (Assets.Code.Gameplay.Features.Dungeon.CollisionTilemap)GetComponent(GameComponentsLookup.CollisionTilemap); } }
     public UnityEngine.Tilemaps.Tilemap CollisionTilemap { get { return collisionTilemap.Value; } }
     public bool hasCollisionTilemap { get { return HasComponent(GameComponentsLookup.CollisionTilemap); } }
 
     public GameEntity AddCollisionTilemap(UnityEngine.Tilemaps.Tilemap newValue) {
         var index = GameComponentsLookup.CollisionTilemap;
-        var component = (CollisionTilemap)CreateComponent(index, typeof(CollisionTilemap));
+        var component = (Assets.Code.Gameplay.Features.Dungeon.CollisionTilemap)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Dungeon.CollisionTilemap));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -50,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceCollisionTilemap(UnityEngine.Tilemaps.Tilemap newValue) {
         var index = GameComponentsLookup.CollisionTilemap;
-        var component = (CollisionTilemap)CreateComponent(index, typeof(CollisionTilemap));
+        var component = (Assets.Code.Gameplay.Features.Dungeon.CollisionTilemap)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Dungeon.CollisionTilemap));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

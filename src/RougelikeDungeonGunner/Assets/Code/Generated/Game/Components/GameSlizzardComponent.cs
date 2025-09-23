@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Assets.Code.Gameplay.Features.Enemy;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherSlizzard;
@@ -36,7 +33,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Slizzard slizzardComponent = new Slizzard();
+    static readonly Assets.Code.Gameplay.Features.Enemy.Slizzard slizzardComponent = new Assets.Code.Gameplay.Features.Enemy.Slizzard();
 
     public bool isSlizzard {
         get { return HasComponent(GameComponentsLookup.Slizzard); }

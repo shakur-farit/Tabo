@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Assets.Code.Common;
-
 public static class MetaComponentsLookup {
 
     public const int Destructed = 0;
@@ -20,6 +17,6 @@ public static class MetaComponentsLookup {
     };
 
     public static readonly System.Type[] componentTypes = {
-        typeof(Destructed)
+        typeof(Assets.Code.Common.Destructed)
     };
 }

@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Assets.Code.Gameplay.Features.Effects;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherProducerId;
@@ -36,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public ProducerId producerId { get { return (ProducerId)GetComponent(GameComponentsLookup.ProducerId); } }
+    public Assets.Code.Gameplay.Features.Effects.ProducerId producerId { get { return (Assets.Code.Gameplay.Features.Effects.ProducerId)GetComponent(GameComponentsLookup.ProducerId); } }
     public int ProducerId { get { return producerId.Value; } }
     public bool hasProducerId { get { return HasComponent(GameComponentsLookup.ProducerId); } }
 
     public GameEntity AddProducerId(int newValue) {
         var index = GameComponentsLookup.ProducerId;
-        var component = (ProducerId)CreateComponent(index, typeof(ProducerId));
+        var component = (Assets.Code.Gameplay.Features.Effects.ProducerId)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Effects.ProducerId));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -50,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceProducerId(int newValue) {
         var index = GameComponentsLookup.ProducerId;
-        var component = (ProducerId)CreateComponent(index, typeof(ProducerId));
+        var component = (Assets.Code.Gameplay.Features.Effects.ProducerId)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Effects.ProducerId));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

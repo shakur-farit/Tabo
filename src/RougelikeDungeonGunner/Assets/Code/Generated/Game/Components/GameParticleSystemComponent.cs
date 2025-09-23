@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Assets.Code.Gameplay.Common;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherParticleSystem;
@@ -36,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public ParticleSystemComponent particleSystem { get { return (ParticleSystemComponent)GetComponent(GameComponentsLookup.ParticleSystem); } }
+    public Assets.Code.Gameplay.Common.ParticleSystemComponent particleSystem { get { return (Assets.Code.Gameplay.Common.ParticleSystemComponent)GetComponent(GameComponentsLookup.ParticleSystem); } }
     public UnityEngine.ParticleSystem ParticleSystem { get { return particleSystem.Value; } }
     public bool hasParticleSystem { get { return HasComponent(GameComponentsLookup.ParticleSystem); } }
 
     public GameEntity AddParticleSystem(UnityEngine.ParticleSystem newValue) {
         var index = GameComponentsLookup.ParticleSystem;
-        var component = (ParticleSystemComponent)CreateComponent(index, typeof(ParticleSystemComponent));
+        var component = (Assets.Code.Gameplay.Common.ParticleSystemComponent)CreateComponent(index, typeof(Assets.Code.Gameplay.Common.ParticleSystemComponent));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -50,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceParticleSystem(UnityEngine.ParticleSystem newValue) {
         var index = GameComponentsLookup.ParticleSystem;
-        var component = (ParticleSystemComponent)CreateComponent(index, typeof(ParticleSystemComponent));
+        var component = (Assets.Code.Gameplay.Common.ParticleSystemComponent)CreateComponent(index, typeof(Assets.Code.Gameplay.Common.ParticleSystemComponent));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

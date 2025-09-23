@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Assets.Code.Gameplay.Features.Weapon;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherInfinityAmmo;
@@ -36,7 +33,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly InfinityAmmo infinityAmmoComponent = new InfinityAmmo();
+    static readonly Assets.Code.Gameplay.Features.Weapon.InfinityAmmo infinityAmmoComponent = new Assets.Code.Gameplay.Features.Weapon.InfinityAmmo();
 
     public bool isInfinityAmmo {
         get { return HasComponent(GameComponentsLookup.InfinityAmmo); }

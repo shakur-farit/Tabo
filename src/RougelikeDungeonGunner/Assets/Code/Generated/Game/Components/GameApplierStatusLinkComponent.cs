@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Assets.Code.Gameplay.Features.Statuses;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherApplierStatusLink;
@@ -36,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public StatusComponents.ApplierStatusLink applierStatusLink { get { return (StatusComponents.ApplierStatusLink)GetComponent(GameComponentsLookup.ApplierStatusLink); } }
+    public Assets.Code.Gameplay.Features.Statuses.StatusComponents.ApplierStatusLink applierStatusLink { get { return (Assets.Code.Gameplay.Features.Statuses.StatusComponents.ApplierStatusLink)GetComponent(GameComponentsLookup.ApplierStatusLink); } }
     public int ApplierStatusLink { get { return applierStatusLink.Value; } }
     public bool hasApplierStatusLink { get { return HasComponent(GameComponentsLookup.ApplierStatusLink); } }
 
     public GameEntity AddApplierStatusLink(int newValue) {
         var index = GameComponentsLookup.ApplierStatusLink;
-        var component = (StatusComponents.ApplierStatusLink)CreateComponent(index, typeof(StatusComponents.ApplierStatusLink));
+        var component = (Assets.Code.Gameplay.Features.Statuses.StatusComponents.ApplierStatusLink)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Statuses.StatusComponents.ApplierStatusLink));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -50,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceApplierStatusLink(int newValue) {
         var index = GameComponentsLookup.ApplierStatusLink;
-        var component = (StatusComponents.ApplierStatusLink)CreateComponent(index, typeof(StatusComponents.ApplierStatusLink));
+        var component = (Assets.Code.Gameplay.Features.Statuses.StatusComponents.ApplierStatusLink)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Statuses.StatusComponents.ApplierStatusLink));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

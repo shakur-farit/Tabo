@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Assets.Code.Gameplay.Features.Aura;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherAura;
@@ -36,7 +33,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Aura auraComponent = new Aura();
+    static readonly Assets.Code.Gameplay.Features.Aura.Aura auraComponent = new Assets.Code.Gameplay.Features.Aura.Aura();
 
     public bool isAura {
         get { return HasComponent(GameComponentsLookup.Aura); }

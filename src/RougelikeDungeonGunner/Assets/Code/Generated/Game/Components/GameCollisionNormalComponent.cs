@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Assets.Code.Gameplay.Features.Collection;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherCollisionNormal;
@@ -36,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public CollisionNormal collisionNormal { get { return (CollisionNormal)GetComponent(GameComponentsLookup.CollisionNormal); } }
+    public Assets.Code.Gameplay.Features.Collection.CollisionNormal collisionNormal { get { return (Assets.Code.Gameplay.Features.Collection.CollisionNormal)GetComponent(GameComponentsLookup.CollisionNormal); } }
     public UnityEngine.Vector2 CollisionNormal { get { return collisionNormal.Value; } }
     public bool hasCollisionNormal { get { return HasComponent(GameComponentsLookup.CollisionNormal); } }
 
     public GameEntity AddCollisionNormal(UnityEngine.Vector2 newValue) {
         var index = GameComponentsLookup.CollisionNormal;
-        var component = (CollisionNormal)CreateComponent(index, typeof(CollisionNormal));
+        var component = (Assets.Code.Gameplay.Features.Collection.CollisionNormal)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Collection.CollisionNormal));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -50,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceCollisionNormal(UnityEngine.Vector2 newValue) {
         var index = GameComponentsLookup.CollisionNormal;
-        var component = (CollisionNormal)CreateComponent(index, typeof(CollisionNormal));
+        var component = (Assets.Code.Gameplay.Features.Collection.CollisionNormal)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Collection.CollisionNormal));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Assets.Code.Gameplay.Features.Collection;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherBoxCastHeight;
@@ -36,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public BoxCastHeight boxCastHeight { get { return (BoxCastHeight)GetComponent(GameComponentsLookup.BoxCastHeight); } }
+    public Assets.Code.Gameplay.Features.Collection.BoxCastHeight boxCastHeight { get { return (Assets.Code.Gameplay.Features.Collection.BoxCastHeight)GetComponent(GameComponentsLookup.BoxCastHeight); } }
     public float BoxCastHeight { get { return boxCastHeight.Value; } }
     public bool hasBoxCastHeight { get { return HasComponent(GameComponentsLookup.BoxCastHeight); } }
 
     public GameEntity AddBoxCastHeight(float newValue) {
         var index = GameComponentsLookup.BoxCastHeight;
-        var component = (BoxCastHeight)CreateComponent(index, typeof(BoxCastHeight));
+        var component = (Assets.Code.Gameplay.Features.Collection.BoxCastHeight)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Collection.BoxCastHeight));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -50,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceBoxCastHeight(float newValue) {
         var index = GameComponentsLookup.BoxCastHeight;
-        var component = (BoxCastHeight)CreateComponent(index, typeof(BoxCastHeight));
+        var component = (Assets.Code.Gameplay.Features.Collection.BoxCastHeight)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Collection.BoxCastHeight));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

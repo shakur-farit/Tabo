@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Assets.Code.Gameplay.Features.Weapon;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherPrechargeTime;
@@ -36,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public PrechargeTime prechargeTime { get { return (PrechargeTime)GetComponent(GameComponentsLookup.PrechargeTime); } }
+    public Assets.Code.Gameplay.Features.Weapon.PrechargeTime prechargeTime { get { return (Assets.Code.Gameplay.Features.Weapon.PrechargeTime)GetComponent(GameComponentsLookup.PrechargeTime); } }
     public float PrechargeTime { get { return prechargeTime.Value; } }
     public bool hasPrechargeTime { get { return HasComponent(GameComponentsLookup.PrechargeTime); } }
 
     public GameEntity AddPrechargeTime(float newValue) {
         var index = GameComponentsLookup.PrechargeTime;
-        var component = (PrechargeTime)CreateComponent(index, typeof(PrechargeTime));
+        var component = (Assets.Code.Gameplay.Features.Weapon.PrechargeTime)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Weapon.PrechargeTime));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -50,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplacePrechargeTime(float newValue) {
         var index = GameComponentsLookup.PrechargeTime;
-        var component = (PrechargeTime)CreateComponent(index, typeof(PrechargeTime));
+        var component = (Assets.Code.Gameplay.Features.Weapon.PrechargeTime)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Weapon.PrechargeTime));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

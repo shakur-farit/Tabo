@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Assets.Code.Common;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherUnparented;
@@ -36,7 +33,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Unparented unparentedComponent = new Unparented();
+    static readonly Assets.Code.Common.Unparented unparentedComponent = new Assets.Code.Common.Unparented();
 
     public bool isUnparented {
         get { return HasComponent(GameComponentsLookup.Unparented); }

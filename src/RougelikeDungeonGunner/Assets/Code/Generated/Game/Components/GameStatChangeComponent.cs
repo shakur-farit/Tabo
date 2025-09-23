@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Assets.Code.Gameplay.Features.CharacterStats;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherStatChange;
@@ -36,21 +33,21 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public StatChange statChange { get { return (StatChange)GetComponent(GameComponentsLookup.StatChange); } }
-    public Stats StatChange { get { return statChange.Value; } }
+    public Assets.Code.Gameplay.Features.CharacterStats.StatChange statChange { get { return (Assets.Code.Gameplay.Features.CharacterStats.StatChange)GetComponent(GameComponentsLookup.StatChange); } }
+    public Assets.Code.Gameplay.Features.CharacterStats.Stats StatChange { get { return statChange.Value; } }
     public bool hasStatChange { get { return HasComponent(GameComponentsLookup.StatChange); } }
 
-    public GameEntity AddStatChange(Stats newValue) {
+    public GameEntity AddStatChange(Assets.Code.Gameplay.Features.CharacterStats.Stats newValue) {
         var index = GameComponentsLookup.StatChange;
-        var component = (StatChange)CreateComponent(index, typeof(StatChange));
+        var component = (Assets.Code.Gameplay.Features.CharacterStats.StatChange)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.CharacterStats.StatChange));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
     }
 
-    public GameEntity ReplaceStatChange(Stats newValue) {
+    public GameEntity ReplaceStatChange(Assets.Code.Gameplay.Features.CharacterStats.Stats newValue) {
         var index = GameComponentsLookup.StatChange;
-        var component = (StatChange)CreateComponent(index, typeof(StatChange));
+        var component = (Assets.Code.Gameplay.Features.CharacterStats.StatChange)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.CharacterStats.StatChange));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

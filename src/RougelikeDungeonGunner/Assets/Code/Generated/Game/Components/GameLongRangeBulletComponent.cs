@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Assets.Code.Gameplay.Features.Ammo;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherLongRangeBullet;
@@ -36,7 +33,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly LongRangeBullet longRangeBulletComponent = new LongRangeBullet();
+    static readonly Assets.Code.Gameplay.Features.Ammo.LongRangeBullet longRangeBulletComponent = new Assets.Code.Gameplay.Features.Ammo.LongRangeBullet();
 
     public bool isLongRangeBullet {
         get { return HasComponent(GameComponentsLookup.LongRangeBullet); }

@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Assets.Code.Gameplay.Features.Weapon;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherMaxWeaponEnchantsCount;
@@ -36,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public MaxWeaponEnchantsCount maxWeaponEnchantsCount { get { return (MaxWeaponEnchantsCount)GetComponent(GameComponentsLookup.MaxWeaponEnchantsCount); } }
+    public Assets.Code.Gameplay.Features.Weapon.MaxWeaponEnchantsCount maxWeaponEnchantsCount { get { return (Assets.Code.Gameplay.Features.Weapon.MaxWeaponEnchantsCount)GetComponent(GameComponentsLookup.MaxWeaponEnchantsCount); } }
     public int MaxWeaponEnchantsCount { get { return maxWeaponEnchantsCount.Value; } }
     public bool hasMaxWeaponEnchantsCount { get { return HasComponent(GameComponentsLookup.MaxWeaponEnchantsCount); } }
 
     public GameEntity AddMaxWeaponEnchantsCount(int newValue) {
         var index = GameComponentsLookup.MaxWeaponEnchantsCount;
-        var component = (MaxWeaponEnchantsCount)CreateComponent(index, typeof(MaxWeaponEnchantsCount));
+        var component = (Assets.Code.Gameplay.Features.Weapon.MaxWeaponEnchantsCount)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Weapon.MaxWeaponEnchantsCount));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -50,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceMaxWeaponEnchantsCount(int newValue) {
         var index = GameComponentsLookup.MaxWeaponEnchantsCount;
-        var component = (MaxWeaponEnchantsCount)CreateComponent(index, typeof(MaxWeaponEnchantsCount));
+        var component = (Assets.Code.Gameplay.Features.Weapon.MaxWeaponEnchantsCount)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Weapon.MaxWeaponEnchantsCount));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;
