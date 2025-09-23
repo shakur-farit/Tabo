@@ -33,7 +33,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Assets.Code.Gameplay.Features.Statuses.StatusComponents.Unapplied unappliedComponent = new Assets.Code.Gameplay.Features.Statuses.StatusComponents.Unapplied();
+    static readonly Code.Gameplay.Features.Statuses.StatusComponents.Unapplied unappliedComponent = new Code.Gameplay.Features.Statuses.StatusComponents.Unapplied();
 
     public bool isUnapplied {
         get { return HasComponent(GameComponentsLookup.Unapplied); }

@@ -1,9 +1,9 @@
-﻿using Assets.Code.Meta.Features.Shop.Weapon.Configs;
+﻿using Code.Meta.Features.Shop.Weapon.Configs;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Assets.Code.Meta.Features.Shop.Weapon.Behaviours
+namespace Code.Meta.Features.Shop.Weapon.Behaviours
 {
 	public class WeaponToBuyItem : MonoBehaviour
 	{

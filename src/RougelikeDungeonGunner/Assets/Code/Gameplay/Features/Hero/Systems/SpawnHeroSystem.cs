@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
-using Assets.Code.Gameplay.Features.Hero.Factory;
-using Assets.Code.Progress.Provider;
+using Code.Gameplay.Features.Hero.Factory;
+using Code.Progress.Provider;
 using Entitas;
 
-namespace Assets.Code.Gameplay.Features.Hero.Systems
+namespace Code.Gameplay.Features.Hero.Systems
 {
 	public class SpawnHeroSystem : IExecuteSystem
 	{

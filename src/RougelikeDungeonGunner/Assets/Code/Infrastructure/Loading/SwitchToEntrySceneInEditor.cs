@@ -2,7 +2,7 @@
 using UnityEngine.SceneManagement;
 using Zenject;
 
-namespace Assets.Code.Infrastructure.Loading
+namespace Code.Infrastructure.Loading
 {
   // Has execution order to start before every other script
   public class SwitchToEntrySceneInEditor : MonoBehaviour

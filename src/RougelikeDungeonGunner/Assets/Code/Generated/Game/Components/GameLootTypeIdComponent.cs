@@ -33,21 +33,21 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Assets.Code.Gameplay.Features.Loot.LootComponents.LootTypeIdComponent lootTypeId { get { return (Assets.Code.Gameplay.Features.Loot.LootComponents.LootTypeIdComponent)GetComponent(GameComponentsLookup.LootTypeId); } }
-    public Assets.Code.Gameplay.Features.Loot.LootTypeId LootTypeId { get { return lootTypeId.Value; } }
+    public Code.Gameplay.Features.Loot.LootComponents.LootTypeIdComponent lootTypeId { get { return (Code.Gameplay.Features.Loot.LootComponents.LootTypeIdComponent)GetComponent(GameComponentsLookup.LootTypeId); } }
+    public Code.Gameplay.Features.Loot.LootTypeId LootTypeId { get { return lootTypeId.Value; } }
     public bool hasLootTypeId { get { return HasComponent(GameComponentsLookup.LootTypeId); } }
 
-    public GameEntity AddLootTypeId(Assets.Code.Gameplay.Features.Loot.LootTypeId newValue) {
+    public GameEntity AddLootTypeId(Code.Gameplay.Features.Loot.LootTypeId newValue) {
         var index = GameComponentsLookup.LootTypeId;
-        var component = (Assets.Code.Gameplay.Features.Loot.LootComponents.LootTypeIdComponent)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Loot.LootComponents.LootTypeIdComponent));
+        var component = (Code.Gameplay.Features.Loot.LootComponents.LootTypeIdComponent)CreateComponent(index, typeof(Code.Gameplay.Features.Loot.LootComponents.LootTypeIdComponent));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
     }
 
-    public GameEntity ReplaceLootTypeId(Assets.Code.Gameplay.Features.Loot.LootTypeId newValue) {
+    public GameEntity ReplaceLootTypeId(Code.Gameplay.Features.Loot.LootTypeId newValue) {
         var index = GameComponentsLookup.LootTypeId;
-        var component = (Assets.Code.Gameplay.Features.Loot.LootComponents.LootTypeIdComponent)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Loot.LootComponents.LootTypeIdComponent));
+        var component = (Code.Gameplay.Features.Loot.LootComponents.LootTypeIdComponent)CreateComponent(index, typeof(Code.Gameplay.Features.Loot.LootComponents.LootTypeIdComponent));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

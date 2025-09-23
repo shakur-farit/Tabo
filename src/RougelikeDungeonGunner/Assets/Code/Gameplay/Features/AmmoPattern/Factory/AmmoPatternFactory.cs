@@ -1,12 +1,12 @@
 ﻿using System;
-using Assets.Code.Common.Extensions;
-using Assets.Code.Gameplay.Features.Ammo;
-using Assets.Code.Gameplay.Features.Weapon.Configs;
-using Assets.Code.Infrastructure.Identifiers;
 using Code.Common.Entity;
+using Code.Common.Extensions;
+using Code.Gameplay.Features.Ammo;
+using Code.Gameplay.Features.Weapon.Configs;
+using Code.Infrastructure.Identifiers;
 using UnityEngine;
 
-namespace Assets.Code.Gameplay.Features.AmmoPattern.Factory
+namespace Code.Gameplay.Features.AmmoPattern.Factory
 {
 	public class AmmoPatternFactory : IAmmoPatternFactory
 	{

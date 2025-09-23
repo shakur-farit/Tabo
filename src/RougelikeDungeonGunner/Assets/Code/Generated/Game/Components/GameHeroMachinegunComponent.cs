@@ -33,7 +33,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Assets.Code.Gameplay.Features.Weapon.HeroMachinegun heroMachinegunComponent = new Assets.Code.Gameplay.Features.Weapon.HeroMachinegun();
+    static readonly Code.Gameplay.Features.Weapon.HeroMachinegun heroMachinegunComponent = new Code.Gameplay.Features.Weapon.HeroMachinegun();
 
     public bool isHeroMachinegun {
         get { return HasComponent(GameComponentsLookup.HeroMachinegun); }

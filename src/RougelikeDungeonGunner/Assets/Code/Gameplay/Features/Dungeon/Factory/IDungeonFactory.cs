@@ -1,4 +1,4 @@
-﻿namespace Assets.Code.Gameplay.Features.Dungeon.Factory
+﻿namespace Code.Gameplay.Features.Dungeon.Factory
 {
 	public interface IDungeonFactory
 	{

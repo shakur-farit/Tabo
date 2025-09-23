@@ -33,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Assets.Code.Gameplay.Features.Movement.OrbitInitialAngle orbitInitialAngle { get { return (Assets.Code.Gameplay.Features.Movement.OrbitInitialAngle)GetComponent(GameComponentsLookup.OrbitInitialAngle); } }
+    public Code.Gameplay.Features.Movement.OrbitInitialAngle orbitInitialAngle { get { return (Code.Gameplay.Features.Movement.OrbitInitialAngle)GetComponent(GameComponentsLookup.OrbitInitialAngle); } }
     public float OrbitInitialAngle { get { return orbitInitialAngle.Value; } }
     public bool hasOrbitInitialAngle { get { return HasComponent(GameComponentsLookup.OrbitInitialAngle); } }
 
     public GameEntity AddOrbitInitialAngle(float newValue) {
         var index = GameComponentsLookup.OrbitInitialAngle;
-        var component = (Assets.Code.Gameplay.Features.Movement.OrbitInitialAngle)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Movement.OrbitInitialAngle));
+        var component = (Code.Gameplay.Features.Movement.OrbitInitialAngle)CreateComponent(index, typeof(Code.Gameplay.Features.Movement.OrbitInitialAngle));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceOrbitInitialAngle(float newValue) {
         var index = GameComponentsLookup.OrbitInitialAngle;
-        var component = (Assets.Code.Gameplay.Features.Movement.OrbitInitialAngle)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Movement.OrbitInitialAngle));
+        var component = (Code.Gameplay.Features.Movement.OrbitInitialAngle)CreateComponent(index, typeof(Code.Gameplay.Features.Movement.OrbitInitialAngle));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

@@ -1,4 +1,4 @@
-﻿namespace Assets.Code.Meta.Features.Shop.Weapon
+﻿namespace Code.Meta.Features.Shop.Weapon
 {
 	public enum WeaponShopItemTypeId
 	{

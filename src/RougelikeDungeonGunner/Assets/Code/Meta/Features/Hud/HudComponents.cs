@@ -1,12 +1,12 @@
-﻿using Assets.Code.Meta.Features.Hud.AmmoHolder.Behaviours;
-using Assets.Code.Meta.Features.Hud.CoinsHolder.Behaviours;
-using Assets.Code.Meta.Features.Hud.EnchantHolder.Behaviours;
-using Assets.Code.Meta.Features.Hud.HeroHeartHolder.Behaviours;
-using Assets.Code.Meta.Features.Hud.LevelTimerHolder.Behaviours;
-using Assets.Code.Meta.Features.Hud.WeaponHolder.Behaviours;
+﻿using Code.Meta.Features.Hud.AmmoHolder.Behaviours;
+using Code.Meta.Features.Hud.CoinsHolder.Behaviours;
+using Code.Meta.Features.Hud.EnchantHolder.Behaviours;
+using Code.Meta.Features.Hud.HeroHeartHolder.Behaviours;
+using Code.Meta.Features.Hud.LevelTimerHolder.Behaviours;
+using Code.Meta.Features.Hud.WeaponHolder.Behaviours;
 using Entitas;
 
-namespace Assets.Code.Meta.Features.Hud
+namespace Code.Meta.Features.Hud
 {
 	[Game] public class AmmoHolderComponent : IComponent { public AmmoHolderBehaviour Value; }
 	[Game] public class CoinsHolderComponent : IComponent { public CoinsHolderBehaviour Value; }

@@ -33,7 +33,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Assets.Code.Gameplay.Features.AmmoPattern.PatternEmpty patternEmptyComponent = new Assets.Code.Gameplay.Features.AmmoPattern.PatternEmpty();
+    static readonly Code.Gameplay.Features.AmmoPattern.PatternEmpty patternEmptyComponent = new Code.Gameplay.Features.AmmoPattern.PatternEmpty();
 
     public bool isPatternEmpty {
         get { return HasComponent(GameComponentsLookup.PatternEmpty); }

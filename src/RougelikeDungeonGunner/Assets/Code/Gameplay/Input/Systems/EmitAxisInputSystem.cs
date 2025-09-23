@@ -1,8 +1,8 @@
-using Assets.Code.Gameplay.Input.Service;
+using Code.Gameplay.Input.Service;
 using Entitas;
 using UnityEngine;
 
-namespace Assets.Code.Gameplay.Input.Systems
+namespace Code.Gameplay.Input.Systems
 {
 	public class EmitAxisInputSystem : IExecuteSystem
 	{

@@ -1,11 +1,11 @@
-﻿using Assets.Code.Infrastructure.States.GameStates;
-using Assets.Code.Infrastructure.States.StateMachine;
-using Assets.Code.Meta.UI.Windows.Service;
+﻿using Code.Infrastructure.States.GameStates;
+using Code.Infrastructure.States.StateMachine;
+using Code.Meta.UI.Windows.Service;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
 
-namespace Assets.Code.Meta.UI.Windows.Behaviours
+namespace Code.Meta.UI.Windows.Behaviours
 {
 	public class GameOverWindow : BaseWindow
 	{

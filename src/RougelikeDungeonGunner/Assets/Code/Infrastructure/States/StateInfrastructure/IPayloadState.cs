@@ -1,4 +1,4 @@
-namespace Assets.Code.Infrastructure.States.StateInfrastructure
+namespace Code.Infrastructure.States.StateInfrastructure
 {
 	public interface IPayloadState<TPayload> : IExitableState
 	{

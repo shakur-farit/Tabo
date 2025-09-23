@@ -3,7 +3,7 @@ using Entitas;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-namespace Assets.Code.Gameplay.Features.Dungeon.Systems
+namespace Code.Gameplay.Features.Dungeon.Systems
 {
 	public class GetValidPositionsOnCollisionTilemapSystem : IExecuteSystem
 	{

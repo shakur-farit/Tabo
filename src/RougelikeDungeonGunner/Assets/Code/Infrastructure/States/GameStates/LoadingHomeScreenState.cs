@@ -1,8 +1,8 @@
-using Assets.Code.Infrastructure.Loading;
-using Assets.Code.Infrastructure.States.StateInfrastructure;
-using Assets.Code.Infrastructure.States.StateMachine;
+using Code.Infrastructure.Loading;
+using Code.Infrastructure.States.StateInfrastructure;
+using Code.Infrastructure.States.StateMachine;
 
-namespace Assets.Code.Infrastructure.States.GameStates
+namespace Code.Infrastructure.States.GameStates
 {
 	public class LoadingHomeScreenState : SimpleState
 	{

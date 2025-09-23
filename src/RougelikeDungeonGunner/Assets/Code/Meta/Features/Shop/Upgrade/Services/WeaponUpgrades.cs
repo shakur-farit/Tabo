@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using Assets.Code.Gameplay.Features.Weapon;
-using Assets.Code.Progress.Provider;
+using Code.Gameplay.Features.Weapon;
+using Code.Progress.Provider;
 
-namespace Assets.Code.Meta.Features.Shop.Upgrade.Services
+namespace Code.Meta.Features.Shop.Upgrade.Services
 {
 	public class WeaponUpgrades : IWeaponUpgradesProvider, IWeaponUpgradesCleaner
 	{

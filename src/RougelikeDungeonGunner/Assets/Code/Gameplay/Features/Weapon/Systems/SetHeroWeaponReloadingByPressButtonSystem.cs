@@ -2,7 +2,7 @@
 using Entitas;
 using UnityEngine;
 
-namespace Assets.Code.Gameplay.Features.Weapon.Systems
+namespace Code.Gameplay.Features.Weapon.Systems
 {
 	public class SetHeroWeaponReloadingByPressButtonSystem : IExecuteSystem
 	{

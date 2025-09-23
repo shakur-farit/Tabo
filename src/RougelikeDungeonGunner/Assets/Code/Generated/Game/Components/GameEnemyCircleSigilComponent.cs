@@ -33,7 +33,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Assets.Code.Gameplay.Features.Weapon.EnemyCircleSigil enemyCircleSigilComponent = new Assets.Code.Gameplay.Features.Weapon.EnemyCircleSigil();
+    static readonly Code.Gameplay.Features.Weapon.EnemyCircleSigil enemyCircleSigilComponent = new Code.Gameplay.Features.Weapon.EnemyCircleSigil();
 
     public bool isEnemyCircleSigil {
         get { return HasComponent(GameComponentsLookup.EnemyCircleSigil); }

@@ -1,9 +1,9 @@
-﻿using Assets.Code.Gameplay.StaticData;
-using Assets.Code.Meta.UI.Windows.Behaviours;
+﻿using Code.Gameplay.StaticData;
+using Code.Meta.UI.Windows.Behaviours;
 using UnityEngine;
 using Zenject;
 
-namespace Assets.Code.Meta.UI.Windows.Factory
+namespace Code.Meta.UI.Windows.Factory
 {
 	public class WindowFactory : IWindowFactory
 	{

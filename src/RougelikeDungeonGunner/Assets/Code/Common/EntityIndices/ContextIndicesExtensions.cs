@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
-using Assets.Code.Gameplay.Features.CharacterStats;
-using Assets.Code.Gameplay.Features.CharacterStats.Indexing;
-using Assets.Code.Gameplay.Features.Statuses;
-using Assets.Code.Gameplay.Features.Statuses.Indexing;
+using Code.Gameplay.Features.CharacterStats;
+using Code.Gameplay.Features.CharacterStats.Indexing;
+using Code.Gameplay.Features.Statuses;
+using Code.Gameplay.Features.Statuses.Indexing;
 using Entitas;
 
-namespace Assets.Code.Common.EntityIndices
+namespace Code.Common.EntityIndices
 {
 	public static class ContextIndicesExtensions
 	{

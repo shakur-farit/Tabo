@@ -1,8 +1,8 @@
-﻿using Assets.Code.Common.Extensions;
+﻿using Code.Common.Extensions;
 using TMPro;
 using UnityEngine;
 
-namespace Assets.Code.Meta.Features.Shop.EnchantUIEntry.Behaviours
+namespace Code.Meta.Features.Shop.EnchantUIEntry.Behaviours
 {
 	public class EnchantStatUIEntryItem : MonoBehaviour
 	{

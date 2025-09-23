@@ -33,7 +33,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Assets.Code.Gameplay.Features.Ammo.RocketMissile rocketMissileComponent = new Assets.Code.Gameplay.Features.Ammo.RocketMissile();
+    static readonly Code.Gameplay.Features.Ammo.RocketMissile rocketMissileComponent = new Code.Gameplay.Features.Ammo.RocketMissile();
 
     public bool isRocketMissile {
         get { return HasComponent(GameComponentsLookup.RocketMissile); }

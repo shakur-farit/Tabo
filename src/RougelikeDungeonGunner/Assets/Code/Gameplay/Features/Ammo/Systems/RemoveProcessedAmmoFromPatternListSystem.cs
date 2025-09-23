@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Entitas;
 
-namespace Assets.Code.Gameplay.Features.Ammo.Systems
+namespace Code.Gameplay.Features.Ammo.Systems
 {
 	public class RemoveProcessedAmmoFromPatternListSystem : IExecuteSystem
 	{

@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using Assets.Code.Gameplay.Features.Weapon;
+using Code.Gameplay.Features.Weapon;
 using Entitas;
 
-namespace Assets.Code.Meta.Features.Hud.WeaponHolder.Systems
+namespace Code.Meta.Features.Hud.WeaponHolder.Systems
 {
 	public class UpdateWeaponNameInHolderSystem : ReactiveSystem<GameEntity>
 	{

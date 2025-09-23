@@ -1,4 +1,4 @@
-namespace Assets.Code.Gameplay.Common.Random
+namespace Code.Gameplay.Common.Random
 {
   public interface IRandomService
   {

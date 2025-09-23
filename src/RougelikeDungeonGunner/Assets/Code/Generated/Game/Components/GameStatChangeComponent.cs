@@ -33,21 +33,21 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Assets.Code.Gameplay.Features.CharacterStats.StatChange statChange { get { return (Assets.Code.Gameplay.Features.CharacterStats.StatChange)GetComponent(GameComponentsLookup.StatChange); } }
-    public Assets.Code.Gameplay.Features.CharacterStats.Stats StatChange { get { return statChange.Value; } }
+    public Code.Gameplay.Features.CharacterStats.StatChange statChange { get { return (Code.Gameplay.Features.CharacterStats.StatChange)GetComponent(GameComponentsLookup.StatChange); } }
+    public Code.Gameplay.Features.CharacterStats.Stats StatChange { get { return statChange.Value; } }
     public bool hasStatChange { get { return HasComponent(GameComponentsLookup.StatChange); } }
 
-    public GameEntity AddStatChange(Assets.Code.Gameplay.Features.CharacterStats.Stats newValue) {
+    public GameEntity AddStatChange(Code.Gameplay.Features.CharacterStats.Stats newValue) {
         var index = GameComponentsLookup.StatChange;
-        var component = (Assets.Code.Gameplay.Features.CharacterStats.StatChange)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.CharacterStats.StatChange));
+        var component = (Code.Gameplay.Features.CharacterStats.StatChange)CreateComponent(index, typeof(Code.Gameplay.Features.CharacterStats.StatChange));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
     }
 
-    public GameEntity ReplaceStatChange(Assets.Code.Gameplay.Features.CharacterStats.Stats newValue) {
+    public GameEntity ReplaceStatChange(Code.Gameplay.Features.CharacterStats.Stats newValue) {
         var index = GameComponentsLookup.StatChange;
-        var component = (Assets.Code.Gameplay.Features.CharacterStats.StatChange)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.CharacterStats.StatChange));
+        var component = (Code.Gameplay.Features.CharacterStats.StatChange)CreateComponent(index, typeof(Code.Gameplay.Features.CharacterStats.StatChange));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

@@ -1,7 +1,7 @@
-﻿using Assets.Code.Common.EntityIndices;
+﻿using Code.Common.EntityIndices;
 using Entitas;
 
-namespace Assets.Code.Gameplay.Features.CharacterStats.Systems
+namespace Code.Gameplay.Features.CharacterStats.Systems
 {
 	public class StatChangeSystem : IExecuteSystem
 	{

@@ -33,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Assets.Code.Gameplay.Features.Weapon.Pierce pierce { get { return (Assets.Code.Gameplay.Features.Weapon.Pierce)GetComponent(GameComponentsLookup.Pierce); } }
+    public Code.Gameplay.Features.Weapon.Pierce pierce { get { return (Code.Gameplay.Features.Weapon.Pierce)GetComponent(GameComponentsLookup.Pierce); } }
     public int Pierce { get { return pierce.Value; } }
     public bool hasPierce { get { return HasComponent(GameComponentsLookup.Pierce); } }
 
     public GameEntity AddPierce(int newValue) {
         var index = GameComponentsLookup.Pierce;
-        var component = (Assets.Code.Gameplay.Features.Weapon.Pierce)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Weapon.Pierce));
+        var component = (Code.Gameplay.Features.Weapon.Pierce)CreateComponent(index, typeof(Code.Gameplay.Features.Weapon.Pierce));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplacePierce(int newValue) {
         var index = GameComponentsLookup.Pierce;
-        var component = (Assets.Code.Gameplay.Features.Weapon.Pierce)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Weapon.Pierce));
+        var component = (Code.Gameplay.Features.Weapon.Pierce)CreateComponent(index, typeof(Code.Gameplay.Features.Weapon.Pierce));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

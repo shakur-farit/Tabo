@@ -33,7 +33,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Assets.Code.Gameplay.Features.Cooldowns.CooldownUp cooldownUpComponent = new Assets.Code.Gameplay.Features.Cooldowns.CooldownUp();
+    static readonly Code.Gameplay.Features.Cooldowns.CooldownUp cooldownUpComponent = new Code.Gameplay.Features.Cooldowns.CooldownUp();
 
     public bool isCooldownUp {
         get { return HasComponent(GameComponentsLookup.CooldownUp); }

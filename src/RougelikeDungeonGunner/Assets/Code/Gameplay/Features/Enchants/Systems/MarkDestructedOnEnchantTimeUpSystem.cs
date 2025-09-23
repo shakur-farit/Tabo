@@ -1,7 +1,7 @@
-﻿using Assets.Code.Gameplay.Common.Time;
+﻿using Code.Gameplay.Common.Time;
 using Entitas;
 
-namespace Assets.Code.Gameplay.Features.Enchants.Systems
+namespace Code.Gameplay.Features.Enchants.Systems
 {
 	public class MarkDestructedOnEnchantTimeUpSystem : IExecuteSystem
 	{

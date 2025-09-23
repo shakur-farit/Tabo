@@ -33,7 +33,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Assets.Code.Gameplay.Features.Level.Level levelComponent = new Assets.Code.Gameplay.Features.Level.Level();
+    static readonly Code.Gameplay.Features.Level.Level levelComponent = new Code.Gameplay.Features.Level.Level();
 
     public bool isLevel {
         get { return HasComponent(GameComponentsLookup.Level); }

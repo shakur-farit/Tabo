@@ -1,7 +1,7 @@
 ﻿using TMPro;
 using UnityEngine;
 
-namespace Assets.Code.Meta.Features.Hud.CoinsHolder.Behaviours
+namespace Code.Meta.Features.Hud.CoinsHolder.Behaviours
 {
 	public class CoinsHolderBehaviour : MonoBehaviour
 	{

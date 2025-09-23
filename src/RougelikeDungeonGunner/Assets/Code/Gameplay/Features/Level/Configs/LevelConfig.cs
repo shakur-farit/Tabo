@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using Assets.Code.Gameplay.Features.Dungeon;
+using Code.Gameplay.Features.Dungeon;
 using UnityEngine;
 
-namespace Assets.Code.Gameplay.Features.Level.Configs
+namespace Code.Gameplay.Features.Level.Configs
 {
 	[CreateAssetMenu(menuName = "Dungeon Gunner/Level Config", fileName = "LevelConfig")]
 	public class LevelConfig : ScriptableObject

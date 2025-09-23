@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Assets.Code.Gameplay.Features.Ammo.Services
+namespace Code.Gameplay.Features.Ammo.Services
 {
 	public interface IAmmoDirectionProvider
 	{

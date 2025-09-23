@@ -33,7 +33,7 @@ public sealed partial class InputMatcher {
 //------------------------------------------------------------------------------
 public partial class InputEntity {
 
-    static readonly Assets.Code.Gameplay.Input.Paused pausedComponent = new Assets.Code.Gameplay.Input.Paused();
+    static readonly Code.Gameplay.Features.Pause.Paused pausedComponent = new Code.Gameplay.Features.Pause.Paused();
 
     public bool isPaused {
         get { return HasComponent(InputComponentsLookup.Paused); }

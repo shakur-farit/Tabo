@@ -1,15 +1,15 @@
-﻿using Assets.Code.Common.Extensions;
-using Assets.Code.Gameplay.Features.Weapon;
-using Assets.Code.Meta.Features.Shop.Weapon.Configs;
-using Assets.Code.Meta.UI.Windows;
-using Assets.Code.Meta.UI.Windows.Service;
-using Assets.Code.Progress.Provider;
+﻿using Code.Common.Extensions;
+using Code.Gameplay.Features.Weapon;
+using Code.Meta.Features.Shop.Weapon.Configs;
+using Code.Meta.UI.Windows;
+using Code.Meta.UI.Windows.Service;
+using Code.Progress.Provider;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
 
-namespace Assets.Code.Meta.Features.Shop.Weapon.Behaviours
+namespace Code.Meta.Features.Shop.Weapon.Behaviours
 {
 	public class WeaponShopItem : MonoBehaviour
 	{

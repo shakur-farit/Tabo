@@ -1,11 +1,11 @@
-using Assets.Code.Gameplay.Features.Level.Factory;
-using Assets.Code.Infrastructure.States.StateInfrastructure;
-using Assets.Code.Infrastructure.States.StateMachine;
-using Assets.Code.Meta.UI.Windows;
-using Assets.Code.Meta.UI.Windows.Service;
-using Assets.Code.Progress.Provider;
+using Code.Gameplay.Features.Level.Factory;
+using Code.Infrastructure.States.StateInfrastructure;
+using Code.Infrastructure.States.StateMachine;
+using Code.Meta.UI.Windows;
+using Code.Meta.UI.Windows.Service;
+using Code.Progress.Provider;
 
-namespace Assets.Code.Infrastructure.States.GameStates
+namespace Code.Infrastructure.States.GameStates
 {
 	public class BattleEnterState : SimpleState
 	{

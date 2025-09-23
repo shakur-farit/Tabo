@@ -33,21 +33,21 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Assets.Code.Meta.Features.Hud.AmmoHolderComponent ammoHolder { get { return (Assets.Code.Meta.Features.Hud.AmmoHolderComponent)GetComponent(GameComponentsLookup.AmmoHolder); } }
-    public Assets.Code.Meta.Features.Hud.AmmoHolder.Behaviours.AmmoHolderBehaviour AmmoHolder { get { return ammoHolder.Value; } }
+    public Code.Meta.Features.Hud.AmmoHolderComponent ammoHolder { get { return (Code.Meta.Features.Hud.AmmoHolderComponent)GetComponent(GameComponentsLookup.AmmoHolder); } }
+    public Code.Meta.Features.Hud.AmmoHolder.Behaviours.AmmoHolderBehaviour AmmoHolder { get { return ammoHolder.Value; } }
     public bool hasAmmoHolder { get { return HasComponent(GameComponentsLookup.AmmoHolder); } }
 
-    public GameEntity AddAmmoHolder(Assets.Code.Meta.Features.Hud.AmmoHolder.Behaviours.AmmoHolderBehaviour newValue) {
+    public GameEntity AddAmmoHolder(Code.Meta.Features.Hud.AmmoHolder.Behaviours.AmmoHolderBehaviour newValue) {
         var index = GameComponentsLookup.AmmoHolder;
-        var component = (Assets.Code.Meta.Features.Hud.AmmoHolderComponent)CreateComponent(index, typeof(Assets.Code.Meta.Features.Hud.AmmoHolderComponent));
+        var component = (Code.Meta.Features.Hud.AmmoHolderComponent)CreateComponent(index, typeof(Code.Meta.Features.Hud.AmmoHolderComponent));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
     }
 
-    public GameEntity ReplaceAmmoHolder(Assets.Code.Meta.Features.Hud.AmmoHolder.Behaviours.AmmoHolderBehaviour newValue) {
+    public GameEntity ReplaceAmmoHolder(Code.Meta.Features.Hud.AmmoHolder.Behaviours.AmmoHolderBehaviour newValue) {
         var index = GameComponentsLookup.AmmoHolder;
-        var component = (Assets.Code.Meta.Features.Hud.AmmoHolderComponent)CreateComponent(index, typeof(Assets.Code.Meta.Features.Hud.AmmoHolderComponent));
+        var component = (Code.Meta.Features.Hud.AmmoHolderComponent)CreateComponent(index, typeof(Code.Meta.Features.Hud.AmmoHolderComponent));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

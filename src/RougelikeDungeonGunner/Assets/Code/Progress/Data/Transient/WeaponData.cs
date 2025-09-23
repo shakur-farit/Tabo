@@ -1,7 +1,7 @@
-using Assets.Code.Gameplay.Features.Statuses;
-using Assets.Code.Meta.Features.Shop.EnchantUIEntry;
+using Code.Gameplay.Features.Statuses;
+using Code.Meta.Features.Shop.EnchantUIEntry;
 
-namespace Assets.Code.Progress.Data.Transient
+namespace Code.Progress.Data.Transient
 {
 	public class WeaponData
 	{

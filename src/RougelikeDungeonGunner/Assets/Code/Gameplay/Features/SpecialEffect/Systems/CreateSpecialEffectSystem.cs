@@ -1,7 +1,7 @@
-﻿using Assets.Code.Gameplay.Features.SpecialEffect.Factory;
+﻿using Code.Gameplay.Features.SpecialEffect.Factory;
 using Entitas;
 
-namespace Assets.Code.Gameplay.Features.SpecialEffect.Systems
+namespace Code.Gameplay.Features.SpecialEffect.Systems
 {
 	public class CreateSpecialEffectSystem : IExecuteSystem
 	{

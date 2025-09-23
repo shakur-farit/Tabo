@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Assets.Code.Gameplay.Features.Ammo.Factory
+namespace Code.Gameplay.Features.Ammo.Factory
 {
 	public interface IAmmoFactory
 	{

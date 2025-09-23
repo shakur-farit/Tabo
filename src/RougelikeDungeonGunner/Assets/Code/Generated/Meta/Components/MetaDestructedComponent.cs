@@ -43,7 +43,7 @@ public partial class MetaEntity : IDestructedEntity { }
 //------------------------------------------------------------------------------
 public partial class MetaEntity {
 
-    static readonly Assets.Code.Common.Destructed destructedComponent = new Assets.Code.Common.Destructed();
+    static readonly Code.Common.Destructed destructedComponent = new Code.Common.Destructed();
 
     public bool isDestructed {
         get { return HasComponent(MetaComponentsLookup.Destructed); }

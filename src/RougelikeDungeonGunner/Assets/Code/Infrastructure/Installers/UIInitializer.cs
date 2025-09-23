@@ -1,8 +1,8 @@
-using Assets.Code.Meta.UI.Windows.Factory;
+using Code.Meta.UI.Windows.Factory;
 using UnityEngine;
 using Zenject;
 
-namespace Assets.Code.Infrastructure.Installers
+namespace Code.Infrastructure.Installers
 {
 	public class UIInitializer : MonoBehaviour, IInitializable
 	{

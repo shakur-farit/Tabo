@@ -33,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Assets.Code.Gameplay.Features.Movement.FollowTargetId followTargetId { get { return (Assets.Code.Gameplay.Features.Movement.FollowTargetId)GetComponent(GameComponentsLookup.FollowTargetId); } }
+    public Code.Gameplay.Features.Movement.FollowTargetId followTargetId { get { return (Code.Gameplay.Features.Movement.FollowTargetId)GetComponent(GameComponentsLookup.FollowTargetId); } }
     public int FollowTargetId { get { return followTargetId.Value; } }
     public bool hasFollowTargetId { get { return HasComponent(GameComponentsLookup.FollowTargetId); } }
 
     public GameEntity AddFollowTargetId(int newValue) {
         var index = GameComponentsLookup.FollowTargetId;
-        var component = (Assets.Code.Gameplay.Features.Movement.FollowTargetId)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Movement.FollowTargetId));
+        var component = (Code.Gameplay.Features.Movement.FollowTargetId)CreateComponent(index, typeof(Code.Gameplay.Features.Movement.FollowTargetId));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceFollowTargetId(int newValue) {
         var index = GameComponentsLookup.FollowTargetId;
-        var component = (Assets.Code.Gameplay.Features.Movement.FollowTargetId)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Movement.FollowTargetId));
+        var component = (Code.Gameplay.Features.Movement.FollowTargetId)CreateComponent(index, typeof(Code.Gameplay.Features.Movement.FollowTargetId));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

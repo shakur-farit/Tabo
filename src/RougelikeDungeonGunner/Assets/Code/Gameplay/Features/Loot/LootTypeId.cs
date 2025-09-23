@@ -1,4 +1,4 @@
-﻿namespace Assets.Code.Gameplay.Features.Loot
+﻿namespace Code.Gameplay.Features.Loot
 {
 	public enum LootTypeId
 	{

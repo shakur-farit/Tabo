@@ -1,7 +1,7 @@
-﻿using Assets.Code.Gameplay.Features.SpecialEffect.Systems;
-using Assets.Code.Infrastructure.Systems;
+﻿using Code.Gameplay.Features.SpecialEffect.Systems;
+using Code.Infrastructure.Systems;
 
-namespace Assets.Code.Gameplay.Features.SpecialEffect
+namespace Code.Gameplay.Features.SpecialEffect
 {
 	public sealed class SpecialEffectFeature : Feature
 	{

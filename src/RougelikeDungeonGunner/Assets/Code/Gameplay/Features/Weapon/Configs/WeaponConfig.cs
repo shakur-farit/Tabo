@@ -1,17 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using Assets.Code.Gameplay.Features.Ammo;
-using Assets.Code.Gameplay.Features.AmmoPattern;
-using Assets.Code.Gameplay.Features.Collection;
-using Assets.Code.Gameplay.Features.Effects;
-using Assets.Code.Gameplay.Features.SpecialEffect;
-using Assets.Code.Gameplay.Features.Statuses;
-using Assets.Code.Infrastructure.View;
-using Assets.Code.Meta.Features.Shop.Upgrade;
-using Assets.Code.Meta.Features.Shop.WeaponStatUIEntry;
+using Code.Gameplay.Features.Ammo;
+using Code.Gameplay.Features.AmmoPattern;
+using Code.Gameplay.Features.Collection;
+using Code.Gameplay.Features.Effects;
+using Code.Gameplay.Features.SpecialEffect;
+using Code.Gameplay.Features.Statuses;
+using Code.Infrastructure.View;
+using Code.Meta.Features.Shop.Upgrade;
+using Code.Meta.Features.Shop.WeaponStatUIEntry;
 using UnityEngine;
 
-namespace Assets.Code.Gameplay.Features.Weapon.Configs
+namespace Code.Gameplay.Features.Weapon.Configs
 {
 	[CreateAssetMenu(menuName = "Dungeon Gunner/Weapon Config", fileName = "WeaponConfig")]
 	public class WeaponConfig : ScriptableObject

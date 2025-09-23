@@ -1,9 +1,9 @@
-﻿using Assets.Code.Gameplay.Cameras.Systems;
-using Assets.Code.Gameplay.Features.Hero.Systems;
-using Assets.Code.Infrastructure.Systems;
-using Assets.Code.Meta.Features.Hud.HeroHeartHolder.Systems;
+﻿using Code.Gameplay.Cameras.Systems;
+using Code.Gameplay.Features.Hero.Systems;
+using Code.Infrastructure.Systems;
+using Code.Meta.Features.Hud.HeroHeartHolder.Systems;
 
-namespace Assets.Code.Gameplay.Features.Hero
+namespace Code.Gameplay.Features.Hero
 {
 	public sealed class HeroFeature : Feature
 	{

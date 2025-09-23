@@ -33,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Assets.Code.Gameplay.Features.AmmoPattern.PatternRotateSpeed patternRotateSpeed { get { return (Assets.Code.Gameplay.Features.AmmoPattern.PatternRotateSpeed)GetComponent(GameComponentsLookup.PatternRotateSpeed); } }
+    public Code.Gameplay.Features.AmmoPattern.PatternRotateSpeed patternRotateSpeed { get { return (Code.Gameplay.Features.AmmoPattern.PatternRotateSpeed)GetComponent(GameComponentsLookup.PatternRotateSpeed); } }
     public float PatternRotateSpeed { get { return patternRotateSpeed.Value; } }
     public bool hasPatternRotateSpeed { get { return HasComponent(GameComponentsLookup.PatternRotateSpeed); } }
 
     public GameEntity AddPatternRotateSpeed(float newValue) {
         var index = GameComponentsLookup.PatternRotateSpeed;
-        var component = (Assets.Code.Gameplay.Features.AmmoPattern.PatternRotateSpeed)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.AmmoPattern.PatternRotateSpeed));
+        var component = (Code.Gameplay.Features.AmmoPattern.PatternRotateSpeed)CreateComponent(index, typeof(Code.Gameplay.Features.AmmoPattern.PatternRotateSpeed));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplacePatternRotateSpeed(float newValue) {
         var index = GameComponentsLookup.PatternRotateSpeed;
-        var component = (Assets.Code.Gameplay.Features.AmmoPattern.PatternRotateSpeed)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.AmmoPattern.PatternRotateSpeed));
+        var component = (Code.Gameplay.Features.AmmoPattern.PatternRotateSpeed)CreateComponent(index, typeof(Code.Gameplay.Features.AmmoPattern.PatternRotateSpeed));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

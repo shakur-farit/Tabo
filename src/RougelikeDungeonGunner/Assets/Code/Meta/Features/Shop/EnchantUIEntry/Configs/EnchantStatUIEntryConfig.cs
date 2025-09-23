@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Assets.Code.Meta.Features.Shop.EnchantUIEntry.Configs
+namespace Code.Meta.Features.Shop.EnchantUIEntry.Configs
 {
 	[CreateAssetMenu(menuName = "Dungeon Gunner/Weapon Information/Enchant Stat UI Entry Config",
 		fileName = "EnchantStatUIEntryConfig")]

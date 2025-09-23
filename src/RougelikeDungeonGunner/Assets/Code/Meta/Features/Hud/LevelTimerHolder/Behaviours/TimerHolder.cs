@@ -1,7 +1,7 @@
 ﻿using TMPro;
 using UnityEngine;
 
-namespace Assets.Code.Meta.Features.Hud.LevelTimerHolder.Behaviours
+namespace Code.Meta.Features.Hud.LevelTimerHolder.Behaviours
 {
 	public class TimerHolder : MonoBehaviour
 	{

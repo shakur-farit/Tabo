@@ -33,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Assets.Code.Gameplay.Features.Weapon.CurrentAmmoCount currentAmmoCount { get { return (Assets.Code.Gameplay.Features.Weapon.CurrentAmmoCount)GetComponent(GameComponentsLookup.CurrentAmmoCount); } }
+    public Code.Gameplay.Features.Weapon.CurrentAmmoCount currentAmmoCount { get { return (Code.Gameplay.Features.Weapon.CurrentAmmoCount)GetComponent(GameComponentsLookup.CurrentAmmoCount); } }
     public int CurrentAmmoCount { get { return currentAmmoCount.Value; } }
     public bool hasCurrentAmmoCount { get { return HasComponent(GameComponentsLookup.CurrentAmmoCount); } }
 
     public GameEntity AddCurrentAmmoCount(int newValue) {
         var index = GameComponentsLookup.CurrentAmmoCount;
-        var component = (Assets.Code.Gameplay.Features.Weapon.CurrentAmmoCount)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Weapon.CurrentAmmoCount));
+        var component = (Code.Gameplay.Features.Weapon.CurrentAmmoCount)CreateComponent(index, typeof(Code.Gameplay.Features.Weapon.CurrentAmmoCount));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceCurrentAmmoCount(int newValue) {
         var index = GameComponentsLookup.CurrentAmmoCount;
-        var component = (Assets.Code.Gameplay.Features.Weapon.CurrentAmmoCount)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Weapon.CurrentAmmoCount));
+        var component = (Code.Gameplay.Features.Weapon.CurrentAmmoCount)CreateComponent(index, typeof(Code.Gameplay.Features.Weapon.CurrentAmmoCount));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

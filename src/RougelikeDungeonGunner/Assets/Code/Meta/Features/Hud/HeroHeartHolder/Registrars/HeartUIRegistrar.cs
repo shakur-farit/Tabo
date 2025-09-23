@@ -1,7 +1,7 @@
-﻿using Assets.Code.Infrastructure.View.Registrars;
+﻿using Code.Infrastructure.View.Registrars;
 using UnityEngine;
 
-namespace Assets.Code.Meta.Features.Hud.HeroHeartHolder.Registrars
+namespace Code.Meta.Features.Hud.HeroHeartHolder.Registrars
 {
 	public class HeartUIRegistrar : EntityComponentRegistrar
 	{

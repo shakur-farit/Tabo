@@ -1,7 +1,7 @@
-using Assets.Code.Meta.Features.Shop.Enchant.Configs;
-using Assets.Code.Meta.Features.Shop.Weapon.Configs;
+using Code.Meta.Features.Shop.Enchant.Configs;
+using Code.Meta.Features.Shop.Weapon.Configs;
 
-namespace Assets.Code.Progress.Data.Transient
+namespace Code.Progress.Data.Transient
 {
 	public class ShopData
 	{

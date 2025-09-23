@@ -33,7 +33,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Assets.Code.Gameplay.Features.Statuses.StatusComponents.Affected affectedComponent = new Assets.Code.Gameplay.Features.Statuses.StatusComponents.Affected();
+    static readonly Code.Gameplay.Features.Statuses.StatusComponents.Affected affectedComponent = new Code.Gameplay.Features.Statuses.StatusComponents.Affected();
 
     public bool isAffected {
         get { return HasComponent(GameComponentsLookup.Affected); }

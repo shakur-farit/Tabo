@@ -1,4 +1,4 @@
-﻿namespace Assets.Code.Meta.Features.Shop.Upgrade
+﻿namespace Code.Meta.Features.Shop.Upgrade
 {
 	public enum WeaponUpgradeTypeId
 	{

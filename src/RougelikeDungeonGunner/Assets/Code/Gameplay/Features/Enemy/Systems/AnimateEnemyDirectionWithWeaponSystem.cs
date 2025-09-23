@@ -1,8 +1,8 @@
-﻿using Assets.Code.Gameplay.Common.Direction;
+﻿using Code.Gameplay.Common.Direction;
 using Entitas;
 using UnityEngine;
 
-namespace Assets.Code.Gameplay.Features.Enemy.Systems
+namespace Code.Gameplay.Features.Enemy.Systems
 {
 	public class AnimateEnemyDirectionWithWeaponSystem : IExecuteSystem
 	{

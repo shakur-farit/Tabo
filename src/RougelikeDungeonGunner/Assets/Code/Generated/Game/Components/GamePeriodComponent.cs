@@ -33,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Assets.Code.Gameplay.Features.Statuses.StatusComponents.Period period { get { return (Assets.Code.Gameplay.Features.Statuses.StatusComponents.Period)GetComponent(GameComponentsLookup.Period); } }
+    public Code.Gameplay.Features.Statuses.StatusComponents.Period period { get { return (Code.Gameplay.Features.Statuses.StatusComponents.Period)GetComponent(GameComponentsLookup.Period); } }
     public float Period { get { return period.Value; } }
     public bool hasPeriod { get { return HasComponent(GameComponentsLookup.Period); } }
 
     public GameEntity AddPeriod(float newValue) {
         var index = GameComponentsLookup.Period;
-        var component = (Assets.Code.Gameplay.Features.Statuses.StatusComponents.Period)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Statuses.StatusComponents.Period));
+        var component = (Code.Gameplay.Features.Statuses.StatusComponents.Period)CreateComponent(index, typeof(Code.Gameplay.Features.Statuses.StatusComponents.Period));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplacePeriod(float newValue) {
         var index = GameComponentsLookup.Period;
-        var component = (Assets.Code.Gameplay.Features.Statuses.StatusComponents.Period)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Statuses.StatusComponents.Period));
+        var component = (Code.Gameplay.Features.Statuses.StatusComponents.Period)CreateComponent(index, typeof(Code.Gameplay.Features.Statuses.StatusComponents.Period));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

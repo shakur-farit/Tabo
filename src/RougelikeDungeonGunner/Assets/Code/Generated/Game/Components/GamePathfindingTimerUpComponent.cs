@@ -33,7 +33,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Assets.Code.Gameplay.Features.AStar.PathfindingTimerUp pathfindingTimerUpComponent = new Assets.Code.Gameplay.Features.AStar.PathfindingTimerUp();
+    static readonly Code.Gameplay.Features.AStar.PathfindingTimerUp pathfindingTimerUpComponent = new Code.Gameplay.Features.AStar.PathfindingTimerUp();
 
     public bool isPathfindingTimerUp {
         get { return HasComponent(GameComponentsLookup.PathfindingTimerUp); }

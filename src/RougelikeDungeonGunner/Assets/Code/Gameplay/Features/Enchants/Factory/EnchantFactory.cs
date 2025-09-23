@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using Assets.Code.Common.Extensions;
-using Assets.Code.Gameplay.Features.Enchants.Configs;
-using Assets.Code.Gameplay.Features.Statuses;
-using Assets.Code.Gameplay.StaticData;
-using Assets.Code.Infrastructure.Identifiers;
 using Code.Common.Entity;
+using Code.Common.Extensions;
+using Code.Gameplay.Features.Enchants.Configs;
+using Code.Gameplay.Features.Statuses;
+using Code.Gameplay.StaticData;
+using Code.Infrastructure.Identifiers;
 
-namespace Assets.Code.Gameplay.Features.Enchants.Factory
+namespace Code.Gameplay.Features.Enchants.Factory
 {
 	public class EnchantFactory : IEnchantFactory
 	{

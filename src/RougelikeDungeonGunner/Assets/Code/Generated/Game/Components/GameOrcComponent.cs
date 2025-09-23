@@ -33,7 +33,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Assets.Code.Gameplay.Features.Enemy.Orc orcComponent = new Assets.Code.Gameplay.Features.Enemy.Orc();
+    static readonly Code.Gameplay.Features.Enemy.Orc orcComponent = new Code.Gameplay.Features.Enemy.Orc();
 
     public bool isOrc {
         get { return HasComponent(GameComponentsLookup.Orc); }

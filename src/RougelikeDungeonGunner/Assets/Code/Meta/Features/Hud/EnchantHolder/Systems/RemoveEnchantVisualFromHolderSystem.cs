@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Entitas;
 
-namespace Assets.Code.Meta.Features.Hud.EnchantHolder.Systems
+namespace Code.Meta.Features.Hud.EnchantHolder.Systems
 {
 	public class RemoveEnchantVisualFromHolderSystem : ReactiveSystem<GameEntity>
 	{

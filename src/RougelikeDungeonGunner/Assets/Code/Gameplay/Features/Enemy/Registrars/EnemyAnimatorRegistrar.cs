@@ -1,8 +1,8 @@
-﻿using Assets.Code.Gameplay.Features.Enemy.Behaviours;
-using Assets.Code.Infrastructure.View.Registrars;
+﻿using Code.Gameplay.Features.Enemy.Behaviours;
+using Code.Infrastructure.View.Registrars;
 using UnityEngine;
 
-namespace Assets.Code.Gameplay.Features.Enemy.Registrars
+namespace Code.Gameplay.Features.Enemy.Registrars
 {
 	public class EnemyAnimatorRegistrar : EntityComponentRegistrar
 	{

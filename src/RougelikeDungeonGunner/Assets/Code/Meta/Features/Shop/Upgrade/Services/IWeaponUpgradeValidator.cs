@@ -1,6 +1,6 @@
-﻿using Assets.Code.Meta.Features.Shop.Upgrade.Configs;
+﻿using Code.Meta.Features.Shop.Upgrade.Configs;
 
-namespace Assets.Code.Meta.Features.Shop.Upgrade.Services
+namespace Code.Meta.Features.Shop.Upgrade.Services
 {
 	public interface IWeaponUpgradeValidator
 	{

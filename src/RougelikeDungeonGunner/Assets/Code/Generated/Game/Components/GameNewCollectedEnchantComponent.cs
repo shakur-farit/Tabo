@@ -33,7 +33,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Assets.Code.Gameplay.Features.Enchants.NewCollectedEnchant newCollectedEnchantComponent = new Assets.Code.Gameplay.Features.Enchants.NewCollectedEnchant();
+    static readonly Code.Gameplay.Features.Enchants.NewCollectedEnchant newCollectedEnchantComponent = new Code.Gameplay.Features.Enchants.NewCollectedEnchant();
 
     public bool isNewCollectedEnchant {
         get { return HasComponent(GameComponentsLookup.NewCollectedEnchant); }

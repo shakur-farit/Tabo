@@ -1,9 +1,9 @@
-using Assets.Code.Infrastructure.States.Factory;
-using Assets.Code.Infrastructure.States.StateInfrastructure;
+using Code.Infrastructure.States.Factory;
+using Code.Infrastructure.States.StateInfrastructure;
 using Cysharp.Threading.Tasks;
 using Zenject;
 
-namespace Assets.Code.Infrastructure.States.StateMachine
+namespace Code.Infrastructure.States.StateMachine
 {
 	public class GameStateMachine :  ITickable, IGameStateMachine
 	{

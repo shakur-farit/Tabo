@@ -33,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Assets.Code.Gameplay.Features.Level.FinishingTime finishingTime { get { return (Assets.Code.Gameplay.Features.Level.FinishingTime)GetComponent(GameComponentsLookup.FinishingTime); } }
+    public Code.Gameplay.Features.Level.FinishingTime finishingTime { get { return (Code.Gameplay.Features.Level.FinishingTime)GetComponent(GameComponentsLookup.FinishingTime); } }
     public float FinishingTime { get { return finishingTime.Value; } }
     public bool hasFinishingTime { get { return HasComponent(GameComponentsLookup.FinishingTime); } }
 
     public GameEntity AddFinishingTime(float newValue) {
         var index = GameComponentsLookup.FinishingTime;
-        var component = (Assets.Code.Gameplay.Features.Level.FinishingTime)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Level.FinishingTime));
+        var component = (Code.Gameplay.Features.Level.FinishingTime)CreateComponent(index, typeof(Code.Gameplay.Features.Level.FinishingTime));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceFinishingTime(float newValue) {
         var index = GameComponentsLookup.FinishingTime;
-        var component = (Assets.Code.Gameplay.Features.Level.FinishingTime)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Level.FinishingTime));
+        var component = (Code.Gameplay.Features.Level.FinishingTime)CreateComponent(index, typeof(Code.Gameplay.Features.Level.FinishingTime));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

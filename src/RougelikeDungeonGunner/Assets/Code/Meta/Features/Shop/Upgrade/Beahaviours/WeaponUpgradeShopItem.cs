@@ -1,19 +1,19 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Assets.Code.Common.Extensions;
-using Assets.Code.Gameplay.Features.Effects;
-using Assets.Code.Gameplay.Features.Weapon;
-using Assets.Code.Gameplay.Features.Weapon.Configs;
-using Assets.Code.Gameplay.StaticData;
-using Assets.Code.Meta.Features.Shop.Upgrade.Configs;
-using Assets.Code.Meta.Features.Shop.Upgrade.Services;
-using Assets.Code.Progress.Provider;
+using Code.Common.Extensions;
+using Code.Gameplay.Features.Effects;
+using Code.Gameplay.Features.Weapon;
+using Code.Gameplay.Features.Weapon.Configs;
+using Code.Gameplay.StaticData;
+using Code.Meta.Features.Shop.Upgrade.Configs;
+using Code.Meta.Features.Shop.Upgrade.Services;
+using Code.Progress.Provider;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
 
-namespace Assets.Code.Meta.Features.Shop.Upgrade.Beahaviours
+namespace Code.Meta.Features.Shop.Upgrade.Beahaviours
 {
 	public class WeaponUpgradeShopItem : MonoBehaviour
 	{

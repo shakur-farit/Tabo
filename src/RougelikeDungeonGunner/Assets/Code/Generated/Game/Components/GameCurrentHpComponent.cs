@@ -33,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Assets.Code.Gameplay.Features.Lifetime.CurrentHp currentHp { get { return (Assets.Code.Gameplay.Features.Lifetime.CurrentHp)GetComponent(GameComponentsLookup.CurrentHp); } }
+    public Code.Gameplay.Features.Lifetime.CurrentHp currentHp { get { return (Code.Gameplay.Features.Lifetime.CurrentHp)GetComponent(GameComponentsLookup.CurrentHp); } }
     public float CurrentHp { get { return currentHp.Value; } }
     public bool hasCurrentHp { get { return HasComponent(GameComponentsLookup.CurrentHp); } }
 
     public GameEntity AddCurrentHp(float newValue) {
         var index = GameComponentsLookup.CurrentHp;
-        var component = (Assets.Code.Gameplay.Features.Lifetime.CurrentHp)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Lifetime.CurrentHp));
+        var component = (Code.Gameplay.Features.Lifetime.CurrentHp)CreateComponent(index, typeof(Code.Gameplay.Features.Lifetime.CurrentHp));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceCurrentHp(float newValue) {
         var index = GameComponentsLookup.CurrentHp;
-        var component = (Assets.Code.Gameplay.Features.Lifetime.CurrentHp)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Lifetime.CurrentHp));
+        var component = (Code.Gameplay.Features.Lifetime.CurrentHp)CreateComponent(index, typeof(Code.Gameplay.Features.Lifetime.CurrentHp));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

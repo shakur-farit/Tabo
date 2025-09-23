@@ -1,4 +1,4 @@
-﻿namespace Assets.Code.Gameplay.Features.Level.Factory
+﻿namespace Code.Gameplay.Features.Level.Factory
 {
 	public interface ILevelFactory
 	{

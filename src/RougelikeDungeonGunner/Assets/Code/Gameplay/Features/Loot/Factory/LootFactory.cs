@@ -1,11 +1,11 @@
-﻿using Assets.Code.Common.Extensions;
-using Assets.Code.Gameplay.Features.Loot.Configs;
-using Assets.Code.Gameplay.StaticData;
-using Assets.Code.Infrastructure.Identifiers;
-using Code.Common.Entity;
+﻿using Code.Common.Entity;
+using Code.Common.Extensions;
+using Code.Gameplay.Features.Loot.Configs;
+using Code.Gameplay.StaticData;
+using Code.Infrastructure.Identifiers;
 using UnityEngine;
 
-namespace Assets.Code.Gameplay.Features.Loot.Factory
+namespace Code.Gameplay.Features.Loot.Factory
 {
 	public class LootFactory : ILootFactory
 	{

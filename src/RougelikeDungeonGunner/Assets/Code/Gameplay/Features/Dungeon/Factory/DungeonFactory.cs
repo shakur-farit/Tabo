@@ -1,12 +1,12 @@
-﻿using Assets.Code.Common.Extensions;
-using Assets.Code.Gameplay.Common.Random;
-using Assets.Code.Gameplay.Features.Dungeon.Configs;
-using Assets.Code.Gameplay.StaticData;
-using Assets.Code.Infrastructure.Identifiers;
-using Code.Common.Entity;
+﻿using Code.Common.Entity;
+using Code.Common.Extensions;
+using Code.Gameplay.Common.Random;
+using Code.Gameplay.Features.Dungeon.Configs;
+using Code.Gameplay.StaticData;
+using Code.Infrastructure.Identifiers;
 using UnityEngine;
 
-namespace Assets.Code.Gameplay.Features.Dungeon.Factory
+namespace Code.Gameplay.Features.Dungeon.Factory
 {
 	public class DungeonFactory : IDungeonFactory
 	{

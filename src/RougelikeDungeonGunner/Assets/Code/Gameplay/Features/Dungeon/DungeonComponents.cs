@@ -3,7 +3,7 @@ using Entitas;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-namespace Assets.Code.Gameplay.Features.Dungeon
+namespace Code.Gameplay.Features.Dungeon
 {
 	[Game] public class Dungeon : IComponent { }
 	[Game] public class DungeonTypeIdComponent : IComponent { public DungeonTypeId Value; }

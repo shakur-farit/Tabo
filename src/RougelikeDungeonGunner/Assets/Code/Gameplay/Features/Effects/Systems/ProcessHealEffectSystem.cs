@@ -2,7 +2,7 @@
 using Entitas;
 using UnityEngine;
 
-namespace Assets.Code.Gameplay.Features.Effects.Systems
+namespace Code.Gameplay.Features.Effects.Systems
 {
 	public class ProcessHealEffectSystem : IExecuteSystem
 	{

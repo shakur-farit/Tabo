@@ -33,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Assets.Code.Gameplay.Features.Movement.FollowMovementXAxisOffset followMovementXAxisOffset { get { return (Assets.Code.Gameplay.Features.Movement.FollowMovementXAxisOffset)GetComponent(GameComponentsLookup.FollowMovementXAxisOffset); } }
+    public Code.Gameplay.Features.Movement.FollowMovementXAxisOffset followMovementXAxisOffset { get { return (Code.Gameplay.Features.Movement.FollowMovementXAxisOffset)GetComponent(GameComponentsLookup.FollowMovementXAxisOffset); } }
     public float FollowMovementXAxisOffset { get { return followMovementXAxisOffset.Value; } }
     public bool hasFollowMovementXAxisOffset { get { return HasComponent(GameComponentsLookup.FollowMovementXAxisOffset); } }
 
     public GameEntity AddFollowMovementXAxisOffset(float newValue) {
         var index = GameComponentsLookup.FollowMovementXAxisOffset;
-        var component = (Assets.Code.Gameplay.Features.Movement.FollowMovementXAxisOffset)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Movement.FollowMovementXAxisOffset));
+        var component = (Code.Gameplay.Features.Movement.FollowMovementXAxisOffset)CreateComponent(index, typeof(Code.Gameplay.Features.Movement.FollowMovementXAxisOffset));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceFollowMovementXAxisOffset(float newValue) {
         var index = GameComponentsLookup.FollowMovementXAxisOffset;
-        var component = (Assets.Code.Gameplay.Features.Movement.FollowMovementXAxisOffset)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Movement.FollowMovementXAxisOffset));
+        var component = (Code.Gameplay.Features.Movement.FollowMovementXAxisOffset)CreateComponent(index, typeof(Code.Gameplay.Features.Movement.FollowMovementXAxisOffset));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

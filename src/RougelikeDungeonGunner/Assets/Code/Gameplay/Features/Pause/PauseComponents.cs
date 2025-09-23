@@ -1,7 +1,6 @@
-using System.Numerics;
 using Entitas;
 
-namespace Assets.Code.Gameplay.Input
+namespace Code.Gameplay.Features.Pause
 {
 	[Input] public class Paused : IComponent { }
 }

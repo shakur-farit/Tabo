@@ -33,21 +33,21 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Assets.Code.Meta.Features.Hud.CoinsHolderComponent coinsHolder { get { return (Assets.Code.Meta.Features.Hud.CoinsHolderComponent)GetComponent(GameComponentsLookup.CoinsHolder); } }
-    public Assets.Code.Meta.Features.Hud.CoinsHolder.Behaviours.CoinsHolderBehaviour CoinsHolder { get { return coinsHolder.Value; } }
+    public Code.Meta.Features.Hud.CoinsHolderComponent coinsHolder { get { return (Code.Meta.Features.Hud.CoinsHolderComponent)GetComponent(GameComponentsLookup.CoinsHolder); } }
+    public Code.Meta.Features.Hud.CoinsHolder.Behaviours.CoinsHolderBehaviour CoinsHolder { get { return coinsHolder.Value; } }
     public bool hasCoinsHolder { get { return HasComponent(GameComponentsLookup.CoinsHolder); } }
 
-    public GameEntity AddCoinsHolder(Assets.Code.Meta.Features.Hud.CoinsHolder.Behaviours.CoinsHolderBehaviour newValue) {
+    public GameEntity AddCoinsHolder(Code.Meta.Features.Hud.CoinsHolder.Behaviours.CoinsHolderBehaviour newValue) {
         var index = GameComponentsLookup.CoinsHolder;
-        var component = (Assets.Code.Meta.Features.Hud.CoinsHolderComponent)CreateComponent(index, typeof(Assets.Code.Meta.Features.Hud.CoinsHolderComponent));
+        var component = (Code.Meta.Features.Hud.CoinsHolderComponent)CreateComponent(index, typeof(Code.Meta.Features.Hud.CoinsHolderComponent));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
     }
 
-    public GameEntity ReplaceCoinsHolder(Assets.Code.Meta.Features.Hud.CoinsHolder.Behaviours.CoinsHolderBehaviour newValue) {
+    public GameEntity ReplaceCoinsHolder(Code.Meta.Features.Hud.CoinsHolder.Behaviours.CoinsHolderBehaviour newValue) {
         var index = GameComponentsLookup.CoinsHolder;
-        var component = (Assets.Code.Meta.Features.Hud.CoinsHolderComponent)CreateComponent(index, typeof(Assets.Code.Meta.Features.Hud.CoinsHolderComponent));
+        var component = (Code.Meta.Features.Hud.CoinsHolderComponent)CreateComponent(index, typeof(Code.Meta.Features.Hud.CoinsHolderComponent));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

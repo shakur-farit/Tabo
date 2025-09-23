@@ -1,7 +1,7 @@
-using Assets.Code.Gameplay.Input.Service;
+using Code.Gameplay.Input.Service;
 using Entitas;
 
-namespace Assets.Code.Gameplay.Input.Systems
+namespace Code.Gameplay.Input.Systems
 {
 	public class EmitLeftMouseButtonInputSystem : IExecuteSystem
 	{

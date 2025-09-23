@@ -33,7 +33,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Assets.Code.Gameplay.Features.Level.EnemiesInLevelCountCalculated enemiesInLevelCountCalculatedComponent = new Assets.Code.Gameplay.Features.Level.EnemiesInLevelCountCalculated();
+    static readonly Code.Gameplay.Features.Level.EnemiesInLevelCountCalculated enemiesInLevelCountCalculatedComponent = new Code.Gameplay.Features.Level.EnemiesInLevelCountCalculated();
 
     public bool isEnemiesInLevelCountCalculated {
         get { return HasComponent(GameComponentsLookup.EnemiesInLevelCountCalculated); }

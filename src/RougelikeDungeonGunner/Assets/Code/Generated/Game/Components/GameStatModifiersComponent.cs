@@ -33,21 +33,21 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Assets.Code.Gameplay.Features.CharacterStats.StatModifiers statModifiers { get { return (Assets.Code.Gameplay.Features.CharacterStats.StatModifiers)GetComponent(GameComponentsLookup.StatModifiers); } }
-    public System.Collections.Generic.Dictionary<Assets.Code.Gameplay.Features.CharacterStats.Stats, float> StatModifiers { get { return statModifiers.Value; } }
+    public Code.Gameplay.Features.CharacterStats.StatModifiers statModifiers { get { return (Code.Gameplay.Features.CharacterStats.StatModifiers)GetComponent(GameComponentsLookup.StatModifiers); } }
+    public System.Collections.Generic.Dictionary<Code.Gameplay.Features.CharacterStats.Stats, float> StatModifiers { get { return statModifiers.Value; } }
     public bool hasStatModifiers { get { return HasComponent(GameComponentsLookup.StatModifiers); } }
 
-    public GameEntity AddStatModifiers(System.Collections.Generic.Dictionary<Assets.Code.Gameplay.Features.CharacterStats.Stats, float> newValue) {
+    public GameEntity AddStatModifiers(System.Collections.Generic.Dictionary<Code.Gameplay.Features.CharacterStats.Stats, float> newValue) {
         var index = GameComponentsLookup.StatModifiers;
-        var component = (Assets.Code.Gameplay.Features.CharacterStats.StatModifiers)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.CharacterStats.StatModifiers));
+        var component = (Code.Gameplay.Features.CharacterStats.StatModifiers)CreateComponent(index, typeof(Code.Gameplay.Features.CharacterStats.StatModifiers));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
     }
 
-    public GameEntity ReplaceStatModifiers(System.Collections.Generic.Dictionary<Assets.Code.Gameplay.Features.CharacterStats.Stats, float> newValue) {
+    public GameEntity ReplaceStatModifiers(System.Collections.Generic.Dictionary<Code.Gameplay.Features.CharacterStats.Stats, float> newValue) {
         var index = GameComponentsLookup.StatModifiers;
-        var component = (Assets.Code.Gameplay.Features.CharacterStats.StatModifiers)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.CharacterStats.StatModifiers));
+        var component = (Code.Gameplay.Features.CharacterStats.StatModifiers)CreateComponent(index, typeof(Code.Gameplay.Features.CharacterStats.StatModifiers));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

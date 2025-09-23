@@ -3,7 +3,7 @@ using System.Text;
 using DesperateDevs.Extensions;
 using Entitas;
 
-namespace Assets.Code.Common.Entity.ToStrings
+namespace Code.Common.Entity.ToStrings
 {
   public class EntityPrinter
   {

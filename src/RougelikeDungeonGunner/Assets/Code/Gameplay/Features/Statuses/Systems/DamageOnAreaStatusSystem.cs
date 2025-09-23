@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
-using Assets.Code.Gameplay.Features.Effects;
-using Assets.Code.Gameplay.Features.Effects.Factory;
+using Code.Gameplay.Features.Effects;
+using Code.Gameplay.Features.Effects.Factory;
 using Entitas;
 
-namespace Assets.Code.Gameplay.Features.Statuses.Systems
+namespace Code.Gameplay.Features.Statuses.Systems
 {
 	public class DamageOnAreaStatusSystem : IExecuteSystem
 	{

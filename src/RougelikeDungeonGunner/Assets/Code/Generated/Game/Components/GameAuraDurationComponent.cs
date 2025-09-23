@@ -33,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Assets.Code.Gameplay.Features.Aura.AuraDuration auraDuration { get { return (Assets.Code.Gameplay.Features.Aura.AuraDuration)GetComponent(GameComponentsLookup.AuraDuration); } }
+    public Code.Gameplay.Features.Aura.AuraDuration auraDuration { get { return (Code.Gameplay.Features.Aura.AuraDuration)GetComponent(GameComponentsLookup.AuraDuration); } }
     public float AuraDuration { get { return auraDuration.Value; } }
     public bool hasAuraDuration { get { return HasComponent(GameComponentsLookup.AuraDuration); } }
 
     public GameEntity AddAuraDuration(float newValue) {
         var index = GameComponentsLookup.AuraDuration;
-        var component = (Assets.Code.Gameplay.Features.Aura.AuraDuration)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Aura.AuraDuration));
+        var component = (Code.Gameplay.Features.Aura.AuraDuration)CreateComponent(index, typeof(Code.Gameplay.Features.Aura.AuraDuration));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceAuraDuration(float newValue) {
         var index = GameComponentsLookup.AuraDuration;
-        var component = (Assets.Code.Gameplay.Features.Aura.AuraDuration)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Aura.AuraDuration));
+        var component = (Code.Gameplay.Features.Aura.AuraDuration)CreateComponent(index, typeof(Code.Gameplay.Features.Aura.AuraDuration));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

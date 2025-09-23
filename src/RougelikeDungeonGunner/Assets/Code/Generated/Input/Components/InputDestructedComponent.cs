@@ -43,7 +43,7 @@ public partial class InputEntity : IDestructedEntity { }
 //------------------------------------------------------------------------------
 public partial class InputEntity {
 
-    static readonly Assets.Code.Common.Destructed destructedComponent = new Assets.Code.Common.Destructed();
+    static readonly Code.Common.Destructed destructedComponent = new Code.Common.Destructed();
 
     public bool isDestructed {
         get { return HasComponent(InputComponentsLookup.Destructed); }

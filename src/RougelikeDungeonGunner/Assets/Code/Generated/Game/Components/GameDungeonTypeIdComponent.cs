@@ -33,21 +33,21 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Assets.Code.Gameplay.Features.Dungeon.DungeonTypeIdComponent dungeonTypeId { get { return (Assets.Code.Gameplay.Features.Dungeon.DungeonTypeIdComponent)GetComponent(GameComponentsLookup.DungeonTypeId); } }
-    public Assets.Code.Gameplay.Features.Dungeon.DungeonTypeId DungeonTypeId { get { return dungeonTypeId.Value; } }
+    public Code.Gameplay.Features.Dungeon.DungeonTypeIdComponent dungeonTypeId { get { return (Code.Gameplay.Features.Dungeon.DungeonTypeIdComponent)GetComponent(GameComponentsLookup.DungeonTypeId); } }
+    public Code.Gameplay.Features.Dungeon.DungeonTypeId DungeonTypeId { get { return dungeonTypeId.Value; } }
     public bool hasDungeonTypeId { get { return HasComponent(GameComponentsLookup.DungeonTypeId); } }
 
-    public GameEntity AddDungeonTypeId(Assets.Code.Gameplay.Features.Dungeon.DungeonTypeId newValue) {
+    public GameEntity AddDungeonTypeId(Code.Gameplay.Features.Dungeon.DungeonTypeId newValue) {
         var index = GameComponentsLookup.DungeonTypeId;
-        var component = (Assets.Code.Gameplay.Features.Dungeon.DungeonTypeIdComponent)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Dungeon.DungeonTypeIdComponent));
+        var component = (Code.Gameplay.Features.Dungeon.DungeonTypeIdComponent)CreateComponent(index, typeof(Code.Gameplay.Features.Dungeon.DungeonTypeIdComponent));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
     }
 
-    public GameEntity ReplaceDungeonTypeId(Assets.Code.Gameplay.Features.Dungeon.DungeonTypeId newValue) {
+    public GameEntity ReplaceDungeonTypeId(Code.Gameplay.Features.Dungeon.DungeonTypeId newValue) {
         var index = GameComponentsLookup.DungeonTypeId;
-        var component = (Assets.Code.Gameplay.Features.Dungeon.DungeonTypeIdComponent)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Dungeon.DungeonTypeIdComponent));
+        var component = (Code.Gameplay.Features.Dungeon.DungeonTypeIdComponent)CreateComponent(index, typeof(Code.Gameplay.Features.Dungeon.DungeonTypeIdComponent));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

@@ -33,7 +33,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Assets.Code.Gameplay.Features.Enchants.FlameEnchant flameEnchantComponent = new Assets.Code.Gameplay.Features.Enchants.FlameEnchant();
+    static readonly Code.Gameplay.Features.Enchants.FlameEnchant flameEnchantComponent = new Code.Gameplay.Features.Enchants.FlameEnchant();
 
     public bool isFlameEnchant {
         get { return HasComponent(GameComponentsLookup.FlameEnchant); }

@@ -33,21 +33,21 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Assets.Code.Gameplay.Features.Hero.HeroTypeIdComponent heroTypeId { get { return (Assets.Code.Gameplay.Features.Hero.HeroTypeIdComponent)GetComponent(GameComponentsLookup.HeroTypeId); } }
-    public Assets.Code.Gameplay.Features.Hero.HeroTypeId HeroTypeId { get { return heroTypeId.Value; } }
+    public Code.Gameplay.Features.Hero.HeroTypeIdComponent heroTypeId { get { return (Code.Gameplay.Features.Hero.HeroTypeIdComponent)GetComponent(GameComponentsLookup.HeroTypeId); } }
+    public Code.Gameplay.Features.Hero.HeroTypeId HeroTypeId { get { return heroTypeId.Value; } }
     public bool hasHeroTypeId { get { return HasComponent(GameComponentsLookup.HeroTypeId); } }
 
-    public GameEntity AddHeroTypeId(Assets.Code.Gameplay.Features.Hero.HeroTypeId newValue) {
+    public GameEntity AddHeroTypeId(Code.Gameplay.Features.Hero.HeroTypeId newValue) {
         var index = GameComponentsLookup.HeroTypeId;
-        var component = (Assets.Code.Gameplay.Features.Hero.HeroTypeIdComponent)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Hero.HeroTypeIdComponent));
+        var component = (Code.Gameplay.Features.Hero.HeroTypeIdComponent)CreateComponent(index, typeof(Code.Gameplay.Features.Hero.HeroTypeIdComponent));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
     }
 
-    public GameEntity ReplaceHeroTypeId(Assets.Code.Gameplay.Features.Hero.HeroTypeId newValue) {
+    public GameEntity ReplaceHeroTypeId(Code.Gameplay.Features.Hero.HeroTypeId newValue) {
         var index = GameComponentsLookup.HeroTypeId;
-        var component = (Assets.Code.Gameplay.Features.Hero.HeroTypeIdComponent)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Hero.HeroTypeIdComponent));
+        var component = (Code.Gameplay.Features.Hero.HeroTypeIdComponent)CreateComponent(index, typeof(Code.Gameplay.Features.Hero.HeroTypeIdComponent));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

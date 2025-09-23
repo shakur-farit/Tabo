@@ -33,7 +33,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Assets.Code.Gameplay.Features.AStar.Pathfinder pathfinderComponent = new Assets.Code.Gameplay.Features.AStar.Pathfinder();
+    static readonly Code.Gameplay.Features.AStar.Pathfinder pathfinderComponent = new Code.Gameplay.Features.AStar.Pathfinder();
 
     public bool isPathfinder {
         get { return HasComponent(GameComponentsLookup.Pathfinder); }

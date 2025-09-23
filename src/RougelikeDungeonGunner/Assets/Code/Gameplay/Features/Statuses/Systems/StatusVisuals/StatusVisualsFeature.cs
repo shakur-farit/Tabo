@@ -1,6 +1,6 @@
-﻿using Assets.Code.Infrastructure.Systems;
+﻿using Code.Infrastructure.Systems;
 
-namespace Assets.Code.Gameplay.Features.Statuses.Systems.StatusVisuals
+namespace Code.Gameplay.Features.Statuses.Systems.StatusVisuals
 {
 	public sealed class StatusVisualsFeature : Feature
 	{

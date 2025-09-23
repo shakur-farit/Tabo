@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
-using Assets.Code.Gameplay.Features.Aura.Configs;
-using Assets.Code.Gameplay.StaticData;
+using Code.Gameplay.Features.Aura.Configs;
+using Code.Gameplay.StaticData;
 using Entitas;
 using UnityEngine;
 
-namespace Assets.Code.Gameplay.Features.Aura.Systems
+namespace Code.Gameplay.Features.Aura.Systems
 {
 	public class SetAuraColorSystem : ReactiveSystem<GameEntity>
 	{

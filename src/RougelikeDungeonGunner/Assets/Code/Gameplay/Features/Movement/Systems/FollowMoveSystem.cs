@@ -1,6 +1,6 @@
 ﻿using Entitas;
 
-namespace Assets.Code.Gameplay.Features.Movement.Systems
+namespace Code.Gameplay.Features.Movement.Systems
 {
 	public class FollowMoveSystem : IExecuteSystem
 	{

@@ -1,8 +1,8 @@
-﻿using Assets.Code.Infrastructure.View.Registrars;
-using Assets.Code.Meta.Features.Hud.WeaponHolder.Behaviours;
+﻿using Code.Infrastructure.View.Registrars;
+using Code.Meta.Features.Hud.WeaponHolder.Behaviours;
 using UnityEngine;
 
-namespace Assets.Code.Meta.Features.Hud.WeaponHolder.Registrar
+namespace Code.Meta.Features.Hud.WeaponHolder.Registrar
 {
 	public class ReloadingAnimatorRegistrar : EntityComponentRegistrar
 	{

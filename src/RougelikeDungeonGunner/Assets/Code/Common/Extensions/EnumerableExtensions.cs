@@ -2,7 +2,7 @@
 using System.Linq;
 using Random = UnityEngine.Random;
 
-namespace Assets.Code.Common.Extensions
+namespace Code.Common.Extensions
 {
   public static class  EnumerableExtensions
   {

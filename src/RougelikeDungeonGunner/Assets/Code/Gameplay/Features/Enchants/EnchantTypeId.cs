@@ -1,4 +1,4 @@
-﻿namespace Assets.Code.Gameplay.Features.Enchants
+﻿namespace Code.Gameplay.Features.Enchants
 {
 	public enum EnchantTypeId
 	{

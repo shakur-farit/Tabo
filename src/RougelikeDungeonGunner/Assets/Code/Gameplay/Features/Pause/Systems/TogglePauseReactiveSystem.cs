@@ -1,9 +1,8 @@
 using System.Collections.Generic;
-using Assets.Code.Gameplay.Common.Time;
+using Code.Gameplay.Common.Time;
 using Entitas;
-using UnityEngine;
 
-namespace Assets.Code.Gameplay.Input
+namespace Code.Gameplay.Features.Pause.Systems
 {
 	public class TogglePauseReactiveSystem : ReactiveSystem<InputEntity>
 	{

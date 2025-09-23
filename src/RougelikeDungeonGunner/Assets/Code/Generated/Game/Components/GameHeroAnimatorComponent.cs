@@ -33,21 +33,21 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Assets.Code.Gameplay.Features.Hero.HeroAnimatorComponent heroAnimator { get { return (Assets.Code.Gameplay.Features.Hero.HeroAnimatorComponent)GetComponent(GameComponentsLookup.HeroAnimator); } }
-    public Assets.Code.Gameplay.Features.Hero.Behaviours.HeroAnimator HeroAnimator { get { return heroAnimator.Value; } }
+    public Code.Gameplay.Features.Hero.HeroAnimatorComponent heroAnimator { get { return (Code.Gameplay.Features.Hero.HeroAnimatorComponent)GetComponent(GameComponentsLookup.HeroAnimator); } }
+    public Code.Gameplay.Features.Hero.Behaviours.HeroAnimator HeroAnimator { get { return heroAnimator.Value; } }
     public bool hasHeroAnimator { get { return HasComponent(GameComponentsLookup.HeroAnimator); } }
 
-    public GameEntity AddHeroAnimator(Assets.Code.Gameplay.Features.Hero.Behaviours.HeroAnimator newValue) {
+    public GameEntity AddHeroAnimator(Code.Gameplay.Features.Hero.Behaviours.HeroAnimator newValue) {
         var index = GameComponentsLookup.HeroAnimator;
-        var component = (Assets.Code.Gameplay.Features.Hero.HeroAnimatorComponent)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Hero.HeroAnimatorComponent));
+        var component = (Code.Gameplay.Features.Hero.HeroAnimatorComponent)CreateComponent(index, typeof(Code.Gameplay.Features.Hero.HeroAnimatorComponent));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
     }
 
-    public GameEntity ReplaceHeroAnimator(Assets.Code.Gameplay.Features.Hero.Behaviours.HeroAnimator newValue) {
+    public GameEntity ReplaceHeroAnimator(Code.Gameplay.Features.Hero.Behaviours.HeroAnimator newValue) {
         var index = GameComponentsLookup.HeroAnimator;
-        var component = (Assets.Code.Gameplay.Features.Hero.HeroAnimatorComponent)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Hero.HeroAnimatorComponent));
+        var component = (Code.Gameplay.Features.Hero.HeroAnimatorComponent)CreateComponent(index, typeof(Code.Gameplay.Features.Hero.HeroAnimatorComponent));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

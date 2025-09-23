@@ -1,6 +1,6 @@
 using System;
 
-namespace Assets.Code.Gameplay.Common.Time
+namespace Code.Gameplay.Common.Time
 {
   public class UnityTimeService : ITimeService
   {

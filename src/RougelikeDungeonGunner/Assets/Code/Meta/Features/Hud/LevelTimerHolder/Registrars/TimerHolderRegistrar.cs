@@ -1,7 +1,7 @@
-﻿using Assets.Code.Infrastructure.View.Registrars;
+﻿using Code.Infrastructure.View.Registrars;
 using UnityEngine;
 
-namespace Assets.Code.Meta.Features.Hud.LevelTimerHolder.Registrars
+namespace Code.Meta.Features.Hud.LevelTimerHolder.Registrars
 {
 	public class TimerHolderRegistrar : EntityComponentRegistrar
 	{

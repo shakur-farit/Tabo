@@ -33,7 +33,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Assets.Code.Gameplay.Features.Aura.Aura auraComponent = new Assets.Code.Gameplay.Features.Aura.Aura();
+    static readonly Code.Gameplay.Features.Aura.Aura auraComponent = new Code.Gameplay.Features.Aura.Aura();
 
     public bool isAura {
         get { return HasComponent(GameComponentsLookup.Aura); }

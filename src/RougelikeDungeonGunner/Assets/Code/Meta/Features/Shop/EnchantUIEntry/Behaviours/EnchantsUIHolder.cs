@@ -1,10 +1,10 @@
 ﻿using System;
-using Assets.Code.Gameplay.Features.Statuses;
-using Assets.Code.Meta.Features.Shop.EnchantUIEntry.Factory;
+using Code.Gameplay.Features.Statuses;
+using Code.Meta.Features.Shop.EnchantUIEntry.Factory;
 using UnityEngine;
 using Zenject;
 
-namespace Assets.Code.Meta.Features.Shop.EnchantUIEntry.Behaviours
+namespace Code.Meta.Features.Shop.EnchantUIEntry.Behaviours
 {
 	public class EnchantsUIHolder : MonoBehaviour
 	{

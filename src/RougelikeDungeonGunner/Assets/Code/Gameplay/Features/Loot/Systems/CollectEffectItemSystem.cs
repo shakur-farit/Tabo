@@ -1,8 +1,8 @@
-﻿using Assets.Code.Gameplay.Features.Effects;
-using Assets.Code.Gameplay.Features.Effects.Factory;
+﻿using Code.Gameplay.Features.Effects;
+using Code.Gameplay.Features.Effects.Factory;
 using Entitas;
 
-namespace Assets.Code.Gameplay.Features.Loot.Systems
+namespace Code.Gameplay.Features.Loot.Systems
 {
 	public class CollectEffectItemSystem : IExecuteSystem
 	{

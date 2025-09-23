@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Assets.Code.Gameplay.Features.Weapon.Behavours
+namespace Code.Gameplay.Features.Weapon.Behavours
 {
 	public class WeaponScaleNormalizer : MonoBehaviour
 	{

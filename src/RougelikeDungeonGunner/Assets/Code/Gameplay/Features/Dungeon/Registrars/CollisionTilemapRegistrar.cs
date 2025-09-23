@@ -1,8 +1,8 @@
-﻿using Assets.Code.Infrastructure.View.Registrars;
+﻿using Code.Infrastructure.View.Registrars;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-namespace Assets.Code.Gameplay.Features.Dungeon.Registrars
+namespace Code.Gameplay.Features.Dungeon.Registrars
 {
 	public class CollisionTilemapRegistrar : EntityComponentRegistrar
 	{

@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using Assets.Code.Gameplay.Features.Statuses;
+using Code.Gameplay.Features.Statuses;
 using Entitas;
 
-namespace Assets.Code.Gameplay.Features.Enchants.Systems
+namespace Code.Gameplay.Features.Enchants.Systems
 {
 	public class PoisonEnchantSystem : IExecuteSystem
 	{

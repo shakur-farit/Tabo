@@ -33,7 +33,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Assets.Code.Gameplay.Features.Level.StartingTimeUp startingTimeUpComponent = new Assets.Code.Gameplay.Features.Level.StartingTimeUp();
+    static readonly Code.Gameplay.Features.Level.StartingTimeUp startingTimeUpComponent = new Code.Gameplay.Features.Level.StartingTimeUp();
 
     public bool isStartingTimeUp {
         get { return HasComponent(GameComponentsLookup.StartingTimeUp); }

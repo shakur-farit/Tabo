@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using Assets.Code.Gameplay.Common.Time;
+using Code.Gameplay.Common.Time;
 using Entitas;
 
-namespace Assets.Code.Common.Destruct.Systems
+namespace Code.Common.Destruct.Systems
 {
 	public class SelfDestructTimerSystem : IExecuteSystem
 	{

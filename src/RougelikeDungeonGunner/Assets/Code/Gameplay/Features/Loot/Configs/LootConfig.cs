@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
-using Assets.Code.Gameplay.Features.Effects;
-using Assets.Code.Gameplay.Features.Enemy;
-using Assets.Code.Gameplay.Features.Statuses;
-using Assets.Code.Infrastructure.View;
+using Code.Gameplay.Features.Effects;
+using Code.Gameplay.Features.Enemy;
+using Code.Gameplay.Features.Statuses;
+using Code.Infrastructure.View;
 using UnityEngine;
 
-namespace Assets.Code.Gameplay.Features.Loot.Configs
+namespace Code.Gameplay.Features.Loot.Configs
 {
 	[CreateAssetMenu(menuName = "Dungeon Gunner/Loot Config", fileName = "LootConfig")]
 

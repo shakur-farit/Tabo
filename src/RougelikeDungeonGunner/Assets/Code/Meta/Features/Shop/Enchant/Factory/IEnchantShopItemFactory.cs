@@ -1,7 +1,7 @@
-﻿using Assets.Code.Meta.Features.Shop.Enchant.Behaviours;
+﻿using Code.Meta.Features.Shop.Enchant.Behaviours;
 using UnityEngine;
 
-namespace Assets.Code.Meta.Features.Shop.Enchant.Factory
+namespace Code.Meta.Features.Shop.Enchant.Factory
 {
 	public interface IEnchantShopItemFactory
 	{

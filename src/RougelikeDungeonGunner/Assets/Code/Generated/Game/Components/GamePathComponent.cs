@@ -33,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Assets.Code.Gameplay.Features.AStar.Path path { get { return (Assets.Code.Gameplay.Features.AStar.Path)GetComponent(GameComponentsLookup.Path); } }
+    public Code.Gameplay.Features.AStar.Path path { get { return (Code.Gameplay.Features.AStar.Path)GetComponent(GameComponentsLookup.Path); } }
     public System.Collections.Generic.List<UnityEngine.Vector2Int> Path { get { return path.Value; } }
     public bool hasPath { get { return HasComponent(GameComponentsLookup.Path); } }
 
     public GameEntity AddPath(System.Collections.Generic.List<UnityEngine.Vector2Int> newValue) {
         var index = GameComponentsLookup.Path;
-        var component = (Assets.Code.Gameplay.Features.AStar.Path)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.AStar.Path));
+        var component = (Code.Gameplay.Features.AStar.Path)CreateComponent(index, typeof(Code.Gameplay.Features.AStar.Path));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplacePath(System.Collections.Generic.List<UnityEngine.Vector2Int> newValue) {
         var index = GameComponentsLookup.Path;
-        var component = (Assets.Code.Gameplay.Features.AStar.Path)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.AStar.Path));
+        var component = (Code.Gameplay.Features.AStar.Path)CreateComponent(index, typeof(Code.Gameplay.Features.AStar.Path));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

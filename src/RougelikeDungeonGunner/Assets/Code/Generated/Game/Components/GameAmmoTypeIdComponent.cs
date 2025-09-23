@@ -33,21 +33,21 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Assets.Code.Gameplay.Features.Ammo.AmmoTypeIdComponent ammoTypeId { get { return (Assets.Code.Gameplay.Features.Ammo.AmmoTypeIdComponent)GetComponent(GameComponentsLookup.AmmoTypeId); } }
-    public Assets.Code.Gameplay.Features.Ammo.AmmoTypeId AmmoTypeId { get { return ammoTypeId.Value; } }
+    public Code.Gameplay.Features.Ammo.AmmoTypeIdComponent ammoTypeId { get { return (Code.Gameplay.Features.Ammo.AmmoTypeIdComponent)GetComponent(GameComponentsLookup.AmmoTypeId); } }
+    public Code.Gameplay.Features.Ammo.AmmoTypeId AmmoTypeId { get { return ammoTypeId.Value; } }
     public bool hasAmmoTypeId { get { return HasComponent(GameComponentsLookup.AmmoTypeId); } }
 
-    public GameEntity AddAmmoTypeId(Assets.Code.Gameplay.Features.Ammo.AmmoTypeId newValue) {
+    public GameEntity AddAmmoTypeId(Code.Gameplay.Features.Ammo.AmmoTypeId newValue) {
         var index = GameComponentsLookup.AmmoTypeId;
-        var component = (Assets.Code.Gameplay.Features.Ammo.AmmoTypeIdComponent)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Ammo.AmmoTypeIdComponent));
+        var component = (Code.Gameplay.Features.Ammo.AmmoTypeIdComponent)CreateComponent(index, typeof(Code.Gameplay.Features.Ammo.AmmoTypeIdComponent));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
     }
 
-    public GameEntity ReplaceAmmoTypeId(Assets.Code.Gameplay.Features.Ammo.AmmoTypeId newValue) {
+    public GameEntity ReplaceAmmoTypeId(Code.Gameplay.Features.Ammo.AmmoTypeId newValue) {
         var index = GameComponentsLookup.AmmoTypeId;
-        var component = (Assets.Code.Gameplay.Features.Ammo.AmmoTypeIdComponent)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Ammo.AmmoTypeIdComponent));
+        var component = (Code.Gameplay.Features.Ammo.AmmoTypeIdComponent)CreateComponent(index, typeof(Code.Gameplay.Features.Ammo.AmmoTypeIdComponent));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

@@ -101,165 +101,166 @@ public static class GameComponentsLookup {
     public const int Cooldown = 90;
     public const int CooldownLeft = 91;
     public const int CooldownUp = 92;
-    public const int CollisionTilemap = 93;
-    public const int Dungeon = 94;
-    public const int DungeonAvailable = 95;
-    public const int DungeonTypeId = 96;
-    public const int HeroStartPosition = 97;
-    public const int ValidPositions = 98;
-    public const int ValidSprite = 99;
-    public const int DamageEffect = 100;
-    public const int Effect = 101;
-    public const int EffectValue = 102;
-    public const int HealEffect = 103;
-    public const int ProducerId = 104;
-    public const int TargetId = 105;
-    public const int Enchant = 106;
-    public const int EnchantAlreadyHeld = 107;
-    public const int EnchantDuration = 108;
-    public const int EnchantTimeLeft = 109;
-    public const int EnchantTypeId = 110;
-    public const int EnchantUI = 111;
-    public const int EnchantVisualEffect = 112;
-    public const int ExplosiveEnchant = 113;
-    public const int FlameEnchant = 114;
-    public const int FreezeEnchant = 115;
-    public const int NewCollectedEnchant = 116;
-    public const int PoisonEnchant = 117;
-    public const int Enemy = 118;
-    public const int EnemyAnimator = 119;
-    public const int EnemyTypeId = 120;
-    public const int Grimonk = 121;
-    public const int Hedusa = 122;
-    public const int LastTargetPosition = 123;
-    public const int MudRock = 124;
-    public const int Orc = 125;
-    public const int Slime = 126;
-    public const int Slizzard = 127;
-    public const int CurrentWeaponTypeId = 128;
-    public const int Hero = 129;
-    public const int HeroAnimator = 130;
-    public const int HeroAvailable = 131;
-    public const int HeroTypeId = 132;
-    public const int TheGeneral = 133;
-    public const int TheScientist = 134;
-    public const int TheThief = 135;
-    public const int Unweaponed = 136;
-    public const int Weaponed = 137;
-    public const int DungeonTypeOnLevel = 138;
-    public const int EnemiesInLevelCount = 139;
-    public const int EnemiesInLevelCountCalculated = 140;
-    public const int EnemyWave = 141;
-    public const int EnemyWaves = 142;
-    public const int FinishingTime = 143;
-    public const int FinishingTimeLeft = 144;
-    public const int HeroSafeZoneRadius = 145;
-    public const int Level = 146;
-    public const int LevelTypeId = 147;
-    public const int SpawnedEnemyWaves = 148;
-    public const int StartingTime = 149;
-    public const int StartingTimeLeft = 150;
-    public const int StartingTimeUp = 151;
-    public const int CurrentHp = 152;
-    public const int Dead = 153;
-    public const int MaxHp = 154;
-    public const int ProcessingDeath = 155;
-    public const int Coins = 156;
-    public const int Collected = 157;
-    public const int LootTypeId = 158;
-    public const int PickupRadius = 159;
-    public const int Pullable = 160;
-    public const int Pulling = 161;
-    public const int Direction = 162;
-    public const int FollowMovement = 163;
-    public const int FollowMovementXAxisOffset = 164;
-    public const int FollowMovementYAxisOffset = 165;
-    public const int FollowTargetId = 166;
-    public const int LinerMovement = 167;
-    public const int MovementAvailable = 168;
-    public const int Moving = 169;
-    public const int OrbitalMovement = 170;
-    public const int OrbitAngularSpeed = 171;
-    public const int OrbitCenter = 172;
-    public const int OrbitElapsedTime = 173;
-    public const int OrbitInitialAngle = 174;
-    public const int OrbitRadius = 175;
-    public const int Speed = 176;
-    public const int Rotating = 177;
-    public const int RotationAngle = 178;
-    public const int RotationAvailable = 179;
-    public const int SpecialEffect = 180;
-    public const int SpecialEffectTypeId = 181;
-    public const int Affected = 182;
-    public const int Applied = 183;
-    public const int ApplierStatusLink = 184;
-    public const int Explosive = 185;
-    public const int Flame = 186;
-    public const int Freeze = 187;
-    public const int Period = 188;
-    public const int Poison = 189;
-    public const int Status = 190;
-    public const int StatusDuration = 191;
-    public const int StatusTimeLeft = 192;
-    public const int StatusTypeId = 193;
-    public const int TimeSinceLastTick = 194;
-    public const int Unapplied = 195;
-    public const int ClosestTargetPosition = 196;
-    public const int CurrentAmmoCount = 197;
-    public const int EffectSetups = 198;
-    public const int EnemyCircleSigil = 199;
-    public const int EnemyPistol = 200;
-    public const int EnemyStarSigil = 201;
-    public const int EnemyTriangleSigil = 202;
-    public const int EnemyWeapon = 203;
-    public const int FirePositionTransform = 204;
-    public const int HeroAutomaticPistol = 205;
-    public const int HeroCircleSigil = 206;
-    public const int HeroLaserBlaster = 207;
-    public const int HeroMachinegun = 208;
-    public const int HeroPistol = 209;
-    public const int HeroPlasmaGun = 210;
-    public const int HeroRevolver = 211;
-    public const int HeroRocketLauncher = 212;
-    public const int HeroShotgun = 213;
-    public const int HeroSniper = 214;
-    public const int HeroStarSigil = 215;
-    public const int HeroTriangleSigil = 216;
-    public const int HeroWeapon = 217;
-    public const int InfinityAmmo = 218;
-    public const int MagazineNotEmpty = 219;
-    public const int MagazineSize = 220;
-    public const int MaxPelletsDeviation = 221;
-    public const int MaxWeaponEnchantsCount = 222;
-    public const int MinPelletsDeviation = 223;
-    public const int MultiPellet = 224;
-    public const int Pierce = 225;
-    public const int Precharged = 226;
-    public const int PrechargeTime = 227;
-    public const int PrechargeTimeLeft = 228;
-    public const int ReadyToShoot = 229;
-    public const int Reloading = 230;
-    public const int ReloadTime = 231;
-    public const int ReloadTimeLeft = 232;
-    public const int RotationPointTransform = 233;
-    public const int Shooting = 234;
-    public const int Shot = 235;
-    public const int StatusSetups = 236;
-    public const int Weapon = 237;
-    public const int WeaponEnchants = 238;
-    public const int WeaponOwnerId = 239;
-    public const int WeaponOwnerTypeId = 240;
-    public const int WeaponRotationAngle = 241;
-    public const int WeaponTypeId = 242;
-    public const int AmmoHolder = 243;
-    public const int CoinsHolder = 244;
-    public const int EnchantHolder = 245;
-    public const int HeartHolder = 246;
-    public const int ReloadingAnimator = 247;
-    public const int TimerHolder = 248;
-    public const int WeaponHolder = 249;
+    public const int DestroyableAnimator = 93;
+    public const int CollisionTilemap = 94;
+    public const int Dungeon = 95;
+    public const int DungeonAvailable = 96;
+    public const int DungeonTypeId = 97;
+    public const int HeroStartPosition = 98;
+    public const int ValidPositions = 99;
+    public const int ValidSprite = 100;
+    public const int DamageEffect = 101;
+    public const int Effect = 102;
+    public const int EffectValue = 103;
+    public const int HealEffect = 104;
+    public const int ProducerId = 105;
+    public const int TargetId = 106;
+    public const int Enchant = 107;
+    public const int EnchantAlreadyHeld = 108;
+    public const int EnchantDuration = 109;
+    public const int EnchantTimeLeft = 110;
+    public const int EnchantTypeId = 111;
+    public const int EnchantUI = 112;
+    public const int EnchantVisualEffect = 113;
+    public const int ExplosiveEnchant = 114;
+    public const int FlameEnchant = 115;
+    public const int FreezeEnchant = 116;
+    public const int NewCollectedEnchant = 117;
+    public const int PoisonEnchant = 118;
+    public const int Enemy = 119;
+    public const int EnemyAnimator = 120;
+    public const int EnemyTypeId = 121;
+    public const int Grimonk = 122;
+    public const int Hedusa = 123;
+    public const int LastTargetPosition = 124;
+    public const int MudRock = 125;
+    public const int Orc = 126;
+    public const int Slime = 127;
+    public const int Slizzard = 128;
+    public const int CurrentWeaponTypeId = 129;
+    public const int Hero = 130;
+    public const int HeroAnimator = 131;
+    public const int HeroAvailable = 132;
+    public const int HeroTypeId = 133;
+    public const int TheGeneral = 134;
+    public const int TheScientist = 135;
+    public const int TheThief = 136;
+    public const int Unweaponed = 137;
+    public const int Weaponed = 138;
+    public const int DungeonTypeOnLevel = 139;
+    public const int EnemiesInLevelCount = 140;
+    public const int EnemiesInLevelCountCalculated = 141;
+    public const int EnemyWave = 142;
+    public const int EnemyWaves = 143;
+    public const int FinishingTime = 144;
+    public const int FinishingTimeLeft = 145;
+    public const int HeroSafeZoneRadius = 146;
+    public const int Level = 147;
+    public const int LevelTypeId = 148;
+    public const int SpawnedEnemyWaves = 149;
+    public const int StartingTime = 150;
+    public const int StartingTimeLeft = 151;
+    public const int StartingTimeUp = 152;
+    public const int CurrentHp = 153;
+    public const int Dead = 154;
+    public const int MaxHp = 155;
+    public const int ProcessingDeath = 156;
+    public const int Coins = 157;
+    public const int Collected = 158;
+    public const int LootTypeId = 159;
+    public const int PickupRadius = 160;
+    public const int Pullable = 161;
+    public const int Pulling = 162;
+    public const int Direction = 163;
+    public const int FollowMovement = 164;
+    public const int FollowMovementXAxisOffset = 165;
+    public const int FollowMovementYAxisOffset = 166;
+    public const int FollowTargetId = 167;
+    public const int LinerMovement = 168;
+    public const int MovementAvailable = 169;
+    public const int Moving = 170;
+    public const int OrbitalMovement = 171;
+    public const int OrbitAngularSpeed = 172;
+    public const int OrbitCenter = 173;
+    public const int OrbitElapsedTime = 174;
+    public const int OrbitInitialAngle = 175;
+    public const int OrbitRadius = 176;
+    public const int Speed = 177;
+    public const int Rotating = 178;
+    public const int RotationAngle = 179;
+    public const int RotationAvailable = 180;
+    public const int SpecialEffect = 181;
+    public const int SpecialEffectTypeId = 182;
+    public const int Affected = 183;
+    public const int Applied = 184;
+    public const int ApplierStatusLink = 185;
+    public const int Explosive = 186;
+    public const int Flame = 187;
+    public const int Freeze = 188;
+    public const int Period = 189;
+    public const int Poison = 190;
+    public const int Status = 191;
+    public const int StatusDuration = 192;
+    public const int StatusTimeLeft = 193;
+    public const int StatusTypeId = 194;
+    public const int TimeSinceLastTick = 195;
+    public const int Unapplied = 196;
+    public const int ClosestTargetPosition = 197;
+    public const int CurrentAmmoCount = 198;
+    public const int EffectSetups = 199;
+    public const int EnemyCircleSigil = 200;
+    public const int EnemyPistol = 201;
+    public const int EnemyStarSigil = 202;
+    public const int EnemyTriangleSigil = 203;
+    public const int EnemyWeapon = 204;
+    public const int FirePositionTransform = 205;
+    public const int HeroAutomaticPistol = 206;
+    public const int HeroCircleSigil = 207;
+    public const int HeroLaserBlaster = 208;
+    public const int HeroMachinegun = 209;
+    public const int HeroPistol = 210;
+    public const int HeroPlasmaGun = 211;
+    public const int HeroRevolver = 212;
+    public const int HeroRocketLauncher = 213;
+    public const int HeroShotgun = 214;
+    public const int HeroSniper = 215;
+    public const int HeroStarSigil = 216;
+    public const int HeroTriangleSigil = 217;
+    public const int HeroWeapon = 218;
+    public const int InfinityAmmo = 219;
+    public const int MagazineNotEmpty = 220;
+    public const int MagazineSize = 221;
+    public const int MaxPelletsDeviation = 222;
+    public const int MaxWeaponEnchantsCount = 223;
+    public const int MinPelletsDeviation = 224;
+    public const int MultiPellet = 225;
+    public const int Pierce = 226;
+    public const int Precharged = 227;
+    public const int PrechargeTime = 228;
+    public const int PrechargeTimeLeft = 229;
+    public const int ReadyToShoot = 230;
+    public const int Reloading = 231;
+    public const int ReloadTime = 232;
+    public const int ReloadTimeLeft = 233;
+    public const int RotationPointTransform = 234;
+    public const int Shooting = 235;
+    public const int Shot = 236;
+    public const int StatusSetups = 237;
+    public const int Weapon = 238;
+    public const int WeaponEnchants = 239;
+    public const int WeaponOwnerId = 240;
+    public const int WeaponOwnerTypeId = 241;
+    public const int WeaponRotationAngle = 242;
+    public const int WeaponTypeId = 243;
+    public const int AmmoHolder = 244;
+    public const int CoinsHolder = 245;
+    public const int EnchantHolder = 246;
+    public const int HeartHolder = 247;
+    public const int ReloadingAnimator = 248;
+    public const int TimerHolder = 249;
+    public const int WeaponHolder = 250;
 
-    public const int TotalComponents = 250;
+    public const int TotalComponents = 251;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -355,6 +356,7 @@ public static class GameComponentsLookup {
         "Cooldown",
         "CooldownLeft",
         "CooldownUp",
+        "DestroyableAnimator",
         "CollisionTilemap",
         "Dungeon",
         "DungeonAvailable",
@@ -515,255 +517,256 @@ public static class GameComponentsLookup {
     };
 
     public static readonly System.Type[] componentTypes = {
-        typeof(Assets.Code.Common.Destructed),
-        typeof(Assets.Code.Common.Parented),
-        typeof(Assets.Code.Common.SelfDestructedTimer),
-        typeof(Assets.Code.Common.Unparented),
-        typeof(Assets.Code.Common.View),
-        typeof(Assets.Code.Common.ViewParent),
-        typeof(Assets.Code.Common.ViewPath),
-        typeof(Assets.Code.Common.ViewPrefab),
-        typeof(Assets.Code.Gameplay.Common.ColorComponent),
-        typeof(Assets.Code.Gameplay.Common.Damage),
-        typeof(Assets.Code.Gameplay.Common.DamageTakenAnimatorComponent),
-        typeof(Assets.Code.Gameplay.Common.Id),
-        typeof(Assets.Code.Gameplay.Common.ParentTransform),
-        typeof(Assets.Code.Gameplay.Common.ParticleSystemComponent),
-        typeof(Assets.Code.Gameplay.Common.ParticleSystemRendererComponent),
-        typeof(Assets.Code.Gameplay.Common.Processed),
-        typeof(Assets.Code.Gameplay.Common.SpriteRendererComponent),
-        typeof(Assets.Code.Gameplay.Common.StatusVisualsComponent),
-        typeof(Assets.Code.Gameplay.Common.Stunned),
-        typeof(Assets.Code.Gameplay.Common.TrailRendererComponent),
-        typeof(Assets.Code.Gameplay.Common.TransformComponent),
-        typeof(Assets.Code.Gameplay.Common.WorldPosition),
-        typeof(Assets.Code.Gameplay.Features.Ammo.Ammo),
-        typeof(Assets.Code.Gameplay.Features.Ammo.AmmoTypeIdComponent),
-        typeof(Assets.Code.Gameplay.Features.Ammo.EnemyBullet),
-        typeof(Assets.Code.Gameplay.Features.Ammo.LaserBolt),
-        typeof(Assets.Code.Gameplay.Features.Ammo.LightBullet),
-        typeof(Assets.Code.Gameplay.Features.Ammo.LongRangeBullet),
-        typeof(Assets.Code.Gameplay.Features.Ammo.RifleBullet),
-        typeof(Assets.Code.Gameplay.Features.Ammo.RocketMissile),
-        typeof(Assets.Code.Gameplay.Features.Ammo.ShotgunShell),
-        typeof(Assets.Code.Gameplay.Features.Ammo.SigilAmmo),
-        typeof(Assets.Code.Gameplay.Features.Ammo.TargetLimit),
-        typeof(Assets.Code.Gameplay.Features.AmmoPattern.AddedInList),
-        typeof(Assets.Code.Gameplay.Features.AmmoPattern.AmmoPattern),
-        typeof(Assets.Code.Gameplay.Features.AmmoPattern.AmmoPatternId),
-        typeof(Assets.Code.Gameplay.Features.AmmoPattern.AmmoPatternSetupComponent),
-        typeof(Assets.Code.Gameplay.Features.AmmoPattern.AmmoTransformsList),
-        typeof(Assets.Code.Gameplay.Features.AmmoPattern.CirclePattern),
-        typeof(Assets.Code.Gameplay.Features.AmmoPattern.PatternAmmoCount),
-        typeof(Assets.Code.Gameplay.Features.AmmoPattern.PatternBranches),
-        typeof(Assets.Code.Gameplay.Features.AmmoPattern.PatternCurrentAngle),
-        typeof(Assets.Code.Gameplay.Features.AmmoPattern.PatternEmpty),
-        typeof(Assets.Code.Gameplay.Features.AmmoPattern.PatternRadius),
-        typeof(Assets.Code.Gameplay.Features.AmmoPattern.PatternRotateSpeed),
-        typeof(Assets.Code.Gameplay.Features.AmmoPattern.SinglePattern),
-        typeof(Assets.Code.Gameplay.Features.AmmoPattern.StarPattern),
-        typeof(Assets.Code.Gameplay.Features.AmmoPattern.TrianglePattern),
-        typeof(Assets.Code.Gameplay.Features.AStar.MinDistanceForRepath),
-        typeof(Assets.Code.Gameplay.Features.AStar.Path),
-        typeof(Assets.Code.Gameplay.Features.AStar.Pathfinder),
-        typeof(Assets.Code.Gameplay.Features.AStar.PathfinderAvailable),
-        typeof(Assets.Code.Gameplay.Features.AStar.PathfinderInitialized),
-        typeof(Assets.Code.Gameplay.Features.AStar.PathfindingIntervalTimer),
-        typeof(Assets.Code.Gameplay.Features.AStar.PathfindingTimerLeft),
-        typeof(Assets.Code.Gameplay.Features.AStar.PathfindingTimerUp),
-        typeof(Assets.Code.Gameplay.Features.Aura.Aura),
-        typeof(Assets.Code.Gameplay.Features.Aura.AuraDuration),
-        typeof(Assets.Code.Gameplay.Features.Aura.AuraDurationTimeLeft),
-        typeof(Assets.Code.Gameplay.Features.Aura.AuraLayer),
-        typeof(Assets.Code.Gameplay.Features.Aura.AuraLayerMask),
-        typeof(Assets.Code.Gameplay.Features.Aura.AuraPeriod),
-        typeof(Assets.Code.Gameplay.Features.Aura.AuraPeriodTimeLeft),
-        typeof(Assets.Code.Gameplay.Features.Aura.AuraPeriodTimeUp),
-        typeof(Assets.Code.Gameplay.Features.Aura.AuraRadius),
-        typeof(Assets.Code.Gameplay.Features.Aura.AuraTypeIdComponent),
-        typeof(Assets.Code.Gameplay.Features.Aura.HealingAura),
-        typeof(Assets.Code.Gameplay.Features.Aura.HealingAuraApplied),
-        typeof(Assets.Code.Gameplay.Features.Aura.RequestHealingAura),
-        typeof(Assets.Code.Gameplay.Features.Aura.RequestShield),
-        typeof(Assets.Code.Gameplay.Features.Aura.Shield),
-        typeof(Assets.Code.Gameplay.Features.Aura.ShieldApplied),
-        typeof(Assets.Code.Gameplay.Features.CharacterStats.BaseStats),
-        typeof(Assets.Code.Gameplay.Features.CharacterStats.StatChange),
-        typeof(Assets.Code.Gameplay.Features.CharacterStats.StatModifiers),
-        typeof(Assets.Code.Gameplay.Features.Collection.BoxCastHeight),
-        typeof(Assets.Code.Gameplay.Features.Collection.BoxCastWidth),
-        typeof(Assets.Code.Gameplay.Features.Collection.CastStartPositionTransform),
-        typeof(Assets.Code.Gameplay.Features.Collection.CollectTargetsContinuously),
-        typeof(Assets.Code.Gameplay.Features.Collection.CollectTargetsInterval),
-        typeof(Assets.Code.Gameplay.Features.Collection.CollectTargetsTimer),
-        typeof(Assets.Code.Gameplay.Features.Collection.CollisionInFront),
-        typeof(Assets.Code.Gameplay.Features.Collection.CollisionNormal),
-        typeof(Assets.Code.Gameplay.Features.Collection.ForwardCastDistance),
-        typeof(Assets.Code.Gameplay.Features.Collection.ProcessedTargets),
-        typeof(Assets.Code.Gameplay.Features.Collection.Radius),
-        typeof(Assets.Code.Gameplay.Features.Collection.Reached),
-        typeof(Assets.Code.Gameplay.Features.Collection.ReadyToCollectTargets),
-        typeof(Assets.Code.Gameplay.Features.Collection.TargetLayerMask),
-        typeof(Assets.Code.Gameplay.Features.Collection.TargetsBuffer),
-        typeof(Assets.Code.Gameplay.Features.Cooldowns.Cooldown),
-        typeof(Assets.Code.Gameplay.Features.Cooldowns.CooldownLeft),
-        typeof(Assets.Code.Gameplay.Features.Cooldowns.CooldownUp),
-        typeof(Assets.Code.Gameplay.Features.Dungeon.CollisionTilemap),
-        typeof(Assets.Code.Gameplay.Features.Dungeon.Dungeon),
-        typeof(Assets.Code.Gameplay.Features.Dungeon.DungeonAvailable),
-        typeof(Assets.Code.Gameplay.Features.Dungeon.DungeonTypeIdComponent),
-        typeof(Assets.Code.Gameplay.Features.Dungeon.HeroStartPosition),
-        typeof(Assets.Code.Gameplay.Features.Dungeon.ValidPositions),
-        typeof(Assets.Code.Gameplay.Features.Dungeon.ValidSprite),
-        typeof(Assets.Code.Gameplay.Features.Effects.DamageEffect),
-        typeof(Assets.Code.Gameplay.Features.Effects.Effect),
-        typeof(Assets.Code.Gameplay.Features.Effects.EffectValue),
-        typeof(Assets.Code.Gameplay.Features.Effects.HealEffect),
-        typeof(Assets.Code.Gameplay.Features.Effects.ProducerId),
-        typeof(Assets.Code.Gameplay.Features.Effects.TargetId),
-        typeof(Assets.Code.Gameplay.Features.Enchants.Enchant),
-        typeof(Assets.Code.Gameplay.Features.Enchants.EnchantAlreadyHeld),
-        typeof(Assets.Code.Gameplay.Features.Enchants.EnchantDuration),
-        typeof(Assets.Code.Gameplay.Features.Enchants.EnchantTimeLeft),
-        typeof(Assets.Code.Gameplay.Features.Enchants.EnchantTypeIdComponent),
-        typeof(Assets.Code.Gameplay.Features.Enchants.EnchantUIComponent),
-        typeof(Assets.Code.Gameplay.Features.Enchants.EnchantVisualEffectComponent),
-        typeof(Assets.Code.Gameplay.Features.Enchants.ExplosiveEnchant),
-        typeof(Assets.Code.Gameplay.Features.Enchants.FlameEnchant),
-        typeof(Assets.Code.Gameplay.Features.Enchants.FreezeEnchant),
-        typeof(Assets.Code.Gameplay.Features.Enchants.NewCollectedEnchant),
-        typeof(Assets.Code.Gameplay.Features.Enchants.PoisonEnchant),
-        typeof(Assets.Code.Gameplay.Features.Enemy.Enemy),
-        typeof(Assets.Code.Gameplay.Features.Enemy.EnemyAnimatorComponent),
-        typeof(Assets.Code.Gameplay.Features.Enemy.EnemyTypeIdComponent),
-        typeof(Assets.Code.Gameplay.Features.Enemy.Grimonk),
-        typeof(Assets.Code.Gameplay.Features.Enemy.Hedusa),
-        typeof(Assets.Code.Gameplay.Features.Enemy.LastTargetPosition),
-        typeof(Assets.Code.Gameplay.Features.Enemy.MudRock),
-        typeof(Assets.Code.Gameplay.Features.Enemy.Orc),
-        typeof(Assets.Code.Gameplay.Features.Enemy.Slime),
-        typeof(Assets.Code.Gameplay.Features.Enemy.Slizzard),
-        typeof(Assets.Code.Gameplay.Features.Hero.CurrentWeaponTypeId),
-        typeof(Assets.Code.Gameplay.Features.Hero.Hero),
-        typeof(Assets.Code.Gameplay.Features.Hero.HeroAnimatorComponent),
-        typeof(Assets.Code.Gameplay.Features.Hero.HeroAvailable),
-        typeof(Assets.Code.Gameplay.Features.Hero.HeroTypeIdComponent),
-        typeof(Assets.Code.Gameplay.Features.Hero.TheGeneral),
-        typeof(Assets.Code.Gameplay.Features.Hero.TheScientist),
-        typeof(Assets.Code.Gameplay.Features.Hero.TheThief),
-        typeof(Assets.Code.Gameplay.Features.Hero.Unweaponed),
-        typeof(Assets.Code.Gameplay.Features.Hero.Weaponed),
-        typeof(Assets.Code.Gameplay.Features.Level.DungeonTypeOnLevel),
-        typeof(Assets.Code.Gameplay.Features.Level.EnemiesInLevelCount),
-        typeof(Assets.Code.Gameplay.Features.Level.EnemiesInLevelCountCalculated),
-        typeof(Assets.Code.Gameplay.Features.Level.EnemyWaveComponent),
-        typeof(Assets.Code.Gameplay.Features.Level.EnemyWaves),
-        typeof(Assets.Code.Gameplay.Features.Level.FinishingTime),
-        typeof(Assets.Code.Gameplay.Features.Level.FinishingTimeLeft),
-        typeof(Assets.Code.Gameplay.Features.Level.HeroSafeZoneRadius),
-        typeof(Assets.Code.Gameplay.Features.Level.Level),
-        typeof(Assets.Code.Gameplay.Features.Level.LevelTypeIdComponent),
-        typeof(Assets.Code.Gameplay.Features.Level.SpawnedEnemyWaves),
-        typeof(Assets.Code.Gameplay.Features.Level.StartingTime),
-        typeof(Assets.Code.Gameplay.Features.Level.StartingTimeLeft),
-        typeof(Assets.Code.Gameplay.Features.Level.StartingTimeUp),
-        typeof(Assets.Code.Gameplay.Features.Lifetime.CurrentHp),
-        typeof(Assets.Code.Gameplay.Features.Lifetime.Dead),
-        typeof(Assets.Code.Gameplay.Features.Lifetime.MaxHp),
-        typeof(Assets.Code.Gameplay.Features.Lifetime.ProcessingDeath),
-        typeof(Assets.Code.Gameplay.Features.Loot.LootComponents.Coins),
-        typeof(Assets.Code.Gameplay.Features.Loot.LootComponents.Collected),
-        typeof(Assets.Code.Gameplay.Features.Loot.LootComponents.LootTypeIdComponent),
-        typeof(Assets.Code.Gameplay.Features.Loot.LootComponents.PickupRadius),
-        typeof(Assets.Code.Gameplay.Features.Loot.LootComponents.Pullable),
-        typeof(Assets.Code.Gameplay.Features.Loot.LootComponents.Pulling),
-        typeof(Assets.Code.Gameplay.Features.Movement.Direction),
-        typeof(Assets.Code.Gameplay.Features.Movement.FollowMovement),
-        typeof(Assets.Code.Gameplay.Features.Movement.FollowMovementXAxisOffset),
-        typeof(Assets.Code.Gameplay.Features.Movement.FollowMovementYAxisOffset),
-        typeof(Assets.Code.Gameplay.Features.Movement.FollowTargetId),
-        typeof(Assets.Code.Gameplay.Features.Movement.LinerMovement),
-        typeof(Assets.Code.Gameplay.Features.Movement.MovementAvailable),
-        typeof(Assets.Code.Gameplay.Features.Movement.Moving),
-        typeof(Assets.Code.Gameplay.Features.Movement.OrbitalMovement),
-        typeof(Assets.Code.Gameplay.Features.Movement.OrbitAngularSpeed),
-        typeof(Assets.Code.Gameplay.Features.Movement.OrbitCenter),
-        typeof(Assets.Code.Gameplay.Features.Movement.OrbitElapsedTime),
-        typeof(Assets.Code.Gameplay.Features.Movement.OrbitInitialAngle),
-        typeof(Assets.Code.Gameplay.Features.Movement.OrbitRadius),
-        typeof(Assets.Code.Gameplay.Features.Movement.Speed),
-        typeof(Assets.Code.Gameplay.Features.Rotation.Rotating),
-        typeof(Assets.Code.Gameplay.Features.Rotation.RotationAngle),
-        typeof(Assets.Code.Gameplay.Features.Rotation.RotationAvailable),
-        typeof(Assets.Code.Gameplay.Features.SpecialEffect.SpecialEffect),
-        typeof(Assets.Code.Gameplay.Features.SpecialEffect.SpecialEffectTypeIdComponent),
-        typeof(Assets.Code.Gameplay.Features.Statuses.StatusComponents.Affected),
-        typeof(Assets.Code.Gameplay.Features.Statuses.StatusComponents.Applied),
-        typeof(Assets.Code.Gameplay.Features.Statuses.StatusComponents.ApplierStatusLink),
-        typeof(Assets.Code.Gameplay.Features.Statuses.StatusComponents.Explosive),
-        typeof(Assets.Code.Gameplay.Features.Statuses.StatusComponents.Flame),
-        typeof(Assets.Code.Gameplay.Features.Statuses.StatusComponents.Freeze),
-        typeof(Assets.Code.Gameplay.Features.Statuses.StatusComponents.Period),
-        typeof(Assets.Code.Gameplay.Features.Statuses.StatusComponents.Poison),
-        typeof(Assets.Code.Gameplay.Features.Statuses.StatusComponents.Status),
-        typeof(Assets.Code.Gameplay.Features.Statuses.StatusComponents.StatusDuration),
-        typeof(Assets.Code.Gameplay.Features.Statuses.StatusComponents.StatusTimeLeft),
-        typeof(Assets.Code.Gameplay.Features.Statuses.StatusComponents.StatusTypeIdComponent),
-        typeof(Assets.Code.Gameplay.Features.Statuses.StatusComponents.TimeSinceLastTick),
-        typeof(Assets.Code.Gameplay.Features.Statuses.StatusComponents.Unapplied),
-        typeof(Assets.Code.Gameplay.Features.Weapon.ClosestTargetPosition),
-        typeof(Assets.Code.Gameplay.Features.Weapon.CurrentAmmoCount),
-        typeof(Assets.Code.Gameplay.Features.Weapon.EffectSetups),
-        typeof(Assets.Code.Gameplay.Features.Weapon.EnemyCircleSigil),
-        typeof(Assets.Code.Gameplay.Features.Weapon.EnemyPistol),
-        typeof(Assets.Code.Gameplay.Features.Weapon.EnemyStarSigil),
-        typeof(Assets.Code.Gameplay.Features.Weapon.EnemyTriangleSigil),
-        typeof(Assets.Code.Gameplay.Features.Weapon.EnemyWeapon),
-        typeof(Assets.Code.Gameplay.Features.Weapon.FirePositionTransform),
-        typeof(Assets.Code.Gameplay.Features.Weapon.HeroAutomaticPistol),
-        typeof(Assets.Code.Gameplay.Features.Weapon.HeroCircleSigil),
-        typeof(Assets.Code.Gameplay.Features.Weapon.HeroLaserBlaster),
-        typeof(Assets.Code.Gameplay.Features.Weapon.HeroMachinegun),
-        typeof(Assets.Code.Gameplay.Features.Weapon.HeroPistol),
-        typeof(Assets.Code.Gameplay.Features.Weapon.HeroPlasmaGun),
-        typeof(Assets.Code.Gameplay.Features.Weapon.HeroRevolver),
-        typeof(Assets.Code.Gameplay.Features.Weapon.HeroRocketLauncher),
-        typeof(Assets.Code.Gameplay.Features.Weapon.HeroShotgun),
-        typeof(Assets.Code.Gameplay.Features.Weapon.HeroSniper),
-        typeof(Assets.Code.Gameplay.Features.Weapon.HeroStarSigil),
-        typeof(Assets.Code.Gameplay.Features.Weapon.HeroTriangleSigil),
-        typeof(Assets.Code.Gameplay.Features.Weapon.HeroWeapon),
-        typeof(Assets.Code.Gameplay.Features.Weapon.InfinityAmmo),
-        typeof(Assets.Code.Gameplay.Features.Weapon.MagazineNotEmpty),
-        typeof(Assets.Code.Gameplay.Features.Weapon.MagazineSize),
-        typeof(Assets.Code.Gameplay.Features.Weapon.MaxPelletsDeviation),
-        typeof(Assets.Code.Gameplay.Features.Weapon.MaxWeaponEnchantsCount),
-        typeof(Assets.Code.Gameplay.Features.Weapon.MinPelletsDeviation),
-        typeof(Assets.Code.Gameplay.Features.Weapon.MultiPellet),
-        typeof(Assets.Code.Gameplay.Features.Weapon.Pierce),
-        typeof(Assets.Code.Gameplay.Features.Weapon.Precharged),
-        typeof(Assets.Code.Gameplay.Features.Weapon.PrechargeTime),
-        typeof(Assets.Code.Gameplay.Features.Weapon.PrechargeTimeLeft),
-        typeof(Assets.Code.Gameplay.Features.Weapon.ReadyToShoot),
-        typeof(Assets.Code.Gameplay.Features.Weapon.Reloading),
-        typeof(Assets.Code.Gameplay.Features.Weapon.ReloadTime),
-        typeof(Assets.Code.Gameplay.Features.Weapon.ReloadTimeLeft),
-        typeof(Assets.Code.Gameplay.Features.Weapon.RotationPointTransform),
-        typeof(Assets.Code.Gameplay.Features.Weapon.Shooting),
-        typeof(Assets.Code.Gameplay.Features.Weapon.Shot),
-        typeof(Assets.Code.Gameplay.Features.Weapon.StatusSetups),
-        typeof(Assets.Code.Gameplay.Features.Weapon.Weapon),
-        typeof(Assets.Code.Gameplay.Features.Weapon.WeaponEnchants),
-        typeof(Assets.Code.Gameplay.Features.Weapon.WeaponOwnerId),
-        typeof(Assets.Code.Gameplay.Features.Weapon.WeaponOwnerTypeIdComponent),
-        typeof(Assets.Code.Gameplay.Features.Weapon.WeaponRotationAngle),
-        typeof(Assets.Code.Gameplay.Features.Weapon.WeaponTypeIdComponent),
-        typeof(Assets.Code.Meta.Features.Hud.AmmoHolderComponent),
-        typeof(Assets.Code.Meta.Features.Hud.CoinsHolderComponent),
-        typeof(Assets.Code.Meta.Features.Hud.EnchantHolderComponent),
-        typeof(Assets.Code.Meta.Features.Hud.HeartHolderComponent),
-        typeof(Assets.Code.Meta.Features.Hud.ReloadingAnimatorComponent),
-        typeof(Assets.Code.Meta.Features.Hud.TimerHolderComponent),
-        typeof(Assets.Code.Meta.Features.Hud.WeaponHolderComponent)
+        typeof(Code.Common.Destructed),
+        typeof(Code.Common.Parented),
+        typeof(Code.Common.SelfDestructedTimer),
+        typeof(Code.Common.Unparented),
+        typeof(Code.Common.View),
+        typeof(Code.Common.ViewParent),
+        typeof(Code.Common.ViewPath),
+        typeof(Code.Common.ViewPrefab),
+        typeof(Code.Gameplay.Common.ColorComponent),
+        typeof(Code.Gameplay.Common.Damage),
+        typeof(Code.Gameplay.Common.DamageTakenAnimatorComponent),
+        typeof(Code.Gameplay.Common.Id),
+        typeof(Code.Gameplay.Common.ParentTransform),
+        typeof(Code.Gameplay.Common.ParticleSystemComponent),
+        typeof(Code.Gameplay.Common.ParticleSystemRendererComponent),
+        typeof(Code.Gameplay.Common.Processed),
+        typeof(Code.Gameplay.Common.SpriteRendererComponent),
+        typeof(Code.Gameplay.Common.StatusVisualsComponent),
+        typeof(Code.Gameplay.Common.Stunned),
+        typeof(Code.Gameplay.Common.TrailRendererComponent),
+        typeof(Code.Gameplay.Common.TransformComponent),
+        typeof(Code.Gameplay.Common.WorldPosition),
+        typeof(Code.Gameplay.Features.Ammo.Ammo),
+        typeof(Code.Gameplay.Features.Ammo.AmmoTypeIdComponent),
+        typeof(Code.Gameplay.Features.Ammo.EnemyBullet),
+        typeof(Code.Gameplay.Features.Ammo.LaserBolt),
+        typeof(Code.Gameplay.Features.Ammo.LightBullet),
+        typeof(Code.Gameplay.Features.Ammo.LongRangeBullet),
+        typeof(Code.Gameplay.Features.Ammo.RifleBullet),
+        typeof(Code.Gameplay.Features.Ammo.RocketMissile),
+        typeof(Code.Gameplay.Features.Ammo.ShotgunShell),
+        typeof(Code.Gameplay.Features.Ammo.SigilAmmo),
+        typeof(Code.Gameplay.Features.Ammo.TargetLimit),
+        typeof(Code.Gameplay.Features.AmmoPattern.AddedInList),
+        typeof(Code.Gameplay.Features.AmmoPattern.AmmoPattern),
+        typeof(Code.Gameplay.Features.AmmoPattern.AmmoPatternId),
+        typeof(Code.Gameplay.Features.AmmoPattern.AmmoPatternSetupComponent),
+        typeof(Code.Gameplay.Features.AmmoPattern.AmmoTransformsList),
+        typeof(Code.Gameplay.Features.AmmoPattern.CirclePattern),
+        typeof(Code.Gameplay.Features.AmmoPattern.PatternAmmoCount),
+        typeof(Code.Gameplay.Features.AmmoPattern.PatternBranches),
+        typeof(Code.Gameplay.Features.AmmoPattern.PatternCurrentAngle),
+        typeof(Code.Gameplay.Features.AmmoPattern.PatternEmpty),
+        typeof(Code.Gameplay.Features.AmmoPattern.PatternRadius),
+        typeof(Code.Gameplay.Features.AmmoPattern.PatternRotateSpeed),
+        typeof(Code.Gameplay.Features.AmmoPattern.SinglePattern),
+        typeof(Code.Gameplay.Features.AmmoPattern.StarPattern),
+        typeof(Code.Gameplay.Features.AmmoPattern.TrianglePattern),
+        typeof(Code.Gameplay.Features.AStar.MinDistanceForRepath),
+        typeof(Code.Gameplay.Features.AStar.Path),
+        typeof(Code.Gameplay.Features.AStar.Pathfinder),
+        typeof(Code.Gameplay.Features.AStar.PathfinderAvailable),
+        typeof(Code.Gameplay.Features.AStar.PathfinderInitialized),
+        typeof(Code.Gameplay.Features.AStar.PathfindingIntervalTimer),
+        typeof(Code.Gameplay.Features.AStar.PathfindingTimerLeft),
+        typeof(Code.Gameplay.Features.AStar.PathfindingTimerUp),
+        typeof(Code.Gameplay.Features.Aura.Aura),
+        typeof(Code.Gameplay.Features.Aura.AuraDuration),
+        typeof(Code.Gameplay.Features.Aura.AuraDurationTimeLeft),
+        typeof(Code.Gameplay.Features.Aura.AuraLayer),
+        typeof(Code.Gameplay.Features.Aura.AuraLayerMask),
+        typeof(Code.Gameplay.Features.Aura.AuraPeriod),
+        typeof(Code.Gameplay.Features.Aura.AuraPeriodTimeLeft),
+        typeof(Code.Gameplay.Features.Aura.AuraPeriodTimeUp),
+        typeof(Code.Gameplay.Features.Aura.AuraRadius),
+        typeof(Code.Gameplay.Features.Aura.AuraTypeIdComponent),
+        typeof(Code.Gameplay.Features.Aura.HealingAura),
+        typeof(Code.Gameplay.Features.Aura.HealingAuraApplied),
+        typeof(Code.Gameplay.Features.Aura.RequestHealingAura),
+        typeof(Code.Gameplay.Features.Aura.RequestShield),
+        typeof(Code.Gameplay.Features.Aura.Shield),
+        typeof(Code.Gameplay.Features.Aura.ShieldApplied),
+        typeof(Code.Gameplay.Features.CharacterStats.BaseStats),
+        typeof(Code.Gameplay.Features.CharacterStats.StatChange),
+        typeof(Code.Gameplay.Features.CharacterStats.StatModifiers),
+        typeof(Code.Gameplay.Features.Collection.BoxCastHeight),
+        typeof(Code.Gameplay.Features.Collection.BoxCastWidth),
+        typeof(Code.Gameplay.Features.Collection.CastStartPositionTransform),
+        typeof(Code.Gameplay.Features.Collection.CollectTargetsContinuously),
+        typeof(Code.Gameplay.Features.Collection.CollectTargetsInterval),
+        typeof(Code.Gameplay.Features.Collection.CollectTargetsTimer),
+        typeof(Code.Gameplay.Features.Collection.CollisionInFront),
+        typeof(Code.Gameplay.Features.Collection.CollisionNormal),
+        typeof(Code.Gameplay.Features.Collection.ForwardCastDistance),
+        typeof(Code.Gameplay.Features.Collection.ProcessedTargets),
+        typeof(Code.Gameplay.Features.Collection.Radius),
+        typeof(Code.Gameplay.Features.Collection.Reached),
+        typeof(Code.Gameplay.Features.Collection.ReadyToCollectTargets),
+        typeof(Code.Gameplay.Features.Collection.TargetLayerMask),
+        typeof(Code.Gameplay.Features.Collection.TargetsBuffer),
+        typeof(Code.Gameplay.Features.Cooldowns.Cooldown),
+        typeof(Code.Gameplay.Features.Cooldowns.CooldownLeft),
+        typeof(Code.Gameplay.Features.Cooldowns.CooldownUp),
+        typeof(Code.Gameplay.Features.Destroyable.Behaviours.DestroyableAnimatorComponent),
+        typeof(Code.Gameplay.Features.Dungeon.CollisionTilemap),
+        typeof(Code.Gameplay.Features.Dungeon.Dungeon),
+        typeof(Code.Gameplay.Features.Dungeon.DungeonAvailable),
+        typeof(Code.Gameplay.Features.Dungeon.DungeonTypeIdComponent),
+        typeof(Code.Gameplay.Features.Dungeon.HeroStartPosition),
+        typeof(Code.Gameplay.Features.Dungeon.ValidPositions),
+        typeof(Code.Gameplay.Features.Dungeon.ValidSprite),
+        typeof(Code.Gameplay.Features.Effects.DamageEffect),
+        typeof(Code.Gameplay.Features.Effects.Effect),
+        typeof(Code.Gameplay.Features.Effects.EffectValue),
+        typeof(Code.Gameplay.Features.Effects.HealEffect),
+        typeof(Code.Gameplay.Features.Effects.ProducerId),
+        typeof(Code.Gameplay.Features.Effects.TargetId),
+        typeof(Code.Gameplay.Features.Enchants.Enchant),
+        typeof(Code.Gameplay.Features.Enchants.EnchantAlreadyHeld),
+        typeof(Code.Gameplay.Features.Enchants.EnchantDuration),
+        typeof(Code.Gameplay.Features.Enchants.EnchantTimeLeft),
+        typeof(Code.Gameplay.Features.Enchants.EnchantTypeIdComponent),
+        typeof(Code.Gameplay.Features.Enchants.EnchantUIComponent),
+        typeof(Code.Gameplay.Features.Enchants.EnchantVisualEffectComponent),
+        typeof(Code.Gameplay.Features.Enchants.ExplosiveEnchant),
+        typeof(Code.Gameplay.Features.Enchants.FlameEnchant),
+        typeof(Code.Gameplay.Features.Enchants.FreezeEnchant),
+        typeof(Code.Gameplay.Features.Enchants.NewCollectedEnchant),
+        typeof(Code.Gameplay.Features.Enchants.PoisonEnchant),
+        typeof(Code.Gameplay.Features.Enemy.Enemy),
+        typeof(Code.Gameplay.Features.Enemy.EnemyAnimatorComponent),
+        typeof(Code.Gameplay.Features.Enemy.EnemyTypeIdComponent),
+        typeof(Code.Gameplay.Features.Enemy.Grimonk),
+        typeof(Code.Gameplay.Features.Enemy.Hedusa),
+        typeof(Code.Gameplay.Features.Enemy.LastTargetPosition),
+        typeof(Code.Gameplay.Features.Enemy.MudRock),
+        typeof(Code.Gameplay.Features.Enemy.Orc),
+        typeof(Code.Gameplay.Features.Enemy.Slime),
+        typeof(Code.Gameplay.Features.Enemy.Slizzard),
+        typeof(Code.Gameplay.Features.Hero.CurrentWeaponTypeId),
+        typeof(Code.Gameplay.Features.Hero.Hero),
+        typeof(Code.Gameplay.Features.Hero.HeroAnimatorComponent),
+        typeof(Code.Gameplay.Features.Hero.HeroAvailable),
+        typeof(Code.Gameplay.Features.Hero.HeroTypeIdComponent),
+        typeof(Code.Gameplay.Features.Hero.TheGeneral),
+        typeof(Code.Gameplay.Features.Hero.TheScientist),
+        typeof(Code.Gameplay.Features.Hero.TheThief),
+        typeof(Code.Gameplay.Features.Hero.Unweaponed),
+        typeof(Code.Gameplay.Features.Hero.Weaponed),
+        typeof(Code.Gameplay.Features.Level.DungeonTypeOnLevel),
+        typeof(Code.Gameplay.Features.Level.EnemiesInLevelCount),
+        typeof(Code.Gameplay.Features.Level.EnemiesInLevelCountCalculated),
+        typeof(Code.Gameplay.Features.Level.EnemyWaveComponent),
+        typeof(Code.Gameplay.Features.Level.EnemyWaves),
+        typeof(Code.Gameplay.Features.Level.FinishingTime),
+        typeof(Code.Gameplay.Features.Level.FinishingTimeLeft),
+        typeof(Code.Gameplay.Features.Level.HeroSafeZoneRadius),
+        typeof(Code.Gameplay.Features.Level.Level),
+        typeof(Code.Gameplay.Features.Level.LevelTypeIdComponent),
+        typeof(Code.Gameplay.Features.Level.SpawnedEnemyWaves),
+        typeof(Code.Gameplay.Features.Level.StartingTime),
+        typeof(Code.Gameplay.Features.Level.StartingTimeLeft),
+        typeof(Code.Gameplay.Features.Level.StartingTimeUp),
+        typeof(Code.Gameplay.Features.Lifetime.CurrentHp),
+        typeof(Code.Gameplay.Features.Lifetime.Dead),
+        typeof(Code.Gameplay.Features.Lifetime.MaxHp),
+        typeof(Code.Gameplay.Features.Lifetime.ProcessingDeath),
+        typeof(Code.Gameplay.Features.Loot.LootComponents.Coins),
+        typeof(Code.Gameplay.Features.Loot.LootComponents.Collected),
+        typeof(Code.Gameplay.Features.Loot.LootComponents.LootTypeIdComponent),
+        typeof(Code.Gameplay.Features.Loot.LootComponents.PickupRadius),
+        typeof(Code.Gameplay.Features.Loot.LootComponents.Pullable),
+        typeof(Code.Gameplay.Features.Loot.LootComponents.Pulling),
+        typeof(Code.Gameplay.Features.Movement.Direction),
+        typeof(Code.Gameplay.Features.Movement.FollowMovement),
+        typeof(Code.Gameplay.Features.Movement.FollowMovementXAxisOffset),
+        typeof(Code.Gameplay.Features.Movement.FollowMovementYAxisOffset),
+        typeof(Code.Gameplay.Features.Movement.FollowTargetId),
+        typeof(Code.Gameplay.Features.Movement.LinerMovement),
+        typeof(Code.Gameplay.Features.Movement.MovementAvailable),
+        typeof(Code.Gameplay.Features.Movement.Moving),
+        typeof(Code.Gameplay.Features.Movement.OrbitalMovement),
+        typeof(Code.Gameplay.Features.Movement.OrbitAngularSpeed),
+        typeof(Code.Gameplay.Features.Movement.OrbitCenter),
+        typeof(Code.Gameplay.Features.Movement.OrbitElapsedTime),
+        typeof(Code.Gameplay.Features.Movement.OrbitInitialAngle),
+        typeof(Code.Gameplay.Features.Movement.OrbitRadius),
+        typeof(Code.Gameplay.Features.Movement.Speed),
+        typeof(Code.Gameplay.Features.Rotation.Rotating),
+        typeof(Code.Gameplay.Features.Rotation.RotationAngle),
+        typeof(Code.Gameplay.Features.Rotation.RotationAvailable),
+        typeof(Code.Gameplay.Features.SpecialEffect.SpecialEffect),
+        typeof(Code.Gameplay.Features.SpecialEffect.SpecialEffectTypeIdComponent),
+        typeof(Code.Gameplay.Features.Statuses.StatusComponents.Affected),
+        typeof(Code.Gameplay.Features.Statuses.StatusComponents.Applied),
+        typeof(Code.Gameplay.Features.Statuses.StatusComponents.ApplierStatusLink),
+        typeof(Code.Gameplay.Features.Statuses.StatusComponents.Explosive),
+        typeof(Code.Gameplay.Features.Statuses.StatusComponents.Flame),
+        typeof(Code.Gameplay.Features.Statuses.StatusComponents.Freeze),
+        typeof(Code.Gameplay.Features.Statuses.StatusComponents.Period),
+        typeof(Code.Gameplay.Features.Statuses.StatusComponents.Poison),
+        typeof(Code.Gameplay.Features.Statuses.StatusComponents.Status),
+        typeof(Code.Gameplay.Features.Statuses.StatusComponents.StatusDuration),
+        typeof(Code.Gameplay.Features.Statuses.StatusComponents.StatusTimeLeft),
+        typeof(Code.Gameplay.Features.Statuses.StatusComponents.StatusTypeIdComponent),
+        typeof(Code.Gameplay.Features.Statuses.StatusComponents.TimeSinceLastTick),
+        typeof(Code.Gameplay.Features.Statuses.StatusComponents.Unapplied),
+        typeof(Code.Gameplay.Features.Weapon.ClosestTargetPosition),
+        typeof(Code.Gameplay.Features.Weapon.CurrentAmmoCount),
+        typeof(Code.Gameplay.Features.Weapon.EffectSetups),
+        typeof(Code.Gameplay.Features.Weapon.EnemyCircleSigil),
+        typeof(Code.Gameplay.Features.Weapon.EnemyPistol),
+        typeof(Code.Gameplay.Features.Weapon.EnemyStarSigil),
+        typeof(Code.Gameplay.Features.Weapon.EnemyTriangleSigil),
+        typeof(Code.Gameplay.Features.Weapon.EnemyWeapon),
+        typeof(Code.Gameplay.Features.Weapon.FirePositionTransform),
+        typeof(Code.Gameplay.Features.Weapon.HeroAutomaticPistol),
+        typeof(Code.Gameplay.Features.Weapon.HeroCircleSigil),
+        typeof(Code.Gameplay.Features.Weapon.HeroLaserBlaster),
+        typeof(Code.Gameplay.Features.Weapon.HeroMachinegun),
+        typeof(Code.Gameplay.Features.Weapon.HeroPistol),
+        typeof(Code.Gameplay.Features.Weapon.HeroPlasmaGun),
+        typeof(Code.Gameplay.Features.Weapon.HeroRevolver),
+        typeof(Code.Gameplay.Features.Weapon.HeroRocketLauncher),
+        typeof(Code.Gameplay.Features.Weapon.HeroShotgun),
+        typeof(Code.Gameplay.Features.Weapon.HeroSniper),
+        typeof(Code.Gameplay.Features.Weapon.HeroStarSigil),
+        typeof(Code.Gameplay.Features.Weapon.HeroTriangleSigil),
+        typeof(Code.Gameplay.Features.Weapon.HeroWeapon),
+        typeof(Code.Gameplay.Features.Weapon.InfinityAmmo),
+        typeof(Code.Gameplay.Features.Weapon.MagazineNotEmpty),
+        typeof(Code.Gameplay.Features.Weapon.MagazineSize),
+        typeof(Code.Gameplay.Features.Weapon.MaxPelletsDeviation),
+        typeof(Code.Gameplay.Features.Weapon.MaxWeaponEnchantsCount),
+        typeof(Code.Gameplay.Features.Weapon.MinPelletsDeviation),
+        typeof(Code.Gameplay.Features.Weapon.MultiPellet),
+        typeof(Code.Gameplay.Features.Weapon.Pierce),
+        typeof(Code.Gameplay.Features.Weapon.Precharged),
+        typeof(Code.Gameplay.Features.Weapon.PrechargeTime),
+        typeof(Code.Gameplay.Features.Weapon.PrechargeTimeLeft),
+        typeof(Code.Gameplay.Features.Weapon.ReadyToShoot),
+        typeof(Code.Gameplay.Features.Weapon.Reloading),
+        typeof(Code.Gameplay.Features.Weapon.ReloadTime),
+        typeof(Code.Gameplay.Features.Weapon.ReloadTimeLeft),
+        typeof(Code.Gameplay.Features.Weapon.RotationPointTransform),
+        typeof(Code.Gameplay.Features.Weapon.Shooting),
+        typeof(Code.Gameplay.Features.Weapon.Shot),
+        typeof(Code.Gameplay.Features.Weapon.StatusSetups),
+        typeof(Code.Gameplay.Features.Weapon.Weapon),
+        typeof(Code.Gameplay.Features.Weapon.WeaponEnchants),
+        typeof(Code.Gameplay.Features.Weapon.WeaponOwnerId),
+        typeof(Code.Gameplay.Features.Weapon.WeaponOwnerTypeIdComponent),
+        typeof(Code.Gameplay.Features.Weapon.WeaponRotationAngle),
+        typeof(Code.Gameplay.Features.Weapon.WeaponTypeIdComponent),
+        typeof(Code.Meta.Features.Hud.AmmoHolderComponent),
+        typeof(Code.Meta.Features.Hud.CoinsHolderComponent),
+        typeof(Code.Meta.Features.Hud.EnchantHolderComponent),
+        typeof(Code.Meta.Features.Hud.HeartHolderComponent),
+        typeof(Code.Meta.Features.Hud.ReloadingAnimatorComponent),
+        typeof(Code.Meta.Features.Hud.TimerHolderComponent),
+        typeof(Code.Meta.Features.Hud.WeaponHolderComponent)
     };
 }

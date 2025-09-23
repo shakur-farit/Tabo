@@ -1,4 +1,4 @@
-﻿namespace Assets.Code.Meta.Features.Shop.WeaponStatUIEntry
+﻿namespace Code.Meta.Features.Shop.WeaponStatUIEntry
 {
 	public enum WeaponStatUIEntryTypeId
 	{

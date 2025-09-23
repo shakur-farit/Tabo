@@ -1,7 +1,7 @@
-﻿using Assets.Code.Meta.Features.Hud.EnchantHolder.Behaviours;
+﻿using Code.Meta.Features.Hud.EnchantHolder.Behaviours;
 using Entitas;
 
-namespace Assets.Code.Meta.Features.Hud.EnchantHolder.Systems
+namespace Code.Meta.Features.Hud.EnchantHolder.Systems
 {
 	public class UpdateEnchantTimeLeftVisualSystem : IExecuteSystem
 	{

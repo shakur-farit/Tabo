@@ -1,7 +1,7 @@
 ﻿using Entitas;
 using UnityEngine;
 
-namespace Assets.Code.Gameplay.Features.Movement.Systems
+namespace Code.Gameplay.Features.Movement.Systems
 {
 	public class FollowMoveWithYAxisOffsetSystem : IExecuteSystem
 	{

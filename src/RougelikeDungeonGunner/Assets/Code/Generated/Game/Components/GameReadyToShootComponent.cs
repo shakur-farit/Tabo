@@ -33,7 +33,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Assets.Code.Gameplay.Features.Weapon.ReadyToShoot readyToShootComponent = new Assets.Code.Gameplay.Features.Weapon.ReadyToShoot();
+    static readonly Code.Gameplay.Features.Weapon.ReadyToShoot readyToShootComponent = new Code.Gameplay.Features.Weapon.ReadyToShoot();
 
     public bool isReadyToShoot {
         get { return HasComponent(GameComponentsLookup.ReadyToShoot); }

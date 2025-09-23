@@ -1,9 +1,9 @@
-﻿using Assets.Code.Gameplay.Common.Direction;
-using Assets.Code.Gameplay.Common.Visuals;
+﻿using Code.Gameplay.Common.Direction;
+using Code.Gameplay.Common.Visuals;
 using DG.Tweening;
 using UnityEngine;
 
-namespace Assets.Code.Gameplay.Features.Enemy.Behaviours
+namespace Code.Gameplay.Features.Enemy.Behaviours
 {
 	public class EnemyAnimator : MonoBehaviour, IDamageTakenAnimator
 	{

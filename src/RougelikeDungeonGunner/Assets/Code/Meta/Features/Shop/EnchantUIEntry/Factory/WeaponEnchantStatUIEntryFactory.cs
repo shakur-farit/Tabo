@@ -1,10 +1,10 @@
-﻿using Assets.Code.Gameplay.StaticData;
-using Assets.Code.Meta.Features.Shop.EnchantUIEntry.Behaviours;
-using Assets.Code.Meta.Features.Shop.EnchantUIEntry.Configs;
+﻿using Code.Gameplay.StaticData;
+using Code.Meta.Features.Shop.EnchantUIEntry.Behaviours;
+using Code.Meta.Features.Shop.EnchantUIEntry.Configs;
 using UnityEngine;
 using Zenject;
 
-namespace Assets.Code.Meta.Features.Shop.EnchantUIEntry.Factory
+namespace Code.Meta.Features.Shop.EnchantUIEntry.Factory
 {
 	public class WeaponEnchantStatUIEntryFactory : IWeaponEnchantStatUIEntryFactory
 	{

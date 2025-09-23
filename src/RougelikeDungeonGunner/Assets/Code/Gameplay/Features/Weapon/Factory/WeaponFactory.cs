@@ -1,16 +1,16 @@
 ﻿using System;
-using Assets.Code.Common.Extensions;
-using Assets.Code.Gameplay.Features.Collection;
-using Assets.Code.Gameplay.Features.Cooldowns;
-using Assets.Code.Gameplay.Features.SpecialEffect;
-using Assets.Code.Gameplay.Features.Weapon.Configs;
-using Assets.Code.Gameplay.StaticData;
-using Assets.Code.Infrastructure.Identifiers;
-using Assets.Code.Meta.Features.Shop.Upgrade.Services;
 using Code.Common.Entity;
+using Code.Common.Extensions;
+using Code.Gameplay.Features.Collection;
+using Code.Gameplay.Features.Cooldowns;
+using Code.Gameplay.Features.SpecialEffect;
+using Code.Gameplay.Features.Weapon.Configs;
+using Code.Gameplay.StaticData;
+using Code.Infrastructure.Identifiers;
+using Code.Meta.Features.Shop.Upgrade.Services;
 using UnityEngine;
 
-namespace Assets.Code.Gameplay.Features.Weapon.Factory
+namespace Code.Gameplay.Features.Weapon.Factory
 {
 	public class WeaponFactory : IWeaponFactory
 	{

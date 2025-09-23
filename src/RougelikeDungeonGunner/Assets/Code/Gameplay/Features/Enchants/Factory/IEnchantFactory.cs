@@ -1,6 +1,6 @@
-﻿using Assets.Code.Gameplay.Features.Statuses;
+﻿using Code.Gameplay.Features.Statuses;
 
-namespace Assets.Code.Gameplay.Features.Enchants.Factory
+namespace Code.Gameplay.Features.Enchants.Factory
 {
 	public interface IEnchantFactory
 	{

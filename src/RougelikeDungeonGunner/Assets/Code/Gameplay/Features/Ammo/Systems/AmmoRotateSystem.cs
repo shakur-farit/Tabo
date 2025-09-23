@@ -1,7 +1,7 @@
 ﻿using Entitas;
 using UnityEngine;
 
-namespace Assets.Code.Gameplay.Features.Ammo.Systems
+namespace Code.Gameplay.Features.Ammo.Systems
 {
 	public class AmmoRotateSystem : IExecuteSystem
 	{

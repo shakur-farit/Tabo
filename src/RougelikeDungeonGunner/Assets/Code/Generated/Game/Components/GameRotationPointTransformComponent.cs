@@ -33,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Assets.Code.Gameplay.Features.Weapon.RotationPointTransform rotationPointTransform { get { return (Assets.Code.Gameplay.Features.Weapon.RotationPointTransform)GetComponent(GameComponentsLookup.RotationPointTransform); } }
+    public Code.Gameplay.Features.Weapon.RotationPointTransform rotationPointTransform { get { return (Code.Gameplay.Features.Weapon.RotationPointTransform)GetComponent(GameComponentsLookup.RotationPointTransform); } }
     public UnityEngine.Transform RotationPointTransform { get { return rotationPointTransform.Value; } }
     public bool hasRotationPointTransform { get { return HasComponent(GameComponentsLookup.RotationPointTransform); } }
 
     public GameEntity AddRotationPointTransform(UnityEngine.Transform newValue) {
         var index = GameComponentsLookup.RotationPointTransform;
-        var component = (Assets.Code.Gameplay.Features.Weapon.RotationPointTransform)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Weapon.RotationPointTransform));
+        var component = (Code.Gameplay.Features.Weapon.RotationPointTransform)CreateComponent(index, typeof(Code.Gameplay.Features.Weapon.RotationPointTransform));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceRotationPointTransform(UnityEngine.Transform newValue) {
         var index = GameComponentsLookup.RotationPointTransform;
-        var component = (Assets.Code.Gameplay.Features.Weapon.RotationPointTransform)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Weapon.RotationPointTransform));
+        var component = (Code.Gameplay.Features.Weapon.RotationPointTransform)CreateComponent(index, typeof(Code.Gameplay.Features.Weapon.RotationPointTransform));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

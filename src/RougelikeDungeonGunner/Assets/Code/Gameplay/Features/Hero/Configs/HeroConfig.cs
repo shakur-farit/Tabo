@@ -1,10 +1,10 @@
-﻿using Assets.Code.Gameplay.Features.Aura;
-using Assets.Code.Gameplay.Features.Collection;
-using Assets.Code.Gameplay.Features.Weapon;
-using Assets.Code.Infrastructure.View;
+﻿using Code.Gameplay.Features.Aura;
+using Code.Gameplay.Features.Collection;
+using Code.Gameplay.Features.Weapon;
+using Code.Infrastructure.View;
 using UnityEngine;
 
-namespace Assets.Code.Gameplay.Features.Hero.Configs
+namespace Code.Gameplay.Features.Hero.Configs
 {
 	[CreateAssetMenu(menuName = "Dungeon Gunner/Hero Config", fileName = "HeroConfig")]
 	public class HeroConfig : ScriptableObject

@@ -1,8 +1,8 @@
-﻿using Assets.Code.Gameplay.Features.Loot.Systems;
-using Assets.Code.Infrastructure.Systems;
-using Assets.Code.Meta.Features.Hud.CoinsHolder.Systems;
+﻿using Code.Gameplay.Features.Loot.Systems;
+using Code.Infrastructure.Systems;
+using Code.Meta.Features.Hud.CoinsHolder.Systems;
 
-namespace Assets.Code.Gameplay.Features.Loot
+namespace Code.Gameplay.Features.Loot
 {
 	public sealed class LootFeature : Feature
 	{

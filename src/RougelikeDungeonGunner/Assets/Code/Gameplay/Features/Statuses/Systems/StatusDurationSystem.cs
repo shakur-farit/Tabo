@@ -1,8 +1,8 @@
-﻿using Assets.Code.Gameplay.Common.Time;
-using Assets.Code.Gameplay.Features.Effects;
+﻿using Code.Gameplay.Common.Time;
+using Code.Gameplay.Features.Effects;
 using Entitas;
 
-namespace Assets.Code.Gameplay.Features.Statuses.Systems
+namespace Code.Gameplay.Features.Statuses.Systems
 {
 	public class StatusDurationSystem : IExecuteSystem
 	{

@@ -33,7 +33,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Assets.Code.Gameplay.Features.Aura.RequestShield requestShieldComponent = new Assets.Code.Gameplay.Features.Aura.RequestShield();
+    static readonly Code.Gameplay.Features.Aura.RequestShield requestShieldComponent = new Code.Gameplay.Features.Aura.RequestShield();
 
     public bool isRequestShield {
         get { return HasComponent(GameComponentsLookup.RequestShield); }

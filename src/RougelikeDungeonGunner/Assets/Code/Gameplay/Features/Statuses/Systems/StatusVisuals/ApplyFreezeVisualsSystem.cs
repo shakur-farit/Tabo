@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using Assets.Code.Gameplay.Features.Effects;
+using Code.Gameplay.Features.Effects;
 using Entitas;
 
-namespace Assets.Code.Gameplay.Features.Statuses.Systems.StatusVisuals
+namespace Code.Gameplay.Features.Statuses.Systems.StatusVisuals
 {
 	public class ApplyFreezeVisualsSystem : ReactiveSystem<GameEntity>
 	{

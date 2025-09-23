@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
-using Assets.Code.Common.EntityIndices;
-using Assets.Code.Common.Extensions;
-using Assets.Code.Gameplay.Features.Statuses.Factory;
+using Code.Common.EntityIndices;
+using Code.Common.Extensions;
+using Code.Gameplay.Features.Statuses.Factory;
 
-namespace Assets.Code.Gameplay.Features.Statuses.Applier
+namespace Code.Gameplay.Features.Statuses.Applier
 {
 	public class StatusApplier : IStatusApplier
 	{

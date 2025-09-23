@@ -1,6 +1,6 @@
 using Cysharp.Threading.Tasks;
 
-namespace Assets.Code.Infrastructure.States.StateInfrastructure
+namespace Code.Infrastructure.States.StateInfrastructure
 {
 	public class SimplePayloadState<TPayload> : IPayloadState<TPayload>
 	{

@@ -33,7 +33,7 @@ public sealed partial class InputMatcher {
 //------------------------------------------------------------------------------
 public partial class InputEntity {
 
-    static readonly Assets.Code.Gameplay.Input.MouseLeftButtonDown mouseLeftButtonDownComponent = new Assets.Code.Gameplay.Input.MouseLeftButtonDown();
+    static readonly Code.Gameplay.Input.MouseLeftButtonDown mouseLeftButtonDownComponent = new Code.Gameplay.Input.MouseLeftButtonDown();
 
     public bool isMouseLeftButtonDown {
         get { return HasComponent(InputComponentsLookup.MouseLeftButtonDown); }

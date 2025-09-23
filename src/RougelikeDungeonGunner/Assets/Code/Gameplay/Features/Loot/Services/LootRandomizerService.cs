@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Assets.Code.Gameplay.Common.Random;
-using Assets.Code.Gameplay.Features.Enemy;
-using Assets.Code.Gameplay.Features.Loot.Configs;
-using Assets.Code.Gameplay.StaticData;
+using Code.Gameplay.Common.Random;
+using Code.Gameplay.Features.Enemy;
+using Code.Gameplay.Features.Loot.Configs;
+using Code.Gameplay.StaticData;
 
-namespace Assets.Code.Gameplay.Features.Loot.Services
+namespace Code.Gameplay.Features.Loot.Services
 {
 	public class LootRandomizerService : ILootRandomizerService
 	{

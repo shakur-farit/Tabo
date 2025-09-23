@@ -33,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Assets.Code.Gameplay.Features.Dungeon.ValidPositions validPositions { get { return (Assets.Code.Gameplay.Features.Dungeon.ValidPositions)GetComponent(GameComponentsLookup.ValidPositions); } }
+    public Code.Gameplay.Features.Dungeon.ValidPositions validPositions { get { return (Code.Gameplay.Features.Dungeon.ValidPositions)GetComponent(GameComponentsLookup.ValidPositions); } }
     public System.Collections.Generic.List<UnityEngine.Vector2Int> ValidPositions { get { return validPositions.Value; } }
     public bool hasValidPositions { get { return HasComponent(GameComponentsLookup.ValidPositions); } }
 
     public GameEntity AddValidPositions(System.Collections.Generic.List<UnityEngine.Vector2Int> newValue) {
         var index = GameComponentsLookup.ValidPositions;
-        var component = (Assets.Code.Gameplay.Features.Dungeon.ValidPositions)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Dungeon.ValidPositions));
+        var component = (Code.Gameplay.Features.Dungeon.ValidPositions)CreateComponent(index, typeof(Code.Gameplay.Features.Dungeon.ValidPositions));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceValidPositions(System.Collections.Generic.List<UnityEngine.Vector2Int> newValue) {
         var index = GameComponentsLookup.ValidPositions;
-        var component = (Assets.Code.Gameplay.Features.Dungeon.ValidPositions)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Dungeon.ValidPositions));
+        var component = (Code.Gameplay.Features.Dungeon.ValidPositions)CreateComponent(index, typeof(Code.Gameplay.Features.Dungeon.ValidPositions));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

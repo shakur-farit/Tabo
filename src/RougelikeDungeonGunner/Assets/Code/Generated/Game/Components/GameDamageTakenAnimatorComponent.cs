@@ -33,21 +33,21 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Assets.Code.Gameplay.Common.DamageTakenAnimatorComponent damageTakenAnimator { get { return (Assets.Code.Gameplay.Common.DamageTakenAnimatorComponent)GetComponent(GameComponentsLookup.DamageTakenAnimator); } }
-    public Assets.Code.Gameplay.Common.Visuals.IDamageTakenAnimator DamageTakenAnimator { get { return damageTakenAnimator.Value; } }
+    public Code.Gameplay.Common.DamageTakenAnimatorComponent damageTakenAnimator { get { return (Code.Gameplay.Common.DamageTakenAnimatorComponent)GetComponent(GameComponentsLookup.DamageTakenAnimator); } }
+    public Code.Gameplay.Common.Visuals.IDamageTakenAnimator DamageTakenAnimator { get { return damageTakenAnimator.Value; } }
     public bool hasDamageTakenAnimator { get { return HasComponent(GameComponentsLookup.DamageTakenAnimator); } }
 
-    public GameEntity AddDamageTakenAnimator(Assets.Code.Gameplay.Common.Visuals.IDamageTakenAnimator newValue) {
+    public GameEntity AddDamageTakenAnimator(Code.Gameplay.Common.Visuals.IDamageTakenAnimator newValue) {
         var index = GameComponentsLookup.DamageTakenAnimator;
-        var component = (Assets.Code.Gameplay.Common.DamageTakenAnimatorComponent)CreateComponent(index, typeof(Assets.Code.Gameplay.Common.DamageTakenAnimatorComponent));
+        var component = (Code.Gameplay.Common.DamageTakenAnimatorComponent)CreateComponent(index, typeof(Code.Gameplay.Common.DamageTakenAnimatorComponent));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
     }
 
-    public GameEntity ReplaceDamageTakenAnimator(Assets.Code.Gameplay.Common.Visuals.IDamageTakenAnimator newValue) {
+    public GameEntity ReplaceDamageTakenAnimator(Code.Gameplay.Common.Visuals.IDamageTakenAnimator newValue) {
         var index = GameComponentsLookup.DamageTakenAnimator;
-        var component = (Assets.Code.Gameplay.Common.DamageTakenAnimatorComponent)CreateComponent(index, typeof(Assets.Code.Gameplay.Common.DamageTakenAnimatorComponent));
+        var component = (Code.Gameplay.Common.DamageTakenAnimatorComponent)CreateComponent(index, typeof(Code.Gameplay.Common.DamageTakenAnimatorComponent));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

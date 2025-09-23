@@ -17,6 +17,6 @@ public static class MetaComponentsLookup {
     };
 
     public static readonly System.Type[] componentTypes = {
-        typeof(Assets.Code.Common.Destructed)
+        typeof(Code.Common.Destructed)
     };
 }

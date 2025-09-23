@@ -1,6 +1,7 @@
-using Assets.Code.Infrastructure.Systems;
+using Code.Gameplay.Features.Pause.Systems;
+using Code.Infrastructure.Systems;
 
-namespace Assets.Code.Gameplay.Input
+namespace Code.Gameplay.Features.Pause
 {
 	public sealed class PauseFeature : Feature
 	{

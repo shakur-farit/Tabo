@@ -33,21 +33,21 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Assets.Code.Gameplay.Features.Enemy.EnemyAnimatorComponent enemyAnimator { get { return (Assets.Code.Gameplay.Features.Enemy.EnemyAnimatorComponent)GetComponent(GameComponentsLookup.EnemyAnimator); } }
-    public Assets.Code.Gameplay.Features.Enemy.Behaviours.EnemyAnimator EnemyAnimator { get { return enemyAnimator.Value; } }
+    public Code.Gameplay.Features.Enemy.EnemyAnimatorComponent enemyAnimator { get { return (Code.Gameplay.Features.Enemy.EnemyAnimatorComponent)GetComponent(GameComponentsLookup.EnemyAnimator); } }
+    public Code.Gameplay.Features.Enemy.Behaviours.EnemyAnimator EnemyAnimator { get { return enemyAnimator.Value; } }
     public bool hasEnemyAnimator { get { return HasComponent(GameComponentsLookup.EnemyAnimator); } }
 
-    public GameEntity AddEnemyAnimator(Assets.Code.Gameplay.Features.Enemy.Behaviours.EnemyAnimator newValue) {
+    public GameEntity AddEnemyAnimator(Code.Gameplay.Features.Enemy.Behaviours.EnemyAnimator newValue) {
         var index = GameComponentsLookup.EnemyAnimator;
-        var component = (Assets.Code.Gameplay.Features.Enemy.EnemyAnimatorComponent)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Enemy.EnemyAnimatorComponent));
+        var component = (Code.Gameplay.Features.Enemy.EnemyAnimatorComponent)CreateComponent(index, typeof(Code.Gameplay.Features.Enemy.EnemyAnimatorComponent));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
     }
 
-    public GameEntity ReplaceEnemyAnimator(Assets.Code.Gameplay.Features.Enemy.Behaviours.EnemyAnimator newValue) {
+    public GameEntity ReplaceEnemyAnimator(Code.Gameplay.Features.Enemy.Behaviours.EnemyAnimator newValue) {
         var index = GameComponentsLookup.EnemyAnimator;
-        var component = (Assets.Code.Gameplay.Features.Enemy.EnemyAnimatorComponent)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Enemy.EnemyAnimatorComponent));
+        var component = (Code.Gameplay.Features.Enemy.EnemyAnimatorComponent)CreateComponent(index, typeof(Code.Gameplay.Features.Enemy.EnemyAnimatorComponent));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

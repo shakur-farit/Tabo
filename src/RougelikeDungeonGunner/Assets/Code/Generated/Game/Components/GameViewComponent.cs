@@ -33,21 +33,21 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Assets.Code.Common.View view { get { return (Assets.Code.Common.View)GetComponent(GameComponentsLookup.View); } }
-    public Assets.Code.Infrastructure.View.IEntityView View { get { return view.Value; } }
+    public Code.Common.View view { get { return (Code.Common.View)GetComponent(GameComponentsLookup.View); } }
+    public Code.Infrastructure.View.IEntityView View { get { return view.Value; } }
     public bool hasView { get { return HasComponent(GameComponentsLookup.View); } }
 
-    public GameEntity AddView(Assets.Code.Infrastructure.View.IEntityView newValue) {
+    public GameEntity AddView(Code.Infrastructure.View.IEntityView newValue) {
         var index = GameComponentsLookup.View;
-        var component = (Assets.Code.Common.View)CreateComponent(index, typeof(Assets.Code.Common.View));
+        var component = (Code.Common.View)CreateComponent(index, typeof(Code.Common.View));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
     }
 
-    public GameEntity ReplaceView(Assets.Code.Infrastructure.View.IEntityView newValue) {
+    public GameEntity ReplaceView(Code.Infrastructure.View.IEntityView newValue) {
         var index = GameComponentsLookup.View;
-        var component = (Assets.Code.Common.View)CreateComponent(index, typeof(Assets.Code.Common.View));
+        var component = (Code.Common.View)CreateComponent(index, typeof(Code.Common.View));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

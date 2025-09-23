@@ -33,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Assets.Code.Gameplay.Features.AmmoPattern.PatternCurrentAngle patternCurrentAngle { get { return (Assets.Code.Gameplay.Features.AmmoPattern.PatternCurrentAngle)GetComponent(GameComponentsLookup.PatternCurrentAngle); } }
+    public Code.Gameplay.Features.AmmoPattern.PatternCurrentAngle patternCurrentAngle { get { return (Code.Gameplay.Features.AmmoPattern.PatternCurrentAngle)GetComponent(GameComponentsLookup.PatternCurrentAngle); } }
     public float PatternCurrentAngle { get { return patternCurrentAngle.Value; } }
     public bool hasPatternCurrentAngle { get { return HasComponent(GameComponentsLookup.PatternCurrentAngle); } }
 
     public GameEntity AddPatternCurrentAngle(float newValue) {
         var index = GameComponentsLookup.PatternCurrentAngle;
-        var component = (Assets.Code.Gameplay.Features.AmmoPattern.PatternCurrentAngle)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.AmmoPattern.PatternCurrentAngle));
+        var component = (Code.Gameplay.Features.AmmoPattern.PatternCurrentAngle)CreateComponent(index, typeof(Code.Gameplay.Features.AmmoPattern.PatternCurrentAngle));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplacePatternCurrentAngle(float newValue) {
         var index = GameComponentsLookup.PatternCurrentAngle;
-        var component = (Assets.Code.Gameplay.Features.AmmoPattern.PatternCurrentAngle)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.AmmoPattern.PatternCurrentAngle));
+        var component = (Code.Gameplay.Features.AmmoPattern.PatternCurrentAngle)CreateComponent(index, typeof(Code.Gameplay.Features.AmmoPattern.PatternCurrentAngle));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

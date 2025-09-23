@@ -33,7 +33,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Assets.Code.Gameplay.Features.Movement.FollowMovement followMovementComponent = new Assets.Code.Gameplay.Features.Movement.FollowMovement();
+    static readonly Code.Gameplay.Features.Movement.FollowMovement followMovementComponent = new Code.Gameplay.Features.Movement.FollowMovement();
 
     public bool isFollowMovement {
         get { return HasComponent(GameComponentsLookup.FollowMovement); }

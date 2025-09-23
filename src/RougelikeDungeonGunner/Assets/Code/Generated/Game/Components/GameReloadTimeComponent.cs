@@ -33,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Assets.Code.Gameplay.Features.Weapon.ReloadTime reloadTime { get { return (Assets.Code.Gameplay.Features.Weapon.ReloadTime)GetComponent(GameComponentsLookup.ReloadTime); } }
+    public Code.Gameplay.Features.Weapon.ReloadTime reloadTime { get { return (Code.Gameplay.Features.Weapon.ReloadTime)GetComponent(GameComponentsLookup.ReloadTime); } }
     public float ReloadTime { get { return reloadTime.Value; } }
     public bool hasReloadTime { get { return HasComponent(GameComponentsLookup.ReloadTime); } }
 
     public GameEntity AddReloadTime(float newValue) {
         var index = GameComponentsLookup.ReloadTime;
-        var component = (Assets.Code.Gameplay.Features.Weapon.ReloadTime)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Weapon.ReloadTime));
+        var component = (Code.Gameplay.Features.Weapon.ReloadTime)CreateComponent(index, typeof(Code.Gameplay.Features.Weapon.ReloadTime));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceReloadTime(float newValue) {
         var index = GameComponentsLookup.ReloadTime;
-        var component = (Assets.Code.Gameplay.Features.Weapon.ReloadTime)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Weapon.ReloadTime));
+        var component = (Code.Gameplay.Features.Weapon.ReloadTime)CreateComponent(index, typeof(Code.Gameplay.Features.Weapon.ReloadTime));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

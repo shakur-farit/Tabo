@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Linq;
-using Assets.Code.Common.Entity.ToStrings;
+using Code.Common.Entity.ToStrings;
 using Entitas;
 using UnityEngine;
 

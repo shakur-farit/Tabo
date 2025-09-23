@@ -33,7 +33,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Assets.Code.Gameplay.Features.Statuses.StatusComponents.Explosive explosiveComponent = new Assets.Code.Gameplay.Features.Statuses.StatusComponents.Explosive();
+    static readonly Code.Gameplay.Features.Statuses.StatusComponents.Explosive explosiveComponent = new Code.Gameplay.Features.Statuses.StatusComponents.Explosive();
 
     public bool isExplosive {
         get { return HasComponent(GameComponentsLookup.Explosive); }

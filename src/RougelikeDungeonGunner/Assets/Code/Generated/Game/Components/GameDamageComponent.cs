@@ -33,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Assets.Code.Gameplay.Common.Damage damage { get { return (Assets.Code.Gameplay.Common.Damage)GetComponent(GameComponentsLookup.Damage); } }
+    public Code.Gameplay.Common.Damage damage { get { return (Code.Gameplay.Common.Damage)GetComponent(GameComponentsLookup.Damage); } }
     public float Damage { get { return damage.Value; } }
     public bool hasDamage { get { return HasComponent(GameComponentsLookup.Damage); } }
 
     public GameEntity AddDamage(float newValue) {
         var index = GameComponentsLookup.Damage;
-        var component = (Assets.Code.Gameplay.Common.Damage)CreateComponent(index, typeof(Assets.Code.Gameplay.Common.Damage));
+        var component = (Code.Gameplay.Common.Damage)CreateComponent(index, typeof(Code.Gameplay.Common.Damage));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceDamage(float newValue) {
         var index = GameComponentsLookup.Damage;
-        var component = (Assets.Code.Gameplay.Common.Damage)CreateComponent(index, typeof(Assets.Code.Gameplay.Common.Damage));
+        var component = (Code.Gameplay.Common.Damage)CreateComponent(index, typeof(Code.Gameplay.Common.Damage));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

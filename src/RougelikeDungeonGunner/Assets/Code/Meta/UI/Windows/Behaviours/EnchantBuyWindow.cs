@@ -1,13 +1,13 @@
 ﻿using System.Collections.Generic;
-using Assets.Code.Common.Utilities;
-using Assets.Code.Meta.Features.Shop.Enchant;
-using Assets.Code.Meta.Features.Shop.Enchant.Factory;
-using Assets.Code.Meta.UI.Windows.Service;
+using Code.Common.Utilities;
+using Code.Meta.Features.Shop.Enchant;
+using Code.Meta.Features.Shop.Enchant.Factory;
+using Code.Meta.UI.Windows.Service;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
 
-namespace Assets.Code.Meta.UI.Windows.Behaviours
+namespace Code.Meta.UI.Windows.Behaviours
 {
 	public class EnchantBuyWindow : BaseWindow
 	{

@@ -1,12 +1,12 @@
 ﻿using System;
-using Assets.Code.Common.Extensions;
-using Assets.Code.Gameplay.Features.Aura.Configs;
-using Assets.Code.Gameplay.StaticData;
-using Assets.Code.Infrastructure.Identifiers;
 using Code.Common.Entity;
+using Code.Common.Extensions;
+using Code.Gameplay.Features.Aura.Configs;
+using Code.Gameplay.StaticData;
+using Code.Infrastructure.Identifiers;
 using UnityEngine;
 
-namespace Assets.Code.Gameplay.Features.Aura.Factory
+namespace Code.Gameplay.Features.Aura.Factory
 {
 	public class AuraFactory : IAuraFactory
 	{

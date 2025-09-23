@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using Assets.Code.Gameplay.Features.Statuses;
+using Code.Gameplay.Features.Statuses;
 using Entitas;
 
-namespace Assets.Code.Gameplay.Features.Ammo.Systems.Visuals
+namespace Code.Gameplay.Features.Ammo.Systems.Visuals
 {
 	public class ApplyEnchantVisualsToAmmoReactiveSystem : ReactiveSystem<GameEntity>
 	{

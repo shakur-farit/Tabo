@@ -33,7 +33,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Assets.Code.Gameplay.Features.Weapon.Reloading reloadingComponent = new Assets.Code.Gameplay.Features.Weapon.Reloading();
+    static readonly Code.Gameplay.Features.Weapon.Reloading reloadingComponent = new Code.Gameplay.Features.Weapon.Reloading();
 
     public bool isReloading {
         get { return HasComponent(GameComponentsLookup.Reloading); }

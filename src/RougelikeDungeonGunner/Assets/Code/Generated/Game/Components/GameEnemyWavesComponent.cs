@@ -33,21 +33,21 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Assets.Code.Gameplay.Features.Level.EnemyWaves enemyWaves { get { return (Assets.Code.Gameplay.Features.Level.EnemyWaves)GetComponent(GameComponentsLookup.EnemyWaves); } }
-    public System.Collections.Generic.List<Assets.Code.Gameplay.Features.Level.Configs.EnemyWave> EnemyWaves { get { return enemyWaves.Value; } }
+    public Code.Gameplay.Features.Level.EnemyWaves enemyWaves { get { return (Code.Gameplay.Features.Level.EnemyWaves)GetComponent(GameComponentsLookup.EnemyWaves); } }
+    public System.Collections.Generic.List<Code.Gameplay.Features.Level.Configs.EnemyWave> EnemyWaves { get { return enemyWaves.Value; } }
     public bool hasEnemyWaves { get { return HasComponent(GameComponentsLookup.EnemyWaves); } }
 
-    public GameEntity AddEnemyWaves(System.Collections.Generic.List<Assets.Code.Gameplay.Features.Level.Configs.EnemyWave> newValue) {
+    public GameEntity AddEnemyWaves(System.Collections.Generic.List<Code.Gameplay.Features.Level.Configs.EnemyWave> newValue) {
         var index = GameComponentsLookup.EnemyWaves;
-        var component = (Assets.Code.Gameplay.Features.Level.EnemyWaves)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Level.EnemyWaves));
+        var component = (Code.Gameplay.Features.Level.EnemyWaves)CreateComponent(index, typeof(Code.Gameplay.Features.Level.EnemyWaves));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
     }
 
-    public GameEntity ReplaceEnemyWaves(System.Collections.Generic.List<Assets.Code.Gameplay.Features.Level.Configs.EnemyWave> newValue) {
+    public GameEntity ReplaceEnemyWaves(System.Collections.Generic.List<Code.Gameplay.Features.Level.Configs.EnemyWave> newValue) {
         var index = GameComponentsLookup.EnemyWaves;
-        var component = (Assets.Code.Gameplay.Features.Level.EnemyWaves)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Level.EnemyWaves));
+        var component = (Code.Gameplay.Features.Level.EnemyWaves)CreateComponent(index, typeof(Code.Gameplay.Features.Level.EnemyWaves));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

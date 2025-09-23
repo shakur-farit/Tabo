@@ -1,4 +1,4 @@
-﻿namespace Assets.Code.Gameplay.Features.Dungeon
+﻿namespace Code.Gameplay.Features.Dungeon
 {
 	public enum DungeonTypeId
 	{

@@ -1,6 +1,6 @@
-﻿using Assets.Code.Gameplay.Features.Weapon;
+﻿using Code.Gameplay.Features.Weapon;
 
-namespace Assets.Code.Meta.Features.Shop.Upgrade.Services
+namespace Code.Meta.Features.Shop.Upgrade.Services
 {
 	public interface IWeaponUpgradesProvider
 	{

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Assets.Code.Common.Extensions
+namespace Code.Common.Extensions
 {
   public enum CollisionLayer
   {

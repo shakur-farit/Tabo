@@ -33,7 +33,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Assets.Code.Gameplay.Features.Movement.OrbitalMovement orbitalMovementComponent = new Assets.Code.Gameplay.Features.Movement.OrbitalMovement();
+    static readonly Code.Gameplay.Features.Movement.OrbitalMovement orbitalMovementComponent = new Code.Gameplay.Features.Movement.OrbitalMovement();
 
     public bool isOrbitalMovement {
         get { return HasComponent(GameComponentsLookup.OrbitalMovement); }

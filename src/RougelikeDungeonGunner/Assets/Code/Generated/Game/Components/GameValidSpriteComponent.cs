@@ -33,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Assets.Code.Gameplay.Features.Dungeon.ValidSprite validSprite { get { return (Assets.Code.Gameplay.Features.Dungeon.ValidSprite)GetComponent(GameComponentsLookup.ValidSprite); } }
+    public Code.Gameplay.Features.Dungeon.ValidSprite validSprite { get { return (Code.Gameplay.Features.Dungeon.ValidSprite)GetComponent(GameComponentsLookup.ValidSprite); } }
     public UnityEngine.Sprite ValidSprite { get { return validSprite.Value; } }
     public bool hasValidSprite { get { return HasComponent(GameComponentsLookup.ValidSprite); } }
 
     public GameEntity AddValidSprite(UnityEngine.Sprite newValue) {
         var index = GameComponentsLookup.ValidSprite;
-        var component = (Assets.Code.Gameplay.Features.Dungeon.ValidSprite)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Dungeon.ValidSprite));
+        var component = (Code.Gameplay.Features.Dungeon.ValidSprite)CreateComponent(index, typeof(Code.Gameplay.Features.Dungeon.ValidSprite));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceValidSprite(UnityEngine.Sprite newValue) {
         var index = GameComponentsLookup.ValidSprite;
-        var component = (Assets.Code.Gameplay.Features.Dungeon.ValidSprite)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Dungeon.ValidSprite));
+        var component = (Code.Gameplay.Features.Dungeon.ValidSprite)CreateComponent(index, typeof(Code.Gameplay.Features.Dungeon.ValidSprite));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

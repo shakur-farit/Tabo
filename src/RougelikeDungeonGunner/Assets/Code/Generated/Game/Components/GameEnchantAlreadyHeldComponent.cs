@@ -33,7 +33,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Assets.Code.Gameplay.Features.Enchants.EnchantAlreadyHeld enchantAlreadyHeldComponent = new Assets.Code.Gameplay.Features.Enchants.EnchantAlreadyHeld();
+    static readonly Code.Gameplay.Features.Enchants.EnchantAlreadyHeld enchantAlreadyHeldComponent = new Code.Gameplay.Features.Enchants.EnchantAlreadyHeld();
 
     public bool isEnchantAlreadyHeld {
         get { return HasComponent(GameComponentsLookup.EnchantAlreadyHeld); }

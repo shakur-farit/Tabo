@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Entitas;
 
-namespace Assets.Code.Gameplay.Common.Collisions
+namespace Code.Gameplay.Common.Collisions
 {
   public class CollisionRegistry : ICollisionRegistry
   {

@@ -1,15 +1,15 @@
 ﻿using System.Collections.Generic;
-using Assets.Code.Gameplay.Features.Weapon;
-using Assets.Code.Gameplay.Features.Weapon.Configs;
-using Assets.Code.Gameplay.StaticData;
-using Assets.Code.Meta.Features.Shop.Upgrade.Factory;
-using Assets.Code.Meta.UI.Windows.Service;
-using Assets.Code.Progress.Provider;
+using Code.Gameplay.Features.Weapon;
+using Code.Gameplay.Features.Weapon.Configs;
+using Code.Gameplay.StaticData;
+using Code.Meta.Features.Shop.Upgrade.Factory;
+using Code.Meta.UI.Windows.Service;
+using Code.Progress.Provider;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
 
-namespace Assets.Code.Meta.UI.Windows.Behaviours
+namespace Code.Meta.UI.Windows.Behaviours
 {
 	public class WeaponUpgradeWindow : BaseWindow
 	{

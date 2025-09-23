@@ -1,4 +1,4 @@
-﻿namespace Assets.Code.Gameplay.Features.Aura
+﻿namespace Code.Gameplay.Features.Aura
 {
 	public static class AuraEntityExtensions
 	{

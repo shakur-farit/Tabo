@@ -33,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Assets.Code.Gameplay.Common.TrailRendererComponent trailRenderer { get { return (Assets.Code.Gameplay.Common.TrailRendererComponent)GetComponent(GameComponentsLookup.TrailRenderer); } }
+    public Code.Gameplay.Common.TrailRendererComponent trailRenderer { get { return (Code.Gameplay.Common.TrailRendererComponent)GetComponent(GameComponentsLookup.TrailRenderer); } }
     public UnityEngine.TrailRenderer TrailRenderer { get { return trailRenderer.Value; } }
     public bool hasTrailRenderer { get { return HasComponent(GameComponentsLookup.TrailRenderer); } }
 
     public GameEntity AddTrailRenderer(UnityEngine.TrailRenderer newValue) {
         var index = GameComponentsLookup.TrailRenderer;
-        var component = (Assets.Code.Gameplay.Common.TrailRendererComponent)CreateComponent(index, typeof(Assets.Code.Gameplay.Common.TrailRendererComponent));
+        var component = (Code.Gameplay.Common.TrailRendererComponent)CreateComponent(index, typeof(Code.Gameplay.Common.TrailRendererComponent));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceTrailRenderer(UnityEngine.TrailRenderer newValue) {
         var index = GameComponentsLookup.TrailRenderer;
-        var component = (Assets.Code.Gameplay.Common.TrailRendererComponent)CreateComponent(index, typeof(Assets.Code.Gameplay.Common.TrailRendererComponent));
+        var component = (Code.Gameplay.Common.TrailRendererComponent)CreateComponent(index, typeof(Code.Gameplay.Common.TrailRendererComponent));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

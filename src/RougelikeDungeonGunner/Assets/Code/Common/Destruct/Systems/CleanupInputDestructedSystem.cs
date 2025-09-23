@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Entitas;
 
-namespace Assets.Code.Common.Destruct.Systems
+namespace Code.Common.Destruct.Systems
 {
 	public class CleanupInputDestructedSystem : ICleanupSystem
 	{

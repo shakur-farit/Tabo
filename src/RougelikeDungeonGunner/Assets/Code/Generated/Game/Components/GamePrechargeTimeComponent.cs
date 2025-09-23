@@ -33,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Assets.Code.Gameplay.Features.Weapon.PrechargeTime prechargeTime { get { return (Assets.Code.Gameplay.Features.Weapon.PrechargeTime)GetComponent(GameComponentsLookup.PrechargeTime); } }
+    public Code.Gameplay.Features.Weapon.PrechargeTime prechargeTime { get { return (Code.Gameplay.Features.Weapon.PrechargeTime)GetComponent(GameComponentsLookup.PrechargeTime); } }
     public float PrechargeTime { get { return prechargeTime.Value; } }
     public bool hasPrechargeTime { get { return HasComponent(GameComponentsLookup.PrechargeTime); } }
 
     public GameEntity AddPrechargeTime(float newValue) {
         var index = GameComponentsLookup.PrechargeTime;
-        var component = (Assets.Code.Gameplay.Features.Weapon.PrechargeTime)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Weapon.PrechargeTime));
+        var component = (Code.Gameplay.Features.Weapon.PrechargeTime)CreateComponent(index, typeof(Code.Gameplay.Features.Weapon.PrechargeTime));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplacePrechargeTime(float newValue) {
         var index = GameComponentsLookup.PrechargeTime;
-        var component = (Assets.Code.Gameplay.Features.Weapon.PrechargeTime)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Weapon.PrechargeTime));
+        var component = (Code.Gameplay.Features.Weapon.PrechargeTime)CreateComponent(index, typeof(Code.Gameplay.Features.Weapon.PrechargeTime));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

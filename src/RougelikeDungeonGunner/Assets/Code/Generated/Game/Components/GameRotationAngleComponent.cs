@@ -33,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Assets.Code.Gameplay.Features.Rotation.RotationAngle rotationAngle { get { return (Assets.Code.Gameplay.Features.Rotation.RotationAngle)GetComponent(GameComponentsLookup.RotationAngle); } }
+    public Code.Gameplay.Features.Rotation.RotationAngle rotationAngle { get { return (Code.Gameplay.Features.Rotation.RotationAngle)GetComponent(GameComponentsLookup.RotationAngle); } }
     public float RotationAngle { get { return rotationAngle.Value; } }
     public bool hasRotationAngle { get { return HasComponent(GameComponentsLookup.RotationAngle); } }
 
     public GameEntity AddRotationAngle(float newValue) {
         var index = GameComponentsLookup.RotationAngle;
-        var component = (Assets.Code.Gameplay.Features.Rotation.RotationAngle)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Rotation.RotationAngle));
+        var component = (Code.Gameplay.Features.Rotation.RotationAngle)CreateComponent(index, typeof(Code.Gameplay.Features.Rotation.RotationAngle));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceRotationAngle(float newValue) {
         var index = GameComponentsLookup.RotationAngle;
-        var component = (Assets.Code.Gameplay.Features.Rotation.RotationAngle)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Rotation.RotationAngle));
+        var component = (Code.Gameplay.Features.Rotation.RotationAngle)CreateComponent(index, typeof(Code.Gameplay.Features.Rotation.RotationAngle));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

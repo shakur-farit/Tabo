@@ -33,7 +33,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Assets.Code.Gameplay.Features.Statuses.StatusComponents.Freeze freezeComponent = new Assets.Code.Gameplay.Features.Statuses.StatusComponents.Freeze();
+    static readonly Code.Gameplay.Features.Statuses.StatusComponents.Freeze freezeComponent = new Code.Gameplay.Features.Statuses.StatusComponents.Freeze();
 
     public bool isFreeze {
         get { return HasComponent(GameComponentsLookup.Freeze); }

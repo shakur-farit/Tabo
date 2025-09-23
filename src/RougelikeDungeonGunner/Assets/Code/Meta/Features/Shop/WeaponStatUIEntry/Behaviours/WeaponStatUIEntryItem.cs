@@ -1,8 +1,8 @@
-﻿using Assets.Code.Common.Extensions;
+﻿using Code.Common.Extensions;
 using TMPro;
 using UnityEngine;
 
-namespace Assets.Code.Meta.Features.Shop.WeaponStatUIEntry.Behaviours
+namespace Code.Meta.Features.Shop.WeaponStatUIEntry.Behaviours
 {
 	public class WeaponStatUIEntryItem : MonoBehaviour
 	{

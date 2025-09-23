@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Entitas;
 
-namespace Assets.Code.Gameplay.Features.Effects.Systems
+namespace Code.Gameplay.Features.Effects.Systems
 {
 	public class ProcessDamageEffectSystem : IExecuteSystem
 	{

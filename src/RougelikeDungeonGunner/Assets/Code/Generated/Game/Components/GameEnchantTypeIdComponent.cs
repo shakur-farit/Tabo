@@ -33,21 +33,21 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Assets.Code.Gameplay.Features.Enchants.EnchantTypeIdComponent enchantTypeId { get { return (Assets.Code.Gameplay.Features.Enchants.EnchantTypeIdComponent)GetComponent(GameComponentsLookup.EnchantTypeId); } }
-    public Assets.Code.Gameplay.Features.Enchants.EnchantTypeId EnchantTypeId { get { return enchantTypeId.Value; } }
+    public Code.Gameplay.Features.Enchants.EnchantTypeIdComponent enchantTypeId { get { return (Code.Gameplay.Features.Enchants.EnchantTypeIdComponent)GetComponent(GameComponentsLookup.EnchantTypeId); } }
+    public Code.Gameplay.Features.Enchants.EnchantTypeId EnchantTypeId { get { return enchantTypeId.Value; } }
     public bool hasEnchantTypeId { get { return HasComponent(GameComponentsLookup.EnchantTypeId); } }
 
-    public GameEntity AddEnchantTypeId(Assets.Code.Gameplay.Features.Enchants.EnchantTypeId newValue) {
+    public GameEntity AddEnchantTypeId(Code.Gameplay.Features.Enchants.EnchantTypeId newValue) {
         var index = GameComponentsLookup.EnchantTypeId;
-        var component = (Assets.Code.Gameplay.Features.Enchants.EnchantTypeIdComponent)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Enchants.EnchantTypeIdComponent));
+        var component = (Code.Gameplay.Features.Enchants.EnchantTypeIdComponent)CreateComponent(index, typeof(Code.Gameplay.Features.Enchants.EnchantTypeIdComponent));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
     }
 
-    public GameEntity ReplaceEnchantTypeId(Assets.Code.Gameplay.Features.Enchants.EnchantTypeId newValue) {
+    public GameEntity ReplaceEnchantTypeId(Code.Gameplay.Features.Enchants.EnchantTypeId newValue) {
         var index = GameComponentsLookup.EnchantTypeId;
-        var component = (Assets.Code.Gameplay.Features.Enchants.EnchantTypeIdComponent)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Enchants.EnchantTypeIdComponent));
+        var component = (Code.Gameplay.Features.Enchants.EnchantTypeIdComponent)CreateComponent(index, typeof(Code.Gameplay.Features.Enchants.EnchantTypeIdComponent));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

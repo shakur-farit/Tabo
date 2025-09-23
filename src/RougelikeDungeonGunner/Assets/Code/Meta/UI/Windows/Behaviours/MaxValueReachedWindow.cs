@@ -1,9 +1,9 @@
-﻿using Assets.Code.Meta.UI.Windows.Service;
+﻿using Code.Meta.UI.Windows.Service;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
 
-namespace Assets.Code.Meta.UI.Windows.Behaviours
+namespace Code.Meta.UI.Windows.Behaviours
 {
 	public class MaxValueReachedWindow : BaseWindow
 	{

@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
-using Assets.Code.Gameplay.Features.Weapon.Configs;
+using Code.Gameplay.Features.Weapon.Configs;
 using Entitas;
 using UnityEngine;
 
-namespace Assets.Code.Gameplay.Features.AmmoPattern
+namespace Code.Gameplay.Features.AmmoPattern
 {
 	[Game] public class AmmoPattern : IComponent { }
 	[Game] public class AmmoPatternId : IComponent { public int Value; }

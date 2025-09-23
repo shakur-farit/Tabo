@@ -1,7 +1,7 @@
-﻿using Assets.Code.Gameplay.Features.Collection.Systems;
-using Assets.Code.Infrastructure.Systems;
+﻿using Code.Gameplay.Features.Collection.Systems;
+using Code.Infrastructure.Systems;
 
-namespace Assets.Code.Gameplay.Features.Collection
+namespace Code.Gameplay.Features.Collection
 {
 	public sealed class CollectFeature : Feature
 	{

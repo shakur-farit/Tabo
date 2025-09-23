@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using Assets.Code.Gameplay.StaticData;
+using Code.Gameplay.StaticData;
 using Entitas;
 
-namespace Assets.Code.Gameplay.Features.Hero.Systems
+namespace Code.Gameplay.Features.Hero.Systems
 {
 	public class SetHeroCastStartLocalPositionSystem : ReactiveSystem<GameEntity>
 	{

@@ -1,7 +1,7 @@
-using Assets.Code.Progress.Data.Progress;
-using Assets.Code.Progress.Data.Transient;
+using Code.Progress.Data.Progress;
+using Code.Progress.Data.Transient;
 
-namespace Assets.Code.Progress.Provider
+namespace Code.Progress.Provider
 {
 	public interface IProgressProvider
 	{

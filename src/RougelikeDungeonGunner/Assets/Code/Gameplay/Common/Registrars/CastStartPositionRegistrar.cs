@@ -1,7 +1,7 @@
-﻿using Assets.Code.Infrastructure.View.Registrars;
+﻿using Code.Infrastructure.View.Registrars;
 using UnityEngine;
 
-namespace Assets.Code.Gameplay.Common.Registrars
+namespace Code.Gameplay.Common.Registrars
 {
 	public class CastStartPositionRegistrar : EntityComponentRegistrar
 	{

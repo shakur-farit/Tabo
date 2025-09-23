@@ -33,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Assets.Code.Gameplay.Features.Statuses.StatusComponents.TimeSinceLastTick timeSinceLastTick { get { return (Assets.Code.Gameplay.Features.Statuses.StatusComponents.TimeSinceLastTick)GetComponent(GameComponentsLookup.TimeSinceLastTick); } }
+    public Code.Gameplay.Features.Statuses.StatusComponents.TimeSinceLastTick timeSinceLastTick { get { return (Code.Gameplay.Features.Statuses.StatusComponents.TimeSinceLastTick)GetComponent(GameComponentsLookup.TimeSinceLastTick); } }
     public float TimeSinceLastTick { get { return timeSinceLastTick.Value; } }
     public bool hasTimeSinceLastTick { get { return HasComponent(GameComponentsLookup.TimeSinceLastTick); } }
 
     public GameEntity AddTimeSinceLastTick(float newValue) {
         var index = GameComponentsLookup.TimeSinceLastTick;
-        var component = (Assets.Code.Gameplay.Features.Statuses.StatusComponents.TimeSinceLastTick)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Statuses.StatusComponents.TimeSinceLastTick));
+        var component = (Code.Gameplay.Features.Statuses.StatusComponents.TimeSinceLastTick)CreateComponent(index, typeof(Code.Gameplay.Features.Statuses.StatusComponents.TimeSinceLastTick));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceTimeSinceLastTick(float newValue) {
         var index = GameComponentsLookup.TimeSinceLastTick;
-        var component = (Assets.Code.Gameplay.Features.Statuses.StatusComponents.TimeSinceLastTick)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Statuses.StatusComponents.TimeSinceLastTick));
+        var component = (Code.Gameplay.Features.Statuses.StatusComponents.TimeSinceLastTick)CreateComponent(index, typeof(Code.Gameplay.Features.Statuses.StatusComponents.TimeSinceLastTick));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

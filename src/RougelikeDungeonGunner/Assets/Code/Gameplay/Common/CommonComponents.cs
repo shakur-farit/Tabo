@@ -1,10 +1,10 @@
-﻿using Assets.Code.Gameplay.Common.Visuals;
-using Assets.Code.Gameplay.Common.Visuals.StatusVisuals;
+﻿using Code.Gameplay.Common.Visuals;
+using Code.Gameplay.Common.Visuals.StatusVisuals;
 using Entitas;
 using Entitas.CodeGeneration.Attributes;
 using UnityEngine;
 
-namespace Assets.Code.Gameplay.Common
+namespace Code.Gameplay.Common
 {
 	[Game] public class WorldPosition : IComponent { public Vector3 Value; }
 	[Game] public class Id : IComponent { [PrimaryEntityIndex] public int Value; }

@@ -33,7 +33,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Assets.Code.Gameplay.Common.Stunned stunnedComponent = new Assets.Code.Gameplay.Common.Stunned();
+    static readonly Code.Gameplay.Common.Stunned stunnedComponent = new Code.Gameplay.Common.Stunned();
 
     public bool isStunned {
         get { return HasComponent(GameComponentsLookup.Stunned); }

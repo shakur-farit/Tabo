@@ -33,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Assets.Code.Gameplay.Features.Collection.CollectTargetsTimer collectTargetsTimer { get { return (Assets.Code.Gameplay.Features.Collection.CollectTargetsTimer)GetComponent(GameComponentsLookup.CollectTargetsTimer); } }
+    public Code.Gameplay.Features.Collection.CollectTargetsTimer collectTargetsTimer { get { return (Code.Gameplay.Features.Collection.CollectTargetsTimer)GetComponent(GameComponentsLookup.CollectTargetsTimer); } }
     public float CollectTargetsTimer { get { return collectTargetsTimer.Value; } }
     public bool hasCollectTargetsTimer { get { return HasComponent(GameComponentsLookup.CollectTargetsTimer); } }
 
     public GameEntity AddCollectTargetsTimer(float newValue) {
         var index = GameComponentsLookup.CollectTargetsTimer;
-        var component = (Assets.Code.Gameplay.Features.Collection.CollectTargetsTimer)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Collection.CollectTargetsTimer));
+        var component = (Code.Gameplay.Features.Collection.CollectTargetsTimer)CreateComponent(index, typeof(Code.Gameplay.Features.Collection.CollectTargetsTimer));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceCollectTargetsTimer(float newValue) {
         var index = GameComponentsLookup.CollectTargetsTimer;
-        var component = (Assets.Code.Gameplay.Features.Collection.CollectTargetsTimer)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Collection.CollectTargetsTimer));
+        var component = (Code.Gameplay.Features.Collection.CollectTargetsTimer)CreateComponent(index, typeof(Code.Gameplay.Features.Collection.CollectTargetsTimer));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

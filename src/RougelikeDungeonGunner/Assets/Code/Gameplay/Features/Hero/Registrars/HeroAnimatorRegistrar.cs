@@ -1,8 +1,8 @@
-﻿using Assets.Code.Gameplay.Features.Hero.Behaviours;
-using Assets.Code.Infrastructure.View.Registrars;
+﻿using Code.Gameplay.Features.Hero.Behaviours;
+using Code.Infrastructure.View.Registrars;
 using UnityEngine;
 
-namespace Assets.Code.Gameplay.Features.Hero.Registrars
+namespace Code.Gameplay.Features.Hero.Registrars
 {
 	public class HeroAnimatorRegistrar : EntityComponentRegistrar
 	{

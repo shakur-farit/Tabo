@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Assets.Code.Gameplay.Features.Ammo.Configs
+namespace Code.Gameplay.Features.Ammo.Configs
 {
 	[Serializable]
 	public class AmmoStats

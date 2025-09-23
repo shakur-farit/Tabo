@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Entitas;
 
-namespace Assets.Code.Gameplay.Features.Loot.Systems
+namespace Code.Gameplay.Features.Loot.Systems
 {
 	public class CollectShieldItemSystem : IExecuteSystem
 	{

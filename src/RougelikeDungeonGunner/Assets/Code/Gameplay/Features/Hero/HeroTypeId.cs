@@ -1,4 +1,4 @@
-﻿namespace Assets.Code.Gameplay.Features.Hero
+﻿namespace Code.Gameplay.Features.Hero
 {
 	public enum HeroTypeId
 	{

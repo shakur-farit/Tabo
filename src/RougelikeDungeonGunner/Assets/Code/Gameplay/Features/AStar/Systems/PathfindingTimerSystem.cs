@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using Assets.Code.Gameplay.Common.Time;
+using Code.Gameplay.Common.Time;
 using Entitas;
 
-namespace Assets.Code.Gameplay.Features.AStar.Systems
+namespace Code.Gameplay.Features.AStar.Systems
 {
 	public class PathfindingTimerSystem : IExecuteSystem
 	{

@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
-using Assets.Code.Common.Extensions;
-using Assets.Code.Gameplay.Features.Ammo.Factory;
+using Code.Common.Extensions;
+using Code.Gameplay.Features.Ammo.Factory;
 using Entitas;
 using UnityEngine;
 
-namespace Assets.Code.Gameplay.Features.Ammo.Systems
+namespace Code.Gameplay.Features.Ammo.Systems
 {
 	public class CreateAmmoFromTrianglePatternSystem : IExecuteSystem
 	{

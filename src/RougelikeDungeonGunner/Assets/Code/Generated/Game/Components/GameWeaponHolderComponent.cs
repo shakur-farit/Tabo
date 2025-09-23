@@ -33,21 +33,21 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Assets.Code.Meta.Features.Hud.WeaponHolderComponent weaponHolder { get { return (Assets.Code.Meta.Features.Hud.WeaponHolderComponent)GetComponent(GameComponentsLookup.WeaponHolder); } }
-    public Assets.Code.Meta.Features.Hud.WeaponHolder.Behaviours.WeaponHolderBehaviour WeaponHolder { get { return weaponHolder.Value; } }
+    public Code.Meta.Features.Hud.WeaponHolderComponent weaponHolder { get { return (Code.Meta.Features.Hud.WeaponHolderComponent)GetComponent(GameComponentsLookup.WeaponHolder); } }
+    public Code.Meta.Features.Hud.WeaponHolder.Behaviours.WeaponHolderBehaviour WeaponHolder { get { return weaponHolder.Value; } }
     public bool hasWeaponHolder { get { return HasComponent(GameComponentsLookup.WeaponHolder); } }
 
-    public GameEntity AddWeaponHolder(Assets.Code.Meta.Features.Hud.WeaponHolder.Behaviours.WeaponHolderBehaviour newValue) {
+    public GameEntity AddWeaponHolder(Code.Meta.Features.Hud.WeaponHolder.Behaviours.WeaponHolderBehaviour newValue) {
         var index = GameComponentsLookup.WeaponHolder;
-        var component = (Assets.Code.Meta.Features.Hud.WeaponHolderComponent)CreateComponent(index, typeof(Assets.Code.Meta.Features.Hud.WeaponHolderComponent));
+        var component = (Code.Meta.Features.Hud.WeaponHolderComponent)CreateComponent(index, typeof(Code.Meta.Features.Hud.WeaponHolderComponent));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
     }
 
-    public GameEntity ReplaceWeaponHolder(Assets.Code.Meta.Features.Hud.WeaponHolder.Behaviours.WeaponHolderBehaviour newValue) {
+    public GameEntity ReplaceWeaponHolder(Code.Meta.Features.Hud.WeaponHolder.Behaviours.WeaponHolderBehaviour newValue) {
         var index = GameComponentsLookup.WeaponHolder;
-        var component = (Assets.Code.Meta.Features.Hud.WeaponHolderComponent)CreateComponent(index, typeof(Assets.Code.Meta.Features.Hud.WeaponHolderComponent));
+        var component = (Code.Meta.Features.Hud.WeaponHolderComponent)CreateComponent(index, typeof(Code.Meta.Features.Hud.WeaponHolderComponent));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

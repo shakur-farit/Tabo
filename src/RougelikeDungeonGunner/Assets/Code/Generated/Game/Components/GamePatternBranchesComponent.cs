@@ -33,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Assets.Code.Gameplay.Features.AmmoPattern.PatternBranches patternBranches { get { return (Assets.Code.Gameplay.Features.AmmoPattern.PatternBranches)GetComponent(GameComponentsLookup.PatternBranches); } }
+    public Code.Gameplay.Features.AmmoPattern.PatternBranches patternBranches { get { return (Code.Gameplay.Features.AmmoPattern.PatternBranches)GetComponent(GameComponentsLookup.PatternBranches); } }
     public int PatternBranches { get { return patternBranches.Value; } }
     public bool hasPatternBranches { get { return HasComponent(GameComponentsLookup.PatternBranches); } }
 
     public GameEntity AddPatternBranches(int newValue) {
         var index = GameComponentsLookup.PatternBranches;
-        var component = (Assets.Code.Gameplay.Features.AmmoPattern.PatternBranches)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.AmmoPattern.PatternBranches));
+        var component = (Code.Gameplay.Features.AmmoPattern.PatternBranches)CreateComponent(index, typeof(Code.Gameplay.Features.AmmoPattern.PatternBranches));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplacePatternBranches(int newValue) {
         var index = GameComponentsLookup.PatternBranches;
-        var component = (Assets.Code.Gameplay.Features.AmmoPattern.PatternBranches)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.AmmoPattern.PatternBranches));
+        var component = (Code.Gameplay.Features.AmmoPattern.PatternBranches)CreateComponent(index, typeof(Code.Gameplay.Features.AmmoPattern.PatternBranches));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

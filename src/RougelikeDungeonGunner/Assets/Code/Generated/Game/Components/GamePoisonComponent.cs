@@ -33,7 +33,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Assets.Code.Gameplay.Features.Statuses.StatusComponents.Poison poisonComponent = new Assets.Code.Gameplay.Features.Statuses.StatusComponents.Poison();
+    static readonly Code.Gameplay.Features.Statuses.StatusComponents.Poison poisonComponent = new Code.Gameplay.Features.Statuses.StatusComponents.Poison();
 
     public bool isPoison {
         get { return HasComponent(GameComponentsLookup.Poison); }

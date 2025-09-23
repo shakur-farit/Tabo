@@ -33,21 +33,21 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Assets.Code.Gameplay.Features.Hero.CurrentWeaponTypeId currentWeaponTypeId { get { return (Assets.Code.Gameplay.Features.Hero.CurrentWeaponTypeId)GetComponent(GameComponentsLookup.CurrentWeaponTypeId); } }
-    public Assets.Code.Gameplay.Features.Weapon.WeaponTypeId CurrentWeaponTypeId { get { return currentWeaponTypeId.Value; } }
+    public Code.Gameplay.Features.Hero.CurrentWeaponTypeId currentWeaponTypeId { get { return (Code.Gameplay.Features.Hero.CurrentWeaponTypeId)GetComponent(GameComponentsLookup.CurrentWeaponTypeId); } }
+    public Code.Gameplay.Features.Weapon.WeaponTypeId CurrentWeaponTypeId { get { return currentWeaponTypeId.Value; } }
     public bool hasCurrentWeaponTypeId { get { return HasComponent(GameComponentsLookup.CurrentWeaponTypeId); } }
 
-    public GameEntity AddCurrentWeaponTypeId(Assets.Code.Gameplay.Features.Weapon.WeaponTypeId newValue) {
+    public GameEntity AddCurrentWeaponTypeId(Code.Gameplay.Features.Weapon.WeaponTypeId newValue) {
         var index = GameComponentsLookup.CurrentWeaponTypeId;
-        var component = (Assets.Code.Gameplay.Features.Hero.CurrentWeaponTypeId)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Hero.CurrentWeaponTypeId));
+        var component = (Code.Gameplay.Features.Hero.CurrentWeaponTypeId)CreateComponent(index, typeof(Code.Gameplay.Features.Hero.CurrentWeaponTypeId));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
     }
 
-    public GameEntity ReplaceCurrentWeaponTypeId(Assets.Code.Gameplay.Features.Weapon.WeaponTypeId newValue) {
+    public GameEntity ReplaceCurrentWeaponTypeId(Code.Gameplay.Features.Weapon.WeaponTypeId newValue) {
         var index = GameComponentsLookup.CurrentWeaponTypeId;
-        var component = (Assets.Code.Gameplay.Features.Hero.CurrentWeaponTypeId)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Hero.CurrentWeaponTypeId));
+        var component = (Code.Gameplay.Features.Hero.CurrentWeaponTypeId)CreateComponent(index, typeof(Code.Gameplay.Features.Hero.CurrentWeaponTypeId));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

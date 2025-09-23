@@ -33,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Assets.Code.Gameplay.Common.ParticleSystemRendererComponent particleSystemRenderer { get { return (Assets.Code.Gameplay.Common.ParticleSystemRendererComponent)GetComponent(GameComponentsLookup.ParticleSystemRenderer); } }
+    public Code.Gameplay.Common.ParticleSystemRendererComponent particleSystemRenderer { get { return (Code.Gameplay.Common.ParticleSystemRendererComponent)GetComponent(GameComponentsLookup.ParticleSystemRenderer); } }
     public UnityEngine.ParticleSystemRenderer ParticleSystemRenderer { get { return particleSystemRenderer.Value; } }
     public bool hasParticleSystemRenderer { get { return HasComponent(GameComponentsLookup.ParticleSystemRenderer); } }
 
     public GameEntity AddParticleSystemRenderer(UnityEngine.ParticleSystemRenderer newValue) {
         var index = GameComponentsLookup.ParticleSystemRenderer;
-        var component = (Assets.Code.Gameplay.Common.ParticleSystemRendererComponent)CreateComponent(index, typeof(Assets.Code.Gameplay.Common.ParticleSystemRendererComponent));
+        var component = (Code.Gameplay.Common.ParticleSystemRendererComponent)CreateComponent(index, typeof(Code.Gameplay.Common.ParticleSystemRendererComponent));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceParticleSystemRenderer(UnityEngine.ParticleSystemRenderer newValue) {
         var index = GameComponentsLookup.ParticleSystemRenderer;
-        var component = (Assets.Code.Gameplay.Common.ParticleSystemRendererComponent)CreateComponent(index, typeof(Assets.Code.Gameplay.Common.ParticleSystemRendererComponent));
+        var component = (Code.Gameplay.Common.ParticleSystemRendererComponent)CreateComponent(index, typeof(Code.Gameplay.Common.ParticleSystemRendererComponent));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

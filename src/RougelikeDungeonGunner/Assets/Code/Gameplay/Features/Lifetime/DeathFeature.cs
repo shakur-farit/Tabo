@@ -1,7 +1,7 @@
-﻿using Assets.Code.Gameplay.Features.Lifetime.Systems;
-using Assets.Code.Infrastructure.Systems;
+﻿using Code.Gameplay.Features.Lifetime.Systems;
+using Code.Infrastructure.Systems;
 
-namespace Assets.Code.Gameplay.Features.Lifetime
+namespace Code.Gameplay.Features.Lifetime
 {
 	public sealed class DeathFeature : Feature
 	{

@@ -1,7 +1,7 @@
-﻿using Assets.Code.Common.Destruct.Systems;
-using Assets.Code.Infrastructure.Systems;
+﻿using Code.Common.Destruct.Systems;
+using Code.Infrastructure.Systems;
 
-namespace Assets.Code.Common.Destruct
+namespace Code.Common.Destruct
 {
 	public sealed class ProcessMetaDestructedFeature : Feature
 	{

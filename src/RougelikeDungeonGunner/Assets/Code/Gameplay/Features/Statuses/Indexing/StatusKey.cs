@@ -1,4 +1,4 @@
-﻿namespace Assets.Code.Gameplay.Features.Statuses.Indexing
+﻿namespace Code.Gameplay.Features.Statuses.Indexing
 {
 	public struct StatusKey
 	{

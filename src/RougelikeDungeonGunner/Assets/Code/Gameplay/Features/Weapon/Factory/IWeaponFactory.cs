@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Assets.Code.Gameplay.Features.Weapon.Factory
+namespace Code.Gameplay.Features.Weapon.Factory
 {
 	public interface IWeaponFactory
 	{

@@ -1,10 +1,10 @@
 using System.Collections.Generic;
-using Assets.Code.Infrastructure.AssetManagement;
+using Code.Infrastructure.AssetManagement;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 using Zenject;
 
-namespace Assets.Code.Infrastructure.View.Factory
+namespace Code.Infrastructure.View.Factory
 {
 	public class EntityViewFactory : IEntityViewFactory
 	{

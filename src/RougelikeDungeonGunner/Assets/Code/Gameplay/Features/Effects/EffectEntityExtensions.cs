@@ -1,4 +1,4 @@
-﻿namespace Assets.Code.Gameplay.Features.Effects
+﻿namespace Code.Gameplay.Features.Effects
 {
 	public static class EffectEntityExtensions
 	{

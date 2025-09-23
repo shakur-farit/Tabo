@@ -33,7 +33,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Assets.Code.Common.Unparented unparentedComponent = new Assets.Code.Common.Unparented();
+    static readonly Code.Common.Unparented unparentedComponent = new Code.Common.Unparented();
 
     public bool isUnparented {
         get { return HasComponent(GameComponentsLookup.Unparented); }

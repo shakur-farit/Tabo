@@ -1,7 +1,7 @@
-﻿using Assets.Code.Infrastructure.View.Registrars;
+﻿using Code.Infrastructure.View.Registrars;
 using UnityEngine;
 
-namespace Assets.Code.Gameplay.Features.SpecialEffect.Registrars
+namespace Code.Gameplay.Features.SpecialEffect.Registrars
 {
 	public class ParticleSystemRegistrar : EntityComponentRegistrar
 	{

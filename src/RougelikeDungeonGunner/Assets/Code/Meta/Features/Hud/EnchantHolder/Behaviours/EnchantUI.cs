@@ -1,10 +1,10 @@
-using Assets.Code.Gameplay.Features.Enchants;
-using Assets.Code.Gameplay.Features.Enchants.Configs;
+using Code.Gameplay.Features.Enchants;
+using Code.Gameplay.Features.Enchants.Configs;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Assets.Code.Meta.Features.Hud.EnchantHolder.Behaviours
+namespace Code.Meta.Features.Hud.EnchantHolder.Behaviours
 {
 	public class EnchantUI : MonoBehaviour
 	{

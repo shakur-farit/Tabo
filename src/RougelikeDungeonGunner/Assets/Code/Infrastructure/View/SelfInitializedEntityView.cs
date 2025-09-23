@@ -1,9 +1,9 @@
-using Assets.Code.Infrastructure.Identifiers;
 using Code.Common.Entity;
+using Code.Infrastructure.Identifiers;
 using UnityEngine;
 using Zenject;
 
-namespace Assets.Code.Infrastructure.View
+namespace Code.Infrastructure.View
 {
 	public class SelfInitializedEntityView : MonoBehaviour
 	{

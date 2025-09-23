@@ -33,21 +33,21 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Assets.Code.Gameplay.Features.Enemy.EnemyTypeIdComponent enemyTypeId { get { return (Assets.Code.Gameplay.Features.Enemy.EnemyTypeIdComponent)GetComponent(GameComponentsLookup.EnemyTypeId); } }
-    public Assets.Code.Gameplay.Features.Enemy.EnemyTypeId EnemyTypeId { get { return enemyTypeId.Value; } }
+    public Code.Gameplay.Features.Enemy.EnemyTypeIdComponent enemyTypeId { get { return (Code.Gameplay.Features.Enemy.EnemyTypeIdComponent)GetComponent(GameComponentsLookup.EnemyTypeId); } }
+    public Code.Gameplay.Features.Enemy.EnemyTypeId EnemyTypeId { get { return enemyTypeId.Value; } }
     public bool hasEnemyTypeId { get { return HasComponent(GameComponentsLookup.EnemyTypeId); } }
 
-    public GameEntity AddEnemyTypeId(Assets.Code.Gameplay.Features.Enemy.EnemyTypeId newValue) {
+    public GameEntity AddEnemyTypeId(Code.Gameplay.Features.Enemy.EnemyTypeId newValue) {
         var index = GameComponentsLookup.EnemyTypeId;
-        var component = (Assets.Code.Gameplay.Features.Enemy.EnemyTypeIdComponent)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Enemy.EnemyTypeIdComponent));
+        var component = (Code.Gameplay.Features.Enemy.EnemyTypeIdComponent)CreateComponent(index, typeof(Code.Gameplay.Features.Enemy.EnemyTypeIdComponent));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
     }
 
-    public GameEntity ReplaceEnemyTypeId(Assets.Code.Gameplay.Features.Enemy.EnemyTypeId newValue) {
+    public GameEntity ReplaceEnemyTypeId(Code.Gameplay.Features.Enemy.EnemyTypeId newValue) {
         var index = GameComponentsLookup.EnemyTypeId;
-        var component = (Assets.Code.Gameplay.Features.Enemy.EnemyTypeIdComponent)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Enemy.EnemyTypeIdComponent));
+        var component = (Code.Gameplay.Features.Enemy.EnemyTypeIdComponent)CreateComponent(index, typeof(Code.Gameplay.Features.Enemy.EnemyTypeIdComponent));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

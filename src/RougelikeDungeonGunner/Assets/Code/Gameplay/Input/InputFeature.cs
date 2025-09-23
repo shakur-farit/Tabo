@@ -1,7 +1,7 @@
-using Assets.Code.Gameplay.Input.Systems;
-using Assets.Code.Infrastructure.Systems;
+using Code.Gameplay.Input.Systems;
+using Code.Infrastructure.Systems;
 
-namespace Assets.Code.Gameplay.Input
+namespace Code.Gameplay.Input
 {
 	public sealed class InputFeature : Feature
 	{

@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Assets.Code.Gameplay.Features.Statuses
+namespace Code.Gameplay.Features.Statuses
 {
 	[Serializable]
 	public class StatusSetup

@@ -1,8 +1,8 @@
-﻿using Assets.Code.Gameplay.Cameras.Provider;
+﻿using Code.Gameplay.Cameras.Provider;
 using UnityEngine;
 using Zenject;
 
-namespace Assets.Code.Gameplay.Cameras.Behaviours
+namespace Code.Gameplay.Cameras.Behaviours
 {
 	public class CameraStartOrthographicSizeInitializer : MonoBehaviour
 	{

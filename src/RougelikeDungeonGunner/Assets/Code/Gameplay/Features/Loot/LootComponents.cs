@@ -1,6 +1,6 @@
 ﻿using Entitas;
 
-namespace Assets.Code.Gameplay.Features.Loot
+namespace Code.Gameplay.Features.Loot
 {
 	public class LootComponents
 	{

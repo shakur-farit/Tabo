@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using Assets.Code.Gameplay.Common.Time;
+using Code.Gameplay.Common.Time;
 using Entitas;
 
-namespace Assets.Code.Gameplay.Features.Cooldowns.Systems
+namespace Code.Gameplay.Features.Cooldowns.Systems
 {
 	public class CooldownSystem : IExecuteSystem
 	{

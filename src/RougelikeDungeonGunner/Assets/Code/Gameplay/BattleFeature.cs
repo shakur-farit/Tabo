@@ -1,29 +1,30 @@
-﻿using Assets.Code.Common.Destruct;
-using Assets.Code.Gameplay.Features.Ammo;
-using Assets.Code.Gameplay.Features.AmmoPattern;
-using Assets.Code.Gameplay.Features.AStar;
-using Assets.Code.Gameplay.Features.Aura;
-using Assets.Code.Gameplay.Features.CharacterStats;
-using Assets.Code.Gameplay.Features.Collection;
-using Assets.Code.Gameplay.Features.Dungeon;
-using Assets.Code.Gameplay.Features.EffectApplication;
-using Assets.Code.Gameplay.Features.Effects;
-using Assets.Code.Gameplay.Features.Enchants;
-using Assets.Code.Gameplay.Features.Enemy;
-using Assets.Code.Gameplay.Features.Hero;
-using Assets.Code.Gameplay.Features.Level;
-using Assets.Code.Gameplay.Features.Lifetime;
-using Assets.Code.Gameplay.Features.Loot;
-using Assets.Code.Gameplay.Features.Movement;
-using Assets.Code.Gameplay.Features.Rotation;
-using Assets.Code.Gameplay.Features.SpecialEffect;
-using Assets.Code.Gameplay.Features.Statuses;
-using Assets.Code.Gameplay.Features.Weapon;
-using Assets.Code.Gameplay.Input;
-using Assets.Code.Infrastructure.Systems;
-using Assets.Code.Infrastructure.View;
+﻿using Code.Common.Destruct;
+using Code.Gameplay.Features.Ammo;
+using Code.Gameplay.Features.AmmoPattern;
+using Code.Gameplay.Features.AStar;
+using Code.Gameplay.Features.Aura;
+using Code.Gameplay.Features.CharacterStats;
+using Code.Gameplay.Features.Collection;
+using Code.Gameplay.Features.Dungeon;
+using Code.Gameplay.Features.EffectApplication;
+using Code.Gameplay.Features.Effects;
+using Code.Gameplay.Features.Enchants;
+using Code.Gameplay.Features.Enemy;
+using Code.Gameplay.Features.Hero;
+using Code.Gameplay.Features.Level;
+using Code.Gameplay.Features.Lifetime;
+using Code.Gameplay.Features.Loot;
+using Code.Gameplay.Features.Movement;
+using Code.Gameplay.Features.Pause;
+using Code.Gameplay.Features.Rotation;
+using Code.Gameplay.Features.SpecialEffect;
+using Code.Gameplay.Features.Statuses;
+using Code.Gameplay.Features.Weapon;
+using Code.Gameplay.Input;
+using Code.Infrastructure.Systems;
+using Code.Infrastructure.View;
 
-namespace Assets.Code.Gameplay
+namespace Code.Gameplay
 {
 	public sealed class BattleFeature : Feature
 	{

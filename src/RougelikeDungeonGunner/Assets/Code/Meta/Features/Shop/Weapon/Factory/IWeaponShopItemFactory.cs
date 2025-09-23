@@ -1,7 +1,7 @@
-﻿using Assets.Code.Meta.Features.Shop.Weapon.Behaviours;
+﻿using Code.Meta.Features.Shop.Weapon.Behaviours;
 using UnityEngine;
 
-namespace Assets.Code.Meta.Features.Shop.Weapon.Factory
+namespace Code.Meta.Features.Shop.Weapon.Factory
 {
 	public interface IWeaponShopItemFactory
 	{

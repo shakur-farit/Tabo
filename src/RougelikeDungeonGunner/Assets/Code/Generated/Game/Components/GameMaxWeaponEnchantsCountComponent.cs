@@ -33,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Assets.Code.Gameplay.Features.Weapon.MaxWeaponEnchantsCount maxWeaponEnchantsCount { get { return (Assets.Code.Gameplay.Features.Weapon.MaxWeaponEnchantsCount)GetComponent(GameComponentsLookup.MaxWeaponEnchantsCount); } }
+    public Code.Gameplay.Features.Weapon.MaxWeaponEnchantsCount maxWeaponEnchantsCount { get { return (Code.Gameplay.Features.Weapon.MaxWeaponEnchantsCount)GetComponent(GameComponentsLookup.MaxWeaponEnchantsCount); } }
     public int MaxWeaponEnchantsCount { get { return maxWeaponEnchantsCount.Value; } }
     public bool hasMaxWeaponEnchantsCount { get { return HasComponent(GameComponentsLookup.MaxWeaponEnchantsCount); } }
 
     public GameEntity AddMaxWeaponEnchantsCount(int newValue) {
         var index = GameComponentsLookup.MaxWeaponEnchantsCount;
-        var component = (Assets.Code.Gameplay.Features.Weapon.MaxWeaponEnchantsCount)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Weapon.MaxWeaponEnchantsCount));
+        var component = (Code.Gameplay.Features.Weapon.MaxWeaponEnchantsCount)CreateComponent(index, typeof(Code.Gameplay.Features.Weapon.MaxWeaponEnchantsCount));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceMaxWeaponEnchantsCount(int newValue) {
         var index = GameComponentsLookup.MaxWeaponEnchantsCount;
-        var component = (Assets.Code.Gameplay.Features.Weapon.MaxWeaponEnchantsCount)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Weapon.MaxWeaponEnchantsCount));
+        var component = (Code.Gameplay.Features.Weapon.MaxWeaponEnchantsCount)CreateComponent(index, typeof(Code.Gameplay.Features.Weapon.MaxWeaponEnchantsCount));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

@@ -33,7 +33,7 @@ public sealed partial class InputMatcher {
 //------------------------------------------------------------------------------
 public partial class InputEntity {
 
-    static readonly Assets.Code.Gameplay.Input.EscButtonDown escButtonDownComponent = new Assets.Code.Gameplay.Input.EscButtonDown();
+    static readonly Code.Gameplay.Input.EscButtonDown escButtonDownComponent = new Code.Gameplay.Input.EscButtonDown();
 
     public bool isEscButtonDown {
         get { return HasComponent(InputComponentsLookup.EscButtonDown); }

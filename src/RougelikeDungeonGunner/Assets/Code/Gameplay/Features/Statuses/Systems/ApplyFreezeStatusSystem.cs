@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
-using Assets.Code.Gameplay.Features.CharacterStats;
-using Assets.Code.Gameplay.Features.Effects;
 using Code.Common.Entity;
+using Code.Gameplay.Features.CharacterStats;
+using Code.Gameplay.Features.Effects;
 using Entitas;
 
-namespace Assets.Code.Gameplay.Features.Statuses.Systems
+namespace Code.Gameplay.Features.Statuses.Systems
 {
 	public class ApplyFreezeStatusSystem : IExecuteSystem
 	{

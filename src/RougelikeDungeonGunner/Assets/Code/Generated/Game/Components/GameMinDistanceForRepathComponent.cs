@@ -33,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Assets.Code.Gameplay.Features.AStar.MinDistanceForRepath minDistanceForRepath { get { return (Assets.Code.Gameplay.Features.AStar.MinDistanceForRepath)GetComponent(GameComponentsLookup.MinDistanceForRepath); } }
+    public Code.Gameplay.Features.AStar.MinDistanceForRepath minDistanceForRepath { get { return (Code.Gameplay.Features.AStar.MinDistanceForRepath)GetComponent(GameComponentsLookup.MinDistanceForRepath); } }
     public float MinDistanceForRepath { get { return minDistanceForRepath.Value; } }
     public bool hasMinDistanceForRepath { get { return HasComponent(GameComponentsLookup.MinDistanceForRepath); } }
 
     public GameEntity AddMinDistanceForRepath(float newValue) {
         var index = GameComponentsLookup.MinDistanceForRepath;
-        var component = (Assets.Code.Gameplay.Features.AStar.MinDistanceForRepath)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.AStar.MinDistanceForRepath));
+        var component = (Code.Gameplay.Features.AStar.MinDistanceForRepath)CreateComponent(index, typeof(Code.Gameplay.Features.AStar.MinDistanceForRepath));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceMinDistanceForRepath(float newValue) {
         var index = GameComponentsLookup.MinDistanceForRepath;
-        var component = (Assets.Code.Gameplay.Features.AStar.MinDistanceForRepath)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.AStar.MinDistanceForRepath));
+        var component = (Code.Gameplay.Features.AStar.MinDistanceForRepath)CreateComponent(index, typeof(Code.Gameplay.Features.AStar.MinDistanceForRepath));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

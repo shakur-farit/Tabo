@@ -33,21 +33,21 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Assets.Code.Gameplay.Features.CharacterStats.BaseStats baseStats { get { return (Assets.Code.Gameplay.Features.CharacterStats.BaseStats)GetComponent(GameComponentsLookup.BaseStats); } }
-    public System.Collections.Generic.Dictionary<Assets.Code.Gameplay.Features.CharacterStats.Stats, float> BaseStats { get { return baseStats.Value; } }
+    public Code.Gameplay.Features.CharacterStats.BaseStats baseStats { get { return (Code.Gameplay.Features.CharacterStats.BaseStats)GetComponent(GameComponentsLookup.BaseStats); } }
+    public System.Collections.Generic.Dictionary<Code.Gameplay.Features.CharacterStats.Stats, float> BaseStats { get { return baseStats.Value; } }
     public bool hasBaseStats { get { return HasComponent(GameComponentsLookup.BaseStats); } }
 
-    public GameEntity AddBaseStats(System.Collections.Generic.Dictionary<Assets.Code.Gameplay.Features.CharacterStats.Stats, float> newValue) {
+    public GameEntity AddBaseStats(System.Collections.Generic.Dictionary<Code.Gameplay.Features.CharacterStats.Stats, float> newValue) {
         var index = GameComponentsLookup.BaseStats;
-        var component = (Assets.Code.Gameplay.Features.CharacterStats.BaseStats)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.CharacterStats.BaseStats));
+        var component = (Code.Gameplay.Features.CharacterStats.BaseStats)CreateComponent(index, typeof(Code.Gameplay.Features.CharacterStats.BaseStats));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
     }
 
-    public GameEntity ReplaceBaseStats(System.Collections.Generic.Dictionary<Assets.Code.Gameplay.Features.CharacterStats.Stats, float> newValue) {
+    public GameEntity ReplaceBaseStats(System.Collections.Generic.Dictionary<Code.Gameplay.Features.CharacterStats.Stats, float> newValue) {
         var index = GameComponentsLookup.BaseStats;
-        var component = (Assets.Code.Gameplay.Features.CharacterStats.BaseStats)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.CharacterStats.BaseStats));
+        var component = (Code.Gameplay.Features.CharacterStats.BaseStats)CreateComponent(index, typeof(Code.Gameplay.Features.CharacterStats.BaseStats));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

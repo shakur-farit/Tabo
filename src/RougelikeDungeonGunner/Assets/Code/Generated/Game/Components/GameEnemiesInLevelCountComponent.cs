@@ -33,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Assets.Code.Gameplay.Features.Level.EnemiesInLevelCount enemiesInLevelCount { get { return (Assets.Code.Gameplay.Features.Level.EnemiesInLevelCount)GetComponent(GameComponentsLookup.EnemiesInLevelCount); } }
+    public Code.Gameplay.Features.Level.EnemiesInLevelCount enemiesInLevelCount { get { return (Code.Gameplay.Features.Level.EnemiesInLevelCount)GetComponent(GameComponentsLookup.EnemiesInLevelCount); } }
     public int EnemiesInLevelCount { get { return enemiesInLevelCount.Value; } }
     public bool hasEnemiesInLevelCount { get { return HasComponent(GameComponentsLookup.EnemiesInLevelCount); } }
 
     public GameEntity AddEnemiesInLevelCount(int newValue) {
         var index = GameComponentsLookup.EnemiesInLevelCount;
-        var component = (Assets.Code.Gameplay.Features.Level.EnemiesInLevelCount)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Level.EnemiesInLevelCount));
+        var component = (Code.Gameplay.Features.Level.EnemiesInLevelCount)CreateComponent(index, typeof(Code.Gameplay.Features.Level.EnemiesInLevelCount));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceEnemiesInLevelCount(int newValue) {
         var index = GameComponentsLookup.EnemiesInLevelCount;
-        var component = (Assets.Code.Gameplay.Features.Level.EnemiesInLevelCount)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Level.EnemiesInLevelCount));
+        var component = (Code.Gameplay.Features.Level.EnemiesInLevelCount)CreateComponent(index, typeof(Code.Gameplay.Features.Level.EnemiesInLevelCount));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

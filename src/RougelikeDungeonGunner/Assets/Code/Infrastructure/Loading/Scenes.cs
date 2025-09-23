@@ -1,4 +1,4 @@
-﻿namespace Assets.Code.Infrastructure.Loading
+﻿namespace Code.Infrastructure.Loading
 {
   public static class Scenes
   {

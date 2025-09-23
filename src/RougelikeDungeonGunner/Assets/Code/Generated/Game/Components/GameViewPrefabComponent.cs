@@ -33,21 +33,21 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Assets.Code.Common.ViewPrefab viewPrefab { get { return (Assets.Code.Common.ViewPrefab)GetComponent(GameComponentsLookup.ViewPrefab); } }
-    public Assets.Code.Infrastructure.View.EntityBehaviour ViewPrefab { get { return viewPrefab.Value; } }
+    public Code.Common.ViewPrefab viewPrefab { get { return (Code.Common.ViewPrefab)GetComponent(GameComponentsLookup.ViewPrefab); } }
+    public Code.Infrastructure.View.EntityBehaviour ViewPrefab { get { return viewPrefab.Value; } }
     public bool hasViewPrefab { get { return HasComponent(GameComponentsLookup.ViewPrefab); } }
 
-    public GameEntity AddViewPrefab(Assets.Code.Infrastructure.View.EntityBehaviour newValue) {
+    public GameEntity AddViewPrefab(Code.Infrastructure.View.EntityBehaviour newValue) {
         var index = GameComponentsLookup.ViewPrefab;
-        var component = (Assets.Code.Common.ViewPrefab)CreateComponent(index, typeof(Assets.Code.Common.ViewPrefab));
+        var component = (Code.Common.ViewPrefab)CreateComponent(index, typeof(Code.Common.ViewPrefab));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
     }
 
-    public GameEntity ReplaceViewPrefab(Assets.Code.Infrastructure.View.EntityBehaviour newValue) {
+    public GameEntity ReplaceViewPrefab(Code.Infrastructure.View.EntityBehaviour newValue) {
         var index = GameComponentsLookup.ViewPrefab;
-        var component = (Assets.Code.Common.ViewPrefab)CreateComponent(index, typeof(Assets.Code.Common.ViewPrefab));
+        var component = (Code.Common.ViewPrefab)CreateComponent(index, typeof(Code.Common.ViewPrefab));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

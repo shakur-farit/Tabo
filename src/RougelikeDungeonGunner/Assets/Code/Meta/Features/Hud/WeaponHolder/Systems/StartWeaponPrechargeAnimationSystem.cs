@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Entitas;
 
-namespace Assets.Code.Meta.Features.Hud.WeaponHolder.Systems
+namespace Code.Meta.Features.Hud.WeaponHolder.Systems
 {
 	public class StartWeaponPrechargeAnimationSystem : ReactiveSystem<GameEntity>
 	{

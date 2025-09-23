@@ -33,21 +33,21 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Assets.Code.Gameplay.Features.AmmoPattern.AmmoPatternSetupComponent ammoPatternSetup { get { return (Assets.Code.Gameplay.Features.AmmoPattern.AmmoPatternSetupComponent)GetComponent(GameComponentsLookup.AmmoPatternSetup); } }
-    public Assets.Code.Gameplay.Features.Weapon.Configs.AmmoPatternSetup AmmoPatternSetup { get { return ammoPatternSetup.Value; } }
+    public Code.Gameplay.Features.AmmoPattern.AmmoPatternSetupComponent ammoPatternSetup { get { return (Code.Gameplay.Features.AmmoPattern.AmmoPatternSetupComponent)GetComponent(GameComponentsLookup.AmmoPatternSetup); } }
+    public Code.Gameplay.Features.Weapon.Configs.AmmoPatternSetup AmmoPatternSetup { get { return ammoPatternSetup.Value; } }
     public bool hasAmmoPatternSetup { get { return HasComponent(GameComponentsLookup.AmmoPatternSetup); } }
 
-    public GameEntity AddAmmoPatternSetup(Assets.Code.Gameplay.Features.Weapon.Configs.AmmoPatternSetup newValue) {
+    public GameEntity AddAmmoPatternSetup(Code.Gameplay.Features.Weapon.Configs.AmmoPatternSetup newValue) {
         var index = GameComponentsLookup.AmmoPatternSetup;
-        var component = (Assets.Code.Gameplay.Features.AmmoPattern.AmmoPatternSetupComponent)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.AmmoPattern.AmmoPatternSetupComponent));
+        var component = (Code.Gameplay.Features.AmmoPattern.AmmoPatternSetupComponent)CreateComponent(index, typeof(Code.Gameplay.Features.AmmoPattern.AmmoPatternSetupComponent));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
     }
 
-    public GameEntity ReplaceAmmoPatternSetup(Assets.Code.Gameplay.Features.Weapon.Configs.AmmoPatternSetup newValue) {
+    public GameEntity ReplaceAmmoPatternSetup(Code.Gameplay.Features.Weapon.Configs.AmmoPatternSetup newValue) {
         var index = GameComponentsLookup.AmmoPatternSetup;
-        var component = (Assets.Code.Gameplay.Features.AmmoPattern.AmmoPatternSetupComponent)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.AmmoPattern.AmmoPatternSetupComponent));
+        var component = (Code.Gameplay.Features.AmmoPattern.AmmoPatternSetupComponent)CreateComponent(index, typeof(Code.Gameplay.Features.AmmoPattern.AmmoPatternSetupComponent));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

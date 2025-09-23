@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
-using Assets.Code.Gameplay.Features.Weapon;
-using Assets.Code.Gameplay.Features.Weapon.Factory;
+using Code.Gameplay.Features.Weapon;
+using Code.Gameplay.Features.Weapon.Factory;
 using Entitas;
 using UnityEngine;
 
-namespace Assets.Code.Gameplay.Features.Enemy.Systems
+namespace Code.Gameplay.Features.Enemy.Systems
 {
 	public class CreateWeaponForEnemySystem : IExecuteSystem
 	{

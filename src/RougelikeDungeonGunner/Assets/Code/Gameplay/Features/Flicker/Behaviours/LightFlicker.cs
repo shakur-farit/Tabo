@@ -1,5 +1,5 @@
-﻿using Assets.Code.Gameplay.Common.Random;
-using Assets.Code.Gameplay.Common.Time;
+﻿using Code.Gameplay.Common.Random;
+using Code.Gameplay.Common.Time;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using Zenject;

@@ -1,10 +1,10 @@
-﻿using Assets.Code.Gameplay.Features.Hero.Configs;
-using Assets.Code.Gameplay.Features.Weapon.Configs;
-using Assets.Code.Gameplay.StaticData;
+﻿using Code.Gameplay.Features.Hero.Configs;
+using Code.Gameplay.Features.Weapon.Configs;
+using Code.Gameplay.StaticData;
 using UnityEngine;
 using Zenject;
 
-namespace Assets.Code.Meta.Features.Hud.HeroSelector.Behaviours
+namespace Code.Meta.Features.Hud.HeroSelector.Behaviours
 {
 	public class HeroUI : MonoBehaviour
 	{

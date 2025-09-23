@@ -1,8 +1,8 @@
 using System.Collections.Generic;
-using Assets.Code.Infrastructure.View.Factory;
+using Code.Infrastructure.View.Factory;
 using Entitas;
 
-namespace Assets.Code.Infrastructure.View.Systems
+namespace Code.Infrastructure.View.Systems
 {
 	public class BindEntityViewFromPrefabSystem : IExecuteSystem
 	{

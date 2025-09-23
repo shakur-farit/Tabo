@@ -1,7 +1,7 @@
 ﻿using Entitas;
 using UnityEngine;
 
-namespace Assets.Code.Gameplay.Features.Aura
+namespace Code.Gameplay.Features.Aura
 {
 	[Game] public class Aura : IComponent { }
 	[Game] public class AuraTypeIdComponent : IComponent { public AuraTypeId Value; }

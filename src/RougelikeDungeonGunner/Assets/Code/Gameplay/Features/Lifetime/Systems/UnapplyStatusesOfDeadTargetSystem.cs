@@ -1,6 +1,6 @@
 ﻿using Entitas;
 
-namespace Assets.Code.Gameplay.Features.Lifetime.Systems
+namespace Code.Gameplay.Features.Lifetime.Systems
 {
 	public class UnapplyStatusesOfDeadTargetSystem : IExecuteSystem
 	{

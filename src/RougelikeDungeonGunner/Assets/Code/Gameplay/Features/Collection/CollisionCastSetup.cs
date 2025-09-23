@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Assets.Code.Gameplay.Features.Collection
+namespace Code.Gameplay.Features.Collection
 {
 	[Serializable]
 	public class CollisionCastSetup

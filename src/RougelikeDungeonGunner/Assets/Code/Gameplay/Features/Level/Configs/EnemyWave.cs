@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using Assets.Code.Gameplay.Features.Enemy;
+using Code.Gameplay.Features.Enemy;
 using UnityEngine;
 
-namespace Assets.Code.Gameplay.Features.Level.Configs
+namespace Code.Gameplay.Features.Level.Configs
 {
 	[Serializable]
 	public class EnemyWave

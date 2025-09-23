@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Assets.Code.Gameplay.Features.AStar.Services
+namespace Code.Gameplay.Features.AStar.Services
 {
 	public class PriorityQueue<T>
 	{

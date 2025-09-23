@@ -1,4 +1,4 @@
-﻿namespace Assets.Code.Infrastructure.Identifiers
+﻿namespace Code.Infrastructure.Identifiers
 {
   public class IdentifierService : IIdentifierService
   {

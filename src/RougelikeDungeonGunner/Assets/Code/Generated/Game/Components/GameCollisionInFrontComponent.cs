@@ -33,7 +33,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Assets.Code.Gameplay.Features.Collection.CollisionInFront collisionInFrontComponent = new Assets.Code.Gameplay.Features.Collection.CollisionInFront();
+    static readonly Code.Gameplay.Features.Collection.CollisionInFront collisionInFrontComponent = new Code.Gameplay.Features.Collection.CollisionInFront();
 
     public bool isCollisionInFront {
         get { return HasComponent(GameComponentsLookup.CollisionInFront); }

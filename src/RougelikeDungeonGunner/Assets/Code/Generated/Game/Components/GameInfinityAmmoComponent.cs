@@ -33,7 +33,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Assets.Code.Gameplay.Features.Weapon.InfinityAmmo infinityAmmoComponent = new Assets.Code.Gameplay.Features.Weapon.InfinityAmmo();
+    static readonly Code.Gameplay.Features.Weapon.InfinityAmmo infinityAmmoComponent = new Code.Gameplay.Features.Weapon.InfinityAmmo();
 
     public bool isInfinityAmmo {
         get { return HasComponent(GameComponentsLookup.InfinityAmmo); }

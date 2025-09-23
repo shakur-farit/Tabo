@@ -33,21 +33,21 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Assets.Code.Gameplay.Features.Level.LevelTypeIdComponent levelTypeId { get { return (Assets.Code.Gameplay.Features.Level.LevelTypeIdComponent)GetComponent(GameComponentsLookup.LevelTypeId); } }
-    public Assets.Code.Gameplay.Features.Level.LevelTypeId LevelTypeId { get { return levelTypeId.Value; } }
+    public Code.Gameplay.Features.Level.LevelTypeIdComponent levelTypeId { get { return (Code.Gameplay.Features.Level.LevelTypeIdComponent)GetComponent(GameComponentsLookup.LevelTypeId); } }
+    public Code.Gameplay.Features.Level.LevelTypeId LevelTypeId { get { return levelTypeId.Value; } }
     public bool hasLevelTypeId { get { return HasComponent(GameComponentsLookup.LevelTypeId); } }
 
-    public GameEntity AddLevelTypeId(Assets.Code.Gameplay.Features.Level.LevelTypeId newValue) {
+    public GameEntity AddLevelTypeId(Code.Gameplay.Features.Level.LevelTypeId newValue) {
         var index = GameComponentsLookup.LevelTypeId;
-        var component = (Assets.Code.Gameplay.Features.Level.LevelTypeIdComponent)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Level.LevelTypeIdComponent));
+        var component = (Code.Gameplay.Features.Level.LevelTypeIdComponent)CreateComponent(index, typeof(Code.Gameplay.Features.Level.LevelTypeIdComponent));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
     }
 
-    public GameEntity ReplaceLevelTypeId(Assets.Code.Gameplay.Features.Level.LevelTypeId newValue) {
+    public GameEntity ReplaceLevelTypeId(Code.Gameplay.Features.Level.LevelTypeId newValue) {
         var index = GameComponentsLookup.LevelTypeId;
-        var component = (Assets.Code.Gameplay.Features.Level.LevelTypeIdComponent)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Level.LevelTypeIdComponent));
+        var component = (Code.Gameplay.Features.Level.LevelTypeIdComponent)CreateComponent(index, typeof(Code.Gameplay.Features.Level.LevelTypeIdComponent));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

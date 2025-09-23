@@ -33,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Assets.Code.Gameplay.Features.Movement.OrbitElapsedTime orbitElapsedTime { get { return (Assets.Code.Gameplay.Features.Movement.OrbitElapsedTime)GetComponent(GameComponentsLookup.OrbitElapsedTime); } }
+    public Code.Gameplay.Features.Movement.OrbitElapsedTime orbitElapsedTime { get { return (Code.Gameplay.Features.Movement.OrbitElapsedTime)GetComponent(GameComponentsLookup.OrbitElapsedTime); } }
     public float OrbitElapsedTime { get { return orbitElapsedTime.Value; } }
     public bool hasOrbitElapsedTime { get { return HasComponent(GameComponentsLookup.OrbitElapsedTime); } }
 
     public GameEntity AddOrbitElapsedTime(float newValue) {
         var index = GameComponentsLookup.OrbitElapsedTime;
-        var component = (Assets.Code.Gameplay.Features.Movement.OrbitElapsedTime)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Movement.OrbitElapsedTime));
+        var component = (Code.Gameplay.Features.Movement.OrbitElapsedTime)CreateComponent(index, typeof(Code.Gameplay.Features.Movement.OrbitElapsedTime));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceOrbitElapsedTime(float newValue) {
         var index = GameComponentsLookup.OrbitElapsedTime;
-        var component = (Assets.Code.Gameplay.Features.Movement.OrbitElapsedTime)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Movement.OrbitElapsedTime));
+        var component = (Code.Gameplay.Features.Movement.OrbitElapsedTime)CreateComponent(index, typeof(Code.Gameplay.Features.Movement.OrbitElapsedTime));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

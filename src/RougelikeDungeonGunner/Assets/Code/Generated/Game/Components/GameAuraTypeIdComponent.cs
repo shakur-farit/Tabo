@@ -33,21 +33,21 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Assets.Code.Gameplay.Features.Aura.AuraTypeIdComponent auraTypeId { get { return (Assets.Code.Gameplay.Features.Aura.AuraTypeIdComponent)GetComponent(GameComponentsLookup.AuraTypeId); } }
-    public Assets.Code.Gameplay.Features.Aura.AuraTypeId AuraTypeId { get { return auraTypeId.Value; } }
+    public Code.Gameplay.Features.Aura.AuraTypeIdComponent auraTypeId { get { return (Code.Gameplay.Features.Aura.AuraTypeIdComponent)GetComponent(GameComponentsLookup.AuraTypeId); } }
+    public Code.Gameplay.Features.Aura.AuraTypeId AuraTypeId { get { return auraTypeId.Value; } }
     public bool hasAuraTypeId { get { return HasComponent(GameComponentsLookup.AuraTypeId); } }
 
-    public GameEntity AddAuraTypeId(Assets.Code.Gameplay.Features.Aura.AuraTypeId newValue) {
+    public GameEntity AddAuraTypeId(Code.Gameplay.Features.Aura.AuraTypeId newValue) {
         var index = GameComponentsLookup.AuraTypeId;
-        var component = (Assets.Code.Gameplay.Features.Aura.AuraTypeIdComponent)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Aura.AuraTypeIdComponent));
+        var component = (Code.Gameplay.Features.Aura.AuraTypeIdComponent)CreateComponent(index, typeof(Code.Gameplay.Features.Aura.AuraTypeIdComponent));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
     }
 
-    public GameEntity ReplaceAuraTypeId(Assets.Code.Gameplay.Features.Aura.AuraTypeId newValue) {
+    public GameEntity ReplaceAuraTypeId(Code.Gameplay.Features.Aura.AuraTypeId newValue) {
         var index = GameComponentsLookup.AuraTypeId;
-        var component = (Assets.Code.Gameplay.Features.Aura.AuraTypeIdComponent)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Aura.AuraTypeIdComponent));
+        var component = (Code.Gameplay.Features.Aura.AuraTypeIdComponent)CreateComponent(index, typeof(Code.Gameplay.Features.Aura.AuraTypeIdComponent));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

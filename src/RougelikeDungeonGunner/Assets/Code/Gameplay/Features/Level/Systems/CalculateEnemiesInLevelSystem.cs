@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using Assets.Code.Gameplay.Features.Level.Configs;
+using Code.Gameplay.Features.Level.Configs;
 using Entitas;
 
-namespace Assets.Code.Gameplay.Features.Level.Systems
+namespace Code.Gameplay.Features.Level.Systems
 {
 	public class CalculateEnemiesInLevelSystem : IExecuteSystem
 	{

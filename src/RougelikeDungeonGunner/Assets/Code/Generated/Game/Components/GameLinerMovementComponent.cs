@@ -33,7 +33,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Assets.Code.Gameplay.Features.Movement.LinerMovement linerMovementComponent = new Assets.Code.Gameplay.Features.Movement.LinerMovement();
+    static readonly Code.Gameplay.Features.Movement.LinerMovement linerMovementComponent = new Code.Gameplay.Features.Movement.LinerMovement();
 
     public bool isLinerMovement {
         get { return HasComponent(GameComponentsLookup.LinerMovement); }

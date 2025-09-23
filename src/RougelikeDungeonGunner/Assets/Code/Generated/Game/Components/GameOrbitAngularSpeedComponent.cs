@@ -33,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Assets.Code.Gameplay.Features.Movement.OrbitAngularSpeed orbitAngularSpeed { get { return (Assets.Code.Gameplay.Features.Movement.OrbitAngularSpeed)GetComponent(GameComponentsLookup.OrbitAngularSpeed); } }
+    public Code.Gameplay.Features.Movement.OrbitAngularSpeed orbitAngularSpeed { get { return (Code.Gameplay.Features.Movement.OrbitAngularSpeed)GetComponent(GameComponentsLookup.OrbitAngularSpeed); } }
     public float OrbitAngularSpeed { get { return orbitAngularSpeed.Value; } }
     public bool hasOrbitAngularSpeed { get { return HasComponent(GameComponentsLookup.OrbitAngularSpeed); } }
 
     public GameEntity AddOrbitAngularSpeed(float newValue) {
         var index = GameComponentsLookup.OrbitAngularSpeed;
-        var component = (Assets.Code.Gameplay.Features.Movement.OrbitAngularSpeed)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Movement.OrbitAngularSpeed));
+        var component = (Code.Gameplay.Features.Movement.OrbitAngularSpeed)CreateComponent(index, typeof(Code.Gameplay.Features.Movement.OrbitAngularSpeed));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceOrbitAngularSpeed(float newValue) {
         var index = GameComponentsLookup.OrbitAngularSpeed;
-        var component = (Assets.Code.Gameplay.Features.Movement.OrbitAngularSpeed)CreateComponent(index, typeof(Assets.Code.Gameplay.Features.Movement.OrbitAngularSpeed));
+        var component = (Code.Gameplay.Features.Movement.OrbitAngularSpeed)CreateComponent(index, typeof(Code.Gameplay.Features.Movement.OrbitAngularSpeed));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using Assets.Code.Gameplay.Features.SpecialEffect.Factory;
+using Code.Gameplay.Features.SpecialEffect.Factory;
 using Entitas;
 
-namespace Assets.Code.Gameplay.Features.Ammo.Systems
+namespace Code.Gameplay.Features.Ammo.Systems
 {
 	public class MarkAmmoProcessedOnTargetLimitExceededSystem : IExecuteSystem
 	{

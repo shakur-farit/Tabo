@@ -1,4 +1,4 @@
-﻿namespace Assets.Code.Gameplay.Features.Collection
+﻿namespace Code.Gameplay.Features.Collection
 {
 	public static class CollectionEntityExtensions
 	{

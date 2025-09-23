@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
-using Assets.Code.Gameplay.Features.Enchants;
-using Assets.Code.Meta.Features.Hud.EnchantHolder.Factory;
+using Code.Gameplay.Features.Enchants;
+using Code.Meta.Features.Hud.EnchantHolder.Factory;
 using UnityEngine;
 using Zenject;
 
-namespace Assets.Code.Meta.Features.Hud.EnchantHolder.Behaviours
+namespace Code.Meta.Features.Hud.EnchantHolder.Behaviours
 {
 	public class EnchantHolderBehaviour : MonoBehaviour
 	{
