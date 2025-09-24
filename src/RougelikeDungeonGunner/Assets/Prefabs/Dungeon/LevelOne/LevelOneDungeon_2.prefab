@@ -12041,7 +12041,7 @@ GameObject:
   - component: {fileID: 3584602932419248275}
   - component: {fileID: -15141162013080971}
   m_Layer: 0
-  m_Name: LevelOneRoom_2
+  m_Name: LevelOneDungeon_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

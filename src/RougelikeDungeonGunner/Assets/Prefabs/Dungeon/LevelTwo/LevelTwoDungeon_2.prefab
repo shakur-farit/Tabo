@@ -24504,7 +24504,7 @@ GameObject:
   - component: {fileID: 272322074253719490}
   - component: {fileID: -4327000458373981057}
   m_Layer: 0
-  m_Name: LevelTwoRoom_2
+  m_Name: LevelTwoDungeon_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

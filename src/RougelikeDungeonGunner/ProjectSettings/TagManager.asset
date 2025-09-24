@@ -59,3 +59,9 @@ TagManager:
   - name: Collision
     uniqueID: 2106508737
     locked: 0
+  - name: DestroyableDecoration
+    uniqueID: 500259031
+    locked: 0
+  - name: WallDestroyableDecoration
+    uniqueID: 3745444939
+    locked: 0

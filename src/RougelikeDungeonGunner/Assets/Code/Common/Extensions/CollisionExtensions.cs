@@ -6,6 +6,7 @@ namespace Code.Common.Extensions
   {
     Hero = 6,
     Enemy = 7,
+    Ammo = 8,
     Collectable = 9,
     Destroyable = 10,
     Collision = 13

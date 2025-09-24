@@ -105,164 +105,168 @@ public static class GameComponentsLookup {
     public const int CooldownUp = 94;
     public const int DestroyableAnimator = 95;
     public const int CollisionTilemap = 96;
-    public const int Dungeon = 97;
-    public const int DungeonAvailable = 98;
-    public const int DungeonTypeId = 99;
-    public const int HeroStartPosition = 100;
-    public const int ValidPositions = 101;
-    public const int ValidSprite = 102;
-    public const int DamageEffect = 103;
-    public const int Effect = 104;
-    public const int EffectValue = 105;
-    public const int HealEffect = 106;
-    public const int ProducerId = 107;
-    public const int TargetId = 108;
-    public const int Enchant = 109;
-    public const int EnchantAlreadyHeld = 110;
-    public const int EnchantDuration = 111;
-    public const int EnchantTimeLeft = 112;
-    public const int EnchantTypeId = 113;
-    public const int EnchantUI = 114;
-    public const int EnchantVisualEffect = 115;
-    public const int ExplosiveEnchant = 116;
-    public const int FlameEnchant = 117;
-    public const int FreezeEnchant = 118;
-    public const int NewCollectedEnchant = 119;
-    public const int PoisonEnchant = 120;
-    public const int Enemy = 121;
-    public const int EnemyAnimator = 122;
-    public const int EnemyTypeId = 123;
-    public const int Grimonk = 124;
-    public const int Hedusa = 125;
-    public const int LastTargetPosition = 126;
-    public const int MudRock = 127;
-    public const int Orc = 128;
-    public const int Slime = 129;
-    public const int Slizzard = 130;
-    public const int CurrentWeaponTypeId = 131;
-    public const int Hero = 132;
-    public const int HeroAnimator = 133;
-    public const int HeroAvailable = 134;
-    public const int HeroTypeId = 135;
-    public const int TheGeneral = 136;
-    public const int TheScientist = 137;
-    public const int TheThief = 138;
-    public const int Unweaponed = 139;
-    public const int Weaponed = 140;
-    public const int DungeonTypeOnLevel = 141;
-    public const int EnemiesInLevelCount = 142;
-    public const int EnemiesInLevelCountCalculated = 143;
-    public const int EnemyWave = 144;
-    public const int EnemyWaves = 145;
-    public const int FinishingTime = 146;
-    public const int FinishingTimeLeft = 147;
-    public const int HeroSafeZoneRadius = 148;
-    public const int Level = 149;
-    public const int LevelTypeId = 150;
-    public const int SpawnedEnemyWaves = 151;
-    public const int StartingTime = 152;
-    public const int StartingTimeLeft = 153;
-    public const int StartingTimeUp = 154;
-    public const int CurrentHp = 155;
-    public const int Dead = 156;
-    public const int MaxHp = 157;
-    public const int ProcessingDeath = 158;
-    public const int Coins = 159;
-    public const int Collected = 160;
-    public const int LootTypeId = 161;
-    public const int PickupRadius = 162;
-    public const int Pullable = 163;
-    public const int Pulling = 164;
-    public const int Direction = 165;
-    public const int FollowMovement = 166;
-    public const int FollowMovementXAxisOffset = 167;
-    public const int FollowMovementYAxisOffset = 168;
-    public const int FollowTargetId = 169;
-    public const int LinerMovement = 170;
-    public const int MovementAvailable = 171;
-    public const int Moving = 172;
-    public const int OrbitalMovement = 173;
-    public const int OrbitAngularSpeed = 174;
-    public const int OrbitCenter = 175;
-    public const int OrbitElapsedTime = 176;
-    public const int OrbitInitialAngle = 177;
-    public const int OrbitRadius = 178;
-    public const int Speed = 179;
-    public const int Rotating = 180;
-    public const int RotationAngle = 181;
-    public const int RotationAvailable = 182;
-    public const int SpecialEffect = 183;
-    public const int SpecialEffectTypeId = 184;
-    public const int Affected = 185;
-    public const int Applied = 186;
-    public const int ApplierStatusLink = 187;
-    public const int Explosive = 188;
-    public const int Flame = 189;
-    public const int Freeze = 190;
-    public const int Period = 191;
-    public const int Poison = 192;
-    public const int Status = 193;
-    public const int StatusDuration = 194;
-    public const int StatusTimeLeft = 195;
-    public const int StatusTypeId = 196;
-    public const int TimeSinceLastTick = 197;
-    public const int Unapplied = 198;
-    public const int ClosestTargetPosition = 199;
-    public const int CurrentAmmoCount = 200;
-    public const int EffectSetups = 201;
-    public const int EnemyCircleSigil = 202;
-    public const int EnemyPistol = 203;
-    public const int EnemyStarSigil = 204;
-    public const int EnemyTriangleSigil = 205;
-    public const int EnemyWeapon = 206;
-    public const int FirePositionTransform = 207;
-    public const int HeroAutomaticPistol = 208;
-    public const int HeroCircleSigil = 209;
-    public const int HeroLaserBlaster = 210;
-    public const int HeroMachinegun = 211;
-    public const int HeroPistol = 212;
-    public const int HeroPlasmaGun = 213;
-    public const int HeroRevolver = 214;
-    public const int HeroRocketLauncher = 215;
-    public const int HeroShotgun = 216;
-    public const int HeroSniper = 217;
-    public const int HeroStarSigil = 218;
-    public const int HeroTriangleSigil = 219;
-    public const int HeroWeapon = 220;
-    public const int InfinityAmmo = 221;
-    public const int MagazineNotEmpty = 222;
-    public const int MagazineSize = 223;
-    public const int MaxPelletsDeviation = 224;
-    public const int MaxWeaponEnchantsCount = 225;
-    public const int MinPelletsDeviation = 226;
-    public const int MultiPellet = 227;
-    public const int Pierce = 228;
-    public const int Precharged = 229;
-    public const int PrechargeTime = 230;
-    public const int PrechargeTimeLeft = 231;
-    public const int ReadyToShoot = 232;
-    public const int Reloading = 233;
-    public const int ReloadTime = 234;
-    public const int ReloadTimeLeft = 235;
-    public const int RotationPointTransform = 236;
-    public const int Shooting = 237;
-    public const int Shot = 238;
-    public const int StatusSetups = 239;
-    public const int Weapon = 240;
-    public const int WeaponEnchants = 241;
-    public const int WeaponOwnerId = 242;
-    public const int WeaponOwnerTypeId = 243;
-    public const int WeaponRotationAngle = 244;
-    public const int WeaponTypeId = 245;
-    public const int AmmoHolder = 246;
-    public const int CoinsHolder = 247;
-    public const int EnchantHolder = 248;
-    public const int HeartHolder = 249;
-    public const int ReloadingAnimator = 250;
-    public const int TimerHolder = 251;
-    public const int WeaponHolder = 252;
+    public const int DestroyableDecorationSprite = 97;
+    public const int DestroyableDecorationTilemap = 98;
+    public const int Dungeon = 99;
+    public const int DungeonAvailable = 100;
+    public const int DungeonTypeId = 101;
+    public const int HeroStartPosition = 102;
+    public const int ValidPositions = 103;
+    public const int ValidSprite = 104;
+    public const int WallDestroyableDecorationSprite = 105;
+    public const int WallDestroyableDecorationTilemap = 106;
+    public const int DamageEffect = 107;
+    public const int Effect = 108;
+    public const int EffectValue = 109;
+    public const int HealEffect = 110;
+    public const int ProducerId = 111;
+    public const int TargetId = 112;
+    public const int Enchant = 113;
+    public const int EnchantAlreadyHeld = 114;
+    public const int EnchantDuration = 115;
+    public const int EnchantTimeLeft = 116;
+    public const int EnchantTypeId = 117;
+    public const int EnchantUI = 118;
+    public const int EnchantVisualEffect = 119;
+    public const int ExplosiveEnchant = 120;
+    public const int FlameEnchant = 121;
+    public const int FreezeEnchant = 122;
+    public const int NewCollectedEnchant = 123;
+    public const int PoisonEnchant = 124;
+    public const int Enemy = 125;
+    public const int EnemyAnimator = 126;
+    public const int EnemyTypeId = 127;
+    public const int Grimonk = 128;
+    public const int Hedusa = 129;
+    public const int LastTargetPosition = 130;
+    public const int MudRock = 131;
+    public const int Orc = 132;
+    public const int Slime = 133;
+    public const int Slizzard = 134;
+    public const int CurrentWeaponTypeId = 135;
+    public const int Hero = 136;
+    public const int HeroAnimator = 137;
+    public const int HeroAvailable = 138;
+    public const int HeroTypeId = 139;
+    public const int TheGeneral = 140;
+    public const int TheScientist = 141;
+    public const int TheThief = 142;
+    public const int Unweaponed = 143;
+    public const int Weaponed = 144;
+    public const int DungeonTypeOnLevel = 145;
+    public const int EnemiesInLevelCount = 146;
+    public const int EnemiesInLevelCountCalculated = 147;
+    public const int EnemyWave = 148;
+    public const int EnemyWaves = 149;
+    public const int FinishingTime = 150;
+    public const int FinishingTimeLeft = 151;
+    public const int HeroSafeZoneRadius = 152;
+    public const int Level = 153;
+    public const int LevelTypeId = 154;
+    public const int SpawnedEnemyWaves = 155;
+    public const int StartingTime = 156;
+    public const int StartingTimeLeft = 157;
+    public const int StartingTimeUp = 158;
+    public const int CurrentHp = 159;
+    public const int Dead = 160;
+    public const int MaxHp = 161;
+    public const int ProcessingDeath = 162;
+    public const int Coins = 163;
+    public const int Collected = 164;
+    public const int LootTypeId = 165;
+    public const int PickupRadius = 166;
+    public const int Pullable = 167;
+    public const int Pulling = 168;
+    public const int Direction = 169;
+    public const int FollowMovement = 170;
+    public const int FollowMovementXAxisOffset = 171;
+    public const int FollowMovementYAxisOffset = 172;
+    public const int FollowTargetId = 173;
+    public const int LinerMovement = 174;
+    public const int MovementAvailable = 175;
+    public const int Moving = 176;
+    public const int OrbitalMovement = 177;
+    public const int OrbitAngularSpeed = 178;
+    public const int OrbitCenter = 179;
+    public const int OrbitElapsedTime = 180;
+    public const int OrbitInitialAngle = 181;
+    public const int OrbitRadius = 182;
+    public const int Speed = 183;
+    public const int Rotating = 184;
+    public const int RotationAngle = 185;
+    public const int RotationAvailable = 186;
+    public const int SpecialEffect = 187;
+    public const int SpecialEffectTypeId = 188;
+    public const int Affected = 189;
+    public const int Applied = 190;
+    public const int ApplierStatusLink = 191;
+    public const int Explosive = 192;
+    public const int Flame = 193;
+    public const int Freeze = 194;
+    public const int Period = 195;
+    public const int Poison = 196;
+    public const int Status = 197;
+    public const int StatusDuration = 198;
+    public const int StatusTimeLeft = 199;
+    public const int StatusTypeId = 200;
+    public const int TimeSinceLastTick = 201;
+    public const int Unapplied = 202;
+    public const int ClosestTargetPosition = 203;
+    public const int CurrentAmmoCount = 204;
+    public const int EffectSetups = 205;
+    public const int EnemyCircleSigil = 206;
+    public const int EnemyPistol = 207;
+    public const int EnemyStarSigil = 208;
+    public const int EnemyTriangleSigil = 209;
+    public const int EnemyWeapon = 210;
+    public const int FirePositionTransform = 211;
+    public const int HeroAutomaticPistol = 212;
+    public const int HeroCircleSigil = 213;
+    public const int HeroLaserBlaster = 214;
+    public const int HeroMachinegun = 215;
+    public const int HeroPistol = 216;
+    public const int HeroPlasmaGun = 217;
+    public const int HeroRevolver = 218;
+    public const int HeroRocketLauncher = 219;
+    public const int HeroShotgun = 220;
+    public const int HeroSniper = 221;
+    public const int HeroStarSigil = 222;
+    public const int HeroTriangleSigil = 223;
+    public const int HeroWeapon = 224;
+    public const int InfinityAmmo = 225;
+    public const int MagazineNotEmpty = 226;
+    public const int MagazineSize = 227;
+    public const int MaxPelletsDeviation = 228;
+    public const int MaxWeaponEnchantsCount = 229;
+    public const int MinPelletsDeviation = 230;
+    public const int MultiPellet = 231;
+    public const int Pierce = 232;
+    public const int Precharged = 233;
+    public const int PrechargeTime = 234;
+    public const int PrechargeTimeLeft = 235;
+    public const int ReadyToShoot = 236;
+    public const int Reloading = 237;
+    public const int ReloadTime = 238;
+    public const int ReloadTimeLeft = 239;
+    public const int RotationPointTransform = 240;
+    public const int Shooting = 241;
+    public const int Shot = 242;
+    public const int StatusSetups = 243;
+    public const int Weapon = 244;
+    public const int WeaponEnchants = 245;
+    public const int WeaponOwnerId = 246;
+    public const int WeaponOwnerTypeId = 247;
+    public const int WeaponRotationAngle = 248;
+    public const int WeaponTypeId = 249;
+    public const int AmmoHolder = 250;
+    public const int CoinsHolder = 251;
+    public const int EnchantHolder = 252;
+    public const int HeartHolder = 253;
+    public const int ReloadingAnimator = 254;
+    public const int TimerHolder = 255;
+    public const int WeaponHolder = 256;
 
-    public const int TotalComponents = 253;
+    public const int TotalComponents = 257;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -362,12 +366,16 @@ public static class GameComponentsLookup {
         "CooldownUp",
         "DestroyableAnimator",
         "CollisionTilemap",
+        "DestroyableDecorationSprite",
+        "DestroyableDecorationTilemap",
         "Dungeon",
         "DungeonAvailable",
         "DungeonTypeId",
         "HeroStartPosition",
         "ValidPositions",
         "ValidSprite",
+        "WallDestroyableDecorationSprite",
+        "WallDestroyableDecorationTilemap",
         "DamageEffect",
         "Effect",
         "EffectValue",
@@ -618,12 +626,16 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Cooldowns.CooldownUp),
         typeof(Code.Gameplay.Features.Destroyable.Behaviours.DestroyableAnimatorComponent),
         typeof(Code.Gameplay.Features.Dungeon.CollisionTilemap),
+        typeof(Code.Gameplay.Features.Dungeon.DestroyableDecorationSprite),
+        typeof(Code.Gameplay.Features.Dungeon.DestroyableDecorationTilemap),
         typeof(Code.Gameplay.Features.Dungeon.Dungeon),
         typeof(Code.Gameplay.Features.Dungeon.DungeonAvailable),
         typeof(Code.Gameplay.Features.Dungeon.DungeonTypeIdComponent),
         typeof(Code.Gameplay.Features.Dungeon.HeroStartPosition),
         typeof(Code.Gameplay.Features.Dungeon.ValidPositions),
         typeof(Code.Gameplay.Features.Dungeon.ValidSprite),
+        typeof(Code.Gameplay.Features.Dungeon.WallDestroyableDecorationSprite),
+        typeof(Code.Gameplay.Features.Dungeon.WallDestroyableDecorationTilemap),
         typeof(Code.Gameplay.Features.Effects.DamageEffect),
         typeof(Code.Gameplay.Features.Effects.Effect),
         typeof(Code.Gameplay.Features.Effects.EffectValue),

@@ -1,5 +1,4 @@
-﻿using Code.Gameplay.Features.Ammo;
-using Entitas;
+﻿using Entitas;
 
 namespace Code.Gameplay.Features.Destroyable.Behaviours
 {
