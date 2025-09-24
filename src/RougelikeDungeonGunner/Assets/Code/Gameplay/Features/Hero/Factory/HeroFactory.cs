@@ -84,10 +84,14 @@ namespace Code.Gameplay.Features.Hero.Factory
 					.AddPickupRadius(PickupRadius)
 					.AddCurrentWeaponTypeId(CurrentWeapon(config))
 					.AddAuraRequest(config.StartAura)
+					.AddDestroyableTargetsBuffer(new())
+					.AddDestroyableTargetLayerMask(CollisionLayer.Destroyable.AsMask())
+					.AddRadius(1f)
 					.With(x => x.isHero = true)
 					.With(x => x.isMovementAvailable = true)
 					.With(x => x.isLinerMovement = true)
 					.With(x => x.isUnweaponed = true)
+					.With(x => x.isReadyToCollectTargets = true)
 				;
 		}
 

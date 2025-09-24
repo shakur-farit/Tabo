@@ -8,6 +8,7 @@ namespace Code.Gameplay.Features.Destroyable.Behaviours
 
     private readonly int _isDestroy = Animator.StringToHash("destroy");
 
-    public void PlayDestroy() => _animator.SetBool(_isDestroy, true);
+    public void PlayDestroy() => 
+	    _animator.SetBool(_isDestroy, true);
   }
 }

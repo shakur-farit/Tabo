@@ -5,6 +5,8 @@ using Code.Gameplay.Features.AStar;
 using Code.Gameplay.Features.Aura;
 using Code.Gameplay.Features.CharacterStats;
 using Code.Gameplay.Features.Collection;
+using Code.Gameplay.Features.Destroyable;
+using Code.Gameplay.Features.Destroyable.Behaviours;
 using Code.Gameplay.Features.Dungeon;
 using Code.Gameplay.Features.EffectApplication;
 using Code.Gameplay.Features.Effects;
@@ -52,6 +54,8 @@ namespace Code.Gameplay
 
 			Add(systems.Create<CollectFeature>());
 			Add(systems.Create<EffectApplicationFeature>());
+
+			Add(systems.Create<DestroyableFeature>());
 
 			Add(systems.Create<EnchantFeature>());
 			Add(systems.Create<EffectsFeature>());
