@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 2477527371390215069}
   - component: {fileID: 9104444782865922670}
   - component: {fileID: 3990029826859278579}
-  - component: {fileID: 4913381151519831907}
   m_Layer: 10
   m_Name: DestroyableItem
   m_TagString: Untagged
@@ -182,16 +181,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EntityView: {fileID: 0}
   _destroyableAnimator: {fileID: 9104444782865922670}
---- !u!114 &4913381151519831907
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3500183305535904011}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5899cdf0b6e41f44b6f99c1b10c1556, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _holder: {fileID: 0}
