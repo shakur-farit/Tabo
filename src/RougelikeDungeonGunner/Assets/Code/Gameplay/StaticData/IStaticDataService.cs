@@ -4,6 +4,7 @@ using Code.Gameplay.Features.Ammo;
 using Code.Gameplay.Features.Ammo.Configs;
 using Code.Gameplay.Features.Aura;
 using Code.Gameplay.Features.Aura.Configs;
+using Code.Gameplay.Features.Destroyable;
 using Code.Gameplay.Features.Dungeon;
 using Code.Gameplay.Features.Dungeon.Configs;
 using Code.Gameplay.Features.Enchants;
@@ -40,17 +41,22 @@ namespace Code.Gameplay.StaticData
   {
 	  IEnumerable<LootConfig> GetAllLootConfigs();
 	  IEnumerable<HeroConfig> GetAllHeroConfigs();
+    IEnumerable<DestroyableItemConfig> GetAllDestroyableItemConfigs();
 
-	  UniTask Load();
+    UniTask Load();
 
-	  BalanceConfig GetBalance();
-	  AmmoConfig GetAmmoConfig(AmmoTypeId ammoTypeId);
-	  WeaponConfig GetWeaponConfig(WeaponTypeId weaponTypeId);
-	  EnemyConfig GetEnemyConfig(EnemyTypeId enemyId);
-	  HeroConfig GetHeroConfig(HeroTypeId heroId);
-	  LevelConfig GetLevelConfig(LevelTypeId levelId);
-	  LootConfig GetLootConfig(LootTypeId lootId);
-	  EnchantConfig GetEnchantConfig(EnchantTypeId id);
+    BalanceConfig GetBalance();
+    DungeonConfig GetDungeonConfig(DungeonTypeId id);
+    AmmoConfig GetAmmoConfig(AmmoTypeId ammoTypeId);
+    WeaponConfig GetWeaponConfig(WeaponTypeId weaponTypeId);
+    EnemyConfig GetEnemyConfig(EnemyTypeId enemyId);
+    HeroConfig GetHeroConfig(HeroTypeId heroId);
+    LevelConfig GetLevelConfig(LevelTypeId levelId);
+    LootConfig GetLootConfig(LootTypeId lootId);
+    EnchantConfig GetEnchantConfig(EnchantTypeId id);
+    AuraConfig GetAuraConfig(AuraTypeId id);
+    SpecialEffectConfig GetSpecialEffectConfig(SpecialEffectTypeId typeId);
+    DestroyableItemConfig GetDestroyableItemConfig(DestroyableItemTypeId id);
     WindowConfig GetWindowConfig(WindowId id);
     WeaponUpgradeShopItemConfig GetWeaponUpgradeShopItemConfig(WeaponUpgradeTypeId id);
     WeaponShopItemConfig GetWeaponShopItemConfig(WeaponShopItemTypeId id);
@@ -58,8 +64,5 @@ namespace Code.Gameplay.StaticData
     EnchantUIEntryConfig GetEnchantUIEntryItemConfig(EnchantUIEntryTypeId id);
     EnchantStatUIEntryConfig GetEnchantStatUIEntryItemConfig(EnchantStatUIEntryTypeId id);
     EnchantShopItemConfig GetEnchantShopItemConfig(EnchantShopItemTypeId id);
-    DungeonConfig GetDungeonConfig(DungeonTypeId id);
-    AuraConfig GetAuraConfig(AuraTypeId id);
-    SpecialEffectConfig GetSpecialEffectConfig(SpecialEffectTypeId typeId);
   }
 }

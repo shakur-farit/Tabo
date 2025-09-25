@@ -1,5 +1,6 @@
 ﻿using Code.Gameplay.Features.Loot;
 using System.Collections.Generic;
+using Code.Infrastructure.View;
 using UnityEngine;
 
 namespace Code.Gameplay.Features.Destroyable
@@ -9,6 +10,7 @@ namespace Code.Gameplay.Features.Destroyable
   {
     public DestroyableItemTypeId TypeId;
     public DestroyableItemPlacingTypeId PlacingTypeId;
+    public EntityBehaviour ViewPrefab; 
     public Sprite Sprite;
     public RuntimeAnimatorController AnimatorController;
     [Range(0, 100)] public int LootDropChance;

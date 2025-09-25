@@ -6,6 +6,7 @@ using Code.Gameplay.Features.Ammo;
 using Code.Gameplay.Features.Ammo.Configs;
 using Code.Gameplay.Features.Aura;
 using Code.Gameplay.Features.Aura.Configs;
+using Code.Gameplay.Features.Destroyable;
 using Code.Gameplay.Features.Dungeon;
 using Code.Gameplay.Features.Dungeon.Configs;
 using Code.Gameplay.Features.Enchants;
@@ -52,8 +53,9 @@ namespace Code.Gameplay.StaticData
 		private const string EnchantConfigLabel = "EnchantConfig";
 		private const string AuraConfigLabel = "AuraConfig";
 		private const string SpecialEffectConfigLabel = "SpecialEffectConfig";
-		private const string WindowConfigLabel = "WindowConfig";
-		private const string WeaponShopItemConfigLabel = "WeaponShopItemConfig";
+    private const string DestroyableItemConfigLabel = "DestroyableItemConfig";
+    private const string WindowConfigLabel = "WindowConfig";
+    private const string WeaponShopItemConfigLabel = "WeaponShopItemConfig";
 		private const string EnchantShopItemConfigLabel = "EnchantShopItemConfig";
 		private const string WeaponUpgradeShopItemConfigLabel = "WeaponUpgradeShopItemConfig";
 		private const string WeaponStatUIEntryConfigLabel = "WeaponStatUIEntryConfig";
@@ -70,8 +72,9 @@ namespace Code.Gameplay.StaticData
 		private Dictionary<LootTypeId, LootConfig> _lootById;
 		private Dictionary<EnchantTypeId, EnchantConfig> _enchantById;
 		private Dictionary<AuraTypeId, AuraConfig> _auraById;
-		private Dictionary<WindowId, WindowConfig> _windowById;
-		private Dictionary<WeaponShopItemTypeId, WeaponShopItemConfig> _weaponShopItemById;
+    private Dictionary<DestroyableItemTypeId, DestroyableItemConfig> _destroyableItemById;
+    private Dictionary<WindowId, WindowConfig> _windowById;
+    private Dictionary<WeaponShopItemTypeId, WeaponShopItemConfig> _weaponShopItemById;
 		private Dictionary<WeaponUpgradeTypeId, WeaponUpgradeShopItemConfig> _weaponUpgradeShopItemById;
 		private Dictionary<WeaponStatUIEntryTypeId, WeaponStatUIEntryConfig> _weaponStatUIEntryItemById;
 		private Dictionary<EnchantShopItemTypeId, EnchantShopItemConfig> _enchantShopItemById;
@@ -84,6 +87,7 @@ namespace Code.Gameplay.StaticData
 
 		public IEnumerable<LootConfig> GetAllLootConfigs() => _lootById.Values;
 		public IEnumerable<HeroConfig> GetAllHeroConfigs() => _heroById.Values;
+		public IEnumerable<DestroyableItemConfig> GetAllDestroyableItemConfigs() => _destroyableItemById.Values;
 
 
 		public StaticDataService(IAssetProvider assetProvider) =>
@@ -100,7 +104,8 @@ namespace Code.Gameplay.StaticData
 			await LoadDungeons();
 			await LoadLoots();
 			await LoadEnchants();
-			await LoadAura();
+			await LoadAuras();
+      await LoadDestroyableItems();
 			await LoadSpecialEffects();
 			await LoadWindows();
 			await LoadWeaponShopItem();
@@ -191,7 +196,15 @@ namespace Code.Gameplay.StaticData
 			throw new Exception($"Special effect config for {id} was not found");
 		}
 
-		public WindowConfig GetWindowConfig(WindowId id)
+    public DestroyableItemConfig GetDestroyableItemConfig(DestroyableItemTypeId id)
+    {
+      if (_destroyableItemById.TryGetValue(id, out DestroyableItemConfig config))
+        return config;
+
+      throw new Exception($"Destroyable item config for {id} was not found");
+    }
+
+    public WindowConfig GetWindowConfig(WindowId id)
 		{
 			if (_windowById.TryGetValue(id, out WindowConfig config))
 				return config;
@@ -287,11 +300,15 @@ namespace Code.Gameplay.StaticData
 				(await _assetProvider.LoadAll<SpecialEffectConfig>(SpecialEffectConfigLabel))
 				.ToDictionary(x => x.TypeId, x => x);
 
-		private async UniTask LoadAura() =>
+		private async UniTask LoadAuras() =>
 			_auraById = (await _assetProvider.LoadAll<AuraConfig>(AuraConfigLabel))
 				.ToDictionary(x => x.TypeId, x => x);
 
-		private async UniTask LoadWindows() =>
+    private async UniTask LoadDestroyableItems() =>
+      _destroyableItemById = (await _assetProvider.LoadAll<DestroyableItemConfig>(DestroyableItemConfigLabel))
+        .ToDictionary(x => x.TypeId, x => x);
+
+    private async UniTask LoadWindows() =>
 			_windowById = (await _assetProvider.LoadAll<WindowConfig>(WindowConfigLabel))
 				.ToDictionary(x => x.TypeId, x => x);
 

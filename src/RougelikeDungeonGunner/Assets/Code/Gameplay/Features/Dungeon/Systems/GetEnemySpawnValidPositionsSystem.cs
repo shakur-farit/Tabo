@@ -23,9 +23,8 @@ namespace Code.Gameplay.Features.Dungeon.Systems
 		public void Execute()
 		{
 			foreach (GameEntity dungeon in _dungeons.GetEntities(_buffer))
-			{
-				dungeon.AddEnemySpawnValidPositions(_validPositionsProvider.GetValidPositions(dungeon.CollisionTilemap, dungeon.EnemySpawnValidSprite));
-			}
-		}
+        dungeon.AddEnemySpawnValidPositions(
+          _validPositionsProvider.GetValidPositions(dungeon.CollisionTilemap, dungeon.EnemySpawnValidSprite));
+    }
   }
 }

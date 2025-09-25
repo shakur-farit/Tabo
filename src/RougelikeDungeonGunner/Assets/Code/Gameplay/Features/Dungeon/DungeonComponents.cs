@@ -18,6 +18,9 @@ namespace Code.Gameplay.Features.Dungeon
 	[Game] public class FloorDestroyableDecorationTilemap : IComponent { public Tilemap Value; }
 	[Game] public class WallDestroyableDecorationSprite : IComponent { public Sprite Value; }
 	[Game] public class FloorDestroyableDecorationSprite : IComponent { public Sprite Value; }
+  [Game] public class WallDestroyableItemValidPositions : IComponent { public List<Vector2Int> Value; }
+  [Game] public class FloorDestroyableItemValidPositions : IComponent { public List<Vector2Int> Value; }
 
-	[Game] public class DungeonAvailable : IComponent { }
+
+  [Game] public class DungeonAvailable : IComponent { }
 }

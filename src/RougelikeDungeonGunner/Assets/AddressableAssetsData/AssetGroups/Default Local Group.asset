@@ -717,6 +717,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - SpecialEffectConfig
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 95a87126b57d7ac4ab5d124fb20a6f02
+    m_Address: Assets/StaticData/DestroyableItem/SkeletonConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - DestroyableItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 7128017d563554245a79368046c75e1a, type: 2}
   m_SchemaSet:

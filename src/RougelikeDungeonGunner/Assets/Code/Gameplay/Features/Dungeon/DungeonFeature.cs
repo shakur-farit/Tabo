@@ -9,6 +9,8 @@ namespace Code.Gameplay.Features.Dungeon
 		{
 			Add(systems.Create<CreateDungeonSystem>());
 			Add(systems.Create<GetEnemySpawnValidPositionsSystem>());
+			Add(systems.Create<GetFloorDestroyableItemValidPositionSystem>());
+			Add(systems.Create<GetWallDestroyableItemValidPositionSystem>());
 		}
 	}
 }

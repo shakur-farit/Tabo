@@ -1,14 +1,13 @@
 ﻿using Entitas;
-using UnityEngine;
 
 namespace Code.Gameplay.Features.Destroyable.Systems
 {
-	public class DestroyableItemAnimationPlaySystem : IExecuteSystem
+	public class DestroyableItemDestroyAnimationPlaySystem : IExecuteSystem
 	{
 		private readonly GameContext _game;
 		private readonly IGroup<GameEntity> _collectors;
 
-		public DestroyableItemAnimationPlaySystem(GameContext game)
+		public DestroyableItemDestroyAnimationPlaySystem(GameContext game)
 		{
 			_game = game;
 			_collectors = game.GetGroup(GameMatcher
@@ -23,30 +22,15 @@ namespace Code.Gameplay.Features.Destroyable.Systems
 				{
 					GameEntity destroyable = _game.GetEntityWithId(id);
 
+					if(destroyable.isDestroyed)
+						continue;
+
 					if (destroyable.hasDestroyableAnimator)
 						destroyable.DestroyableAnimator.PlayDestroy();
-				}
+
+          destroyable.isDestroyed = true;
+        }
 			}
 		}
-  }
-
-
-  public class CreateWallDestroyableItemSystem : IExecuteSystem
-  {
-    private readonly IGroup<GameEntity> _collectors;
-
-    public CreateWallDestroyableItemSystem(GameContext game)
-    {
-      _collectors = game.GetGroup(GameMatcher
-        .AllOf(GameMatcher.DestroyableTargetsBuffer));
-    }
-
-    public void Execute()
-    {
-      foreach (GameEntity collector in _collectors)
-      {
-
-      }
-    }
   }
 }
