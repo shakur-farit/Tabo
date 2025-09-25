@@ -33,7 +33,7 @@ namespace Code.Gameplay.Features.AStar.Systems
 				.AllOf(
 					GameMatcher.Pathfinder,
 					GameMatcher.MinDistanceForRepath,
-					GameMatcher.ValidPositions,
+					GameMatcher.EnemySpawnValidPositions,
 					GameMatcher.PathfindingTimerUp,
 					GameMatcher.PathfinderInitialized));
 		}

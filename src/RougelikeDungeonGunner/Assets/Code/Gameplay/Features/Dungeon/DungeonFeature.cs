@@ -8,7 +8,7 @@ namespace Code.Gameplay.Features.Dungeon
 		public DungeonFeature(ISystemsFactory systems)
 		{
 			Add(systems.Create<CreateDungeonSystem>());
-			Add(systems.Create<GetValidPositionsOnCollisionTilemapSystem>());
+			Add(systems.Create<GetEnemySpawnValidPositionsSystem>());
 		}
 	}
 }

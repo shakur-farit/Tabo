@@ -105,14 +105,14 @@ public static class GameComponentsLookup {
     public const int CooldownUp = 94;
     public const int DestroyableAnimator = 95;
     public const int CollisionTilemap = 96;
-    public const int DestroyableDecorationSprite = 97;
-    public const int DestroyableDecorationTilemap = 98;
-    public const int Dungeon = 99;
-    public const int DungeonAvailable = 100;
-    public const int DungeonTypeId = 101;
-    public const int HeroStartPosition = 102;
-    public const int ValidPositions = 103;
-    public const int ValidSprite = 104;
+    public const int Dungeon = 97;
+    public const int DungeonAvailable = 98;
+    public const int DungeonTypeId = 99;
+    public const int EnemySpawnValidPositions = 100;
+    public const int EnemySpawnValidSprite = 101;
+    public const int FloorDestroyableDecorationSprite = 102;
+    public const int FloorDestroyableDecorationTilemap = 103;
+    public const int HeroStartPosition = 104;
     public const int WallDestroyableDecorationSprite = 105;
     public const int WallDestroyableDecorationTilemap = 106;
     public const int DamageEffect = 107;
@@ -173,100 +173,102 @@ public static class GameComponentsLookup {
     public const int ProcessingDeath = 162;
     public const int Coins = 163;
     public const int Collected = 164;
-    public const int LootTypeId = 165;
-    public const int PickupRadius = 166;
-    public const int Pullable = 167;
-    public const int Pulling = 168;
-    public const int Direction = 169;
-    public const int FollowMovement = 170;
-    public const int FollowMovementXAxisOffset = 171;
-    public const int FollowMovementYAxisOffset = 172;
-    public const int FollowTargetId = 173;
-    public const int LinerMovement = 174;
-    public const int MovementAvailable = 175;
-    public const int Moving = 176;
-    public const int OrbitalMovement = 177;
-    public const int OrbitAngularSpeed = 178;
-    public const int OrbitCenter = 179;
-    public const int OrbitElapsedTime = 180;
-    public const int OrbitInitialAngle = 181;
-    public const int OrbitRadius = 182;
-    public const int Speed = 183;
-    public const int Rotating = 184;
-    public const int RotationAngle = 185;
-    public const int RotationAvailable = 186;
-    public const int SpecialEffect = 187;
-    public const int SpecialEffectTypeId = 188;
-    public const int Affected = 189;
-    public const int Applied = 190;
-    public const int ApplierStatusLink = 191;
-    public const int Explosive = 192;
-    public const int Flame = 193;
-    public const int Freeze = 194;
-    public const int Period = 195;
-    public const int Poison = 196;
-    public const int Status = 197;
-    public const int StatusDuration = 198;
-    public const int StatusTimeLeft = 199;
-    public const int StatusTypeId = 200;
-    public const int TimeSinceLastTick = 201;
-    public const int Unapplied = 202;
-    public const int ClosestTargetPosition = 203;
-    public const int CurrentAmmoCount = 204;
-    public const int EffectSetups = 205;
-    public const int EnemyCircleSigil = 206;
-    public const int EnemyPistol = 207;
-    public const int EnemyStarSigil = 208;
-    public const int EnemyTriangleSigil = 209;
-    public const int EnemyWeapon = 210;
-    public const int FirePositionTransform = 211;
-    public const int HeroAutomaticPistol = 212;
-    public const int HeroCircleSigil = 213;
-    public const int HeroLaserBlaster = 214;
-    public const int HeroMachinegun = 215;
-    public const int HeroPistol = 216;
-    public const int HeroPlasmaGun = 217;
-    public const int HeroRevolver = 218;
-    public const int HeroRocketLauncher = 219;
-    public const int HeroShotgun = 220;
-    public const int HeroSniper = 221;
-    public const int HeroStarSigil = 222;
-    public const int HeroTriangleSigil = 223;
-    public const int HeroWeapon = 224;
-    public const int InfinityAmmo = 225;
-    public const int MagazineNotEmpty = 226;
-    public const int MagazineSize = 227;
-    public const int MaxPelletsDeviation = 228;
-    public const int MaxWeaponEnchantsCount = 229;
-    public const int MinPelletsDeviation = 230;
-    public const int MultiPellet = 231;
-    public const int Pierce = 232;
-    public const int Precharged = 233;
-    public const int PrechargeTime = 234;
-    public const int PrechargeTimeLeft = 235;
-    public const int ReadyToShoot = 236;
-    public const int Reloading = 237;
-    public const int ReloadTime = 238;
-    public const int ReloadTimeLeft = 239;
-    public const int RotationPointTransform = 240;
-    public const int Shooting = 241;
-    public const int Shot = 242;
-    public const int StatusSetups = 243;
-    public const int Weapon = 244;
-    public const int WeaponEnchants = 245;
-    public const int WeaponOwnerId = 246;
-    public const int WeaponOwnerTypeId = 247;
-    public const int WeaponRotationAngle = 248;
-    public const int WeaponTypeId = 249;
-    public const int AmmoHolder = 250;
-    public const int CoinsHolder = 251;
-    public const int EnchantHolder = 252;
-    public const int HeartHolder = 253;
-    public const int ReloadingAnimator = 254;
-    public const int TimerHolder = 255;
-    public const int WeaponHolder = 256;
+    public const int ExcludedLoot = 165;
+    public const int LootDropChance = 166;
+    public const int LootTypeId = 167;
+    public const int PickupRadius = 168;
+    public const int Pullable = 169;
+    public const int Pulling = 170;
+    public const int Direction = 171;
+    public const int FollowMovement = 172;
+    public const int FollowMovementXAxisOffset = 173;
+    public const int FollowMovementYAxisOffset = 174;
+    public const int FollowTargetId = 175;
+    public const int LinerMovement = 176;
+    public const int MovementAvailable = 177;
+    public const int Moving = 178;
+    public const int OrbitalMovement = 179;
+    public const int OrbitAngularSpeed = 180;
+    public const int OrbitCenter = 181;
+    public const int OrbitElapsedTime = 182;
+    public const int OrbitInitialAngle = 183;
+    public const int OrbitRadius = 184;
+    public const int Speed = 185;
+    public const int Rotating = 186;
+    public const int RotationAngle = 187;
+    public const int RotationAvailable = 188;
+    public const int SpecialEffect = 189;
+    public const int SpecialEffectTypeId = 190;
+    public const int Affected = 191;
+    public const int Applied = 192;
+    public const int ApplierStatusLink = 193;
+    public const int Explosive = 194;
+    public const int Flame = 195;
+    public const int Freeze = 196;
+    public const int Period = 197;
+    public const int Poison = 198;
+    public const int Status = 199;
+    public const int StatusDuration = 200;
+    public const int StatusTimeLeft = 201;
+    public const int StatusTypeId = 202;
+    public const int TimeSinceLastTick = 203;
+    public const int Unapplied = 204;
+    public const int ClosestTargetPosition = 205;
+    public const int CurrentAmmoCount = 206;
+    public const int EffectSetups = 207;
+    public const int EnemyCircleSigil = 208;
+    public const int EnemyPistol = 209;
+    public const int EnemyStarSigil = 210;
+    public const int EnemyTriangleSigil = 211;
+    public const int EnemyWeapon = 212;
+    public const int FirePositionTransform = 213;
+    public const int HeroAutomaticPistol = 214;
+    public const int HeroCircleSigil = 215;
+    public const int HeroLaserBlaster = 216;
+    public const int HeroMachinegun = 217;
+    public const int HeroPistol = 218;
+    public const int HeroPlasmaGun = 219;
+    public const int HeroRevolver = 220;
+    public const int HeroRocketLauncher = 221;
+    public const int HeroShotgun = 222;
+    public const int HeroSniper = 223;
+    public const int HeroStarSigil = 224;
+    public const int HeroTriangleSigil = 225;
+    public const int HeroWeapon = 226;
+    public const int InfinityAmmo = 227;
+    public const int MagazineNotEmpty = 228;
+    public const int MagazineSize = 229;
+    public const int MaxPelletsDeviation = 230;
+    public const int MaxWeaponEnchantsCount = 231;
+    public const int MinPelletsDeviation = 232;
+    public const int MultiPellet = 233;
+    public const int Pierce = 234;
+    public const int Precharged = 235;
+    public const int PrechargeTime = 236;
+    public const int PrechargeTimeLeft = 237;
+    public const int ReadyToShoot = 238;
+    public const int Reloading = 239;
+    public const int ReloadTime = 240;
+    public const int ReloadTimeLeft = 241;
+    public const int RotationPointTransform = 242;
+    public const int Shooting = 243;
+    public const int Shot = 244;
+    public const int StatusSetups = 245;
+    public const int Weapon = 246;
+    public const int WeaponEnchants = 247;
+    public const int WeaponOwnerId = 248;
+    public const int WeaponOwnerTypeId = 249;
+    public const int WeaponRotationAngle = 250;
+    public const int WeaponTypeId = 251;
+    public const int AmmoHolder = 252;
+    public const int CoinsHolder = 253;
+    public const int EnchantHolder = 254;
+    public const int HeartHolder = 255;
+    public const int ReloadingAnimator = 256;
+    public const int TimerHolder = 257;
+    public const int WeaponHolder = 258;
 
-    public const int TotalComponents = 257;
+    public const int TotalComponents = 259;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -366,14 +368,14 @@ public static class GameComponentsLookup {
         "CooldownUp",
         "DestroyableAnimator",
         "CollisionTilemap",
-        "DestroyableDecorationSprite",
-        "DestroyableDecorationTilemap",
         "Dungeon",
         "DungeonAvailable",
         "DungeonTypeId",
+        "EnemySpawnValidPositions",
+        "EnemySpawnValidSprite",
+        "FloorDestroyableDecorationSprite",
+        "FloorDestroyableDecorationTilemap",
         "HeroStartPosition",
-        "ValidPositions",
-        "ValidSprite",
         "WallDestroyableDecorationSprite",
         "WallDestroyableDecorationTilemap",
         "DamageEffect",
@@ -434,6 +436,8 @@ public static class GameComponentsLookup {
         "ProcessingDeath",
         "Coins",
         "Collected",
+        "ExcludedLoot",
+        "LootDropChance",
         "LootTypeId",
         "PickupRadius",
         "Pullable",
@@ -626,14 +630,14 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Cooldowns.CooldownUp),
         typeof(Code.Gameplay.Features.Destroyable.Behaviours.DestroyableAnimatorComponent),
         typeof(Code.Gameplay.Features.Dungeon.CollisionTilemap),
-        typeof(Code.Gameplay.Features.Dungeon.DestroyableDecorationSprite),
-        typeof(Code.Gameplay.Features.Dungeon.DestroyableDecorationTilemap),
         typeof(Code.Gameplay.Features.Dungeon.Dungeon),
         typeof(Code.Gameplay.Features.Dungeon.DungeonAvailable),
         typeof(Code.Gameplay.Features.Dungeon.DungeonTypeIdComponent),
+        typeof(Code.Gameplay.Features.Dungeon.EnemySpawnValidPositions),
+        typeof(Code.Gameplay.Features.Dungeon.EnemySpawnValidSprite),
+        typeof(Code.Gameplay.Features.Dungeon.FloorDestroyableDecorationSprite),
+        typeof(Code.Gameplay.Features.Dungeon.FloorDestroyableDecorationTilemap),
         typeof(Code.Gameplay.Features.Dungeon.HeroStartPosition),
-        typeof(Code.Gameplay.Features.Dungeon.ValidPositions),
-        typeof(Code.Gameplay.Features.Dungeon.ValidSprite),
         typeof(Code.Gameplay.Features.Dungeon.WallDestroyableDecorationSprite),
         typeof(Code.Gameplay.Features.Dungeon.WallDestroyableDecorationTilemap),
         typeof(Code.Gameplay.Features.Effects.DamageEffect),
@@ -694,6 +698,8 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Lifetime.ProcessingDeath),
         typeof(Code.Gameplay.Features.Loot.LootComponents.Coins),
         typeof(Code.Gameplay.Features.Loot.LootComponents.Collected),
+        typeof(Code.Gameplay.Features.Loot.LootComponents.ExcludedLoot),
+        typeof(Code.Gameplay.Features.Loot.LootComponents.LootDropChance),
         typeof(Code.Gameplay.Features.Loot.LootComponents.LootTypeIdComponent),
         typeof(Code.Gameplay.Features.Loot.LootComponents.PickupRadius),
         typeof(Code.Gameplay.Features.Loot.LootComponents.Pullable),

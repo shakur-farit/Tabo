@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Code.Gameplay.Common.Random;
-using Code.Gameplay.Features.Enemy;
 using Code.Gameplay.Features.Loot.Configs;
 using Code.Gameplay.StaticData;
 
@@ -9,42 +8,41 @@ namespace Code.Gameplay.Features.Loot.Services
 {
 	public class LootRandomizerService : ILootRandomizerService
 	{
-		private readonly IStaticDataService _staticDataService;
-		private readonly IRandomService _random;
+    private readonly IRandomService _random;
+    private readonly IStaticDataService _staticDataService;
 
-		public LootRandomizerService(IStaticDataService staticDataService, IRandomService random)
-		{
-			_staticDataService = staticDataService;
-			_random = random;
-		}
+    public LootRandomizerService(IRandomService random, IStaticDataService staticDataService)
+    {
+      _random = random;
+      _staticDataService = staticDataService;
+    }
 
-		public LootTypeId? GetLootToDrop(GameEntity enemy)
-		{
-			EnemyTypeId enemyType = enemy.EnemyTypeId;
-			List<LootConfig> lootConfigs = _staticDataService.GetAllLootConfigs()
-				.Where(config => config.EnemyTypeFilter.Count == 0 || config.EnemyTypeFilter.Contains(enemyType))
-				.ToList();
+    public LootTypeId? GetRandomLoot(IEnumerable<LootTypeId> excludedLoot)
+    {
+      IEnumerable<LootConfig> lootConfigs = _staticDataService.GetAllLootConfigs();
 
-			if (lootConfigs.Count == 0)
-				return null;
+      if (excludedLoot != null)
+        lootConfigs = lootConfigs.Where(c => excludedLoot.Contains(c.TypeId) == false);
 
-			float totalWeight = lootConfigs.Sum(c => c.DropChanceWeight);
+      List<LootConfig> configs = lootConfigs.ToList();
+      if (configs.Count == 0)
+        return null;
 
-			if (totalWeight <= 0f)
-				return null;
+      float totalWeight = configs.Sum(c => c.DropChanceWeight);
+      if (totalWeight <= 0f)
+        return null;
 
-			float random = _random.Range(0f, totalWeight);
-			float current = 0f;
+      float roll = _random.Range(0f, totalWeight);
+      float current = 0f;
 
-			foreach (LootConfig config in lootConfigs)
-			{
-				current += config.DropChanceWeight;
+      foreach (LootConfig config in configs)
+      {
+        current += config.DropChanceWeight;
+        if (roll <= current)
+          return config.TypeId;
+      }
 
-				if (random <= current)
-					return config.TypeId;
-			}
-
-			return null;
-		}
-	}
+      return null;
+    }
+  }
 }

@@ -7,8 +7,8 @@ namespace Code.Gameplay.Features.Dungeon.Registrars
 	public class DestroyableDecorationTilemapRegistrar : EntityComponentRegistrar
 	{
 		[SerializeField] private Tilemap _wallDestroyableDecorationTilemap;
-		[SerializeField] private Tilemap _destroyableDecorationTilemap;
-		[SerializeField] private Sprite _destroyableDecorationSprite;
+		[SerializeField] private Tilemap _floorDestroyableDecorationTilemap;
+		[SerializeField] private Sprite _floorDestroyableDecorationSprite;
 		[SerializeField] private Sprite _wallDestroyableDecorationSprite;
 
 
@@ -16,9 +16,9 @@ namespace Code.Gameplay.Features.Dungeon.Registrars
 		{
 			Entity
 				.AddWallDestroyableDecorationTilemap(_wallDestroyableDecorationTilemap)
-				.AddDestroyableDecorationTilemap(_destroyableDecorationTilemap)
+				.AddFloorDestroyableDecorationTilemap(_floorDestroyableDecorationTilemap)
 				.AddWallDestroyableDecorationSprite(_wallDestroyableDecorationSprite)
-				.AddDestroyableDecorationSprite(_destroyableDecorationSprite)
+				.AddFloorDestroyableDecorationSprite(_floorDestroyableDecorationSprite)
 				;
 		}
 
@@ -27,14 +27,14 @@ namespace Code.Gameplay.Features.Dungeon.Registrars
 			if(Entity.hasWallDestroyableDecorationTilemap)
 				Entity.RemoveWallDestroyableDecorationTilemap();
 
-			if (Entity.hasDestroyableDecorationTilemap)
-				Entity.RemoveDestroyableDecorationTilemap();
+			if (Entity.hasFloorDestroyableDecorationTilemap)
+				Entity.RemoveFloorDestroyableDecorationTilemap();
 
 			if(Entity.hasWallDestroyableDecorationSprite)
 				Entity.RemoveWallDestroyableDecorationSprite();
 
-			if (Entity.hasDestroyableDecorationSprite)
-				Entity.RemoveDestroyableDecorationSprite();
+			if (Entity.hasFloorDestroyableDecorationSprite)
+				Entity.RemoveFloorDestroyableDecorationSprite();
 		}
 	}
 }

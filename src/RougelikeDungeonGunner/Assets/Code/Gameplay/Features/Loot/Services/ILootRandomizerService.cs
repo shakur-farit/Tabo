@@ -1,7 +1,9 @@
-﻿namespace Code.Gameplay.Features.Loot.Services
+﻿using System.Collections.Generic;
+
+namespace Code.Gameplay.Features.Loot.Services
 {
 	public interface ILootRandomizerService
 	{
-		LootTypeId? GetLootToDrop(GameEntity enemy);
+		LootTypeId? GetRandomLoot(IEnumerable<LootTypeId> excludedLoot);
 	}
 }

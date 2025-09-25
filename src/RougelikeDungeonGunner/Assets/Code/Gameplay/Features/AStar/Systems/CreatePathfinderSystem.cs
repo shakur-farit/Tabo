@@ -21,7 +21,7 @@ namespace Code.Gameplay.Features.AStar.Systems
 			_dungeons = game.GetGroup(GameMatcher
 				.AllOf(
 					GameMatcher.Dungeon,
-					GameMatcher.ValidPositions)
+					GameMatcher.EnemySpawnValidPositions)
 				.NoneOf(GameMatcher.PathfinderAvailable));
 		}
 
@@ -30,7 +30,7 @@ namespace Code.Gameplay.Features.AStar.Systems
 			foreach (GameEntity dungeon in _dungeons.GetEntities(_buffer))
 			{
 				CreateEntity.Empty()
-					.AddValidPositions(dungeon.ValidPositions)
+					.AddEnemySpawnValidPositions(dungeon.EnemySpawnValidPositions)
 					.AddMinDistanceForRepath(MinDistanceForRepath)
 					.AddPathfindingIntervalTimer(2f)
 					.AddPathfindingTimerLeft(2f)

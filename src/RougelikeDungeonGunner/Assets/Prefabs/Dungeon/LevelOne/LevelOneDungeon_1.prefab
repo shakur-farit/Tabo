@@ -13076,7 +13076,7 @@ GameObject:
   - component: {fileID: 3565838751867889358}
   - component: {fileID: 7183966143828716285}
   m_Layer: 13
-  m_Name: Tilemap6_DestroyableDecoration
+  m_Name: Tilemap6_FloorDestroyableDecoration
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27825,8 +27825,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EntityView: {fileID: 1733638422461797998}
   _wallDestroyableDecorationTilemap: {fileID: 3267312541050094987}
-  _destroyableDecorationTilemap: {fileID: 6501776830914657851}
-  _destroyableDecorationSprite: {fileID: 21300000, guid: acb472a000b9796439aa81e7fa7ee56d, type: 3}
+  _floorDestroyableDecorationTilemap: {fileID: 6501776830914657851}
+  _floorDestroyableDecorationSprite: {fileID: 21300000, guid: acb472a000b9796439aa81e7fa7ee56d, type: 3}
   _wallDestroyableDecorationSprite: {fileID: 21300000, guid: a9f1b49a9c2593348a1ca6ec7e5241c4, type: 3}
 --- !u!1 &7181964659672031439
 GameObject:

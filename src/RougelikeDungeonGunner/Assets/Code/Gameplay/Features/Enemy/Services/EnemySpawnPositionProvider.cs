@@ -13,7 +13,7 @@ namespace Code.Gameplay.Features.Enemy.Services
 
 		public Vector2 GetEnemyPosition(Vector2 heroPosition, float safeZoneRadius, List<Vector2Int> validPositions)
 		{
-			var position = GetRandomPosition(validPositions);
+			Vector2 position = GetRandomPosition(validPositions);
 
 			if (Vector2.Distance(position, heroPosition) > safeZoneRadius)
 				return position;

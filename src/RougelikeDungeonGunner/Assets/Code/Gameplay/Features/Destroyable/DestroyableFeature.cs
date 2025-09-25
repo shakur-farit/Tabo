@@ -7,8 +7,7 @@ namespace Code.Gameplay.Features.Destroyable
 	{
 		public DestroyableFeature(ISystemsFactory systems)
 		{
-			//Add(systems.Create<DestroyableItemAnimationPlaySystem>());
-			//Add(systems.Create<DestroyableItemAnimationPlayReactiveSystem>());
+		
 		}
-	}
+  }
 }

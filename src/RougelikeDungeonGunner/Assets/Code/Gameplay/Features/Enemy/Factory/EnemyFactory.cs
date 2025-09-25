@@ -93,8 +93,7 @@ namespace Code.Gameplay.Features.Enemy.Factory
 					.AddStatModifiers(InitStats.EmptyStatDictionary())
 					.AddCurrentHp(config.CurrentHp)
 					.AddMaxHp(baseStats[Stats.MaxHp])
-					.AddEffectSetups(new List<EffectSetup> 
-						{ EffectSetup.FormId(EffectTypeId.Damage, baseStats[Stats.Damage]) })
+					.AddEffectSetups(new List<EffectSetup> { EffectSetup.FormId(EffectTypeId.Damage, baseStats[Stats.Damage]) })
 					.AddSpeed(baseStats[Stats.Speed])
 					.AddBoxCastWidth(castSetup.Width)
 					.AddBoxCastHeight(castSetup.Height)
@@ -105,7 +104,9 @@ namespace Code.Gameplay.Features.Enemy.Factory
 					.AddTargetLayerMask(CollisionLayer.Hero.AsMask())
 					.AddViewPrefab(config.ViewPrefab)
 					.AddAuraRequest(config.StartAura)
-					.With(x => x.AddCurrentWeaponTypeId(config.StartWeapon),
+          .AddExcludedLoot(config.ExcludedLoot)
+          .With(x => x.AddLootDropChance(config.LootDropChance), when: config.LootDropChance > 0)
+          .With(x => x.AddCurrentWeaponTypeId(config.StartWeapon),
 						when: config.StartWeapon != WeaponTypeId.NoWeapon)
 					.With(x => x.AddStatusSetups(config.StatusSetups), 
 						when: config.StatusSetups.IsNullOrEmpty() == false)

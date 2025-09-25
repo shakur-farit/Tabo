@@ -28,5 +28,25 @@ namespace Code.Gameplay.Features.Destroyable.Systems
 				}
 			}
 		}
-	}
+  }
+
+
+  public class CreateWallDestroyableItemSystem : IExecuteSystem
+  {
+    private readonly IGroup<GameEntity> _collectors;
+
+    public CreateWallDestroyableItemSystem(GameContext game)
+    {
+      _collectors = game.GetGroup(GameMatcher
+        .AllOf(GameMatcher.DestroyableTargetsBuffer));
+    }
+
+    public void Execute()
+    {
+      foreach (GameEntity collector in _collectors)
+      {
+
+      }
+    }
+  }
 }

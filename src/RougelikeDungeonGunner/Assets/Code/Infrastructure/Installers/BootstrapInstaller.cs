@@ -9,7 +9,9 @@ using Code.Gameplay.Features.Ammo.Services;
 using Code.Gameplay.Features.AmmoPattern.Factory;
 using Code.Gameplay.Features.AStar.Services;
 using Code.Gameplay.Features.Aura.Factory;
+using Code.Gameplay.Features.Destroyable;
 using Code.Gameplay.Features.Dungeon.Factory;
+using Code.Gameplay.Features.Dungeon.Systems;
 using Code.Gameplay.Features.Effects.Factory;
 using Code.Gameplay.Features.Enchants.Factory;
 using Code.Gameplay.Features.Enemy.Factory;
@@ -118,6 +120,7 @@ namespace Code.Infrastructure.Installers
 		{
 			Container.Bind<IStaticDataService>().To<StaticDataService>().AsSingle();
 			Container.Bind<IStatusApplier>().To<StatusApplier>().AsSingle();
+			Container.Bind<ILootDropChanceService>().To<LootDropChanceService>().AsSingle();
 			Container.Bind<ILootRandomizerService>().To<LootRandomizerService>().AsSingle();
 			Container.Bind<IWeaponUpgradeValidator>().To<WeaponUpgradeValidator>().AsSingle();
 			Container.Bind<IWeaponStatsProvider>().To<WeaponStatsProvider>().AsSingle();
@@ -125,6 +128,7 @@ namespace Code.Infrastructure.Installers
 			Container.Bind<IWeaponUpgrader>().To<WeaponUpgrader>().AsSingle();
 			Container.BindInterfacesAndSelfTo<WeaponUpgrades>().AsSingle();
 			Container.Bind<IAmmoDirectionProvider>().To<AmmoDirectionProvider>().AsSingle();
+			Container.Bind<IValidPositionsProvider>().To<ValidPositionsProvider>().AsSingle();
 			Container.Bind<IEnemySpawnPositionProvider>().To<EnemySpawnPositionProvider>().AsSingle();
 			Container.BindInterfacesAndSelfTo<AStarPathfinder>().AsSingle();
 		}
@@ -145,6 +149,7 @@ namespace Code.Infrastructure.Installers
 			Container.Bind<IAuraFactory>().To<AuraFactory>().AsSingle();
 			Container.Bind<ISpecialEffectsFactory>().To<SpecialEffectsFactory>().AsSingle();
 			Container.Bind<IAmmoPatternFactory>().To<AmmoPatternFactory>().AsSingle();
+			Container.Bind<IDestroyableItemFactory>().To<DestroyableItemFactory>().AsSingle();
 		}
 
 		private void BindUIFactories()

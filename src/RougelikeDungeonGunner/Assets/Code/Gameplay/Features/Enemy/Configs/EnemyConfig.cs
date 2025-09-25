@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Code.Gameplay.Features.Aura;
 using Code.Gameplay.Features.Collection;
+using Code.Gameplay.Features.Loot;
 using Code.Gameplay.Features.Statuses;
 using Code.Gameplay.Features.Weapon;
 using Code.Infrastructure.View;
@@ -23,7 +24,9 @@ namespace Code.Gameplay.Features.Enemy.Configs
 		[Range(0, 100)] public int TargetAmount;
 		[Range(0, 100)] public float AttackRaduis;
 		[Range(0, 100)] public float AttackInterlal;
-		public CollisionCastSetup CastSetup;
+		[Range(0, 100)] public int LootDropChance;
+    public List<LootTypeId> ExcludedLoot;
+    public CollisionCastSetup CastSetup;
 		public List<StatusSetup> StatusSetups;
 
 		private void OnValidate()

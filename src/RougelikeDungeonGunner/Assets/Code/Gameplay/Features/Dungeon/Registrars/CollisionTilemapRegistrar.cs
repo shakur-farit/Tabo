@@ -13,7 +13,7 @@ namespace Code.Gameplay.Features.Dungeon.Registrars
 		{
 			Entity
 				.AddCollisionTilemap(_collisionTilemap)
-				.AddValidSprite(_validSprite);
+				.AddEnemySpawnValidSprite(_validSprite);
 		}
 
 		public override void UnregisterComponents()
@@ -21,8 +21,8 @@ namespace Code.Gameplay.Features.Dungeon.Registrars
 			if (Entity.hasCollisionTilemap)
 				Entity.RemoveCollisionTilemap();
 
-			if(Entity.hasValidSprite)
-				Entity.RemoveValidSprite();
+			if(Entity.hasEnemySpawnValidSprite)
+				Entity.RemoveEnemySpawnValidSprite();
 		}
 	}
 }

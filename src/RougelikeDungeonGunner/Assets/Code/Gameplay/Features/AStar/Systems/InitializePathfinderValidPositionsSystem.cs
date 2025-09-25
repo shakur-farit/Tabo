@@ -17,7 +17,7 @@ namespace Code.Gameplay.Features.AStar.Systems
 			_pathfinders = game.GetGroup(GameMatcher
 				.AllOf(
 					GameMatcher.Pathfinder,
-					GameMatcher.ValidPositions)
+					GameMatcher.EnemySpawnValidPositions)
 				.NoneOf(GameMatcher.PathfinderInitialized));
 		}
 
@@ -25,7 +25,7 @@ namespace Code.Gameplay.Features.AStar.Systems
 		{
 			foreach (GameEntity pathfinders in _pathfinders.GetEntities(_buffer))
 			{
-				_pathfinder.Initialize(pathfinders.ValidPositions);
+				_pathfinder.Initialize(pathfinders.EnemySpawnValidPositions);
 
 				pathfinders.isPathfinderInitialized = true;
 			}

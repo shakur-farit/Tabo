@@ -36,7 +36,7 @@ namespace Code.Gameplay.Features.Enemy.Systems
 			_dungeons = game.GetGroup(GameMatcher
 				.AllOf(
 					GameMatcher.Dungeon,
-					GameMatcher.ValidPositions));
+					GameMatcher.EnemySpawnValidPositions));
 		}
 
 		public void Execute()
@@ -50,7 +50,7 @@ namespace Code.Gameplay.Features.Enemy.Systems
 						_enemyFactory.CreateEnemy(enemiesInWave.EnemyTypeId, GetPosition(
 							hero.WorldPosition, 
 							level.HeroSafeZoneRadius,
-							dungeon.ValidPositions));
+							dungeon.EnemySpawnValidPositions));
 
 				level.RemoveEnemyWave();
 			}

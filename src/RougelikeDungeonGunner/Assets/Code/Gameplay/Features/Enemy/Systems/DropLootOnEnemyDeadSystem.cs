@@ -8,21 +8,26 @@ namespace Code.Gameplay.Features.Enemy.Systems
 	public class DropLootOnEnemyDeadSystem : IExecuteSystem
 	{
 		private readonly ILootRandomizerService _randomizer;
-		private readonly ILootFactory _lootFactory;
+    private readonly ILootDropChanceService _dropChance;
+    private readonly ILootFactory _lootFactory;
 		private readonly IGroup<GameEntity> _enemies;
 
 		public DropLootOnEnemyDeadSystem(
 			GameContext game,
 			ILootRandomizerService randomizer,
+			ILootDropChanceService dropChance,
 			ILootFactory lootFactory)
 		{
 			_randomizer = randomizer;
-			_lootFactory = lootFactory;
+      _dropChance = dropChance;
+      _lootFactory = lootFactory;
 			_enemies = game.GetGroup(GameMatcher
 				.AllOf(
 					GameMatcher.Enemy,
 					GameMatcher.WorldPosition,
-					GameMatcher.Dead,
+					GameMatcher.LootDropChance,
+					GameMatcher.ExcludedLoot,
+          GameMatcher.Dead,
 					GameMatcher.ProcessingDeath));
 		}
 
@@ -30,7 +35,11 @@ namespace Code.Gameplay.Features.Enemy.Systems
 		{
 			foreach (GameEntity enemy in _enemies)
 			{
-				LootTypeId? loot = _randomizer.GetLootToDrop(enemy);
+				if(_dropChance.ShouldDrop(enemy.LootDropChance) == false)
+					continue;
+
+
+				LootTypeId? loot = _randomizer.GetRandomLoot(enemy.ExcludedLoot);
 
 				if (loot.HasValue)
 					_lootFactory.CreateLoot(loot.Value, enemy.WorldPosition);
