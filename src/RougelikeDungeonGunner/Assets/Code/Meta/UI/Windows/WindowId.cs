@@ -16,6 +16,7 @@
 		NotEnoughCoinsWindow = 11,
 		MaxValueReachedWindow = 12,
 		EnchantStatsWindow = 13,
-		EnchantAlreadyAppliedWindow = 14
+		EnchantAlreadyAppliedWindow = 14,
+		PauseWindow = 15
 	}
 }

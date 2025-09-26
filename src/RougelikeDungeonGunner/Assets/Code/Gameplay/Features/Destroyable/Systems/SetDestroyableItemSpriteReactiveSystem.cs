@@ -22,7 +22,7 @@ namespace Code.Gameplay.Features.Destroyable.Systems
     }
 
     protected override bool Filter(GameEntity item) =>
-      item.isDestroyableItem && item.hasDestroyableItemTypeId && item.hasSpriteRenderer && item.isDestroyed == false;
+      item.isDestroyableItem && item.hasDestroyableItemTypeId && item.hasSpriteRenderer;
 
     protected override void Execute(List<GameEntity> items)
     {

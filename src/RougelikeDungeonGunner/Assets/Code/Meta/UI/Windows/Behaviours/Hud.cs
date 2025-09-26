@@ -7,9 +7,5 @@ namespace Code.Meta.UI.Windows.Behaviours
 		[Inject]
 		public void Constructor() => 
 			Id = WindowId.Hud;
-
-		protected override void Initialize()
-		{
-		}
-	}
+  }
 }

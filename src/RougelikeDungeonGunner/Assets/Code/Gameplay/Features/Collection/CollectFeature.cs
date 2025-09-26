@@ -12,7 +12,8 @@ namespace Code.Gameplay.Features.Collection
 			Add(systems.Create<CastBoxForCollisionsSystem>());
 			Add(systems.Create<CastLineForCollisionsSystem>());
 			Add(systems.Create<CastForTargetsWithLimitSystem>());
-			Add(systems.Create<CastForDestroyableTargetsSystem>());
+			Add(systems.Create<CastForDestroyableTargetsWithLimitSystem>());
+			Add(systems.Create<CastForDestroyableTargetsWithNoLimitSystem>());
 
 			Add(systems.Create<MarkReachedSystem>());
 			Add(systems.Create<MarkDestroyableReachedSystem>());

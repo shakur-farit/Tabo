@@ -1,28 +1,29 @@
 ﻿using Code.Meta.UI.Windows.Service;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 using Zenject;
 
 namespace Code.Meta.UI.Windows.Behaviours
 {
-	public class NotEnoughCoinsWindow : BaseWindow
-	{
-		[SerializeField] private Button _closeButton;
+  public class NotEnoughCoinsWindow : BaseWindow
+  {
+    [SerializeField] private Button _closeButton;
 
-		private IWindowService _windowService;
+    private IWindowService _windowService;
 
-		[Inject]
-		public void Constructor(IWindowService windowService)
-		{
-			Id = WindowId.NotEnoughCoinsWindow;
+    [Inject]
+    public void Constructor(IWindowService windowService)
+    {
+      Id = WindowId.NotEnoughCoinsWindow;
 
-			_windowService = windowService;
-		}
+      _windowService = windowService;
+    }
 
-		protected override void Initialize() =>
-			_closeButton.onClick.AddListener(Close);
+    protected override void Initialize() =>
+      _closeButton.onClick.AddListener(Close);
 
-		private void Close() =>
-			_windowService.Close(WindowId.NotEnoughCoinsWindow);
-	}
+    private void Close() =>
+      _windowService.Close(WindowId.NotEnoughCoinsWindow);
+  }
 }

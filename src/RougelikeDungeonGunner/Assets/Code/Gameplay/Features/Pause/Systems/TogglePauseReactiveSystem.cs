@@ -26,17 +26,13 @@ namespace Code.Gameplay.Features.Pause.Systems
 		{
 			foreach (InputEntity input in inputs)
 			{
-				if (input.isPaused)
-				{
-					_time.StartTime();
-					input.isPaused = false;
-				}
-				else
-				{
-					_time.StopTime();
-					input.isPaused = true;
-				}
-			}
-		}
+        if (input.isPaused)
+          _time.StartTime();
+        else
+          _time.StopTime();
+
+        input.isPaused = _time.Paused;
+      }
+    }
 	}
 }

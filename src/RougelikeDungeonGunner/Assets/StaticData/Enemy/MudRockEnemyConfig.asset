@@ -24,6 +24,8 @@ MonoBehaviour:
   TargetAmount: 1
   AttackRaduis: 1
   AttackInterlal: 2
+  LootDropChance: 70
+  ExcludedLoot: 
   CastSetup:
     CastStartPosiotion: {x: 0, y: 0.6}
     ForwardCastDistance: 0

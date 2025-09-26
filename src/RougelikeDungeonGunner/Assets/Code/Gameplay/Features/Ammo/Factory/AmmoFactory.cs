@@ -14,9 +14,8 @@ namespace Code.Gameplay.Features.Ammo.Factory
 	public class AmmoFactory : IAmmoFactory
 	{
 		private const int BufferSize = 16;
-		private const int NoLimit = 0;
 
-		private readonly IIdentifierService _identifier;
+    private readonly IIdentifierService _identifier;
 		private readonly IStaticDataService _staticDataService;
 
 		public AmmoFactory(IIdentifierService identifier, IStaticDataService staticDataService)
@@ -97,8 +96,7 @@ namespace Code.Gameplay.Features.Ammo.Factory
 					.AddRadius(config.ContactRadius)
 					.AddForwardCastDistance(castSetup.ForwardCastDistance)
 					.AddTargetsBuffer(new List<int>(BufferSize))
-					//.AddTargetLimit(NoLimit)
-					.AddProcessedTargets(new List<int>(BufferSize))
+          .AddProcessedTargets(new List<int>(BufferSize))
 					.AddDestroyableCollectRadius(config.ContactRadius)
 					.AddDestroyableTargetLayerMask(CollisionLayer.Destroyable.AsMask())
 					.AddDestroyableTargetsBuffer(new(BufferSize))

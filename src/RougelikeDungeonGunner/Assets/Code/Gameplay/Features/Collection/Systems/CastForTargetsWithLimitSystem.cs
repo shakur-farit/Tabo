@@ -40,7 +40,7 @@ namespace Code.Gameplay.Features.Collection.Systems
 					{
 						entity.TargetsBuffer.Add(targetId);
 						entity.ProcessedTargets.Add(targetId);
-					}
+          }
 				}
 
 				if (entity.isCollectTargetsContinuously == false)

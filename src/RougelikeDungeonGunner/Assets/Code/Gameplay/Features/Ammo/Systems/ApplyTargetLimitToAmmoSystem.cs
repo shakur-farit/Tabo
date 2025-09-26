@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Net;
 using Entitas;
 
 namespace Code.Gameplay.Features.Ammo.Systems
@@ -21,13 +20,12 @@ namespace Code.Gameplay.Features.Ammo.Systems
 		{
 			return context.CreateCollector(GameMatcher.AllOf(
 					GameMatcher.Ammo,
-					/*GameMatcher.TargetLimit,*/
-					GameMatcher.ProducerId)
+          GameMatcher.ProducerId)
 				.Added());
 		}
 
 		protected override bool Filter(GameEntity ammunitions) =>
-			ammunitions.isAmmo && ammunitions.hasProducerId && ammunitions.hasTargetLimit;
+			ammunitions.isAmmo && ammunitions.hasProducerId;
 
 		protected override void Execute(List<GameEntity> ammunitions)
 		{

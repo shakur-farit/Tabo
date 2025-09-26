@@ -17,5 +17,5 @@ MonoBehaviour:
   ViewPrefab: {fileID: 5787494655573491850, guid: f2586d5cefc64a54eaeba48f18dbac65, type: 3}
   Sprite: {fileID: 3641686006095517685, guid: 1a59e6589a702274ca77ec6b61130abd, type: 3}
   AnimatorController: {fileID: 9100000, guid: 894eef989bf0b88489355df47f8b619d, type: 2}
-  LootDropChance: 0
-  ExcludedLoot: 
+  LootDropChance: 10
+  ExcludedLoot: 0300000004000000050000000600000007000000

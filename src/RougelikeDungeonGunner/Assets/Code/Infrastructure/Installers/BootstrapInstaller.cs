@@ -29,6 +29,7 @@ using Code.Gameplay.StaticData;
 using Code.Infrastructure.AssetManagement;
 using Code.Infrastructure.Identifiers;
 using Code.Infrastructure.Loading;
+using Code.Infrastructure.Services;
 using Code.Infrastructure.States.Factory;
 using Code.Infrastructure.States.GameStates;
 using Code.Infrastructure.States.StateMachine;
@@ -180,6 +181,7 @@ namespace Code.Infrastructure.Installers
 		{
 			Container.BindInterfacesTo<BootstrapInstaller>().FromInstance(this).AsSingle();
 			Container.Bind<IIdentifierService>().To<IdentifierService>().AsSingle();
+			Container.Bind<IQuitGameService>().To<QuitGameService>().AsSingle();
 		}
 
 		private void BindAssetManagementServices()

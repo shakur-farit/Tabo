@@ -1,4 +1,5 @@
-﻿using Code.Infrastructure.States.GameStates;
+﻿using Code.Infrastructure.Services;
+using Code.Infrastructure.States.GameStates;
 using Code.Infrastructure.States.StateMachine;
 using Code.Meta.UI.Windows.Service;
 using UnityEngine;
@@ -14,15 +15,17 @@ namespace Code.Meta.UI.Windows.Behaviours
 
 		private IWindowService _windowService;
 		private IGameStateMachine _stateMachine;
+    private IQuitGameService _quit;
 
-		[Inject]
-		public void Constructor(IWindowService windowService, IGameStateMachine stateMachine)
+    [Inject]
+		public void Constructor(IWindowService windowService, IGameStateMachine stateMachine, IQuitGameService quit)
 		{
 			Id = WindowId.GameOverWindow;
 
 			_windowService = windowService;
 			_stateMachine = stateMachine;
-		}
+      _quit = quit;
+    }
 
 		protected override void Initialize()
 		{
@@ -41,11 +44,7 @@ namespace Code.Meta.UI.Windows.Behaviours
 		{
 			CloseWindow();
 
-#if UNITY_EDITOR
-			UnityEditor.EditorApplication.isPlaying = false;
-#else
-    Application.Quit();
-#endif
+			_quit.QuitGame();
 		}
 
 

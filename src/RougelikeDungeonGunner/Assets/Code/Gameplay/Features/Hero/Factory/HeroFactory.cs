@@ -93,6 +93,7 @@ namespace Code.Gameplay.Features.Hero.Factory
 					.With(x => x.isLinerMovement = true)
 					.With(x => x.isUnweaponed = true)
 					.With(x => x.isReadyToCollectTargets = true)
+					.With(x => x.isCollectTargetsContinuously = true)
 				;
 		}
 

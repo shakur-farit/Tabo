@@ -1,5 +1,4 @@
 ﻿using Entitas;
-using UnityEngine;
 
 namespace Code.Gameplay.Features.Destroyable.Systems
 {
@@ -18,20 +17,18 @@ namespace Code.Gameplay.Features.Destroyable.Systems
 		public void Execute()
 		{
 			foreach (GameEntity collector in _collectors)
-			{
-				foreach (int id in collector.DestroyableTargetsBuffer)
-				{
-					GameEntity destroyable = _game.GetEntityWithId(id);
+      foreach (int id in collector.DestroyableTargetsBuffer)
+      {
+        GameEntity destroyable = _game.GetEntityWithId(id);
 
-					if(destroyable.isDestroyed)
-						continue;
+				if(destroyable.isDestroying)
+					continue;
 
-					if (destroyable.hasDestroyableAnimator) 
-						destroyable.DestroyableAnimator.PlayDestroy();
+        if(destroyable.hasDestroyableAnimator)
+          destroyable.DestroyableAnimator.PlayDestroy();
 
-					destroyable.isDestroyed = true;
-        }
-			}
-		}
+        destroyable.isDestroying = true;
+      }
+    }
   }
 }
