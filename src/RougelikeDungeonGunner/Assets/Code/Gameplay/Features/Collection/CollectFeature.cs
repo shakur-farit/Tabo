@@ -15,8 +15,10 @@ namespace Code.Gameplay.Features.Collection
 			Add(systems.Create<CastForDestroyableTargetsSystem>());
 
 			Add(systems.Create<MarkReachedSystem>());
+			Add(systems.Create<MarkDestroyableReachedSystem>());
 
 			Add(systems.Create<CleanupTargetBuffersSystem>());
+			Add(systems.Create<CleanupDestroyableTargetBuffersSystem>());
 		}
 	}
 }

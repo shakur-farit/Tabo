@@ -723,6 +723,60 @@ MonoBehaviour:
     m_SerializedLabels:
     - DestroyableItemConfig
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 998dc478c704c28458a5f9312e496844
+    m_Address: Assets/StaticData/DestroyableItem/BlueBottleConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - DestroyableItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2164322903b740c4aa6ae5f6fc92f114
+    m_Address: Assets/StaticData/DestroyableItem/GreenBottleConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - DestroyableItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 62dc63872ab02f348b68997a727f3b16
+    m_Address: Assets/StaticData/DestroyableItem/PinkBottleConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - DestroyableItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5c205d82a4414c04e8b65d4f77a311a6
+    m_Address: Assets/StaticData/DestroyableItem/LimeBottleConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - DestroyableItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a18360923c8dae340ac0ae7ae021c76f
+    m_Address: Assets/StaticData/DestroyableItem/RedBottleConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - DestroyableItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5973578728b51c64d83f54bc97069519
+    m_Address: Assets/StaticData/DestroyableItem/GoldenBarrelConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - DestroyableItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6257e7911f03beb4a8614dfb3cfc8fca
+    m_Address: Assets/StaticData/DestroyableItem/WoodenBarrelConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - DestroyableItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 993da6dd8ad4bcd4abe4011a8d1a0f7a
+    m_Address: Assets/StaticData/DestroyableItem/VaseConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - DestroyableItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 48fe99f63a2387541b431e3db612fa95
+    m_Address: Assets/StaticData/DestroyableItem/ShelfConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - DestroyableItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 7128017d563554245a79368046c75e1a, type: 2}
   m_SchemaSet:

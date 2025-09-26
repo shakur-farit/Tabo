@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c42418304c1e3f40ae564d9127cc208, type: 3}
+  m_Name: RedBottleConfig
+  m_EditorClassIdentifier: 
+  TypeId: 5
+  PlacingTypeId: 2
+  ViewPrefab: {fileID: 5787494655573491850, guid: f2586d5cefc64a54eaeba48f18dbac65, type: 3}
+  Sprite: {fileID: 2622213409082645890, guid: ce9b0fcd06c36d541912c391dbdef096, type: 3}
+  AnimatorController: {fileID: 9100000, guid: b479f051e2b118345b780a03b494138d, type: 2}
+  LootDropChance: 0
+  ExcludedLoot: 

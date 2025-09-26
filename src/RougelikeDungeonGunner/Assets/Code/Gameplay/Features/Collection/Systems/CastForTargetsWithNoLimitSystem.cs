@@ -28,6 +28,7 @@ namespace Code.Gameplay.Features.Collection.Systems
 
 		public void Execute()
 		{
+
 			foreach (GameEntity ready in _ready.GetEntities(_buffer))
 			{
 				ready.TargetsBuffer.AddRange(TargetsInRadius(ready));

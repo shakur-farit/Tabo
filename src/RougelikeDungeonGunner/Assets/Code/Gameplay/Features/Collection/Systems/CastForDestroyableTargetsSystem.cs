@@ -19,7 +19,7 @@ namespace Code.Gameplay.Features.Collection.Systems
 			_ready = game.GetGroup(GameMatcher
 				.AllOf(
 					GameMatcher.DestroyableTargetsBuffer,
-					GameMatcher.Radius,
+					GameMatcher.DestroyableCollectRadius,
 					GameMatcher.DestroyableTargetLayerMask,
 					GameMatcher.WorldPosition,
 					GameMatcher.ReadyToCollectTargets));
@@ -36,10 +36,13 @@ namespace Code.Gameplay.Features.Collection.Systems
 			Vector2 center = entity.WorldPosition;
 
 			if (entity.hasCastStartPositionTransform)
+			{
 				center = entity.CastStartPositionTransform.position;
+				Debug.Log($"{entity.WorldPosition} / {center}");
+			}
 
 			return _physicsService
-				.CircleCast(center, entity.Radius, entity.DestroyableTargetLayerMask)
+				.CircleCast(center, entity.DestroyableCollectRadius, entity.DestroyableTargetLayerMask)
 				.Select(x => x.Id);
 		}
 	}

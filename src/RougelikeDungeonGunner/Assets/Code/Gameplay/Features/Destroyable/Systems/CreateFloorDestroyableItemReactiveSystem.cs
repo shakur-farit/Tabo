@@ -20,7 +20,7 @@ namespace Code.Gameplay.Features.Destroyable.Systems
     {
       foreach (GameEntity dungeon in dungeons)
       foreach (Vector2Int position in dungeon.FloorDestroyableItemValidPositions)
-        _factory.CreateDestroyableItem(DestroyableItemPlacingTypeId.Wall, (Vector2)position);
+        _factory.CreateDestroyableItem(DestroyableItemPlacingTypeId.Floor, (Vector2)position);
     }
   }
 }
