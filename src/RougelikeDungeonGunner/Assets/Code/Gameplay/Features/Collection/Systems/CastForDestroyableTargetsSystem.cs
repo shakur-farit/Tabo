@@ -35,11 +35,8 @@ namespace Code.Gameplay.Features.Collection.Systems
 		{
 			Vector2 center = entity.WorldPosition;
 
-			if (entity.hasCastStartPositionTransform)
-			{
+			if (entity.hasCastStartPositionTransform) 
 				center = entity.CastStartPositionTransform.position;
-				Debug.Log($"{entity.WorldPosition} / {center}");
-			}
 
 			return _physicsService
 				.CircleCast(center, entity.DestroyableCollectRadius, entity.DestroyableTargetLayerMask)

@@ -14,7 +14,7 @@ namespace Code.Gameplay.Features.Ammo.Configs
     public EntityBehaviour ViewPrefab;
     public Sprite Sprite;
 		public Material Material;
-		public AmmoStats Stats;
+		[Range(0f, 100f)] public float ContactRadius;
 		public CollisionCastSetup CastSetup;
 		public TrailSetup TrailSetup;
 	}

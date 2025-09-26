@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Net;
 using Entitas;
 
 namespace Code.Gameplay.Features.Ammo.Systems
@@ -20,8 +21,8 @@ namespace Code.Gameplay.Features.Ammo.Systems
 		{
 			return context.CreateCollector(GameMatcher.AllOf(
 					GameMatcher.Ammo,
-					GameMatcher.ProducerId,
-					GameMatcher.TargetLimit)
+					/*GameMatcher.TargetLimit,*/
+					GameMatcher.ProducerId)
 				.Added());
 		}
 

@@ -1,4 +1,5 @@
 ﻿using Entitas;
+using UnityEngine;
 
 namespace Code.Gameplay.Features.Destroyable.Systems
 {
@@ -25,10 +26,10 @@ namespace Code.Gameplay.Features.Destroyable.Systems
 					if(destroyable.isDestroyed)
 						continue;
 
-					if (destroyable.hasDestroyableAnimator)
+					if (destroyable.hasDestroyableAnimator) 
 						destroyable.DestroyableAnimator.PlayDestroy();
 
-          destroyable.isDestroyed = true;
+					destroyable.isDestroyed = true;
         }
 			}
 		}

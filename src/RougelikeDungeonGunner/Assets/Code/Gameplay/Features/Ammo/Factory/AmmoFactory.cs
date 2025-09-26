@@ -87,7 +87,6 @@ namespace Code.Gameplay.Features.Ammo.Factory
 		private GameEntity CreateAmmoEntity(AmmoTypeId ammoTypeId, Vector3 at)
 		{
 			AmmoConfig config = _staticDataService.GetAmmoConfig(ammoTypeId);
-			AmmoStats stats = config.Stats;
 			CollisionCastSetup castSetup = config.CastSetup;
 
 			return CreateEntity.Empty()
@@ -95,11 +94,14 @@ namespace Code.Gameplay.Features.Ammo.Factory
 					.AddWorldPosition(at)
 					.AddAmmoTypeId(ammoTypeId)
 					.AddViewPrefab(config.ViewPrefab)
-					.AddRadius(stats.ContactRadius)
+					.AddRadius(config.ContactRadius)
 					.AddForwardCastDistance(castSetup.ForwardCastDistance)
 					.AddTargetsBuffer(new List<int>(BufferSize))
-					.AddTargetLimit(NoLimit)
+					//.AddTargetLimit(NoLimit)
 					.AddProcessedTargets(new List<int>(BufferSize))
+					.AddDestroyableCollectRadius(config.ContactRadius)
+					.AddDestroyableTargetLayerMask(CollisionLayer.Destroyable.AsMask())
+					.AddDestroyableTargetsBuffer(new(BufferSize))
 					.With(x => x.AddSpecialEffectTypeId(config.CollideSpecialEffectTypeId),
 						when: config.CollideSpecialEffectTypeId != SpecialEffectTypeId.NoSpecialEffect)
 					.With(x => x.isAmmo = true)

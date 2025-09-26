@@ -18,6 +18,8 @@ namespace Code.Gameplay.Features.Hero.Configs
 		[Range(1, 100)] public int CurrentHp;
 		[Range(1, 100)] public int MaxHp;
 		[Range(1, 100)] public int MovementSpeed;
+		[Range(0, 100)] public float LootPickupRadius;
+		[Range(0, 100)] public float DestroyableCollidingRadius;
 
 		public CollisionCastSetup CastSetup;
 

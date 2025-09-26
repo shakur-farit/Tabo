@@ -16,7 +16,8 @@ namespace Code.Gameplay.Features.Hero.Factory
 {
 	public class HeroFactory : IHeroFactory
 	{
-		private const float PickupRadius = 2f;
+		private const int BufferSize = 16;
+
 		private readonly IIdentifierService _identifier;
 		private readonly IStaticDataService _staticDataService;
 		private readonly IProgressProvider _progressProvider;
@@ -81,11 +82,11 @@ namespace Code.Gameplay.Features.Hero.Factory
 					.AddSpeed(baseStats[Stats.Speed])
 					.AddViewPrefab(config.ViewPrefab)
 					.AddCoins(_progressProvider.HeroData.CurrentCoinsCount)
-					.AddPickupRadius(PickupRadius)
+					.AddPickupRadius(config.LootPickupRadius)
 					.AddCurrentWeaponTypeId(CurrentWeapon(config))
 					.AddAuraRequest(config.StartAura)
-					.AddDestroyableTargetsBuffer(new())
-					.AddDestroyableCollectRadius(0.5f)
+					.AddDestroyableTargetsBuffer(new(BufferSize))
+					.AddDestroyableCollectRadius(config.DestroyableCollidingRadius)
 					.AddDestroyableTargetLayerMask(CollisionLayer.Destroyable.AsMask())
 					.With(x => x.isHero = true)
 					.With(x => x.isMovementAvailable = true)
