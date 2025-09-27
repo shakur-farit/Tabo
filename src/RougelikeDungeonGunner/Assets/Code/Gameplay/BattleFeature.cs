@@ -6,7 +6,6 @@ using Code.Gameplay.Features.Aura;
 using Code.Gameplay.Features.CharacterStats;
 using Code.Gameplay.Features.Collection;
 using Code.Gameplay.Features.Destroyable;
-using Code.Gameplay.Features.Destroyable.Behaviours;
 using Code.Gameplay.Features.Dungeon;
 using Code.Gameplay.Features.EffectApplication;
 using Code.Gameplay.Features.Effects;
@@ -17,7 +16,6 @@ using Code.Gameplay.Features.Level;
 using Code.Gameplay.Features.Lifetime;
 using Code.Gameplay.Features.Loot;
 using Code.Gameplay.Features.Movement;
-using Code.Gameplay.Features.Pause;
 using Code.Gameplay.Features.Rotation;
 using Code.Gameplay.Features.SpecialEffect;
 using Code.Gameplay.Features.Statuses;
@@ -62,8 +60,6 @@ namespace Code.Gameplay
 			Add(systems.Create<StatusFeature>());
 			Add(systems.Create<StatsFeature>());
 			Add(systems.Create<AuraFeature>());
-
-			Add(systems.Create<PauseFeature>());
 
 			Add(systems.Create<ProcessGameDestructedFeature>());
 			Add(systems.Create<ProcessInputDestructedFeature>());

@@ -1,9 +1,12 @@
-﻿using Entitas;
+﻿using System.Collections.Generic;
+using Entitas;
 
 namespace Code.Gameplay.Features.Weapon.Systems
 {
 	public class FindClosestHeroTargetSystem : IExecuteSystem
 	{
+		private readonly List<GameEntity> _buffer = new(1);
+
 		private readonly IGroup<GameEntity> _targets;
 		private readonly IGroup<GameEntity> _weapons;
 
@@ -28,7 +31,7 @@ namespace Code.Gameplay.Features.Weapon.Systems
 			{
 				float closestDistance = float.MaxValue;
 
-				foreach (GameEntity target in _targets)
+				foreach (GameEntity target in _targets.GetEntities(_buffer))
 				{
 					float distance = (target.WorldPosition - weapon.RotationPointTransform.position).magnitude;
 
@@ -36,6 +39,8 @@ namespace Code.Gameplay.Features.Weapon.Systems
 					{
 						closestDistance = distance;
 						weapon.ReplaceClosestTargetPosition(target.WorldPosition);
+
+						target.isClosestTarget = true;
 					}
 				}
 			}

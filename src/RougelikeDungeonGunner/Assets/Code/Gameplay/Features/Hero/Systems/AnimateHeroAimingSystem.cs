@@ -1,5 +1,6 @@
 ﻿using Code.Gameplay.Common.Direction;
 using Entitas;
+using UnityEngine;
 
 namespace Code.Gameplay.Features.Hero.Systems
 {
@@ -41,11 +42,11 @@ namespace Code.Gameplay.Features.Hero.Systems
 				return FacingDirection.Up;
 			if (angle > 112f + Hysteresis && angle <= 158f - Hysteresis)
 				return FacingDirection.UpLeft;
-			if ((angle <= 180f && angle > 158f + Hysteresis) || (angle > -180f && angle <= -135f - Hysteresis))
+			if (angle > 158f - Hysteresis || angle <= -135f + Hysteresis)
 				return FacingDirection.Left;
-			if (angle > -135f + Hysteresis && angle <= -45f - Hysteresis)
+			if (angle > -135f - Hysteresis && angle <= -45f + Hysteresis)
 				return FacingDirection.Down;
-			if ((angle > -45f + Hysteresis && angle <= 0f) || (angle > 0f && angle < 22f - Hysteresis))
+			if (angle > -45f + Hysteresis && angle <= 22f - Hysteresis)
 				return FacingDirection.Right;
 
 			return FacingDirection.Up;

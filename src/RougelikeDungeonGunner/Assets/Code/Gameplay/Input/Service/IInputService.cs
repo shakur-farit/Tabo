@@ -13,8 +13,5 @@ namespace Code.Gameplay.Input.Service
     Vector2 GetScreenMousePosition();
     Vector2 GetWorldMousePosition();
     bool GetLeftMouseButtonUp();
-
-    bool GetEscButtonDown();
-
   }
 }

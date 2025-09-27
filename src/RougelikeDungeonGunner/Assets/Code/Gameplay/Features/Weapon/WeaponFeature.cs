@@ -26,8 +26,8 @@ namespace Code.Gameplay.Features.Weapon
 			Add(systems.Create<FindClosestHeroTargetSystem>());
 			Add(systems.Create<FindClosestEnemyTargetSystem>());
 			Add(systems.Create<RotateHeroWeaponAlongClosestTargetSystem>());
+			Add(systems.Create<RotateHeroWeaponAlongMovementDirectionSystem>());
 			Add(systems.Create<RotateEnemyWeaponAlongHeroSystem>());
-			Add(systems.Create<HeroWeaponDefaultRotateDirectionWithoutTargetSystem>());
 			Add(systems.Create<SetWeaponDirectionSystem>());
 			Add(systems.Create<PushBackHeroOnCollisionFrontWeaponSystem>());
 			Add(systems.Create<CalculateMultiPelletCountSystem>());
@@ -43,7 +43,7 @@ namespace Code.Gameplay.Features.Weapon
 			
 			Add(systems.Create<MarkDestructWeaponWithoutOwnerSystem>());
 
-			Add(systems.Create<CleanupClosestTargetSystem>());
+			Add(systems.Create<CleanupClosestTargetPositionSystem>());
 		}
 	}
 }

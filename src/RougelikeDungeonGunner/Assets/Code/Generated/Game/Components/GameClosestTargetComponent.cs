@@ -6,19 +6,19 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-public sealed partial class InputMatcher {
+public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<InputEntity> _matcherEscButtonDown;
+    static Entitas.IMatcher<GameEntity> _matcherClosestTarget;
 
-    public static Entitas.IMatcher<InputEntity> EscButtonDown {
+    public static Entitas.IMatcher<GameEntity> ClosestTarget {
         get {
-            if (_matcherEscButtonDown == null) {
-                var matcher = (Entitas.Matcher<InputEntity>)Entitas.Matcher<InputEntity>.AllOf(InputComponentsLookup.EscButtonDown);
-                matcher.componentNames = InputComponentsLookup.componentNames;
-                _matcherEscButtonDown = matcher;
+            if (_matcherClosestTarget == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.ClosestTarget);
+                matcher.componentNames = GameComponentsLookup.componentNames;
+                _matcherClosestTarget = matcher;
             }
 
-            return _matcherEscButtonDown;
+            return _matcherClosestTarget;
         }
     }
 }
@@ -31,20 +31,20 @@ public sealed partial class InputMatcher {
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-public partial class InputEntity {
+public partial class GameEntity {
 
-    static readonly Code.Gameplay.Input.EscButtonDown escButtonDownComponent = new Code.Gameplay.Input.EscButtonDown();
+    static readonly Code.Gameplay.Features.Weapon.ClosestTarget closestTargetComponent = new Code.Gameplay.Features.Weapon.ClosestTarget();
 
-    public bool isEscButtonDown {
-        get { return HasComponent(InputComponentsLookup.EscButtonDown); }
+    public bool isClosestTarget {
+        get { return HasComponent(GameComponentsLookup.ClosestTarget); }
         set {
-            if (value != isEscButtonDown) {
-                var index = InputComponentsLookup.EscButtonDown;
+            if (value != isClosestTarget) {
+                var index = GameComponentsLookup.ClosestTarget;
                 if (value) {
                     var componentPool = GetComponentPool(index);
                     var component = componentPool.Count > 0
                             ? componentPool.Pop()
-                            : escButtonDownComponent;
+                            : closestTargetComponent;
 
                     AddComponent(index, component);
                 } else {

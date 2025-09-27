@@ -1,4 +1,5 @@
 ﻿using Code.Gameplay.Features.Enemy.Systems;
+using Code.Gameplay.Features.Weapon.Systems;
 using Code.Infrastructure.Systems;
 
 namespace Code.Gameplay.Features.Enemy
@@ -11,6 +12,7 @@ namespace Code.Gameplay.Features.Enemy
 
 			Add(systems.Create<SetEnemyRuntimeAnimatorControllerSystem>());
 			Add(systems.Create<SetEnemyCastStartLocalPositionSystem>());
+			Add(systems.Create<ShowEnemyTargetSpriteSystem>());
 
 			Add(systems.Create<EnemyMoveSystem>());
 			Add(systems.Create<AnimateEnemyMovementSystem>());
@@ -23,6 +25,7 @@ namespace Code.Gameplay.Features.Enemy
 			Add(systems.Create<EnemyDeathSystem>());
 			Add(systems.Create<DropLootOnEnemyDeadSystem>());
 			Add(systems.Create<FinalizeEnemyDeathProcessingSystem>());
+			Add(systems.Create<UnapplyClosestTargetFromEnemySystem>());
 		}
 	}
 }
