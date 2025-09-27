@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using Entitas;
+﻿using Entitas;
+using System.Collections.Generic;
 
 namespace Code.Gameplay.Features.Weapon.Systems
 {
@@ -30,20 +30,24 @@ namespace Code.Gameplay.Features.Weapon.Systems
 			foreach (GameEntity weapon in _weapons)
 			{
 				float closestDistance = float.MaxValue;
-
+        GameEntity closestTarget = null;
+        
 				foreach (GameEntity target in _targets.GetEntities(_buffer))
-				{
-					float distance = (target.WorldPosition - weapon.RotationPointTransform.position).magnitude;
+        {
+          float distance = (target.WorldPosition - weapon.RotationPointTransform.position).magnitude;
 
 					if (distance <= weapon.Radius && distance < closestDistance)
 					{
 						closestDistance = distance;
 						weapon.ReplaceClosestTargetPosition(target.WorldPosition);
 
-						target.isClosestTarget = true;
-					}
-				}
-			}
+            closestTarget = target;
+          }
+        }
+
+        if (closestTarget != null)
+          closestTarget.isClosestTarget = true;
+      }
 		}
 	}
 }

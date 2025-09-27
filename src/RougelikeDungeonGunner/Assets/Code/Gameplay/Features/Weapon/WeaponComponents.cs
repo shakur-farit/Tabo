@@ -14,7 +14,7 @@ namespace Code.Gameplay.Features.Weapon
 	[Game] public class EnemyWeapon : IComponent { }
 
 	[Game] public class ClosestTargetPosition : IComponent { public Vector3 Value; }
-	[Game] public class ClosestTarget : IComponent { }
+  [Game] public class ClosestTarget : IComponent { }
 
 	[Game] public class FirePositionTransform : IComponent { public Transform Value; }
 	[Game] public class RotationPointTransform : IComponent { public Transform Value; }

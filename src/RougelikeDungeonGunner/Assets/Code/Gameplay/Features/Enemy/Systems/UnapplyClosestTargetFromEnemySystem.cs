@@ -18,8 +18,8 @@ namespace Code.Gameplay.Features.Weapon.Systems
 
 		public void Execute()
 		{
-			foreach (GameEntity enemy in _enemies.GetEntities(_buffer)) 
-				enemy.isClosestTarget = false;
-		}
+      foreach (GameEntity enemy in _enemies.GetEntities(_buffer)) 
+        enemy.isClosestTarget = false;
+    }
 	}
 }
