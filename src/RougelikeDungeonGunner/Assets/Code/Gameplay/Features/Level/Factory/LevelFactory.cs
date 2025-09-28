@@ -45,8 +45,6 @@ namespace Code.Gameplay.Features.Level.Factory
 						.AddCooldown(config.TimeBetweenSpawnWaves)
 						.AddCooldownLeft(config.TimeBetweenSpawnWaves)
 						.AddEnemiesInLevelCount(StartingEnemiesCount)
-						.AddFinishingTime(config.FinishingTime)
-						.AddFinishingTimeLeft(config.FinishingTime)
 						.AddHeroSafeZoneRadius(config.HeroSaveZoneRadius)
 						.With(x => x.isLevel = true)
 						.With(x => x.isCooldownUp = true)

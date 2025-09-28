@@ -12,8 +12,6 @@ namespace Code.Gameplay.Features.Level
 	[Game] public class StartingTime : IComponent { public float Value; }
 	[Game] public class StartingTimeLeft : IComponent { public float Value; }
 	[Game] public class StartingTimeUp : IComponent { }
-	[Game] public class FinishingTime : IComponent { public float Value; }
-	[Game] public class FinishingTimeLeft : IComponent { public float Value; }
 
 	[Game] public class EnemyWaves : IComponent { public List<EnemyWave> Value; }
 	[Game] public class EnemyWaveComponent : IComponent { public EnemyWave Value; }

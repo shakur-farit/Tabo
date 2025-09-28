@@ -35,7 +35,6 @@ namespace Code.Gameplay.Features.AmmoPattern.Systems
 					GameMatcher.WorldPosition,
 					GameMatcher.MagazineNotEmpty,
 					GameMatcher.CurrentAmmoCount,
-					GameMatcher.ClosestTargetPosition,
 					GameMatcher.Shooting,
 					GameMatcher.ReadyToShoot));
 		}

@@ -8,8 +8,6 @@ namespace Code.Gameplay.Features.Level.Systems
 {
 	public class FinalizeProcessedLevelSystem : IExecuteSystem
 	{
-		private const string TimeText = "Time to level complete";
-
 		private readonly List<GameEntity> _buffer = new(1);
 
 		private readonly IGameStateMachine _stateMachine;
@@ -17,39 +15,21 @@ namespace Code.Gameplay.Features.Level.Systems
 		private readonly IGroup<GameEntity> _levels;
 		private readonly IGroup<GameEntity> _holders;
 
-		public FinalizeProcessedLevelSystem(GameContext game, IGameStateMachine stateMachine, ITimeService time)
+		public FinalizeProcessedLevelSystem(GameContext game, IGameStateMachine stateMachine)
 		{
 			_stateMachine = stateMachine;
-			_time = time;
 			_levels = game.GetGroup(GameMatcher
 				.AllOf(
 					GameMatcher.Level,
-					GameMatcher.Processed,
-					GameMatcher.FinishingTimeLeft,
-					GameMatcher.FinishingTime));
-
-			_holders = game.GetGroup(GameMatcher
-				.AllOf(
-					GameMatcher.TimerHolder));
+					GameMatcher.Processed));
 		}
 
 		public void Execute()
 		{
 			foreach (GameEntity level in _levels.GetEntities(_buffer))
-			foreach (GameEntity holder in _holders)
 			{
-				if (level.FinishingTimeLeft <= 0)
-				{
-					level.ReplaceFinishingTimeLeft(level.FinishingTime);
-					level.isDestructed = true;
-					holder.TimerHolder.HideTimeText();
-					_stateMachine.Enter<LevelCompleteState>();
-				}
-				else
-				{
-					level.ReplaceFinishingTimeLeft(level.FinishingTimeLeft - _time.DeltaTime);
-					holder.TimerHolder.UpdateTimeText(TimeText, level.FinishingTimeLeft);
-				}
+				level.isDestructed = true;
+				_stateMachine.Enter<LevelCompleteState>();
 			}
 		}
 	}

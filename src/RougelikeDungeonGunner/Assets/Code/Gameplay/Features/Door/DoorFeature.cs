@@ -10,6 +10,7 @@ namespace Code.Gameplay.Features.Weapon
 			Add(systems.Create<CreateDoorReactiveSystem>());
 			Add(systems.Create<OpenDoorOnAllEnemiesDeadSystem>());
 			Add(systems.Create<PlayDoorOpeningAnimationReactiveSystem>());
+			Add(systems.Create<MarkLevelProcessedOnHeroDetectedSystem>());
 		}
 	}
 }

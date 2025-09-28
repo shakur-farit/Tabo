@@ -26,7 +26,12 @@ namespace Code.Gameplay.Features.Weapon
 					.AddDoorTypeId(typeId)
 					.AddViewPrefab(config.ViewPrefab)
 					.AddWorldPosition(at)
+					.AddTargetsBuffer(new(1))
+					.AddTargetLayerMask(CollisionLayer.Hero.AsMask())
+					.AddRadius(1f)
 					.With(x => x.isDoor = true)
+					.With(x => x.isReadyToCollectTargets = true)
+					.With(x => x.isCollectTargetsContinuously = true)
 				;
 		}
 	}

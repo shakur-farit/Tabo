@@ -179,7 +179,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -564624649
   m_SortingLayer: 4
-  m_SortingOrder: 0
+  m_SortingOrder: 1500
   m_Sprite: {fileID: 7053689574826554501, guid: 8bf4537c840876747a02facf5781dfb0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -203,8 +203,8 @@ GameObject:
   - component: {fileID: 2144678513380910711}
   - component: {fileID: 6282441095508054087}
   - component: {fileID: 2264886600904616598}
-  - component: {fileID: 2294689041795877783}
   - component: {fileID: 2869627734964477721}
+  - component: {fileID: 8831952838978661447}
   m_Layer: 0
   m_Name: DoorEW
   m_TagString: Untagged
@@ -298,19 +298,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EntityView: {fileID: 6282441095508054087}
---- !u!114 &2294689041795877783
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9196731505644697100}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 909904de94662674291ccb9ffcd43615, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _animator: {fileID: 7155659016969480035}
 --- !u!114 &2869627734964477721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -324,4 +311,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EntityView: {fileID: 6282441095508054087}
-  _doorAnimator: {fileID: 2294689041795877783}
+  _doorAnimator: {fileID: 0}
+--- !u!114 &8831952838978661447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9196731505644697100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8034b48977ae0284692f4134c0ca4ccb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 7155659016969480035}
