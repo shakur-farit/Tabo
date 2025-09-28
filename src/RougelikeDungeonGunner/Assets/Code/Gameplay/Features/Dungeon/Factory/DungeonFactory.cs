@@ -29,12 +29,15 @@ namespace Code.Gameplay.Features.Dungeon.Factory
 			DungeonConfig config = _staticDataService.GetDungeonConfig(typeId);
 			int randomIndex = _random.Range(0, config.EnvironmentSetups.Count);
 			EnvironmentSetup environment = config.EnvironmentSetups[randomIndex];
+			DoorSetup door = environment.DoorSetup;
 
 			return CreateEntity.Empty()
 					.AddId(_identifier.Next())
 					.AddViewPrefab(environment.ViewPrefab)
 					.AddWorldPosition(Vector2.zero)
 					.AddHeroStartPosition(environment.HeroStartPosition)
+					.AddDoorPosition(door.DoorPosition)
+					.AddDoorTypeId(door.TypeId)
 					.With(x => x.isDungeon = true)
 				;
 		}

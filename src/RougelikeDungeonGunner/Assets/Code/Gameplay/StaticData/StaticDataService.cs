@@ -54,6 +54,7 @@ namespace Code.Gameplay.StaticData
 		private const string AuraConfigLabel = "AuraConfig";
 		private const string SpecialEffectConfigLabel = "SpecialEffectConfig";
     private const string DestroyableItemConfigLabel = "DestroyableItemConfig";
+    private const string DoorConfigLabel = "DoorConfig";
     private const string WindowConfigLabel = "WindowConfig";
     private const string WeaponShopItemConfigLabel = "WeaponShopItemConfig";
 		private const string EnchantShopItemConfigLabel = "EnchantShopItemConfig";
@@ -73,6 +74,7 @@ namespace Code.Gameplay.StaticData
 		private Dictionary<EnchantTypeId, EnchantConfig> _enchantById;
 		private Dictionary<AuraTypeId, AuraConfig> _auraById;
     private Dictionary<DestroyableItemTypeId, DestroyableItemConfig> _destroyableItemById;
+    private Dictionary<DoorTypeId, DoorConfig> _doorById;
     private Dictionary<WindowId, WindowConfig> _windowById;
     private Dictionary<WeaponShopItemTypeId, WeaponShopItemConfig> _weaponShopItemById;
 		private Dictionary<WeaponUpgradeTypeId, WeaponUpgradeShopItemConfig> _weaponUpgradeShopItemById;
@@ -106,6 +108,7 @@ namespace Code.Gameplay.StaticData
 			await LoadEnchants();
 			await LoadAuras();
       await LoadDestroyableItems();
+      await LoadDoors();
 			await LoadSpecialEffects();
 			await LoadWindows();
 			await LoadWeaponShopItem();
@@ -204,7 +207,15 @@ namespace Code.Gameplay.StaticData
       throw new Exception($"Destroyable item config for {id} was not found");
     }
 
-    public WindowConfig GetWindowConfig(WindowId id)
+    public DoorConfig GetDoorConfig(DoorTypeId id)
+    {
+	    if (_doorById.TryGetValue(id, out DoorConfig config))
+		    return config;
+
+	    throw new Exception($"Door item config for {id} was not found");
+    }
+
+		public WindowConfig GetWindowConfig(WindowId id)
 		{
 			if (_windowById.TryGetValue(id, out WindowConfig config))
 				return config;
@@ -308,7 +319,11 @@ namespace Code.Gameplay.StaticData
       _destroyableItemById = (await _assetProvider.LoadAll<DestroyableItemConfig>(DestroyableItemConfigLabel))
         .ToDictionary(x => x.TypeId, x => x);
 
-    private async UniTask LoadWindows() =>
+    private async UniTask LoadDoors() =>
+	    _doorById = (await _assetProvider.LoadAll<DoorConfig>(DoorConfigLabel))
+		    .ToDictionary(x => x.TypeId, x => x);
+
+		private async UniTask LoadWindows() =>
 			_windowById = (await _assetProvider.LoadAll<WindowConfig>(WindowConfigLabel))
 				.ToDictionary(x => x.TypeId, x => x);
 

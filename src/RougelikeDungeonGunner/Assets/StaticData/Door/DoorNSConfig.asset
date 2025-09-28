@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b7c1f9db64f06147ba8f1c07f1f242f, type: 3}
+  m_Name: DoorNSConfig
+  m_EditorClassIdentifier: 
+  TypeId: 1
+  ViewPrefab: {fileID: 1709411908639538131, guid: ffee800f6ed06644eb1ffb13514ab867, type: 3}

@@ -10,7 +10,7 @@ namespace Code.Gameplay.Features.Level
 			Add(systems.Create<CalculateTimeToSpawnEnemiesSystem>());
 			Add(systems.Create<CalculateEnemiesInLevelSystem>());
 			Add(systems.Create<AddEnemyWaveWithCooldownSystem>());
-			Add(systems.Create<MarkLevelProcessedOnAllEnemiesDeadSystem>());
+//			Add(systems.Create<MarkLevelProcessedOnAllEnemiesDeadSystem>());
 			Add(systems.Create<FinalizeProcessedLevelSystem>());
 		}
 	}

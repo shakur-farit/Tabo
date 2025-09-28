@@ -57,6 +57,7 @@ namespace Code.Gameplay.StaticData
     AuraConfig GetAuraConfig(AuraTypeId id);
     SpecialEffectConfig GetSpecialEffectConfig(SpecialEffectTypeId typeId);
     DestroyableItemConfig GetDestroyableItemConfig(DestroyableItemTypeId id);
+    DoorConfig GetDoorConfig(DoorTypeId id);
     WindowConfig GetWindowConfig(WindowId id);
     WeaponUpgradeShopItemConfig GetWeaponUpgradeShopItemConfig(WeaponUpgradeTypeId id);
     WeaponShopItemConfig GetWeaponShopItemConfig(WeaponShopItemTypeId id);

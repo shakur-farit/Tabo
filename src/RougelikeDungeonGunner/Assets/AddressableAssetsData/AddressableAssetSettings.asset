@@ -15,7 +15,7 @@ MonoBehaviour:
   m_DefaultGroup: f40428f047dc54a46b8184ab91599836
   m_currentHash:
     serializedVersion: 2
-    Hash: de7712be27da018f4d1d9735761d3dc7
+    Hash: 51b943c00ef946c4db5a2b30a2dd9c5b
   m_OptimizeCatalogSize: 0
   m_BuildRemoteCatalog: 0
   m_BundleLocalCatalog: 0
@@ -105,6 +105,7 @@ MonoBehaviour:
     - AuraConfig
     - SpecialEffectConfig
     - DestroyableItemConfig
+    - DoorConfig
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: 85357d346e02ee54ab80d633e7b0c1cf, type: 2}

@@ -53,13 +53,14 @@ namespace Code.Gameplay
 			Add(systems.Create<CollectFeature>());
 			Add(systems.Create<EffectApplicationFeature>());
 
-			Add(systems.Create<DestroyableFeature>());
-
 			Add(systems.Create<EnchantFeature>());
 			Add(systems.Create<EffectsFeature>());
 			Add(systems.Create<StatusFeature>());
 			Add(systems.Create<StatsFeature>());
 			Add(systems.Create<AuraFeature>());
+
+			Add(systems.Create<DestroyableFeature>());
+			Add(systems.Create<DoorFeature>());
 
 			Add(systems.Create<ProcessGameDestructedFeature>());
 			Add(systems.Create<ProcessInputDestructedFeature>());

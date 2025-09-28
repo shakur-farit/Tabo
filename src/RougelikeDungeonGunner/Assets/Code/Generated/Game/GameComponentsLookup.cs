@@ -224,60 +224,65 @@ public static class GameComponentsLookup {
     public const int ClosestTarget = 213;
     public const int ClosestTargetPosition = 214;
     public const int CurrentAmmoCount = 215;
-    public const int EffectSetups = 216;
-    public const int EnemyCircleSigil = 217;
-    public const int EnemyPistol = 218;
-    public const int EnemyStarSigil = 219;
-    public const int EnemyTriangleSigil = 220;
-    public const int EnemyWeapon = 221;
-    public const int FirePositionTransform = 222;
-    public const int HeroAutomaticPistol = 223;
-    public const int HeroCircleSigil = 224;
-    public const int HeroLaserBlaster = 225;
-    public const int HeroMachinegun = 226;
-    public const int HeroPistol = 227;
-    public const int HeroPlasmaGun = 228;
-    public const int HeroRevolver = 229;
-    public const int HeroRocketLauncher = 230;
-    public const int HeroShotgun = 231;
-    public const int HeroSniper = 232;
-    public const int HeroStarSigil = 233;
-    public const int HeroTriangleSigil = 234;
-    public const int HeroWeapon = 235;
-    public const int InfinityAmmo = 236;
-    public const int MagazineNotEmpty = 237;
-    public const int MagazineSize = 238;
-    public const int MaxPelletsDeviation = 239;
-    public const int MaxWeaponEnchantsCount = 240;
-    public const int MinPelletsDeviation = 241;
-    public const int MultiPellet = 242;
-    public const int Pierce = 243;
-    public const int Precharged = 244;
-    public const int PrechargeTime = 245;
-    public const int PrechargeTimeLeft = 246;
-    public const int ReadyToShoot = 247;
-    public const int Reloading = 248;
-    public const int ReloadTime = 249;
-    public const int ReloadTimeLeft = 250;
-    public const int RotationPointTransform = 251;
-    public const int Shooting = 252;
-    public const int Shot = 253;
-    public const int StatusSetups = 254;
-    public const int Weapon = 255;
-    public const int WeaponEnchants = 256;
-    public const int WeaponOwnerId = 257;
-    public const int WeaponOwnerTypeId = 258;
-    public const int WeaponRotationAngle = 259;
-    public const int WeaponTypeId = 260;
-    public const int AmmoHolder = 261;
-    public const int CoinsHolder = 262;
-    public const int EnchantHolder = 263;
-    public const int HeartHolder = 264;
-    public const int ReloadingAnimator = 265;
-    public const int TimerHolder = 266;
-    public const int WeaponHolder = 267;
+    public const int Door = 216;
+    public const int DoorAnimator = 217;
+    public const int DoorPosition = 218;
+    public const int DoorTypeId = 219;
+    public const int EffectSetups = 220;
+    public const int EnemyCircleSigil = 221;
+    public const int EnemyPistol = 222;
+    public const int EnemyStarSigil = 223;
+    public const int EnemyTriangleSigil = 224;
+    public const int EnemyWeapon = 225;
+    public const int FirePositionTransform = 226;
+    public const int HeroAutomaticPistol = 227;
+    public const int HeroCircleSigil = 228;
+    public const int HeroLaserBlaster = 229;
+    public const int HeroMachinegun = 230;
+    public const int HeroPistol = 231;
+    public const int HeroPlasmaGun = 232;
+    public const int HeroRevolver = 233;
+    public const int HeroRocketLauncher = 234;
+    public const int HeroShotgun = 235;
+    public const int HeroSniper = 236;
+    public const int HeroStarSigil = 237;
+    public const int HeroTriangleSigil = 238;
+    public const int HeroWeapon = 239;
+    public const int InfinityAmmo = 240;
+    public const int MagazineNotEmpty = 241;
+    public const int MagazineSize = 242;
+    public const int MaxPelletsDeviation = 243;
+    public const int MaxWeaponEnchantsCount = 244;
+    public const int MinPelletsDeviation = 245;
+    public const int MultiPellet = 246;
+    public const int Opened = 247;
+    public const int Pierce = 248;
+    public const int Precharged = 249;
+    public const int PrechargeTime = 250;
+    public const int PrechargeTimeLeft = 251;
+    public const int ReadyToShoot = 252;
+    public const int Reloading = 253;
+    public const int ReloadTime = 254;
+    public const int ReloadTimeLeft = 255;
+    public const int RotationPointTransform = 256;
+    public const int Shooting = 257;
+    public const int Shot = 258;
+    public const int StatusSetups = 259;
+    public const int Weapon = 260;
+    public const int WeaponEnchants = 261;
+    public const int WeaponOwnerId = 262;
+    public const int WeaponOwnerTypeId = 263;
+    public const int WeaponRotationAngle = 264;
+    public const int WeaponTypeId = 265;
+    public const int AmmoHolder = 266;
+    public const int CoinsHolder = 267;
+    public const int EnchantHolder = 268;
+    public const int HeartHolder = 269;
+    public const int ReloadingAnimator = 270;
+    public const int TimerHolder = 271;
+    public const int WeaponHolder = 272;
 
-    public const int TotalComponents = 268;
+    public const int TotalComponents = 273;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -496,6 +501,10 @@ public static class GameComponentsLookup {
         "ClosestTarget",
         "ClosestTargetPosition",
         "CurrentAmmoCount",
+        "Door",
+        "DoorAnimator",
+        "DoorPosition",
+        "DoorTypeId",
         "EffectSetups",
         "EnemyCircleSigil",
         "EnemyPistol",
@@ -523,6 +532,7 @@ public static class GameComponentsLookup {
         "MaxWeaponEnchantsCount",
         "MinPelletsDeviation",
         "MultiPellet",
+        "Opened",
         "Pierce",
         "Precharged",
         "PrechargeTime",
@@ -767,6 +777,10 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Weapon.ClosestTarget),
         typeof(Code.Gameplay.Features.Weapon.ClosestTargetPosition),
         typeof(Code.Gameplay.Features.Weapon.CurrentAmmoCount),
+        typeof(Code.Gameplay.Features.Weapon.Door),
+        typeof(Code.Gameplay.Features.Weapon.DoorAnimatorComponent),
+        typeof(Code.Gameplay.Features.Weapon.DoorPosition),
+        typeof(Code.Gameplay.Features.Weapon.DoorTypeIdComponent),
         typeof(Code.Gameplay.Features.Weapon.EffectSetups),
         typeof(Code.Gameplay.Features.Weapon.EnemyCircleSigil),
         typeof(Code.Gameplay.Features.Weapon.EnemyPistol),
@@ -794,6 +808,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Weapon.MaxWeaponEnchantsCount),
         typeof(Code.Gameplay.Features.Weapon.MinPelletsDeviation),
         typeof(Code.Gameplay.Features.Weapon.MultiPellet),
+        typeof(Code.Gameplay.Features.Weapon.Opened),
         typeof(Code.Gameplay.Features.Weapon.Pierce),
         typeof(Code.Gameplay.Features.Weapon.Precharged),
         typeof(Code.Gameplay.Features.Weapon.PrechargeTime),

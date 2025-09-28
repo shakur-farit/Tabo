@@ -23,6 +23,7 @@ using Code.Gameplay.Features.Loot.Services;
 using Code.Gameplay.Features.SpecialEffect.Factory;
 using Code.Gameplay.Features.Statuses.Applier;
 using Code.Gameplay.Features.Statuses.Factory;
+using Code.Gameplay.Features.Weapon;
 using Code.Gameplay.Features.Weapon.Factory;
 using Code.Gameplay.Input.Service;
 using Code.Gameplay.StaticData;
@@ -151,6 +152,7 @@ namespace Code.Infrastructure.Installers
 			Container.Bind<ISpecialEffectsFactory>().To<SpecialEffectsFactory>().AsSingle();
 			Container.Bind<IAmmoPatternFactory>().To<AmmoPatternFactory>().AsSingle();
 			Container.Bind<IDestroyableItemFactory>().To<DestroyableItemFactory>().AsSingle();
+			Container.Bind<IDoorFactory>().To<DoorFactory>().AsSingle();
 		}
 
 		private void BindUIFactories()
