@@ -13,6 +13,7 @@ namespace Code.Gameplay.Features.Destroyable
       Add(systems.Create<SetDestroyableItemRuntimeAnimatorControllerReactiveSystem>());
       Add(systems.Create<DestroyableItemDestroyAnimationPlaySystem>());
       Add(systems.Create<MarkDestroyedDestroyableItemOnAnimationEndSystem>());
+      Add(systems.Create<DropLootOnDestroyableItemDestroyingSystem>());
       Add(systems.Create<MarkDestructDestroyedDestroyableItemEntitySystem>());
     }
   }

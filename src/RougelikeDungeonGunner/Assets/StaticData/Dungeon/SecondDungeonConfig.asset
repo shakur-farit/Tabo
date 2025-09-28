@@ -16,7 +16,16 @@ MonoBehaviour:
   EnvironmentSetups:
   - ViewPrefab: {fileID: -743074746319577026, guid: 0631e6e6f0194a34ba1c738c26dfbd18, type: 3}
     HeroStartPosition: {x: 26.02, y: 0.36}
+    DoorSetup:
+      TypeId: 1
+      DoorPosition: {x: -38, y: -20}
   - ViewPrefab: {fileID: -288942039315954583, guid: 1d03ccc2f7105014ab96544340713d61, type: 3}
     HeroStartPosition: {x: -42.28, y: -10.69}
+    DoorSetup:
+      TypeId: 1
+      DoorPosition: {x: 47.5, y: -49}
   - ViewPrefab: {fileID: 935917641888412009, guid: 39bdf850364284a4dbbea4506bf048a9, type: 3}
     HeroStartPosition: {x: -42.83, y: -12.12}
+    DoorSetup:
+      TypeId: 1
+      DoorPosition: {x: 46.5, y: -50}

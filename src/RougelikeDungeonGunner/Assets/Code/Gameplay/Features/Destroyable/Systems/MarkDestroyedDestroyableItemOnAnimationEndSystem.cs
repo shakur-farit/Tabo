@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using Entitas;
+﻿using Entitas;
+using System.Collections.Generic;
 
 namespace Code.Gameplay.Features.Destroyable.Systems
 {

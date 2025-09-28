@@ -35,6 +35,8 @@ namespace Code.Gameplay.Features.Destroyable
           .AddDestroyableItemTypeId(config.TypeId)
           .AddWorldPosition(at)
           .AddViewPrefab(config.ViewPrefab)
+          .AddLootDropChance(config.LootDropChance)
+          .AddExcludedLoot(config.ExcludedLoot)
           .With(x => x.isDestroyableItem = true)
         ;
     }
