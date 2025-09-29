@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Code.Gameplay.Features.Weapon
+namespace Code.Gameplay.Features.Door.Behaviours
 {
 	public class DoorAnimator : MonoBehaviour
 	{

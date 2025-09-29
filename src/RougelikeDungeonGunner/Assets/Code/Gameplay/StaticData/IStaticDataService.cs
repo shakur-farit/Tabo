@@ -5,6 +5,9 @@ using Code.Gameplay.Features.Ammo.Configs;
 using Code.Gameplay.Features.Aura;
 using Code.Gameplay.Features.Aura.Configs;
 using Code.Gameplay.Features.Destroyable;
+using Code.Gameplay.Features.Destroyable.Configs;
+using Code.Gameplay.Features.Door;
+using Code.Gameplay.Features.Door.Configs;
 using Code.Gameplay.Features.Dungeon;
 using Code.Gameplay.Features.Dungeon.Configs;
 using Code.Gameplay.Features.Enchants;
@@ -17,6 +20,8 @@ using Code.Gameplay.Features.Level;
 using Code.Gameplay.Features.Level.Configs;
 using Code.Gameplay.Features.Loot;
 using Code.Gameplay.Features.Loot.Configs;
+using Code.Gameplay.Features.Music;
+using Code.Gameplay.Features.Music.Configs;
 using Code.Gameplay.Features.SpecialEffect;
 using Code.Gameplay.Features.SpecialEffect.Configs;
 using Code.Gameplay.Features.Weapon;
@@ -65,5 +70,6 @@ namespace Code.Gameplay.StaticData
     EnchantUIEntryConfig GetEnchantUIEntryItemConfig(EnchantUIEntryTypeId id);
     EnchantStatUIEntryConfig GetEnchantStatUIEntryItemConfig(EnchantStatUIEntryTypeId id);
     EnchantShopItemConfig GetEnchantShopItemConfig(EnchantShopItemTypeId id);
+    MusicConfig GetMusicConfig(MusicTypeId typeId);
   }
 }

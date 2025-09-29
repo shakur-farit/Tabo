@@ -6,6 +6,7 @@ using Code.Gameplay.Features.Aura;
 using Code.Gameplay.Features.CharacterStats;
 using Code.Gameplay.Features.Collection;
 using Code.Gameplay.Features.Destroyable;
+using Code.Gameplay.Features.Door;
 using Code.Gameplay.Features.Dungeon;
 using Code.Gameplay.Features.EffectApplication;
 using Code.Gameplay.Features.Effects;

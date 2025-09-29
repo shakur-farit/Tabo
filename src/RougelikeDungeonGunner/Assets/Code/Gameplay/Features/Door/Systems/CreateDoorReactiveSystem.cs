@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
+using Code.Gameplay.Features.Door.Factory;
 using Entitas;
 
-namespace Code.Gameplay.Features.Weapon
+namespace Code.Gameplay.Features.Door.Systems
 {
 	public class CreateDoorReactiveSystem : ReactiveSystem<GameEntity>
 	{

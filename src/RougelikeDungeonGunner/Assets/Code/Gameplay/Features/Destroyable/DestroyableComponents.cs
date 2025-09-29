@@ -1,6 +1,7 @@
-﻿using Entitas;
+﻿using Code.Gameplay.Features.Destroyable.Behaviours;
+using Entitas;
 
-namespace Code.Gameplay.Features.Destroyable.Behaviours
+namespace Code.Gameplay.Features.Destroyable
 {
 	[Game] public class DestroyableItem : IComponent { }
 	[Game] public class DestroyableItemTypeIdComponent : IComponent { public DestroyableItemTypeId Value; }

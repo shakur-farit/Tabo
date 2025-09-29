@@ -1,4 +1,4 @@
-﻿namespace Code.Gameplay.Features.Weapon
+﻿namespace Code.Gameplay.Features.Door
 {
 	public enum DoorTypeId
 	{

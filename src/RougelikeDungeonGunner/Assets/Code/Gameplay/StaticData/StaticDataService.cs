@@ -7,6 +7,9 @@ using Code.Gameplay.Features.Ammo.Configs;
 using Code.Gameplay.Features.Aura;
 using Code.Gameplay.Features.Aura.Configs;
 using Code.Gameplay.Features.Destroyable;
+using Code.Gameplay.Features.Destroyable.Configs;
+using Code.Gameplay.Features.Door;
+using Code.Gameplay.Features.Door.Configs;
 using Code.Gameplay.Features.Dungeon;
 using Code.Gameplay.Features.Dungeon.Configs;
 using Code.Gameplay.Features.Enchants;
@@ -19,6 +22,8 @@ using Code.Gameplay.Features.Level;
 using Code.Gameplay.Features.Level.Configs;
 using Code.Gameplay.Features.Loot;
 using Code.Gameplay.Features.Loot.Configs;
+using Code.Gameplay.Features.Music;
+using Code.Gameplay.Features.Music.Configs;
 using Code.Gameplay.Features.SpecialEffect;
 using Code.Gameplay.Features.SpecialEffect.Configs;
 using Code.Gameplay.Features.Weapon;
@@ -62,6 +67,7 @@ namespace Code.Gameplay.StaticData
 		private const string WeaponStatUIEntryConfigLabel = "WeaponStatUIEntryConfig";
 		private const string EnchantUIEntryConfigLabel = "EnchantUIEntryConfig";
 		private const string EnchantStatUIEntryConfigLabel = "EnchantStatUIEntryConfig";
+		private const string MusicConfigLabel = "MusicConfig";
 
 		private BalanceConfig _balance;
 		private Dictionary<AmmoTypeId, AmmoConfig> _ammoById;
@@ -84,6 +90,8 @@ namespace Code.Gameplay.StaticData
 		private Dictionary<SpecialEffectTypeId, SpecialEffectConfig> _specialEffectById;
 		private Dictionary<EnchantStatUIEntryTypeId, EnchantStatUIEntryConfig>
 			_weaponEnchantStatUIEntryItemById;
+		private Dictionary<MusicTypeId, MusicConfig> _musicById;
+
 
 		private readonly IAssetProvider _assetProvider;
 
@@ -117,6 +125,7 @@ namespace Code.Gameplay.StaticData
 			await LoadWeaponStatUIEntryItem();
 			await LoadEnchantUIEntryItem();
 			await LoadEnchantStatUIEntryItem();
+			await LoadMusics();
 		}
 
 		public AmmoConfig GetAmmoConfig(AmmoTypeId id)
@@ -271,6 +280,14 @@ namespace Code.Gameplay.StaticData
 			throw new Exception($"Enchant stat ui entry item config for {id} was not found");
 		}
 
+		public MusicConfig GetMusicConfig(MusicTypeId id)
+		{
+			if (_musicById.TryGetValue(id, out MusicConfig config))
+				return config;
+
+			throw new Exception($"Music config for {id} was not found");
+		}
+
 		public BalanceConfig GetBalance() =>
 			_balance;
 
@@ -352,6 +369,10 @@ namespace Code.Gameplay.StaticData
 		private async UniTask LoadEnchantStatUIEntryItem() =>
 			_weaponEnchantStatUIEntryItemById = 
 				(await _assetProvider.LoadAll<EnchantStatUIEntryConfig>(EnchantStatUIEntryConfigLabel))
+				.ToDictionary(x => x.TypeId, x => x);
+
+		private async UniTask LoadMusics() =>
+			_musicById = (await _assetProvider.LoadAll<MusicConfig>(MusicConfigLabel))
 				.ToDictionary(x => x.TypeId, x => x);
 
 		private async UniTask LoadBalance() =>

@@ -1,7 +1,8 @@
-﻿using Entitas;
+﻿using Code.Gameplay.Features.Door.Behaviours;
+using Entitas;
 using UnityEngine;
 
-namespace Code.Gameplay.Features.Weapon
+namespace Code.Gameplay.Features.Door
 {
 	[Game] public class Door : IComponent { }
 	[Game] public class DoorTypeIdComponent : IComponent { public DoorTypeId Value; }

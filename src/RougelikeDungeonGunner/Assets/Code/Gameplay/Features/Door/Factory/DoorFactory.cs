@@ -1,10 +1,11 @@
 ﻿using Code.Common.Entity;
 using Code.Common.Extensions;
+using Code.Gameplay.Features.Door.Configs;
 using Code.Gameplay.StaticData;
 using Code.Infrastructure.Identifiers;
 using UnityEngine;
 
-namespace Code.Gameplay.Features.Weapon
+namespace Code.Gameplay.Features.Door.Factory
 {
 	public class DoorFactory : IDoorFactory
 	{

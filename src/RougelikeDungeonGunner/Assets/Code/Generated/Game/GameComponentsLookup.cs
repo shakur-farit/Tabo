@@ -6,6 +6,10 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Code.Gameplay.Features.Destroyable;
+using Code.Gameplay.Features.Door;
+
 public static class GameComponentsLookup {
 
     public const int Destructed = 0;
@@ -653,11 +657,11 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Cooldowns.Cooldown),
         typeof(Code.Gameplay.Features.Cooldowns.CooldownLeft),
         typeof(Code.Gameplay.Features.Cooldowns.CooldownUp),
-        typeof(Code.Gameplay.Features.Destroyable.Behaviours.DestroyableAnimatorComponent),
-        typeof(Code.Gameplay.Features.Destroyable.Behaviours.DestroyableItem),
-        typeof(Code.Gameplay.Features.Destroyable.Behaviours.DestroyableItemTypeIdComponent),
-        typeof(Code.Gameplay.Features.Destroyable.Behaviours.Destroyed),
-        typeof(Code.Gameplay.Features.Destroyable.Behaviours.Destroying),
+        typeof(DestroyableAnimatorComponent),
+        typeof(DestroyableItem),
+        typeof(DestroyableItemTypeIdComponent),
+        typeof(Destroyed),
+        typeof(Destroying),
         typeof(Code.Gameplay.Features.Dungeon.CollisionTilemap),
         typeof(Code.Gameplay.Features.Dungeon.Dungeon),
         typeof(Code.Gameplay.Features.Dungeon.DungeonAvailable),
@@ -771,10 +775,10 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Weapon.ClosestTarget),
         typeof(Code.Gameplay.Features.Weapon.ClosestTargetPosition),
         typeof(Code.Gameplay.Features.Weapon.CurrentAmmoCount),
-        typeof(Code.Gameplay.Features.Weapon.Door),
-        typeof(Code.Gameplay.Features.Weapon.DoorAnimatorComponent),
-        typeof(Code.Gameplay.Features.Weapon.DoorPosition),
-        typeof(Code.Gameplay.Features.Weapon.DoorTypeIdComponent),
+        typeof(Door),
+        typeof(DoorAnimatorComponent),
+        typeof(DoorPosition),
+        typeof(DoorTypeIdComponent),
         typeof(Code.Gameplay.Features.Weapon.EffectSetups),
         typeof(Code.Gameplay.Features.Weapon.EnemyCircleSigil),
         typeof(Code.Gameplay.Features.Weapon.EnemyPistol),
@@ -802,7 +806,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Weapon.MaxWeaponEnchantsCount),
         typeof(Code.Gameplay.Features.Weapon.MinPelletsDeviation),
         typeof(Code.Gameplay.Features.Weapon.MultiPellet),
-        typeof(Code.Gameplay.Features.Weapon.Opened),
+        typeof(Opened),
         typeof(Code.Gameplay.Features.Weapon.Pierce),
         typeof(Code.Gameplay.Features.Weapon.Precharged),
         typeof(Code.Gameplay.Features.Weapon.PrechargeTime),

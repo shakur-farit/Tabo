@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-namespace Code.Gameplay.Features.Dungeon.Systems
+namespace Code.Gameplay.Features.Dungeon.Services
 {
   public class ValidPositionsProvider : IValidPositionsProvider
   {

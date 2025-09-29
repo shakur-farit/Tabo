@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Code.Gameplay.Features.Door;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherDoorTypeId;
@@ -33,21 +36,21 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Features.Weapon.DoorTypeIdComponent doorTypeId { get { return (Code.Gameplay.Features.Weapon.DoorTypeIdComponent)GetComponent(GameComponentsLookup.DoorTypeId); } }
-    public Code.Gameplay.Features.Weapon.DoorTypeId DoorTypeId { get { return doorTypeId.Value; } }
+    public DoorTypeIdComponent doorTypeId { get { return (DoorTypeIdComponent)GetComponent(GameComponentsLookup.DoorTypeId); } }
+    public DoorTypeId DoorTypeId { get { return doorTypeId.Value; } }
     public bool hasDoorTypeId { get { return HasComponent(GameComponentsLookup.DoorTypeId); } }
 
-    public GameEntity AddDoorTypeId(Code.Gameplay.Features.Weapon.DoorTypeId newValue) {
+    public GameEntity AddDoorTypeId(DoorTypeId newValue) {
         var index = GameComponentsLookup.DoorTypeId;
-        var component = (Code.Gameplay.Features.Weapon.DoorTypeIdComponent)CreateComponent(index, typeof(Code.Gameplay.Features.Weapon.DoorTypeIdComponent));
+        var component = (DoorTypeIdComponent)CreateComponent(index, typeof(DoorTypeIdComponent));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
     }
 
-    public GameEntity ReplaceDoorTypeId(Code.Gameplay.Features.Weapon.DoorTypeId newValue) {
+    public GameEntity ReplaceDoorTypeId(DoorTypeId newValue) {
         var index = GameComponentsLookup.DoorTypeId;
-        var component = (Code.Gameplay.Features.Weapon.DoorTypeIdComponent)CreateComponent(index, typeof(Code.Gameplay.Features.Weapon.DoorTypeIdComponent));
+        var component = (DoorTypeIdComponent)CreateComponent(index, typeof(DoorTypeIdComponent));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

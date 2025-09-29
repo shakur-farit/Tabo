@@ -1,9 +1,9 @@
-﻿using Code.Gameplay.Features.Loot;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Code.Gameplay.Features.Loot;
 using Code.Infrastructure.View;
 using UnityEngine;
 
-namespace Code.Gameplay.Features.Destroyable
+namespace Code.Gameplay.Features.Destroyable.Configs
 {
   [CreateAssetMenu(menuName = "Dungeon Gunner/Destroyable Item Config", fileName = "DestroyableItemConfig")]
   public class DestroyableItemConfig : ScriptableObject

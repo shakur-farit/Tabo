@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Code.Gameplay.Features.Weapon
+namespace Code.Gameplay.Features.Door.Factory
 {
 	public interface IDoorFactory
 	{

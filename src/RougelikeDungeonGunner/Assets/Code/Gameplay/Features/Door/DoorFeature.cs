@@ -1,7 +1,7 @@
-﻿using Code.Gameplay.Features.Level.Systems;
+﻿using Code.Gameplay.Features.Door.Systems;
 using Code.Infrastructure.Systems;
 
-namespace Code.Gameplay.Features.Weapon
+namespace Code.Gameplay.Features.Door
 {
 	public sealed class DoorFeature : Feature
 	{

@@ -10,7 +10,10 @@ using Code.Gameplay.Features.AmmoPattern.Factory;
 using Code.Gameplay.Features.AStar.Services;
 using Code.Gameplay.Features.Aura.Factory;
 using Code.Gameplay.Features.Destroyable;
+using Code.Gameplay.Features.Destroyable.Factory;
+using Code.Gameplay.Features.Door.Factory;
 using Code.Gameplay.Features.Dungeon.Factory;
+using Code.Gameplay.Features.Dungeon.Services;
 using Code.Gameplay.Features.Dungeon.Systems;
 using Code.Gameplay.Features.Effects.Factory;
 using Code.Gameplay.Features.Enchants.Factory;
@@ -20,6 +23,7 @@ using Code.Gameplay.Features.Hero.Factory;
 using Code.Gameplay.Features.Level.Factory;
 using Code.Gameplay.Features.Loot.Factory;
 using Code.Gameplay.Features.Loot.Services;
+using Code.Gameplay.Features.Music;
 using Code.Gameplay.Features.SpecialEffect.Factory;
 using Code.Gameplay.Features.Statuses.Applier;
 using Code.Gameplay.Features.Statuses.Factory;
@@ -69,6 +73,7 @@ namespace Code.Infrastructure.Installers
 			BindGameplayFactories();
 			BindUIFactories();
 			BindUIServices();
+			BindMusicServices();
 			BindCameraProvider();
 			BindProgressServices();
 			BindEntityIndices();
@@ -172,6 +177,11 @@ namespace Code.Infrastructure.Installers
 		private void BindUIServices()
 		{
 			Container.Bind<IWindowService>().To<WindowService>().AsSingle();
+		}
+
+		private void BindMusicServices()
+		{
+			Container.BindInterfacesAndSelfTo<MusicProvider>().AsSingle();
 		}
 
 		private void BindSystemFactory()

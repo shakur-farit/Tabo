@@ -1,4 +1,5 @@
 using Code.Gameplay.Features.Level.Factory;
+using Code.Gameplay.Features.Music;
 using Code.Infrastructure.States.StateInfrastructure;
 using Code.Infrastructure.States.StateMachine;
 using Code.Meta.UI.Windows;
@@ -13,23 +14,27 @@ namespace Code.Infrastructure.States.GameStates
 		private readonly ILevelFactory _levelFactory;
 		private readonly IProgressProvider _progressProvider;
 		private readonly IWindowService _windowService;
+		private readonly IMusicClipSetter _clipSetter;
 
 		public BattleEnterState(
 			IGameStateMachine stateMachine,
 			ILevelFactory levelFactory,
 			IProgressProvider progressProvider,
-			IWindowService windowService)
+			IWindowService windowService,
+			IMusicClipSetter clipSetter)
 		{
 			_stateMachine = stateMachine;
 			_levelFactory = levelFactory;
 			_progressProvider = progressProvider;
 			_windowService = windowService;
+			_clipSetter = clipSetter;
 		}
 
 		public override void Enter()
 		{
 			CreateNewLevel();
 			OpenHud();
+			PlayClearedRoomMusic(MusicTypeId.ClearedRoom);
 			EnterToBattleLoop();
 		}
 
@@ -38,6 +43,9 @@ namespace Code.Infrastructure.States.GameStates
 
 		private void OpenHud() => 
 			_windowService.Open(WindowId.Hud);
+
+		private void PlayClearedRoomMusic(MusicTypeId typeId) => 
+			_clipSetter.SetClip(typeId);
 
 		private void EnterToBattleLoop() => 
 			_stateMachine.Enter<BattleLoopState>();

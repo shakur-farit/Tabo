@@ -1,5 +1,6 @@
 ﻿using Entitas;
 using System.Collections.Generic;
+using Code.Gameplay.Features.Dungeon.Services;
 using UnityEngine;
 
 namespace Code.Gameplay.Features.Dungeon.Systems

@@ -3,11 +3,12 @@ using System.Linq;
 using Code.Common.Entity;
 using Code.Common.Extensions;
 using Code.Gameplay.Common.Random;
+using Code.Gameplay.Features.Destroyable.Configs;
 using Code.Gameplay.StaticData;
 using Code.Infrastructure.Identifiers;
 using UnityEngine;
 
-namespace Code.Gameplay.Features.Destroyable
+namespace Code.Gameplay.Features.Destroyable.Factory
 {
   public class DestroyableItemFactory : IDestroyableItemFactory
   {

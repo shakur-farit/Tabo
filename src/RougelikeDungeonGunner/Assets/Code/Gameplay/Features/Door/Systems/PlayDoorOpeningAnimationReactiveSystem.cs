@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Entitas;
 
-namespace Code.Gameplay.Features.Weapon
+namespace Code.Gameplay.Features.Door.Systems
 {
 	public class PlayDoorOpeningAnimationReactiveSystem : ReactiveSystem<GameEntity>
 	{

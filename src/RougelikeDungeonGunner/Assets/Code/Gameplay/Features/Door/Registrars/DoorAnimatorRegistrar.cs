@@ -1,8 +1,8 @@
-﻿using Code.Gameplay.Features.Destroyable;
+﻿using Code.Gameplay.Features.Door.Behaviours;
 using Code.Infrastructure.View.Registrars;
 using UnityEngine;
 
-namespace Code.Gameplay.Features.Weapon
+namespace Code.Gameplay.Features.Door.Registrars
 {
 	public class DoorAnimatorRegistrar : EntityComponentRegistrar
 	{

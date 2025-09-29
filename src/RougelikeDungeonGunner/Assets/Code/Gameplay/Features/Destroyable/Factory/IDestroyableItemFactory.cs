@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Code.Gameplay.Features.Destroyable
+namespace Code.Gameplay.Features.Destroyable.Factory
 {
   public interface IDestroyableItemFactory
   {

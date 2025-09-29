@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Code.Gameplay.Features.Door;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherDoor;
@@ -33,7 +36,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Weapon.Door doorComponent = new Code.Gameplay.Features.Weapon.Door();
+    static readonly Door doorComponent = new Door();
 
     public bool isDoor {
         get { return HasComponent(GameComponentsLookup.Door); }

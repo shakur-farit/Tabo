@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Code.Gameplay.Features.Door;
 using Code.Gameplay.Features.Weapon;
 using Code.Infrastructure.View;
 using UnityEngine;

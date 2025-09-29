@@ -1,4 +1,5 @@
-﻿using Code.Infrastructure.States.GameStates;
+﻿using Code.Gameplay.Features.Music;
+using Code.Infrastructure.States.GameStates;
 using Code.Infrastructure.States.StateMachine;
 using Code.Meta.UI.Windows.Service;
 using Code.Progress.Provider;
@@ -21,18 +22,21 @@ namespace Code.Meta.UI.Windows.Behaviours
 		private IGameStateMachine _stateMachine;
 		private IWindowService _windowService;
 		private IProgressProvider _progressProvider;
+		private IMusicClipSetter _clipSetter;
 
 		[Inject]
 		public void Constructor(
 			IGameStateMachine stateMachine, 
 			IWindowService windowService,
-			IProgressProvider progressProvider)
+			IProgressProvider progressProvider,
+			IMusicClipSetter clipSetter)
 		{
 			Id = WindowId.LevelCompleteWindow;
 
 			_stateMachine = stateMachine;
 			_windowService = windowService;
 			_progressProvider = progressProvider;
+			_clipSetter = clipSetter;
 		}
 
 		protected override void Initialize()
@@ -44,6 +48,7 @@ namespace Code.Meta.UI.Windows.Behaviours
 			_currentWeaponInfoButton.onClick.AddListener(OpenCurrentWeaponInfoWindow);
 			
 			CoinsTextUpdate();
+			PlayDungeonMelancholyMusic();
 		}
 
 		protected override void SubscribeUpdates() => 
@@ -69,5 +74,8 @@ namespace Code.Meta.UI.Windows.Behaviours
 
 		private void CoinsTextUpdate() => 
 			_coinsText.text = _progressProvider.HeroData.CurrentCoinsCount.ToString();
+
+		private void PlayDungeonMelancholyMusic() => 
+			_clipSetter.SetClip(MusicTypeId.DungeonMelancholy);
 	}
 }

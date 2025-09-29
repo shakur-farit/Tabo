@@ -6,6 +6,10 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Code.Gameplay.Features.Door;
+using Code.Gameplay.Features.Door.Behaviours;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherDoorAnimator;
@@ -33,21 +37,21 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Features.Weapon.DoorAnimatorComponent doorAnimator { get { return (Code.Gameplay.Features.Weapon.DoorAnimatorComponent)GetComponent(GameComponentsLookup.DoorAnimator); } }
-    public Code.Gameplay.Features.Weapon.DoorAnimator DoorAnimator { get { return doorAnimator.Value; } }
+    public DoorAnimatorComponent doorAnimator { get { return (DoorAnimatorComponent)GetComponent(GameComponentsLookup.DoorAnimator); } }
+    public DoorAnimator DoorAnimator { get { return doorAnimator.Value; } }
     public bool hasDoorAnimator { get { return HasComponent(GameComponentsLookup.DoorAnimator); } }
 
-    public GameEntity AddDoorAnimator(Code.Gameplay.Features.Weapon.DoorAnimator newValue) {
+    public GameEntity AddDoorAnimator(DoorAnimator newValue) {
         var index = GameComponentsLookup.DoorAnimator;
-        var component = (Code.Gameplay.Features.Weapon.DoorAnimatorComponent)CreateComponent(index, typeof(Code.Gameplay.Features.Weapon.DoorAnimatorComponent));
+        var component = (DoorAnimatorComponent)CreateComponent(index, typeof(DoorAnimatorComponent));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
     }
 
-    public GameEntity ReplaceDoorAnimator(Code.Gameplay.Features.Weapon.DoorAnimator newValue) {
+    public GameEntity ReplaceDoorAnimator(DoorAnimator newValue) {
         var index = GameComponentsLookup.DoorAnimator;
-        var component = (Code.Gameplay.Features.Weapon.DoorAnimatorComponent)CreateComponent(index, typeof(Code.Gameplay.Features.Weapon.DoorAnimatorComponent));
+        var component = (DoorAnimatorComponent)CreateComponent(index, typeof(DoorAnimatorComponent));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

@@ -795,6 +795,30 @@ MonoBehaviour:
     m_SerializedLabels:
     - DoorConfig
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 47ff4ca5950d81a4fb42c89baf4dca52
+    m_Address: Assets/StaticData/Music/MainMenuMusicConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - MusicConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 13456b3ea103a124f841b1b7507128cf
+    m_Address: Assets/StaticData/Music/RoomClearedMusicConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - MusicConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6fc60c7741de7e842ba6649aa6734a23
+    m_Address: Assets/StaticData/Music/DungeonMelancholyMusicConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - MusicConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f894bc48639ad80448d7506cd574a98c
+    m_Address: Assets/StaticData/Music/BattleLoopMusicConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - MusicConfig
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 7128017d563554245a79368046c75e1a, type: 2}
   m_SchemaSet:
