@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Code.Gameplay.Features.Music
+namespace Code.Gameplay.Features.Music.Services
 {
 	public interface IMusicSourceSetter
 	{

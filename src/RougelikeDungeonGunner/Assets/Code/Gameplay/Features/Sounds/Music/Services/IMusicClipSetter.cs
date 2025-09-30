@@ -1,4 +1,4 @@
-﻿namespace Code.Gameplay.Features.Music
+﻿namespace Code.Gameplay.Features.Music.Services
 {
 	public interface IMusicClipSetter
 	{

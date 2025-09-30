@@ -63,6 +63,8 @@ namespace Code.Gameplay
 			Add(systems.Create<DestroyableFeature>());
 			Add(systems.Create<DoorFeature>());
 
+			Add(systems.Create<MusicFeature>());
+
 			Add(systems.Create<ProcessGameDestructedFeature>());
 			Add(systems.Create<ProcessInputDestructedFeature>());
 		}

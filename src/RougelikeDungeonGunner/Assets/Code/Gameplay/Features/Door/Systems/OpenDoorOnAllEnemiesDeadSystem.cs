@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
-using Code.Gameplay.Features.Music;
+﻿using Code.Gameplay.Features.Level;
 using Entitas;
+using System.Collections.Generic;
 
 namespace Code.Gameplay.Features.Door.Systems
 {
@@ -8,13 +8,11 @@ namespace Code.Gameplay.Features.Door.Systems
 	{
 		private readonly List<GameEntity> _buffer = new(1);
 
-		private readonly IMusicClipSetter _clipSetter;
 		private readonly IGroup<GameEntity> _levels;
 		private readonly IGroup<GameEntity> _doors;
 
-		public OpenDoorOnAllEnemiesDeadSystem(GameContext game, IMusicClipSetter clipSetter)
+		public OpenDoorOnAllEnemiesDeadSystem(GameContext game)
 		{
-			_clipSetter = clipSetter;
 			_levels = game.GetGroup(GameMatcher
 				.AllOf(
 					GameMatcher.EnemiesInLevelCount));
@@ -29,10 +27,7 @@ namespace Code.Gameplay.Features.Door.Systems
 			foreach (GameEntity level in _levels)
 			foreach (GameEntity door in _doors.GetEntities(_buffer))
 				if (level.EnemiesInLevelCount <= 0)
-				{
-					door.isOpened = true;
-					_clipSetter.SetClip(MusicTypeId.ClearedRoom);
-				}
-		}
+          door.isOpened = true;
+    }
 	}
 }

@@ -24,6 +24,7 @@ using Code.Gameplay.Features.Level.Factory;
 using Code.Gameplay.Features.Loot.Factory;
 using Code.Gameplay.Features.Loot.Services;
 using Code.Gameplay.Features.Music;
+using Code.Gameplay.Features.Music.Services;
 using Code.Gameplay.Features.SpecialEffect.Factory;
 using Code.Gameplay.Features.Statuses.Applier;
 using Code.Gameplay.Features.Statuses.Factory;
@@ -182,6 +183,7 @@ namespace Code.Infrastructure.Installers
 		private void BindMusicServices()
 		{
 			Container.BindInterfacesAndSelfTo<MusicProvider>().AsSingle();
+			Container.BindInterfacesAndSelfTo<SoundsVolumeService>().AsSingle();
 		}
 
 		private void BindSystemFactory()
