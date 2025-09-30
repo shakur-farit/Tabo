@@ -44,6 +44,7 @@ using Code.Infrastructure.View.Factory;
 using Code.Meta.Features.Hud.AmmoHolder.Factory;
 using Code.Meta.Features.Hud.EnchantHolder.Factory;
 using Code.Meta.Features.Hud.HeroHeartHolder.Factory;
+using Code.Meta.Features.Hud.HeroSelector.Behaviours;
 using Code.Meta.Features.Shop.Enchant.Factory;
 using Code.Meta.Features.Shop.EnchantUIEntry.Factory;
 using Code.Meta.Features.Shop.Upgrade.Factory;
@@ -173,6 +174,7 @@ namespace Code.Infrastructure.Installers
 			Container.Bind<IWeaponStatUIEntryItemFactory>().To<WeaponStatUIEntryItemFactory>().AsSingle();
 			Container.Bind<IEnchantUIEntryFactory>().To<EnchantUIEntryFactory>().AsSingle();
 			Container.Bind<IWeaponEnchantStatUIEntryFactory>().To<WeaponEnchantStatUIEntryFactory>().AsSingle();
+			Container.Bind<IHeroSelectorFactory>().To<HeroSelectorFactory>().AsSingle();
 		}
 
 		private void BindUIServices()

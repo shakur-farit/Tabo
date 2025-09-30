@@ -4,6 +4,7 @@ using Code.Gameplay.Features.Hero;
 using Code.Gameplay.Features.Hero.Configs;
 using Code.Gameplay.StaticData;
 using Code.Progress.Provider;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;

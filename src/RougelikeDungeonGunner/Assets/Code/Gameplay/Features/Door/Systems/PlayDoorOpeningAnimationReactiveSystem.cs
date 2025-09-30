@@ -3,7 +3,8 @@ using Entitas;
 
 namespace Code.Gameplay.Features.Door.Systems
 {
-	public class PlayDoorOpeningAnimationReactiveSystem : ReactiveSystem<GameEntity>
+	public class 
+    PlayDoorOpeningAnimationReactiveSystem : ReactiveSystem<GameEntity>
 	{
 		public PlayDoorOpeningAnimationReactiveSystem(GameContext game) : base(game)
 		{
