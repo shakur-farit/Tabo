@@ -17,6 +17,7 @@
 		MaxValueReachedWindow = 12,
 		EnchantStatsWindow = 13,
 		EnchantAlreadyAppliedWindow = 14,
-		PauseWindow = 15
-	}
+		PauseWindow = 15,
+    SettingsWindow = 16
+  }
 }

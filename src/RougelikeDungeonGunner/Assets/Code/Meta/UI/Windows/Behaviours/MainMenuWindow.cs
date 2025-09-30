@@ -11,6 +11,7 @@ namespace Code.Meta.UI.Windows.Behaviours
 	public class MainMenuWindow : BaseWindow
 	{
 		[SerializeField] private Button _startGameButton;
+		[SerializeField] private Button _settingsButton;
 
 		private IGameStateMachine _stateMachine;
 		private IWindowService _windowService;
@@ -28,12 +29,16 @@ namespace Code.Meta.UI.Windows.Behaviours
 		{
 			_startGameButton.onClick.AddListener(EnterToBattle);
 			_startGameButton.onClick.AddListener(CloseWindow);
+			_settingsButton.onClick.AddListener(OpenSettingsWindow);
 		}
 
 		private void EnterToBattle() => 
 			_stateMachine.Enter<LoadingBattleState, string>(Scenes.Gameplay);
 
-		private void CloseWindow() => 
+    private void OpenSettingsWindow() =>
+      _windowService.Open(WindowId.SettingsWindow);
+
+    private void CloseWindow() => 
 			_windowService.Close(WindowId.MainMenuWindow);
 	}
 }
