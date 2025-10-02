@@ -31,7 +31,7 @@ namespace Code.Gameplay.Features.Destroyable.Factory
 
       DestroyableItemConfig config = configs[_random.Range(0, configs.Count)];
 
-      return CreateEntity.Empty()
+      return CreateGameEntity.Empty()
           .AddId(_identifier.Next())
           .AddDestroyableItemTypeId(config.TypeId)
           .AddWorldPosition(at)

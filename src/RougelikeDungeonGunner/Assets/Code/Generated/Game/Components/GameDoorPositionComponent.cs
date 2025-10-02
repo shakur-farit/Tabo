@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Code.Gameplay.Features.Door;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherDoorPosition;
@@ -36,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public DoorPosition doorPosition { get { return (DoorPosition)GetComponent(GameComponentsLookup.DoorPosition); } }
+    public Code.Gameplay.Features.Door.DoorPosition doorPosition { get { return (Code.Gameplay.Features.Door.DoorPosition)GetComponent(GameComponentsLookup.DoorPosition); } }
     public UnityEngine.Vector3 DoorPosition { get { return doorPosition.Value; } }
     public bool hasDoorPosition { get { return HasComponent(GameComponentsLookup.DoorPosition); } }
 
     public GameEntity AddDoorPosition(UnityEngine.Vector3 newValue) {
         var index = GameComponentsLookup.DoorPosition;
-        var component = (DoorPosition)CreateComponent(index, typeof(DoorPosition));
+        var component = (Code.Gameplay.Features.Door.DoorPosition)CreateComponent(index, typeof(Code.Gameplay.Features.Door.DoorPosition));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -50,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceDoorPosition(UnityEngine.Vector3 newValue) {
         var index = GameComponentsLookup.DoorPosition;
-        var component = (DoorPosition)CreateComponent(index, typeof(DoorPosition));
+        var component = (Code.Gameplay.Features.Door.DoorPosition)CreateComponent(index, typeof(Code.Gameplay.Features.Door.DoorPosition));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Code.Gameplay.Features.Destroyable;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherDestroyableAnimator;
@@ -36,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public DestroyableAnimatorComponent destroyableAnimator { get { return (DestroyableAnimatorComponent)GetComponent(GameComponentsLookup.DestroyableAnimator); } }
+    public Code.Gameplay.Features.Destroyable.DestroyableAnimatorComponent destroyableAnimator { get { return (Code.Gameplay.Features.Destroyable.DestroyableAnimatorComponent)GetComponent(GameComponentsLookup.DestroyableAnimator); } }
     public Code.Gameplay.Features.Destroyable.Behaviours.DestroyableAnimator DestroyableAnimator { get { return destroyableAnimator.Value; } }
     public bool hasDestroyableAnimator { get { return HasComponent(GameComponentsLookup.DestroyableAnimator); } }
 
     public GameEntity AddDestroyableAnimator(Code.Gameplay.Features.Destroyable.Behaviours.DestroyableAnimator newValue) {
         var index = GameComponentsLookup.DestroyableAnimator;
-        var component = (DestroyableAnimatorComponent)CreateComponent(index, typeof(DestroyableAnimatorComponent));
+        var component = (Code.Gameplay.Features.Destroyable.DestroyableAnimatorComponent)CreateComponent(index, typeof(Code.Gameplay.Features.Destroyable.DestroyableAnimatorComponent));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -50,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceDestroyableAnimator(Code.Gameplay.Features.Destroyable.Behaviours.DestroyableAnimator newValue) {
         var index = GameComponentsLookup.DestroyableAnimator;
-        var component = (DestroyableAnimatorComponent)CreateComponent(index, typeof(DestroyableAnimatorComponent));
+        var component = (Code.Gameplay.Features.Destroyable.DestroyableAnimatorComponent)CreateComponent(index, typeof(Code.Gameplay.Features.Destroyable.DestroyableAnimatorComponent));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

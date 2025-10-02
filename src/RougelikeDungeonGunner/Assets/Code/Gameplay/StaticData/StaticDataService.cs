@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using Code.Common.Balance;
+﻿using Code.Common.Balance;
+using Code.Gameplay.Common;
 using Code.Gameplay.Features.Ammo;
 using Code.Gameplay.Features.Ammo.Configs;
 using Code.Gameplay.Features.Aura;
@@ -42,6 +40,9 @@ using Code.Meta.Features.Shop.WeaponStatUIEntry.Configs;
 using Code.Meta.UI.Windows;
 using Code.Meta.UI.Windows.Config;
 using Cysharp.Threading.Tasks;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Code.Gameplay.StaticData
 {
@@ -65,37 +66,39 @@ namespace Code.Gameplay.StaticData
 		private const string EnchantShopItemConfigLabel = "EnchantShopItemConfig";
 		private const string WeaponUpgradeShopItemConfigLabel = "WeaponUpgradeShopItemConfig";
 		private const string WeaponStatUIEntryConfigLabel = "WeaponStatUIEntryConfig";
-		private const string EnchantUIEntryConfigLabel = "EnchantUIEntryConfig";
-		private const string EnchantStatUIEntryConfigLabel = "EnchantStatUIEntryConfig";
-		private const string MusicConfigLabel = "MusicConfig";
+    private const string EnchantUIEntryConfigLabel = "EnchantUIEntryConfig";
+    private const string EnchantStatUIEntryConfigLabel = "EnchantStatUIEntryConfig";
+    private const string MusicConfigLabel = "MusicConfig";
+    private const string SoundEffectConfigLabel = "SoundEffectConfig";
 
-		private BalanceConfig _balance;
-		private Dictionary<AmmoTypeId, AmmoConfig> _ammoById;
-		private Dictionary<WeaponTypeId, WeaponConfig> _weaponById;
-		private Dictionary<EnemyTypeId, EnemyConfig> _enemyById;
-		private Dictionary<HeroTypeId, HeroConfig> _heroById;
-		private Dictionary<LevelTypeId, LevelConfig> _levelById;
-		private Dictionary<DungeonTypeId, DungeonConfig> _dungeonById;
-		private Dictionary<LootTypeId, LootConfig> _lootById;
-		private Dictionary<EnchantTypeId, EnchantConfig> _enchantById;
-		private Dictionary<AuraTypeId, AuraConfig> _auraById;
+    private BalanceConfig _balance;
+    private Dictionary<AmmoTypeId, AmmoConfig> _ammoById;
+    private Dictionary<WeaponTypeId, WeaponConfig> _weaponById;
+    private Dictionary<EnemyTypeId, EnemyConfig> _enemyById;
+    private Dictionary<HeroTypeId, HeroConfig> _heroById;
+    private Dictionary<LevelTypeId, LevelConfig> _levelById;
+    private Dictionary<DungeonTypeId, DungeonConfig> _dungeonById;
+    private Dictionary<LootTypeId, LootConfig> _lootById;
+    private Dictionary<EnchantTypeId, EnchantConfig> _enchantById;
+    private Dictionary<AuraTypeId, AuraConfig> _auraById;
     private Dictionary<DestroyableItemTypeId, DestroyableItemConfig> _destroyableItemById;
     private Dictionary<DoorTypeId, DoorConfig> _doorById;
     private Dictionary<WindowId, WindowConfig> _windowById;
     private Dictionary<WeaponShopItemTypeId, WeaponShopItemConfig> _weaponShopItemById;
-		private Dictionary<WeaponUpgradeTypeId, WeaponUpgradeShopItemConfig> _weaponUpgradeShopItemById;
-		private Dictionary<WeaponStatUIEntryTypeId, WeaponStatUIEntryConfig> _weaponStatUIEntryItemById;
-		private Dictionary<EnchantShopItemTypeId, EnchantShopItemConfig> _enchantShopItemById;
-		private Dictionary<EnchantUIEntryTypeId, EnchantUIEntryConfig> _enchantUIEntryItemById;
-		private Dictionary<SpecialEffectTypeId, SpecialEffectConfig> _specialEffectById;
-		private Dictionary<EnchantStatUIEntryTypeId, EnchantStatUIEntryConfig>
+    private Dictionary<WeaponUpgradeTypeId, WeaponUpgradeShopItemConfig> _weaponUpgradeShopItemById;
+    private Dictionary<WeaponStatUIEntryTypeId, WeaponStatUIEntryConfig> _weaponStatUIEntryItemById;
+    private Dictionary<EnchantShopItemTypeId, EnchantShopItemConfig> _enchantShopItemById;
+    private Dictionary<EnchantUIEntryTypeId, EnchantUIEntryConfig> _enchantUIEntryItemById;
+    private Dictionary<SpecialEffectTypeId, SpecialEffectConfig> _specialEffectById;
+    private Dictionary<EnchantStatUIEntryTypeId, EnchantStatUIEntryConfig>
 			_weaponEnchantStatUIEntryItemById;
-		private Dictionary<MusicTypeId, MusicConfig> _musicById;
+    private Dictionary<MusicTypeId, MusicConfig> _musicById;
+    private Dictionary<SoundEffectsTypeId, SoundEffectConfig> _soundEffectById;
 
 
-		private readonly IAssetProvider _assetProvider;
+    private readonly IAssetProvider _assetProvider;
 
-		public IEnumerable<LootConfig> GetAllLootConfigs() => _lootById.Values;
+    public IEnumerable<LootConfig> GetAllLootConfigs() => _lootById.Values;
 		public IEnumerable<HeroConfig> GetAllHeroConfigs() => _heroById.Values;
 		public IEnumerable<DestroyableItemConfig> GetAllDestroyableItemConfigs() => _destroyableItemById.Values;
 
@@ -126,7 +129,8 @@ namespace Code.Gameplay.StaticData
 			await LoadEnchantUIEntryItem();
 			await LoadEnchantStatUIEntryItem();
 			await LoadMusics();
-		}
+      await LoadSoundEffect();
+    }
 
 		public AmmoConfig GetAmmoConfig(AmmoTypeId id)
 		{
@@ -288,7 +292,15 @@ namespace Code.Gameplay.StaticData
 			throw new Exception($"Music config for {id} was not found");
 		}
 
-		public BalanceConfig GetBalance() =>
+    public SoundEffectConfig GetSoundEffectConfig(SoundEffectsTypeId id)
+    {
+      if (_soundEffectById.TryGetValue(id, out SoundEffectConfig config))
+        return config;
+
+      throw new Exception($"Sound effect config for {id} was not found");
+    }
+
+    public BalanceConfig GetBalance() =>
 			_balance;
 
 		private async UniTask LoadAbilities() =>
@@ -375,7 +387,12 @@ namespace Code.Gameplay.StaticData
 			_musicById = (await _assetProvider.LoadAll<MusicConfig>(MusicConfigLabel))
 				.ToDictionary(x => x.TypeId, x => x);
 
-		private async UniTask LoadBalance() =>
+    private async UniTask LoadSoundEffect() =>
+      _soundEffectById = (await _assetProvider.LoadAll<SoundEffectConfig>(SoundEffectConfigLabel))
+        .ToDictionary(x => x.TypeId, x => x);
+
+
+    private async UniTask LoadBalance() =>
 			_balance = await _assetProvider.Load<BalanceConfig>(BalanceConfigPath);
 	}
 }

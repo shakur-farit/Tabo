@@ -2,6 +2,7 @@
 using Code.Infrastructure.Services;
 using Code.Infrastructure.States.GameStates;
 using Code.Infrastructure.States.StateMachine;
+using Code.Meta.Features.Hud.HeroSelector.Behaviours;
 using Code.Meta.UI.Windows.Service;
 using UnityEngine;
 using UnityEngine.UI;
@@ -18,15 +19,21 @@ namespace Code.Meta.UI.Windows.Behaviours
 		private IGameStateMachine _stateMachine;
 		private IWindowService _windowService;
     private IQuitGameService _quit;
+    private IHeroSelectorFactory _heroSelectorFactory;
 
     [Inject]
-		public void Constructor(IGameStateMachine stateMachine, IWindowService windowService, IQuitGameService quit)
+		public void Constructor(
+      IGameStateMachine stateMachine, 
+      IWindowService windowService, 
+      IQuitGameService quit,
+      IHeroSelectorFactory heroSelectorFactory)
 		{
 			Id = WindowId.MainMenuWindow;
 
       _stateMachine = stateMachine;
 			_windowService = windowService;
       _quit = quit;
+      _heroSelectorFactory = heroSelectorFactory;
     }
 
 		protected override void Initialize()
@@ -37,8 +44,17 @@ namespace Code.Meta.UI.Windows.Behaviours
 			_quitButton.onClick.AddListener(Quit);
 		}
 
-		private void EnterToBattle() => 
-			_stateMachine.Enter<LoadingBattleState, string>(Scenes.Gameplay);
+		private void EnterToBattle()
+    {
+      DestroyHeroSelector();
+
+      CloseWindow();
+
+      _stateMachine.Enter<LoadingBattleState, string>(Scenes.Gameplay);
+    }
+
+    private void DestroyHeroSelector() => 
+      Destroy(_heroSelectorFactory.HeroSelector);
 
     private void OpenSettingsWindow() =>
       _windowService.Open(WindowId.SettingsWindow);

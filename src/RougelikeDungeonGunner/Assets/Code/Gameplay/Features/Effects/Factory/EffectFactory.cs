@@ -34,7 +34,7 @@ namespace Code.Gameplay.Features.Effects.Factory
 				.With(x => x.isHealEffect = true);
 
 		private GameEntity CreateEffectEntity(int producerId, int targetId, float value) =>
-			CreateEntity.Empty()
+			CreateGameEntity.Empty()
 				.AddId(_identifier.Next())
 				.With(x => x.isEffect = true)
 				.AddProducerId(producerId)

@@ -44,7 +44,7 @@ namespace Code.Gameplay.Features.Aura.Factory
 		{
 			AuraConfig config = _staticDataService.GetAuraConfig(typeId);
 
-			return CreateEntity.Empty()
+			return CreateGameEntity.Empty()
 					.AddId(_identifier.Next())
 					.AddWorldPosition(at)
 					.AddAuraTypeId(typeId)

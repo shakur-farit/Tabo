@@ -61,7 +61,7 @@ namespace Code.Gameplay.Features.Enchants.Factory
 		{
 			EnchantConfig config = _staticDataService.GetEnchantConfig(typeId);
 
-			return CreateEntity.Empty()
+			return CreateGameEntity.Empty()
 				.AddId(_identifier.Next())
 				.AddEnchantTypeId(typeId)
 				.AddStatusSetups(new List<StatusSetup> { setup })

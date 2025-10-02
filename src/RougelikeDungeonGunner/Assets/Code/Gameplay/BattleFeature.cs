@@ -67,6 +67,7 @@ namespace Code.Gameplay
 
 			Add(systems.Create<ProcessGameDestructedFeature>());
 			Add(systems.Create<ProcessInputDestructedFeature>());
+			Add(systems.Create<ProcessSoundsDestructedFeature>());
 		}
 	}
 }

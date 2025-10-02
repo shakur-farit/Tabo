@@ -71,5 +71,6 @@ namespace Code.Gameplay.StaticData
     EnchantStatUIEntryConfig GetEnchantStatUIEntryItemConfig(EnchantStatUIEntryTypeId id);
     EnchantShopItemConfig GetEnchantShopItemConfig(EnchantShopItemTypeId id);
     MusicConfig GetMusicConfig(MusicTypeId typeId);
+    SoundEffectConfig GetSoundEffectConfig(SoundEffectsTypeId id);
   }
 }

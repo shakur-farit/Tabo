@@ -34,7 +34,7 @@ namespace Code.Gameplay.Features.Level.Factory
 				LevelTypeId typeId = (LevelTypeId)level;
 				LevelConfig config = _staticDataService.GetLevelConfig(typeId);
 
-				return CreateEntity.Empty()
+				return CreateGameEntity.Empty()
 						.AddId(_identifier.Next())
 						.AddLevelTypeId(typeId)
 						.AddDungeonTypeOnLevel(config.DungeonTypeOnLevel)

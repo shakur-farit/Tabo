@@ -22,7 +22,7 @@ namespace Code.Gameplay.Features.SpecialEffect.Factory
 		{
 			SpecialEffectConfig config = _staticDataService.GetSpecialEffectConfig(typeId);
 
-			return CreateEntity.Empty()
+			return CreateGameEntity.Empty()
 				.AddId(_identifier.Next())
 				.AddSpecialEffectTypeId(typeId)
 				.AddWorldPosition(at)

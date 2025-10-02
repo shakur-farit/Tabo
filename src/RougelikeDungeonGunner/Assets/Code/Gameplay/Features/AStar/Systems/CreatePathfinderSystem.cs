@@ -29,7 +29,7 @@ namespace Code.Gameplay.Features.AStar.Systems
 		{
 			foreach (GameEntity dungeon in _dungeons.GetEntities(_buffer))
 			{
-				CreateEntity.Empty()
+				CreateGameEntity.Empty()
 					.AddEnemySpawnValidPositions(dungeon.EnemySpawnValidPositions)
 					.AddMinDistanceForRepath(MinDistanceForRepath)
 					.AddPathfindingIntervalTimer(2f)

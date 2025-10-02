@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Code.Gameplay.Features.Destroyable;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherDestroyableItem;
@@ -36,7 +33,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly DestroyableItem destroyableItemComponent = new DestroyableItem();
+    static readonly Code.Gameplay.Features.Destroyable.DestroyableItem destroyableItemComponent = new Code.Gameplay.Features.Destroyable.DestroyableItem();
 
     public bool isDestroyableItem {
         get { return HasComponent(GameComponentsLookup.DestroyableItem); }

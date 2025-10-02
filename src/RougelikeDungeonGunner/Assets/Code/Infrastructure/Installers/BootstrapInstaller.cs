@@ -75,7 +75,8 @@ namespace Code.Infrastructure.Installers
 			BindGameplayFactories();
 			BindUIFactories();
 			BindUIServices();
-			BindMusicServices();
+			BindSoundsServices();
+			BindSoundsFactories();
 			BindCameraProvider();
 			BindProgressServices();
 			BindEntityIndices();
@@ -113,6 +114,7 @@ namespace Code.Infrastructure.Installers
 			Container.Bind<GameContext>().FromInstance(Contexts.sharedInstance.game).AsSingle();
 			Container.Bind<InputContext>().FromInstance(Contexts.sharedInstance.input).AsSingle();
 			Container.Bind<MetaContext>().FromInstance(Contexts.sharedInstance.meta).AsSingle();
+			Container.Bind<SoundsContext>().FromInstance(Contexts.sharedInstance.sounds).AsSingle();
 		}
 
 		private void BindCameraProvider()
@@ -182,13 +184,16 @@ namespace Code.Infrastructure.Installers
 			Container.Bind<IWindowService>().To<WindowService>().AsSingle();
 		}
 
-		private void BindMusicServices()
+		private void BindSoundsServices()
 		{
 			Container.BindInterfacesAndSelfTo<MusicProvider>().AsSingle();
 			Container.BindInterfacesAndSelfTo<SoundsVolumeService>().AsSingle();
 		}
 
-		private void BindSystemFactory()
+    private void BindSoundsFactories() => 
+      Container.Bind<ISoundEffectFactory>().To<SoundEffectFactory>().AsSingle();
+
+    private void BindSystemFactory()
 		{
 			Container.Bind<ISystemsFactory>().To<SystemsFactory>().AsSingle();
 		}

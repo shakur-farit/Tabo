@@ -75,7 +75,7 @@ namespace Code.Gameplay.Features.AmmoPattern.Factory
 				.With(x => x.isSinglePattern = true);
 
 		private GameEntity CreatePatternEntity(AmmoTypeId ammoTypeId, Vector3 origin, Vector3 forward) =>
-			CreateEntity.Empty()
+			CreateGameEntity.Empty()
 				.AddId(_identifier.Next())
 				.AddAmmoTypeId(ammoTypeId)
 				.AddWorldPosition(origin)

@@ -88,7 +88,7 @@ namespace Code.Gameplay.Features.Ammo.Factory
 			AmmoConfig config = _staticDataService.GetAmmoConfig(ammoTypeId);
 			CollisionCastSetup castSetup = config.CastSetup;
 
-			return CreateEntity.Empty()
+			return CreateGameEntity.Empty()
 					.AddId(_identifier.Next())
 					.AddWorldPosition(at)
 					.AddAmmoTypeId(ammoTypeId)

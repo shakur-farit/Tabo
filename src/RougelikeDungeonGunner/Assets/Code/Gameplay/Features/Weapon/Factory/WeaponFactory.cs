@@ -164,7 +164,7 @@ namespace Code.Gameplay.Features.Weapon.Factory
 			CollisionCastSetup castSetup = config.CastSetup;
 
 
-			return CreateEntity.Empty()
+			return CreateGameEntity.Empty()
 					.AddId(_identifier.Next())
 					.AddWeaponTypeId(weaponTypeId)
 					.AddAmmoTypeId(config.AmmoTypeId)

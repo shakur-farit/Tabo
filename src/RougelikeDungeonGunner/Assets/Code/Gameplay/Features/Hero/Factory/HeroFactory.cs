@@ -67,7 +67,7 @@ namespace Code.Gameplay.Features.Hero.Factory
 					.With(x => x[Stats.MaxHp] = config.MaxHp)
 				;
 
-			return CreateEntity.Empty()
+			return CreateGameEntity.Empty()
 					.AddId(_identifier.Next())
 					.AddHeroTypeId(typeId)
 					.AddWorldPosition(at)

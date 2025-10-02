@@ -830,6 +830,162 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3c204fea80d85cf4b9ee13275f13c5f4
+    m_Address: Assets/StaticData/SoundEffect/LowBreakingSoundEffectConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SoundEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 73780e297bda6ba44a724a988e7ad470
+    m_Address: Assets/StaticData/SoundEffect/PistolFireSoundEffectConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SoundEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7fd15072080592b458005d240e6fb2a2
+    m_Address: Assets/StaticData/SoundEffect/EnergyFireSoundEffectConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SoundEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b0de8d702a1440745bf012bff13a4491
+    m_Address: Assets/StaticData/SoundEffect/EnergyPulseSoundEffectConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SoundEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c03eb46bb6aee0f47a081212e26ce6fd
+    m_Address: Assets/StaticData/SoundEffect/EnergyReloadSoundEffectConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SoundEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 979af7e13378f434c9f575c90a2cc71c
+    m_Address: Assets/StaticData/SoundEffect/SniperFireSoundEffectConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SoundEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a08839efaf4c2e44abd714cbdcc8c5ff
+    m_Address: Assets/StaticData/SoundEffect/SniperReloadSoundEffectConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SoundEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fa385c1e90554264f911ca8742d4a81f
+    m_Address: Assets/StaticData/SoundEffect/MachinegunFireSoundEffectConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SoundEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ead580afef4afd94dbc500a46a31711e
+    m_Address: Assets/StaticData/SoundEffect/MachinegunReloadSoundEffectConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SoundEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7f1a6766baadd9140a1ddff01ac744dc
+    m_Address: Assets/StaticData/SoundEffect/LaserBlasterFireSoundEffectConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SoundEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dec76516840187b459e2c80f97faf64e
+    m_Address: Assets/StaticData/SoundEffect/LaserBlacterReloadSoundEffectConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SoundEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7808c299dd60a564da154db0b0e24b53
+    m_Address: Assets/StaticData/SoundEffect/PistolReloadSoundEffectConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SoundEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 13855138ccf5a664a8993caee9dcef18
+    m_Address: Assets/StaticData/SoundEffect/RevolverFireSoundEffectConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SoundEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 394843bdf9cf3214094ef91365f5f42f
+    m_Address: Assets/StaticData/SoundEffect/RevolverReloadSoundEffectConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SoundEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b7c7bb017fbfaac448036e4d7e6b963d
+    m_Address: Assets/StaticData/SoundEffect/RiffleFireSoundEffectConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SoundEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 724711abc5df9bc42b2ead94ae4d6883
+    m_Address: Assets/StaticData/SoundEffect/RiffleReloadSoundEffectConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SoundEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: df993b55cc67cf949a99f312d5723854
+    m_Address: Assets/StaticData/SoundEffect/BazukaFireSoundEffectConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SoundEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a3d504e08ebc2fc4ab2cdde80de78f4f
+    m_Address: Assets/StaticData/SoundEffect/BazukaReloadSoundEffectConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SoundEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1b373091f469e9e4fba58205cc1f68f9
+    m_Address: Assets/StaticData/SoundEffect/ShotgunFireSoundEffectConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SoundEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: eb2de925656abe94494a18769526fc0e
+    m_Address: Assets/StaticData/SoundEffect/ShotgunReloadSoundEffectConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SoundEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1e5929efc2987414b8ea3673c3e9d1f5
+    m_Address: Assets/StaticData/SoundEffect/DoorSoundEffectConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SoundEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2e7c132b761f3e74e8b35792acf55f9a
+    m_Address: Assets/StaticData/SoundEffect/PickupOneSoundEffectConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SoundEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d4f5e8134b394694c9528ef3c85ca28c
+    m_Address: Assets/StaticData/SoundEffect/PickupTwoSoundEffectConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SoundEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0f270c5496b7dbc4ca3c8075b432cb74
+    m_Address: Assets/StaticData/SoundEffect/PickupThreeSoundEffectConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SoundEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f197b0a0ce1b3e443aa4f6aa8852ab98
+    m_Address: Assets/StaticData/SoundEffect/GlassBreakingSoundEffectConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SoundEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 195156dc76a97634099e8ec0f6ea612d
+    m_Address: Assets/StaticData/SoundEffect/HighBreakingSoundEffectConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SoundEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 7128017d563554245a79368046c75e1a, type: 2}
   m_SchemaSet:

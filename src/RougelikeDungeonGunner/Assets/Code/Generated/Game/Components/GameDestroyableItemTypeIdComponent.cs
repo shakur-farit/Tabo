@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Code.Gameplay.Features.Destroyable;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherDestroyableItemTypeId;
@@ -36,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public DestroyableItemTypeIdComponent destroyableItemTypeId { get { return (DestroyableItemTypeIdComponent)GetComponent(GameComponentsLookup.DestroyableItemTypeId); } }
+    public Code.Gameplay.Features.Destroyable.DestroyableItemTypeIdComponent destroyableItemTypeId { get { return (Code.Gameplay.Features.Destroyable.DestroyableItemTypeIdComponent)GetComponent(GameComponentsLookup.DestroyableItemTypeId); } }
     public Code.Gameplay.Features.Destroyable.DestroyableItemTypeId DestroyableItemTypeId { get { return destroyableItemTypeId.Value; } }
     public bool hasDestroyableItemTypeId { get { return HasComponent(GameComponentsLookup.DestroyableItemTypeId); } }
 
     public GameEntity AddDestroyableItemTypeId(Code.Gameplay.Features.Destroyable.DestroyableItemTypeId newValue) {
         var index = GameComponentsLookup.DestroyableItemTypeId;
-        var component = (DestroyableItemTypeIdComponent)CreateComponent(index, typeof(DestroyableItemTypeIdComponent));
+        var component = (Code.Gameplay.Features.Destroyable.DestroyableItemTypeIdComponent)CreateComponent(index, typeof(Code.Gameplay.Features.Destroyable.DestroyableItemTypeIdComponent));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -50,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceDestroyableItemTypeId(Code.Gameplay.Features.Destroyable.DestroyableItemTypeId newValue) {
         var index = GameComponentsLookup.DestroyableItemTypeId;
-        var component = (DestroyableItemTypeIdComponent)CreateComponent(index, typeof(DestroyableItemTypeIdComponent));
+        var component = (Code.Gameplay.Features.Destroyable.DestroyableItemTypeIdComponent)CreateComponent(index, typeof(Code.Gameplay.Features.Destroyable.DestroyableItemTypeIdComponent));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

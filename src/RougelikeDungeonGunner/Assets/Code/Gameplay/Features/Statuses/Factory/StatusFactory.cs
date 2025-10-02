@@ -78,7 +78,7 @@ namespace Code.Gameplay.Features.Statuses.Factory
 
 		private GameEntity CreateStatusEntity(StatusSetup setup, int producerId)
 		{
-			return CreateEntity.Empty()
+			return CreateGameEntity.Empty()
 					.AddId(_identifier.Next())
 					.AddStatusTypeId(setup.StatusTypeId)
 					.AddEffectValue(setup.Value)

@@ -8,6 +8,7 @@ namespace Code.Meta
 		public HomeScreenFeature(ISystemsFactory systems)
 		{
 			Add(systems.Create<ProcessMetaDestructedFeature>());
+			Add(systems.Create<ProcessSoundsDestructedFeature>());
 		}
 	}
 }

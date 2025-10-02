@@ -83,7 +83,7 @@ namespace Code.Gameplay.Features.Enemy.Factory
 					.With(x => x[Stats.Damage] = config.Damage)
 				;
 
-			return CreateEntity.Empty()
+			return CreateGameEntity.Empty()
 					.AddId(_identifier.Next())
 					.AddEnemyTypeId(typeId)
 					.AddWorldPosition(at)

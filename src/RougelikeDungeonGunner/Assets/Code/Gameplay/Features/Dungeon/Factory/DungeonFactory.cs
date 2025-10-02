@@ -31,7 +31,7 @@ namespace Code.Gameplay.Features.Dungeon.Factory
 			EnvironmentSetup environment = config.EnvironmentSetups[randomIndex];
 			DoorSetup door = environment.DoorSetup;
 
-			return CreateEntity.Empty()
+			return CreateGameEntity.Empty()
 					.AddId(_identifier.Next())
 					.AddViewPrefab(environment.ViewPrefab)
 					.AddWorldPosition(Vector2.zero)

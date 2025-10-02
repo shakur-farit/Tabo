@@ -11,6 +11,8 @@ namespace Code.Meta.Features.Hud.HeroSelector.Behaviours
     private readonly IInstantiator _instantiator;
     private readonly IAssetProvider _assetProvider;
 
+    public GameObject HeroSelector { get; private set; }
+
     public HeroSelectorFactory(IInstantiator instantiator, IAssetProvider assetProvider)
     {
       _instantiator = instantiator;
@@ -20,7 +22,7 @@ namespace Code.Meta.Features.Hud.HeroSelector.Behaviours
     public async void CreateHeroSelector()
     {
       GameObject prefab = await _assetProvider.Load<GameObject>(HeroSelectorAddress);
-      _instantiator.InstantiatePrefab(prefab);
+      HeroSelector = _instantiator.InstantiatePrefab(prefab);
     }
   }
 }

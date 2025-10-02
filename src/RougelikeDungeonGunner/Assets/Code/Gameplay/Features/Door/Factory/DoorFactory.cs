@@ -22,7 +22,7 @@ namespace Code.Gameplay.Features.Door.Factory
 		{
 			DoorConfig config = _staticDataService.GetDoorConfig(typeId);
 
-			return CreateEntity.Empty()
+			return CreateGameEntity.Empty()
 					.AddId(_identifier.Next())
 					.AddDoorTypeId(typeId)
 					.AddViewPrefab(config.ViewPrefab)
