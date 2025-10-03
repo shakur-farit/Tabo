@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: DoorNSConfig
   m_EditorClassIdentifier: 
   TypeId: 1
+  OpeningSoundEffectTypeId: 20
   ViewPrefab: {fileID: 1709411908639538131, guid: ffee800f6ed06644eb1ffb13514ab867, type: 3}
+  ContacnRadius: 0.5

@@ -3,6 +3,7 @@ using Code.Common.Extensions;
 using Code.Gameplay.Features.Ammo.Services;
 using Code.Gameplay.Features.AmmoPattern.Factory;
 using Code.Gameplay.Features.Cooldowns;
+using Code.Gameplay.Features.Music;
 using Entitas;
 using UnityEngine;
 
@@ -14,15 +15,18 @@ namespace Code.Gameplay.Features.AmmoPattern.Systems
 
 		private readonly IAmmoPatternFactory _patternFactory;
 		private readonly IAmmoDirectionProvider _ammoDirectionProvider;
+		private readonly ISoundEffectFactory _soundEffectFactory;
 		private readonly IGroup<GameEntity> _weapons;
 
 		public CreatePatternForHeroBazukaSystem(
 			GameContext game,
 			IAmmoPatternFactory patternFactory,
-			IAmmoDirectionProvider ammoDirectionProvider)
+			IAmmoDirectionProvider ammoDirectionProvider,
+			ISoundEffectFactory soundEffectFactory)
 		{
 			_patternFactory = patternFactory;
 			_ammoDirectionProvider = ammoDirectionProvider;
+			_soundEffectFactory = soundEffectFactory;
 
 			_weapons = game.GetGroup(GameMatcher
 				.AllOf(
@@ -52,6 +56,9 @@ namespace Code.Gameplay.Features.AmmoPattern.Systems
 				weapon
 					.With(x => x.isShot = true)
 					.PutOnCooldown(weapon.Cooldown);
+
+				if (weapon.hasShotSoundEffectTypeId)
+					_soundEffectFactory.CreateSoundEffect(weapon.ShotSoundEffectTypeId);
 			}
 		}
 

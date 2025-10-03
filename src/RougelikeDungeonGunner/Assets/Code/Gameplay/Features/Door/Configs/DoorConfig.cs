@@ -1,4 +1,5 @@
-﻿using Code.Infrastructure.View;
+﻿using Code.Gameplay.Features.Music;
+using Code.Infrastructure.View;
 using UnityEngine;
 
 namespace Code.Gameplay.Features.Door.Configs
@@ -7,6 +8,8 @@ namespace Code.Gameplay.Features.Door.Configs
 	public class DoorConfig : ScriptableObject
 	{
 		public DoorTypeId TypeId;
+		public SoundEffectTypeId OpeningSoundEffectTypeId;
 		public EntityBehaviour ViewPrefab;
+		[Range(0.1f, 5f)] public float ContacnRadius;
 	}
 }

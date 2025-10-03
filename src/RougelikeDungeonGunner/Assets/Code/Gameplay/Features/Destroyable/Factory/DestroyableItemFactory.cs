@@ -38,6 +38,7 @@ namespace Code.Gameplay.Features.Destroyable.Factory
           .AddViewPrefab(config.ViewPrefab)
           .AddLootDropChance(config.LootDropChance)
           .AddExcludedLoot(config.ExcludedLoot)
+          .AddSoundEffectTypeId(config.DestroyingSoundEffectTypeId)
           .With(x => x.isDestroyableItem = true)
         ;
     }

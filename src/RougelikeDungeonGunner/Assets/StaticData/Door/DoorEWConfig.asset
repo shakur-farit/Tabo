@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: DoorEWConfig
   m_EditorClassIdentifier: 
   TypeId: 2
+  OpeningSoundEffectTypeId: 20
   ViewPrefab: {fileID: 6282441095508054087, guid: 2450c2b9a7fd0da4a995f5c72cac6984, type: 3}
+  ContacnRadius: 0.5

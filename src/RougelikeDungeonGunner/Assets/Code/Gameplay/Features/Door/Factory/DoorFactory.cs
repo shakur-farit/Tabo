@@ -9,6 +9,8 @@ namespace Code.Gameplay.Features.Door.Factory
 {
 	public class DoorFactory : IDoorFactory
 	{
+		private const int TargetsBuffer = 1;
+
 		private readonly IIdentifierService _identifier;
 		private readonly IStaticDataService _staticDataService;
 
@@ -27,9 +29,10 @@ namespace Code.Gameplay.Features.Door.Factory
 					.AddDoorTypeId(typeId)
 					.AddViewPrefab(config.ViewPrefab)
 					.AddWorldPosition(at)
-					.AddTargetsBuffer(new(1))
+					.AddTargetsBuffer(new(TargetsBuffer))
 					.AddTargetLayerMask(CollisionLayer.Hero.AsMask())
-					.AddRadius(1f)
+					.AddRadius(config.ContacnRadius)
+					.AddSoundEffectTypeId(config.OpeningSoundEffectTypeId)
 					.With(x => x.isDoor = true)
 					.With(x => x.isReadyToCollectTargets = true)
 					.With(x => x.isCollectTargetsContinuously = true)

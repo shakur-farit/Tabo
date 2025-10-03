@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: PickupTwoSoundEffectConfig
   m_EditorClassIdentifier: 
   TypeId: 22
-  ViewPrefab: {fileID: 0}
+  ViewPrefab: {fileID: 1539839927614816462, guid: a345a91caf7c34c4585c9d7610cba74d, type: 3}
   AudioClip: {fileID: 8300000, guid: dbabfecd2fac4fe45b27d356ed2e46fa, type: 3}
   Volume: 0.5
+  Lifetime: 1

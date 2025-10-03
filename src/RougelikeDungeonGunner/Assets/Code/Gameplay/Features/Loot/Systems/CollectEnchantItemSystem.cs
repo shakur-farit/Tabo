@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Code.Gameplay.Features.Enchants.Factory;
+using Code.Gameplay.Features.Music;
 using Code.Gameplay.Features.Statuses;
 using Entitas;
 
@@ -8,14 +9,19 @@ namespace Code.Gameplay.Features.Loot.Systems
 	public class CollectEnchantItemSystem : IExecuteSystem
 	{
 		private readonly IEnchantFactory _enchantFactory;
+		private readonly ISoundEffectFactory _soundEffectFactory;
 		private readonly IGroup<GameEntity> _collected;
 		private readonly IGroup<GameEntity> _weapons;
 		private readonly List<GameEntity> _buffer = new(1);
 
 
-		public CollectEnchantItemSystem(GameContext game, IEnchantFactory enchantFactory)
+		public CollectEnchantItemSystem(
+			GameContext game, 
+			IEnchantFactory enchantFactory,
+			ISoundEffectFactory soundEffectFactory)
 		{
 			_enchantFactory = enchantFactory;
+			_soundEffectFactory = soundEffectFactory;
 			_collected = game.GetGroup(GameMatcher
 				.AllOf(
 					GameMatcher.Collected,
@@ -32,7 +38,12 @@ namespace Code.Gameplay.Features.Loot.Systems
 			foreach (GameEntity weapon in _weapons.GetEntities(_buffer))
 			foreach (GameEntity collected in _collected)
 			foreach (StatusSetup setup in collected.StatusSetups)
+			{
 				_enchantFactory.CreateEnchant(setup, weapon.Id);
+
+				if (collected.hasSoundEffectTypeId)
+					_soundEffectFactory.CreateSoundEffect(collected.SoundEffectTypeId);
+			}
 		}
 	}
 }

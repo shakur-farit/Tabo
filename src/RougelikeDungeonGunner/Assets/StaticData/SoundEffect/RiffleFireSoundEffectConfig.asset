@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: RiffleFireSoundEffectConfig
   m_EditorClassIdentifier: 
   TypeId: 14
-  ViewPrefab: {fileID: 0}
+  ViewPrefab: {fileID: 1539839927614816462, guid: a345a91caf7c34c4585c9d7610cba74d, type: 3}
   AudioClip: {fileID: 8300000, guid: 5e5fc42332c6f0d4698f5a740496c9e2, type: 3}
   Volume: 0.5
+  Lifetime: 1

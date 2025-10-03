@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Code.Gameplay.Features.Loot;
+using Code.Gameplay.Features.Music;
 using Code.Infrastructure.View;
 using UnityEngine;
 
@@ -10,6 +11,7 @@ namespace Code.Gameplay.Features.Destroyable.Configs
   {
     public DestroyableItemTypeId TypeId;
     public DestroyableItemPlacingTypeId PlacingTypeId;
+    public SoundEffectTypeId DestroyingSoundEffectTypeId;
     public EntityBehaviour ViewPrefab; 
     public Sprite Sprite;
     public RuntimeAnimatorController AnimatorController;

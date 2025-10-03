@@ -1,15 +1,18 @@
-﻿using Entitas;
+﻿using Code.Gameplay.Features.Music;
+using Entitas;
 
 namespace Code.Gameplay.Features.Destroyable.Systems
 {
 	public class DestroyableItemDestroyAnimationPlaySystem : IExecuteSystem
 	{
 		private readonly GameContext _game;
+		private readonly ISoundEffectFactory _soundEffectFactory;
 		private readonly IGroup<GameEntity> _collectors;
 
-		public DestroyableItemDestroyAnimationPlaySystem(GameContext game)
+		public DestroyableItemDestroyAnimationPlaySystem(GameContext game, ISoundEffectFactory soundEffectFactory)
 		{
 			_game = game;
+			_soundEffectFactory = soundEffectFactory;
 			_collectors = game.GetGroup(GameMatcher
 				.AllOf(GameMatcher.DestroyableTargetsBuffer));
 		}
@@ -26,6 +29,9 @@ namespace Code.Gameplay.Features.Destroyable.Systems
 
         if(destroyable.hasDestroyableAnimator)
           destroyable.DestroyableAnimator.PlayDestroy();
+
+        if (destroyable.hasSoundEffectTypeId)
+	        _soundEffectFactory.CreateSoundEffect(destroyable.SoundEffectTypeId);
 
         destroyable.isDestroying = true;
       }

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: SniperFireSoundEffectConfig
   m_EditorClassIdentifier: 
   TypeId: 4
-  ViewPrefab: {fileID: 0}
+  ViewPrefab: {fileID: 1539839927614816462, guid: a345a91caf7c34c4585c9d7610cba74d, type: 3}
   AudioClip: {fileID: 8300000, guid: c5d39e077e05af94e8f4af8d2125ce24, type: 3}
   Volume: 0.5
+  Lifetime: 1

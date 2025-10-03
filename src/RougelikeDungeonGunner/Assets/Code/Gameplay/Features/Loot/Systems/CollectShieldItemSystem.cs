@@ -1,16 +1,19 @@
 ﻿using System.Collections.Generic;
+using Code.Gameplay.Features.Music;
 using Entitas;
 
 namespace Code.Gameplay.Features.Loot.Systems
 {
 	public class CollectShieldItemSystem : IExecuteSystem
 	{
+		private readonly ISoundEffectFactory _soundEffectFactory;
 		private readonly IGroup<GameEntity> _collected;
 		private readonly IGroup<GameEntity> _heroes;
 		private readonly List<GameEntity> _buffer = new(1);
 
-		public CollectShieldItemSystem(GameContext game)
+		public CollectShieldItemSystem(GameContext game, ISoundEffectFactory soundEffectFactory)
 		{
+			_soundEffectFactory = soundEffectFactory;
 			_collected = game.GetGroup(GameMatcher
 				.AllOf(
 					GameMatcher.Collected,
@@ -26,7 +29,12 @@ namespace Code.Gameplay.Features.Loot.Systems
 		{
 			foreach (GameEntity hero in _heroes.GetEntities(_buffer))
 			foreach (GameEntity collected in _collected)
+			{
 				hero.isRequestShield = collected.isShield;
+
+				if (collected.hasSoundEffectTypeId)
+					_soundEffectFactory.CreateSoundEffect(collected.SoundEffectTypeId);
+				}
 		}
 	}
 }

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: DoorSoundEffectConfig
   m_EditorClassIdentifier: 
   TypeId: 20
-  ViewPrefab: {fileID: 0}
+  ViewPrefab: {fileID: 1539839927614816462, guid: a345a91caf7c34c4585c9d7610cba74d, type: 3}
   AudioClip: {fileID: 8300000, guid: 7f1653d2178fdc047a95879eb5bc482e, type: 3}
   Volume: 0.5
+  Lifetime: 1

@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TypeId: 6
   PlacingTypeId: 2
+  DestroyingSoundEffectTypeId: 26
   ViewPrefab: {fileID: 5787494655573491850, guid: f2586d5cefc64a54eaeba48f18dbac65, type: 3}
   Sprite: {fileID: -1575555147489216822, guid: 370179218b8e7c14b85a6a52fb84894a, type: 3}
   AnimatorController: {fileID: 9100000, guid: d95624bd2e3c69b4c83cea096bf3b37f, type: 2}
