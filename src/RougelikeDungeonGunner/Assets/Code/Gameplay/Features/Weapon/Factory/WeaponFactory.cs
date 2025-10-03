@@ -180,6 +180,8 @@ namespace Code.Gameplay.Features.Weapon.Factory
 					.AddMaxPelletsDeviation(_statsProvider.GetMaxDeviation(config))
 					.AddCooldown(_statsProvider.GetCooldown(config))
 					.AddMaxWeaponEnchantsCount(_statsProvider.GetEnchantSlots(config))
+					.AddShotSoundEffectTypeId(config.ShotSoundEffectTypeId)
+					.AddReloadSoundEffectTypeId(config.ReloadSoundEffectTypeId)
 					.With(x => x.isWeapon = true)
 					.With(x => x.isReadyToCollectTargets = true)
 					.With(x => x.isMagazineNotEmpty = true)

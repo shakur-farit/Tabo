@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Code.Gameplay.Features.Effects;
+using Code.Gameplay.Features.Music;
 using Code.Gameplay.Features.Statuses;
 using Entitas;
 using UnityEngine;
@@ -44,6 +45,9 @@ namespace Code.Gameplay.Features.Weapon
 
 	[Game] public class WeaponEnchants : IComponent { public Dictionary<int, StatusSetup> Value; }
 	[Game] public class MaxWeaponEnchantsCount : IComponent { public int Value; }
+
+	[Game] public class ShotSoundEffectTypeId : IComponent { public SoundEffectTypeId Value; }
+	[Game] public class ReloadSoundEffectTypeId : IComponent { public SoundEffectTypeId Value; }
 
 	[Game] public class HeroPistol : IComponent { }
 	[Game] public class HeroRevolver : IComponent { }

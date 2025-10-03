@@ -8,17 +8,17 @@
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherViewParent;
+    static Entitas.IMatcher<GameEntity> _matcherVolume;
 
-    public static Entitas.IMatcher<GameEntity> ViewParent {
+    public static Entitas.IMatcher<GameEntity> Volume {
         get {
-            if (_matcherViewParent == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.ViewParent);
+            if (_matcherVolume == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.Volume);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherViewParent = matcher;
+                _matcherVolume = matcher;
             }
 
-            return _matcherViewParent;
+            return _matcherVolume;
         }
     }
 }
@@ -33,28 +33,28 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Common.ViewParent viewParent { get { return (Code.Common.ViewParent)GetComponent(GameComponentsLookup.ViewParent); } }
-    public UnityEngine.Transform ViewParent { get { return viewParent.Value; } }
-    public bool hasViewParent { get { return HasComponent(GameComponentsLookup.ViewParent); } }
+    public Code.Gameplay.Features.Music.Volume volume { get { return (Code.Gameplay.Features.Music.Volume)GetComponent(GameComponentsLookup.Volume); } }
+    public float Volume { get { return volume.Value; } }
+    public bool hasVolume { get { return HasComponent(GameComponentsLookup.Volume); } }
 
-    public GameEntity AddViewParent(UnityEngine.Transform newValue) {
-        var index = GameComponentsLookup.ViewParent;
-        var component = (Code.Common.ViewParent)CreateComponent(index, typeof(Code.Common.ViewParent));
+    public GameEntity AddVolume(float newValue) {
+        var index = GameComponentsLookup.Volume;
+        var component = (Code.Gameplay.Features.Music.Volume)CreateComponent(index, typeof(Code.Gameplay.Features.Music.Volume));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
     }
 
-    public GameEntity ReplaceViewParent(UnityEngine.Transform newValue) {
-        var index = GameComponentsLookup.ViewParent;
-        var component = (Code.Common.ViewParent)CreateComponent(index, typeof(Code.Common.ViewParent));
+    public GameEntity ReplaceVolume(float newValue) {
+        var index = GameComponentsLookup.Volume;
+        var component = (Code.Gameplay.Features.Music.Volume)CreateComponent(index, typeof(Code.Gameplay.Features.Music.Volume));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;
     }
 
-    public GameEntity RemoveViewParent() {
-        RemoveComponent(GameComponentsLookup.ViewParent);
+    public GameEntity RemoveVolume() {
+        RemoveComponent(GameComponentsLookup.Volume);
         return this;
     }
 }

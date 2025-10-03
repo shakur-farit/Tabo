@@ -6,9 +6,10 @@ namespace Code.Gameplay.Features.Music
   [CreateAssetMenu(menuName = "Dungeon Gunner/Sound Effect Config", fileName = "SoundEffectConfig")]
   public class SoundEffectConfig : ScriptableObject
   {
-    public SoundEffectsTypeId TypeId;
+    public SoundEffectTypeId TypeId;
     public EntityBehaviour ViewPrefab;
     public AudioClip AudioClip;
-    public float Volume;
+    [Range(0f, 1f)] public float Volume;
+    [Range(0f, 2f)] public float Lifetime;
   }
 }

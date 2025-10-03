@@ -93,7 +93,7 @@ namespace Code.Gameplay.StaticData
     private Dictionary<EnchantStatUIEntryTypeId, EnchantStatUIEntryConfig>
 			_weaponEnchantStatUIEntryItemById;
     private Dictionary<MusicTypeId, MusicConfig> _musicById;
-    private Dictionary<SoundEffectsTypeId, SoundEffectConfig> _soundEffectById;
+    private Dictionary<SoundEffectTypeId, SoundEffectConfig> _soundEffectById;
 
 
     private readonly IAssetProvider _assetProvider;
@@ -292,7 +292,7 @@ namespace Code.Gameplay.StaticData
 			throw new Exception($"Music config for {id} was not found");
 		}
 
-    public SoundEffectConfig GetSoundEffectConfig(SoundEffectsTypeId id)
+    public SoundEffectConfig GetSoundEffectConfig(SoundEffectTypeId id)
     {
       if (_soundEffectById.TryGetValue(id, out SoundEffectConfig config))
         return config;

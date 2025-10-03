@@ -4,6 +4,7 @@ using Code.Gameplay.Features.Ammo;
 using Code.Gameplay.Features.AmmoPattern;
 using Code.Gameplay.Features.Collection;
 using Code.Gameplay.Features.Effects;
+using Code.Gameplay.Features.Music;
 using Code.Gameplay.Features.SpecialEffect;
 using Code.Gameplay.Features.Statuses;
 using Code.Infrastructure.View;
@@ -19,6 +20,8 @@ namespace Code.Gameplay.Features.Weapon.Configs
 		public WeaponTypeId TypeId;
 		public AmmoTypeId AmmoTypeId;
 		public SpecialEffectTypeId SpecialEffectTypeId;
+		public SoundEffectTypeId ShotSoundEffectTypeId;
+		public SoundEffectTypeId ReloadSoundEffectTypeId;
 		public AmmoPatternSetup AmmoPatternSetup;
 		public EntityBehaviour ViewPrefab;
 		public Sprite Sprite;

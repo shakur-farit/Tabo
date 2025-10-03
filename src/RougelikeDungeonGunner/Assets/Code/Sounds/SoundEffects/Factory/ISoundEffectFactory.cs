@@ -2,6 +2,6 @@
 {
   public interface ISoundEffectFactory
   {
-    SoundsEntity CreateSoundEffect(SoundEffectsTypeId typeId);
+    GameEntity CreateSoundEffect(SoundEffectTypeId typeId);
   }
 }

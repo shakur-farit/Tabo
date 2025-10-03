@@ -32,8 +32,9 @@ namespace Code.Gameplay.Features.Weapon
 			Add(systems.Create<PushBackHeroOnCollisionFrontWeaponSystem>());
 			Add(systems.Create<CalculateMultiPelletCountSystem>());
 			Add(systems.Create<SetHeroWeaponReloadingByPressButtonSystem>());
+			Add(systems.Create<CreateReloadSoundEffectReactiveSystem>());
 			Add(systems.Create<ReloadWeaponSystem>());
-			
+
 			Add(systems.Create<StartWeaponReloadingAnimationSystem>());
 			Add(systems.Create<StartWeaponPrechargeAnimationSystem>());
 			 

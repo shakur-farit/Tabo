@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Code.Gameplay.Common.Time;
+using Code.Gameplay.Features.Door.Factory;
 using Entitas;
 
 namespace Code.Gameplay.Features.Weapon.Systems

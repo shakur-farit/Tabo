@@ -17,6 +17,7 @@ using Code.Gameplay.Features.Level;
 using Code.Gameplay.Features.Lifetime;
 using Code.Gameplay.Features.Loot;
 using Code.Gameplay.Features.Movement;
+using Code.Gameplay.Features.Music;
 using Code.Gameplay.Features.Rotation;
 using Code.Gameplay.Features.SpecialEffect;
 using Code.Gameplay.Features.Statuses;
@@ -64,10 +65,10 @@ namespace Code.Gameplay
 			Add(systems.Create<DoorFeature>());
 
 			Add(systems.Create<MusicFeature>());
+			Add(systems.Create<SoundEffectFeature>());
 
 			Add(systems.Create<ProcessGameDestructedFeature>());
 			Add(systems.Create<ProcessInputDestructedFeature>());
-			Add(systems.Create<ProcessSoundsDestructedFeature>());
 		}
 	}
 }

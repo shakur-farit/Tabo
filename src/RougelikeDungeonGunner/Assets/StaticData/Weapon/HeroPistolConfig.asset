@@ -15,6 +15,8 @@ MonoBehaviour:
   TypeId: 1
   AmmoTypeId: 1
   SpecialEffectTypeId: 1
+  ShotSoundEffectTypeId: 10
+  ReloadSoundEffectTypeId: 11
   AmmoPatternSetup:
     PatternTypeId: 1
     AmmoCount: 3

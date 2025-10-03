@@ -1,4 +1,5 @@
 ﻿using Code.Common.Destruct;
+using Code.Gameplay.Features.Music;
 using Code.Infrastructure.Systems;
 
 namespace Code.Meta
@@ -7,8 +8,8 @@ namespace Code.Meta
 	{
 		public HomeScreenFeature(ISystemsFactory systems)
 		{
+			Add(systems.Create<SoundEffectFeature>());
 			Add(systems.Create<ProcessMetaDestructedFeature>());
-			Add(systems.Create<ProcessSoundsDestructedFeature>());
 		}
 	}
 }

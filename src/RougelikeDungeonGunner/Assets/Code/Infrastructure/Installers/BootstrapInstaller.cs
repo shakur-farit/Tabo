@@ -114,7 +114,6 @@ namespace Code.Infrastructure.Installers
 			Container.Bind<GameContext>().FromInstance(Contexts.sharedInstance.game).AsSingle();
 			Container.Bind<InputContext>().FromInstance(Contexts.sharedInstance.input).AsSingle();
 			Container.Bind<MetaContext>().FromInstance(Contexts.sharedInstance.meta).AsSingle();
-			Container.Bind<SoundsContext>().FromInstance(Contexts.sharedInstance.sounds).AsSingle();
 		}
 
 		private void BindCameraProvider()
@@ -122,10 +121,8 @@ namespace Code.Infrastructure.Installers
 			Container.BindInterfacesAndSelfTo<CameraProvider>().AsSingle();
 		}
 
-		private void BindProgressServices()
-		{
+		private void BindProgressServices() => 
 			Container.Bind<IProgressProvider>().To<ProgressProvider>().AsSingle();
-		}
 
 		private void BindGameplayServices()
 		{

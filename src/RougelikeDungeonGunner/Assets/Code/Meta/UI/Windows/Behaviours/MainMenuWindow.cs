@@ -41,14 +41,13 @@ namespace Code.Meta.UI.Windows.Behaviours
 			_startGameButton.onClick.AddListener(EnterToBattle);
 			_startGameButton.onClick.AddListener(CloseWindow);
 			_settingsButton.onClick.AddListener(OpenSettingsWindow);
+			_quitButton.onClick.AddListener(CloseWindow);
 			_quitButton.onClick.AddListener(Quit);
 		}
 
 		private void EnterToBattle()
     {
       DestroyHeroSelector();
-
-      CloseWindow();
 
       _stateMachine.Enter<LoadingBattleState, string>(Scenes.Gameplay);
     }
@@ -59,14 +58,10 @@ namespace Code.Meta.UI.Windows.Behaviours
     private void OpenSettingsWindow() =>
       _windowService.Open(WindowId.SettingsWindow);
 
-    private void Quit()
-    {
-      CloseWindow();
-
-			_quit.QuitGame();
-    }
+    private void Quit() => 
+	    _quit.QuitGame();
 
     private void CloseWindow() => 
-			_windowService.Close(WindowId.MainMenuWindow);
+	    _windowService.Close(WindowId.MainMenuWindow);
 	}
 }
