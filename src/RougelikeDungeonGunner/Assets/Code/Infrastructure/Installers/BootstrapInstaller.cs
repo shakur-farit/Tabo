@@ -30,6 +30,7 @@ using Code.Gameplay.Features.Statuses.Applier;
 using Code.Gameplay.Features.Statuses.Factory;
 using Code.Gameplay.Features.Weapon;
 using Code.Gameplay.Features.Weapon.Factory;
+using Code.Gameplay.Features.Weapon.Systems;
 using Code.Gameplay.Input.Service;
 using Code.Gameplay.StaticData;
 using Code.Infrastructure.AssetManagement;
@@ -134,6 +135,7 @@ namespace Code.Infrastructure.Installers
 			Container.Bind<IWeaponStatsProvider>().To<WeaponStatsProvider>().AsSingle();
 			Container.Bind<IWeaponEffectsProvider>().To<WeaponEffectsProvider>().AsSingle();
 			Container.Bind<IWeaponUpgrader>().To<WeaponUpgrader>().AsSingle();
+			Container.Bind<IWeaponReloadService>().To<WeaponReloadService>().AsSingle();
 			Container.BindInterfacesAndSelfTo<WeaponUpgrades>().AsSingle();
 			Container.Bind<IAmmoDirectionProvider>().To<AmmoDirectionProvider>().AsSingle();
 			Container.Bind<IValidPositionsProvider>().To<ValidPositionsProvider>().AsSingle();

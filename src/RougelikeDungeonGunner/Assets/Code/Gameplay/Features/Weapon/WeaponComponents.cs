@@ -39,6 +39,7 @@ namespace Code.Gameplay.Features.Weapon
 	[Game] public class Precharged : IComponent { }
 	[Game] public class Shooting : IComponent { }
 	[Game] public class Reloading : IComponent { }
+	[Game] public class Precharging : IComponent { }
 
 	[Game] public class EffectSetups : IComponent { public List<EffectSetup> Value; }
 	[Game] public class StatusSetups : IComponent { public List<StatusSetup> Value; }

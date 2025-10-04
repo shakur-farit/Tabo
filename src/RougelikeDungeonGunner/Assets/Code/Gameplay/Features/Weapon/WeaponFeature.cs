@@ -32,15 +32,16 @@ namespace Code.Gameplay.Features.Weapon
 			Add(systems.Create<PushBackHeroOnCollisionFrontWeaponSystem>());
 			Add(systems.Create<CalculateMultiPelletCountSystem>());
 			Add(systems.Create<SetHeroWeaponReloadingByPressButtonSystem>());
-			Add(systems.Create<CreateReloadSoundEffectReactiveSystem>());
-			Add(systems.Create<ReloadWeaponSystem>());
+      Add(systems.Create<CreateReloadSoundEffectReactiveSystem>());
+      Add(systems.Create<ReloadWeaponSystem>());
 
-			Add(systems.Create<StartWeaponReloadingAnimationSystem>());
-			Add(systems.Create<StartWeaponPrechargeAnimationSystem>());
-			 
-			Add(systems.Create<MarkWeaponReadyToShotSystem>());
-			Add(systems.Create<SetHeroWeaponShootingByLeftMouseButtonInputSystem>());
-			Add(systems.Create<PrechargeWeaponSystem>());
+      Add(systems.Create<StartWeaponReloadingAnimationSystem>());
+      Add(systems.Create<StartWeaponPrechargeAnimationSystem>());
+
+      Add(systems.Create<MarkWeaponReadyToShotSystem>());
+      Add(systems.Create<SetHeroWeaponShootingByLeftMouseButtonInputSystem>());
+      Add(systems.Create<CreatePrechargeSoundEffectReactiveSystem>());
+      Add(systems.Create<PrechargeWeaponSystem>());
 			
 			Add(systems.Create<MarkDestructWeaponWithoutOwnerSystem>());
 

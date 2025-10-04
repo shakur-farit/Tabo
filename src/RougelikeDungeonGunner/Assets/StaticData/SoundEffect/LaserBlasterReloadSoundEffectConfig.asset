@@ -16,4 +16,4 @@ MonoBehaviour:
   ViewPrefab: {fileID: 1539839927614816462, guid: a345a91caf7c34c4585c9d7610cba74d, type: 3}
   AudioClip: {fileID: 8300000, guid: 3a23ff12c7253704a92030876b18c839, type: 3}
   Volume: 0.5
-  Lifetime: 1
+  Lifetime: 4

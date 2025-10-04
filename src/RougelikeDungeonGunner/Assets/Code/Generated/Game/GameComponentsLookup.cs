@@ -263,31 +263,32 @@ public static class GameComponentsLookup {
     public const int Precharged = 252;
     public const int PrechargeTime = 253;
     public const int PrechargeTimeLeft = 254;
-    public const int ReadyToShoot = 255;
-    public const int Reloading = 256;
-    public const int ReloadSoundEffectTypeId = 257;
-    public const int ReloadTime = 258;
-    public const int ReloadTimeLeft = 259;
-    public const int RotationPointTransform = 260;
-    public const int Shooting = 261;
-    public const int Shot = 262;
-    public const int ShotSoundEffectTypeId = 263;
-    public const int StatusSetups = 264;
-    public const int Weapon = 265;
-    public const int WeaponEnchants = 266;
-    public const int WeaponOwnerId = 267;
-    public const int WeaponOwnerTypeId = 268;
-    public const int WeaponRotationAngle = 269;
-    public const int WeaponTypeId = 270;
-    public const int AmmoHolder = 271;
-    public const int CoinsHolder = 272;
-    public const int EnchantHolder = 273;
-    public const int HeartHolder = 274;
-    public const int ReloadingAnimator = 275;
-    public const int TimerHolder = 276;
-    public const int WeaponHolder = 277;
+    public const int Precharging = 255;
+    public const int ReadyToShoot = 256;
+    public const int Reloading = 257;
+    public const int ReloadSoundEffectTypeId = 258;
+    public const int ReloadTime = 259;
+    public const int ReloadTimeLeft = 260;
+    public const int RotationPointTransform = 261;
+    public const int Shooting = 262;
+    public const int Shot = 263;
+    public const int ShotSoundEffectTypeId = 264;
+    public const int StatusSetups = 265;
+    public const int Weapon = 266;
+    public const int WeaponEnchants = 267;
+    public const int WeaponOwnerId = 268;
+    public const int WeaponOwnerTypeId = 269;
+    public const int WeaponRotationAngle = 270;
+    public const int WeaponTypeId = 271;
+    public const int AmmoHolder = 272;
+    public const int CoinsHolder = 273;
+    public const int EnchantHolder = 274;
+    public const int HeartHolder = 275;
+    public const int ReloadingAnimator = 276;
+    public const int TimerHolder = 277;
+    public const int WeaponHolder = 278;
 
-    public const int TotalComponents = 278;
+    public const int TotalComponents = 279;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -545,6 +546,7 @@ public static class GameComponentsLookup {
         "Precharged",
         "PrechargeTime",
         "PrechargeTimeLeft",
+        "Precharging",
         "ReadyToShoot",
         "Reloading",
         "ReloadSoundEffectTypeId",
@@ -826,6 +828,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Weapon.Precharged),
         typeof(Code.Gameplay.Features.Weapon.PrechargeTime),
         typeof(Code.Gameplay.Features.Weapon.PrechargeTimeLeft),
+        typeof(Code.Gameplay.Features.Weapon.Precharging),
         typeof(Code.Gameplay.Features.Weapon.ReadyToShoot),
         typeof(Code.Gameplay.Features.Weapon.Reloading),
         typeof(Code.Gameplay.Features.Weapon.ReloadSoundEffectTypeId),

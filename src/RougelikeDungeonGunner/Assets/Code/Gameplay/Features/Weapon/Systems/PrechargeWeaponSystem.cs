@@ -29,13 +29,15 @@ namespace Code.Gameplay.Features.Weapon.Systems
 				if (weapon.PrechargeTimeLeft > 0)
 				{
 					weapon.ReplacePrechargeTimeLeft(weapon.PrechargeTimeLeft - _time.DeltaTime);
-				}
+          weapon.isPrecharging = true;
+        }
 				else
 				{
 					weapon.isPrecharged = true;
 					weapon.ReplacePrechargeTimeLeft(weapon.PrechargeTime);
-				}
-			}
+          weapon.isPrecharging = false;
+        }
+      }
 		}
 	}
 }

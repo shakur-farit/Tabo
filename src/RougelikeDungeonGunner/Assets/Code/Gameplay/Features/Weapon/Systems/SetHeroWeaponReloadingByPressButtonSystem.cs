@@ -6,12 +6,14 @@ namespace Code.Gameplay.Features.Weapon.Systems
 {
 	public class SetHeroWeaponReloadingByPressButtonSystem : IExecuteSystem
 	{
-		private readonly IGroup<GameEntity> _weapons;
+    private readonly IWeaponReloadService _reloadService;
+    private readonly IGroup<GameEntity> _weapons;
 		private readonly List<GameEntity> _buffer = new(1);
 
-		public SetHeroWeaponReloadingByPressButtonSystem(GameContext game)
-		{
-			_weapons = game.GetGroup(GameMatcher
+		public SetHeroWeaponReloadingByPressButtonSystem(GameContext game, IWeaponReloadService reloadService)
+    {
+      _reloadService = reloadService;
+      _weapons = game.GetGroup(GameMatcher
 				.AllOf(
 					GameMatcher.Weapon,
 					GameMatcher.HeroWeapon,
@@ -19,16 +21,18 @@ namespace Code.Gameplay.Features.Weapon.Systems
 					GameMatcher.ReloadTime,
 					GameMatcher.ReloadTimeLeft)
 				.NoneOf(GameMatcher.Reloading));
-		}
+    }
 
 		public void Execute()
 		{
 			foreach (GameEntity weapon in _weapons.GetEntities(_buffer))
 			{
-				if (UnityEngine.Input.GetKeyDown(KeyCode.R))
+				if (_reloadService.IsReloading)
 				{
 					weapon.isMagazineNotEmpty = false;
 					weapon.isReloading = true;
+
+					_reloadService.StopReloading();
 				}
 			}
 		}

@@ -10,6 +10,6 @@ namespace Code.Gameplay.Features.Music
     public EntityBehaviour ViewPrefab;
     public AudioClip AudioClip;
     [Range(0f, 1f)] public float Volume;
-    [Range(0f, 2f)] public float Lifetime;
+    [Range(0f, 4f)] public float Lifetime;
   }
 }

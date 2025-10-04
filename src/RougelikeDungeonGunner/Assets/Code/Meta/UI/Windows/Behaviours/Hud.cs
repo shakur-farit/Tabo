@@ -1,4 +1,5 @@
 ﻿using Code.Gameplay.Common.Time;
+using Code.Gameplay.Features.Weapon.Systems;
 using Code.Meta.UI.Windows.Service;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,22 +10,26 @@ namespace Code.Meta.UI.Windows.Behaviours
 	public class Hud : BaseWindow
 	{
 		[SerializeField] private Button _pauseButton;
+		[SerializeField] private Button _reloadButton;
 
 		private IWindowService _windowService;
 		private ITimeService _time;
+    private IWeaponReloadService _reloadService;
 
-		[Inject]
-		public void Constructor(IWindowService windowService, ITimeService time)
+    [Inject]
+		public void Constructor(IWindowService windowService, ITimeService time, IWeaponReloadService reloadService)
 		{
 			Id = WindowId.Hud;
 
 			_windowService = windowService;
 			_time = time;
-		}
+      _reloadService = reloadService;
+    }
 
 		protected override void Initialize()
 		{
 			_pauseButton.onClick.AddListener(Pause);
+			_reloadButton.onClick.AddListener(ReloadWeapon);
 		}
 
 		private void Pause()
@@ -33,5 +38,8 @@ namespace Code.Meta.UI.Windows.Behaviours
 
 			_time.StopTime();
 		}
-	}
+
+    private void ReloadWeapon() => 
+      _reloadService.StartReloading();
+  }
 }
