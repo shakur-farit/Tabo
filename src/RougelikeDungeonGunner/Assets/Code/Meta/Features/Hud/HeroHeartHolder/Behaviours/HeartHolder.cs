@@ -1,6 +1,7 @@
-﻿using System.Collections.Generic;
-using Code.Meta.Features.Hud.HeroHeartHolder.Factory;
+﻿using Code.Meta.Features.Hud.HeroHeartHolder.Factory;
 using Cysharp.Threading.Tasks;
+using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using Zenject;
 
@@ -8,9 +9,9 @@ namespace Code.Meta.Features.Hud.HeroHeartHolder.Behaviours
 {
 	public class HeartHolder : MonoBehaviour
 	{
-		private const int MaxHearts = 10;
-
-		[SerializeField] private Transform _holder;
+    [SerializeField] private Transform _holder;
+    [SerializeField] private TextMeshProUGUI _hpText;
+		[SerializeField] private int _maxUIHearts = 5;
 
 		private IHeartUIFactory _factory;
 
@@ -20,26 +21,33 @@ namespace Code.Meta.Features.Hud.HeroHeartHolder.Behaviours
 		public void Constructor(IHeartUIFactory factory) =>
 			_factory = factory;
 
-
 		public async void UpdateHeartUICount(float currentHp, float maxHp)
 		{
-			int heartsToShow = Mathf.CeilToInt((currentHp / maxHp) * MaxHearts);
-			heartsToShow = Mathf.Clamp(heartsToShow, 0, MaxHearts);
+			int heartsToShow = Mathf.CeilToInt((currentHp / maxHp) * _maxUIHearts);
+			heartsToShow = Mathf.Clamp(heartsToShow, 0, _maxUIHearts);
 
 			await CreateHeartUI();
 
 			for (int i = 0; i < _heartIconsBuffer.Count; i++)
 				_heartIconsBuffer[i].SetActive(i < heartsToShow);
+
+			UpdateHpText(currentHp, maxHp);
 		}
 
 		private async UniTask CreateHeartUI()
 		{
-			while (_heartIconsBuffer.Count < MaxHearts)
+			while (_heartIconsBuffer.Count < _maxUIHearts)
 			{
 				GameObject icon = await _factory.CreateHeartUI(_holder);
 				icon.SetActive(false);
 				_heartIconsBuffer.Add(icon);
 			}
 		}
+
+    private void UpdateHpText(float currentHp, float maxHp)
+    {
+      float hpPercent = (currentHp / maxHp) * 100f;
+      _hpText.text = $"{hpPercent:0}%";
+    }
 	}
 }

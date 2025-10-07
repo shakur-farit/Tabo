@@ -140,7 +140,7 @@ namespace Code.Gameplay.Common.Physics
     {
 	    int hitCount = Physics2D.BoxCastNonAlloc(origin, size, 0f, direction.normalized, Hits, distance, layerMask);
 
-	    for (int i = 0; i < hitCount; i++)
+      for (int i = 0; i < hitCount; i++)
 	    {
 		    RaycastHit2D hit = Hits[i];
 		    if (hit.collider == null)

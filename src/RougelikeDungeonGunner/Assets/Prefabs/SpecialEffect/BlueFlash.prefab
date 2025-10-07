@@ -43,7 +43,7 @@ ParticleSystem:
   serializedVersion: 8
   lengthInSec: 0.1
   simulationSpeed: 1
-  stopAction: 1
+  stopAction: 0
   cullingMode: 3
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
@@ -4899,7 +4899,7 @@ GameObject:
   - component: {fileID: 8701506688930854304}
   - component: {fileID: 2183183120376608140}
   - component: {fileID: 6244926618751341932}
-  - component: {fileID: 8278118926734922745}
+  - component: {fileID: -8592646083137616883}
   m_Layer: 0
   m_Name: BlueFlash
   m_TagString: Untagged
@@ -4948,7 +4948,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f995b7c574ebe654d91168f1183f0916, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &8278118926734922745
+--- !u!114 &-8592646083137616883
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4957,9 +4957,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 9126710399240088047}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bca20d606c4705b4eab71fe5b10199d2, type: 3}
+  m_Script: {fileID: 11500000, guid: b45947ad57d922c438157d9085f57417, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EntityView: {fileID: 6244926618751341932}
-  _particleSystem: {fileID: 4119310809776717062}
-  _particleSystemRenderer: {fileID: 3075619582667188114}
+  _particleSystems:
+  - {fileID: 4119310809776717062}

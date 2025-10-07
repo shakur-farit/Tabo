@@ -8,6 +8,9 @@ namespace Code.Gameplay.Features.Door.Behaviours
 
 		private readonly int _isOpening = Animator.StringToHash("isOpening");
 
-		public void PlayOpening() => _animator.SetBool(_isOpening, true);
+    private void OnDisable() =>
+      _animator.Rebind();
+
+    public void PlayOpening() => _animator.SetBool(_isOpening, true);
 	}
 }

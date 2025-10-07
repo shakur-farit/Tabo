@@ -17,8 +17,8 @@ namespace Code.Meta.Features.Hud.EnchantHolder.Systems
 				.NoneOf(GameMatcher.EnchantUI));
 
 			_enchantHolders = game.GetGroup(GameMatcher
-				.AllOf(
-					GameMatcher.EnchantHolder));
+        .AllOf(
+          GameMatcher.EnchantHolder));
 		}
 
 		public void Execute()

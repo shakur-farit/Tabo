@@ -15,7 +15,10 @@ namespace Code.Gameplay.Features.Enchants.Behaviours
 
 		private readonly HashSet<StatusTypeId> _activeEnchantTypes = new();
 
-		public void ApplyVisual(StatusTypeId typeId)
+    private void OnDisable() => 
+      ResetVisual();
+
+    public void ApplyVisual(StatusTypeId typeId)
 		{
 			_activeEnchantTypes.Add(typeId);
 
@@ -34,5 +37,11 @@ namespace Code.Gameplay.Features.Enchants.Behaviours
 				_ => _otherEnchantsMaterial
 			};
 		}
-	}
+
+    public void ResetVisual()
+    {
+      _activeEnchantTypes.Clear();
+      _spriteRenderer.material = _otherEnchantsMaterial;
+    }
+  }
 }

@@ -4,7 +4,7 @@ using Entitas;
 namespace Code.Meta.Features.Hud.EnchantHolder.Systems
 {
 	public class RemoveEnchantVisualFromHolderSystem : ReactiveSystem<GameEntity>
-	{
+  {
 		private readonly IGroup<GameEntity> _enchantHolders;
 
 		public RemoveEnchantVisualFromHolderSystem(Contexts contexts) : base(contexts.game) =>

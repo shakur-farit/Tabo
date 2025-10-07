@@ -15,8 +15,8 @@ namespace Code.Meta.Features.Hud.CoinsHolder.Systems
 					GameMatcher.Coins));
 
 			_coinsHolders = game.GetGroup(GameMatcher
-				.AllOf(
-					GameMatcher.CoinsHolder));
+        .AllOf(
+          GameMatcher.CoinsHolder));
 		}
 
 		public void Execute()

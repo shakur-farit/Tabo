@@ -9,7 +9,7 @@ namespace Code.Meta.Features.Hud.AmmoHolder.Systems
 
 		public UpdateAmmoUICountInHolderOnCreateOrReloadWeaponSystem(Contexts contexts) : base(contexts.game) =>
 			_ammoHolders = contexts.game.GetGroup(GameMatcher.AllOf(
-				GameMatcher.AmmoHolder));
+        GameMatcher.AmmoHolder));
 
 		protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context) =>
 			context.CreateCollector(GameMatcher.AllOf(

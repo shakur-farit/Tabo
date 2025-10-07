@@ -10,6 +10,7 @@ namespace Code.Infrastructure.View
 		private ICollisionRegistry _collisionRegistry;
 
 		public GameEntity Entity { get; private set; }
+    public EntityBehaviour EntityBehaviourObject => this;
 
 		[Inject]
 		public void Constructor(ICollisionRegistry collisionRegistry) => 
@@ -39,5 +40,5 @@ namespace Code.Infrastructure.View
 			Entity.Release(this);
 			Entity = null;
 		}
-	}
+  }
 }

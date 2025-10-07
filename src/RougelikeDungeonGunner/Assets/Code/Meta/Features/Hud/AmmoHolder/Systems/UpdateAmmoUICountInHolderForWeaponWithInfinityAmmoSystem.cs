@@ -4,14 +4,14 @@ using Entitas;
 namespace Code.Meta.Features.Hud.AmmoHolder.Systems
 {
 	public class UpdateAmmoUICountInHolderForWeaponWithInfinityAmmoSystem : ReactiveSystem<GameEntity>
-	{
+  {
 		private const int InfinityMagazineSize = 0;
 
 		private readonly IGroup<GameEntity> _ammoHolders;
 
 		public UpdateAmmoUICountInHolderForWeaponWithInfinityAmmoSystem(Contexts contexts) : base(contexts.game) =>
 			_ammoHolders = contexts.game.GetGroup(GameMatcher.AllOf(
-				GameMatcher.AmmoHolder));
+        GameMatcher.AmmoHolder));
 
 		protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context) =>
 			context.CreateCollector(GameMatcher.AllOf(

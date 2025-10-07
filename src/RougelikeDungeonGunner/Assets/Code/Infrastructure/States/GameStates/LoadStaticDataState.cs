@@ -5,27 +5,27 @@ using Cysharp.Threading.Tasks;
 
 namespace Code.Infrastructure.States.GameStates
 {
-	public class LoadStaticDataState : SimpleState
-	{
-		private readonly IStaticDataService _staticDataService;
-		private readonly IGameStateMachine _stateMachine;
+  public class LoadStaticDataState : SimpleState
+  {
+    private readonly IStaticDataService _staticDataService;
+    private readonly IGameStateMachine _stateMachine;
 
-		public LoadStaticDataState(IStaticDataService staticDataService, IGameStateMachine stateMachine)
-		{
-			_staticDataService = staticDataService;
-			_stateMachine = stateMachine;
-		}
+    public LoadStaticDataState(IStaticDataService staticDataService, IGameStateMachine stateMachine)
+    {
+      _staticDataService = staticDataService;
+      _stateMachine = stateMachine;
+    }
 
-		public override async void Enter()
-		{
-			await LoadStaticData();
-			EnterToLoadingHomeScreenState();
-		}
+    public override async void Enter()
+    {
+      await LoadStaticData();
+      EnterToLoadingHomeScreenState();
+    }
 
-		private async UniTask LoadStaticData() => 
-			await _staticDataService.Load();
+    private async UniTask LoadStaticData() =>
+      await _staticDataService.Load();
 
-		private void EnterToLoadingHomeScreenState() => 
-			_stateMachine.Enter<LoadingHomeScreenState>();
-	}
+    private void EnterToLoadingHomeScreenState() =>
+      _stateMachine.Enter<ObjectPoolWarmupState>();
+  }
 }

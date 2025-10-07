@@ -8,6 +8,6 @@ namespace Code.Infrastructure.View
 		void SetEntity(GameEntity entity);
 		void ReleaseEntity();
 
-		GameObject gameObject { get; }
-	}
+		EntityBehaviour EntityBehaviourObject { get; }
+  }
 }

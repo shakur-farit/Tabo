@@ -65,3 +65,6 @@ TagManager:
   - name: WallDestroyableDecoration
     uniqueID: 3745444939
     locked: 0
+  - name: Aura
+    uniqueID: 607812167
+    locked: 0

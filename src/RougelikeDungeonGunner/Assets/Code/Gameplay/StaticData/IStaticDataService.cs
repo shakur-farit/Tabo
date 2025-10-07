@@ -26,6 +26,7 @@ using Code.Gameplay.Features.SpecialEffect;
 using Code.Gameplay.Features.SpecialEffect.Configs;
 using Code.Gameplay.Features.Weapon;
 using Code.Gameplay.Features.Weapon.Configs;
+using Code.Infrastructure.ObjectPool.Config;
 using Code.Meta.Features.Shop.Enchant;
 using Code.Meta.Features.Shop.Enchant.Configs;
 using Code.Meta.Features.Shop.EnchantUIEntry;
@@ -72,5 +73,6 @@ namespace Code.Gameplay.StaticData
     EnchantShopItemConfig GetEnchantShopItemConfig(EnchantShopItemTypeId id);
     MusicConfig GetMusicConfig(MusicTypeId typeId);
     SoundEffectConfig GetSoundEffectConfig(SoundEffectTypeId id);
+    ObjectPoolConfig GetObjectPoolConfig();
   }
 }

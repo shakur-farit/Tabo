@@ -36,11 +36,13 @@ using Code.Gameplay.StaticData;
 using Code.Infrastructure.AssetManagement;
 using Code.Infrastructure.Identifiers;
 using Code.Infrastructure.Loading;
+using Code.Infrastructure.ObjectPool.Services;
 using Code.Infrastructure.Services;
 using Code.Infrastructure.States.Factory;
 using Code.Infrastructure.States.GameStates;
 using Code.Infrastructure.States.StateMachine;
 using Code.Infrastructure.Systems;
+using Code.Infrastructure.View;
 using Code.Infrastructure.View.Factory;
 using Code.Meta.Features.Hud.AmmoHolder.Factory;
 using Code.Meta.Features.Hud.EnchantHolder.Factory;
@@ -98,6 +100,7 @@ namespace Code.Infrastructure.Installers
 			Container.BindInterfacesAndSelfTo<BootstrapState>().AsSingle();
 			Container.BindInterfacesAndSelfTo<InitializeProgressState>().AsSingle();
 			Container.BindInterfacesAndSelfTo<LoadStaticDataState>().AsSingle();
+			Container.BindInterfacesAndSelfTo<ObjectPoolWarmupState>().AsSingle();
 			Container.BindInterfacesAndSelfTo<LoadingHomeScreenState>().AsSingle();
 			Container.BindInterfacesAndSelfTo<HomeScreenEnterState>().AsSingle();
 			Container.BindInterfacesAndSelfTo<HomeScreenState>().AsSingle();
@@ -202,6 +205,8 @@ namespace Code.Infrastructure.Installers
 			Container.BindInterfacesTo<BootstrapInstaller>().FromInstance(this).AsSingle();
 			Container.Bind<IIdentifierService>().To<IdentifierService>().AsSingle();
 			Container.Bind<IQuitGameService>().To<QuitGameService>().AsSingle();
+			Container.Bind<IObjectPoolService>().To<ObjectPoolService>().AsSingle();
+			Container.Bind<IObjectPoolWarmUpper>().To<ObjectPoolWarmUpper>().AsSingle();
 		}
 
 		private void BindAssetManagementServices()

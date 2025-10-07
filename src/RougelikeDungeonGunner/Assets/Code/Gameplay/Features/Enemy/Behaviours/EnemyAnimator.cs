@@ -16,10 +16,13 @@ namespace Code.Gameplay.Features.Enemy.Behaviours
 
 		private FacingDirection _currentDirection = FacingDirection.Unknown;
 
-		private void OnDestroy() =>
-			DOTween.Kill(_spriteRenderer);
+		private void OnDestroy()
+    {
+      DOTween.Kill(_spriteRenderer);
+      _animator.Rebind();
+    }
 
-		public void StartIdling() => _animator.SetBool(_isMoving, false);
+    public void StartIdling() => _animator.SetBool(_isMoving, false);
 		public void StartMoving() => _animator.SetBool(_isMoving, true);
 
 		public void SetDirectionEnum(FacingDirection direction)

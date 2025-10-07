@@ -9,7 +9,6 @@ namespace Code.Gameplay.Features.Destroyable
     {
       Add(systems.Create<CreateWallDestroyableItemReactiveSystem>());
       Add(systems.Create<CreateFloorDestroyableItemReactiveSystem>());
-      Add(systems.Create<SetDestroyableItemSpriteReactiveSystem>());
       Add(systems.Create<SetDestroyableItemRuntimeAnimatorControllerReactiveSystem>());
       Add(systems.Create<DestroyableItemDestroyAnimationPlaySystem>());
       Add(systems.Create<MarkDestroyedDestroyableItemOnAnimationEndSystem>());

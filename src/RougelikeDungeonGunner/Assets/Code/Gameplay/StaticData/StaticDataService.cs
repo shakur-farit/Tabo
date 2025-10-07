@@ -43,12 +43,15 @@ using Cysharp.Threading.Tasks;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Code.Infrastructure.ObjectPool.Config;
+using Code.Infrastructure.View;
 
 namespace Code.Gameplay.StaticData
 {
 	public class StaticDataService : IStaticDataService
 	{
 		private const string BalanceConfigPath = "BalanceConfig";
+		private const string ObjectPoolConfigPath = "ObjectPoolConfig";
 		private const string AmmoConfigLabel = "AmmoConfig";
 		private const string WeaponConfigLabel = "WeaponConfig";
 		private const string EnemyConfigLabel = "EnemyConfig";
@@ -72,6 +75,7 @@ namespace Code.Gameplay.StaticData
     private const string SoundEffectConfigLabel = "SoundEffectConfig";
 
     private BalanceConfig _balance;
+    private ObjectPoolConfig _objectPool;
     private Dictionary<AmmoTypeId, AmmoConfig> _ammoById;
     private Dictionary<WeaponTypeId, WeaponConfig> _weaponById;
     private Dictionary<EnemyTypeId, EnemyConfig> _enemyById;
@@ -109,6 +113,7 @@ namespace Code.Gameplay.StaticData
 		public async UniTask Load()
 		{
 			await LoadBalance();
+      await LoadObjectPool();
 			await LoadAbilities();
 			await LoadWeapons();
 			await LoadEnemies();
@@ -303,7 +308,10 @@ namespace Code.Gameplay.StaticData
     public BalanceConfig GetBalance() =>
 			_balance;
 
-		private async UniTask LoadAbilities() =>
+    public ObjectPoolConfig GetObjectPoolConfig() => 
+      _objectPool;
+
+    private async UniTask LoadAbilities() =>
 			_ammoById = (await _assetProvider.LoadAll<AmmoConfig>(AmmoConfigLabel))
 				.ToDictionary(x => x.TypeId, x => x);
 
@@ -391,8 +399,10 @@ namespace Code.Gameplay.StaticData
       _soundEffectById = (await _assetProvider.LoadAll<SoundEffectConfig>(SoundEffectConfigLabel))
         .ToDictionary(x => x.TypeId, x => x);
 
-
     private async UniTask LoadBalance() =>
 			_balance = await _assetProvider.Load<BalanceConfig>(BalanceConfigPath);
-	}
+
+    private async UniTask LoadObjectPool() =>
+      _objectPool = await _assetProvider.Load<ObjectPoolConfig>(ObjectPoolConfigPath);
+  }
 }

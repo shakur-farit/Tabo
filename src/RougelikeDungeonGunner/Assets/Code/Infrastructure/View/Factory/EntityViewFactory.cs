@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Code.Infrastructure.AssetManagement;
+using Code.Infrastructure.ObjectPool.Services;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 using Zenject;
@@ -13,12 +14,14 @@ namespace Code.Infrastructure.View.Factory
 
 		private readonly IAssetProvider _assetProvider;
 		private readonly IInstantiator _instantiator;
+    private readonly IObjectPoolService _objectPool;
 
-		public EntityViewFactory(IAssetProvider assetProvider, IInstantiator instantiator)
+    public EntityViewFactory(IAssetProvider assetProvider, IInstantiator instantiator, IObjectPoolService objectPool)
 		{
 			_assetProvider = assetProvider;
 			_instantiator = instantiator;
-		}
+      _objectPool = objectPool;
+    }
 
 		public async UniTask<EntityBehaviour> CreateViewForEntity(GameEntity entity)
 		{
@@ -48,14 +51,19 @@ namespace Code.Infrastructure.View.Factory
 		}
 
 		public EntityBehaviour CreateViewForEntityFromPrefab(GameEntity entity)
-		{
-			EntityBehaviour view = _instantiator.InstantiatePrefabForComponent<EntityBehaviour>(
-				entity.ViewPrefab,
-				position: _farAway,
-				Quaternion.identity,
-				parentTransform: null);
+    {
+      EntityBehaviour view;
 
-			view.SetEntity(entity);
+        view = _objectPool.Get(entity.ViewPrefab, _farAway);
+
+        //view = _instantiator.InstantiatePrefabForComponent<EntityBehaviour>(
+        //  entity.ViewPrefab,
+        //  position: _farAway,
+        //  Quaternion.identity,
+        //  parentTransform: null);
+      
+
+      view.SetEntity(entity);
 
 			return view;
 		}
