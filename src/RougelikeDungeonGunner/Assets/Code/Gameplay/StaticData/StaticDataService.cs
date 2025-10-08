@@ -45,6 +45,8 @@ using System.Collections.Generic;
 using System.Linq;
 using Code.Infrastructure.ObjectPool.Config;
 using Code.Infrastructure.View;
+using Code.Sounds.SoundEffects;
+using Code.Sounds.SoundEffects.Config;
 
 namespace Code.Gameplay.StaticData
 {

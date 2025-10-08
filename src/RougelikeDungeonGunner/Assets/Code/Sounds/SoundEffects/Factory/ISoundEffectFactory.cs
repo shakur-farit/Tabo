@@ -1,4 +1,4 @@
-﻿namespace Code.Gameplay.Features.Music
+﻿namespace Code.Sounds.SoundEffects.Factory
 {
   public interface ISoundEffectFactory
   {

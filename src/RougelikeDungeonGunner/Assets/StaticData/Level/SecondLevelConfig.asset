@@ -16,16 +16,8 @@ MonoBehaviour:
   DungeonTypeOnLevel: 2
   StartingTime: 2
   TimeBetweenSpawnWaves: 5
-  FinishingTime: 3
   HeroSaveZoneRadius: 5
   EnemyWaves:
   - EnemiesInWave:
     - EnemyTypeId: 2
-      Amount: 1
-    - EnemyTypeId: 1
-      Amount: 3
-  - EnemiesInWave:
-    - EnemyTypeId: 2
-      Amount: 10
-    - EnemyTypeId: 1
-      Amount: 1
+      Amount: 2

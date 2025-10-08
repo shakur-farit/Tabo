@@ -36,6 +36,7 @@ namespace Code.Gameplay.Features.Door.Factory
 					.With(x => x.isDoor = true)
 					.With(x => x.isReadyToCollectTargets = true)
 					.With(x => x.isCollectTargetsContinuously = true)
+					.With(x => x.isReusable = true)
 				;
 		}
 	}

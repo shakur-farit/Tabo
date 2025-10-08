@@ -179,13 +179,13 @@ namespace Code.Gameplay.Features.Weapon.Factory
 					.AddMinPelletsDeviation(_statsProvider.GetMinDeviation(config))
 					.AddMaxPelletsDeviation(_statsProvider.GetMaxDeviation(config))
 					.AddCooldown(_statsProvider.GetCooldown(config))
-					.AddMaxWeaponEnchantsCount(_statsProvider.GetEnchantSlots(config))
 					.AddShotSoundEffectTypeId(config.ShotSoundEffectTypeId)
 					.AddReloadSoundEffectTypeId(config.ReloadSoundEffectTypeId)
 					.With(x => x.isWeapon = true)
 					.With(x => x.isReadyToCollectTargets = true)
 					.With(x => x.isMagazineNotEmpty = true)
 					.With(x => x.isReadyToShoot = true)
+					.With(x => x.isReusable = true)
 					.With(x => x.AddMultiPellet(config.Stats.PelletCount), when: config.Stats.PelletCount > 1)
 					.With(x => x.AddPrechargeTime(_statsProvider.GetPrechargingTime(config)),
 						when: _statsProvider.GetPrechargingTime(config) > 0)
@@ -204,6 +204,8 @@ namespace Code.Gameplay.Features.Weapon.Factory
 						when: _statsProvider.GetReloadTime(config) > 0 && config.Stats.isInfinityAmmo == false)
 					.With(x => x.AddEffectSetups(_effectsProvider.GetEffects(config)),
 						when: _effectsProvider.GetEffects(config).IsNullOrEmpty() == false)
+					.With(x => x.AddMaxWeaponEnchantsCount(_statsProvider.GetEnchantSlots(config)),
+						when: _statsProvider.GetEnchantSlots(config) > 0)
 					.With(x => x.AddStatusSetups(config.StatusSetups),
 						when: config.StatusSetups.IsNullOrEmpty() == false)
 					.With(x => x.AddSpecialEffectTypeId(config.SpecialEffectTypeId), 

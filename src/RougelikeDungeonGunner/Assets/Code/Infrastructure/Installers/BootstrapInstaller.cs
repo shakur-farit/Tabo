@@ -57,6 +57,7 @@ using Code.Meta.Features.Shop.WeaponStatUIEntry.Factory;
 using Code.Meta.UI.Windows.Factory;
 using Code.Meta.UI.Windows.Service;
 using Code.Progress.Provider;
+using Code.Sounds.SoundEffects.Factory;
 using Zenject;
 
 namespace Code.Infrastructure.Installers

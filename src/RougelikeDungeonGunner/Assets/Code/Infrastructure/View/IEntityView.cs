@@ -9,5 +9,6 @@ namespace Code.Infrastructure.View
 		void ReleaseEntity();
 
 		EntityBehaviour EntityBehaviourObject { get; }
+		GameObject gameObject { get; }
   }
 }

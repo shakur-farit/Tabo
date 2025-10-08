@@ -3,6 +3,7 @@ using Code.Gameplay.Features.Effects;
 using Code.Gameplay.Features.Music;
 using Code.Gameplay.Features.Statuses;
 using Code.Infrastructure.View;
+using Code.Sounds.SoundEffects;
 using UnityEngine;
 
 namespace Code.Gameplay.Features.Loot.Configs

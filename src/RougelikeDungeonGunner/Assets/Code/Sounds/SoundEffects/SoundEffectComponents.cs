@@ -1,7 +1,7 @@
 ﻿using Entitas;
 using UnityEngine;
 
-namespace Code.Gameplay.Features.Music
+namespace Code.Sounds.SoundEffects
 {
 	[Game] public class SoundEffect : IComponent { }
 	[Game] public class SoundEffectTypeIdComponent : IComponent { public SoundEffectTypeId Value; }

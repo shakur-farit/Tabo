@@ -94,6 +94,7 @@ namespace Code.Gameplay.Features.Hero.Factory
 					.With(x => x.isUnweaponed = true)
 					.With(x => x.isReadyToCollectTargets = true)
 					.With(x => x.isCollectTargetsContinuously = true)
+					.With(x => x.isReusable = true)
 				;
 		}
 

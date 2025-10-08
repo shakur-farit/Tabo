@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Code.Gameplay.Features.Enchants.Factory;
-using Code.Gameplay.Features.Music;
 using Code.Gameplay.Features.Statuses;
+using Code.Sounds.SoundEffects.Factory;
 using Entitas;
 
 namespace Code.Gameplay.Features.Loot.Systems
@@ -30,6 +30,7 @@ namespace Code.Gameplay.Features.Loot.Systems
 			_weapons = game.GetGroup(GameMatcher
 				.AllOf(
 					GameMatcher.HeroWeapon,
+					GameMatcher.MaxWeaponEnchantsCount,
 					GameMatcher.Id));
 		}
 

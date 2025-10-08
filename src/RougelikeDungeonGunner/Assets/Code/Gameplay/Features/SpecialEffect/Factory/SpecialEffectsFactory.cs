@@ -29,6 +29,7 @@ namespace Code.Gameplay.Features.SpecialEffect.Factory
 				.AddViewPrefab(config.ViewPrefab)
         .AddSelfDestructedTimer(config.Lifetime)
 				.With(x => x.isSpecialEffect = true)
+				.With(x => x.isReusable = true)
 				;
 		}
 	}

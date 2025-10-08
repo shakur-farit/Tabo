@@ -25,6 +25,7 @@ using Code.Gameplay.Features.Weapon;
 using Code.Gameplay.Input;
 using Code.Infrastructure.Systems;
 using Code.Infrastructure.View;
+using Code.Sounds.SoundEffects;
 
 namespace Code.Gameplay
 {

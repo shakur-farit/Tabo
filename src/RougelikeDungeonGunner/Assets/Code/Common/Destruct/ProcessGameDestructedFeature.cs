@@ -10,6 +10,7 @@ namespace Code.Common.Destruct
 			Add(systems.Create<SelfDestructTimerSystem>());
 
 			Add(systems.Create<CleanupGameDestructedViewSystem>());
+			Add(systems.Create<ReturnToPoolGameDestructedViewSystem>());
 			Add(systems.Create<CleanupGameDestructedSystem>());
 		}
 	}

@@ -1,6 +1,7 @@
 ﻿using Code.Infrastructure.Systems;
+using Code.Sounds.SoundEffects.Systems;
 
-namespace Code.Gameplay.Features.Music
+namespace Code.Sounds.SoundEffects
 {
 	public sealed class SoundEffectFeature : Feature
 	{

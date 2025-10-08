@@ -2,7 +2,7 @@
 using Code.Gameplay.Features.Music.Services;
 using Entitas;
 
-namespace Code.Gameplay.Features.Music
+namespace Code.Sounds.SoundEffects.Systems
 {
 	public class PlaySoundEffectReactiveSystem : ReactiveSystem<GameEntity>
 	{

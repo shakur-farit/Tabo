@@ -1,7 +1,7 @@
 ﻿using Code.Infrastructure.View;
 using UnityEngine;
 
-namespace Code.Gameplay.Features.Music
+namespace Code.Sounds.SoundEffects.Config
 {
   [CreateAssetMenu(menuName = "Dungeon Gunner/Sound Effect Config", fileName = "SoundEffectConfig")]
   public class SoundEffectConfig : ScriptableObject

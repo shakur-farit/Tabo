@@ -15,16 +15,11 @@ namespace Code.Gameplay.Features.Level.Factory
 
 		private readonly IIdentifierService _identifier;
 		private readonly IStaticDataService _staticDataService;
-		private readonly IRandomService _random;
 
-		public LevelFactory(
-			IIdentifierService identifier, 
-			IStaticDataService staticDataService,
-			IRandomService random)
+		public LevelFactory(IIdentifierService identifier, IStaticDataService staticDataService)
 		{
 			_identifier = identifier;
 			_staticDataService = staticDataService;
-			_random = random;
 		}
 
 		public GameEntity CreateLevel(int level)

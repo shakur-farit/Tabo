@@ -33,6 +33,7 @@ namespace Code.Gameplay.Features.Loot.Factory
 					.With(x => x.AddStatusSetups(config.StatusSetups), when: config.StatusSetups.IsNullOrEmpty() == false)
 					.With(x => x.isShield = true, when: typeId == LootTypeId.ShieldItem)
 					.With(x => x.isPullable = true)
+					.With(x => x.isReusable = true)
 				;
 		}
 	}

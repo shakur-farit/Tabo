@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Code.Sounds.SoundEffects;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherSoundEffectTypeId;
@@ -33,21 +36,21 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Features.Music.SoundEffectTypeIdComponent soundEffectTypeId { get { return (Code.Gameplay.Features.Music.SoundEffectTypeIdComponent)GetComponent(GameComponentsLookup.SoundEffectTypeId); } }
-    public Code.Gameplay.Features.Music.SoundEffectTypeId SoundEffectTypeId { get { return soundEffectTypeId.Value; } }
+    public SoundEffectTypeIdComponent soundEffectTypeId { get { return (SoundEffectTypeIdComponent)GetComponent(GameComponentsLookup.SoundEffectTypeId); } }
+    public SoundEffectTypeId SoundEffectTypeId { get { return soundEffectTypeId.Value; } }
     public bool hasSoundEffectTypeId { get { return HasComponent(GameComponentsLookup.SoundEffectTypeId); } }
 
-    public GameEntity AddSoundEffectTypeId(Code.Gameplay.Features.Music.SoundEffectTypeId newValue) {
+    public GameEntity AddSoundEffectTypeId(SoundEffectTypeId newValue) {
         var index = GameComponentsLookup.SoundEffectTypeId;
-        var component = (Code.Gameplay.Features.Music.SoundEffectTypeIdComponent)CreateComponent(index, typeof(Code.Gameplay.Features.Music.SoundEffectTypeIdComponent));
+        var component = (SoundEffectTypeIdComponent)CreateComponent(index, typeof(SoundEffectTypeIdComponent));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
     }
 
-    public GameEntity ReplaceSoundEffectTypeId(Code.Gameplay.Features.Music.SoundEffectTypeId newValue) {
+    public GameEntity ReplaceSoundEffectTypeId(SoundEffectTypeId newValue) {
         var index = GameComponentsLookup.SoundEffectTypeId;
-        var component = (Code.Gameplay.Features.Music.SoundEffectTypeIdComponent)CreateComponent(index, typeof(Code.Gameplay.Features.Music.SoundEffectTypeIdComponent));
+        var component = (SoundEffectTypeIdComponent)CreateComponent(index, typeof(SoundEffectTypeIdComponent));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

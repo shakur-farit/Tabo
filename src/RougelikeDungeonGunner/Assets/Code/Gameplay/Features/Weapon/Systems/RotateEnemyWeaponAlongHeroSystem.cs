@@ -22,7 +22,8 @@ namespace Code.Gameplay.Features.Weapon.Systems
 				.AllOf(
 					GameMatcher.Enemy,
 					GameMatcher.Id,
-					GameMatcher.WorldPosition));
+					GameMatcher.WorldPosition)
+				.NoneOf(GameMatcher.Stunned));
 
 			_hero = game.GetGroup(GameMatcher
 				.AllOf(

@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Code.Sounds.SoundEffects;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherShotSoundEffectTypeId;
@@ -34,10 +37,10 @@ public sealed partial class GameMatcher {
 public partial class GameEntity {
 
     public Code.Gameplay.Features.Weapon.ShotSoundEffectTypeId shotSoundEffectTypeId { get { return (Code.Gameplay.Features.Weapon.ShotSoundEffectTypeId)GetComponent(GameComponentsLookup.ShotSoundEffectTypeId); } }
-    public Code.Gameplay.Features.Music.SoundEffectTypeId ShotSoundEffectTypeId { get { return shotSoundEffectTypeId.Value; } }
+    public SoundEffectTypeId ShotSoundEffectTypeId { get { return shotSoundEffectTypeId.Value; } }
     public bool hasShotSoundEffectTypeId { get { return HasComponent(GameComponentsLookup.ShotSoundEffectTypeId); } }
 
-    public GameEntity AddShotSoundEffectTypeId(Code.Gameplay.Features.Music.SoundEffectTypeId newValue) {
+    public GameEntity AddShotSoundEffectTypeId(SoundEffectTypeId newValue) {
         var index = GameComponentsLookup.ShotSoundEffectTypeId;
         var component = (Code.Gameplay.Features.Weapon.ShotSoundEffectTypeId)CreateComponent(index, typeof(Code.Gameplay.Features.Weapon.ShotSoundEffectTypeId));
         component.Value = newValue;
@@ -45,7 +48,7 @@ public partial class GameEntity {
         return this;
     }
 
-    public GameEntity ReplaceShotSoundEffectTypeId(Code.Gameplay.Features.Music.SoundEffectTypeId newValue) {
+    public GameEntity ReplaceShotSoundEffectTypeId(SoundEffectTypeId newValue) {
         var index = GameComponentsLookup.ShotSoundEffectTypeId;
         var component = (Code.Gameplay.Features.Weapon.ShotSoundEffectTypeId)CreateComponent(index, typeof(Code.Gameplay.Features.Weapon.ShotSoundEffectTypeId));
         component.Value = newValue;

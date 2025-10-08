@@ -105,6 +105,7 @@ namespace Code.Gameplay.Features.Ammo.Factory
 					.With(x => x.isAmmo = true)
 					.With(x => x.isReadyToCollectTargets = true)
 					.With(x => x.isCollectTargetsContinuously = true)
+					.With(x => x.isReusable = true)
 				;
 		}
 	}

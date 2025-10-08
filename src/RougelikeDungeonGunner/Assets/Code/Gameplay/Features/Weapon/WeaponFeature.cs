@@ -34,6 +34,7 @@ namespace Code.Gameplay.Features.Weapon
 			Add(systems.Create<SetHeroWeaponReloadingByPressButtonSystem>());
       Add(systems.Create<CreateReloadSoundEffectReactiveSystem>());
       Add(systems.Create<ReloadWeaponSystem>());
+      Add(systems.Create<StunWeaponOnOwnerStunnedSystem>());
 
       Add(systems.Create<StartWeaponReloadingAnimationSystem>());
       Add(systems.Create<StartWeaponPrechargeAnimationSystem>());

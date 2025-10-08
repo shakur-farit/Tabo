@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Code.Sounds.SoundEffects;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherAudioClip;
@@ -33,13 +36,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Features.Music.AudioClipComponent audioClip { get { return (Code.Gameplay.Features.Music.AudioClipComponent)GetComponent(GameComponentsLookup.AudioClip); } }
+    public AudioClipComponent audioClip { get { return (AudioClipComponent)GetComponent(GameComponentsLookup.AudioClip); } }
     public UnityEngine.AudioClip AudioClip { get { return audioClip.Value; } }
     public bool hasAudioClip { get { return HasComponent(GameComponentsLookup.AudioClip); } }
 
     public GameEntity AddAudioClip(UnityEngine.AudioClip newValue) {
         var index = GameComponentsLookup.AudioClip;
-        var component = (Code.Gameplay.Features.Music.AudioClipComponent)CreateComponent(index, typeof(Code.Gameplay.Features.Music.AudioClipComponent));
+        var component = (AudioClipComponent)CreateComponent(index, typeof(AudioClipComponent));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +50,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceAudioClip(UnityEngine.AudioClip newValue) {
         var index = GameComponentsLookup.AudioClip;
-        var component = (Code.Gameplay.Features.Music.AudioClipComponent)CreateComponent(index, typeof(Code.Gameplay.Features.Music.AudioClipComponent));
+        var component = (AudioClipComponent)CreateComponent(index, typeof(AudioClipComponent));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

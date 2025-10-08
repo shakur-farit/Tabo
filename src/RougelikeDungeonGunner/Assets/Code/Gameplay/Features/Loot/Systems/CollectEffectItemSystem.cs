@@ -1,6 +1,7 @@
 ﻿using Code.Gameplay.Features.Effects;
 using Code.Gameplay.Features.Effects.Factory;
 using Code.Gameplay.Features.Music;
+using Code.Sounds.SoundEffects.Factory;
 using Entitas;
 
 namespace Code.Gameplay.Features.Loot.Systems

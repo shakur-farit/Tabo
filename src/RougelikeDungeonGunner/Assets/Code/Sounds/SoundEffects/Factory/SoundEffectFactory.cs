@@ -1,10 +1,11 @@
 ﻿using Code.Common.Entity;
 using Code.Common.Extensions;
+using Code.Gameplay.Features.Music;
 using Code.Gameplay.StaticData;
 using Code.Infrastructure.Identifiers;
-using UnityEngine;
+using Code.Sounds.SoundEffects.Config;
 
-namespace Code.Gameplay.Features.Music
+namespace Code.Sounds.SoundEffects.Factory
 {
 	public class SoundEffectFactory : ISoundEffectFactory
 	{
@@ -35,6 +36,7 @@ namespace Code.Gameplay.Features.Music
 					.AddAudioClip(config.AudioClip)
 					.AddSelfDestructedTimer(config.Lifetime)
 					.With(x => x.isSoundEffect = true)
+					.With(x => x.isReusable = true)
 				;
 		}
 	}

@@ -4,12 +4,12 @@ using Code.Gameplay.Features.Ammo;
 using Code.Gameplay.Features.AmmoPattern;
 using Code.Gameplay.Features.Collection;
 using Code.Gameplay.Features.Effects;
-using Code.Gameplay.Features.Music;
 using Code.Gameplay.Features.SpecialEffect;
 using Code.Gameplay.Features.Statuses;
 using Code.Infrastructure.View;
 using Code.Meta.Features.Shop.Upgrade;
 using Code.Meta.Features.Shop.WeaponStatUIEntry;
+using Code.Sounds.SoundEffects;
 using UnityEngine;
 
 namespace Code.Gameplay.Features.Weapon.Configs

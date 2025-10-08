@@ -6,22 +6,19 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Code.Sounds.SoundEffects;
-
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherSoundEffect;
+    static Entitas.IMatcher<GameEntity> _matcherReusable;
 
-    public static Entitas.IMatcher<GameEntity> SoundEffect {
+    public static Entitas.IMatcher<GameEntity> Reusable {
         get {
-            if (_matcherSoundEffect == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.SoundEffect);
+            if (_matcherReusable == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.Reusable);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherSoundEffect = matcher;
+                _matcherReusable = matcher;
             }
 
-            return _matcherSoundEffect;
+            return _matcherReusable;
         }
     }
 }
@@ -36,18 +33,18 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly SoundEffect soundEffectComponent = new SoundEffect();
+    static readonly Code.Common.Reusable reusableComponent = new Code.Common.Reusable();
 
-    public bool isSoundEffect {
-        get { return HasComponent(GameComponentsLookup.SoundEffect); }
+    public bool isReusable {
+        get { return HasComponent(GameComponentsLookup.Reusable); }
         set {
-            if (value != isSoundEffect) {
-                var index = GameComponentsLookup.SoundEffect;
+            if (value != isReusable) {
+                var index = GameComponentsLookup.Reusable;
                 if (value) {
                     var componentPool = GetComponentPool(index);
                     var component = componentPool.Count > 0
                             ? componentPool.Pop()
-                            : soundEffectComponent;
+                            : reusableComponent;
 
                     AddComponent(index, component);
                 } else {

@@ -39,6 +39,8 @@ using Code.Meta.Features.Shop.WeaponStatUIEntry;
 using Code.Meta.Features.Shop.WeaponStatUIEntry.Configs;
 using Code.Meta.UI.Windows;
 using Code.Meta.UI.Windows.Config;
+using Code.Sounds.SoundEffects;
+using Code.Sounds.SoundEffects.Config;
 using Cysharp.Threading.Tasks;
 
 namespace Code.Gameplay.StaticData

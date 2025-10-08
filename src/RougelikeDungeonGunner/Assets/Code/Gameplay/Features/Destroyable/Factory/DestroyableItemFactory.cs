@@ -40,6 +40,7 @@ namespace Code.Gameplay.Features.Destroyable.Factory
           .AddExcludedLoot(config.ExcludedLoot)
           .AddSoundEffectTypeId(config.DestroyingSoundEffectTypeId)
           .With(x => x.isDestroyableItem = true)
+          .With(x => x.isReusable = true)
         ;
     }
   }

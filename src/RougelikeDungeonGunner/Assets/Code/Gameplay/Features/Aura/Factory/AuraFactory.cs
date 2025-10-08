@@ -63,6 +63,7 @@ namespace Code.Gameplay.Features.Aura.Factory
 					.With(x => x.isMovementAvailable = true)
 					.With(x => x.isFollowMovement = true)
 					.With(x => x.isMoving = true)
+					.With(x => x.isReusable = true)
 				;
 		}
 	}

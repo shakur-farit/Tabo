@@ -20,7 +20,8 @@ namespace Code.Gameplay.Features.Weapon.Systems
 			_hero = game.GetGroup(GameMatcher
 				.AllOf(
 					GameMatcher.Hero,
-					GameMatcher.WorldPosition));
+					GameMatcher.WorldPosition)
+				.NoneOf(GameMatcher.Stunned));
 		}
 
 		public void Execute()

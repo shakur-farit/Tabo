@@ -11,6 +11,8 @@ namespace Code.Common
 
 	[Game, Meta, Input] public class Destructed : IComponent { }
 	[Game] public class SelfDestructedTimer : IComponent { public float Value; }
+	[Game] public class Reusable : IComponent { }
+
 
 	[Game] public class Parented : IComponent { }
 	[Game] public class Unparented : IComponent { }
