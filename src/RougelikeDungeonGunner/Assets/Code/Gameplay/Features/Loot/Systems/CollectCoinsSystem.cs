@@ -1,5 +1,4 @@
-﻿using Code.Gameplay.Features.Music;
-using Code.Progress.Provider;
+﻿using Code.Gameplay.Features.Hero;
 using Code.Sounds.SoundEffects.Factory;
 using Entitas;
 
@@ -7,18 +6,18 @@ namespace Code.Gameplay.Features.Loot.Systems
 {
 	public class CollectCoinsSystem : IExecuteSystem
 	{
-		private readonly IProgressProvider _progressProvider;
-		private readonly ISoundEffectFactory _soundEffectFactory;
+    private readonly ICoinService _coinService;
+    private readonly ISoundEffectFactory _soundEffectFactory;
 		private readonly IGroup<GameEntity> _collected;
 		private readonly IGroup<GameEntity> _heroes;
 
 		public CollectCoinsSystem(
-			GameContext game, 
-			IProgressProvider progressProvider,
-			ISoundEffectFactory soundEffectFactory)
+      GameContext game, 
+      ICoinService coinService, 
+      ISoundEffectFactory soundEffectFactory)
 		{
-			_progressProvider = progressProvider;
-			_soundEffectFactory = soundEffectFactory;
+      _coinService = coinService;
+      _soundEffectFactory = soundEffectFactory;
 			_collected = game.GetGroup(GameMatcher
 				.AllOf(
 					GameMatcher.Collected,
@@ -36,7 +35,8 @@ namespace Code.Gameplay.Features.Loot.Systems
 			foreach (GameEntity collected in _collected)
 			{
 				hero.ReplaceCoins(hero.Coins + collected.Coins);
-				_progressProvider.HeroData.CurrentCoinsCount = hero.Coins;
+
+				_coinService.SetCurrentCoinCount(hero.Coins);
 
 				if (collected.hasSoundEffectTypeId)
 					_soundEffectFactory.CreateSoundEffect(collected.SoundEffectTypeId);

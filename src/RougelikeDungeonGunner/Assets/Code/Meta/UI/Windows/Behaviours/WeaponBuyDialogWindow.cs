@@ -1,4 +1,5 @@
-﻿using Code.Gameplay.Features.Weapon.Configs;
+﻿using Code.Gameplay.Features.Hero;
+using Code.Gameplay.Features.Weapon.Configs;
 using Code.Gameplay.StaticData;
 using Code.Meta.Features.Shop.Upgrade.Services;
 using Code.Meta.Features.Shop.Weapon.Behaviours;
@@ -22,13 +23,15 @@ namespace Code.Meta.UI.Windows.Behaviours
 		private IProgressProvider _progressProvider;
 		private IWeaponUpgradesCleaner _upgradeCleaner;
 		private IStaticDataService _staticDataService;
+    private ICoinService _coinService;
 
-		[Inject]
+    [Inject]
 		public void Constructor(
 			IWindowService windowService,
 			IProgressProvider progressProvider,
 			IWeaponUpgradesCleaner upgraderCleaner,
-			IStaticDataService staticDataService)
+			IStaticDataService staticDataService,
+      ICoinService coinService)
 		{
 			Id = WindowId.WeaponBuyDialogWindow;
 
@@ -36,7 +39,8 @@ namespace Code.Meta.UI.Windows.Behaviours
 			_progressProvider = progressProvider;
 			_upgradeCleaner = upgraderCleaner;
 			_staticDataService = staticDataService;
-		}
+      _coinService = coinService;
+    }
 
 		protected override void Initialize()
 		{
@@ -62,10 +66,16 @@ namespace Code.Meta.UI.Windows.Behaviours
 			CloseWindow();
 		}
 
-		private void SubtractPrice() =>
-			_progressProvider.HeroData.CurrentCoinsCount -= _progressProvider.ShopData.WeaponToBuyConfig.Price;
+		private void SubtractPrice()
+    {
+      int coinCount = _coinService.GetCurrentCoinCount();
 
-		private void ChangeCurrentWeapon()
+      coinCount -= _progressProvider.ShopData.WeaponToBuyConfig.Price;
+
+			_coinService.SetCurrentCoinCount(coinCount);
+    }
+
+    private void ChangeCurrentWeapon()
 		{
 			_progressProvider.HeroData.CurrentWeaponTypeId =
 				_progressProvider.ShopData.WeaponToBuyConfig.WeaponTypeId;
@@ -76,7 +86,7 @@ namespace Code.Meta.UI.Windows.Behaviours
 			_upgradeCleaner.CleanUpgrades();
 
 		private bool IsNotEnoughCoins() =>
-			_progressProvider.HeroData.CurrentCoinsCount < _progressProvider.ShopData.WeaponToBuyConfig.Price;
+      _coinService.GetCurrentCoinCount() < _progressProvider.ShopData.WeaponToBuyConfig.Price;
 
 		private void CloseWindow() =>
 			_windowService.Close(WindowId.WeaponBuyDialogWindow);

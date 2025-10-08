@@ -20,16 +20,19 @@ namespace Code.Gameplay.Features.Hero.Factory
 
 		private readonly IIdentifierService _identifier;
 		private readonly IStaticDataService _staticDataService;
-		private readonly IProgressProvider _progressProvider;
+    private readonly ICoinService _coinService;
+    private readonly IProgressProvider _progressProvider;
 
 		public HeroFactory(
 			IIdentifierService identifier, 
 			IStaticDataService staticDataService,
+			ICoinService coinService,
 			IProgressProvider progressProvider)
 		{
 			_identifier = identifier;
 			_staticDataService = staticDataService;
-			_progressProvider = progressProvider;
+      _coinService = coinService;
+      _progressProvider = progressProvider;
 		}
 
 		public GameEntity CreateHero(HeroTypeId typeId, Vector3 at)
@@ -81,7 +84,7 @@ namespace Code.Gameplay.Features.Hero.Factory
 					.AddMaxHp(baseStats[Stats.MaxHp])
 					.AddSpeed(baseStats[Stats.Speed])
 					.AddViewPrefab(config.ViewPrefab)
-					.AddCoins(_progressProvider.HeroData.CurrentCoinsCount)
+					.AddCoins(_coinService.GetCurrentCoinCount())
 					.AddPickupRadius(config.LootPickupRadius)
 					.AddCurrentWeaponTypeId(CurrentWeapon(config))
 					.AddAuraRequest(config.StartAura)

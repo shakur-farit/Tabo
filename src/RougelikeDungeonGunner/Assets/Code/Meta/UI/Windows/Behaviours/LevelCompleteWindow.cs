@@ -1,9 +1,9 @@
-﻿using Code.Gameplay.Features.Music;
+﻿using Code.Gameplay.Features.Hero;
+using Code.Gameplay.Features.Music;
 using Code.Gameplay.Features.Music.Services;
 using Code.Infrastructure.States.GameStates;
 using Code.Infrastructure.States.StateMachine;
 using Code.Meta.UI.Windows.Service;
-using Code.Progress.Provider;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -22,23 +22,23 @@ namespace Code.Meta.UI.Windows.Behaviours
 
 		private IGameStateMachine _stateMachine;
 		private IWindowService _windowService;
-		private IProgressProvider _progressProvider;
 		private IMusicClipSetter _clipSetter;
+    private ICoinService _coinService;
 
-		[Inject]
+    [Inject]
 		public void Constructor(
 			IGameStateMachine stateMachine, 
 			IWindowService windowService,
-			IProgressProvider progressProvider,
+			ICoinService coinService,
 			IMusicClipSetter clipSetter)
 		{
 			Id = WindowId.LevelCompleteWindow;
 
 			_stateMachine = stateMachine;
 			_windowService = windowService;
-			_progressProvider = progressProvider;
 			_clipSetter = clipSetter;
-		}
+      _coinService = coinService;
+    }
 
 		protected override void Initialize()
 		{
@@ -53,10 +53,10 @@ namespace Code.Meta.UI.Windows.Behaviours
 		}
 
 		protected override void SubscribeUpdates() => 
-			_progressProvider.HeroData.CoinsChanged += CoinsTextUpdate;
+			_coinService.CoinCountChanged += CoinsTextUpdate;
 
-		protected override void UnsubscribeUpdates() => 
-			_progressProvider.HeroData.CoinsChanged -= CoinsTextUpdate;
+		protected override void UnsubscribeUpdates() =>
+      _coinService.CoinCountChanged -= CoinsTextUpdate;
 
 		private void EnterToBattle() =>
 			_stateMachine.Enter<BattleEnterState>();
@@ -74,7 +74,7 @@ namespace Code.Meta.UI.Windows.Behaviours
 			_windowService.Open(WindowId.CurrentWeaponInfoWindow);
 
 		private void CoinsTextUpdate() => 
-			_coinsText.text = _progressProvider.HeroData.CurrentCoinsCount.ToString();
+			_coinsText.text = _coinService.GetCurrentCoinCount().ToString();
 
 		private void PlayDungeonMelancholyMusic() => 
 			_clipSetter.SetClip(MusicTypeId.DungeonMelancholy);

@@ -7,13 +7,11 @@ namespace Code.Progress.Data.Transient
 	public class HeroData
 	{
 		public event Action WeaponChanged;
-		public event Action CoinsChanged;
 		public HeroTypeId CurrentHeroTypeId;
 		
 		private WeaponTypeId _currentWeaponTypeId = WeaponTypeId.Unknown;
-		private int _currentCoinsCount;
 
-		public WeaponTypeId CurrentWeaponTypeId
+    public WeaponTypeId CurrentWeaponTypeId
 		{
 			get => _currentWeaponTypeId;
 			set
@@ -25,19 +23,5 @@ namespace Code.Progress.Data.Transient
 				WeaponChanged?.Invoke();
 			}
 		}
-
-		public int CurrentCoinsCount
-		{
-			get => _currentCoinsCount;
-			set
-			{
-				int clampedValue = Math.Max(0, value);
-				if (_currentCoinsCount == clampedValue)
-					return;
-
-				_currentCoinsCount = clampedValue;
-				CoinsChanged?.Invoke();
-			}
-		}
-	}
+  }
 }

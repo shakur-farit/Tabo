@@ -31,7 +31,8 @@ namespace Code.Gameplay.Features.Enemy.Systems
 					Vector2.zero, enemy.Id, WeaponOwnerTypeId.Enemy);
 
 				enemy.isUnweaponed = false;
-			}
+        enemy.isWeaponed = true;
+      }
 		}
 	}
 }

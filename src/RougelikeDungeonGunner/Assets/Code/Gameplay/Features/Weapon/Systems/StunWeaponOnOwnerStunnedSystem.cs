@@ -27,7 +27,7 @@ namespace Code.Gameplay.Features.Weapon.Systems
 			{
 				if (weaponeds.Id == weapon.WeaponOwnerId)
 					weapon.isStunned = weaponeds.isStunned;
-			}
+      }
 		}
 	}
 }

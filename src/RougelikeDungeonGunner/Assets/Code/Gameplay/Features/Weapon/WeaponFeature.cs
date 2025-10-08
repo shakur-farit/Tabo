@@ -12,6 +12,7 @@ namespace Code.Gameplay.Features.Weapon
 		{
 			Add(systems.Create<ChangeCameraSizeByWeaponRangeSystem>());
 			
+			Add(systems.Create<WeaponScaleNormalizeSystem>());
 			Add(systems.Create<SetWeaponCastStartLocalPositionSystem>());
 			Add(systems.Create<SetWeaponFireLocalPositionSystem>());
 			Add(systems.Create<SetWeaponSpriteSystem>());

@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Linq;
 using Code.Common.Entity;
 using Code.Common.Extensions;
 using Code.Gameplay.Features.Collection;
 using Code.Gameplay.Features.Cooldowns;
+using Code.Gameplay.Features.Hero;
 using Code.Gameplay.Features.SpecialEffect;
 using Code.Gameplay.Features.Weapon.Configs;
 using Code.Gameplay.StaticData;
@@ -18,18 +20,21 @@ namespace Code.Gameplay.Features.Weapon.Factory
 		private readonly IStaticDataService _staticDataService;
 		private readonly IWeaponStatsProvider _statsProvider;
 		private readonly IWeaponEffectsProvider _effectsProvider;
+    private readonly IStatusSetupsService _setupsService;
 
-		public WeaponFactory(
+    public WeaponFactory(
 			IIdentifierService identifier,
 			IStaticDataService staticDataService,
 			IWeaponStatsProvider statsProvider,
-			IWeaponEffectsProvider effectsProvider)
+			IWeaponEffectsProvider effectsProvider,
+      IStatusSetupsService setupsService)
 		{
 			_identifier = identifier;
 			_staticDataService = staticDataService;
 			_statsProvider = statsProvider;
 			_effectsProvider = effectsProvider;
-		}
+      _setupsService = setupsService;
+    }
 
 		public GameEntity CreateWeapon(WeaponTypeId weaponTypeId, Transform parent,
 			Vector2 at, int ownerId, WeaponOwnerTypeId ownerTypeId)
@@ -206,8 +211,8 @@ namespace Code.Gameplay.Features.Weapon.Factory
 						when: _effectsProvider.GetEffects(config).IsNullOrEmpty() == false)
 					.With(x => x.AddMaxWeaponEnchantsCount(_statsProvider.GetEnchantSlots(config)),
 						when: _statsProvider.GetEnchantSlots(config) > 0)
-					.With(x => x.AddStatusSetups(config.StatusSetups),
-						when: config.StatusSetups.IsNullOrEmpty() == false)
+					.With(x => x.AddStatusSetups(_setupsService.GetStatusSetups(weaponTypeId).ToList()),
+						when: _setupsService.GetStatusSetups(weaponTypeId).IsNullOrEmpty() == false)
 					.With(x => x.AddSpecialEffectTypeId(config.SpecialEffectTypeId), 
 						when: config.SpecialEffectTypeId != SpecialEffectTypeId.NoSpecialEffect)
 					.PutOnCooldown()

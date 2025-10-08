@@ -31,7 +31,8 @@ namespace Code.Gameplay.Features.Hero.Systems
 					Vector2.zero, hero.Id, WeaponOwnerTypeId.Hero);
 
 				hero.isUnweaponed = false;
-			}
+        hero.isWeaponed = true;
+      }
 		}
 	}
 }

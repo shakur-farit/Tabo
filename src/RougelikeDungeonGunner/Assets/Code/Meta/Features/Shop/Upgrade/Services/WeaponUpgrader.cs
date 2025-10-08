@@ -1,28 +1,28 @@
-﻿using Code.Meta.Features.Shop.Upgrade.Configs;
+﻿using Code.Gameplay.Features.Hero;
+using Code.Meta.Features.Shop.Upgrade.Configs;
 using Code.Meta.UI.Windows;
 using Code.Meta.UI.Windows.Service;
-using Code.Progress.Provider;
 
 namespace Code.Meta.Features.Shop.Upgrade.Services
 {
 	public class WeaponUpgrader : IWeaponUpgrader
 	{
-		private readonly IProgressProvider _progressProvider;
 		private readonly IWeaponUpgradeValidator _validator;
 		private readonly IWeaponUpgradesProvider _provider;
 		private readonly IWindowService _windowService;
+    private readonly ICoinService _coinService;
 
-		public WeaponUpgrader(
-			IProgressProvider progressProvider,
+    public WeaponUpgrader(
 			IWeaponUpgradeValidator validator,
 			IWeaponUpgradesProvider provider,
-			IWindowService windowService)
+			IWindowService windowService,
+      ICoinService coinService)
 		{
-			_progressProvider = progressProvider;
 			_validator = validator;
 			_provider = provider;
 			_windowService = windowService;
-		}
+      _coinService = coinService;
+    }
 
 		public void Upgrade(WeaponUpgradeShopItemConfig config)
 		{
@@ -44,9 +44,15 @@ namespace Code.Meta.Features.Shop.Upgrade.Services
 		}
 
 		private bool EnoughCoins(int price) => 
-			_progressProvider.HeroData.CurrentCoinsCount >= price;
+			_coinService.GetCurrentCoinCount() >= price;
 
-		private void SubtractPrice(int price) =>
-			_progressProvider.HeroData.CurrentCoinsCount -= price;
-	}
+		private void SubtractPrice(int price)
+    {
+      int coinCount = _coinService.GetCurrentCoinCount();
+
+      coinCount -= price;
+
+			_coinService.SetCurrentCoinCount(coinCount);
+    }
+  }
 }

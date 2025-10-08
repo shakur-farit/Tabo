@@ -19,6 +19,7 @@ using Code.Gameplay.Features.Effects.Factory;
 using Code.Gameplay.Features.Enchants.Factory;
 using Code.Gameplay.Features.Enemy.Factory;
 using Code.Gameplay.Features.Enemy.Services;
+using Code.Gameplay.Features.Hero;
 using Code.Gameplay.Features.Hero.Factory;
 using Code.Gameplay.Features.Level.Factory;
 using Code.Gameplay.Features.Loot.Factory;
@@ -144,8 +145,10 @@ namespace Code.Infrastructure.Installers
 			Container.Bind<IAmmoDirectionProvider>().To<AmmoDirectionProvider>().AsSingle();
 			Container.Bind<IValidPositionsProvider>().To<ValidPositionsProvider>().AsSingle();
 			Container.Bind<IEnemySpawnPositionProvider>().To<EnemySpawnPositionProvider>().AsSingle();
-			Container.BindInterfacesAndSelfTo<AStarPathfinder>().AsSingle();
-		}
+      Container.BindInterfacesAndSelfTo<AStarPathfinder>().AsSingle();
+      Container.Bind<ICoinService>().To<CoinService>().AsSingle();
+      Container.Bind<IStatusSetupsService>().To<StatusSetupsService>().AsSingle();
+    }
 
 		private void BindGameplayFactories()
 		{

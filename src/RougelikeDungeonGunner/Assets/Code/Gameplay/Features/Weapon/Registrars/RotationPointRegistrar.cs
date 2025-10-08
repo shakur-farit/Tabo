@@ -1,4 +1,5 @@
-﻿using Code.Infrastructure.View.Registrars;
+﻿using System;
+using Code.Infrastructure.View.Registrars;
 using UnityEngine;
 
 namespace Code.Gameplay.Features.Weapon.Registrars
