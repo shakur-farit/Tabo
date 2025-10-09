@@ -21,6 +21,7 @@ using Code.Gameplay.Features.Enemy.Factory;
 using Code.Gameplay.Features.Enemy.Services;
 using Code.Gameplay.Features.Hero;
 using Code.Gameplay.Features.Hero.Factory;
+using Code.Gameplay.Features.Level;
 using Code.Gameplay.Features.Level.Factory;
 using Code.Gameplay.Features.Loot.Factory;
 using Code.Gameplay.Features.Loot.Services;
@@ -54,6 +55,7 @@ using Code.Meta.Features.Shop.EnchantUIEntry.Factory;
 using Code.Meta.Features.Shop.Upgrade.Factory;
 using Code.Meta.Features.Shop.Upgrade.Services;
 using Code.Meta.Features.Shop.Weapon.Factory;
+using Code.Meta.Features.Shop.WeaponStatUIEntry;
 using Code.Meta.Features.Shop.WeaponStatUIEntry.Factory;
 using Code.Meta.UI.Windows.Factory;
 using Code.Meta.UI.Windows.Service;
@@ -148,6 +150,7 @@ namespace Code.Infrastructure.Installers
       Container.BindInterfacesAndSelfTo<AStarPathfinder>().AsSingle();
       Container.Bind<ICoinService>().To<CoinService>().AsSingle();
       Container.Bind<IStatusSetupsService>().To<StatusSetupsService>().AsSingle();
+      Container.Bind<ILevelService>().To<LevelService>().AsSingle();
     }
 
 		private void BindGameplayFactories()
@@ -188,6 +191,7 @@ namespace Code.Infrastructure.Installers
 		private void BindUIServices()
 		{
 			Container.Bind<IWindowService>().To<WindowService>().AsSingle();
+			Container.BindInterfacesAndSelfTo<ShopService>().AsSingle();
 		}
 
 		private void BindSoundsServices()

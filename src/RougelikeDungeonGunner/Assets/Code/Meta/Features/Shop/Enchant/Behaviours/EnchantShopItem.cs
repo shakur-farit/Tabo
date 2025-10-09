@@ -1,9 +1,9 @@
 ﻿using Code.Common.Extensions;
 using Code.Gameplay.Features.Statuses;
 using Code.Meta.Features.Shop.Enchant.Configs;
+using Code.Meta.Features.Shop.WeaponStatUIEntry;
 using Code.Meta.UI.Windows;
 using Code.Meta.UI.Windows.Service;
-using Code.Progress.Provider;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -15,20 +15,21 @@ namespace Code.Meta.Features.Shop.Enchant.Behaviours
 	{
 		[SerializeField] private Image _icon;
 		[SerializeField] private TextMeshProUGUI _name;
-		[SerializeField] private TextMeshProUGUI _price;
+		[SerializeField] private TextMeshProUGUI _priceText;
 		[SerializeField] private Button _showEnchantStatsButton;
 
 		private StatusSetup _enchant;
+		private int _price;
+		private EnchantShopItemTypeId _enchantShopItemTypeId;
 
 		private IWindowService _windowService;
-		private IProgressProvider _progressProvider;
-		private EnchantShopItemConfig _config;
+		private IEnchantShopService _shopService;
 
 		[Inject]
-		public void Constructor(IWindowService windowService, IProgressProvider progressProvider)
+		public void Constructor(IWindowService windowService, IEnchantShopService shopService)
 		{
 			_windowService = windowService;
-			_progressProvider = progressProvider;
+			_shopService = shopService;
 		}
 
 		private void Start() =>
@@ -38,15 +39,16 @@ namespace Code.Meta.Features.Shop.Enchant.Behaviours
 		{
 			_icon.sprite = config.Sprite;
 			_name.text = config.TypeId.ToDisplayName();
-			_price.text = config.Price.ToString();
-			_config = config;
-
-			_progressProvider.ShopData.EnchantToBuyConfig = config;
+			_priceText.text = config.Price.ToString();
+			_price = config.Price;
+			_enchantShopItemTypeId = config.TypeId;
 		}
 
 		private void ShowEnchantStats()
 		{
-			_progressProvider.ShopData.EnchantToBuyConfig = _config;
+			_shopService.SetEnchantPrice(_price);
+			_shopService.SetEnchantSprite(_icon.sprite);
+			_shopService.SetEnchantTypeId(_enchantShopItemTypeId);
 
 			_windowService.Open(WindowId.EnchantBuyDialogWindow);
 		}

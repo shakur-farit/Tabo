@@ -1,3 +1,4 @@
+using Code.Gameplay.Features.Level;
 using Code.Gameplay.Features.Level.Factory;
 using Code.Gameplay.Features.Music;
 using Code.Gameplay.Features.Music.Services;
@@ -5,7 +6,6 @@ using Code.Infrastructure.States.StateInfrastructure;
 using Code.Infrastructure.States.StateMachine;
 using Code.Meta.UI.Windows;
 using Code.Meta.UI.Windows.Service;
-using Code.Progress.Provider;
 
 namespace Code.Infrastructure.States.GameStates
 {
@@ -13,22 +13,22 @@ namespace Code.Infrastructure.States.GameStates
 	{
 		private readonly IGameStateMachine _stateMachine;
 		private readonly ILevelFactory _levelFactory;
-		private readonly IProgressProvider _progressProvider;
 		private readonly IWindowService _windowService;
 		private readonly IMusicClipSetter _clipSetter;
+		private readonly ILevelService _levelService;
 
 		public BattleEnterState(
 			IGameStateMachine stateMachine,
 			ILevelFactory levelFactory,
-			IProgressProvider progressProvider,
 			IWindowService windowService,
-			IMusicClipSetter clipSetter)
+			IMusicClipSetter clipSetter,
+			ILevelService levelService)
 		{
 			_stateMachine = stateMachine;
 			_levelFactory = levelFactory;
-			_progressProvider = progressProvider;
 			_windowService = windowService;
 			_clipSetter = clipSetter;
+			_levelService = levelService;
 		}
 
 		public override void Enter()
@@ -40,7 +40,7 @@ namespace Code.Infrastructure.States.GameStates
 		}
 
 		private void CreateNewLevel() => 
-			_levelFactory.CreateLevel(_progressProvider.LevelData.CurrentLevel);
+			_levelFactory.CreateLevel(_levelService.GetCurrentLevel());
 
 		private void OpenHud() => 
 			_windowService.Open(WindowId.Hud);

@@ -163,7 +163,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _icon: {fileID: 1941228627984055794}
   _name: {fileID: 5966581229874895996}
-  _price: {fileID: 2615983300745726666}
+  _priceText: {fileID: 2615983300745726666}
   _showEnchantStatsButton: {fileID: 2394695287779661729}
 --- !u!1 &5660317408484499894
 GameObject:

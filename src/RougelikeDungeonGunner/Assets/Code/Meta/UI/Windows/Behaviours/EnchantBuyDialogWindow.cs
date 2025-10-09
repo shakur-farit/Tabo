@@ -7,6 +7,7 @@ using Code.Meta.Features.Shop.Enchant.Behaviours;
 using Code.Meta.Features.Shop.Enchant.Configs;
 using Code.Meta.Features.Shop.EnchantUIEntry.Behaviours;
 using Code.Meta.Features.Shop.EnchantUIEntry.Configs;
+using Code.Meta.Features.Shop.WeaponStatUIEntry;
 using Code.Meta.UI.Windows.Service;
 using Code.Progress.Provider;
 using UnityEngine;
@@ -27,6 +28,7 @@ namespace Code.Meta.UI.Windows.Behaviours
 		private IStaticDataService _staticDataService;
     private ICoinService _coinService;
     private IStatusSetupsService _statusSetupsService;
+    private IEnchantShopService _shopService;
 
     [Inject]
 		public void Constructor(
@@ -34,7 +36,8 @@ namespace Code.Meta.UI.Windows.Behaviours
 			IProgressProvider progressProvider,
       IStaticDataService staticDataService,
       ICoinService coinService,
-      IStatusSetupsService statusSetupsService)
+      IStatusSetupsService statusSetupsService,
+			IEnchantShopService shopService)
 		{
 			Id = WindowId.EnchantBuyDialogWindow;
 
@@ -43,14 +46,15 @@ namespace Code.Meta.UI.Windows.Behaviours
 			_staticDataService = staticDataService;
       _coinService = coinService;
       _statusSetupsService = statusSetupsService;
-    }
+      _shopService = shopService;
+		}
 
 		protected override void Initialize()
 		{
 			_buyButton.onClick.AddListener(BuyEnchant);
 			_closeButton.onClick.AddListener(CloseWindow);
 
-			_enchantToBuyItem.Setup(_progressProvider.ShopData.EnchantToBuyConfig);
+			_enchantToBuyItem.Setup(_shopService.EnchantSprite, _shopService.EnchantPrice);
 
 			UpdateStatsEntry();
 		}
@@ -72,7 +76,7 @@ namespace Code.Meta.UI.Windows.Behaviours
     {
       int coinCount = _coinService.GetCurrentCoinCount();
       
-      coinCount -= _progressProvider.ShopData.EnchantToBuyConfig.Price;
+      coinCount -= _shopService.EnchantPrice;
 
 			_coinService.SetCurrentCoinCount(coinCount);
     }
@@ -93,7 +97,7 @@ namespace Code.Meta.UI.Windows.Behaviours
 		}
 
 		private bool IsNotEnoughCoins() =>
-      _coinService.GetCurrentCoinCount() < _progressProvider.ShopData.EnchantToBuyConfig.Price;
+      _coinService.GetCurrentCoinCount() < _shopService.EnchantPrice;
 
 		private void CloseWindow() =>
 			_windowService.Close(WindowId.EnchantBuyDialogWindow);
@@ -101,7 +105,7 @@ namespace Code.Meta.UI.Windows.Behaviours
 		private void UpdateStatsEntry()
 		{
 			EnchantShopItemConfig config =
-				_staticDataService.GetEnchantShopItemConfig(_progressProvider.ShopData.EnchantToBuyConfig.TypeId);
+				_staticDataService.GetEnchantShopItemConfig(_shopService.EnchantTypeId);
 
 			_progressProvider.WeaponData.SelectedEnchantUIStats = config.Enchnat;
 

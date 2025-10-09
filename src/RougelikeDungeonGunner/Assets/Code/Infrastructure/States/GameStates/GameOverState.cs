@@ -1,3 +1,4 @@
+using Code.Gameplay.Features.Level;
 using Code.Infrastructure.States.StateInfrastructure;
 using Code.Meta.UI.Windows;
 using Code.Meta.UI.Windows.Service;
@@ -8,12 +9,12 @@ namespace Code.Infrastructure.States.GameStates
 	public class GameOverState : SimpleState
 	{
 		private readonly IWindowService _windowService;
-		private readonly IProgressProvider _progressProvider;
+		private readonly ILevelService _levelService;
 
-		public GameOverState(IWindowService windowService, IProgressProvider progressProvider)
+		public GameOverState(IWindowService windowService, ILevelService levelService)
 		{
 			_windowService = windowService;
-			_progressProvider = progressProvider;
+			_levelService = levelService;
 		}
 
 		public override void Enter()
@@ -29,7 +30,7 @@ namespace Code.Infrastructure.States.GameStates
 		private void OpenGameOverWindow() =>
 			_windowService.Open(WindowId.GameOverWindow);
 
-		private void RemoveProgress() => 
-			_progressProvider.LevelData.CurrentLevel = 1;
+		private void RemoveProgress() =>
+			_levelService.SetFirstLevel();
 	}
 }

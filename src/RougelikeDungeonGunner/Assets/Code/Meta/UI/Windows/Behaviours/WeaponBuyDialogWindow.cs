@@ -3,6 +3,7 @@ using Code.Gameplay.Features.Weapon.Configs;
 using Code.Gameplay.StaticData;
 using Code.Meta.Features.Shop.Upgrade.Services;
 using Code.Meta.Features.Shop.Weapon.Behaviours;
+using Code.Meta.Features.Shop.WeaponStatUIEntry;
 using Code.Meta.Features.Shop.WeaponStatUIEntry.Behaviours;
 using Code.Meta.UI.Windows.Service;
 using Code.Progress.Provider;
@@ -24,6 +25,7 @@ namespace Code.Meta.UI.Windows.Behaviours
 		private IWeaponUpgradesCleaner _upgradeCleaner;
 		private IStaticDataService _staticDataService;
     private ICoinService _coinService;
+    private IWeaponShopService _shopService;
 
     [Inject]
 		public void Constructor(
@@ -31,7 +33,8 @@ namespace Code.Meta.UI.Windows.Behaviours
 			IProgressProvider progressProvider,
 			IWeaponUpgradesCleaner upgraderCleaner,
 			IStaticDataService staticDataService,
-      ICoinService coinService)
+      ICoinService coinService,
+			IWeaponShopService shopService)
 		{
 			Id = WindowId.WeaponBuyDialogWindow;
 
@@ -40,14 +43,15 @@ namespace Code.Meta.UI.Windows.Behaviours
 			_upgradeCleaner = upgraderCleaner;
 			_staticDataService = staticDataService;
       _coinService = coinService;
-    }
+      _shopService = shopService;
+		}
 
 		protected override void Initialize()
 		{
 			_buyButton.onClick.AddListener(BuyWeapon);
 			_closeButton.onClick.AddListener(CloseWindow);
 
-			weaponToBuyItem.Setup(_progressProvider.ShopData.WeaponToBuyConfig);
+			weaponToBuyItem.Setup(_shopService.WeaponSprite, _shopService.WeaponPrice);
 
 			UpdateStatsEntry();
 		}
@@ -70,7 +74,7 @@ namespace Code.Meta.UI.Windows.Behaviours
     {
       int coinCount = _coinService.GetCurrentCoinCount();
 
-      coinCount -= _progressProvider.ShopData.WeaponToBuyConfig.Price;
+      coinCount -= _shopService.WeaponPrice;
 
 			_coinService.SetCurrentCoinCount(coinCount);
     }
@@ -78,15 +82,15 @@ namespace Code.Meta.UI.Windows.Behaviours
     private void ChangeCurrentWeapon()
 		{
 			_progressProvider.HeroData.CurrentWeaponTypeId =
-				_progressProvider.ShopData.WeaponToBuyConfig.WeaponTypeId;
-			_progressProvider.ShopData.WeaponToBuyConfig = null;
+				_shopService.WeaponTypeId;
+			_shopService.ResetWeaponSetup();
 		}
 
 		private void CleanUpgrades() =>
 			_upgradeCleaner.CleanUpgrades();
 
 		private bool IsNotEnoughCoins() =>
-      _coinService.GetCurrentCoinCount() < _progressProvider.ShopData.WeaponToBuyConfig.Price;
+      _coinService.GetCurrentCoinCount() < _shopService.WeaponPrice;
 
 		private void CloseWindow() =>
 			_windowService.Close(WindowId.WeaponBuyDialogWindow);
@@ -95,7 +99,7 @@ namespace Code.Meta.UI.Windows.Behaviours
 		{
 			WeaponConfig weaponConfig =
 				_staticDataService
-					.GetWeaponConfig(_progressProvider.ShopData.WeaponToBuyConfig.WeaponTypeId);
+					.GetWeaponConfig(_shopService.WeaponTypeId);
 
 			foreach (WeaponStatUIEntry uiEntry in weaponConfig.StatsUIEntry)
 				_statsUIHolder.CreateStatUIEntryItem(uiEntry.StatUIEntryType, weaponConfig);
