@@ -29,6 +29,7 @@ namespace Code.Meta.UI.Windows.Behaviours
     private ICoinService _coinService;
     private IStatusSetupsService _statusSetupsService;
     private IEnchantShopService _shopService;
+    private ICurrentHeroWeaponProvider _heroWeapon;
 
     [Inject]
 		public void Constructor(
@@ -37,6 +38,7 @@ namespace Code.Meta.UI.Windows.Behaviours
       IStaticDataService staticDataService,
       ICoinService coinService,
       IStatusSetupsService statusSetupsService,
+			ICurrentHeroWeaponProvider heroWeapon,
 			IEnchantShopService shopService)
 		{
 			Id = WindowId.EnchantBuyDialogWindow;
@@ -47,6 +49,7 @@ namespace Code.Meta.UI.Windows.Behaviours
       _coinService = coinService;
       _statusSetupsService = statusSetupsService;
       _shopService = shopService;
+      _heroWeapon = heroWeapon;
 		}
 
 		protected override void Initialize()
@@ -84,7 +87,7 @@ namespace Code.Meta.UI.Windows.Behaviours
     private void AddEnchant()
 		{
       StatusSetup selectedEnchant = _progressProvider.WeaponData.SelectedEnchantUIStats;
-      WeaponTypeId currentWeapon = _progressProvider.HeroData.CurrentWeaponTypeId;
+      WeaponTypeId currentWeapon = _heroWeapon.CurrentWeaponTypeId;
 
       if (_statusSetupsService.GetStatusSetups(currentWeapon)
           .Any(e => e.StatusTypeId == selectedEnchant.StatusTypeId))

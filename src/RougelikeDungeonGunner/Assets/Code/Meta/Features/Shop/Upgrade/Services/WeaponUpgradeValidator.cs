@@ -1,9 +1,9 @@
 ﻿using Code.Common.Balance;
+using Code.Gameplay.Features.Hero;
 using Code.Gameplay.Features.Weapon;
 using Code.Gameplay.Features.Weapon.Configs;
 using Code.Gameplay.StaticData;
 using Code.Meta.Features.Shop.Upgrade.Configs;
-using Code.Progress.Provider;
 
 namespace Code.Meta.Features.Shop.Upgrade.Services
 {
@@ -12,25 +12,25 @@ namespace Code.Meta.Features.Shop.Upgrade.Services
 		public const float MaxAccuracyInPercent = 100f;
 
 		private readonly IWeaponStatsProvider _statsProvider;
-		private readonly IProgressProvider _progressProvider;
 		private readonly IStaticDataService _staticDataService;
+		private readonly ICurrentHeroWeaponProvider _heroWeapon;
 
 
 		public WeaponUpgradeValidator(
 			IWeaponStatsProvider statsProvider,
-			IProgressProvider progressProvider,
+			ICurrentHeroWeaponProvider heroWeapon,
 			IStaticDataService staticDataService)
 		{
 			_statsProvider = statsProvider;
-			_progressProvider = progressProvider;
 			_staticDataService = staticDataService;
+			_heroWeapon = heroWeapon;
 		}
 
 		public bool CanUpgrade(WeaponUpgradeShopItemConfig config)
 		{
 			WeaponBalance weaponBalance = _staticDataService.GetBalance().WeaponBalance;
 
-			WeaponTypeId currentWeapon = _progressProvider.HeroData.CurrentWeaponTypeId;
+			WeaponTypeId currentWeapon = _heroWeapon.CurrentWeaponTypeId;
 			WeaponConfig weaponConfig = _staticDataService.GetWeaponConfig(currentWeapon);
 
 			switch (config.TypeId)

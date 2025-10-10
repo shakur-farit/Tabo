@@ -9,7 +9,6 @@ using Code.Gameplay.Features.Hero.Configs;
 using Code.Gameplay.Features.Weapon;
 using Code.Gameplay.StaticData;
 using Code.Infrastructure.Identifiers;
-using Code.Progress.Provider;
 using UnityEngine;
 
 namespace Code.Gameplay.Features.Hero.Factory
@@ -21,18 +20,18 @@ namespace Code.Gameplay.Features.Hero.Factory
 		private readonly IIdentifierService _identifier;
 		private readonly IStaticDataService _staticDataService;
     private readonly ICoinService _coinService;
-    private readonly IProgressProvider _progressProvider;
+    private readonly ICurrentHeroWeaponProvider _heroWeapon;
 
 		public HeroFactory(
 			IIdentifierService identifier, 
 			IStaticDataService staticDataService,
 			ICoinService coinService,
-			IProgressProvider progressProvider)
+			ICurrentHeroWeaponProvider heroWeapon)
 		{
 			_identifier = identifier;
 			_staticDataService = staticDataService;
       _coinService = coinService;
-      _progressProvider = progressProvider;
+      _heroWeapon = heroWeapon;
 		}
 
 		public GameEntity CreateHero(HeroTypeId typeId, Vector3 at)
@@ -103,13 +102,13 @@ namespace Code.Gameplay.Features.Hero.Factory
 
 		private WeaponTypeId CurrentWeapon(HeroConfig config)
 		{
-			if (_progressProvider.HeroData.CurrentWeaponTypeId == WeaponTypeId.Unknown)
+			if (_heroWeapon.CurrentWeaponTypeId == WeaponTypeId.Unknown)
 			{
-				_progressProvider.HeroData.CurrentWeaponTypeId = config.StartWeapon;
+				_heroWeapon.SetCurrentHeroWeapon(config.StartWeapon);
 				return config.StartWeapon;
 			}
 
-			return _progressProvider.HeroData.CurrentWeaponTypeId;
+			return _heroWeapon.CurrentWeaponTypeId;
 		}
 	}
 }

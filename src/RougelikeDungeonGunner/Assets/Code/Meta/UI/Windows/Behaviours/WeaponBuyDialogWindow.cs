@@ -6,7 +6,6 @@ using Code.Meta.Features.Shop.Weapon.Behaviours;
 using Code.Meta.Features.Shop.WeaponStatUIEntry;
 using Code.Meta.Features.Shop.WeaponStatUIEntry.Behaviours;
 using Code.Meta.UI.Windows.Service;
-using Code.Progress.Provider;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
@@ -21,29 +20,29 @@ namespace Code.Meta.UI.Windows.Behaviours
 		[SerializeField] private WeaponStatsUIHolder _statsUIHolder;
 
 		private IWindowService _windowService;
-		private IProgressProvider _progressProvider;
 		private IWeaponUpgradesCleaner _upgradeCleaner;
 		private IStaticDataService _staticDataService;
     private ICoinService _coinService;
     private IWeaponShopService _shopService;
+    private ICurrentHeroWeaponProvider _heroWeapon;
 
     [Inject]
 		public void Constructor(
 			IWindowService windowService,
-			IProgressProvider progressProvider,
 			IWeaponUpgradesCleaner upgraderCleaner,
 			IStaticDataService staticDataService,
+			ICurrentHeroWeaponProvider heroWeapon,
       ICoinService coinService,
 			IWeaponShopService shopService)
 		{
 			Id = WindowId.WeaponBuyDialogWindow;
 
 			_windowService = windowService;
-			_progressProvider = progressProvider;
 			_upgradeCleaner = upgraderCleaner;
 			_staticDataService = staticDataService;
       _coinService = coinService;
       _shopService = shopService;
+      _heroWeapon = heroWeapon;
 		}
 
 		protected override void Initialize()
@@ -81,8 +80,8 @@ namespace Code.Meta.UI.Windows.Behaviours
 
     private void ChangeCurrentWeapon()
 		{
-			_progressProvider.HeroData.CurrentWeaponTypeId =
-				_shopService.WeaponTypeId;
+			_heroWeapon.SetCurrentHeroWeapon(_shopService.WeaponTypeId);
+
 			_shopService.ResetWeaponSetup();
 		}
 

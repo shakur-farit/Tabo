@@ -2,12 +2,12 @@
 using System.Linq;
 using Code.Common.Extensions;
 using Code.Gameplay.Features.Effects;
+using Code.Gameplay.Features.Hero;
 using Code.Gameplay.Features.Weapon;
 using Code.Gameplay.Features.Weapon.Configs;
 using Code.Gameplay.StaticData;
 using Code.Meta.Features.Shop.Upgrade.Configs;
 using Code.Meta.Features.Shop.Upgrade.Services;
-using Code.Progress.Provider;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -24,23 +24,23 @@ namespace Code.Meta.Features.Shop.Upgrade.Beahaviours
 
 		private WeaponUpgradeShopItemConfig _config;
 
-		private IProgressProvider _progressProvider;
 		private IWeaponUpgrader _weaponUpgrader;
 		private IWeaponStatsProvider _statsProvider;
 		private IStaticDataService _staticDataService;
 		private IWeaponEffectsProvider _effectsProvider;
+		private ICurrentHeroWeaponProvider _heroWeapon;
 
 		[Inject]
 		public void Constructor(
-			IProgressProvider progressProvider,
 			IWeaponUpgrader weaponUpgrader,
 			IWeaponStatsProvider statsProvider,
+			ICurrentHeroWeaponProvider heroWeapon,
 			IWeaponEffectsProvider effectsProvider,
 			IStaticDataService staticDataService)
 		{
-			_progressProvider = progressProvider;
 			_weaponUpgrader = weaponUpgrader;
 			_statsProvider = statsProvider;
+			_heroWeapon = heroWeapon;
 			_effectsProvider = effectsProvider;
 			_staticDataService = staticDataService;
 		}
@@ -67,7 +67,7 @@ namespace Code.Meta.Features.Shop.Upgrade.Beahaviours
 
 		private string UpdateCurrentValueText()
 		{
-			WeaponTypeId currentWeapon = _progressProvider.HeroData.CurrentWeaponTypeId;
+			WeaponTypeId currentWeapon = _heroWeapon.CurrentWeaponTypeId;
 			WeaponConfig weaponConfig = _staticDataService.GetWeaponConfig(currentWeapon);
 
 			switch (_config.TypeId)

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Code.Common.Utilities;
+using Code.Gameplay.Features.Hero;
 using Code.Meta.Features.Shop.Weapon;
 using Code.Meta.Features.Shop.Weapon.Behaviours;
 using Code.Meta.Features.Shop.Weapon.Factory;
@@ -21,11 +22,13 @@ namespace Code.Meta.UI.Windows.Behaviours
 		private IWindowService _windowService;
 		private IWeaponShopItemFactory _factory;
 		private IProgressProvider _progressProvider;
+		private ICurrentHeroWeaponProvider _heroWeapon;
 
 
 		[Inject]
 		public void Constructor(
 			IWindowService windowService,
+			ICurrentHeroWeaponProvider heroWeapon,
 			IWeaponShopItemFactory factory,
 			IProgressProvider progressProvider)
 		{
@@ -34,7 +37,7 @@ namespace Code.Meta.UI.Windows.Behaviours
 			_windowService = windowService;
 			_factory = factory;
 			_progressProvider = progressProvider;
-
+			_heroWeapon = heroWeapon;
 		}
 
 		protected override void Initialize()
@@ -45,10 +48,10 @@ namespace Code.Meta.UI.Windows.Behaviours
 		}
 
 		protected override void SubscribeUpdates() => 
-			_progressProvider.HeroData.WeaponChanged += UpdateWeaponsInShop;
+			_heroWeapon.WeaponChanged += UpdateWeaponsInShop;
 
 		protected override void UnsubscribeUpdates() => 
-			_progressProvider.HeroData.WeaponChanged -= UpdateWeaponsInShop;
+			_heroWeapon.WeaponChanged -= UpdateWeaponsInShop;
 
 		private void Close() => 
 			_windowService.Close(WindowId.WeaponBuyWindow);
@@ -63,7 +66,7 @@ namespace Code.Meta.UI.Windows.Behaviours
 			{
 				WeaponShopItem item = _factory.CreateWeaponShopItem(id, _layout);
 
-				if (item.WeaponToBuy == _progressProvider.HeroData.CurrentWeaponTypeId)
+				if (item.WeaponToBuy == _heroWeapon.CurrentWeaponTypeId)
 					Destroy(item.gameObject);
 				else
 					_items.Add(item.gameObject);

@@ -8,7 +8,6 @@ namespace Code.Progress.Provider
 		ProgressData ProgressData { get; }
 		TransientData TransientData { get; }
 
-		HeroData HeroData => TransientData.HeroData;
 		WeaponData WeaponData => TransientData.WeaponData;
 
 		void SetProgressData(ProgressData data);

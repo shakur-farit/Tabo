@@ -1,10 +1,10 @@
-﻿using Code.Gameplay.Features.Statuses;
+﻿using Code.Gameplay.Features.Hero;
+using Code.Gameplay.Features.Statuses;
 using Code.Gameplay.Features.Weapon.Configs;
 using Code.Gameplay.StaticData;
 using Code.Meta.Features.Shop.EnchantUIEntry.Behaviours;
 using Code.Meta.Features.Shop.WeaponStatUIEntry.Behaviours;
 using Code.Meta.UI.Windows.Service;
-using Code.Progress.Provider;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
@@ -22,20 +22,20 @@ namespace Code.Meta.UI.Windows.Behaviours
 		private WeaponConfig _weaponConfig;
 
 		private IWindowService _windowService;
-		private IProgressProvider _progressProvider;
 		private IStaticDataService _staticDataService;
+		private ICurrentHeroWeaponProvider _heroWeapon;
 
 		[Inject]
 		public void Constructor(
 			IWindowService windowService,
-			IProgressProvider progressProvider,
+			ICurrentHeroWeaponProvider heroWeapon,
 			IStaticDataService staticDataService)
 		{
 			Id = WindowId.CurrentWeaponInfoWindow;
 
 			_windowService = windowService;
-			_progressProvider = progressProvider;
 			_staticDataService = staticDataService;
+			_heroWeapon = heroWeapon;
 		}
 
 		protected override void Initialize()
@@ -67,7 +67,7 @@ namespace Code.Meta.UI.Windows.Behaviours
 			_windowService.Close(WindowId.CurrentWeaponInfoWindow);
 
 		private void SetWeaponConfig() => 
-			_weaponConfig = _staticDataService.GetWeaponConfig(_progressProvider.HeroData.CurrentWeaponTypeId);
+			_weaponConfig = _staticDataService.GetWeaponConfig(_heroWeapon.CurrentWeaponTypeId);
 
 	}
 }

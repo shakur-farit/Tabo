@@ -3,8 +3,6 @@ using System.Linq;
 using Code.Gameplay.Features.Hero;
 using Code.Gameplay.Features.Hero.Configs;
 using Code.Gameplay.StaticData;
-using Code.Progress.Provider;
-using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
@@ -21,13 +19,13 @@ namespace Code.Meta.Features.Hud.HeroSelector.Behaviours
 		private int _currentIndex = 0;
 
 		private IStaticDataService _staticDataService;
-		private IProgressProvider _progressProvider;
+		private ICurrentHeroTypeIdProvider _heroType;
 
 		[Inject]
-		public void Constructor(IStaticDataService staticDataService, IProgressProvider progressProvider)
+		public void Constructor(IStaticDataService staticDataService, ICurrentHeroTypeIdProvider heroType)
 		{
 			_staticDataService = staticDataService;
-			_progressProvider = progressProvider;
+			_heroType = heroType;
 		}
 
 		private void OnEnable()
@@ -67,7 +65,7 @@ namespace Code.Meta.Features.Hud.HeroSelector.Behaviours
 			_heroUI.UpdateHeroUI(config);
 
 		private void UpdateCurrentHero(HeroTypeId typeId) => 
-			_progressProvider.HeroData.CurrentHeroTypeId = typeId;
+			_heroType.CurrentHeroTypeId = typeId;
 
 		private void UpdateNavigationButtons()
 		{
