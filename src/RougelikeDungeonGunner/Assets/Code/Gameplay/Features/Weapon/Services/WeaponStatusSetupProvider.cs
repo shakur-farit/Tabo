@@ -6,12 +6,12 @@ using Code.Gameplay.StaticData;
 
 namespace Code.Gameplay.Features.Hero
 {
-  public class StatusSetupsService : IStatusSetupsService
+  public class WeaponStatusSetupProvider : IWeaponStatusSetupProvider
   {
     private readonly IStaticDataService _staticDataService;
     private readonly Dictionary<WeaponTypeId, List<StatusSetup>> _boughtSetups = new();
 
-    public StatusSetupsService(IStaticDataService staticDataService) =>
+    public WeaponStatusSetupProvider(IStaticDataService staticDataService) =>
       _staticDataService = staticDataService;
 
     public IReadOnlyList<StatusSetup> GetStatusSetups(WeaponTypeId typeId)

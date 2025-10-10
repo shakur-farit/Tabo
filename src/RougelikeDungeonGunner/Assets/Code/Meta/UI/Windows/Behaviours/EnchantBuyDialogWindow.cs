@@ -5,11 +5,11 @@ using Code.Gameplay.Features.Weapon;
 using Code.Gameplay.StaticData;
 using Code.Meta.Features.Shop.Enchant.Behaviours;
 using Code.Meta.Features.Shop.Enchant.Configs;
+using Code.Meta.Features.Shop.EnchantUIEntry;
 using Code.Meta.Features.Shop.EnchantUIEntry.Behaviours;
 using Code.Meta.Features.Shop.EnchantUIEntry.Configs;
 using Code.Meta.Features.Shop.WeaponStatUIEntry;
 using Code.Meta.UI.Windows.Service;
-using Code.Progress.Provider;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
@@ -24,33 +24,33 @@ namespace Code.Meta.UI.Windows.Behaviours
 		[SerializeField] private EnchantStatsUIHolder _holder;
 
 		private IWindowService _windowService;
-		private IProgressProvider _progressProvider;
 		private IStaticDataService _staticDataService;
     private ICoinService _coinService;
-    private IStatusSetupsService _statusSetupsService;
+    private IWeaponStatusSetupProvider _weaponStatusSetupProvider;
     private IEnchantShopService _shopService;
     private ICurrentHeroWeaponProvider _heroWeapon;
+    private ISelectedEnchantUIEntryProvider _enchantUIEntry;
 
     [Inject]
 		public void Constructor(
 			IWindowService windowService,
-			IProgressProvider progressProvider,
       IStaticDataService staticDataService,
       ICoinService coinService,
-      IStatusSetupsService statusSetupsService,
+      IWeaponStatusSetupProvider weaponStatusSetupProvider,
 			ICurrentHeroWeaponProvider heroWeapon,
+			ISelectedEnchantUIEntryProvider enchantUIEntry,
 			IEnchantShopService shopService)
 		{
 			Id = WindowId.EnchantBuyDialogWindow;
 
 			_windowService = windowService;
-			_progressProvider = progressProvider;
 			_staticDataService = staticDataService;
       _coinService = coinService;
-      _statusSetupsService = statusSetupsService;
+      _weaponStatusSetupProvider = weaponStatusSetupProvider;
       _shopService = shopService;
       _heroWeapon = heroWeapon;
-		}
+      _enchantUIEntry = enchantUIEntry;
+    }
 
 		protected override void Initialize()
 		{
@@ -86,17 +86,17 @@ namespace Code.Meta.UI.Windows.Behaviours
 
     private void AddEnchant()
 		{
-      StatusSetup selectedEnchant = _progressProvider.WeaponData.SelectedEnchantUIStats;
+      StatusSetup selectedEnchant = _enchantUIEntry.StatusSetup;
       WeaponTypeId currentWeapon = _heroWeapon.CurrentWeaponTypeId;
 
-      if (_statusSetupsService.GetStatusSetups(currentWeapon)
+      if (_weaponStatusSetupProvider.GetStatusSetups(currentWeapon)
           .Any(e => e.StatusTypeId == selectedEnchant.StatusTypeId))
 			{
 				_windowService.Open(WindowId.EnchantAlreadyAppliedWindow);
 				return;
 			}
 
-			_statusSetupsService.AddBoughtStatusSetup(currentWeapon, selectedEnchant);
+			_weaponStatusSetupProvider.AddBoughtStatusSetup(currentWeapon, selectedEnchant);
 		}
 
 		private bool IsNotEnoughCoins() =>
@@ -110,7 +110,7 @@ namespace Code.Meta.UI.Windows.Behaviours
 			EnchantShopItemConfig config =
 				_staticDataService.GetEnchantShopItemConfig(_shopService.EnchantTypeId);
 
-			_progressProvider.WeaponData.SelectedEnchantUIStats = config.Enchnat;
+			_enchantUIEntry.SetStatusSetup(config.Enchnat);
 
 			foreach (EnchantStatUIEntry statUIEntry in config.EnchantStatUIEntries)
 				_holder.CreateStats(statUIEntry.TypeId);

@@ -1,16 +1,11 @@
 using Code.Progress.Data.Progress;
-using Code.Progress.Data.Transient;
 
 namespace Code.Progress.Provider
 {
 	public interface IProgressProvider
 	{
 		ProgressData ProgressData { get; }
-		TransientData TransientData { get; }
 
-		WeaponData WeaponData => TransientData.WeaponData;
-
-		void SetProgressData(ProgressData data);
-		void SetTransientData(TransientData data);
+    void SetProgressData(ProgressData data);
 	}
 }

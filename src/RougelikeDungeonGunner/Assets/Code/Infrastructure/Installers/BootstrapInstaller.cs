@@ -9,12 +9,10 @@ using Code.Gameplay.Features.Ammo.Services;
 using Code.Gameplay.Features.AmmoPattern.Factory;
 using Code.Gameplay.Features.AStar.Services;
 using Code.Gameplay.Features.Aura.Factory;
-using Code.Gameplay.Features.Destroyable;
 using Code.Gameplay.Features.Destroyable.Factory;
 using Code.Gameplay.Features.Door.Factory;
 using Code.Gameplay.Features.Dungeon.Factory;
 using Code.Gameplay.Features.Dungeon.Services;
-using Code.Gameplay.Features.Dungeon.Systems;
 using Code.Gameplay.Features.Effects.Factory;
 using Code.Gameplay.Features.Enchants.Factory;
 using Code.Gameplay.Features.Enemy.Factory;
@@ -30,7 +28,6 @@ using Code.Gameplay.Features.Music.Services;
 using Code.Gameplay.Features.SpecialEffect.Factory;
 using Code.Gameplay.Features.Statuses.Applier;
 using Code.Gameplay.Features.Statuses.Factory;
-using Code.Gameplay.Features.Weapon;
 using Code.Gameplay.Features.Weapon.Factory;
 using Code.Gameplay.Features.Weapon.Systems;
 using Code.Gameplay.Input.Service;
@@ -44,13 +41,13 @@ using Code.Infrastructure.States.Factory;
 using Code.Infrastructure.States.GameStates;
 using Code.Infrastructure.States.StateMachine;
 using Code.Infrastructure.Systems;
-using Code.Infrastructure.View;
 using Code.Infrastructure.View.Factory;
 using Code.Meta.Features.Hud.AmmoHolder.Factory;
 using Code.Meta.Features.Hud.EnchantHolder.Factory;
 using Code.Meta.Features.Hud.HeroHeartHolder.Factory;
 using Code.Meta.Features.Hud.HeroSelector.Behaviours;
 using Code.Meta.Features.Shop.Enchant.Factory;
+using Code.Meta.Features.Shop.EnchantUIEntry;
 using Code.Meta.Features.Shop.EnchantUIEntry.Factory;
 using Code.Meta.Features.Shop.Upgrade.Factory;
 using Code.Meta.Features.Shop.Upgrade.Services;
@@ -149,8 +146,10 @@ namespace Code.Infrastructure.Installers
 			Container.Bind<IEnemySpawnPositionProvider>().To<EnemySpawnPositionProvider>().AsSingle();
       Container.BindInterfacesAndSelfTo<AStarPathfinder>().AsSingle();
       Container.Bind<ICoinService>().To<CoinService>().AsSingle();
-      Container.Bind<IStatusSetupsService>().To<StatusSetupsService>().AsSingle();
+      Container.Bind<IWeaponStatusSetupProvider>().To<WeaponStatusSetupProvider>().AsSingle();
       Container.Bind<ILevelService>().To<LevelService>().AsSingle();
+      Container.Bind<ICurrentHeroWeaponProvider>().To<CurrentHeroWeaponProvider>().AsSingle();
+      Container.Bind<ICurrentHeroTypeIdProvider>().To<CurrentHeroTypeIdProvider>().AsSingle();
     }
 
 		private void BindGameplayFactories()
@@ -191,8 +190,9 @@ namespace Code.Infrastructure.Installers
 		private void BindUIServices()
 		{
 			Container.Bind<IWindowService>().To<WindowService>().AsSingle();
-			Container.BindInterfacesAndSelfTo<ShopService>().AsSingle();
-		}
+      Container.BindInterfacesAndSelfTo<ShopService>().AsSingle();
+      Container.Bind<ISelectedEnchantUIEntryProvider>().To<SelectedEnchantUIEntryProvider>().AsSingle();
+    }
 
 		private void BindSoundsServices()
 		{

@@ -2,7 +2,6 @@
 using Code.Gameplay.Features.Statuses;
 using Code.Meta.UI.Windows;
 using Code.Meta.UI.Windows.Service;
-using Code.Progress.Provider;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -17,24 +16,24 @@ namespace Code.Meta.Features.Shop.EnchantUIEntry.Behaviours
 		[SerializeField] private Button _showEnchantStatsButton;
 
 		private IWindowService _windowService;
-		private IProgressProvider _progressProvider;
 		private StatusSetup _setup;
 		private EnchantUIEntryTypeId _id;
+    private ISelectedEnchantUIEntryProvider _enchantUIEntry;
 
-		[Inject]
-		public void Constructor(IWindowService windowService, IProgressProvider progressProvider)
+    [Inject]
+		public void Constructor(IWindowService windowService, ISelectedEnchantUIEntryProvider enchantUIEntry)
 		{
 			_windowService = windowService;
-			_progressProvider = progressProvider;
-		}
+      _enchantUIEntry = enchantUIEntry;
+    }
 
 		private void Start() => 
 			_showEnchantStatsButton.onClick.AddListener(OpenEnchantStatsWindow);
 
 		private void OpenEnchantStatsWindow()
 		{
-			_progressProvider.WeaponData.SelectedEnchantUIStats = _setup;
-			_progressProvider.WeaponData.SelectedEnchantUITypeId = _id;
+			_enchantUIEntry.SetStatusSetup(_setup);
+      _enchantUIEntry.SetTypeId(_id);
 
 			_windowService.Open(WindowId.EnchantStatsWindow);
 		}

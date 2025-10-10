@@ -1,5 +1,4 @@
 ﻿using Code.Meta.Features.Shop.EnchantUIEntry.Factory;
-using Code.Progress.Provider;
 using UnityEngine;
 using Zenject;
 
@@ -9,13 +8,13 @@ namespace Code.Meta.Features.Shop.EnchantUIEntry.Behaviours
 	{
 		[SerializeField] private Transform _parent;
 
-		private IProgressProvider _progressProvider;
 		private IWeaponEnchantStatUIEntryFactory _factory;
+    private ISelectedEnchantUIEntryProvider _enchantUIEntry;
 
-		[Inject]
-		public void Constructor(IProgressProvider progressProvider, IWeaponEnchantStatUIEntryFactory factory)
-		{
-			_progressProvider = progressProvider;
+    [Inject]
+		public void Constructor(ISelectedEnchantUIEntryProvider enchantUIEntry, IWeaponEnchantStatUIEntryFactory factory)
+    {
+      _enchantUIEntry = enchantUIEntry;
 			_factory = factory;
 		}
 
@@ -27,25 +26,25 @@ namespace Code.Meta.Features.Shop.EnchantUIEntry.Behaviours
 					_factory.CreateWeaponEnchantUIEntryItem(
 						id,
 						_parent,
-						_progressProvider.WeaponData.SelectedEnchantUIStats.Value.ToString());
+						_enchantUIEntry.StatusSetup.Value.ToString());
 					break;
 				case EnchantStatUIEntryTypeId.Duration:
 					_factory.CreateWeaponEnchantUIEntryItem(
 						id,
 						_parent,
-						_progressProvider.WeaponData.SelectedEnchantUIStats.StatusDuration.ToString());
+            _enchantUIEntry.StatusSetup.StatusDuration.ToString());
 					break;
 				case EnchantStatUIEntryTypeId.Period:
 					_factory.CreateWeaponEnchantUIEntryItem(
 						id,
 						_parent,
-						_progressProvider.WeaponData.SelectedEnchantUIStats.Period.ToString());
+						_enchantUIEntry.StatusSetup.Period.ToString());
 					break;
 				case EnchantStatUIEntryTypeId.Radius:
 					_factory.CreateWeaponEnchantUIEntryItem(
 						id,
 						_parent,
-						_progressProvider.WeaponData.SelectedEnchantUIStats.Radius.ToString());
+						_enchantUIEntry.StatusSetup.Radius.ToString());
 					break;
 			}
 		}

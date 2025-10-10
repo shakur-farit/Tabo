@@ -20,20 +20,20 @@ namespace Code.Gameplay.Features.Weapon.Factory
 		private readonly IStaticDataService _staticDataService;
 		private readonly IWeaponStatsProvider _statsProvider;
 		private readonly IWeaponEffectsProvider _effectsProvider;
-    private readonly IStatusSetupsService _setupsService;
+    private readonly IWeaponStatusSetupProvider _setupProvider;
 
     public WeaponFactory(
 			IIdentifierService identifier,
 			IStaticDataService staticDataService,
 			IWeaponStatsProvider statsProvider,
 			IWeaponEffectsProvider effectsProvider,
-      IStatusSetupsService setupsService)
+      IWeaponStatusSetupProvider setupProvider)
 		{
 			_identifier = identifier;
 			_staticDataService = staticDataService;
 			_statsProvider = statsProvider;
 			_effectsProvider = effectsProvider;
-      _setupsService = setupsService;
+      _setupProvider = setupProvider;
     }
 
 		public GameEntity CreateWeapon(WeaponTypeId weaponTypeId, Transform parent,
@@ -211,8 +211,8 @@ namespace Code.Gameplay.Features.Weapon.Factory
 						when: _effectsProvider.GetEffects(config).IsNullOrEmpty() == false)
 					.With(x => x.AddMaxWeaponEnchantsCount(_statsProvider.GetEnchantSlots(config)),
 						when: _statsProvider.GetEnchantSlots(config) > 0)
-					.With(x => x.AddStatusSetups(_setupsService.GetStatusSetups(weaponTypeId).ToList()),
-						when: _setupsService.GetStatusSetups(weaponTypeId).IsNullOrEmpty() == false)
+					.With(x => x.AddStatusSetups(_setupProvider.GetStatusSetups(weaponTypeId).ToList()),
+						when: _setupProvider.GetStatusSetups(weaponTypeId).IsNullOrEmpty() == false)
 					.With(x => x.AddSpecialEffectTypeId(config.SpecialEffectTypeId), 
 						when: config.SpecialEffectTypeId != SpecialEffectTypeId.NoSpecialEffect)
 					.PutOnCooldown()

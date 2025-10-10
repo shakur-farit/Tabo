@@ -1,7 +1,7 @@
 ﻿using Code.Gameplay.StaticData;
+using Code.Meta.Features.Shop.EnchantUIEntry;
 using Code.Meta.Features.Shop.EnchantUIEntry.Behaviours;
 using Code.Meta.Features.Shop.EnchantUIEntry.Configs;
-using Code.Meta.Features.Shop.EnchantUIEntry.Factory;
 using Code.Meta.UI.Windows.Service;
 using Code.Progress.Provider;
 using UnityEngine;
@@ -18,22 +18,22 @@ namespace Code.Meta.UI.Windows.Behaviours
 		private IWindowService _windowService;
 		private IProgressProvider _progressProvider;
 		private IStaticDataService _staticDataService;
-		private IWeaponEnchantStatUIEntryFactory _factory;
+    private ISelectedEnchantUIEntryProvider _enchantUIEntry;
 
-		[Inject]
+    [Inject]
 		public void Constructor(
 			IWindowService windowService,
 			IProgressProvider progressProvider,
-			IStaticDataService staticDataService,
-			IWeaponEnchantStatUIEntryFactory factory)
+			ISelectedEnchantUIEntryProvider enchantUIEntry,
+			IStaticDataService staticDataService)
 		{
 			Id = WindowId.EnchantStatsWindow;
 
 			_windowService = windowService;
 			_progressProvider = progressProvider;
 			_staticDataService = staticDataService;
-			_factory = factory;
-		}
+      _enchantUIEntry = enchantUIEntry;
+    }
 
 		protected override void Initialize()
 		{
@@ -45,7 +45,7 @@ namespace Code.Meta.UI.Windows.Behaviours
 		private void ShowStats()
 		{
 			EnchantUIEntryConfig config =
-				_staticDataService.GetEnchantUIEntryItemConfig(_progressProvider.WeaponData.SelectedEnchantUITypeId);
+				_staticDataService.GetEnchantUIEntryItemConfig(_enchantUIEntry.TypeId);
 
 			foreach (EnchantStatUIEntry statUIEntry in config.EnchantStatUIEntries)
 				_holder.CreateStats(statUIEntry.TypeId);

@@ -24,11 +24,13 @@ namespace Code.Meta.UI.Windows.Behaviours
 		private IWindowService _windowService;
 		private IStaticDataService _staticDataService;
 		private ICurrentHeroWeaponProvider _heroWeapon;
+    private IWeaponStatusSetupProvider _statusSetupProvider;
 
-		[Inject]
+    [Inject]
 		public void Constructor(
 			IWindowService windowService,
 			ICurrentHeroWeaponProvider heroWeapon,
+			IWeaponStatusSetupProvider statusSetupProvider,
 			IStaticDataService staticDataService)
 		{
 			Id = WindowId.CurrentWeaponInfoWindow;
@@ -36,7 +38,8 @@ namespace Code.Meta.UI.Windows.Behaviours
 			_windowService = windowService;
 			_staticDataService = staticDataService;
 			_heroWeapon = heroWeapon;
-		}
+      _statusSetupProvider = statusSetupProvider;
+    }
 
 		protected override void Initialize()
 		{
@@ -59,7 +62,7 @@ namespace Code.Meta.UI.Windows.Behaviours
 
 		private void ShowEnchants()
 		{
-			foreach (StatusSetup setup in  _weaponConfig.StatusSetups)
+			foreach (StatusSetup setup in  _statusSetupProvider.GetStatusSetups(_weaponConfig.TypeId))
 				_enchantsUIHolder.CreateEnchantUIEntryItem(setup);
 		}
 

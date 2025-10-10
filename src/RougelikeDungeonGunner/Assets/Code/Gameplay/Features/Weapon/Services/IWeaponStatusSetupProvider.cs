@@ -4,7 +4,7 @@ using Code.Gameplay.Features.Weapon;
 
 namespace Code.Gameplay.Features.Hero
 {
-  public interface IStatusSetupsService
+  public interface IWeaponStatusSetupProvider
   {
     IReadOnlyList<StatusSetup> GetStatusSetups(WeaponTypeId typeId);
     void AddBoughtStatusSetup(WeaponTypeId typeId, StatusSetup setup);
