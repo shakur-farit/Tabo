@@ -1,7 +1,7 @@
 ﻿using Code.Infrastructure.View.Registrars;
 using UnityEngine;
 
-namespace Code.Gameplay.Features.Music
+namespace Code.Sounds.Registrars
 {
   public class AudioSourceRegistrar : EntityComponentRegistrar
   {

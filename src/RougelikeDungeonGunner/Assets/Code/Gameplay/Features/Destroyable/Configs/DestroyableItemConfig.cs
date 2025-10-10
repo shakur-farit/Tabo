@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using Code.Gameplay.Features.Loot;
-using Code.Gameplay.Features.Music;
 using Code.Infrastructure.View;
 using Code.Sounds.SoundEffects;
 using UnityEngine;

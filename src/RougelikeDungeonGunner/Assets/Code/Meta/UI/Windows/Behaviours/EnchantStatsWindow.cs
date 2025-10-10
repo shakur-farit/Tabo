@@ -2,6 +2,7 @@
 using Code.Meta.Features.Shop.EnchantUIEntry;
 using Code.Meta.Features.Shop.EnchantUIEntry.Behaviours;
 using Code.Meta.Features.Shop.EnchantUIEntry.Configs;
+using Code.Meta.Features.Shop.EnchantUIEntry.Services;
 using Code.Meta.UI.Windows.Service;
 using Code.Progress.Provider;
 using UnityEngine;

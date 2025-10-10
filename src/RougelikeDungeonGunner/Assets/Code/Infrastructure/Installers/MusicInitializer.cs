@@ -1,5 +1,4 @@
-using Code.Gameplay.Features.Music;
-using Code.Gameplay.Features.Music.Services;
+using Code.Sounds.Music.Services;
 using UnityEngine;
 using Zenject;
 

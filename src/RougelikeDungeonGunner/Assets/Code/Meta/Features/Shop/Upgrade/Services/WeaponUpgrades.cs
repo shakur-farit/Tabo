@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Code.Gameplay.Features.Hero;
+using Code.Gameplay.Features.Hero.Services;
 using Code.Gameplay.Features.Weapon;
 
 namespace Code.Meta.Features.Shop.Upgrade.Services

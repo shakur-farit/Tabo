@@ -1,6 +1,8 @@
 ﻿using Code.Gameplay.Features.Hero;
+using Code.Gameplay.Features.Hero.Services;
 using Code.Gameplay.Features.Weapon.Configs;
 using Code.Gameplay.StaticData;
+using Code.Meta.Features.Shop.Services;
 using Code.Meta.Features.Shop.Upgrade.Services;
 using Code.Meta.Features.Shop.Weapon.Behaviours;
 using Code.Meta.Features.Shop.WeaponStatUIEntry;

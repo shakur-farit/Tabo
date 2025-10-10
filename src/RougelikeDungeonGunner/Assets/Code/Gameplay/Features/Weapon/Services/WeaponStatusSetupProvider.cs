@@ -1,10 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Code.Gameplay.Features.Statuses;
-using Code.Gameplay.Features.Weapon;
 using Code.Gameplay.StaticData;
 
-namespace Code.Gameplay.Features.Hero
+namespace Code.Gameplay.Features.Weapon.Services
 {
   public class WeaponStatusSetupProvider : IWeaponStatusSetupProvider
   {

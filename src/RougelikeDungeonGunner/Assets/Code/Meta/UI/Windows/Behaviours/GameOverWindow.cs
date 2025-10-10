@@ -1,9 +1,9 @@
-﻿using Code.Gameplay.Features.Music;
-using Code.Gameplay.Features.Music.Services;
-using Code.Infrastructure.Services;
+﻿using Code.Infrastructure.Services;
 using Code.Infrastructure.States.GameStates;
 using Code.Infrastructure.States.StateMachine;
 using Code.Meta.UI.Windows.Service;
+using Code.Sounds.Music;
+using Code.Sounds.Music.Services;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;

@@ -1,8 +1,4 @@
-﻿using System;
-using Code.Gameplay.Features.Music.Services;
-using UnityEditor.ShaderGraph.Internal;
-
-namespace Code.Gameplay.Features.Music
+﻿namespace Code.Sounds.Music
 {
   public enum MusicTypeId
   {

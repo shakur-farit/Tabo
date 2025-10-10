@@ -17,7 +17,6 @@ using Code.Gameplay.Features.Level;
 using Code.Gameplay.Features.Lifetime;
 using Code.Gameplay.Features.Loot;
 using Code.Gameplay.Features.Movement;
-using Code.Gameplay.Features.Music;
 using Code.Gameplay.Features.Rotation;
 using Code.Gameplay.Features.SpecialEffect;
 using Code.Gameplay.Features.Statuses;
@@ -25,6 +24,7 @@ using Code.Gameplay.Features.Weapon;
 using Code.Gameplay.Input;
 using Code.Infrastructure.Systems;
 using Code.Infrastructure.View;
+using Code.Sounds.Music;
 using Code.Sounds.SoundEffects;
 
 namespace Code.Gameplay

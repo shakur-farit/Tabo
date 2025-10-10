@@ -1,5 +1,6 @@
 ﻿using Code.Common.Extensions;
 using Code.Gameplay.Features.Statuses;
+using Code.Meta.Features.Shop.EnchantUIEntry.Services;
 using Code.Meta.UI.Windows;
 using Code.Meta.UI.Windows.Service;
 using TMPro;

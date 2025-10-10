@@ -1,6 +1,6 @@
 ﻿using Code.Gameplay.Features.Statuses;
 
-namespace Code.Meta.Features.Shop.EnchantUIEntry
+namespace Code.Meta.Features.Shop.EnchantUIEntry.Services
 {
   public interface ISelectedEnchantUIEntryProvider
   {

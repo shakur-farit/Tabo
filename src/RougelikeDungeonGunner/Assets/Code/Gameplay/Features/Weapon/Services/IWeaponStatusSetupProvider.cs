@@ -1,8 +1,7 @@
 ﻿using System.Collections.Generic;
 using Code.Gameplay.Features.Statuses;
-using Code.Gameplay.Features.Weapon;
 
-namespace Code.Gameplay.Features.Hero
+namespace Code.Gameplay.Features.Weapon.Services
 {
   public interface IWeaponStatusSetupProvider
   {

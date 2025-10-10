@@ -1,8 +1,9 @@
-﻿using Code.Gameplay.Features.Music.Configs;
-using Code.Gameplay.StaticData;
+﻿using Code.Gameplay.StaticData;
+using Code.Sounds.Music.Configs;
+using Code.Sounds.Services;
 using UnityEngine;
 
-namespace Code.Gameplay.Features.Music.Services
+namespace Code.Sounds.Music.Services
 {
 	public class MusicProvider : IMusicSourceSetter, IMusicClipSetter
 	{

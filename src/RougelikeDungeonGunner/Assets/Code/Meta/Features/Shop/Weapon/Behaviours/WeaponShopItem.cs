@@ -1,5 +1,6 @@
 ﻿using Code.Common.Extensions;
 using Code.Gameplay.Features.Weapon;
+using Code.Meta.Features.Shop.Services;
 using Code.Meta.Features.Shop.Weapon.Configs;
 using Code.Meta.Features.Shop.WeaponStatUIEntry;
 using Code.Meta.UI.Windows;

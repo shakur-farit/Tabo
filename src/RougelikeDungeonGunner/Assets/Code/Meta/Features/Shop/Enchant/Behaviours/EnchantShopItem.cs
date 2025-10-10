@@ -1,6 +1,7 @@
 ﻿using Code.Common.Extensions;
 using Code.Gameplay.Features.Statuses;
 using Code.Meta.Features.Shop.Enchant.Configs;
+using Code.Meta.Features.Shop.Services;
 using Code.Meta.Features.Shop.WeaponStatUIEntry;
 using Code.Meta.UI.Windows;
 using Code.Meta.UI.Windows.Service;

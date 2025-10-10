@@ -1,4 +1,4 @@
-﻿namespace Code.Gameplay.Features.Weapon.Systems
+﻿namespace Code.Gameplay.Features.Weapon.Services
 {
   public interface IWeaponReloadService
   {

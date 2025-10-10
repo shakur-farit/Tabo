@@ -2,7 +2,7 @@
 using UnityEngine;
 using Zenject;
 
-namespace Code.Meta.Features.Hud.HeroSelector.Behaviours
+namespace Code.Meta.Features.HeroSelector.Factory
 {
   public class HeroSelectorFactory : IHeroSelectorFactory
   {

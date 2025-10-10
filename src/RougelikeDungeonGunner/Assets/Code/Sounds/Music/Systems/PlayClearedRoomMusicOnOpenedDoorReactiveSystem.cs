@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using Code.Gameplay.Features.Music.Services;
+using Code.Sounds.Music.Services;
 using Entitas;
 
-namespace Code.Gameplay.Features.Music.Systems
+namespace Code.Sounds.Music.Systems
 {
   public class PlayClearedRoomMusicOnOpenedDoorReactiveSystem : ReactiveSystem<GameEntity>
   {

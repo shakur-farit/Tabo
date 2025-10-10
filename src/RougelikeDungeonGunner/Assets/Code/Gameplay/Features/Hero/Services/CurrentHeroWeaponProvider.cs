@@ -1,7 +1,7 @@
 ﻿using System;
 using Code.Gameplay.Features.Weapon;
 
-namespace Code.Gameplay.Features.Hero
+namespace Code.Gameplay.Features.Hero.Services
 {
 	public class CurrentHeroWeaponProvider : ICurrentHeroWeaponProvider
 	{

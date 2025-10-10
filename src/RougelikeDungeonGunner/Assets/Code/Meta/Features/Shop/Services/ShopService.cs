@@ -2,7 +2,7 @@
 using Code.Meta.Features.Shop.Enchant;
 using UnityEngine;
 
-namespace Code.Meta.Features.Shop.WeaponStatUIEntry
+namespace Code.Meta.Features.Shop.Services
 {
 	public class ShopService : IWeaponShopService, IEnchantShopService
 	{

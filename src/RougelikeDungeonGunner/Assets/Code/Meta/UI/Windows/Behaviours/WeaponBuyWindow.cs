@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Code.Common.Utilities;
 using Code.Gameplay.Features.Hero;
+using Code.Gameplay.Features.Hero.Services;
 using Code.Meta.Features.Shop.Weapon;
 using Code.Meta.Features.Shop.Weapon.Behaviours;
 using Code.Meta.Features.Shop.Weapon.Factory;

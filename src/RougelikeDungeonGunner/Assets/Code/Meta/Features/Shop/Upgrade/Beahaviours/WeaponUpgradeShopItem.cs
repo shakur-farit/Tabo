@@ -3,6 +3,7 @@ using System.Linq;
 using Code.Common.Extensions;
 using Code.Gameplay.Features.Effects;
 using Code.Gameplay.Features.Hero;
+using Code.Gameplay.Features.Hero.Services;
 using Code.Gameplay.Features.Weapon;
 using Code.Gameplay.Features.Weapon.Configs;
 using Code.Gameplay.StaticData;

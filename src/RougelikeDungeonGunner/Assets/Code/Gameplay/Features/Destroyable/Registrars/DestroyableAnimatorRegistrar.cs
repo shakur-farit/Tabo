@@ -1,7 +1,8 @@
-﻿using Code.Infrastructure.View.Registrars;
+﻿using Code.Gameplay.Features.Destroyable.Behaviours;
+using Code.Infrastructure.View.Registrars;
 using UnityEngine;
 
-namespace Code.Gameplay.Features.Destroyable.Behaviours
+namespace Code.Gameplay.Features.Destroyable.Registrars
 {
   public class DestroyableAnimatorRegistrar : EntityComponentRegistrar
   {

@@ -1,4 +1,5 @@
 ﻿using Code.Meta.Features.Shop.EnchantUIEntry.Factory;
+using Code.Meta.Features.Shop.EnchantUIEntry.Services;
 using UnityEngine;
 using Zenject;
 

@@ -7,6 +7,7 @@ using Code.Gameplay.Features.Cooldowns;
 using Code.Gameplay.Features.Hero;
 using Code.Gameplay.Features.SpecialEffect;
 using Code.Gameplay.Features.Weapon.Configs;
+using Code.Gameplay.Features.Weapon.Services;
 using Code.Gameplay.StaticData;
 using Code.Infrastructure.Identifiers;
 using Code.Meta.Features.Shop.Upgrade.Services;

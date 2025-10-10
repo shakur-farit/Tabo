@@ -1,4 +1,4 @@
-﻿namespace Code.Gameplay.Features.Hero
+﻿namespace Code.Gameplay.Features.Hero.Services
 {
 	public interface ICurrentHeroTypeIdProvider
 	{

@@ -1,7 +1,7 @@
 ﻿using System;
 using Code.Gameplay.StaticData;
 
-namespace Code.Gameplay.Features.Music
+namespace Code.Sounds.Services
 {
   public class SoundsVolumeService : IMusicVolumeService, ISoundEffectVolumeService
   {

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Code.Meta.Features.Hud.HeroSelector.Behaviours
+namespace Code.Meta.Features.HeroSelector.Factory
 {
   public interface IHeroSelectorFactory
   {

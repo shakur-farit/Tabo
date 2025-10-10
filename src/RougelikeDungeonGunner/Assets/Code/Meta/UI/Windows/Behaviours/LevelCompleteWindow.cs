@@ -1,9 +1,10 @@
 ﻿using Code.Gameplay.Features.Hero;
-using Code.Gameplay.Features.Music;
-using Code.Gameplay.Features.Music.Services;
+using Code.Gameplay.Features.Hero.Services;
 using Code.Infrastructure.States.GameStates;
 using Code.Infrastructure.States.StateMachine;
 using Code.Meta.UI.Windows.Service;
+using Code.Sounds.Music;
+using Code.Sounds.Music.Services;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;

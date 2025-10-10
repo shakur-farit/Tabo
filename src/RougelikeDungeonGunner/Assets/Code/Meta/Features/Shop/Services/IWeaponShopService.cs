@@ -1,7 +1,7 @@
 ﻿using Code.Gameplay.Features.Weapon;
 using UnityEngine;
 
-namespace Code.Meta.Features.Shop.WeaponStatUIEntry
+namespace Code.Meta.Features.Shop.Services
 {
 	public interface IWeaponShopService
 	{

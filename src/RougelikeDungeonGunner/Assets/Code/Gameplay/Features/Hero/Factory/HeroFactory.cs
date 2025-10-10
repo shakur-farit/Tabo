@@ -6,6 +6,7 @@ using Code.Gameplay.Features.Aura;
 using Code.Gameplay.Features.CharacterStats;
 using Code.Gameplay.Features.Collection;
 using Code.Gameplay.Features.Hero.Configs;
+using Code.Gameplay.Features.Hero.Services;
 using Code.Gameplay.Features.Weapon;
 using Code.Gameplay.StaticData;
 using Code.Infrastructure.Identifiers;

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace Code.Gameplay.Features.SpecialEffect
+namespace Code.Gameplay.Features.SpecialEffect.Behaviours
 {
   public class SpecialEffectPlayer : MonoBehaviour
   {

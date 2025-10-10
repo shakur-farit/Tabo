@@ -3,7 +3,6 @@ using Code.Common.Extensions;
 using Code.Gameplay.Features.Ammo.Services;
 using Code.Gameplay.Features.AmmoPattern.Factory;
 using Code.Gameplay.Features.Cooldowns;
-using Code.Gameplay.Features.Music;
 using Code.Sounds.SoundEffects.Factory;
 using Entitas;
 using UnityEngine;

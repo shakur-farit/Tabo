@@ -2,12 +2,13 @@
 using System.Linq;
 using Code.Gameplay.Features.Hero;
 using Code.Gameplay.Features.Hero.Configs;
+using Code.Gameplay.Features.Hero.Services;
 using Code.Gameplay.StaticData;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
 
-namespace Code.Meta.Features.Hud.HeroSelector.Behaviours
+namespace Code.Meta.Features.HeroSelector.Behaviours
 {
 	public class HeroSelectorBehaviour : MonoBehaviour
 	{

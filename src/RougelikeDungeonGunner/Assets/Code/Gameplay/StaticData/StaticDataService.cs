@@ -20,8 +20,6 @@ using Code.Gameplay.Features.Level;
 using Code.Gameplay.Features.Level.Configs;
 using Code.Gameplay.Features.Loot;
 using Code.Gameplay.Features.Loot.Configs;
-using Code.Gameplay.Features.Music;
-using Code.Gameplay.Features.Music.Configs;
 using Code.Gameplay.Features.SpecialEffect;
 using Code.Gameplay.Features.SpecialEffect.Configs;
 using Code.Gameplay.Features.Weapon;
@@ -45,6 +43,8 @@ using System.Collections.Generic;
 using System.Linq;
 using Code.Infrastructure.ObjectPool.Config;
 using Code.Infrastructure.View;
+using Code.Sounds.Music;
+using Code.Sounds.Music.Configs;
 using Code.Sounds.SoundEffects;
 using Code.Sounds.SoundEffects.Config;
 

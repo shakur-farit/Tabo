@@ -2,7 +2,7 @@
 using Code.Infrastructure.Services;
 using Code.Infrastructure.States.GameStates;
 using Code.Infrastructure.States.StateMachine;
-using Code.Meta.Features.Hud.HeroSelector.Behaviours;
+using Code.Meta.Features.HeroSelector.Factory;
 using Code.Meta.UI.Windows.Service;
 using UnityEngine;
 using UnityEngine.UI;

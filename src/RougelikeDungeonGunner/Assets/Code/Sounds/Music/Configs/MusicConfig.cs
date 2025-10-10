@@ -1,7 +1,6 @@
-﻿using Code.Infrastructure.View;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Code.Gameplay.Features.Music.Configs
+namespace Code.Sounds.Music.Configs
 {
 	[CreateAssetMenu(menuName = "Dungeon Gunner/Music Config", fileName = "MusicConfig")]
 	public class MusicConfig : ScriptableObject

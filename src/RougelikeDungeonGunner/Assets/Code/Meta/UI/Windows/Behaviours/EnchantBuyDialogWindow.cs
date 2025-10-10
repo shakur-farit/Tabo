@@ -1,13 +1,17 @@
 ﻿using System.Linq;
 using Code.Gameplay.Features.Hero;
+using Code.Gameplay.Features.Hero.Services;
 using Code.Gameplay.Features.Statuses;
 using Code.Gameplay.Features.Weapon;
+using Code.Gameplay.Features.Weapon.Services;
 using Code.Gameplay.StaticData;
 using Code.Meta.Features.Shop.Enchant.Behaviours;
 using Code.Meta.Features.Shop.Enchant.Configs;
 using Code.Meta.Features.Shop.EnchantUIEntry;
 using Code.Meta.Features.Shop.EnchantUIEntry.Behaviours;
 using Code.Meta.Features.Shop.EnchantUIEntry.Configs;
+using Code.Meta.Features.Shop.EnchantUIEntry.Services;
+using Code.Meta.Features.Shop.Services;
 using Code.Meta.Features.Shop.WeaponStatUIEntry;
 using Code.Meta.UI.Windows.Service;
 using UnityEngine;

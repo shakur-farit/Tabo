@@ -1,7 +1,7 @@
-﻿using Code.Gameplay.Features.Music.Systems;
-using Code.Infrastructure.Systems;
+﻿using Code.Infrastructure.Systems;
+using Code.Sounds.Music.Systems;
 
-namespace Code.Gameplay.Features.Door
+namespace Code.Sounds.Music
 {
   public sealed class MusicFeature : Feature
   {

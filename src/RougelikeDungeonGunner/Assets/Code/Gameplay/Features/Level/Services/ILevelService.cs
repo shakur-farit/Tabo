@@ -1,4 +1,4 @@
-﻿namespace Code.Gameplay.Features.Level
+﻿namespace Code.Gameplay.Features.Level.Services
 {
 	public interface ILevelService
 	{

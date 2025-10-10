@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Code.Gameplay.Features.Hero.Factory;
+using Code.Gameplay.Features.Hero.Services;
 using Entitas;
 
 namespace Code.Gameplay.Features.Hero.Systems
