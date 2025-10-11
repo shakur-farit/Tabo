@@ -23,10 +23,8 @@ namespace Code.Gameplay.Features.EffectApplication.Systems
 			foreach (GameEntity entity in _entities)
 			foreach (int targetId in entity.TargetsBuffer)
 			foreach (EffectSetup setup in entity.EffectSetups)
-			{
-				_effectFactory.CreateEffect(setup, ProducerId(entity), targetId);
-			}
-		}
+        _effectFactory.CreateEffect(setup, ProducerId(entity), targetId);
+    }
 
 		private int ProducerId(GameEntity entity) => 
 			entity.hasProducerId ? entity.ProducerId : entity.Id;

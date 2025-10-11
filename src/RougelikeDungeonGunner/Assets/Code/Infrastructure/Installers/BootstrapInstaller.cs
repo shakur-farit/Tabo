@@ -17,10 +17,8 @@ using Code.Gameplay.Features.Effects.Factory;
 using Code.Gameplay.Features.Enchants.Factory;
 using Code.Gameplay.Features.Enemy.Factory;
 using Code.Gameplay.Features.Enemy.Services;
-using Code.Gameplay.Features.Hero;
 using Code.Gameplay.Features.Hero.Factory;
 using Code.Gameplay.Features.Hero.Services;
-using Code.Gameplay.Features.Level;
 using Code.Gameplay.Features.Level.Factory;
 using Code.Gameplay.Features.Level.Services;
 using Code.Gameplay.Features.Loot.Factory;
@@ -30,7 +28,6 @@ using Code.Gameplay.Features.Statuses.Applier;
 using Code.Gameplay.Features.Statuses.Factory;
 using Code.Gameplay.Features.Weapon.Factory;
 using Code.Gameplay.Features.Weapon.Services;
-using Code.Gameplay.Features.Weapon.Systems;
 using Code.Gameplay.Input.Service;
 using Code.Gameplay.StaticData;
 using Code.Infrastructure.AssetManagement;
@@ -48,14 +45,12 @@ using Code.Meta.Features.Hud.AmmoHolder.Factory;
 using Code.Meta.Features.Hud.EnchantHolder.Factory;
 using Code.Meta.Features.Hud.HeroHeartHolder.Factory;
 using Code.Meta.Features.Shop.Enchant.Factory;
-using Code.Meta.Features.Shop.EnchantUIEntry;
 using Code.Meta.Features.Shop.EnchantUIEntry.Factory;
 using Code.Meta.Features.Shop.EnchantUIEntry.Services;
 using Code.Meta.Features.Shop.Services;
 using Code.Meta.Features.Shop.Upgrade.Factory;
 using Code.Meta.Features.Shop.Upgrade.Services;
 using Code.Meta.Features.Shop.Weapon.Factory;
-using Code.Meta.Features.Shop.WeaponStatUIEntry;
 using Code.Meta.Features.Shop.WeaponStatUIEntry.Factory;
 using Code.Meta.UI.Windows.Factory;
 using Code.Meta.UI.Windows.Service;
@@ -155,6 +150,7 @@ namespace Code.Infrastructure.Installers
       Container.Bind<ILevelService>().To<LevelService>().AsSingle();
       Container.Bind<ICurrentHeroWeaponProvider>().To<CurrentHeroWeaponProvider>().AsSingle();
       Container.Bind<ICurrentHeroTypeIdProvider>().To<CurrentHeroTypeIdProvider>().AsSingle();
+      Container.Bind<ICurrentHeroHpProvider>().To<CurrentHeroHpProvider>().AsSingle();
     }
 
 		private void BindGameplayFactories()

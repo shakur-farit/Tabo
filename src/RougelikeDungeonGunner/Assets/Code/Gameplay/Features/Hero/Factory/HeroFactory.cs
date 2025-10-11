@@ -21,17 +21,20 @@ namespace Code.Gameplay.Features.Hero.Factory
 		private readonly IIdentifierService _identifier;
 		private readonly IStaticDataService _staticDataService;
     private readonly ICoinService _coinService;
+    private readonly ICurrentHeroHpProvider _currentHeroHp;
     private readonly ICurrentHeroWeaponProvider _heroWeapon;
 
 		public HeroFactory(
 			IIdentifierService identifier, 
 			IStaticDataService staticDataService,
 			ICoinService coinService,
+			ICurrentHeroHpProvider currentHeroHp,
 			ICurrentHeroWeaponProvider heroWeapon)
 		{
 			_identifier = identifier;
 			_staticDataService = staticDataService;
       _coinService = coinService;
+      _currentHeroHp = currentHeroHp;
       _heroWeapon = heroWeapon;
 		}
 
@@ -80,7 +83,7 @@ namespace Code.Gameplay.Features.Hero.Factory
 					.AddBoxCastHeight(castSetup.Height)
 					.AddBaseStats(baseStats)
 					.AddStatModifiers(InitStats.EmptyStatDictionary())
-					.AddCurrentHp(config.CurrentHp)
+					.AddCurrentHp(_currentHeroHp.GetCurrentHp(typeId))
 					.AddMaxHp(baseStats[Stats.MaxHp])
 					.AddSpeed(baseStats[Stats.Speed])
 					.AddViewPrefab(config.ViewPrefab)

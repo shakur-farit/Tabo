@@ -24,6 +24,8 @@ namespace Code.Gameplay.Features.Hero
 			Add(systems.Create<CreateWeaponForHeroSystem>());
 			Add(systems.Create<AnimateHeroAimingSystem>());
 
+			Add(systems.Create<SaveCurrentHpInServiceSystem>());
+
 			Add(systems.Create<UpdateHeartUIForHeroInHolderSystem>());
 
 			Add(systems.Create<HeroDeathSystem>());
