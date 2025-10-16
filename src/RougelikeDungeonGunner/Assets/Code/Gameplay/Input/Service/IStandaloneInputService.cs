@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Code.Gameplay.Input.Service
 {
-  public interface IInputService
+  public interface IStandaloneInputService
   {
     float GetVerticalAxis();
     float GetHorizontalAxis();

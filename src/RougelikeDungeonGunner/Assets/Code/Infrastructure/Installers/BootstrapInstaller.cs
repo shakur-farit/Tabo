@@ -234,10 +234,22 @@ namespace Code.Infrastructure.Installers
 
 		private void BindInputService()
 		{
-			Container.Bind<IInputService>().To<StandaloneInputService>().AsSingle();
-		}
+      //#if UNITY_WEBGL
+      //    if (IsTouchDevice())
+      //        Container.Bind<IMobileInputService>().To<MobileInputService>().AsSingle();
+      //    else
+      //        Container.Bind<IStandaloneInputService>().To<StandaloneInputService>().AsSingle();
+      //#elif UNITY_ANDROID || UNITY_IOS
+      //    Container.Bind<IMobileInputService>().To<MobileInputService>().AsSingle();
+      //#else
+      //      Container.Bind<IStandaloneInputService>().To<StandaloneInputService>().AsSingle();
+      //#endif
 
-		public void BindEntityIndices()
+      Container.Bind<IStandaloneInputService>().To<StandaloneInputService>().AsSingle();
+      Container.Bind<IMobileInputService>().To<MobileInputService>().AsSingle();
+    }
+
+    public void BindEntityIndices()
 		{
 			Container.BindInterfacesAndSelfTo<GameEntityIndices>().AsSingle();
 		}

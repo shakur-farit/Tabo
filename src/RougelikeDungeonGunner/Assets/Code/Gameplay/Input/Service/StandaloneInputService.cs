@@ -1,44 +1,36 @@
 using Code.Gameplay.Cameras.Provider;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 
 namespace Code.Gameplay.Input.Service
 {
-	public class StandaloneInputService : IInputService
-	{
-		private Vector3 _screenPosition;
+  public class StandaloneInputService : InputService, IStandaloneInputService
+  {
+    public StandaloneInputService(ICameraProvider cameraProvider) : base(cameraProvider)
+    {
+    }
 
-		private readonly ICameraProvider _cameraProvider;
+    public Vector2 GetWorldMousePosition()
+    {
+      if (CameraProvider.MainCamera == null || Mouse.current == null)
+        return Vector2.zero;
 
-		public StandaloneInputService(ICameraProvider cameraProvider) => 
-			_cameraProvider = cameraProvider;
+      Vector3 screenPos = Mouse.current.position.ReadValue();
+      return CameraProvider.MainCamera.ScreenToWorldPoint(screenPos);
+    }
 
-		public Vector2 GetScreenMousePosition() =>
-			_cameraProvider.MainCamera ? (Vector2)UnityEngine.Input.mousePosition : new Vector2();
+    public Vector2 GetScreenMousePosition() => CameraProvider.MainCamera && Mouse.current != null
+      ? Mouse.current.position.ReadValue()
+      : Vector2.zero;
 
-		public Vector2 GetWorldMousePosition()
-		{
-			if (_cameraProvider.MainCamera == null)
-				return Vector2.zero;
+    public bool GetLeftMouseButton() =>
+      Mouse.current.leftButton.isPressed && !EventSystem.current.IsPointerOverGameObject();
 
-			_screenPosition.x = UnityEngine.Input.mousePosition.x;
-			_screenPosition.y = UnityEngine.Input.mousePosition.y;
-			return _cameraProvider.MainCamera.ScreenToWorldPoint(_screenPosition);
-		}
+    public bool GetLeftMouseButtonDown() =>
+      Mouse.current.leftButton.wasPressedThisFrame && !EventSystem.current.IsPointerOverGameObject();
 
-		public bool HasAxisInput() => GetHorizontalAxis() != 0 || GetVerticalAxis() != 0;
-
-		public float GetVerticalAxis() => UnityEngine.Input.GetAxisRaw("Vertical");
-		public float GetHorizontalAxis() => UnityEngine.Input.GetAxisRaw("Horizontal");
-
-
-		public bool GetLeftMouseButton() =>
-			UnityEngine.Input.GetMouseButton(0) /*&& !EventSystem.current.IsPointerOverGameObject()*/;
-
-		public bool GetLeftMouseButtonDown() =>
-			UnityEngine.Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject();
-
-		public bool GetLeftMouseButtonUp() =>
-			UnityEngine.Input.GetMouseButtonUp(0) && !EventSystem.current.IsPointerOverGameObject();
-	}
+    public bool GetLeftMouseButtonUp() =>
+      Mouse.current.leftButton.wasReleasedThisFrame && !EventSystem.current.IsPointerOverGameObject();
+  }
 }

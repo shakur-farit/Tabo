@@ -1,5 +1,4 @@
 ﻿using Code.Gameplay.StaticData;
-using UnityEngine;
 
 namespace Code.Gameplay.Features.Hero.Services
 {
@@ -20,10 +19,7 @@ namespace Code.Gameplay.Features.Hero.Services
       return _currentHp;
     }
 
-    public void SetCurrentHp(float currentHp)
-    {
+    public void SetCurrentHp(float currentHp) => 
       _currentHp = currentHp;
-      Debug.Log(_currentHp);
-    }
   }
 }

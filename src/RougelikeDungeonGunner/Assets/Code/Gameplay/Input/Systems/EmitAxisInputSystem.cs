@@ -6,10 +6,10 @@ namespace Code.Gameplay.Input.Systems
 {
 	public class EmitAxisInputSystem : IExecuteSystem
 	{
-		private readonly IInputService _inputService;
+		private readonly IMobileInputService _inputService;
 		private readonly IGroup<InputEntity> _inputs;
 
-		public EmitAxisInputSystem(InputContext input, IInputService inputService)
+		public EmitAxisInputSystem(InputContext input, IMobileInputService inputService)
 		{
 			_inputService = inputService;
 			_inputs = input.GetGroup(InputMatcher

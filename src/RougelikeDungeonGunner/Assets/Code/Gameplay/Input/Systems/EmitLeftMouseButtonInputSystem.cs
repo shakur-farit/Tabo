@@ -5,10 +5,10 @@ namespace Code.Gameplay.Input.Systems
 {
 	public class EmitLeftMouseButtonInputSystem : IExecuteSystem
 	{
-		private readonly IInputService _inputService;
+		private readonly IStandaloneInputService _inputService;
 		private readonly IGroup<InputEntity> _inputs;
 
-		public EmitLeftMouseButtonInputSystem(InputContext input, IInputService inputService)
+		public EmitLeftMouseButtonInputSystem(InputContext input, IStandaloneInputService inputService)
 		{
 			_inputService = inputService;
 			_inputs = input.GetGroup(InputMatcher
