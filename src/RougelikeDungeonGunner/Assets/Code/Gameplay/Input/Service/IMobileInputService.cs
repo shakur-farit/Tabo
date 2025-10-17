@@ -1,9 +1,7 @@
 namespace Code.Gameplay.Input.Service
 {
-  public interface IMobileInputService
+  public interface IMobileInputService : IInputService
   {
-    float GetVerticalAxis();
-    float GetHorizontalAxis();
-    bool HasAxisInput();
+    bool GetFireButtonPressed();
   }
 }

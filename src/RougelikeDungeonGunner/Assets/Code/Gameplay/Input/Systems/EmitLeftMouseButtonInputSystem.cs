@@ -19,7 +19,7 @@ namespace Code.Gameplay.Input.Systems
 		public void Execute()
 		{
 			foreach (InputEntity input in _inputs) 
-				input.isMouseLeftButtonDown = _inputService.GetLeftMouseButton();
+				input.isMouseLeftButtonDown = _inputService.GetLeftMouseButtonPressed();
 		}
 	}
 }

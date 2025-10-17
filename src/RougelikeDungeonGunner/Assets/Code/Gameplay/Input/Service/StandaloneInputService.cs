@@ -24,7 +24,7 @@ namespace Code.Gameplay.Input.Service
       ? Mouse.current.position.ReadValue()
       : Vector2.zero;
 
-    public bool GetLeftMouseButton() =>
+    public bool GetLeftMouseButtonPressed() =>
       Mouse.current.leftButton.isPressed && !EventSystem.current.IsPointerOverGameObject();
 
     public bool GetLeftMouseButtonDown() =>

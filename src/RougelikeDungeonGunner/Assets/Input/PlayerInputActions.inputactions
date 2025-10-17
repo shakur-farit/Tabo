@@ -3,17 +3,26 @@
     "name": "PlayerInputActions",
     "maps": [
         {
-            "name": "Moving",
+            "name": "Player",
             "id": "3f1d76f6-91f8-4832-98ff-655517f4838f",
             "actions": [
                 {
                     "name": "Move",
-                    "type": "Value",
+                    "type": "Button",
                     "id": "9cac4ae9-4f6d-4371-a94b-3664740c6425",
-                    "expectedControlType": "Vector2",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Shoot",
+                    "type": "Button",
+                    "id": "5e11dfc7-2beb-41b9-8f12-ce65db516c79",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -75,11 +84,22 @@
                 {
                     "name": "",
                     "id": "1150bcd0-158f-4ed9-b6df-0a3be081a8a2",
-                    "path": "<Gamepad>/leftStick",
+                    "path": "<Joystick>/stick",
                     "interactions": "",
                     "processors": "StickDeadzone",
                     "groups": ";Mobile",
                     "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8ca92cc9-f0d1-4c8b-ad0e-ca0a48ab1634",
+                    "path": "<Joystick>/trigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Mobile",
+                    "action": "Shoot",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
