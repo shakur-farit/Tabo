@@ -29,6 +29,7 @@ using Code.Gameplay.Features.Statuses.Factory;
 using Code.Gameplay.Features.Weapon.Factory;
 using Code.Gameplay.Features.Weapon.Services;
 using Code.Gameplay.Input.Service;
+using Code.Gameplay.Input.Systems;
 using Code.Gameplay.StaticData;
 using Code.Infrastructure.AssetManagement;
 using Code.Infrastructure.Identifiers;
@@ -83,8 +84,9 @@ namespace Code.Infrastructure.Installers
 			BindSoundsFactories();
 			BindCameraProvider();
 			BindProgressServices();
-			BindEntityIndices();
-		}
+      BindEntityIndices();
+      BindGamePlatformServices();
+    }
 
 		private void BindStateMachine()
 		{
@@ -239,14 +241,13 @@ namespace Code.Infrastructure.Installers
       Container.Bind<IMobileInputService>().To<MobileInputService>().AsSingle();
     }
 
-    public void BindEntityIndices()
-		{
-			Container.BindInterfacesAndSelfTo<GameEntityIndices>().AsSingle();
-		}
+    public void BindEntityIndices() => 
+      Container.BindInterfacesAndSelfTo<GameEntityIndices>().AsSingle();
 
-		public void Initialize()
-		{
+    public void BindGamePlatformServices() =>
+      Container.Bind<IGamePlatformProvider>().To<GamePlatformProvider>().AsSingle();
+
+    public void Initialize() => 
 			Container.Resolve<IGameStateMachine>().Enter<BootstrapState>();
-		}
-	}
+  }
 }

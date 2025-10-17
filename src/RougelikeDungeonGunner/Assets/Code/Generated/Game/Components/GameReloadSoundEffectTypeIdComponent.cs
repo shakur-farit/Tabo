@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Code.Sounds.SoundEffects;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherReloadSoundEffectTypeId;
@@ -37,10 +34,10 @@ public sealed partial class GameMatcher {
 public partial class GameEntity {
 
     public Code.Gameplay.Features.Weapon.ReloadSoundEffectTypeId reloadSoundEffectTypeId { get { return (Code.Gameplay.Features.Weapon.ReloadSoundEffectTypeId)GetComponent(GameComponentsLookup.ReloadSoundEffectTypeId); } }
-    public SoundEffectTypeId ReloadSoundEffectTypeId { get { return reloadSoundEffectTypeId.Value; } }
+    public Code.Sounds.SoundEffects.SoundEffectTypeId ReloadSoundEffectTypeId { get { return reloadSoundEffectTypeId.Value; } }
     public bool hasReloadSoundEffectTypeId { get { return HasComponent(GameComponentsLookup.ReloadSoundEffectTypeId); } }
 
-    public GameEntity AddReloadSoundEffectTypeId(SoundEffectTypeId newValue) {
+    public GameEntity AddReloadSoundEffectTypeId(Code.Sounds.SoundEffects.SoundEffectTypeId newValue) {
         var index = GameComponentsLookup.ReloadSoundEffectTypeId;
         var component = (Code.Gameplay.Features.Weapon.ReloadSoundEffectTypeId)CreateComponent(index, typeof(Code.Gameplay.Features.Weapon.ReloadSoundEffectTypeId));
         component.Value = newValue;
@@ -48,7 +45,7 @@ public partial class GameEntity {
         return this;
     }
 
-    public GameEntity ReplaceReloadSoundEffectTypeId(SoundEffectTypeId newValue) {
+    public GameEntity ReplaceReloadSoundEffectTypeId(Code.Sounds.SoundEffects.SoundEffectTypeId newValue) {
         var index = GameComponentsLookup.ReloadSoundEffectTypeId;
         var component = (Code.Gameplay.Features.Weapon.ReloadSoundEffectTypeId)CreateComponent(index, typeof(Code.Gameplay.Features.Weapon.ReloadSoundEffectTypeId));
         component.Value = newValue;

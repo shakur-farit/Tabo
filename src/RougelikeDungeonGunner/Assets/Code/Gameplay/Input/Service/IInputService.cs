@@ -5,6 +5,5 @@ namespace Code.Gameplay.Input.Service
 		float GetVerticalAxis();
 		float GetHorizontalAxis();
 		bool HasAxisInput();
-
-	}
+  }
 }

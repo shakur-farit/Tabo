@@ -13,7 +13,8 @@ namespace Code.Gameplay.Input.Systems
 			_inputService = inputService;
 			_inputs = input.GetGroup(InputMatcher
 				.AllOf(
-					InputMatcher.Input));
+					InputMatcher.Input,
+          InputMatcher.StandaloneInput));
 		}
 
 		public void Execute()

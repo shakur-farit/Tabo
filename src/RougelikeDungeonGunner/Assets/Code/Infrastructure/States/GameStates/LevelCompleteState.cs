@@ -29,7 +29,7 @@ namespace Code.Infrastructure.States.GameStates
 			CloseLevelCompleteWindow();
 
 		private void CloseHud() => 
-			_windowService.Close(WindowId.Hud);
+			_windowService.Close(WindowId.MobileHud);
 
 		private void OpenLevelCompleteWindow() => 
 			_windowService.Open(WindowId.LevelCompleteWindow);

@@ -3,7 +3,7 @@
 	public enum WindowId
 	{
 		Unknown = 0,
-		Hud = 1,
+		MobileHud = 1,
 		MainMenuWindow = 2,
 		LevelCompleteWindow = 3,
 		GameOverWindow = 4,
@@ -18,6 +18,7 @@
 		EnchantStatsWindow = 13,
 		EnchantAlreadyAppliedWindow = 14,
 		PauseWindow = 15,
-    SettingsWindow = 16
+    SettingsWindow = 16,
+		StandaloneHud = 17
   }
 }

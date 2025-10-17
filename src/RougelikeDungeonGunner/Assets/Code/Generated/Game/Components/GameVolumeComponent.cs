@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Code.Sounds.SoundEffects;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherVolume;
@@ -36,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Volume volume { get { return (Volume)GetComponent(GameComponentsLookup.Volume); } }
+    public Code.Sounds.SoundEffects.Volume volume { get { return (Code.Sounds.SoundEffects.Volume)GetComponent(GameComponentsLookup.Volume); } }
     public float Volume { get { return volume.Value; } }
     public bool hasVolume { get { return HasComponent(GameComponentsLookup.Volume); } }
 
     public GameEntity AddVolume(float newValue) {
         var index = GameComponentsLookup.Volume;
-        var component = (Volume)CreateComponent(index, typeof(Volume));
+        var component = (Code.Sounds.SoundEffects.Volume)CreateComponent(index, typeof(Code.Sounds.SoundEffects.Volume));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -50,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceVolume(float newValue) {
         var index = GameComponentsLookup.Volume;
-        var component = (Volume)CreateComponent(index, typeof(Volume));
+        var component = (Code.Sounds.SoundEffects.Volume)CreateComponent(index, typeof(Code.Sounds.SoundEffects.Volume));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

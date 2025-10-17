@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Code.Sounds.SoundEffects;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherAudioSource;
@@ -36,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public AudioSourceComponent audioSource { get { return (AudioSourceComponent)GetComponent(GameComponentsLookup.AudioSource); } }
+    public Code.Sounds.SoundEffects.AudioSourceComponent audioSource { get { return (Code.Sounds.SoundEffects.AudioSourceComponent)GetComponent(GameComponentsLookup.AudioSource); } }
     public UnityEngine.AudioSource AudioSource { get { return audioSource.Value; } }
     public bool hasAudioSource { get { return HasComponent(GameComponentsLookup.AudioSource); } }
 
     public GameEntity AddAudioSource(UnityEngine.AudioSource newValue) {
         var index = GameComponentsLookup.AudioSource;
-        var component = (AudioSourceComponent)CreateComponent(index, typeof(AudioSourceComponent));
+        var component = (Code.Sounds.SoundEffects.AudioSourceComponent)CreateComponent(index, typeof(Code.Sounds.SoundEffects.AudioSourceComponent));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -50,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceAudioSource(UnityEngine.AudioSource newValue) {
         var index = GameComponentsLookup.AudioSource;
-        var component = (AudioSourceComponent)CreateComponent(index, typeof(AudioSourceComponent));
+        var component = (Code.Sounds.SoundEffects.AudioSourceComponent)CreateComponent(index, typeof(Code.Sounds.SoundEffects.AudioSourceComponent));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

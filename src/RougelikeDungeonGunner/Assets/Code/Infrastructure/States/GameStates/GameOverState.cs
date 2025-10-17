@@ -26,7 +26,7 @@ namespace Code.Infrastructure.States.GameStates
 		}
 
 		private void CloseHud() => 
-			_windowService.Close(WindowId.Hud);
+			_windowService.Close(WindowId.MobileHud);
 
 		private void OpenGameOverWindow() =>
 			_windowService.Open(WindowId.GameOverWindow);

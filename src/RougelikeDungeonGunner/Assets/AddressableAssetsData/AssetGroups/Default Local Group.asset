@@ -722,6 +722,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - WeaponUpgradeShopItemConfig
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: be0f4fd53792a584e87c989c6eb9a049
+    m_Address: Assets/StaticData/Window/PCHudConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WindowConfig
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c03eb46bb6aee0f47a081212e26ce6fd
     m_Address: Assets/StaticData/SoundEffect/EnergyReloadSoundEffectConfig.asset
     m_ReadOnly: 0

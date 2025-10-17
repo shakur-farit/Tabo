@@ -1,6 +1,5 @@
 ﻿using Code.Gameplay.Common.Time;
 using Code.Gameplay.Features.Weapon.Services;
-using Code.Gameplay.Features.Weapon.Systems;
 using Code.Meta.UI.Windows.Service;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,7 +7,7 @@ using Zenject;
 
 namespace Code.Meta.UI.Windows.Behaviours
 {
-	public class Hud : BaseWindow
+	public class MobileHud : BaseWindow
 	{
 		[SerializeField] private Button _pauseButton;
 		[SerializeField] private Button _reloadButton;
@@ -20,7 +19,7 @@ namespace Code.Meta.UI.Windows.Behaviours
     [Inject]
 		public void Constructor(IWindowService windowService, ITimeService time, IWeaponReloadService reloadService)
 		{
-			Id = WindowId.Hud;
+			Id = WindowId.MobileHud;
 
 			_windowService = windowService;
 			_time = time;

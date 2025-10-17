@@ -6,19 +6,19 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-public sealed partial class GameMatcher {
+public sealed partial class InputMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherSoundEffect;
+    static Entitas.IMatcher<InputEntity> _matcherStandaloneInput;
 
-    public static Entitas.IMatcher<GameEntity> SoundEffect {
+    public static Entitas.IMatcher<InputEntity> StandaloneInput {
         get {
-            if (_matcherSoundEffect == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.SoundEffect);
-                matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherSoundEffect = matcher;
+            if (_matcherStandaloneInput == null) {
+                var matcher = (Entitas.Matcher<InputEntity>)Entitas.Matcher<InputEntity>.AllOf(InputComponentsLookup.StandaloneInput);
+                matcher.componentNames = InputComponentsLookup.componentNames;
+                _matcherStandaloneInput = matcher;
             }
 
-            return _matcherSoundEffect;
+            return _matcherStandaloneInput;
         }
     }
 }
@@ -31,20 +31,20 @@ public sealed partial class GameMatcher {
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-public partial class GameEntity {
+public partial class InputEntity {
 
-    static readonly Code.Sounds.SoundEffects.SoundEffect soundEffectComponent = new Code.Sounds.SoundEffects.SoundEffect();
+    static readonly Code.Gameplay.Input.StandaloneInput standaloneInputComponent = new Code.Gameplay.Input.StandaloneInput();
 
-    public bool isSoundEffect {
-        get { return HasComponent(GameComponentsLookup.SoundEffect); }
+    public bool isStandaloneInput {
+        get { return HasComponent(InputComponentsLookup.StandaloneInput); }
         set {
-            if (value != isSoundEffect) {
-                var index = GameComponentsLookup.SoundEffect;
+            if (value != isStandaloneInput) {
+                var index = InputComponentsLookup.StandaloneInput;
                 if (value) {
                     var componentPool = GetComponentPool(index);
                     var component = componentPool.Count > 0
                             ? componentPool.Pop()
-                            : soundEffectComponent;
+                            : standaloneInputComponent;
 
                     AddComponent(index, component);
                 } else {

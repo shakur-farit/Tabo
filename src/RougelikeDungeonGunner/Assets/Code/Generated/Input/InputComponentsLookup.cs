@@ -11,21 +11,27 @@ public static class InputComponentsLookup {
     public const int Destructed = 0;
     public const int AxisInput = 1;
     public const int Input = 2;
-    public const int MouseLeftButtonDown = 3;
+    public const int MobileInput = 3;
+    public const int MouseLeftButtonDown = 4;
+    public const int StandaloneInput = 5;
 
-    public const int TotalComponents = 4;
+    public const int TotalComponents = 6;
 
     public static readonly string[] componentNames = {
         "Destructed",
         "AxisInput",
         "Input",
-        "MouseLeftButtonDown"
+        "MobileInput",
+        "MouseLeftButtonDown",
+        "StandaloneInput"
     };
 
     public static readonly System.Type[] componentTypes = {
         typeof(Code.Common.Destructed),
         typeof(Code.Gameplay.Input.AxisInput),
         typeof(Code.Gameplay.Input.Input),
-        typeof(Code.Gameplay.Input.MouseLeftButtonDown)
+        typeof(Code.Gameplay.Input.MobileInput),
+        typeof(Code.Gameplay.Input.MouseLeftButtonDown),
+        typeof(Code.Gameplay.Input.StandaloneInput)
     };
 }
