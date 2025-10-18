@@ -195,6 +195,7 @@ namespace Code.Infrastructure.Installers
 			Container.Bind<IWindowService>().To<WindowService>().AsSingle();
       Container.BindInterfacesAndSelfTo<ShopService>().AsSingle();
       Container.Bind<ISelectedEnchantUIEntryProvider>().To<SelectedEnchantUIEntryProvider>().AsSingle();
+      Container.Bind<IHudDependPlatformProvider>().To<HudDependPlatformProvider>().AsSingle();
     }
 
 		private void BindSoundsServices()

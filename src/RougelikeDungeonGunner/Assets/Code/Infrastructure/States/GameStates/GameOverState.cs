@@ -11,12 +11,14 @@ namespace Code.Infrastructure.States.GameStates
 	{
 		private readonly IWindowService _windowService;
 		private readonly ILevelService _levelService;
+    private readonly IHudDependPlatformProvider _hudProvider;
 
-		public GameOverState(IWindowService windowService, ILevelService levelService)
+    public GameOverState(IWindowService windowService, ILevelService levelService, IHudDependPlatformProvider hudProvider)
 		{
 			_windowService = windowService;
 			_levelService = levelService;
-		}
+      _hudProvider = hudProvider;
+    }
 
 		public override void Enter()
 		{
@@ -25,10 +27,10 @@ namespace Code.Infrastructure.States.GameStates
 			OpenGameOverWindow();
 		}
 
-		private void CloseHud() => 
-			_windowService.Close(WindowId.MobileHud);
+		private void CloseHud() =>
+      _windowService.Close(_hudProvider.GetHud());
 
-		private void OpenGameOverWindow() =>
+    private void OpenGameOverWindow() =>
 			_windowService.Open(WindowId.GameOverWindow);
 
 		private void RemoveProgress() =>

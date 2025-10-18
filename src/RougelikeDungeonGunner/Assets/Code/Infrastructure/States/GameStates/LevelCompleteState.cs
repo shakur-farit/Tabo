@@ -11,12 +11,14 @@ namespace Code.Infrastructure.States.GameStates
 	{
 		private readonly ILevelService _levelService;
 		private readonly IWindowService _windowService;
+    private readonly IHudDependPlatformProvider _hudProvider;
 
-		public LevelCompleteState(ILevelService levelService, IWindowService windowService)
+    public LevelCompleteState(ILevelService levelService, IWindowService windowService, IHudDependPlatformProvider hudProvider)
 		{
 			_levelService = levelService;
 			_windowService = windowService;
-		}
+      _hudProvider = hudProvider;
+    }
 
 		public override void Enter()
 		{
@@ -28,10 +30,10 @@ namespace Code.Infrastructure.States.GameStates
 		protected override void Exit() => 
 			CloseLevelCompleteWindow();
 
-		private void CloseHud() => 
-			_windowService.Close(WindowId.MobileHud);
+		private void CloseHud() =>
+      _windowService.Close(_hudProvider.GetHud());
 
-		private void OpenLevelCompleteWindow() => 
+    private void OpenLevelCompleteWindow() => 
 			_windowService.Open(WindowId.LevelCompleteWindow);
 
 		private void MarkNextLevel() =>
