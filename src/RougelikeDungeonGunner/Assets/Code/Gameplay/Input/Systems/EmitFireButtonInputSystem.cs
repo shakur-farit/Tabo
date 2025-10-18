@@ -20,7 +20,7 @@ namespace Code.Gameplay.Input.Systems
 		public void Execute()
 		{
 			foreach (InputEntity input in _inputs) 
-				input.isMouseLeftButtonDown = _inputService.GetFireButtonPressed();
+				input.isFireButtonPressed = _inputService.GetFireButtonPressed();
 		}
 	}
 }

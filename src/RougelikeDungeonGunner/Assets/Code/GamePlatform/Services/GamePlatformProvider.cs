@@ -5,7 +5,7 @@ namespace Code.Gameplay.Input.Systems
     public GamePlatformTypeId GetGamePlatform()
     {
 #if UNITY_EDITOR
-      return GamePlatformTypeId.Mobile;
+      return GamePlatformTypeId.Standalone;
 #elif UNITY_STANDALONE
             return GamePlatformTypeId.Standalone;
 #elif UNITY_ANDROID || UNITY_IOS

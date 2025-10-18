@@ -10,28 +10,34 @@ public static class InputComponentsLookup {
 
     public const int Destructed = 0;
     public const int AxisInput = 1;
-    public const int Input = 2;
-    public const int MobileInput = 3;
-    public const int MouseLeftButtonDown = 4;
-    public const int StandaloneInput = 5;
+    public const int FireButtonPressed = 2;
+    public const int Input = 3;
+    public const int MobileInput = 4;
+    public const int PauseButtonDown = 5;
+    public const int StandaloneInput = 6;
+    public const int WeaponReloadButtonDown = 7;
 
-    public const int TotalComponents = 6;
+    public const int TotalComponents = 8;
 
     public static readonly string[] componentNames = {
         "Destructed",
         "AxisInput",
+        "FireButtonPressed",
         "Input",
         "MobileInput",
-        "MouseLeftButtonDown",
-        "StandaloneInput"
+        "PauseButtonDown",
+        "StandaloneInput",
+        "WeaponReloadButtonDown"
     };
 
     public static readonly System.Type[] componentTypes = {
         typeof(Code.Common.Destructed),
         typeof(Code.Gameplay.Input.AxisInput),
+        typeof(Code.Gameplay.Input.FireButtonPressed),
         typeof(Code.Gameplay.Input.Input),
         typeof(Code.Gameplay.Input.MobileInput),
-        typeof(Code.Gameplay.Input.MouseLeftButtonDown),
-        typeof(Code.Gameplay.Input.StandaloneInput)
+        typeof(Code.Gameplay.Input.PauseButtonDown),
+        typeof(Code.Gameplay.Input.StandaloneInput),
+        typeof(Code.Gameplay.Input.WeaponReloadButtonDown)
     };
 }

@@ -23,7 +23,7 @@ namespace Code.Gameplay.Features.Weapon.Systems
 		{
 			foreach (InputEntity input in _inputs)
 			foreach (GameEntity weapon in _weapons)
-				weapon.isShooting = input.isMouseLeftButtonDown;
+				weapon.isShooting = input.isFireButtonPressed;
 		}
 	}
 }

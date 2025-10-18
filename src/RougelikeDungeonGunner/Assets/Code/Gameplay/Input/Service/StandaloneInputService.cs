@@ -32,5 +32,11 @@ namespace Code.Gameplay.Input.Service
 
     public bool GetLeftMouseButtonUp() =>
       Mouse.current.leftButton.wasReleasedThisFrame && !EventSystem.current.IsPointerOverGameObject();
+
+    public bool GetPauseButtonDown() => 
+      Input.Player.Pause.WasReleasedThisFrame();
+
+    public bool GetWeaponReloadButtonDown() =>
+      Input.Player.ReloadWeapon.WasReleasedThisFrame();
   }
 }

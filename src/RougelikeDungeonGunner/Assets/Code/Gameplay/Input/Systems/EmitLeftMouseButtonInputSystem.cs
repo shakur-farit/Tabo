@@ -3,24 +3,24 @@ using Entitas;
 
 namespace Code.Gameplay.Input.Systems
 {
-	public class EmitLeftMouseButtonInputSystem : IExecuteSystem
-	{
-		private readonly IStandaloneInputService _inputService;
-		private readonly IGroup<InputEntity> _inputs;
+  public class EmitLeftMouseButtonInputSystem : IExecuteSystem
+  {
+    private readonly IStandaloneInputService _inputService;
+    private readonly IGroup<InputEntity> _inputs;
 
-		public EmitLeftMouseButtonInputSystem(InputContext input, IStandaloneInputService inputService)
-		{
-			_inputService = inputService;
-			_inputs = input.GetGroup(InputMatcher
-				.AllOf(
-					InputMatcher.Input,
+    public EmitLeftMouseButtonInputSystem(InputContext input, IStandaloneInputService inputService)
+    {
+      _inputService = inputService;
+      _inputs = input.GetGroup(InputMatcher
+        .AllOf(
+          InputMatcher.Input,
           InputMatcher.StandaloneInput));
-		}
+    }
 
-		public void Execute()
-		{
-			foreach (InputEntity input in _inputs) 
-				input.isMouseLeftButtonDown = _inputService.GetLeftMouseButtonPressed();
-		}
-	}
+    public void Execute()
+    {
+      foreach (InputEntity input in _inputs)
+        input.isFireButtonPressed = _inputService.GetLeftMouseButtonPressed();
+    }
+  }
 }

@@ -32,7 +32,8 @@ namespace Code.Gameplay.Features.Weapon
 			Add(systems.Create<SetWeaponDirectionSystem>());
 			Add(systems.Create<PushBackHeroOnCollisionFrontWeaponSystem>());
 			Add(systems.Create<CalculateMultiPelletCountSystem>());
-			Add(systems.Create<SetHeroWeaponReloadingByPressButtonSystem>());
+			Add(systems.Create<SetHeroWeaponReloadingMobilePlatformSystem>());
+			Add(systems.Create<SetHeroWeaponReloadingStandalonePlatformSystem>());
       Add(systems.Create<CreateReloadSoundEffectReactiveSystem>());
       Add(systems.Create<ReloadWeaponSystem>());
       Add(systems.Create<StunWeaponOnOwnerStunnedSystem>());

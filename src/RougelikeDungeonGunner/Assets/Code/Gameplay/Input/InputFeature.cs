@@ -11,6 +11,8 @@ namespace Code.Gameplay.Input
 
 			Add(systems.Create<EmitAxisInputSystem>());
 			Add(systems.Create<EmitLeftMouseButtonInputSystem>());
+			Add(systems.Create<EmitPauseButtonInputSystem>());
+			Add(systems.Create<EmitWeaponReloadButtonInputSystem>());
 			Add(systems.Create<EmitFireButtonInputSystem>());
 		}
 	}

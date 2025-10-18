@@ -17,11 +17,13 @@ using Code.Gameplay.Features.Level;
 using Code.Gameplay.Features.Lifetime;
 using Code.Gameplay.Features.Loot;
 using Code.Gameplay.Features.Movement;
+using Code.Gameplay.Features.Pause;
 using Code.Gameplay.Features.Rotation;
 using Code.Gameplay.Features.SpecialEffect;
 using Code.Gameplay.Features.Statuses;
 using Code.Gameplay.Features.Weapon;
 using Code.Gameplay.Input;
+using Code.Gameplay.Input.Systems;
 using Code.Infrastructure.Systems;
 using Code.Infrastructure.View;
 using Code.Sounds.Music;
@@ -67,6 +69,8 @@ namespace Code.Gameplay
 
 			Add(systems.Create<MusicFeature>());
 			Add(systems.Create<SoundEffectFeature>());
+
+			Add(systems.Create<PauseFeature>());
 
 			Add(systems.Create<ProcessGameDestructedFeature>());
 			Add(systems.Create<ProcessInputDestructedFeature>());

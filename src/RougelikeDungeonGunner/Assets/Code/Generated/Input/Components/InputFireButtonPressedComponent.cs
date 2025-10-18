@@ -8,17 +8,17 @@
 //------------------------------------------------------------------------------
 public sealed partial class InputMatcher {
 
-    static Entitas.IMatcher<InputEntity> _matcherMouseLeftButtonDown;
+    static Entitas.IMatcher<InputEntity> _matcherFireButtonPressed;
 
-    public static Entitas.IMatcher<InputEntity> MouseLeftButtonDown {
+    public static Entitas.IMatcher<InputEntity> FireButtonPressed {
         get {
-            if (_matcherMouseLeftButtonDown == null) {
-                var matcher = (Entitas.Matcher<InputEntity>)Entitas.Matcher<InputEntity>.AllOf(InputComponentsLookup.MouseLeftButtonDown);
+            if (_matcherFireButtonPressed == null) {
+                var matcher = (Entitas.Matcher<InputEntity>)Entitas.Matcher<InputEntity>.AllOf(InputComponentsLookup.FireButtonPressed);
                 matcher.componentNames = InputComponentsLookup.componentNames;
-                _matcherMouseLeftButtonDown = matcher;
+                _matcherFireButtonPressed = matcher;
             }
 
-            return _matcherMouseLeftButtonDown;
+            return _matcherFireButtonPressed;
         }
     }
 }
@@ -33,18 +33,18 @@ public sealed partial class InputMatcher {
 //------------------------------------------------------------------------------
 public partial class InputEntity {
 
-    static readonly Code.Gameplay.Input.MouseLeftButtonDown mouseLeftButtonDownComponent = new Code.Gameplay.Input.MouseLeftButtonDown();
+    static readonly Code.Gameplay.Input.FireButtonPressed fireButtonPressedComponent = new Code.Gameplay.Input.FireButtonPressed();
 
-    public bool isMouseLeftButtonDown {
-        get { return HasComponent(InputComponentsLookup.MouseLeftButtonDown); }
+    public bool isFireButtonPressed {
+        get { return HasComponent(InputComponentsLookup.FireButtonPressed); }
         set {
-            if (value != isMouseLeftButtonDown) {
-                var index = InputComponentsLookup.MouseLeftButtonDown;
+            if (value != isFireButtonPressed) {
+                var index = InputComponentsLookup.FireButtonPressed;
                 if (value) {
                     var componentPool = GetComponentPool(index);
                     var component = componentPool.Count > 0
                             ? componentPool.Pop()
-                            : mouseLeftButtonDownComponent;
+                            : fireButtonPressedComponent;
 
                     AddComponent(index, component);
                 } else {
