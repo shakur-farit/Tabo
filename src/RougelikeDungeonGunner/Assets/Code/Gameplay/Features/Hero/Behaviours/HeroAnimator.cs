@@ -9,7 +9,7 @@ namespace Code.Gameplay.Features.Hero.Behaviours
   {
 	  [SerializeField] private Animator _animator;
 	  [SerializeField] private SpriteRenderer _spriteRenderer;
-
+	  
 		private readonly int _isMoving = Animator.StringToHash("isMoving");
 		private readonly int _facingDirectionIndex = Animator.StringToHash("facingDirectionIndex");
 		private readonly int _diedHash = Animator.StringToHash("died");
@@ -18,8 +18,8 @@ namespace Code.Gameplay.Features.Hero.Behaviours
 
 		private void OnDestroy()
     {
-      DOTween.Kill(_spriteRenderer);
-      _animator.Rebind();
+      DOTween.Kill(_spriteRenderer); 
+    	_animator.Rebind();
     }
 
     public void StartIdling() => _animator.SetBool(_isMoving, false);
@@ -35,7 +35,7 @@ namespace Code.Gameplay.Features.Hero.Behaviours
 		}
 
 		public void PlayDamageTaken() =>
-			_spriteRenderer.DOColor(Color.red, 0.1f).OnComplete(() => 
+			_spriteRenderer.DOColor(Color.red, 0.1f).OnComplete(() =>
 				_spriteRenderer.DOColor(Color.white, 0.1f));
 
 		public void PlayDied() { }

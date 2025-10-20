@@ -4,7 +4,6 @@ using Code.Common.Entity;
 using Code.Common.Extensions;
 using Code.Gameplay.Features.Collection;
 using Code.Gameplay.Features.Cooldowns;
-using Code.Gameplay.Features.Hero;
 using Code.Gameplay.Features.SpecialEffect;
 using Code.Gameplay.Features.Weapon.Configs;
 using Code.Gameplay.Features.Weapon.Services;
@@ -202,7 +201,7 @@ namespace Code.Gameplay.Features.Weapon.Factory
 					.With(x => x.AddPierce(_statsProvider.GetPierce(config)),
 						when: _statsProvider.GetPierce(config) > 0)
 					.With(x => x.isInfinityAmmo = true, when: config.Stats.isInfinityAmmo)
-					.With(x => x.AddCurrentAmmoCount(_statsProvider.GetMagazineSize(config)),
+					.With(x => x.AddCurrentAmmoCountInMagazine(_statsProvider.GetMagazineSize(config)),
 						when: config.Stats.isInfinityAmmo == false)
 					.With(x => x.AddReloadTime(_statsProvider.GetReloadTime(config)),
 						when: _statsProvider.GetReloadTime(config) > 0 && config.Stats.isInfinityAmmo == false)

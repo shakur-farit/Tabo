@@ -26,6 +26,8 @@ namespace Code.Gameplay.Features.Enemy
 			Add(systems.Create<DropLootOnEnemyDeadSystem>());
 			Add(systems.Create<FinalizeEnemyDeathProcessingSystem>());
 			Add(systems.Create<UnapplyClosestTargetFromEnemySystem>());
+			
+			Add(systems.Create<UpdateEnemyHpViewSystem>());
 		}
 	}
 }

@@ -27,6 +27,8 @@ namespace Code.Gameplay.Features.Weapon
 	[Game] public class Pierce : IComponent { public int Value; }
 	[Game] public class InfinityAmmo : IComponent { }
 	[Game] public class CurrentAmmoCount : IComponent { public int Value; }
+	[Game] public class MaxAmmoCount : IComponent { public int Value; }
+	[Game] public class CurrentAmmoCountInMagazine : IComponent { public int Value; }
 	[Game] public class MagazineNotEmpty : IComponent { }
 	[Game] public class MultiPellet : IComponent { public int Value; }
 	[Game] public class MinPelletsDeviation : IComponent { public float Value; }

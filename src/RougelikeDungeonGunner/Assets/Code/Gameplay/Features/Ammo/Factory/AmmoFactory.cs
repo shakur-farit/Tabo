@@ -15,37 +15,33 @@ namespace Code.Gameplay.Features.Ammo.Factory
 	{
 		private const int BufferSize = 16;
 
-    private readonly IIdentifierService _identifier;
+		private readonly Dictionary<AmmoTypeId, Func<AmmoTypeId, Vector3, GameEntity>> _factories;
+
+		private readonly IIdentifierService _identifier;
 		private readonly IStaticDataService _staticDataService;
 
 		public AmmoFactory(IIdentifierService identifier, IStaticDataService staticDataService)
 		{
 			_identifier = identifier;
 			_staticDataService = staticDataService;
+
+			_factories = new Dictionary<AmmoTypeId, Func<AmmoTypeId, Vector3, GameEntity>>
+			{
+				{ AmmoTypeId.Light, CreateLightBullet },
+				{ AmmoTypeId.Rifle, CreateRifleBullet },
+				{ AmmoTypeId.ShotgunShell, CreateShotgunShell },
+				{ AmmoTypeId.LongRange, CreateLongRangeBullet },
+				{ AmmoTypeId.LaserBolt, CreateLaserBolt },
+				{ AmmoTypeId.RocketMissile, CreateRocketMissile },
+				{ AmmoTypeId.EnemyBullet, CreateEnemyBullet },
+				{ AmmoTypeId.SigilAmmo, CreateSigilAmmo }
+			};
 		}
 
 		public GameEntity CreateAmmo(AmmoTypeId ammoTypeId, Vector3 at)
 		{
-			switch (ammoTypeId)
-			{
-				case AmmoTypeId.Light:
-					return CreateLightBullet(ammoTypeId, at);
-				case AmmoTypeId.Rifle:
-					return CreateRifleBullet(ammoTypeId, at);
-				case AmmoTypeId.ShotgunShell:
-					return CreateShotgunShell(ammoTypeId, at);
-				case AmmoTypeId.LongRange:
-					return CreateLongRangeBullet(ammoTypeId, at);
-				case AmmoTypeId.LaserBolt:
-					return CreateLaserBolt(ammoTypeId, at);
-				case AmmoTypeId.RocketMissile:
-					return CreateRocketMissile(ammoTypeId, at);
-				case AmmoTypeId.EnemyBullet:
-					return CreateEnemyBullet(ammoTypeId, at);
-				case AmmoTypeId.SigilAmmo:
-					return CreateSigilAmmo(ammoTypeId, at);
-
-			}
+			if (_factories.TryGetValue(ammoTypeId, out Func<AmmoTypeId, Vector3, GameEntity> creator))
+				return creator.Invoke(ammoTypeId, at);
 
 			throw new Exception($"Ammo for {ammoTypeId} type was not found");
 		}

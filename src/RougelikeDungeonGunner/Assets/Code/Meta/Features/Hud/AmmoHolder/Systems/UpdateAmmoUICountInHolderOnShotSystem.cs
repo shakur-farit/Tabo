@@ -14,18 +14,18 @@ namespace Code.Meta.Features.Hud.AmmoHolder.Systems
 		protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context) =>
 			context.CreateCollector(GameMatcher.AllOf(
 					GameMatcher.HeroWeapon,
-					GameMatcher.CurrentAmmoCount,
+					GameMatcher.CurrentAmmoCountInMagazine,
 					GameMatcher.Shot)
 				.Added());
 
 		protected override bool Filter(GameEntity weapons) =>
-			weapons.isWeapon && weapons.isHeroWeapon && weapons.isShot && weapons.hasCurrentAmmoCount;
+			weapons.isWeapon && weapons.isHeroWeapon && weapons.isShot && weapons.hasCurrentAmmoCountInMagazine;
 
 		protected override void Execute(List<GameEntity> weapons)
 		{
 			foreach (GameEntity weapon in weapons)
 			foreach (GameEntity holder in _ammoHolders)
-				holder.AmmoHolder.UpdateAmmoUICount(weapon.CurrentAmmoCount);
+				holder.AmmoHolder.UpdateAmmoUICount(weapon.CurrentAmmoCountInMagazine);
 		}
 	}
 }

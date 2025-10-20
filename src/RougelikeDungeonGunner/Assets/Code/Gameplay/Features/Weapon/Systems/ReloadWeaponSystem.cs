@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using Code.Gameplay.Common.Time;
-using Code.Gameplay.Features.Door.Factory;
 using Entitas;
 
 namespace Code.Gameplay.Features.Weapon.Systems
@@ -33,7 +32,7 @@ namespace Code.Gameplay.Features.Weapon.Systems
 				}
 				else
 				{
-					weapon.ReplaceCurrentAmmoCount(weapon.MagazineSize);
+					weapon.ReplaceCurrentAmmoCountInMagazine(weapon.MagazineSize);
 					weapon.ReplaceReloadTimeLeft(weapon.ReloadTime);
 					weapon.isMagazineNotEmpty = true;
 					weapon.isReloading = false;

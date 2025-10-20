@@ -13,7 +13,7 @@ namespace Code.Gameplay.Features.Ammo.Systems
 			_weapons = game.GetGroup(GameMatcher
 				.AllOf(
 					GameMatcher.MagazineSize,
-					GameMatcher.CurrentAmmoCount,
+					GameMatcher.CurrentAmmoCountInMagazine,
 					GameMatcher.MagazineNotEmpty,
 					GameMatcher.Shot));
 		}
@@ -22,9 +22,9 @@ namespace Code.Gameplay.Features.Ammo.Systems
 		{
 			foreach (GameEntity weapon in _weapons.GetEntities(_buffer))
 			{
-				weapon.ReplaceCurrentAmmoCount(weapon.CurrentAmmoCount - 1);
+				weapon.ReplaceCurrentAmmoCountInMagazine(weapon.CurrentAmmoCountInMagazine - 1);
 
-				if (weapon.CurrentAmmoCount <= 0)
+				if (weapon.CurrentAmmoCountInMagazine <= 0)
 				{
 					weapon.isMagazineNotEmpty = false;
 					weapon.isReloading = true;

@@ -17,19 +17,19 @@ namespace Code.Gameplay.Features.Enemy.Behaviours
 		private FacingDirection _currentDirection = FacingDirection.Unknown;
 
 		private void OnDestroy()
-    {
-      DOTween.Kill(_spriteRenderer);
-      _animator.Rebind();
-    }
+		{
+			DOTween.Kill(_spriteRenderer);
+			_animator.Rebind();
+		}
 
-    public void StartIdling() => _animator.SetBool(_isMoving, false);
+		public void StartIdling() => _animator.SetBool(_isMoving, false);
 		public void StartMoving() => _animator.SetBool(_isMoving, true);
 
 		public void SetDirectionEnum(FacingDirection direction)
 		{
 			if (_currentDirection != direction)
 			{
-				_currentDirection = direction; 
+				_currentDirection = direction;
 				_animator.SetInteger(_facingDirectionIndex, (int)direction);
 			}
 		}
@@ -40,7 +40,7 @@ namespace Code.Gameplay.Features.Enemy.Behaviours
 
 		public void PlayDied() { }
 
-		public void SetRuntimeAnimatorController(RuntimeAnimatorController runtimeAnimatorController) =>
-			_animator.runtimeAnimatorController = runtimeAnimatorController;
+		public void SetRuntimeAnimatorController(RuntimeAnimatorController animatorController) =>
+			_animator.runtimeAnimatorController = animatorController;
 	}
 }
