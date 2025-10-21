@@ -30,6 +30,9 @@ namespace Code.Meta.Features.Shop.Upgrade.Services
 		public int GetMagazineSize(WeaponConfig config) =>
 			config.Stats.MagazineSize + (int)_provider.GetUpgradeBonus(config.TypeId, WeaponUpgradeTypeId.MagazineSize);
 
+		public int GetMaxAmmoCount(WeaponConfig config) =>
+			config.Stats.MaxAmmoCount + (int)_provider.GetUpgradeBonus(config.TypeId, WeaponUpgradeTypeId.MaxAmmoCount);
+
 		public int GetPierce(WeaponConfig config) =>
 			config.Stats.Pierce + (int)_provider.GetUpgradeBonus(config.TypeId, WeaponUpgradeTypeId.Pierce);
 

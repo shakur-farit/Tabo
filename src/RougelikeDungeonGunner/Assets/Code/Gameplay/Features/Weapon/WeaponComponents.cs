@@ -30,6 +30,7 @@ namespace Code.Gameplay.Features.Weapon
 	[Game] public class MaxAmmoCount : IComponent { public int Value; }
 	[Game] public class CurrentAmmoCountInMagazine : IComponent { public int Value; }
 	[Game] public class MagazineNotEmpty : IComponent { }
+	[Game] public class WeaponNotEmpty : IComponent { }
 	[Game] public class MultiPellet : IComponent { public int Value; }
 	[Game] public class MinPelletsDeviation : IComponent { public float Value; }
 	[Game] public class MaxPelletsDeviation : IComponent { public float Value; }

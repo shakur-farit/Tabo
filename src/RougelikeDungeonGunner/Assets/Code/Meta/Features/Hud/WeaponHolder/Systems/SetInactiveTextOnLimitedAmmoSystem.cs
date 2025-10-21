@@ -23,9 +23,11 @@ namespace Code.Meta.Features.Hud.WeaponHolder.Systems
 
 		protected override void Execute(List<GameEntity> weapons)
 		{
-			foreach (GameEntity weapon in weapons)
 			foreach (GameEntity holder in _weaponHolders)
-				holder.WeaponHolder.SetInactiveOnInfinityAmmo();
+			{
+				holder.WeaponHolder.SetInactiveOnInfinityAmmoText();
+				holder.WeaponHolder.SetActiveCurrentAmmoText();
+			}
 		}
 	}
 }

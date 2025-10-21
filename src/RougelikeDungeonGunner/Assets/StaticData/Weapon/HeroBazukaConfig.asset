@@ -19,8 +19,8 @@ MonoBehaviour:
   ReloadSoundEffectTypeId: 13
   AmmoPatternSetup:
     PatternTypeId: 1
-    AmmoCount: 0
-    Raduis: 0
+    AmmoCount: 1
+    Raduis: 0.1
     RotationSpeed: 0
     MovementSpeed: 6
     Branches: 0

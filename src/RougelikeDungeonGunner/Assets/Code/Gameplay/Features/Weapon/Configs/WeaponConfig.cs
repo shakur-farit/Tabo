@@ -48,6 +48,7 @@ namespace Code.Gameplay.Features.Weapon.Configs
 		[Range(0f, 100f)] public float ReloadTime;
 		[Range(0f, 100f)] public float PrechargingTime;
 		[Range(0, 100)] public int MagazineSize;
+		[Range(0, 1000)] public int MaxAmmoCount;
 		[Range(0, 100)] public int Pierce = 1;
 		[Range(0, 10)] public int PelletCount = 1;
 		[Tooltip("In percents")]

@@ -12,5 +12,6 @@
 		EnchantSlots = 7,
 		Damage = 8,
 		Pierce = 9,
+		MaxAmmoCount = 10
 	}
 }

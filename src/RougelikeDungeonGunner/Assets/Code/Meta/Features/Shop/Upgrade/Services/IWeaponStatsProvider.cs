@@ -14,5 +14,6 @@ namespace Code.Meta.Features.Shop.Upgrade.Services
 		float GetMinDeviation(WeaponConfig config);
 		float GetMaxDeviation(WeaponConfig config);
 		int GetPierce(WeaponConfig config);
+		int GetMaxAmmoCount(WeaponConfig config);
 	}
 }

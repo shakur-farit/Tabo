@@ -203,6 +203,10 @@ namespace Code.Gameplay.Features.Weapon.Factory
 					.With(x => x.isInfinityAmmo = true, when: config.Stats.isInfinityAmmo)
 					.With(x => x.AddCurrentAmmoCountInMagazine(_statsProvider.GetMagazineSize(config)),
 						when: config.Stats.isInfinityAmmo == false)
+					.With(x => x.AddMaxAmmoCount(_statsProvider.GetMaxAmmoCount(config)),
+						when: config.Stats.isInfinityAmmo == false)
+					.With(x => x.AddCurrentAmmoCount(_statsProvider.GetMaxAmmoCount(config)),
+						when: config.Stats.isInfinityAmmo == false)
 					.With(x => x.AddReloadTime(_statsProvider.GetReloadTime(config)),
 						when: _statsProvider.GetReloadTime(config) > 0 && config.Stats.isInfinityAmmo == false)
 					.With(x => x.AddReloadTimeLeft(_statsProvider.GetReloadTime(config)),

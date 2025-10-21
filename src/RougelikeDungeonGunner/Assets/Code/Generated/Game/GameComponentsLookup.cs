@@ -273,24 +273,25 @@ public static class GameComponentsLookup {
     public const int StatusSetups = 262;
     public const int Weapon = 263;
     public const int WeaponEnchants = 264;
-    public const int WeaponOwnerId = 265;
-    public const int WeaponOwnerTypeId = 266;
-    public const int WeaponRotationAngle = 267;
-    public const int WeaponTypeId = 268;
-    public const int AmmoHolder = 269;
-    public const int CoinsHolder = 270;
-    public const int EnchantHolder = 271;
-    public const int HeartHolder = 272;
-    public const int ReloadingAnimator = 273;
-    public const int TimerHolder = 274;
-    public const int WeaponHolder = 275;
-    public const int AudioClip = 276;
-    public const int AudioSource = 277;
-    public const int SoundEffect = 278;
-    public const int SoundEffectTypeId = 279;
-    public const int Volume = 280;
+    public const int WeaponNotEmpty = 265;
+    public const int WeaponOwnerId = 266;
+    public const int WeaponOwnerTypeId = 267;
+    public const int WeaponRotationAngle = 268;
+    public const int WeaponTypeId = 269;
+    public const int AmmoHolder = 270;
+    public const int CoinsHolder = 271;
+    public const int EnchantHolder = 272;
+    public const int HeartHolder = 273;
+    public const int ReloadingAnimator = 274;
+    public const int TimerHolder = 275;
+    public const int WeaponHolder = 276;
+    public const int AudioClip = 277;
+    public const int AudioSource = 278;
+    public const int SoundEffect = 279;
+    public const int SoundEffectTypeId = 280;
+    public const int Volume = 281;
 
-    public const int TotalComponents = 281;
+    public const int TotalComponents = 282;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -558,6 +559,7 @@ public static class GameComponentsLookup {
         "StatusSetups",
         "Weapon",
         "WeaponEnchants",
+        "WeaponNotEmpty",
         "WeaponOwnerId",
         "WeaponOwnerTypeId",
         "WeaponRotationAngle",
@@ -842,6 +844,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Weapon.StatusSetups),
         typeof(Code.Gameplay.Features.Weapon.Weapon),
         typeof(Code.Gameplay.Features.Weapon.WeaponEnchants),
+        typeof(Code.Gameplay.Features.Weapon.WeaponNotEmpty),
         typeof(Code.Gameplay.Features.Weapon.WeaponOwnerId),
         typeof(Code.Gameplay.Features.Weapon.WeaponOwnerTypeIdComponent),
         typeof(Code.Gameplay.Features.Weapon.WeaponRotationAngle),

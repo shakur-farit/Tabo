@@ -14,6 +14,7 @@ namespace Code.Gameplay.Features.Ammo.Systems
 				.AllOf(
 					GameMatcher.MagazineSize,
 					GameMatcher.CurrentAmmoCountInMagazine,
+					GameMatcher.CurrentAmmoCount,
 					GameMatcher.MagazineNotEmpty,
 					GameMatcher.Shot));
 		}
@@ -23,6 +24,7 @@ namespace Code.Gameplay.Features.Ammo.Systems
 			foreach (GameEntity weapon in _weapons.GetEntities(_buffer))
 			{
 				weapon.ReplaceCurrentAmmoCountInMagazine(weapon.CurrentAmmoCountInMagazine - 1);
+				weapon.ReplaceCurrentAmmoCount(weapon.CurrentAmmoCount - 1);
 
 				if (weapon.CurrentAmmoCountInMagazine <= 0)
 				{
