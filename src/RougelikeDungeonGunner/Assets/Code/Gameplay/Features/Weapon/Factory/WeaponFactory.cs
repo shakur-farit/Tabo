@@ -20,6 +20,7 @@ namespace Code.Gameplay.Features.Weapon.Factory
 		private readonly IStaticDataService _staticDataService;
 		private readonly IWeaponStatsProvider _statsProvider;
 		private readonly IWeaponEffectsProvider _effectsProvider;
+    private readonly ICurrentAmmoCountProvider _ammoCountProvider;
     private readonly IWeaponStatusSetupProvider _setupProvider;
 
     public WeaponFactory(
@@ -27,12 +28,14 @@ namespace Code.Gameplay.Features.Weapon.Factory
 			IStaticDataService staticDataService,
 			IWeaponStatsProvider statsProvider,
 			IWeaponEffectsProvider effectsProvider,
+			ICurrentAmmoCountProvider ammoCountProvider,
       IWeaponStatusSetupProvider setupProvider)
 		{
 			_identifier = identifier;
 			_staticDataService = staticDataService;
 			_statsProvider = statsProvider;
 			_effectsProvider = effectsProvider;
+      _ammoCountProvider = ammoCountProvider;
       _setupProvider = setupProvider;
     }
 
@@ -189,6 +192,7 @@ namespace Code.Gameplay.Features.Weapon.Factory
 					.With(x => x.isWeapon = true)
 					.With(x => x.isReadyToCollectTargets = true)
 					.With(x => x.isMagazineNotEmpty = true)
+					.With(x => x.isWeaponNotEmpty = true)
 					.With(x => x.isReadyToShoot = true)
 					.With(x => x.isReusable = true)
 					.With(x => x.AddMultiPellet(config.Stats.PelletCount), when: config.Stats.PelletCount > 1)
@@ -205,7 +209,7 @@ namespace Code.Gameplay.Features.Weapon.Factory
 						when: config.Stats.isInfinityAmmo == false)
 					.With(x => x.AddMaxAmmoCount(_statsProvider.GetMaxAmmoCount(config)),
 						when: config.Stats.isInfinityAmmo == false)
-					.With(x => x.AddCurrentAmmoCount(_statsProvider.GetMaxAmmoCount(config)),
+					.With(x => x.AddCurrentAmmoCount(_ammoCountProvider.GetCurrentAmmoCount(weaponTypeId)),
 						when: config.Stats.isInfinityAmmo == false)
 					.With(x => x.AddReloadTime(_statsProvider.GetReloadTime(config)),
 						when: _statsProvider.GetReloadTime(config) > 0 && config.Stats.isInfinityAmmo == false)

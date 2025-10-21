@@ -6,7 +6,6 @@ using Code.Meta.Features.Shop.Weapon;
 using Code.Meta.Features.Shop.Weapon.Behaviours;
 using Code.Meta.Features.Shop.Weapon.Factory;
 using Code.Meta.UI.Windows.Service;
-using Code.Progress.Provider;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
@@ -22,7 +21,6 @@ namespace Code.Meta.UI.Windows.Behaviours
 
 		private IWindowService _windowService;
 		private IWeaponShopItemFactory _factory;
-		private IProgressProvider _progressProvider;
 		private ICurrentHeroWeaponProvider _heroWeapon;
 
 
@@ -30,14 +28,12 @@ namespace Code.Meta.UI.Windows.Behaviours
 		public void Constructor(
 			IWindowService windowService,
 			ICurrentHeroWeaponProvider heroWeapon,
-			IWeaponShopItemFactory factory,
-			IProgressProvider progressProvider)
+			IWeaponShopItemFactory factory)
 		{
 			Id = WindowId.WeaponBuyWindow;
 
 			_windowService = windowService;
 			_factory = factory;
-			_progressProvider = progressProvider;
 			_heroWeapon = heroWeapon;
 		}
 

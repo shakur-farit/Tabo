@@ -17,6 +17,8 @@ namespace Code.Gameplay.Features.Weapon.Systems
 				.AllOf(
 					GameMatcher.Weapon,
 					GameMatcher.MagazineSize,
+					GameMatcher.CurrentAmmoCount,
+					GameMatcher.WeaponNotEmpty,
 					GameMatcher.ReloadTime,
 					GameMatcher.ReloadTimeLeft,
 					GameMatcher.Reloading));
@@ -32,8 +34,11 @@ namespace Code.Gameplay.Features.Weapon.Systems
 				}
 				else
 				{
-					weapon.ReplaceCurrentAmmoCountInMagazine(weapon.MagazineSize);
-					weapon.ReplaceReloadTimeLeft(weapon.ReloadTime);
+          weapon.ReplaceCurrentAmmoCountInMagazine(weapon.CurrentAmmoCount < weapon.MagazineSize
+            ? weapon.CurrentAmmoCount
+            : weapon.MagazineSize);
+
+          weapon.ReplaceReloadTimeLeft(weapon.ReloadTime);
 					weapon.isMagazineNotEmpty = true;
 					weapon.isReloading = false;
 				}

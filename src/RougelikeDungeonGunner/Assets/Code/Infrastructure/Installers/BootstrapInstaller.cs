@@ -153,6 +153,7 @@ namespace Code.Infrastructure.Installers
       Container.Bind<ICurrentHeroWeaponProvider>().To<CurrentHeroWeaponProvider>().AsSingle();
       Container.Bind<ICurrentHeroTypeIdProvider>().To<CurrentHeroTypeIdProvider>().AsSingle();
       Container.Bind<ICurrentHeroHpProvider>().To<CurrentHeroHpProvider>().AsSingle();
+      Container.Bind<ICurrentAmmoCountProvider>().To<CurrentAmmoCountProvider>().AsSingle();
     }
 
 		private void BindGameplayFactories()

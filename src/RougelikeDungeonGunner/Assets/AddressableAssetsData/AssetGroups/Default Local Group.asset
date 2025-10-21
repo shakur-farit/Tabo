@@ -476,6 +476,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - WeaponUpgradeShopItemConfig
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8937bf93906a33c4bbd9c4201dfee679
+    m_Address: Assets/StaticData/Shop/Upgrade/MaxAmmoCountUpgradeItemConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponUpgradeShopItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 89758b79be18d76489a50685468220f3
     m_Address: Assets/StaticData/Shop/WeaponStatUIEntry/FireRangeWeaponStatUIEntryConfig
       4.asset

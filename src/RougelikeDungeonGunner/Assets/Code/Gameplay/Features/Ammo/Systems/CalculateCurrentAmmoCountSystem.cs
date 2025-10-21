@@ -1,23 +1,28 @@
 ﻿using System.Collections.Generic;
+using Code.Gameplay.Features.Weapon.Services;
 using Entitas;
 
 namespace Code.Gameplay.Features.Ammo.Systems
 {
 	public class CalculateCurrentAmmoCountSystem : IExecuteSystem
 	{
-		private readonly IGroup<GameEntity> _weapons;
-		private readonly List<GameEntity> _buffer = new(1);
+    private readonly List<GameEntity> _buffer = new(1);
 
-		public CalculateCurrentAmmoCountSystem(GameContext game)
-		{
-			_weapons = game.GetGroup(GameMatcher
+    private readonly IGroup<GameEntity> _weapons;
+    private readonly ICurrentAmmoCountProvider _ammoCountProvider;
+
+    public CalculateCurrentAmmoCountSystem(GameContext game, ICurrentAmmoCountProvider ammoCountProvider)
+    {
+      _ammoCountProvider = ammoCountProvider;
+      _weapons = game.GetGroup(GameMatcher
 				.AllOf(
 					GameMatcher.MagazineSize,
 					GameMatcher.CurrentAmmoCountInMagazine,
 					GameMatcher.CurrentAmmoCount,
+					GameMatcher.WeaponNotEmpty,
 					GameMatcher.MagazineNotEmpty,
-					GameMatcher.Shot));
-		}
+          GameMatcher.Shot));
+    }
 
 		public void Execute()
 		{
@@ -25,6 +30,14 @@ namespace Code.Gameplay.Features.Ammo.Systems
 			{
 				weapon.ReplaceCurrentAmmoCountInMagazine(weapon.CurrentAmmoCountInMagazine - 1);
 				weapon.ReplaceCurrentAmmoCount(weapon.CurrentAmmoCount - 1);
+
+				_ammoCountProvider.SetCurrentAmmoCount(weapon.CurrentAmmoCount);
+
+        if (weapon.CurrentAmmoCount <= 0)
+        {
+          weapon.isWeaponNotEmpty = false;
+					continue;
+        }
 
 				if (weapon.CurrentAmmoCountInMagazine <= 0)
 				{

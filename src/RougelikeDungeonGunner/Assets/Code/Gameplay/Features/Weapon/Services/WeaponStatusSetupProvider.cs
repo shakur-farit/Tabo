@@ -33,7 +33,7 @@ namespace Code.Gameplay.Features.Weapon.Services
       _boughtSetups[typeId].Add(setup);
     }
 
-    public void Clear() => 
+    public void Clear() =>
       _boughtSetups.Clear();
   }
 }

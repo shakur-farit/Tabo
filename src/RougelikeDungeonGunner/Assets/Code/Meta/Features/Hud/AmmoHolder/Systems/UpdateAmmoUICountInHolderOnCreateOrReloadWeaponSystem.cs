@@ -15,17 +15,22 @@ namespace Code.Meta.Features.Hud.AmmoHolder.Systems
 			context.CreateCollector(GameMatcher.AllOf(
 					GameMatcher.HeroWeapon,
 					GameMatcher.MagazineNotEmpty,
-					GameMatcher.MagazineSize)
+					GameMatcher.CurrentAmmoCount,
+					GameMatcher.CurrentAmmoCountInMagazine)
 				.Added());
 
 		protected override bool Filter(GameEntity weapons) =>
-			weapons.isWeapon && weapons.isHeroWeapon && weapons.hasMagazineSize && weapons.isMagazineNotEmpty;
+			weapons.isWeapon && weapons.isHeroWeapon && weapons.hasCurrentAmmoCountInMagazine && weapons.isMagazineNotEmpty;
 
 		protected override void Execute(List<GameEntity> weapons)
 		{
 			foreach (GameEntity weapon in weapons)
-			foreach (GameEntity holder in _ammoHolders)
-				holder.AmmoHolder.UpdateAmmoUICount(weapon.MagazineSize);
-		}
+      foreach (GameEntity holder in _ammoHolders)
+      {
+        holder.AmmoHolder.UpdateAmmoUICount(weapon.CurrentAmmoCount < weapon.CurrentAmmoCountInMagazine
+          ? weapon.CurrentAmmoCount
+          : weapon.CurrentAmmoCountInMagazine);
+      }
+    }
 	}
 }
