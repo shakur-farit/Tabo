@@ -11,6 +11,7 @@ namespace Code.Meta.Features.Hud.WeaponHolder.Behaviours
 		[SerializeField] private CanvasGroup _reloadingTextCanvas;
 		[SerializeField] private Transform _relaodingBar;
 		[SerializeField] private Image _relaodingBarImage;
+		[SerializeField] private Transform _currentAmmoCount;
 
 		private Vector3 _originalScale;
 		private CancellationTokenSource _cts;
@@ -87,10 +88,16 @@ namespace Code.Meta.Features.Hud.WeaponHolder.Behaviours
 			_cts = null;
 		}
 
-		private void StartAnimateReloadText() =>
-				_reloadingTextCanvas.gameObject.SetActive(true);
+		private void StartAnimateReloadText()
+		{
+			_reloadingTextCanvas.gameObject.SetActive(true);
+			_currentAmmoCount.gameObject.SetActive(false);
+		}
 
-		private void StopAnimateReloadText() =>
-				_reloadingTextCanvas.gameObject.SetActive(false);
+		private void StopAnimateReloadText()
+		{
+			_reloadingTextCanvas.gameObject.SetActive(false);
+			_currentAmmoCount.gameObject.SetActive(true);
+		}
 	}
 }

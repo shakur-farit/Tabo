@@ -7,6 +7,8 @@ namespace Code.Gameplay.Features.Hero
 	[Game] public class Hero : IComponent {}
 	[Game] public class HeroAnimatorComponent : IComponent { public HeroAnimator Value; }
 	[Game] public class HeroTypeIdComponent : IComponent { public HeroTypeId Value; }
+	
+	[Game] public class CurrentCoins : IComponent { public int Value; }
 
 	[Game] public class CurrentWeaponTypeId : IComponent { public WeaponTypeId Value; }
 	[Game] public class Weaponed : IComponent { }

@@ -8,17 +8,17 @@
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherCoins;
+    static Entitas.IMatcher<GameEntity> _matcherAmmoLoot;
 
-    public static Entitas.IMatcher<GameEntity> Coins {
+    public static Entitas.IMatcher<GameEntity> AmmoLoot {
         get {
-            if (_matcherCoins == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.Coins);
+            if (_matcherAmmoLoot == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.AmmoLoot);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherCoins = matcher;
+                _matcherAmmoLoot = matcher;
             }
 
-            return _matcherCoins;
+            return _matcherAmmoLoot;
         }
     }
 }
@@ -33,18 +33,18 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Loot.LootComponents.Coins coinsComponent = new Code.Gameplay.Features.Loot.LootComponents.Coins();
+    static readonly Code.Gameplay.Features.Loot.LootComponents.AmmoLoot ammoLootComponent = new Code.Gameplay.Features.Loot.LootComponents.AmmoLoot();
 
-    public bool isCoins {
-        get { return HasComponent(GameComponentsLookup.Coins); }
+    public bool isAmmoLoot {
+        get { return HasComponent(GameComponentsLookup.AmmoLoot); }
         set {
-            if (value != isCoins) {
-                var index = GameComponentsLookup.Coins;
+            if (value != isAmmoLoot) {
+                var index = GameComponentsLookup.AmmoLoot;
                 if (value) {
                     var componentPool = GetComponentPool(index);
                     var component = componentPool.Count > 0
                             ? componentPool.Pop()
-                            : coinsComponent;
+                            : ammoLootComponent;
 
                     AddComponent(index, component);
                 } else {

@@ -19,8 +19,8 @@ MonoBehaviour:
   ReloadSoundEffectTypeId: 3
   AmmoPatternSetup:
     PatternTypeId: 1
-    AmmoCount: 0
-    Raduis: 0
+    AmmoCount: 1
+    Raduis: 0.1
     RotationSpeed: 0
     MovementSpeed: 15
     Branches: 0
@@ -34,6 +34,7 @@ MonoBehaviour:
     ReloadTime: 0
     PrechargingTime: 5
     MagazineSize: 0
+    MaxAmmoCount: 0
     Pierce: 100
     PelletCount: 1
     Accuracy: 100

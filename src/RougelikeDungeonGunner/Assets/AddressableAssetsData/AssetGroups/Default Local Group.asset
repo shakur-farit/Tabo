@@ -75,6 +75,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - WeaponConfig
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0b9fd3b2861b6ea458f6b280e05671e4
+    m_Address: Assets/StaticData/Loot/MissileLootConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - LootConfig
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 0bd5fd3948ad10b45a9d7175a106683a
     m_Address: UIRoot
     m_ReadOnly: 0
@@ -85,6 +91,12 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - EnemyConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0d44cca60ab4ef247bace4116b744831
+    m_Address: Assets/StaticData/Loot/AmmoLootConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - LootConfig
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 0f270c5496b7dbc4ca3c8075b432cb74
     m_Address: Assets/StaticData/SoundEffect/PickupThreeSoundEffectConfig.asset
@@ -769,6 +781,12 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - WeaponShopItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c85398ef5b89eb24da9514e6cd4f75a8
+    m_Address: Assets/StaticData/WeaponInformation/WeaponStatUIEntry/MAxAmmoCountWeaponStatUIEntryConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponStatUIEntryConfig
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c96b3ed6067df4548979f138e4099016
     m_Address: Assets/StaticData/Shop/Weapon/RevolverItemConfig.asset

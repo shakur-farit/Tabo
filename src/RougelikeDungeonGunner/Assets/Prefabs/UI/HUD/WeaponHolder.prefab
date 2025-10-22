@@ -199,6 +199,7 @@ MonoBehaviour:
   _reloadingTextCanvas: {fileID: 5215170002978003920}
   _relaodingBar: {fileID: 5541421260565237429}
   _relaodingBarImage: {fileID: 7946692761351904999}
+  _currentAmmoCount: {fileID: 2482880862577717465}
 --- !u!114 &7562439653569621087
 MonoBehaviour:
   m_ObjectHideFlags: 0

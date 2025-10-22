@@ -12,7 +12,7 @@ namespace Code.Meta.Features.Hud.CoinsHolder.Systems
 			_heroes = game.GetGroup(GameMatcher
 				.AllOf(
 					GameMatcher.Hero,
-					GameMatcher.Coins));
+					GameMatcher.CurrentCoins));
 
 			_coinsHolders = game.GetGroup(GameMatcher
         .AllOf(
@@ -23,7 +23,7 @@ namespace Code.Meta.Features.Hud.CoinsHolder.Systems
 		{
 			foreach (GameEntity hero in _heroes)
 			foreach (GameEntity coins in _coinsHolders)
-				coins.CoinsHolder.UpdateCoinsText(hero.Coins);
+				coins.CoinsHolder.UpdateCoinsText(hero.CurrentCoins);
 		}
 	}
 }

@@ -9,6 +9,8 @@
 		PoisonEnchantItem = 4,
 		FreezeEnchantItem = 5,
 		FlameEnchantItem = 6,
-		ExplosiveEnchantItem = 7
+		ExplosiveEnchantItem = 7,
+		AmmoItem = 8,
+		MissileItem = 9 
 	}
 }

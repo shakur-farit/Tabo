@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
-using Code.Gameplay.Features.Hero;
 using Code.Gameplay.Features.Hero.Services;
 using Code.Gameplay.Features.Weapon;
 using Code.Gameplay.Features.Weapon.Configs;
 using Code.Gameplay.StaticData;
+using Code.Meta.Features.Shop.Upgrade.Beahaviours;
+using Code.Meta.Features.Shop.Upgrade.Configs;
 using Code.Meta.Features.Shop.Upgrade.Factory;
 using Code.Meta.UI.Windows.Service;
 using UnityEngine;
@@ -50,7 +51,11 @@ namespace Code.Meta.UI.Windows.Behaviours
 			List<WeaponAvailableUpgrade> upgrades = _staticDataService.GetWeaponConfig(currentWeapon).AvailableUpgrades;
 
 			foreach (WeaponAvailableUpgrade upgrade in upgrades)
-				_factory.CreateUpgradeWeaponShopItem(upgrade.UpgradeType, _layout);
+			{
+				WeaponUpgradeShopItem item = _factory.CreateUpgradeWeaponShopItem(upgrade.UpgradeType, _layout);
+				WeaponUpgradeShopItemConfig config = _staticDataService.GetWeaponUpgradeShopItemConfig(upgrade.UpgradeType);
+				item.Setup(config);
+			}
 		}
 
 		private void Close() => 

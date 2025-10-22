@@ -8,17 +8,17 @@
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherCoins;
+    static Entitas.IMatcher<GameEntity> _matcherMissileLoot;
 
-    public static Entitas.IMatcher<GameEntity> Coins {
+    public static Entitas.IMatcher<GameEntity> MissileLoot {
         get {
-            if (_matcherCoins == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.Coins);
+            if (_matcherMissileLoot == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.MissileLoot);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherCoins = matcher;
+                _matcherMissileLoot = matcher;
             }
 
-            return _matcherCoins;
+            return _matcherMissileLoot;
         }
     }
 }
@@ -33,18 +33,18 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Loot.LootComponents.Coins coinsComponent = new Code.Gameplay.Features.Loot.LootComponents.Coins();
+    static readonly Code.Gameplay.Features.Loot.LootComponents.MissileLoot missileLootComponent = new Code.Gameplay.Features.Loot.LootComponents.MissileLoot();
 
-    public bool isCoins {
-        get { return HasComponent(GameComponentsLookup.Coins); }
+    public bool isMissileLoot {
+        get { return HasComponent(GameComponentsLookup.MissileLoot); }
         set {
-            if (value != isCoins) {
-                var index = GameComponentsLookup.Coins;
+            if (value != isMissileLoot) {
+                var index = GameComponentsLookup.MissileLoot;
                 if (value) {
                     var componentPool = GetComponentPool(index);
                     var component = componentPool.Count > 0
                             ? componentPool.Pop()
-                            : coinsComponent;
+                            : missileLootComponent;
 
                     AddComponent(index, component);
                 } else {

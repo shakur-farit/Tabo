@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Code.Gameplay.Features.Effects;
 using Code.Gameplay.Features.Weapon.Configs;
@@ -13,10 +14,11 @@ namespace Code.Meta.Features.Shop.WeaponStatUIEntry.Behaviours
 	{
 		[SerializeField] private Transform _holder;
 
+		private Dictionary<WeaponStatUIEntryTypeId, Action<WeaponConfig>> _createActions;
+
 		private IWeaponStatUIEntryItemFactory _statUIEntryFactory;
 		private IWeaponStatsProvider _statsProvider;
 		private IWeaponEffectsProvider _effectsProvider;
-
 
 		[Inject]
 		public void Constructor(
@@ -27,48 +29,42 @@ namespace Code.Meta.Features.Shop.WeaponStatUIEntry.Behaviours
 			_statUIEntryFactory = statUIEntryItemFactory;
 			_statsProvider = statsProvider;
 			_effectsProvider = effectsProvider;
+
+			_createActions = new Dictionary<WeaponStatUIEntryTypeId, Action<WeaponConfig>>
+			{
+				[WeaponStatUIEntryTypeId.Pierce] =
+					config => CreatePierceUiEntry(WeaponStatUIEntryTypeId.Pierce, _holder, config),
+				[WeaponStatUIEntryTypeId.Damage] =
+					config => CreateDamageUiEntry(WeaponStatUIEntryTypeId.Damage, _holder, config),
+				[WeaponStatUIEntryTypeId.Accuracy] =
+					config => CreateAccuracyUiEntry(WeaponStatUIEntryTypeId.Accuracy, _holder, config),
+				[WeaponStatUIEntryTypeId.EnchantSlots] = config =>
+					CreateEnchantSlotsUiEntry(WeaponStatUIEntryTypeId.EnchantSlots, _holder, config),
+				[WeaponStatUIEntryTypeId.Cooldown] =
+					config => CreateCooldownUiEntry(WeaponStatUIEntryTypeId.Cooldown, _holder, config),
+				[WeaponStatUIEntryTypeId.FireRange] =
+					config => CreateFireRangeUiEntry(WeaponStatUIEntryTypeId.FireRange, _holder, config),
+				[WeaponStatUIEntryTypeId.InfinityAmmo] =
+					_ => CreateInfinityAmmoUiEntry(WeaponStatUIEntryTypeId.InfinityAmmo, _holder),
+				[WeaponStatUIEntryTypeId.PrechargingTime] = config =>
+					CreatePrechargingTimeUiEntry(WeaponStatUIEntryTypeId.PrechargingTime, _holder, config),
+				[WeaponStatUIEntryTypeId.ReloadTime] = config =>
+					CreateReloadTimeUiEntry(WeaponStatUIEntryTypeId.ReloadTime, _holder, config),
+				[WeaponStatUIEntryTypeId.PelletCount] = config =>
+					CreatePelletCountUiEntry(WeaponStatUIEntryTypeId.PelletCount, _holder, config),
+				[WeaponStatUIEntryTypeId.MagazineSize] = config =>
+					CreateMagazineSizeUiEntry(WeaponStatUIEntryTypeId.MagazineSize, _holder, config),
+				[WeaponStatUIEntryTypeId.MagazineSize] = config =>
+					CreateMaxAmmoCountUiEntry(WeaponStatUIEntryTypeId.MaxAmmoCount, _holder, config)
+			};
 		}
 
 		public void CreateStatUIEntryItem(WeaponStatUIEntryTypeId id, WeaponConfig weaponConfig)
 		{
-			switch (id)
-			{
-				case WeaponStatUIEntryTypeId.Pierce:
-					CreatePierceUiEntry(id, _holder, weaponConfig);
-					break;
-				case WeaponStatUIEntryTypeId.Damage:
-					CreateDamageUiEntry(id, _holder, weaponConfig);
-					break;
-				case WeaponStatUIEntryTypeId.Accuracy:
-					CreateAccuracyUiEntry(id, _holder, weaponConfig);
-					break;
-				case WeaponStatUIEntryTypeId.EnchantSlots:
-					CreateEnchantSlotsUiEntry(id, _holder, weaponConfig);
-					break;
-				case WeaponStatUIEntryTypeId.Cooldown:
-					CreateCooldownUiEntry(id, _holder, weaponConfig);
-					break;
-				case WeaponStatUIEntryTypeId.FireRange:
-					CreateFireRangeUiEntry(id, _holder, weaponConfig);
-					break;
-				case WeaponStatUIEntryTypeId.InfinityAmmo:
-					CreateInfinityAmmoUiEntry(id, _holder);
-					break;
-				case WeaponStatUIEntryTypeId.PrechargingTime:
-					CreatePrechargingTimeUiEntry(id, _holder, weaponConfig);
-					break;
-				case WeaponStatUIEntryTypeId.ReloadTime:
-					CreateReloadTimeUiEntry(id, _holder, weaponConfig);
-					break;
-				case WeaponStatUIEntryTypeId.PelletCount:
-					CreatePelletCountUiEntry(id, _holder, weaponConfig);
-					break;
-				case WeaponStatUIEntryTypeId.MagazineSize:
-					CreateMagazineSizeUiEntry(id, _holder, weaponConfig);
-					break;
-				default:
-					throw new Exception($"UI entry with type id {id} does not exist");
-			}
+			if (_createActions.TryGetValue(id, out Action<WeaponConfig> action))
+				action.Invoke(weaponConfig);
+			else
+				throw new Exception($"UI entry with type id {id} does not exist");
 		}
 
 		private void CreateAccuracyUiEntry(WeaponStatUIEntryTypeId id, Transform parent,
@@ -129,5 +125,11 @@ namespace Code.Meta.Features.Shop.WeaponStatUIEntry.Behaviours
 			_statUIEntryFactory
 				.CreateStatUIEntryItem(id, parent, damage.ToString());
 		}
+
+		private void CreateMaxAmmoCountUiEntry(WeaponStatUIEntryTypeId id, Transform parent,
+			WeaponConfig weaponConfig) =>
+			_statUIEntryFactory
+				.CreateStatUIEntryItem(id, parent, _statsProvider.GetMaxAmmoCount(weaponConfig).ToString());
+
 	}
 }

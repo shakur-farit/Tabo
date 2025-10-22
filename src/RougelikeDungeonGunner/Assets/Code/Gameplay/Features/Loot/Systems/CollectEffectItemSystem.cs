@@ -13,7 +13,7 @@ namespace Code.Gameplay.Features.Loot.Systems
 		private readonly IGroup<GameEntity> _heroes;
 
 		public CollectEffectItemSystem(
-			GameContext game, 
+			GameContext game,
 			IEffectFactory effectFactory,
 			ISoundEffectFactory soundEffectFactory)
 		{
@@ -40,7 +40,7 @@ namespace Code.Gameplay.Features.Loot.Systems
 
 				if (collected.hasSoundEffectTypeId)
 					_soundEffectFactory.CreateSoundEffect(collected.SoundEffectTypeId);
-					}
+			}
 		}
 	}
 }

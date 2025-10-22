@@ -13,6 +13,7 @@
 		Damage = 8,
 		Pierce = 9,
 		InfinityAmmo = 10,
-		PelletCount = 11 
+		PelletCount = 11,
+		MaxAmmoCount = 12
 	}
 }

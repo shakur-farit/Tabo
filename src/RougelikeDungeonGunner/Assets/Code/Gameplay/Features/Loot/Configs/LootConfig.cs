@@ -16,7 +16,7 @@ namespace Code.Gameplay.Features.Loot.Configs
 		public EntityBehaviour ViewPrefab;
 		public Sprite Sprite;
 		[Range(0f, 100f)] public float DropChanceWeight;
-    [Range(0, 100)] public int CoinValue;
+    [Range(0, 1000)] public int Value;
 
 		public List<EffectSetup> EffectSetups;
 		public List<StatusSetup> StatusSetups;

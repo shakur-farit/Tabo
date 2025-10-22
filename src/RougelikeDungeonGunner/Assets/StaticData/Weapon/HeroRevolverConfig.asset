@@ -19,8 +19,8 @@ MonoBehaviour:
   ReloadSoundEffectTypeId: 13
   AmmoPatternSetup:
     PatternTypeId: 1
-    AmmoCount: 0
-    Raduis: 0
+    AmmoCount: 1
+    Raduis: 0.1
     RotationSpeed: 0
     MovementSpeed: 5
     Branches: 0
@@ -34,6 +34,7 @@ MonoBehaviour:
     ReloadTime: 2
     PrechargingTime: 0
     MagazineSize: 6
+    MaxAmmoCount: 0
     Pierce: 1
     PelletCount: 1
     Accuracy: 90
@@ -56,6 +57,7 @@ MonoBehaviour:
   - UpgradeType: 3
   - UpgradeType: 7
   - UpgradeType: 9
+  - UpgradeType: 10
   StatsUIEntry:
   - StatUIEntryType: 8
   - StatUIEntryType: 2
@@ -66,3 +68,4 @@ MonoBehaviour:
   - StatUIEntryType: 1
   - StatUIEntryType: 7
   - StatUIEntryType: 11
+  - StatUIEntryType: 12

@@ -87,7 +87,7 @@ namespace Code.Gameplay.Features.Hero.Factory
 					.AddMaxHp(baseStats[Stats.MaxHp])
 					.AddSpeed(baseStats[Stats.Speed])
 					.AddViewPrefab(config.ViewPrefab)
-					.AddCoins(_coinService.GetCurrentCoinCount())
+					.AddCurrentCoins(_coinService.GetCurrentCoinCount())
 					.AddPickupRadius(config.LootPickupRadius)
 					.AddCurrentWeaponTypeId(CurrentWeapon(config))
 					.AddAuraRequest(config.StartAura)

@@ -1,8 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Code.Common.Extensions;
 using Code.Gameplay.Features.Effects;
-using Code.Gameplay.Features.Hero;
 using Code.Gameplay.Features.Hero.Services;
 using Code.Gameplay.Features.Weapon;
 using Code.Gameplay.Features.Weapon.Configs;
@@ -22,6 +22,8 @@ namespace Code.Meta.Features.Shop.Upgrade.Beahaviours
 		[SerializeField] private TextMeshProUGUI _name;
 		[SerializeField] private TextMeshProUGUI _statValueText;
 		[SerializeField] private Button _buyButton;
+
+		private Dictionary<WeaponUpgradeTypeId, Func<WeaponConfig, string>> _valueResolvers;
 
 		private WeaponUpgradeShopItemConfig _config;
 
@@ -44,17 +46,19 @@ namespace Code.Meta.Features.Shop.Upgrade.Beahaviours
 			_heroWeapon = heroWeapon;
 			_effectsProvider = effectsProvider;
 			_staticDataService = staticDataService;
+
+			InitializeResolvers();
 		}
 
 		private void OnEnable() =>
 			_buyButton.onClick.AddListener(Upgrade);
 
-		public void Setup(WeaponUpgradeTypeId id)
+		public void Setup(WeaponUpgradeShopItemConfig config)
 		{
-			_config = _staticDataService.GetWeaponUpgradeShopItemConfig(id);
+			_config = config;
 
-			_priceText.text = _config.Price.ToString();
-			_name.text = id.ToDisplayName();
+			_priceText.text = config.Price.ToString();
+			_name.text = config.TypeId.ToDisplayName();
 
 			_statValueText.text = UpdateCurrentValueText();
 		}
@@ -71,29 +75,28 @@ namespace Code.Meta.Features.Shop.Upgrade.Beahaviours
 			WeaponTypeId currentWeapon = _heroWeapon.CurrentWeaponTypeId;
 			WeaponConfig weaponConfig = _staticDataService.GetWeaponConfig(currentWeapon);
 
-			switch (_config.TypeId)
+			if (_valueResolvers.TryGetValue(_config.TypeId, out var resolver))
+				return resolver.Invoke(weaponConfig);
+
+			Debug.LogWarning($"No resolver found for upgrade type {_config.TypeId}");
+			return string.Empty;
+		}
+
+		private void InitializeResolvers()
+		{
+			_valueResolvers = new Dictionary<WeaponUpgradeTypeId, Func<WeaponConfig, string>>
 			{
-				case WeaponUpgradeTypeId.FireRange:
-					return _statsProvider.GetFireRange(weaponConfig).ToString("F2");
-				case WeaponUpgradeTypeId.Cooldown:
-					return _statsProvider.GetCooldown(weaponConfig).ToString("F2");
-				case WeaponUpgradeTypeId.ReloadTime:
-					return _statsProvider.GetReloadTime(weaponConfig).ToString("F2");
-				case WeaponUpgradeTypeId.PrechargingTime:
-					return _statsProvider.GetPrechargingTime(weaponConfig).ToString("F2");
-				case WeaponUpgradeTypeId.MagazineSize:
-					return _statsProvider.GetMagazineSize(weaponConfig).ToString();
-				case WeaponUpgradeTypeId.Accuracy:
-					return _statsProvider.GetAccuracy(weaponConfig).ToString("F2") + "%";
-				case WeaponUpgradeTypeId.EnchantSlots:
-					return _statsProvider.GetEnchantSlots(weaponConfig).ToString();
-				case WeaponUpgradeTypeId.Pierce:
-					return _statsProvider.GetPierce(weaponConfig).ToString();
-				case WeaponUpgradeTypeId.Damage:
-					return VisualDamageValue(weaponConfig);
-				default:
-					return string.Empty;
-			}
+				[WeaponUpgradeTypeId.FireRange] = c => _statsProvider.GetFireRange(c).ToString("F2"),
+				[WeaponUpgradeTypeId.Cooldown] = c => _statsProvider.GetCooldown(c).ToString("F2"),
+				[WeaponUpgradeTypeId.ReloadTime] = c => _statsProvider.GetReloadTime(c).ToString("F2"),
+				[WeaponUpgradeTypeId.PrechargingTime] = c => _statsProvider.GetPrechargingTime(c).ToString("F2"),
+				[WeaponUpgradeTypeId.MagazineSize] = c => _statsProvider.GetMagazineSize(c).ToString(),
+				[WeaponUpgradeTypeId.Accuracy] = c => _statsProvider.GetAccuracy(c).ToString("F2") + "%",
+				[WeaponUpgradeTypeId.EnchantSlots] = c => _statsProvider.GetEnchantSlots(c).ToString(),
+				[WeaponUpgradeTypeId.Pierce] = c => _statsProvider.GetPierce(c).ToString(),
+				[WeaponUpgradeTypeId.Damage] = VisualDamageValue,
+				[WeaponUpgradeTypeId.MaxAmmoCount] = c => _statsProvider.GetMaxAmmoCount(c).ToString()
+			};
 		}
 
 		private string VisualDamageValue(WeaponConfig weaponConfig)

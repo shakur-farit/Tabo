@@ -23,8 +23,6 @@ namespace Code.Meta.Features.Shop.Upgrade.Factory
 
 			WeaponUpgradeShopItem item = _instantiator.InstantiatePrefabForComponent<WeaponUpgradeShopItem>(config.ViewPrefab, parent);
 
-			item.Setup(typeId);
-
 			return item;
 		}
 	}
