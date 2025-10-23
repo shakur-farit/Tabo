@@ -53,6 +53,7 @@ using Code.Meta.Features.Shop.Upgrade.Factory;
 using Code.Meta.Features.Shop.Upgrade.Services;
 using Code.Meta.Features.Shop.Weapon.Factory;
 using Code.Meta.Features.Shop.WeaponStatUIEntry.Factory;
+using Code.Meta.UI.Windows.Behaviours;
 using Code.Meta.UI.Windows.Factory;
 using Code.Meta.UI.Windows.Service;
 using Code.Progress.Provider;
@@ -197,6 +198,15 @@ namespace Code.Infrastructure.Installers
       Container.BindInterfacesAndSelfTo<ShopService>().AsSingle();
       Container.Bind<ISelectedEnchantUIEntryProvider>().To<SelectedEnchantUIEntryProvider>().AsSingle();
       Container.Bind<IHudDependPlatformProvider>().To<HudDependPlatformProvider>().AsSingle();
+      Container.Bind<IDialogueService>().To<DialogueService>().AsSingle();
+      Container.Bind<IWeaponBuyer>().To<WeaponBuyer>().AsSingle();
+      Container.Bind<ICurrentWeaponInfoProvider>().To<CurrentWeaponInfoProvider>().AsSingle();
+      Container.Bind<IWeaponInfoUIRenderer>().To<WeaponInfoUIRenderer>().AsSingle();
+      Container.Bind<IEnchantShopItemRenderer>().To<EnchantShopItemRenderer>().AsSingle();
+      Container.Bind<IEnchantStatsUIRenderer >().To<EnchantStatsUIRenderer>().AsSingle();
+      Container.Bind<ILevelCompleteFacade>().To<LevelCompleteFacade>().AsSingle();
+      Container.Bind<IGameOverFacade>().To<GameOverFacade>().AsSingle();
+      Container.Bind<IMainMenuFacade>().To<MainMenuFacade>().AsSingle();
     }
 
 		private void BindSoundsServices()

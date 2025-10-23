@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6316ef929a239d43af15994e75e06c5, type: 3}
   m_Name: PauseWindowConfig
   m_EditorClassIdentifier: 
-  TypeId: 15
+  TypeId: 13
   ViewPrefab: {fileID: 1668588398534765585, guid: fceb4602b53f87247ba6be27d5d5f9b0, type: 3}

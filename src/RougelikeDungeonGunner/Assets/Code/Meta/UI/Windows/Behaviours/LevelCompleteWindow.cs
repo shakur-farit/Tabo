@@ -1,10 +1,4 @@
-﻿using Code.Gameplay.Features.Hero;
-using Code.Gameplay.Features.Hero.Services;
-using Code.Infrastructure.States.GameStates;
-using Code.Infrastructure.States.StateMachine;
-using Code.Meta.UI.Windows.Service;
-using Code.Sounds.Music;
-using Code.Sounds.Music.Services;
+﻿using Code.Gameplay.Features.Hero.Services;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -21,63 +15,38 @@ namespace Code.Meta.UI.Windows.Behaviours
 		[SerializeField] private Button _currentWeaponInfoButton;
 		[SerializeField] private TextMeshProUGUI _coinsText;
 
-		private IGameStateMachine _stateMachine;
-		private IWindowService _windowService;
-		private IMusicClipSetter _clipSetter;
     private ICoinService _coinService;
+    private ILevelCompleteFacade _facade;
 
     [Inject]
-		public void Constructor(
-			IGameStateMachine stateMachine, 
-			IWindowService windowService,
-			ICoinService coinService,
-			IMusicClipSetter clipSetter)
-		{
-			Id = WindowId.LevelCompleteWindow;
+    public void Constructor(ILevelCompleteFacade facade, ICoinService coinService)
+    {
+      Id = WindowId.LevelCompleteWindow;
 
-			_stateMachine = stateMachine;
-			_windowService = windowService;
-			_clipSetter = clipSetter;
+      _facade = facade;
       _coinService = coinService;
     }
 
-		protected override void Initialize()
-		{
-			_nextLevelButton.onClick.AddListener(EnterToBattle);
-			_weaponUpgradeButton.onClick.AddListener(OpenWeaponUpgradeWindow);
-			_weaponBuyButton.onClick.AddListener(OpenWeaponBuyWindow);
-			_enchantBuyButton.onClick.AddListener(OpenEnchantBuyWindow);
-			_currentWeaponInfoButton.onClick.AddListener(OpenCurrentWeaponInfoWindow);
-			
-			CoinsTextUpdate();
-			PlayDungeonMelancholyMusic();
-		}
+    protected override void Initialize()
+    {
+      _nextLevelButton.onClick.AddListener(_facade.EnterNextLevel);
+      _weaponUpgradeButton.onClick.AddListener(_facade.OpenWeaponUpgrade);
+      _weaponBuyButton.onClick.AddListener(_facade.OpenWeaponShop);
+      _enchantBuyButton.onClick.AddListener(_facade.OpenEnchantShop);
+      _currentWeaponInfoButton.onClick.AddListener(_facade.OpenCurrentWeaponInfo);
 
-		protected override void SubscribeUpdates() => 
-			_coinService.CoinCountChanged += CoinsTextUpdate;
+      CoinsTextUpdate();
 
-		protected override void UnsubscribeUpdates() =>
+      _facade.PlayMusic();
+    }
+
+    protected override void SubscribeUpdates() =>
+      _coinService.CoinCountChanged += CoinsTextUpdate;
+
+    protected override void UnsubscribeUpdates() =>
       _coinService.CoinCountChanged -= CoinsTextUpdate;
 
-		private void EnterToBattle() =>
-			_stateMachine.Enter<BattleEnterState>();
-
-		private void OpenWeaponUpgradeWindow() =>
-			_windowService.Open(WindowId.WeaponUpgradeWindow);
-
-		private void OpenWeaponBuyWindow() =>
-			_windowService.Open(WindowId.WeaponBuyWindow);
-
-		private void OpenEnchantBuyWindow() =>
-			_windowService.Open(WindowId.EnchantBuyWindow);
-
-		private void OpenCurrentWeaponInfoWindow() => 
-			_windowService.Open(WindowId.CurrentWeaponInfoWindow);
-
-		private void CoinsTextUpdate() => 
-			_coinsText.text = _coinService.GetCurrentCoinCount().ToString();
-
-		private void PlayDungeonMelancholyMusic() => 
-			_clipSetter.SetClip(MusicTypeId.DungeonMelancholy);
-	}
+    private void CoinsTextUpdate() =>
+      _coinsText.text = _coinService.GetCurrentCoinCount().ToString();
+  }
 }

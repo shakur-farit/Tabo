@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6316ef929a239d43af15994e75e06c5, type: 3}
   m_Name: EnchantStatsWindowConfig
   m_EditorClassIdentifier: 
-  TypeId: 13
+  TypeId: 12
   ViewPrefab: {fileID: 9223068499926221233, guid: e7c19ffa2dd20734e9ee238e819d539c, type: 3}

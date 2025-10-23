@@ -1,10 +1,8 @@
-﻿using System.Collections.Generic;
-using Code.Common.Utilities;
-using Code.Gameplay.Features.Hero;
-using Code.Gameplay.Features.Hero.Services;
-using Code.Meta.Features.Shop.Weapon;
+﻿using Code.Gameplay.Features.Weapon.Configs;
+using Code.Gameplay.StaticData;
+using Code.Meta.Features.Shop.Services;
 using Code.Meta.Features.Shop.Weapon.Behaviours;
-using Code.Meta.Features.Shop.Weapon.Factory;
+using Code.Meta.Features.Shop.WeaponStatUIEntry.Behaviours;
 using Code.Meta.UI.Windows.Service;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,70 +10,72 @@ using Zenject;
 
 namespace Code.Meta.UI.Windows.Behaviours
 {
-	public class WeaponBuyWindow : BaseWindow
-	{
-		[SerializeField] private Button _closeButton;
-		[SerializeField] private Transform _layout;
+  public class WeaponBuyWindow : BaseWindow
+  {
+    [SerializeField] private Button _closeButton;
+    [SerializeField] private Button _buyButton;
+    [SerializeField] private WeaponToBuyItem weaponToBuyItem;
+    [SerializeField] private WeaponStatsUIHolder _statsUIHolder;
 
-		private readonly List<GameObject> _items = new();
+    private IWindowService _windowService;
+    private IStaticDataService _staticDataService;
+    private IWeaponShopService _shopService;
+    private IWeaponBuyer _weaponBuyer;
+    private IDialogueService _dialogueService;
 
-		private IWindowService _windowService;
-		private IWeaponShopItemFactory _factory;
-		private ICurrentHeroWeaponProvider _heroWeapon;
 
+    [Inject]
+    public void Constructor(
+      IWindowService windowService,
+      IStaticDataService staticDataService,
+      IDialogueService dialogueService,
+      IWeaponShopService shopService,
+      IWeaponBuyer weaponBuyer)
+    {
+      Id = WindowId.WeaponBuyWindow;
 
-		[Inject]
-		public void Constructor(
-			IWindowService windowService,
-			ICurrentHeroWeaponProvider heroWeapon,
-			IWeaponShopItemFactory factory)
-		{
-			Id = WindowId.WeaponBuyWindow;
+      _windowService = windowService;
+      _staticDataService = staticDataService;
+      _shopService = shopService;
+      _weaponBuyer = weaponBuyer;
+      _dialogueService = dialogueService;
+    }
 
-			_windowService = windowService;
-			_factory = factory;
-			_heroWeapon = heroWeapon;
-		}
+    protected override void Initialize()
+    {
+      _buyButton.onClick.AddListener(BuyWeapon);
+      _closeButton.onClick.AddListener(CloseWindow);
 
-		protected override void Initialize()
-		{
-			_closeButton.onClick.AddListener(Close);
+      weaponToBuyItem.Setup(_shopService.WeaponSprite, _shopService.WeaponPrice);
 
-			UpdateWeaponsInShop();
-		}
+      UpdateStatsEntry();
+    }
 
-		protected override void SubscribeUpdates() => 
-			_heroWeapon.WeaponChanged += UpdateWeaponsInShop;
+    private void BuyWeapon()
+    {
+      if (_weaponBuyer.TryBuyWeapon())
+        CloseWindow();
+      else
+        OpenNotEnoughCoinsWindow();
+    }
 
-		protected override void UnsubscribeUpdates() => 
-			_heroWeapon.WeaponChanged -= UpdateWeaponsInShop;
+    private void CloseWindow() =>
+      _windowService.Close(WindowId.WeaponBuyWindow);
 
-		private void Close() => 
-			_windowService.Close(WindowId.WeaponBuyWindow);
+    private void UpdateStatsEntry()
+    {
+      WeaponConfig weaponConfig =
+        _staticDataService
+          .GetWeaponConfig(_shopService.WeaponTypeId);
 
-		private void UpdateWeaponsInShop()
-		{
-			Clear();
+      foreach (WeaponStatUIEntry uiEntry in weaponConfig.StatsUIEntry)
+        _statsUIHolder.CreateStatUIEntryItem(uiEntry.StatUIEntryType, weaponConfig);
+    }
 
-			List<WeaponShopItemTypeId> ids = EnumUtility.InitEnumList<WeaponShopItemTypeId>();
-
-			foreach (WeaponShopItemTypeId id in ids)
-			{
-				WeaponShopItem item = _factory.CreateWeaponShopItem(id, _layout);
-
-				if (item.WeaponToBuy == _heroWeapon.CurrentWeaponTypeId)
-					Destroy(item.gameObject);
-				else
-					_items.Add(item.gameObject);
-			}
-		}
-
-		private void Clear()
-		{
-			foreach (GameObject item in _items)
-				Destroy(item);
-
-			_items.Clear();
-		}
-	}
+    private void OpenNotEnoughCoinsWindow()
+    {
+      _dialogueService.SetDialogueText(Dialogues.NotEnoughCoins);
+      _windowService.Open(WindowId.DialogueWindow);
+    }
+  }
 }

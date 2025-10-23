@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6316ef929a239d43af15994e75e06c5, type: 3}
   m_Name: StandaloneHudConfig
   m_EditorClassIdentifier: 
-  TypeId: 17
+  TypeId: 15
   ViewPrefab: {fileID: 1311700150535105114, guid: a70fae5dda78f04449d59db9e3273d7a, type: 3}

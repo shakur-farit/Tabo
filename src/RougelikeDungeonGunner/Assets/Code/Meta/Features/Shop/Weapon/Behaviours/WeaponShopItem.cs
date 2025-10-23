@@ -51,7 +51,7 @@ namespace Code.Meta.Features.Shop.Weapon.Behaviours
 			_shopService.SetWeaponPrice(_price);
 			_shopService.SetWeaponTypeId(_weaponToBuy);
 
-			_windowService.Open(WindowId.WeaponBuyDialogWindow);
+			_windowService.Open(WindowId.WeaponBuyWindow);
 		}
 	}
 }
