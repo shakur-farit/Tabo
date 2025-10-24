@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 58ad05875d303c14da9f16618bcda545, type: 3}
-  m_Name: AmmoLootConfig
+  m_Name: BulletLootConfig
   m_EditorClassIdentifier: 
   TypeId: 8
   PickupSoundEffectTypeId: 23
   ViewPrefab: {fileID: 4494103209788103135, guid: c97df207954ad734eaf0eab1d27c9f42, type: 3}
   Sprite: {fileID: 21300000, guid: a2482871b46d396438236c07b6402283, type: 3}
-  DropChanceWeight: 100
+  DropChanceWeight: 0
   Value: 10
   EffectSetups: []
   StatusSetups: []

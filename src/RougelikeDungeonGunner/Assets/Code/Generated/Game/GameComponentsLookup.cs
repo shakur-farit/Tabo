@@ -183,7 +183,7 @@ public static class GameComponentsLookup {
     public const int Dead = 172;
     public const int MaxHp = 173;
     public const int ProcessingDeath = 174;
-    public const int AmmoLoot = 175;
+    public const int BulletLoot = 175;
     public const int Coins = 176;
     public const int Collected = 177;
     public const int ExcludedLoot = 178;
@@ -473,7 +473,7 @@ public static class GameComponentsLookup {
         "Dead",
         "MaxHp",
         "ProcessingDeath",
-        "AmmoLoot",
+        "BulletLoot",
         "Coins",
         "Collected",
         "ExcludedLoot",
@@ -762,7 +762,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Lifetime.Dead),
         typeof(Code.Gameplay.Features.Lifetime.MaxHp),
         typeof(Code.Gameplay.Features.Lifetime.ProcessingDeath),
-        typeof(Code.Gameplay.Features.Loot.LootComponents.AmmoLoot),
+        typeof(Code.Gameplay.Features.Loot.LootComponents.BulletLoot),
         typeof(Code.Gameplay.Features.Loot.LootComponents.Coins),
         typeof(Code.Gameplay.Features.Loot.LootComponents.Collected),
         typeof(Code.Gameplay.Features.Loot.LootComponents.ExcludedLoot),

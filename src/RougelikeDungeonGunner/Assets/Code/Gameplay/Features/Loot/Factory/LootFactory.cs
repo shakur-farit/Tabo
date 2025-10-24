@@ -24,7 +24,7 @@ namespace Code.Gameplay.Features.Loot.Factory
 		{
 			switch (typeId)
 			{
-				case LootTypeId.AmmoItem:
+				case LootTypeId.BulletItem:
 					return CreateAmmoLoot(typeId, at);
 				case LootTypeId.MissileItem:
 					return CreateMissileLoot(typeId, at);
@@ -45,7 +45,7 @@ namespace Code.Gameplay.Features.Loot.Factory
 
 		private GameEntity CreateAmmoLoot(LootTypeId typeId, Vector3 at) => 
 			CreateLootEntity(typeId, at)
-				.With(x => x.isAmmoLoot = true);
+				.With(x => x.isBulletLoot = true);
 
 		private GameEntity CreateLootEntity(LootTypeId typeId, Vector3 at)
 		{

@@ -10,7 +10,7 @@
 		FreezeEnchantItem = 5,
 		FlameEnchantItem = 6,
 		ExplosiveEnchantItem = 7,
-		AmmoItem = 8,
+		BulletItem = 8,
 		MissileItem = 9 
 	}
 }

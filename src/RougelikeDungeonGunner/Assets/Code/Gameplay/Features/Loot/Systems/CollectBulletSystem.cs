@@ -4,7 +4,7 @@ using Entitas;
 
 namespace Code.Gameplay.Features.Loot.Systems
 {
-	public class CollectAmmoSystem : IExecuteSystem
+	public class CollectBulletSystem : IExecuteSystem
 	{
 		private readonly ICurrentAmmoCountProvider _currentAmmo;
 		private readonly ISoundEffectFactory _soundEffectFactory;
@@ -12,7 +12,7 @@ namespace Code.Gameplay.Features.Loot.Systems
 		private readonly IGroup<GameEntity> _weapons;
 		private readonly IGroup<GameEntity> _holders;
 
-		public CollectAmmoSystem(
+		public CollectBulletSystem(
 			GameContext game,
 			ICurrentAmmoCountProvider currentAmmo,
 			ISoundEffectFactory soundEffectFactory)
@@ -23,7 +23,7 @@ namespace Code.Gameplay.Features.Loot.Systems
 				.AllOf(
 					GameMatcher.Collected,
 					GameMatcher.LootValue,
-					GameMatcher.AmmoLoot));
+					GameMatcher.BulletLoot));
 
 			_weapons = game.GetGroup(GameMatcher
 				.AllOf(

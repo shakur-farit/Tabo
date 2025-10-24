@@ -16,7 +16,7 @@ namespace Code.Gameplay.Features.Loot
 			Add(systems.Create<CollectWhenNearToHeroSystem>());
 
 			Add(systems.Create<CollectCoinsSystem>());
-			Add(systems.Create<CollectAmmoSystem>());
+			Add(systems.Create<CollectBulletSystem>());
 			Add(systems.Create<CollectMissileSystem>());
 			Add(systems.Create<CollectEnchantItemSystem>());
 			Add(systems.Create<CollectEffectItemSystem>());

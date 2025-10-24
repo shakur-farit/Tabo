@@ -15,7 +15,7 @@ namespace Code.Gameplay.Features.Loot
 		[Game] public class LootValue : IComponent { public int Value; }
 
 		[Game] public class Coins : IComponent { }
-		[Game] public class AmmoLoot : IComponent { }
+		[Game] public class BulletLoot : IComponent { }
 		[Game] public class MissileLoot : IComponent { }
   }
 }

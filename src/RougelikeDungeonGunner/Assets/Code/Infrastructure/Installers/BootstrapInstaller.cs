@@ -203,10 +203,14 @@ namespace Code.Infrastructure.Installers
       Container.Bind<ICurrentWeaponInfoProvider>().To<CurrentWeaponInfoProvider>().AsSingle();
       Container.Bind<IWeaponInfoUIRenderer>().To<WeaponInfoUIRenderer>().AsSingle();
       Container.Bind<IEnchantShopItemRenderer>().To<EnchantShopItemRenderer>().AsSingle();
-      Container.Bind<IEnchantStatsUIRenderer >().To<EnchantStatsUIRenderer>().AsSingle();
+      Container.Bind<IEnchantStatsUIRenderer>().To<EnchantStatsUIRenderer>().AsSingle();
+      Container.Bind<IWeaponStatsUIRenderer>().To<WeaponStatsUIRenderer>().AsSingle();
+      Container.Bind<IWeaponShopUpdater>().To<WeaponShopUpdater>().AsSingle();
+      Container.Bind<IWeaponUpgradeShopItemsUIRenderer>().To<WeaponUpgradeShopItemsUIRenderer>().AsSingle();
       Container.Bind<ILevelCompleteFacade>().To<LevelCompleteFacade>().AsSingle();
       Container.Bind<IGameOverFacade>().To<GameOverFacade>().AsSingle();
       Container.Bind<IMainMenuFacade>().To<MainMenuFacade>().AsSingle();
+      Container.Bind<IWeaponBuyFacade>().To<WeaponBuyFacade>().AsSingle();
     }
 
 		private void BindSoundsServices()

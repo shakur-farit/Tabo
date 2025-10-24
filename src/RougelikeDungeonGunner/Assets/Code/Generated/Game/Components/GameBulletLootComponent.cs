@@ -8,17 +8,17 @@
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherAmmoLoot;
+    static Entitas.IMatcher<GameEntity> _matcherBulletLoot;
 
-    public static Entitas.IMatcher<GameEntity> AmmoLoot {
+    public static Entitas.IMatcher<GameEntity> BulletLoot {
         get {
-            if (_matcherAmmoLoot == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.AmmoLoot);
+            if (_matcherBulletLoot == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.BulletLoot);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherAmmoLoot = matcher;
+                _matcherBulletLoot = matcher;
             }
 
-            return _matcherAmmoLoot;
+            return _matcherBulletLoot;
         }
     }
 }
@@ -33,18 +33,18 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Loot.LootComponents.AmmoLoot ammoLootComponent = new Code.Gameplay.Features.Loot.LootComponents.AmmoLoot();
+    static readonly Code.Gameplay.Features.Loot.LootComponents.BulletLoot bulletLootComponent = new Code.Gameplay.Features.Loot.LootComponents.BulletLoot();
 
-    public bool isAmmoLoot {
-        get { return HasComponent(GameComponentsLookup.AmmoLoot); }
+    public bool isBulletLoot {
+        get { return HasComponent(GameComponentsLookup.BulletLoot); }
         set {
-            if (value != isAmmoLoot) {
-                var index = GameComponentsLookup.AmmoLoot;
+            if (value != isBulletLoot) {
+                var index = GameComponentsLookup.BulletLoot;
                 if (value) {
                     var componentPool = GetComponentPool(index);
                     var component = componentPool.Count > 0
                             ? componentPool.Pop()
-                            : ammoLootComponent;
+                            : bulletLootComponent;
 
                     AddComponent(index, component);
                 } else {

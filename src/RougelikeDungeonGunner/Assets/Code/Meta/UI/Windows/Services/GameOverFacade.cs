@@ -14,7 +14,11 @@ namespace Code.Meta.UI.Windows.Behaviours
     private readonly IMusicClipSetter _clipSetter;
     private readonly IWindowService _windowService;
 
-    public GameOverFacade(IGameStateMachine stateMachine, IQuitGameService quit, IMusicClipSetter clipSetter, IWindowService windowService)
+    public GameOverFacade(
+      IGameStateMachine stateMachine, 
+      IQuitGameService quit, 
+      IMusicClipSetter clipSetter, 
+      IWindowService windowService)
     {
       _stateMachine = stateMachine;
       _quit = quit;

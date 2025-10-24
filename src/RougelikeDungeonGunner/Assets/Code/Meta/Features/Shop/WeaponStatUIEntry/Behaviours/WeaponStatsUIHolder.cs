@@ -38,24 +38,24 @@ namespace Code.Meta.Features.Shop.WeaponStatUIEntry.Behaviours
 					config => CreateDamageUiEntry(WeaponStatUIEntryTypeId.Damage, _holder, config),
 				[WeaponStatUIEntryTypeId.Accuracy] =
 					config => CreateAccuracyUiEntry(WeaponStatUIEntryTypeId.Accuracy, _holder, config),
-				[WeaponStatUIEntryTypeId.EnchantSlots] = config =>
-					CreateEnchantSlotsUiEntry(WeaponStatUIEntryTypeId.EnchantSlots, _holder, config),
+				[WeaponStatUIEntryTypeId.EnchantSlots] = 
+          config => CreateEnchantSlotsUiEntry(WeaponStatUIEntryTypeId.EnchantSlots, _holder, config),
 				[WeaponStatUIEntryTypeId.Cooldown] =
 					config => CreateCooldownUiEntry(WeaponStatUIEntryTypeId.Cooldown, _holder, config),
 				[WeaponStatUIEntryTypeId.FireRange] =
 					config => CreateFireRangeUiEntry(WeaponStatUIEntryTypeId.FireRange, _holder, config),
 				[WeaponStatUIEntryTypeId.InfinityAmmo] =
 					_ => CreateInfinityAmmoUiEntry(WeaponStatUIEntryTypeId.InfinityAmmo, _holder),
-				[WeaponStatUIEntryTypeId.PrechargingTime] = config =>
-					CreatePrechargingTimeUiEntry(WeaponStatUIEntryTypeId.PrechargingTime, _holder, config),
-				[WeaponStatUIEntryTypeId.ReloadTime] = config =>
-					CreateReloadTimeUiEntry(WeaponStatUIEntryTypeId.ReloadTime, _holder, config),
-				[WeaponStatUIEntryTypeId.PelletCount] = config =>
-					CreatePelletCountUiEntry(WeaponStatUIEntryTypeId.PelletCount, _holder, config),
-				[WeaponStatUIEntryTypeId.MagazineSize] = config =>
-					CreateMagazineSizeUiEntry(WeaponStatUIEntryTypeId.MagazineSize, _holder, config),
-				[WeaponStatUIEntryTypeId.MagazineSize] = config =>
-					CreateMaxAmmoCountUiEntry(WeaponStatUIEntryTypeId.MaxAmmoCount, _holder, config)
+				[WeaponStatUIEntryTypeId.PrechargingTime] = 
+          config => CreatePrechargingTimeUiEntry(WeaponStatUIEntryTypeId.PrechargingTime, _holder, config),
+				[WeaponStatUIEntryTypeId.ReloadTime] = 
+          config => CreateReloadTimeUiEntry(WeaponStatUIEntryTypeId.ReloadTime, _holder, config),
+				[WeaponStatUIEntryTypeId.PelletCount] =
+          config => CreatePelletCountUiEntry(WeaponStatUIEntryTypeId.PelletCount, _holder, config),
+				[WeaponStatUIEntryTypeId.MagazineSize] = 
+          config => CreateMagazineSizeUiEntry(WeaponStatUIEntryTypeId.MagazineSize, _holder, config),
+				[WeaponStatUIEntryTypeId.MaxAmmoCount] = 
+          config => CreateMaxAmmoCountUiEntry(WeaponStatUIEntryTypeId.MaxAmmoCount, _holder, config)
 			};
 		}
 
@@ -130,6 +130,5 @@ namespace Code.Meta.Features.Shop.WeaponStatUIEntry.Behaviours
 			WeaponConfig weaponConfig) =>
 			_statUIEntryFactory
 				.CreateStatUIEntryItem(id, parent, _statsProvider.GetMaxAmmoCount(weaponConfig).ToString());
-
-	}
+  }
 }

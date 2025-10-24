@@ -35,7 +35,7 @@ namespace Code.Gameplay.Features.Loot.Systems
 			foreach (GameEntity hero in _heroes)
 			foreach (GameEntity collected in _collected)
 			{
-				hero.ReplaceLootValue(hero.CurrentCoins + collected.LootValue);
+				hero.ReplaceCurrentCoins(hero.CurrentCoins + collected.LootValue);
 
 				_coinService.SetCurrentCoinCount(hero.CurrentCoins);
 
