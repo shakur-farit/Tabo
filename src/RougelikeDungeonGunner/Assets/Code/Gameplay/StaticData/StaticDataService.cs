@@ -1,5 +1,4 @@
 ﻿using Code.Common.Balance;
-using Code.Gameplay.Common;
 using Code.Gameplay.Features.Ammo;
 using Code.Gameplay.Features.Ammo.Configs;
 using Code.Gameplay.Features.Aura;
@@ -42,7 +41,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Code.Infrastructure.ObjectPool.Config;
-using Code.Infrastructure.View;
 using Code.Sounds.Music;
 using Code.Sounds.Music.Configs;
 using Code.Sounds.SoundEffects;
@@ -70,6 +68,7 @@ namespace Code.Gameplay.StaticData
     private const string WeaponShopItemConfigLabel = "WeaponShopItemConfig";
 		private const string EnchantShopItemConfigLabel = "EnchantShopItemConfig";
 		private const string WeaponUpgradeShopItemConfigLabel = "WeaponUpgradeShopItemConfig";
+		private const string HeroUpgradeShopItemConfigLabel = "HeroUpgradeShopItemConfig";
 		private const string WeaponStatUIEntryConfigLabel = "WeaponStatUIEntryConfig";
     private const string EnchantUIEntryConfigLabel = "EnchantUIEntryConfig";
     private const string EnchantStatUIEntryConfigLabel = "EnchantStatUIEntryConfig";
@@ -98,6 +97,7 @@ namespace Code.Gameplay.StaticData
     private Dictionary<SpecialEffectTypeId, SpecialEffectConfig> _specialEffectById;
     private Dictionary<EnchantStatUIEntryTypeId, EnchantStatUIEntryConfig>
 			_weaponEnchantStatUIEntryItemById;
+    private Dictionary<HeroUpgradeTypeId, HeroUpgradeShopItemConfig> _heroUpgradeShopItemById;
     private Dictionary<MusicTypeId, MusicConfig> _musicById;
     private Dictionary<SoundEffectTypeId, SoundEffectConfig> _soundEffectById;
 
@@ -132,6 +132,7 @@ namespace Code.Gameplay.StaticData
 			await LoadWeaponShopItem();
 			await LoadEnchantShopItem();
 			await LoadWeaponUpgradeShopItem();
+			await LoadHeroUpgradeShopItem();
 			await LoadWeaponStatUIEntryItem();
 			await LoadEnchantUIEntryItem();
 			await LoadEnchantStatUIEntryItem();
@@ -291,6 +292,15 @@ namespace Code.Gameplay.StaticData
 			throw new Exception($"Enchant stat ui entry item config for {id} was not found");
 		}
 
+		public HeroUpgradeShopItemConfig GetHeroUpgradeShopItemConfig(HeroUpgradeTypeId id)
+		{
+			if (_heroUpgradeShopItemById.TryGetValue(id, out HeroUpgradeShopItemConfig config))
+				return config;
+
+			throw new Exception($"Hero upgrade shop item config for {id} was not found");
+
+		}
+
 		public MusicConfig GetMusicConfig(MusicTypeId id)
 		{
 			if (_musicById.TryGetValue(id, out MusicConfig config))
@@ -299,7 +309,7 @@ namespace Code.Gameplay.StaticData
 			throw new Exception($"Music config for {id} was not found");
 		}
 
-    public SoundEffectConfig GetSoundEffectConfig(SoundEffectTypeId id)
+		public SoundEffectConfig GetSoundEffectConfig(SoundEffectTypeId id)
     {
       if (_soundEffectById.TryGetValue(id, out SoundEffectConfig config))
         return config;
@@ -307,7 +317,7 @@ namespace Code.Gameplay.StaticData
       throw new Exception($"Sound effect config for {id} was not found");
     }
 
-    public BalanceConfig GetBalance() =>
+		public BalanceConfig GetBalance() =>
 			_balance;
 
     public ObjectPoolConfig GetObjectPoolConfig() => 
@@ -369,6 +379,11 @@ namespace Code.Gameplay.StaticData
 		private async UniTask LoadWeaponUpgradeShopItem() =>
 			_weaponUpgradeShopItemById =
 				(await _assetProvider.LoadAll<WeaponUpgradeShopItemConfig>(WeaponUpgradeShopItemConfigLabel))
+				.ToDictionary(x => x.TypeId, x => x);
+
+		private async UniTask LoadHeroUpgradeShopItem() =>
+			_heroUpgradeShopItemById =
+				(await _assetProvider.LoadAll<HeroUpgradeShopItemConfig>(HeroUpgradeShopItemConfigLabel))
 				.ToDictionary(x => x.TypeId, x => x);
 
 		private async UniTask LoadWeaponShopItem() =>

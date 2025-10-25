@@ -11,13 +11,15 @@ namespace Code.Meta.UI.Windows.Behaviours
 		[SerializeField] private Button _closeButton;
 
 		private IWindowService _windowService;
+		private IHeroUpgradeShopItemRenderer _renderer;
 
 		[Inject]
-		public void Constructor(IWindowService windowService)
+		public void Constructor(IWindowService windowService, IHeroUpgradeShopItemRenderer renderer)
 		{
 			Id = WindowId.HeroUpgradeShopWindow;
 
 			_windowService = windowService;
+			_renderer = renderer;
 		}
 
 		protected override void Initialize()
@@ -30,9 +32,7 @@ namespace Code.Meta.UI.Windows.Behaviours
 		private void Close() =>
 			_windowService.Close(WindowId.HeroUpgradeShopWindow);
 
-		private void ShowEnchants()
-		{
-
-		}
+		private void ShowEnchants() => 
+			_renderer.RenderItems(_holder);
 	}
 }

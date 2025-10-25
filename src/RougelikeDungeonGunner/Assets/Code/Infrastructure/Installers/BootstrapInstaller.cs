@@ -186,6 +186,7 @@ namespace Code.Infrastructure.Installers
 			Container.Bind<IWeaponShopItemFactory>().To<WeaponShopItemFactory>().AsSingle();
 			Container.Bind<IEnchantShopItemFactory>().To<EnchantShopItemFactory>().AsSingle();
 			Container.Bind<IWeaponUpgradeShopItemFactory>().To<WeaponUpgradeShopItemFactory>().AsSingle();
+			Container.Bind<IHeroUpgradeShopItemFactory>().To<HeroUpgradeShopItemFactory>().AsSingle();
 			Container.Bind<IWeaponStatUIEntryItemFactory>().To<WeaponStatUIEntryItemFactory>().AsSingle();
 			Container.Bind<IEnchantUIEntryFactory>().To<EnchantUIEntryFactory>().AsSingle();
 			Container.Bind<IWeaponEnchantStatUIEntryFactory>().To<WeaponEnchantStatUIEntryFactory>().AsSingle();
@@ -203,6 +204,7 @@ namespace Code.Infrastructure.Installers
       Container.Bind<ICurrentWeaponInfoProvider>().To<CurrentWeaponInfoProvider>().AsSingle();
       Container.Bind<IWeaponInfoUIRenderer>().To<WeaponInfoUIRenderer>().AsSingle();
       Container.Bind<IEnchantShopItemRenderer>().To<EnchantShopItemRenderer>().AsSingle();
+      Container.Bind<IHeroUpgradeShopItemRenderer>().To<HeroUpgradeShopItemRenderer>().AsSingle();
       Container.Bind<IEnchantStatsUIRenderer>().To<EnchantStatsUIRenderer>().AsSingle();
       Container.Bind<IWeaponStatsUIRenderer>().To<WeaponStatsUIRenderer>().AsSingle();
       Container.Bind<IWeaponShopUpdater>().To<WeaponShopUpdater>().AsSingle();

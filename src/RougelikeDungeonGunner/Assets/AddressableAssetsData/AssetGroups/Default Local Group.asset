@@ -116,6 +116,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - WeaponShopItemConfig
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 12b31d8c90e80394d8cc18b6b5837068
+    m_Address: Assets/StaticData/Shop/HeroUpgrade/CurrentHpUpgradeItemConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroUpgradeShopItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 13456b3ea103a124f841b1b7507128cf
     m_Address: Assets/StaticData/Music/RoomClearedMusicConfig.asset
     m_ReadOnly: 0
@@ -211,6 +217,12 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - SoundEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3017acc3792be404682d75fb7b7a3d4b
+    m_Address: Assets/StaticData/Shop/HeroUpgrade/MaxHpUpgradeItemConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroUpgradeShopItemConfig
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 312bcb5fd1b96fe408fa0332d485d46a
     m_Address: Assets/StaticData/Shop/Upgrade/DamageUpgradeItemConfig.asset
@@ -392,6 +404,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - WeaponShopItemConfig
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6ad315037c7aa2e4aa361fc5087b7cbf
+    m_Address: Assets/StaticData/Shop/HeroUpgrade/CurrentBulletsUpgradeItemConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroUpgradeShopItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 6fc60c7741de7e842ba6649aa6734a23
     m_Address: Assets/StaticData/Music/DungeonMelancholyMusicConfig.asset
     m_ReadOnly: 0
@@ -415,6 +433,12 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - LevelConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 73465330ae6adf24a82f5d7c063a2839
+    m_Address: Assets/StaticData/Shop/HeroUpgrade/CurrentMissilesUpgradeItemConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroUpgradeShopItemConfig
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 73780e297bda6ba44a724a988e7ad470
     m_Address: Assets/StaticData/SoundEffect/PistolFireSoundEffectConfig.asset
@@ -884,6 +908,12 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - WeaponStatUIEntryConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e5e550c41d5985a41bb42ff521cc8781
+    m_Address: Assets/StaticData/Shop/HeroUpgrade/ShieldItemConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroUpgradeShopItemConfig
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e69a30b632eb7ae4ab02e65973d32831
     m_Address: Assets/StaticData/Window/WeaponUpgradeWindowConfig.asset

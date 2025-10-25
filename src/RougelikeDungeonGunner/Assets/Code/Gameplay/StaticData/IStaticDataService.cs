@@ -73,6 +73,7 @@ namespace Code.Gameplay.StaticData
     EnchantUIEntryConfig GetEnchantUIEntryItemConfig(EnchantUIEntryTypeId id);
     EnchantStatUIEntryConfig GetEnchantStatUIEntryItemConfig(EnchantStatUIEntryTypeId id);
     EnchantShopItemConfig GetEnchantShopItemConfig(EnchantShopItemTypeId id);
+    HeroUpgradeShopItemConfig GetHeroUpgradeShopItemConfig(HeroUpgradeTypeId id);
     MusicConfig GetMusicConfig(MusicTypeId typeId);
     SoundEffectConfig GetSoundEffectConfig(SoundEffectTypeId id);
     ObjectPoolConfig GetObjectPoolConfig();

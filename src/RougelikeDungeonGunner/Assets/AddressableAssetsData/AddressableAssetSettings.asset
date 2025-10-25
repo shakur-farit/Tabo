@@ -15,7 +15,7 @@ MonoBehaviour:
   m_DefaultGroup: f40428f047dc54a46b8184ab91599836
   m_currentHash:
     serializedVersion: 2
-    Hash: f062a8b25b58e78d0bf56b46f0cbca64
+    Hash: 2e68753037262268d567acb57c3df596
   m_OptimizeCatalogSize: 0
   m_BuildRemoteCatalog: 0
   m_CatalogRequestsTimeout: 0
@@ -122,6 +122,7 @@ MonoBehaviour:
     - DoorConfig
     - MusicConfig
     - SoundEffectConfig
+    - HeroUpgradeShopItemConfig
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: 85357d346e02ee54ab80d633e7b0c1cf, type: 2}
