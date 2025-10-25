@@ -12,6 +12,7 @@ namespace Code.Meta.UI.Windows.Behaviours
 		[SerializeField] private Button _weaponUpgradeButton;
 		[SerializeField] private Button _weaponBuyButton;
 		[SerializeField] private Button _enchantBuyButton;
+		[SerializeField] private Button _heroUpgradeBuyButton;
 		[SerializeField] private Button _currentWeaponInfoButton;
 		[SerializeField] private TextMeshProUGUI _coinsText;
 
@@ -30,9 +31,10 @@ namespace Code.Meta.UI.Windows.Behaviours
     protected override void Initialize()
     {
       _nextLevelButton.onClick.AddListener(_facade.EnterNextLevel);
-      _weaponUpgradeButton.onClick.AddListener(_facade.OpenWeaponUpgrade);
+      _weaponUpgradeButton.onClick.AddListener(_facade.OpenWeaponUpgradeShop);
       _weaponBuyButton.onClick.AddListener(_facade.OpenWeaponShop);
       _enchantBuyButton.onClick.AddListener(_facade.OpenEnchantShop);
+      _heroUpgradeBuyButton.onClick.AddListener(_facade.OpenHeroUpgradeShop);
       _currentWeaponInfoButton.onClick.AddListener(_facade.OpenCurrentWeaponInfo);
 
       CoinsTextUpdate();

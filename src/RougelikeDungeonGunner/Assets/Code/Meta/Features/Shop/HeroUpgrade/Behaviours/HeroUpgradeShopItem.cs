@@ -1,25 +1,24 @@
 ﻿using Code.Common.Extensions;
-using Code.Meta.Features.Shop.Enchant.Configs;
 using Code.Meta.Features.Shop.Services;
+using Code.Meta.Features.Shop.Upgrade;
 using Code.Meta.UI.Windows;
 using Code.Meta.UI.Windows.Service;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 using Zenject;
 
 namespace Code.Meta.Features.Shop.Enchant.Behaviours
 {
-	public class EnchantShopItem : MonoBehaviour
+	public class HeroUpgradeShopItem : MonoBehaviour
 	{
 		[SerializeField] private Image _icon;
 		[SerializeField] private TextMeshProUGUI _name;
 		[SerializeField] private TextMeshProUGUI _priceText;
-		[SerializeField] private Button _showEnchantBuyWindow;
+		[SerializeField] private Button _showHeroUpgradeBuyButton;
 
 		private int _price;
-		private EnchantShopItemTypeId _enchantShopItemTypeId;
+		private HeroUpgradeTypeId _enchantShopItemTypeId;
 
 		private IWindowService _windowService;
 		private IEnchantShopService _shopService;
@@ -32,9 +31,9 @@ namespace Code.Meta.Features.Shop.Enchant.Behaviours
 		}
 
 		private void Start() =>
-			_showEnchantBuyWindow.onClick.AddListener(OpenEnchantBuyWindow);
+			_showHeroUpgradeBuyButton.onClick.AddListener(OpenEnchantBuyWindow);
 
-		public void Setup(EnchantShopItemConfig config)
+		public void Setup(HeroUpgradeShopItemConfig config)
 		{
 			_icon.sprite = config.Sprite;
 			_name.text = config.TypeId.ToDisplayName();
@@ -45,11 +44,11 @@ namespace Code.Meta.Features.Shop.Enchant.Behaviours
 
 		private void OpenEnchantBuyWindow()
 		{
-			_shopService.SetEnchantPrice(_price);
-			_shopService.SetEnchantSprite(_icon.sprite);
-			_shopService.SetEnchantTypeId(_enchantShopItemTypeId);
+			//_shopService.SetEnchantPrice(_price);
+			//_shopService.SetEnchantSprite(_icon.sprite);
+			//_shopService.SetEnchantTypeId(_enchantShopItemTypeId);
 
-			_windowService.Open(WindowId.EnchantBuyWindow);
+			_windowService.Open(WindowId.HeroUpgradeBuyWindow);
 		}
 	}
 }

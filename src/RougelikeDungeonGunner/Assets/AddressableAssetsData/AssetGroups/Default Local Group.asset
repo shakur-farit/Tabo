@@ -266,6 +266,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - WeaponShopItemConfig
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 41d0ded759127af488b6cfcd5daac570
+    m_Address: Assets/StaticData/Window/HeroUpgradeShopWindowConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WindowConfig
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 468966ebed3ced34caf1e38776b3ca22
     m_Address: BalanceConfig
     m_ReadOnly: 0

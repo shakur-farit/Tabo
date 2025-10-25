@@ -3,9 +3,10 @@
   public interface ILevelCompleteFacade
   {
     void EnterNextLevel();
-    void OpenWeaponUpgrade();
+    void OpenWeaponUpgradeShop();
     void OpenWeaponShop();
     void OpenEnchantShop();
+    void OpenHeroUpgradeShop();
     void OpenCurrentWeaponInfo();
     void PlayMusic();
   }

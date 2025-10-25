@@ -18,5 +18,7 @@
 		PauseWindow = 13,
     SettingsWindow = 14,
 		StandaloneHud = 15,
-  }
+		HeroUpgradeShopWindow = 16,
+		HeroUpgradeBuyWindow = 17
+	}
 }

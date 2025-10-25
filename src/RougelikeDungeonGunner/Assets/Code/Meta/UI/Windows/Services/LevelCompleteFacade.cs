@@ -25,7 +25,7 @@ namespace Code.Meta.UI.Windows.Behaviours
     public void EnterNextLevel() =>
       _stateMachine.Enter<BattleEnterState>();
 
-    public void OpenWeaponUpgrade() =>
+    public void OpenWeaponUpgradeShop() =>
       _windowService.Open(WindowId.WeaponUpgradeWindow);
 
     public void OpenWeaponShop() =>
@@ -34,7 +34,10 @@ namespace Code.Meta.UI.Windows.Behaviours
     public void OpenEnchantShop() =>
       _windowService.Open(WindowId.EnchantShopWindow);
 
-    public void OpenCurrentWeaponInfo() =>
+    public void OpenHeroUpgradeShop() =>
+	    _windowService.Open(WindowId.HeroUpgradeShopWindow);
+
+		public void OpenCurrentWeaponInfo() =>
       _windowService.Open(WindowId.CurrentWeaponInfoWindow);
 
     public void PlayMusic() =>
