@@ -25,7 +25,7 @@ namespace Code.Meta.UI.Windows.Behaviours
 
     protected override void Initialize()
     {
-      _buyButton.onClick.AddListener(_facade.TryBuyWeapon);
+      _buyButton.onClick.AddListener(_facade.TryBuyWeapon); 
       _closeButton.onClick.AddListener(_facade.CloseWindow);
 
       weaponToBuyItem.Setup(_facade.GetWeaponSprite(), _facade.GetWeaponPrice());

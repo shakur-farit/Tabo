@@ -612,7 +612,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2149775613843054166}
-  - component: {fileID: 4168439323037455495}
+  - component: {fileID: 3174104938595475541}
   m_Layer: 5
   m_Name: WeaponShopWindow
   m_TagString: Untagged
@@ -642,7 +642,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &4168439323037455495
+--- !u!114 &3174104938595475541
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -651,7 +651,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4945148918330690640}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e87cc24f0ef49624b95c7ec0a377c274, type: 3}
+  m_Script: {fileID: 11500000, guid: 0cdce34b6fe1da84986476b428c927b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _closeButton: {fileID: 6655719655099012602}
