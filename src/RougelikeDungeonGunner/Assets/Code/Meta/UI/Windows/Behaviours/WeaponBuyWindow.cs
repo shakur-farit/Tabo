@@ -10,7 +10,7 @@ namespace Code.Meta.UI.Windows.Behaviours
   {
     [SerializeField] private Button _closeButton;
     [SerializeField] private Button _buyButton;
-    [SerializeField] private WeaponToBuyItem weaponToBuyItem;
+    [SerializeField] private WeaponToBuyItem _weaponToBuyItem;
     [SerializeField] private WeaponStatsUIHolder _statsUIHolder;
 
     private IWeaponBuyFacade _facade;
@@ -28,7 +28,7 @@ namespace Code.Meta.UI.Windows.Behaviours
       _buyButton.onClick.AddListener(_facade.TryBuyWeapon); 
       _closeButton.onClick.AddListener(_facade.CloseWindow);
 
-      weaponToBuyItem.Setup(_facade.GetWeaponSprite(), _facade.GetWeaponPrice());
+      _weaponToBuyItem.Setup(_facade.GetWeaponSprite(), _facade.GetWeaponPrice());
       _facade.RenderWeaponStats(_statsUIHolder);
     }
   }

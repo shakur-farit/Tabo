@@ -557,7 +557,7 @@ GameObject:
   - component: {fileID: 3770753081083582400}
   - component: {fileID: 6675882008545492502}
   m_Layer: 5
-  m_Name: EnchantStatsWindow
+  m_Name: CurrentWeaponEnchantInfoWindow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

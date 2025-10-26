@@ -839,7 +839,7 @@ GameObject:
   - component: {fileID: 2149775613843054166}
   - component: {fileID: 8851170615957792228}
   - component: {fileID: 205377221950136399}
-  - component: {fileID: 6208606411696275006}
+  - component: {fileID: 7313147251287450877}
   m_Layer: 5
   m_Name: WeaponBuyWindow
   m_TagString: Untagged
@@ -895,7 +895,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _icon: {fileID: 6405793439805340276}
   _price: {fileID: 3404107746776499408}
---- !u!114 &6208606411696275006
+--- !u!114 &7313147251287450877
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -904,12 +904,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 4945148918330690640}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e87cc24f0ef49624b95c7ec0a377c274, type: 3}
+  m_Script: {fileID: 11500000, guid: a035082231112e4479ff0496e99cc068, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _closeButton: {fileID: 8416853858772892815}
   _buyButton: {fileID: 5163869900977586934}
-  weaponToBuyItem: {fileID: 205377221950136399}
+  _weaponToBuyItem: {fileID: 205377221950136399}
   _statsUIHolder: {fileID: 8851170615957792228}
 --- !u!1 &4952324215372150880
 GameObject:

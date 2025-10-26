@@ -1,34 +1,26 @@
 ﻿using Code.Gameplay.StaticData;
-using Code.Meta.Features.Shop.Enchant.Configs;
 using Code.Meta.Features.Shop.EnchantUIEntry.Behaviours;
 using Code.Meta.Features.Shop.EnchantUIEntry.Configs;
 using Code.Meta.Features.Shop.EnchantUIEntry.Services;
-using Code.Meta.Features.Shop.Services;
 
 namespace Code.Meta.UI.Windows.Behaviours
 {
-  public class EnchantStatsUIRenderer : IEnchantStatsUIRenderer
+  
+  public class CurrentWeaponEnchantStatsUIRenderer : ICurrentWeaponEnchantStatsUIRenderer
   {
     private readonly ISelectedEnchantUIEntryProvider _enchantUIEntry;
     private readonly IStaticDataService _staticDataService;
-    private readonly IEnchantShopService _shopService;
 
-    public EnchantStatsUIRenderer(
-      ISelectedEnchantUIEntryProvider enchantUIEntry, 
-      IStaticDataService staticDataService,
-      IEnchantShopService shopService)
+    public CurrentWeaponEnchantStatsUIRenderer(ISelectedEnchantUIEntryProvider enchantUIEntry, IStaticDataService staticDataService)
     {
       _enchantUIEntry = enchantUIEntry;
       _staticDataService = staticDataService;
-      _shopService = shopService;
     }
 
     public void RenderUIStats(EnchantStatsUIHolder holder)
     {
-      EnchantShopItemConfig config =
-        _staticDataService.GetEnchantShopItemConfig(_shopService.EnchantTypeId);
-
-      _enchantUIEntry.SetStatusSetup(config.Enchnat);
+      EnchantUIEntryConfig config =
+        _staticDataService.GetEnchantUIEntryItemConfig(_enchantUIEntry.TypeId);
 
       foreach (EnchantStatUIEntry statUIEntry in config.EnchantStatUIEntries)
         holder.CreateStats(statUIEntry.TypeId);

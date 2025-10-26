@@ -2,6 +2,7 @@
 using Code.Gameplay.StaticData;
 using Code.Meta.Features.Shop.Services;
 using Code.Meta.Features.Shop.WeaponStatUIEntry.Behaviours;
+using UnityEngine.WSA;
 
 namespace Code.Meta.UI.Windows.Behaviours
 {

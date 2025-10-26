@@ -3,7 +3,6 @@ using Code.Gameplay.Features.Weapon.Configs;
 using Code.Gameplay.Features.Weapon.Services;
 using Code.Meta.Features.Shop.EnchantUIEntry.Behaviours;
 using Code.Meta.Features.Shop.WeaponStatUIEntry.Behaviours;
-using UnityEngine;
 using UnityEngine.UI;
 
 namespace Code.Meta.UI.Windows.Behaviours

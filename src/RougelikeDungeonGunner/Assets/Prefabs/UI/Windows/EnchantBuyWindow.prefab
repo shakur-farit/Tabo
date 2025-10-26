@@ -839,7 +839,7 @@ GameObject:
   - component: {fileID: 2149775613843054166}
   - component: {fileID: 3739208188016646041}
   - component: {fileID: 2134393160461594275}
-  - component: {fileID: 44029982390269816}
+  - component: {fileID: 3997849715603259957}
   m_Layer: 5
   m_Name: EnchantBuyWindow
   m_TagString: Untagged
@@ -895,7 +895,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _parent: {fileID: 8355777922373837410}
---- !u!114 &44029982390269816
+--- !u!114 &3997849715603259957
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -904,7 +904,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4945148918330690640}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9d953dd0faae514cb1e7112c9e3e8e3, type: 3}
+  m_Script: {fileID: 11500000, guid: 1cec49d37bd5e084bab8078abbbb4647, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _closeButton: {fileID: 8416853858772892815}

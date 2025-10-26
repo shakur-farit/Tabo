@@ -254,12 +254,6 @@ MonoBehaviour:
     m_SerializedLabels:
     - SoundEffectConfig
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 3c1e8a68055d39c41b6a732e24b47e5d
-    m_Address: Assets/StaticData/Window/WeaponBuyDialogWindowConfig.asset
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - WindowConfig
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 3c204fea80d85cf4b9ee13275f13c5f4
     m_Address: Assets/StaticData/SoundEffect/LowBreakingSoundEffectConfig.asset
     m_ReadOnly: 0
@@ -434,6 +428,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - LevelConfig
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 731b743460f07da45b01aea2dfff4585
+    m_Address: Assets/StaticData/Window/WeaponShopWindowConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WindowConfig
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 73465330ae6adf24a82f5d7c063a2839
     m_Address: Assets/StaticData/Shop/HeroUpgrade/CurrentMissilesUpgradeItemConfig.asset
     m_ReadOnly: 0
@@ -525,6 +525,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - WeaponStatUIEntryConfig
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 89e09d9c87ea23646b211e300669998d
+    m_Address: Assets/StaticData/Window/EnchantShopWindowConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WindowConfig
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 8b6f1a3b05a02224b933aabf70452b05
     m_Address: Assets/StaticData/WeaponInformation/WeaponEnchantUIEntry/EnchantStat/PoidonStatUIEntryConfig.asset
     m_ReadOnly: 0
@@ -547,12 +553,6 @@ MonoBehaviour:
     m_Address: HeroSelector
     m_ReadOnly: 0
     m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 8ec2c97b620fc4d4ab21292d91542ebf
-    m_Address: Assets/StaticData/Window/EnchantBuyDialogueWindowConfig.asset
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - WindowConfig
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 8ed21c78f2aa56849ac7cce6b77be104
     m_Address: Assets/StaticData/Hero/TheScientisHeroConfig.asset

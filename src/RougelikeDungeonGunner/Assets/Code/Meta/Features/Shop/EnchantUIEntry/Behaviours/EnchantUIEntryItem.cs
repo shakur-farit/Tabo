@@ -36,7 +36,7 @@ namespace Code.Meta.Features.Shop.EnchantUIEntry.Behaviours
 			_enchantUIEntry.SetStatusSetup(_setup);
       _enchantUIEntry.SetTypeId(_id);
 
-			_windowService.Open(WindowId.EnchantStatsWindow);
+			_windowService.Open(WindowId.CurrentWeaponEnchantInfoWindow);
 		}
 
 		public void Setup(EnchantUIEntryTypeId id, Sprite sprite, StatusSetup setup)

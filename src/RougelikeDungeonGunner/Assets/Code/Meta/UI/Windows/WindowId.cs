@@ -14,7 +14,7 @@
     EnchantBuyWindow = 9,
     CurrentWeaponInfoWindow = 10,
 		DialogueWindow = 11,
-		EnchantStatsWindow = 12,
+		CurrentWeaponEnchantInfoWindow = 12,
 		PauseWindow = 13,
     SettingsWindow = 14,
 		StandaloneHud = 15,

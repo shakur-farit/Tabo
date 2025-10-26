@@ -6,19 +6,19 @@ using Zenject;
 
 namespace Code.Meta.UI.Windows.Behaviours
 {
-	public class EnchantStatsWindow : BaseWindow
+	public class CurrentWeaponEnchantInfoWindow : BaseWindow
 	{
 		[SerializeField] private EnchantStatsUIHolder _holder;
 		[SerializeField] private Button _closeButton;
 
 		private IWindowService _windowService;
-    private IEnchantStatsUIRenderer _statsUIRenderer;
+    private ICurrentWeaponEnchantStatsUIRenderer _statsUIRenderer;
 
 
     [Inject]
-		public void Constructor(IWindowService windowService, IEnchantStatsUIRenderer statsUIRenderer)
+		public void Constructor(IWindowService windowService, ICurrentWeaponEnchantStatsUIRenderer statsUIRenderer)
 		{
-			Id = WindowId.EnchantStatsWindow;
+			Id = WindowId.CurrentWeaponEnchantInfoWindow;
 
 			_windowService = windowService;
       _statsUIRenderer = statsUIRenderer;
@@ -35,6 +35,6 @@ namespace Code.Meta.UI.Windows.Behaviours
       _statsUIRenderer.RenderUIStats(_holder);
 
     private void Close() =>
-			_windowService.Close(WindowId.EnchantStatsWindow);
+			_windowService.Close(WindowId.CurrentWeaponEnchantInfoWindow);
 	}
 }
