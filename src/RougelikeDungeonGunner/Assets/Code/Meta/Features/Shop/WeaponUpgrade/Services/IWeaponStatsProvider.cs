@@ -15,5 +15,7 @@ namespace Code.Meta.Features.Shop.Upgrade.Services
 		float GetMaxDeviation(WeaponConfig config);
 		int GetPierce(WeaponConfig config);
 		int GetMaxAmmoCount(WeaponConfig config);
-	}
+    int GetCurrentBulletsCount(WeaponConfig weaponConfig);
+    int GetCurrentMissilesCount(WeaponConfig weaponConfig);
+  }
 }

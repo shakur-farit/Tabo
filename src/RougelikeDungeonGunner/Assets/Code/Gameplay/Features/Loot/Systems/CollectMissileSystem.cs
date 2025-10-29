@@ -6,7 +6,7 @@ namespace Code.Gameplay.Features.Loot.Systems
 {
 	public class CollectMissileSystem : IExecuteSystem
 	{
-		private readonly ICurrentAmmoCountProvider _currentAmmo;
+		private readonly IAmmoCountProvider _currentAmmo;
 		private readonly ISoundEffectFactory _soundEffectFactory;
 		private readonly IGroup<GameEntity> _collected;
 		private readonly IGroup<GameEntity> _weapons;
@@ -14,7 +14,7 @@ namespace Code.Gameplay.Features.Loot.Systems
 
 		public CollectMissileSystem(
 			GameContext game,
-			ICurrentAmmoCountProvider currentAmmo,
+			IAmmoCountProvider currentAmmo,
 			ISoundEffectFactory soundEffectFactory)
 		{
 			_currentAmmo = currentAmmo;

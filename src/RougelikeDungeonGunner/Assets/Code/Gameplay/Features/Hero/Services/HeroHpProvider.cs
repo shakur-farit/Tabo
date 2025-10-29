@@ -2,13 +2,14 @@
 
 namespace Code.Gameplay.Features.Hero.Services
 {
-  public class CurrentHeroHpProvider : ICurrentHeroHpProvider
+  public class HeroHpProvider : IHeroHpProvider
   {
     private float _currentHp;
+    private float _maxHp;
 
     private readonly IStaticDataService _staticDataService;
 
-    public CurrentHeroHpProvider(IStaticDataService staticDataService) =>
+    public HeroHpProvider(IStaticDataService staticDataService) =>
       _staticDataService = staticDataService;
 
     public float GetCurrentHp(HeroTypeId typeId)
@@ -19,7 +20,18 @@ namespace Code.Gameplay.Features.Hero.Services
       return _currentHp;
     }
 
-    public void SetCurrentHp(float currentHp) => 
+    public float GetMaxHp(HeroTypeId typeId)
+    {
+      if (_maxHp == 0)
+        return _maxHp = _staticDataService.GetHeroConfig(typeId).MaxHp;
+
+      return _maxHp;
+    }
+
+    public void SetCurrentHp(float currentHp) =>
       _currentHp = currentHp;
+
+    public void SetMaxHp(float maxHp) =>
+      _maxHp = maxHp;
   }
 }

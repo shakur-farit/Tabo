@@ -9,9 +9,9 @@ namespace Code.Gameplay.Features.Ammo.Systems
     private readonly List<GameEntity> _buffer = new(1);
 
     private readonly IGroup<GameEntity> _weapons;
-    private readonly ICurrentAmmoCountProvider _ammoCountProvider;
+    private readonly IAmmoCountProvider _ammoCountProvider;
 
-    public CalculateCurrentAmmoCountSystem(GameContext game, ICurrentAmmoCountProvider ammoCountProvider)
+    public CalculateCurrentAmmoCountSystem(GameContext game, IAmmoCountProvider ammoCountProvider)
     {
       _ammoCountProvider = ammoCountProvider;
       _weapons = game.GetGroup(GameMatcher

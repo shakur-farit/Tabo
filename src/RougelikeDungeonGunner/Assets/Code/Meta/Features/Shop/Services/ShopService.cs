@@ -1,11 +1,12 @@
 ﻿using Code.Gameplay.Features.Weapon;
 using Code.Meta.Features.Shop.Enchant;
+using Code.Meta.Features.Shop.Upgrade;
 using UnityEngine;
 
 namespace Code.Meta.Features.Shop.Services
 {
-	public class ShopService : IWeaponShopService, IEnchantShopService
-	{
+  public class ShopService : IWeaponShopService, IEnchantShopService, IHeroUpgradeShopService
+  {
 		public WeaponTypeId WeaponTypeId { get; private set; }
 		public Sprite WeaponSprite { get; private set; }
 		public int WeaponPrice { get; private set; }
@@ -14,8 +15,12 @@ namespace Code.Meta.Features.Shop.Services
 		public Sprite EnchantSprite { get; private set; }
 		public int EnchantPrice { get; private set; }
 
+    public HeroUpgradeTypeId HeroUpgradeTypeId { get; private set; }
+    public Sprite HeroUpgradeSprite { get; private set; }
+    public int HeroUpgradePrice { get; private set; }
+    public float HeroUpgradeValue { get; private set; }
 
-		public void SetWeaponSprite(Sprite sprite) => 
+    public void SetWeaponSprite(Sprite sprite) => 
 			WeaponSprite = sprite;
 
 		public void SetWeaponPrice(int price) => 
@@ -45,5 +50,23 @@ namespace Code.Meta.Features.Shop.Services
 			EnchantPrice = 0;
 			EnchantSprite = null;
 		}
-	}
+
+    public void SetHeroUpgradeSprite(Sprite sprite) =>
+      HeroUpgradeSprite = sprite;
+
+    public void SetHeroUpgradePrice(int price) =>
+      HeroUpgradePrice = price;
+
+    public void SetHeroUpgradeTypeId(HeroUpgradeTypeId heroUpgradeType) =>
+      HeroUpgradeTypeId = heroUpgradeType;
+
+    public void SetHeroUpgradeValue(float value) => 
+      HeroUpgradeValue = value;
+
+    public void ResetHeroUpgradeSetup()
+    {
+      HeroUpgradePrice = 0;
+      HeroUpgradeSprite = null;
+    }
+  }
 }

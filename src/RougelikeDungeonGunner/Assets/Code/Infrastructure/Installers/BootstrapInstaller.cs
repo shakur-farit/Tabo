@@ -153,8 +153,8 @@ namespace Code.Infrastructure.Installers
       Container.Bind<ILevelService>().To<LevelService>().AsSingle();
       Container.Bind<ICurrentHeroWeaponProvider>().To<CurrentHeroWeaponProvider>().AsSingle();
       Container.Bind<ICurrentHeroTypeIdProvider>().To<CurrentHeroTypeIdProvider>().AsSingle();
-      Container.Bind<ICurrentHeroHpProvider>().To<CurrentHeroHpProvider>().AsSingle();
-      Container.Bind<ICurrentAmmoCountProvider>().To<CurrentAmmoCountProvider>().AsSingle();
+      Container.Bind<IHeroHpProvider>().To<HeroHpProvider>().AsSingle();
+      Container.Bind<IAmmoCountProvider>().To<AmmoCountProvider>().AsSingle();
     }
 
 		private void BindGameplayFactories()
@@ -210,8 +210,9 @@ namespace Code.Infrastructure.Installers
       Container.Bind<IEnchantStatsUIRenderer>().To<EnchantStatsUIRenderer>().AsSingle();
       Container.Bind<ICurrentWeaponEnchantStatsUIRenderer>().To<CurrentWeaponEnchantStatsUIRenderer>().AsSingle();
       Container.Bind<IHeroUpgradeShopItemRenderer>().To<HeroUpgradeShopItemRenderer>().AsSingle();
+      Container.Bind<IHeroUpgradeBuyer>().To<HeroUpgradeBuyer>().AsSingle();
+      Container.Bind<IHeroUpgradeService>().To<HeroUpgradeService>().AsSingle();
       Container.Bind<IWeaponUpgradeShopItemsUIRenderer>().To<WeaponUpgradeShopItemsUIRenderer>().AsSingle();
-      Container.Bind<ILevelCompleteFacade>().To<LevelCompleteFacade>().AsSingle();
       Container.Bind<IGameOverFacade>().To<GameOverFacade>().AsSingle();
       Container.Bind<IMainMenuFacade>().To<MainMenuFacade>().AsSingle();
       Container.Bind<IWeaponBuyFacade>().To<WeaponBuyFacade>().AsSingle();

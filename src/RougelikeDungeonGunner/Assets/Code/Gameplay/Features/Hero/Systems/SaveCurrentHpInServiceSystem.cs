@@ -5,10 +5,10 @@ namespace Code.Gameplay.Features.Hero.Systems
 {
   public class SaveCurrentHpInServiceSystem : IExecuteSystem
   {
-    private readonly ICurrentHeroHpProvider _heroHp;
+    private readonly IHeroHpProvider _heroHp;
     private readonly IGroup<GameEntity> _heroes;
 
-    public SaveCurrentHpInServiceSystem(GameContext game, ICurrentHeroHpProvider heroHp)
+    public SaveCurrentHpInServiceSystem(GameContext game, IHeroHpProvider heroHp)
     {
       _heroHp = heroHp;
       _heroes = game.GetGroup(GameMatcher

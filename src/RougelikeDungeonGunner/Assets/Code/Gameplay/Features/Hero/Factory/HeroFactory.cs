@@ -21,20 +21,20 @@ namespace Code.Gameplay.Features.Hero.Factory
 		private readonly IIdentifierService _identifier;
 		private readonly IStaticDataService _staticDataService;
     private readonly ICoinService _coinService;
-    private readonly ICurrentHeroHpProvider _currentHeroHp;
+    private readonly IHeroHpProvider _heroHp;
     private readonly ICurrentHeroWeaponProvider _heroWeapon;
 
 		public HeroFactory(
 			IIdentifierService identifier, 
 			IStaticDataService staticDataService,
 			ICoinService coinService,
-			ICurrentHeroHpProvider currentHeroHp,
+			IHeroHpProvider heroHp,
 			ICurrentHeroWeaponProvider heroWeapon)
 		{
 			_identifier = identifier;
 			_staticDataService = staticDataService;
       _coinService = coinService;
-      _currentHeroHp = currentHeroHp;
+      _heroHp = heroHp;
       _heroWeapon = heroWeapon;
 		}
 
@@ -70,7 +70,7 @@ namespace Code.Gameplay.Features.Hero.Factory
 
 			Dictionary<Stats, float> baseStats = InitStats.EmptyStatDictionary()
 					.With(x => x[Stats.Speed] = config.MovementSpeed)
-					.With(x => x[Stats.MaxHp] = config.MaxHp)
+					.With(x => x[Stats.MaxHp] = _heroHp.GetMaxHp(typeId))
 				;
 
 			return CreateGameEntity.Empty()
@@ -83,7 +83,7 @@ namespace Code.Gameplay.Features.Hero.Factory
 					.AddBoxCastHeight(castSetup.Height)
 					.AddBaseStats(baseStats)
 					.AddStatModifiers(InitStats.EmptyStatDictionary())
-					.AddCurrentHp(_currentHeroHp.GetCurrentHp(typeId))
+					.AddCurrentHp(_heroHp.GetCurrentHp(typeId))
 					.AddMaxHp(baseStats[Stats.MaxHp])
 					.AddSpeed(baseStats[Stats.Speed])
 					.AddViewPrefab(config.ViewPrefab)

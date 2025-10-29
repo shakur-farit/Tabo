@@ -11,13 +11,13 @@ namespace Code.Meta.UI.Windows.Behaviours
     private readonly ICoinService _coinService;
     private readonly IWeaponShopService _shopService;
     private readonly ICurrentHeroWeaponProvider _heroWeapon;
-    private readonly ICurrentAmmoCountProvider _ammoCountProvider;
+    private readonly IAmmoCountProvider _ammoCountProvider;
 
     public WeaponBuyer(
       IWeaponUpgradesCleaner upgraderCleaner,
       ICurrentHeroWeaponProvider heroWeapon,
       ICoinService coinService,
-      ICurrentAmmoCountProvider ammoCountProvider,
+      IAmmoCountProvider ammoCountProvider,
       IWeaponShopService shopService)
     {
       _upgradeCleaner = upgraderCleaner;

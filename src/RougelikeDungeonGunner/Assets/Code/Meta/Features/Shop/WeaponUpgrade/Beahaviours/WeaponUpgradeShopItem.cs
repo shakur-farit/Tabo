@@ -95,7 +95,9 @@ namespace Code.Meta.Features.Shop.Upgrade.Beahaviours
 				[WeaponUpgradeTypeId.EnchantSlots] = c => _statsProvider.GetEnchantSlots(c).ToString(),
 				[WeaponUpgradeTypeId.Pierce] = c => _statsProvider.GetPierce(c).ToString(),
 				[WeaponUpgradeTypeId.Damage] = VisualDamageValue,
-				[WeaponUpgradeTypeId.MaxAmmoCount] = c => _statsProvider.GetMaxAmmoCount(c).ToString()
+				[WeaponUpgradeTypeId.MaxAmmoCount] = c => _statsProvider.GetMaxAmmoCount(c).ToString(),
+				[WeaponUpgradeTypeId.CurrentBullets] = c => _statsProvider.GetCurrentBulletsCount(c).ToString(),
+				[WeaponUpgradeTypeId.CurrentMissiles] = c => _statsProvider.GetCurrentMissilesCount(c).ToString()
 			};
 		}
 

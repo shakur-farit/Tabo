@@ -1,4 +1,5 @@
 ﻿using Code.Gameplay.Features.Weapon.Configs;
+using Code.Gameplay.Features.Weapon.Services;
 using Code.Gameplay.StaticData;
 using UnityEngine;
 
@@ -8,12 +9,14 @@ namespace Code.Meta.Features.Shop.Upgrade.Services
 	{
 		private readonly IWeaponUpgradesProvider _provider;
 		private readonly IStaticDataService _staticDataService;
+    private readonly IAmmoCountProvider _ammoCount;
 
-		public WeaponStatsProvider(IWeaponUpgradesProvider provider, IStaticDataService staticDataService)
+    public WeaponStatsProvider(IWeaponUpgradesProvider provider, IStaticDataService staticDataService, IAmmoCountProvider ammoCount)
 		{
 			_provider = provider;
 			_staticDataService = staticDataService;
-		}
+      _ammoCount = ammoCount;
+    }
 
 		public float GetFireRange(WeaponConfig config) => 
 			config.Stats.FireRange + _provider.GetUpgradeBonus(config.TypeId, WeaponUpgradeTypeId.FireRange);
@@ -33,7 +36,13 @@ namespace Code.Meta.Features.Shop.Upgrade.Services
 		public int GetMaxAmmoCount(WeaponConfig config) =>
 			config.Stats.MaxAmmoCount + (int)_provider.GetUpgradeBonus(config.TypeId, WeaponUpgradeTypeId.MaxAmmoCount);
 
-		public int GetPierce(WeaponConfig config) =>
+    public int GetCurrentBulletsCount(WeaponConfig config) => 
+      _ammoCount.GetCurrentAmmoCount(config) + (int)_provider.GetUpgradeBonus(config.TypeId, WeaponUpgradeTypeId.CurrentBullets);
+
+    public int GetCurrentMissilesCount(WeaponConfig config) => 
+      _ammoCount.GetCurrentAmmoCount(config) + (int)_provider.GetUpgradeBonus(config.TypeId, WeaponUpgradeTypeId.CurrentMissiles);
+
+    public int GetPierce(WeaponConfig config) =>
 			config.Stats.Pierce + (int)_provider.GetUpgradeBonus(config.TypeId, WeaponUpgradeTypeId.Pierce);
 
 		public float GetAccuracy(WeaponConfig config) => 

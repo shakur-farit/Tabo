@@ -188,6 +188,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - HeroConfig
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1f628d8c57e545a428ba9c46ec858dc1
+    m_Address: Assets/StaticData/Window/HeroUpgradeBuyWindowConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WindowConfig
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 2070fde95a5b563429e9f23c4c89ce29
     m_Address: Assets/StaticData/Enemy/HedusaEnemyConfig.asset
     m_ReadOnly: 0
@@ -698,11 +704,23 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a5ba4970e72058944a1088837187839a
+    m_Address: Assets/StaticData/Shop/WeaponUpgrade/CurrentMissilesCountUpgradeItemConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponUpgradeShopItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a7be0d4a1bdfeaa4ab161e34acd5db70
     m_Address: Assets/StaticData/Enemy/MudRockEnemyConfig.asset
     m_ReadOnly: 0
     m_SerializedLabels:
     - EnemyConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a970a6c062934104eb97cf0122be3f04
+    m_Address: Assets/StaticData/Shop/WeaponUpgrade/CurrentBulletsCountUpgradeItemConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponUpgradeShopItemConfig
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a9d1eafde73b1cc42b2bd7b98d3b385f
     m_Address: Assets/StaticData/Window/EnchantBuyWindowConfig.asset

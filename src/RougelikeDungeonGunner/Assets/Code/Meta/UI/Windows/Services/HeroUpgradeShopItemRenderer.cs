@@ -10,16 +10,14 @@ namespace Code.Meta.UI.Windows.Behaviours
 	{
 		private readonly IHeroUpgradeShopItemFactory _factory;
 
-		public HeroUpgradeShopItemRenderer(IHeroUpgradeShopItemFactory factory)
-		{
-			_factory = factory;
-		}
+    public HeroUpgradeShopItemRenderer(IHeroUpgradeShopItemFactory factory) => 
+      _factory = factory;
 
-		public void RenderItems(Transform parent)
+    public void RenderItems(Transform parent)
 		{
-			List<HeroUpgradeTypeId> enchantIds = EnumUtility.InitEnumList<HeroUpgradeTypeId>();
+			List<HeroUpgradeTypeId> upgradeTypeIds = EnumUtility.InitEnumList<HeroUpgradeTypeId>();
 
-			foreach (HeroUpgradeTypeId id in enchantIds)
+      foreach (HeroUpgradeTypeId id in upgradeTypeIds)
 				_factory.CreateHeroUpgradeShopItem(id, parent);
 		}
 	}

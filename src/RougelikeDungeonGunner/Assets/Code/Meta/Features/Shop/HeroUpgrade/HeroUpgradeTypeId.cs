@@ -5,8 +5,6 @@
 		Unknown = 0,
 		CurrentHp = 1,
 		MaxHp = 2,
-		CurrentBullets = 3,
-		CurrentMissiles = 4,
-		Shield = 5
+    Shield = 3
 	}
 }
