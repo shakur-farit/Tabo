@@ -222,7 +222,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 00000000d58e0aa6c19a047c5f66c37df78258dee9e5a1fc
+  m_ApplyToSortingLayers: 00000000d58e0aa6c19a047c5f66c37df78258dee9e5a1fcd758d11d4bf43edf477a3a24
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -311,7 +311,7 @@ SortingGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9175222711827169114}
   m_Enabled: 1
-  m_SortingLayerID: 545656759
-  m_SortingLayer: 5
+  m_SortingLayerID: 2109957727
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_SortAtRoot: 0

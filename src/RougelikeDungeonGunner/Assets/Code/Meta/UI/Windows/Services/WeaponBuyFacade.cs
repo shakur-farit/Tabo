@@ -1,11 +1,7 @@
-﻿using Code.Gameplay.Common;
-using Code.Meta.Features.Shop.Enchant.Behaviours;
-using Code.Meta.Features.Shop.Services;
+﻿using Code.Meta.Features.Shop.Services;
 using Code.Meta.Features.Shop.WeaponStatUIEntry.Behaviours;
 using Code.Meta.UI.Windows.Service;
 using UnityEngine;
-using UnityEngine.WSA;
-using Zenject;
 
 namespace Code.Meta.UI.Windows.Behaviours
 {

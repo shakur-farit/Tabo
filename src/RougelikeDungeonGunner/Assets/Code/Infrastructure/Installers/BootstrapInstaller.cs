@@ -200,12 +200,10 @@ namespace Code.Infrastructure.Installers
       Container.Bind<IDialogueService>().To<DialogueService>().AsSingle();
       Container.Bind<IWeaponShopUpdater>().To<WeaponShopUpdater>().AsSingle();
       Container.Bind<ICurrentWeaponInfoProvider>().To<CurrentWeaponInfoProvider>().AsSingle();
-      Container.Bind<IWeaponInfoUIRenderer>().To<WeaponInfoUIRenderer>().AsSingle();
       Container.Bind<IWeaponBuyer>().To<WeaponBuyer>().AsSingle();
       Container.Bind<IWeaponStatsUIRenderer>().To<WeaponStatsUIRenderer>().AsSingle();
       Container.Bind<IEnchantBuyer>().To<EnchantBuyer>().AsSingle();
       Container.Bind<IEnchantStatsUIRenderer>().To<EnchantStatsUIRenderer>().AsSingle();
-      Container.Bind<ICurrentWeaponEnchantStatsUIRenderer>().To<CurrentWeaponEnchantStatsUIRenderer>().AsSingle();
       Container.Bind<IHeroUpgradeShopItemRenderer>().To<HeroUpgradeShopItemRenderer>().AsSingle();
       Container.Bind<IHeroUpgradeBuyer>().To<HeroUpgradeBuyer>().AsSingle();
       Container.Bind<IHeroUpgradeService>().To<HeroUpgradeService>().AsSingle();

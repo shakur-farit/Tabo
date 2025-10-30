@@ -556,6 +556,7 @@ GameObject:
   - component: {fileID: 3160376798735061521}
   - component: {fileID: 3770753081083582400}
   - component: {fileID: 6675882008545492502}
+  - component: {fileID: 6512622663603206190}
   m_Layer: 5
   m_Name: CurrentWeaponEnchantInfoWindow
   m_TagString: Untagged
@@ -597,7 +598,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae857db940123ea4884f6b5e0641dae1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _holder: {fileID: 6675882008545492502}
   _closeButton: {fileID: 6772829225789676581}
 --- !u!114 &6675882008545492502
 MonoBehaviour:
@@ -612,3 +612,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _parent: {fileID: 2903179606905737110}
+--- !u!114 &6512622663603206190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9223068499926221233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f914bc92ee10e44f8bd424f5e77fb29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enchantStatsUIHolder: {fileID: 6675882008545492502}
