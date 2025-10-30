@@ -1,9 +1,12 @@
-﻿using Code.Gameplay.StaticData;
+﻿using System;
+using Code.Gameplay.StaticData;
 
 namespace Code.Gameplay.Features.Hero.Services
 {
   public class HeroHpProvider : IHeroHpProvider
   {
+	  public event Action HpChanged;
+
     private float _currentHp;
     private float _maxHp;
 
@@ -28,10 +31,21 @@ namespace Code.Gameplay.Features.Hero.Services
       return _maxHp;
     }
 
-    public void SetCurrentHp(float currentHp) =>
-      _currentHp = currentHp;
+    public void SetCurrentHp(float currentHp)
+    {
+	    _currentHp = currentHp;
 
-    public void SetMaxHp(float maxHp) =>
-      _maxHp = maxHp;
+      HpChanged?.Invoke();
+    }
+
+    public void SetMaxHp(float maxHp)
+    {
+	    _maxHp = maxHp;
+
+	    HpChanged?.Invoke();
+		}
+
+		public float GetHpPercent() =>
+	    (_currentHp / _maxHp) * 100f;
   }
 }

@@ -1,4 +1,6 @@
-﻿namespace Code.Gameplay.Features.Hero.Services
+﻿using System;
+
+namespace Code.Gameplay.Features.Hero.Services
 {
   public interface IHeroHpProvider
   {
@@ -6,5 +8,7 @@
     void SetCurrentHp(float currentHp);
     float GetMaxHp(HeroTypeId typeId);
     void SetMaxHp(float maxHp);
+    float GetHpPercent();
+    event Action HpChanged;
   }
 }

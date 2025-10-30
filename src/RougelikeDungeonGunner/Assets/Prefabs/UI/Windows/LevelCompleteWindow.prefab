@@ -221,7 +221,7 @@ GameObject:
   - component: {fileID: 2912299758421801909}
   - component: {fileID: 2856159753823589796}
   m_Layer: 5
-  m_Name: CoinsImage
+  m_Name: Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -575,6 +575,7 @@ GameObject:
   - component: {fileID: 4852136218681786059}
   - component: {fileID: 1013279148437755716}
   - component: {fileID: 5600028415791254052}
+  - component: {fileID: 4320433879104576241}
   m_Layer: 5
   m_Name: LevelCompleteWindow
   m_TagString: Untagged
@@ -644,6 +645,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _currentWeaponInfoButton: {fileID: 4482080763016472010}
+  _icon: {fileID: 9204641059999366322}
 --- !u!114 &5600028415791254052
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -657,6 +659,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _coinsText: {fileID: 8080208432681827772}
+--- !u!114 &4320433879104576241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 731944184819309819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15c7959b303f46544978bb0ba1414dd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hpText: {fileID: 7424363462704395919}
 --- !u!1 &923577151591632070
 GameObject:
   m_ObjectHideFlags: 0
@@ -669,7 +684,7 @@ GameObject:
   - component: {fileID: 3219426073127412955}
   - component: {fileID: 7492991649414691240}
   m_Layer: 5
-  m_Name: CoinsImage
+  m_Name: Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1046,7 +1061,7 @@ GameObject:
   - component: {fileID: 6657838572141292432}
   - component: {fileID: 8080208432681827772}
   m_Layer: 5
-  m_Name: CoinsText
+  m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1880,7 +1895,7 @@ GameObject:
   - component: {fileID: 3451357182831744696}
   - component: {fileID: 7424363462704395919}
   m_Layer: 5
-  m_Name: CoinsText
+  m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

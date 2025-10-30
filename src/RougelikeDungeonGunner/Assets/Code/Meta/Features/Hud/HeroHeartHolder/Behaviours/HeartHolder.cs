@@ -1,6 +1,7 @@
 ﻿using Code.Meta.Features.Hud.HeroHeartHolder.Factory;
 using Cysharp.Threading.Tasks;
 using System.Collections.Generic;
+using Code.Gameplay.Features.Hero.Services;
 using TMPro;
 using UnityEngine;
 using Zenject;
@@ -14,12 +15,16 @@ namespace Code.Meta.Features.Hud.HeroHeartHolder.Behaviours
 		[SerializeField] private int _maxUIHearts = 5;
 
 		private IHeartUIFactory _factory;
+		private IHeroHpProvider _hpProvider;
 
 		private readonly List<GameObject> _heartIconsBuffer = new();
 
 		[Inject]
-		public void Constructor(IHeartUIFactory factory) =>
+		public void Constructor(IHeartUIFactory factory, IHeroHpProvider hpProvider)
+		{
 			_factory = factory;
+			_hpProvider = hpProvider;
+		}
 
 		public async void UpdateHeartUICount(float currentHp, float maxHp)
 		{
@@ -31,7 +36,7 @@ namespace Code.Meta.Features.Hud.HeroHeartHolder.Behaviours
 			for (int i = 0; i < _heartIconsBuffer.Count; i++)
 				_heartIconsBuffer[i].SetActive(i < heartsToShow);
 
-			UpdateHpText(currentHp, maxHp);
+			UpdateHpText();
 		}
 
 		private async UniTask CreateHeartUI()
@@ -44,9 +49,9 @@ namespace Code.Meta.Features.Hud.HeroHeartHolder.Behaviours
 			}
 		}
 
-    private void UpdateHpText(float currentHp, float maxHp)
+    private void UpdateHpText()
     {
-      float hpPercent = (currentHp / maxHp) * 100f;
+	    float hpPercent = _hpProvider.GetHpPercent();
       _hpText.text = $"{hpPercent:0}%";
     }
 	}

@@ -260,6 +260,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - SoundEffectConfig
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3c1e8a68055d39c41b6a732e24b47e5d
+    m_Address: Assets/StaticData/Window/WeaponBuyWindowConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WindowConfig
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 3c204fea80d85cf4b9ee13275f13c5f4
     m_Address: Assets/StaticData/SoundEffect/LowBreakingSoundEffectConfig.asset
     m_ReadOnly: 0
@@ -560,6 +566,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8ec2c97b620fc4d4ab21292d91542ebf
+    m_Address: Assets/StaticData/Window/EnchantBuyWindowConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 8ed21c78f2aa56849ac7cce6b77be104
     m_Address: Assets/StaticData/Hero/TheScientisHeroConfig.asset
     m_ReadOnly: 0
@@ -722,12 +733,6 @@ MonoBehaviour:
     m_SerializedLabels:
     - WeaponUpgradeShopItemConfig
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: a9d1eafde73b1cc42b2bd7b98d3b385f
-    m_Address: Assets/StaticData/Window/EnchantBuyWindowConfig.asset
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - WindowConfig
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: af9b416a80159f1419d7455ae91f6cec
     m_Address: Assets/StaticData/Shop/Upgrade/CooldownWeaponUpgradeItemConfig 6.asset
     m_ReadOnly: 0
@@ -796,12 +801,6 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c5da1bb32a357af4495a18eaebe3adcc
     m_Address: Assets/StaticData/Window/EnchantAlreadyAppliedWindowConfig.asset
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - WindowConfig
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: c6a4b9a90c5526243b544c298c8fc62f
-    m_Address: Assets/StaticData/Window/WeaponBuyWindowConfig.asset
     m_ReadOnly: 0
     m_SerializedLabels:
     - WindowConfig
