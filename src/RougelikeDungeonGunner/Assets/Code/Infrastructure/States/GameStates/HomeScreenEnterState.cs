@@ -1,6 +1,5 @@
 using Code.Infrastructure.States.StateInfrastructure;
 using Code.Infrastructure.States.StateMachine;
-using Code.Meta.Features.HeroSelector.Factory;
 using Code.Meta.UI.Windows;
 using Code.Meta.UI.Windows.Service;
 using Code.Sounds.Music;
@@ -13,18 +12,15 @@ namespace Code.Infrastructure.States.GameStates
 		private readonly IWindowService _windowService;
 		private readonly IGameStateMachine _stateMachine;
 		private readonly IMusicClipSetter _clipSetter;
-    private readonly IHeroSelectorFactory _selectorFactory;
 
     public HomeScreenEnterState(
 			IWindowService windowService, 
 			IGameStateMachine stateMachine,
-			IMusicClipSetter clipSetter,
-      IHeroSelectorFactory selectorFactory)
+			IMusicClipSetter clipSetter)
 		{
 			_windowService = windowService;
 			_stateMachine = stateMachine;
 			_clipSetter = clipSetter;
-      _selectorFactory = selectorFactory;
     }
 
 
@@ -32,7 +28,6 @@ namespace Code.Infrastructure.States.GameStates
 		{
 			OpenMainMenuWindow();
       PlayMainMenuMusic();
-			CreateHeroSelector();
       EnterToHomeScreenState();
     }
 
@@ -44,8 +39,5 @@ namespace Code.Infrastructure.States.GameStates
 
 		private void PlayMainMenuMusic() => 
 			_clipSetter.SetClip(MusicTypeId.MainMenuMusic);
-
-    private void CreateHeroSelector() => 
-      _selectorFactory.CreateHeroSelector();
-  }
+	}
 }

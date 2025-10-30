@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a6897e8e28d7ff49b69468910ddb461, type: 3}
   m_Name: ShieldItemConfig
   m_EditorClassIdentifier: 
-  TypeId: 5
+  TypeId: 3
   ViewPrefab: {fileID: 2528533552097802068, guid: 0f52371a3d2f8534e8f5c7dbddaee36e, type: 3}
   Sprite: {fileID: 21300000, guid: 737efa2dc4b0c7b45acb1105b94ecd15, type: 3}
   Price: 500

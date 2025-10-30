@@ -1,4 +1,8 @@
-﻿using UnityEngine;
+﻿using Code.Infrastructure.Services;
+using Code.Infrastructure.States.GameStates;
+using Code.Infrastructure.States.StateMachine;
+using Code.Meta.UI.Windows.Service;
+using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
 
@@ -9,21 +13,39 @@ namespace Code.Meta.UI.Windows.Behaviours
 		[SerializeField] private Button _quitButton;
 		[SerializeField] private Button _restartButton;
 
-    private IGameOverFacade _facade;
+		private IGameStateMachine _stateMachine;
+		private IQuitGameService _quit;
+		private IWindowService _windowService;
 
-    [Inject]
-    public void Constructor(IGameOverFacade facade)
+		[Inject]
+    public void Constructor(
+	    IGameStateMachine stateMachine,
+	    IQuitGameService quit,
+	    IWindowService windowService)
     {
       Id = WindowId.GameOverWindow;
 
-      _facade = facade;
-    }
+			_stateMachine = stateMachine;
+			_quit = quit;
+			_windowService = windowService;
+		}
 
     protected override void Initialize()
     {
-      _restartButton.onClick.AddListener(_facade.RestartGame);
-      _quitButton.onClick.AddListener(_facade.QuitGame);
-      _facade.PlayMusic();
+	    _restartButton.onClick.AddListener(RestartGame);
+			_quitButton.onClick.AddListener(QuitGame);
     }
+
+    private void RestartGame()
+		{
+			_windowService.Close(WindowId.GameOverWindow);
+			_stateMachine.Enter<LoadingHomeScreenState>();
+		}
+
+    private void QuitGame()
+		{
+			_windowService.Close(WindowId.GameOverWindow);
+			_quit.QuitGame();
+		}
   }
 }

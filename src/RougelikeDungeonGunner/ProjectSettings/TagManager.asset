@@ -53,6 +53,9 @@ TagManager:
   - name: Instance
     uniqueID: 3730342647
     locked: 0
+  - name: Decoration3
+    uniqueID: 545656759
+    locked: 0
   - name: Front
     uniqueID: 4238468585
     locked: 0

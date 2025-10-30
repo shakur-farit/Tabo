@@ -840,6 +840,8 @@ GameObject:
   - component: {fileID: 3739208188016646041}
   - component: {fileID: 2134393160461594275}
   - component: {fileID: 3233499429689708184}
+  - component: {fileID: 3911670565882201910}
+  - component: {fileID: 502909943347827743}
   m_Layer: 5
   m_Name: EnchantBuyWindow
   m_TagString: Untagged
@@ -909,8 +911,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _closeButton: {fileID: 8416853858772892815}
   _buyButton: {fileID: 5163869900977586934}
-  _enchantToBuyItem: {fileID: 3739208188016646041}
-  _holder: {fileID: 2134393160461594275}
+--- !u!114 &3911670565882201910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4945148918330690640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87a7b21e4765d6049bb629fc2a09f60b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enchantStatsUIHolder: {fileID: 2134393160461594275}
+--- !u!114 &502909943347827743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4945148918330690640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4bbcc99c44c51b4784c261945bf5999, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enchantPurchaseItemView: {fileID: 3739208188016646041}
 --- !u!1 &4952324215372150880
 GameObject:
   m_ObjectHideFlags: 0

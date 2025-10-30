@@ -1,5 +1,4 @@
-﻿using Code.Meta.Features.Shop.Services;
-using Code.Meta.UI.Windows.Service;
+﻿using Code.Meta.UI.Windows.Service;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
@@ -10,10 +9,8 @@ namespace Code.Meta.UI.Windows.Behaviours
   {
     [SerializeField] private Button _closeButton;
     [SerializeField] private Button _buyButton;
-    [SerializeField] private HeroUpgradeToBuyItem _heroUpgradeToBuyItem;
 
     private IWindowService _windowService;
-    private IHeroUpgradeShopService _shopService;
     private IHeroUpgradeBuyer _buyer;
     private IDialogueService _dialogueService;
 
@@ -21,14 +18,12 @@ namespace Code.Meta.UI.Windows.Behaviours
     [Inject]
     public void Constructor(
       IWindowService windowService, 
-      IHeroUpgradeShopService shopService, 
       IHeroUpgradeBuyer buyer,
       IDialogueService dialogueService)
     {
       Id = WindowId.HeroUpgradeBuyWindow;
 
       _windowService = windowService;
-      _shopService = shopService;
       _buyer = buyer;
       _dialogueService = dialogueService;
     }
@@ -37,9 +32,6 @@ namespace Code.Meta.UI.Windows.Behaviours
     {
       _closeButton.onClick.AddListener(CloseWindow);
       _buyButton.onClick.AddListener(BuyUpgrade);
-
-      _heroUpgradeToBuyItem.Setup(_shopService.HeroUpgradeSprite, _shopService.HeroUpgradePrice,
-        _shopService.HeroUpgradeValue);
     }
 
     private void BuyUpgrade()

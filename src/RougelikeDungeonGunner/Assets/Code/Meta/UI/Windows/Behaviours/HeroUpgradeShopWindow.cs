@@ -26,13 +26,13 @@ namespace Code.Meta.UI.Windows.Behaviours
 		{
 			_closeButton.onClick.AddListener(Close);
 
-			ShowUpgrades();
+			RenderUpgrades();
 		}
 
 		private void Close() =>
 			_windowService.Close(WindowId.HeroUpgradeShopWindow);
 
-		private void ShowUpgrades() => 
+		private void RenderUpgrades() => 
 			_renderer.RenderItems(_holder);
 	}
 }

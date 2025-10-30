@@ -41,7 +41,6 @@ using Code.Infrastructure.States.GameStates;
 using Code.Infrastructure.States.StateMachine;
 using Code.Infrastructure.Systems;
 using Code.Infrastructure.View.Factory;
-using Code.Meta.Features.HeroSelector.Factory;
 using Code.Meta.Features.Hud.AmmoHolder.Factory;
 using Code.Meta.Features.Hud.EnchantHolder.Factory;
 using Code.Meta.Features.Hud.HeroHeartHolder.Factory;
@@ -190,7 +189,6 @@ namespace Code.Infrastructure.Installers
 			Container.Bind<IWeaponStatUIEntryItemFactory>().To<WeaponStatUIEntryItemFactory>().AsSingle();
 			Container.Bind<IEnchantUIEntryFactory>().To<EnchantUIEntryFactory>().AsSingle();
 			Container.Bind<IWeaponEnchantStatUIEntryFactory>().To<WeaponEnchantStatUIEntryFactory>().AsSingle();
-			Container.Bind<IHeroSelectorFactory>().To<HeroSelectorFactory>().AsSingle();
 		}
 
 		private void BindUIServices()
@@ -205,7 +203,6 @@ namespace Code.Infrastructure.Installers
       Container.Bind<IWeaponInfoUIRenderer>().To<WeaponInfoUIRenderer>().AsSingle();
       Container.Bind<IWeaponBuyer>().To<WeaponBuyer>().AsSingle();
       Container.Bind<IWeaponStatsUIRenderer>().To<WeaponStatsUIRenderer>().AsSingle();
-      Container.Bind<IEnchantShopItemRenderer>().To<EnchantShopItemRenderer>().AsSingle();
       Container.Bind<IEnchantBuyer>().To<EnchantBuyer>().AsSingle();
       Container.Bind<IEnchantStatsUIRenderer>().To<EnchantStatsUIRenderer>().AsSingle();
       Container.Bind<ICurrentWeaponEnchantStatsUIRenderer>().To<CurrentWeaponEnchantStatsUIRenderer>().AsSingle();
@@ -213,10 +210,7 @@ namespace Code.Infrastructure.Installers
       Container.Bind<IHeroUpgradeBuyer>().To<HeroUpgradeBuyer>().AsSingle();
       Container.Bind<IHeroUpgradeService>().To<HeroUpgradeService>().AsSingle();
       Container.Bind<IWeaponUpgradeShopItemsUIRenderer>().To<WeaponUpgradeShopItemsUIRenderer>().AsSingle();
-      Container.Bind<IGameOverFacade>().To<GameOverFacade>().AsSingle();
-      Container.Bind<IMainMenuFacade>().To<MainMenuFacade>().AsSingle();
       Container.Bind<IWeaponBuyFacade>().To<WeaponBuyFacade>().AsSingle();
-      Container.Bind<IEnchantBuyFacade>().To<EnchantBuyFacade>().AsSingle();
     }
 
 		private void BindSoundsServices()

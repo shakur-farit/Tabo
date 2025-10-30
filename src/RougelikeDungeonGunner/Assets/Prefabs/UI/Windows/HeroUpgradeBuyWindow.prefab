@@ -775,6 +775,7 @@ GameObject:
   - component: {fileID: 2149775613843054166}
   - component: {fileID: 6111409947597008038}
   - component: {fileID: 636309467884662939}
+  - component: {fileID: 7167099107064964471}
   m_Layer: 5
   m_Name: HeroUpgradeBuyWindow
   m_TagString: Untagged
@@ -817,7 +818,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _closeButton: {fileID: 8416853858772892815}
   _buyButton: {fileID: 5163869900977586934}
-  _heroUpgradeToBuyItem: {fileID: 636309467884662939}
 --- !u!114 &636309467884662939
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -833,6 +833,19 @@ MonoBehaviour:
   _icon: {fileID: 6405793439805340276}
   _price: {fileID: 3404107746776499408}
   _value: {fileID: 7499655481863556388}
+--- !u!114 &7167099107064964471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4945148918330690640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51b64b627ddac98479a7278493dacd80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _heroUpgradePurchaseItemView: {fileID: 636309467884662939}
 --- !u!1 &4952324215372150880
 GameObject:
   m_ObjectHideFlags: 0

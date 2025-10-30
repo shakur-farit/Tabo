@@ -410,12 +410,6 @@ MonoBehaviour:
     m_SerializedLabels:
     - WeaponShopItemConfig
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 6ad315037c7aa2e4aa361fc5087b7cbf
-    m_Address: Assets/StaticData/Shop/HeroUpgrade/CurrentBulletsUpgradeItemConfig.asset
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - HeroUpgradeShopItemConfig
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 6fc60c7741de7e842ba6649aa6734a23
     m_Address: Assets/StaticData/Music/DungeonMelancholyMusicConfig.asset
     m_ReadOnly: 0
@@ -445,12 +439,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - WindowConfig
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 73465330ae6adf24a82f5d7c063a2839
-    m_Address: Assets/StaticData/Shop/HeroUpgrade/CurrentMissilesUpgradeItemConfig.asset
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - HeroUpgradeShopItemConfig
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 73780e297bda6ba44a724a988e7ad470
     m_Address: Assets/StaticData/SoundEffect/PistolFireSoundEffectConfig.asset

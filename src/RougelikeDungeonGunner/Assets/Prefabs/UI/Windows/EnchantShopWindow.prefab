@@ -613,6 +613,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8458154193943062896}
   - component: {fileID: 5401229070506438988}
+  - component: {fileID: 5172717114193247048}
   m_Layer: 5
   m_Name: EnchantShopWindow
   m_TagString: Untagged
@@ -654,8 +655,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aca4196dcc2038943ac85be282bf8aa5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _holder: {fileID: 8579956003564771537}
   _closeButton: {fileID: 119071195974867259}
+--- !u!114 &5172717114193247048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6042312791012646439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7024f6d58d0093c43a8f786273b38a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _holder: {fileID: 8579956003564771537}
 --- !u!1 &6423082682309323829
 GameObject:
   m_ObjectHideFlags: 0
