@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TypeId: 4
   ViewPrefab: {fileID: 6244926618751341932, guid: 01b730a4342ada743b9ee8b55e1d120e, type: 3}
+  IsSelfDestructable: 1
   Lifetime: 1

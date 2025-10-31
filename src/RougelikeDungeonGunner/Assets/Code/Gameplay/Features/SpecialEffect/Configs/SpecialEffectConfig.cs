@@ -8,6 +8,7 @@ namespace Code.Gameplay.Features.SpecialEffect.Configs
 	{
 		public SpecialEffectTypeId TypeId;
 		public EntityBehaviour ViewPrefab;
+    public bool IsSelfDestructable; 
     [Range(0.1f, 3f)] public float Lifetime;
   }
 }

@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b6e6f5ca1cc54bc4da457a73056372d7, type: 3}
-  m_Name: SmokeSpecialEffectConfig
+  m_Name: PoisonSpecialEffectConfig
   m_EditorClassIdentifier: 
-  TypeId: 1
-  ViewPrefab: {fileID: 6244926618751341932, guid: 067877af8dff64a4a9463a799952820c, type: 3}
-  IsSelfDestructable: 1
-  Lifetime: 1
+  TypeId: 12
+  ViewPrefab: {fileID: 6244926618751341932, guid: 298d819fa25b3f048b73a0e02569d49a, type: 3}
+  IsSelfDestructable: 0
+  Lifetime: 0.1

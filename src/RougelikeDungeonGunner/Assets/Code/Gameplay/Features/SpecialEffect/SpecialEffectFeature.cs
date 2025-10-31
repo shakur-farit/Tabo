@@ -7,7 +7,7 @@ namespace Code.Gameplay.Features.SpecialEffect
 	{
 		public SpecialEffectFeature(ISystemsFactory systems)
 		{
-			Add(systems.Create<CreateSpecialEffectSystem>());
+			Add(systems.Create<CreateSpecialEffectOnShotSystem>());
 		}
 	}
 }

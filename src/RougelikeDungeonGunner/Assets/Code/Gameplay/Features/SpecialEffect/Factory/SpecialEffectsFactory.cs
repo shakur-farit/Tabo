@@ -27,7 +27,7 @@ namespace Code.Gameplay.Features.SpecialEffect.Factory
 				.AddSpecialEffectTypeId(typeId)
 				.AddWorldPosition(at)
 				.AddViewPrefab(config.ViewPrefab)
-        .AddSelfDestructedTimer(config.Lifetime)
+        .With(x => x.AddSelfDestructedTimer(config.Lifetime), when: config.IsSelfDestructable)
 				.With(x => x.isSpecialEffect = true)
 				.With(x => x.isReusable = true)
 				;

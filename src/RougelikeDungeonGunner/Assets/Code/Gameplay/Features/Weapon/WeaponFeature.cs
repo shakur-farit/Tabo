@@ -30,7 +30,7 @@ namespace Code.Gameplay.Features.Weapon
 			Add(systems.Create<RotateHeroWeaponAlongMovementDirectionSystem>());
 			Add(systems.Create<RotateEnemyWeaponAlongHeroSystem>());
 			Add(systems.Create<SetWeaponDirectionSystem>());
-			Add(systems.Create<PushBackHeroOnCollisionFrontWeaponSystem>());
+			//Add(systems.Create<PushBackHeroOnCollisionFrontWeaponSystem>());
 			Add(systems.Create<CalculateMultiPelletCountSystem>());
 			Add(systems.Create<SetHeroWeaponReloadingMobilePlatformSystem>());
 			Add(systems.Create<SetHeroWeaponReloadingStandalonePlatformSystem>());

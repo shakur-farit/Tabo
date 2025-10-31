@@ -3,12 +3,12 @@ using Entitas;
 
 namespace Code.Gameplay.Features.SpecialEffect.Systems
 {
-	public class CreateSpecialEffectSystem : IExecuteSystem
+	public class CreateSpecialEffectOnShotSystem : IExecuteSystem
 	{
 		private readonly ISpecialEffectsFactory _factory;
 		private readonly IGroup<GameEntity> _weapons;
 
-		public CreateSpecialEffectSystem(GameContext game, ISpecialEffectsFactory factory)
+		public CreateSpecialEffectOnShotSystem(GameContext game, ISpecialEffectsFactory factory)
 		{
 			_factory = factory;
 			_weapons = game.GetGroup(GameMatcher

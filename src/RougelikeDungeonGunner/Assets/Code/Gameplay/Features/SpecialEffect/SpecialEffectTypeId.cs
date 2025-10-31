@@ -13,6 +13,7 @@
 		RedHit = 8,
 		PurpleHit = 9,
 		Explosion = 10,
-		NoSpecialEffect = 11
+		NoSpecialEffect = 11,
+		Poison = 12
 	}
 }
