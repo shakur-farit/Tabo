@@ -7,32 +7,22 @@ namespace Code.Meta.UI.Windows.Behaviours
 {
 	public class HeroUpgradeShopWindow : BaseWindow
 	{
-		[SerializeField] private Transform _holder;
 		[SerializeField] private Button _closeButton;
 
 		private IWindowService _windowService;
-		private IHeroUpgradeShopItemRenderer _renderer;
 
 		[Inject]
-		public void Constructor(IWindowService windowService, IHeroUpgradeShopItemRenderer renderer)
+		public void Constructor(IWindowService windowService)
 		{
 			Id = WindowId.HeroUpgradeShopWindow;
 
 			_windowService = windowService;
-			_renderer = renderer;
 		}
 
-		protected override void Initialize()
-		{
+		protected override void Initialize() => 
 			_closeButton.onClick.AddListener(Close);
-
-			RenderUpgrades();
-		}
 
 		private void Close() =>
 			_windowService.Close(WindowId.HeroUpgradeShopWindow);
-
-		private void RenderUpgrades() => 
-			_renderer.RenderItems(_holder);
 	}
 }

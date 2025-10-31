@@ -612,8 +612,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8458154193943062896}
-  - component: {fileID: 5401229070506438988}
   - component: {fileID: 5172717114193247048}
+  - component: {fileID: 2120925812470159894}
   m_Layer: 5
   m_Name: EnchantShopWindow
   m_TagString: Untagged
@@ -643,19 +643,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &5401229070506438988
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6042312791012646439}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aca4196dcc2038943ac85be282bf8aa5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _closeButton: {fileID: 119071195974867259}
 --- !u!114 &5172717114193247048
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -669,6 +656,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _holder: {fileID: 8579956003564771537}
+--- !u!114 &2120925812470159894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6042312791012646439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aca4196dcc2038943ac85be282bf8aa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _closeButton: {fileID: 119071195974867259}
 --- !u!1 &6423082682309323829
 GameObject:
   m_ObjectHideFlags: 0

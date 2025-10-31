@@ -1,4 +1,9 @@
-﻿using Code.Meta.Features.Shop.EnchantUIEntry.Behaviours;
+﻿using Code.Gameplay.StaticData;
+using Code.Meta.Features.Shop.Enchant.Configs;
+using Code.Meta.Features.Shop.EnchantUIEntry.Behaviours;
+using Code.Meta.Features.Shop.EnchantUIEntry.Configs;
+using Code.Meta.Features.Shop.EnchantUIEntry.Services;
+using Code.Meta.Features.Shop.Services;
 using UnityEngine;
 using Zenject;
 
@@ -8,16 +13,33 @@ namespace Code.Meta.UI.Windows.Behaviours
 	{
 		[SerializeField] private EnchantStatsUIHolder _enchantStatsUIHolder;
 
-		private IEnchantStatsUIRenderer _renderer;
+		private ISelectedEnchantUIEntryProvider _enchantUIEntry;
+		private IStaticDataService _staticDataService;
+		private IEnchantShopService _shopService;
 
 		[Inject]
-		public void Constructor(IEnchantStatsUIRenderer renderer) => 
-			_renderer = renderer;
+		public void Constructor(
+			ISelectedEnchantUIEntryProvider enchantUIEntry,
+			IStaticDataService staticDataService,
+			IEnchantShopService shopService)
+		{
+			_enchantUIEntry = enchantUIEntry;
+			_staticDataService = staticDataService;
+			_shopService = shopService;
+		}
 
-		private void Start() => 
+		private void Start() =>
 			RenderStats();
 
-		private void RenderStats() =>
-			_renderer.RenderUIStats(_enchantStatsUIHolder);
+		private void RenderStats()
+		{
+			EnchantShopItemConfig config =
+				_staticDataService.GetEnchantShopItemConfig(_shopService.EnchantTypeId);
+
+			_enchantUIEntry.SetStatusSetup(config.Enchnat);
+
+			foreach (EnchantStatUIEntry statUIEntry in config.EnchantStatUIEntries)
+				_enchantStatsUIHolder.CreateStats(statUIEntry.TypeId);
+		}
 	}
 }

@@ -1,4 +1,5 @@
-﻿using Code.Gameplay.Features.Hero.Services;
+﻿using System;
+using Code.Gameplay.Features.Hero.Services;
 using TMPro;
 using UnityEngine;
 using Zenject;
@@ -20,6 +21,9 @@ namespace Code.Meta.UI.Windows.Behaviours
 
     private void OnDisable() => 
       _coinService.CoinCountChanged -= CoinsTextUpdate;
+
+    private void Start() => 
+	    CoinsTextUpdate();
 
     private void CoinsTextUpdate() =>
       _coinsText.text = _coinService.GetCurrentCoinCount().ToString();

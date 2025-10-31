@@ -613,6 +613,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2149775613843054166}
   - component: {fileID: 389562488680169426}
+  - component: {fileID: 2062253546346863392}
   m_Layer: 5
   m_Name: HeroUpgradeShopWindow
   m_TagString: Untagged
@@ -654,8 +655,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ecb6fafed26ce645be519048b9ff409, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _holder: {fileID: 4131019173163432428}
   _closeButton: {fileID: 6655719655099012602}
+--- !u!114 &2062253546346863392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4945148918330690640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c980e6a40dc5934b8ec587d89a23e5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _holder: {fileID: 4131019173163432428}
 --- !u!1 &8694462305271474669
 GameObject:
   m_ObjectHideFlags: 0
@@ -668,7 +681,7 @@ GameObject:
   - component: {fileID: 942609625833946093}
   - component: {fileID: 3387512034229763772}
   m_Layer: 5
-  m_Name: Content
+  m_Name: Holder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

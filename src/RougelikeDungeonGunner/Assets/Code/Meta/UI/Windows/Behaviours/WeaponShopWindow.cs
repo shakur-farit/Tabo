@@ -11,22 +11,20 @@ namespace Code.Meta.UI.Windows.Behaviours
 	{
 		[SerializeField] private Button _closeButton;
 		[SerializeField] private Transform _layout;
+		[SerializeField] private WeaponShopUpdater _weaponShopUpdater;
 
 		private readonly List<GameObject> _items = new();
 
 		private IWindowService _windowService;
     private ICurrentHeroWeaponProvider _heroWeapon;
-    private IWeaponShopUpdater _updater;
-
 
     [Inject]
-		public void Constructor(IWindowService windowService, ICurrentHeroWeaponProvider heroWeapon, IWeaponShopUpdater updater)
+		public void Constructor(IWindowService windowService, ICurrentHeroWeaponProvider heroWeapon)
 		{
 			Id = WindowId.WeaponShopWindow;
 
 			_windowService = windowService;
       _heroWeapon = heroWeapon;
-      _updater = updater;
     }
 
 		protected override void Initialize()
@@ -46,6 +44,6 @@ namespace Code.Meta.UI.Windows.Behaviours
 			_windowService.Close(WindowId.WeaponShopWindow);
 
 		private void UpdateWeaponsInShop() => 
-      _updater.UpdateWeaponsInShop(_items,_layout);
-  }
+			_weaponShopUpdater.UpdateWeaponsInShop(_items, _layout);
+	}
 }

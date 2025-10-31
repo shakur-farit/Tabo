@@ -80,6 +80,7 @@ namespace Code.Infrastructure.Installers
 			BindGameplayFactories();
 			BindUIFactories();
 			BindUIServices();
+			BindShopServices();
 			BindSoundsServices();
 			BindSoundsFactories();
 			BindCameraProvider();
@@ -194,22 +195,20 @@ namespace Code.Infrastructure.Installers
 		private void BindUIServices()
 		{
 			Container.Bind<IWindowService>().To<WindowService>().AsSingle();
-      Container.BindInterfacesAndSelfTo<ShopService>().AsSingle();
-      Container.Bind<ISelectedEnchantUIEntryProvider>().To<SelectedEnchantUIEntryProvider>().AsSingle();
       Container.Bind<IHudDependPlatformProvider>().To<HudDependPlatformProvider>().AsSingle();
       Container.Bind<IDialogueService>().To<DialogueService>().AsSingle();
-      Container.Bind<IWeaponShopUpdater>().To<WeaponShopUpdater>().AsSingle();
+    }
+
+		private void BindShopServices()
+		{
+			Container.BindInterfacesAndSelfTo<ShopService>().AsSingle();
+			Container.Bind<ISelectedEnchantUIEntryProvider>().To<SelectedEnchantUIEntryProvider>().AsSingle();
       Container.Bind<ICurrentWeaponInfoProvider>().To<CurrentWeaponInfoProvider>().AsSingle();
       Container.Bind<IWeaponBuyer>().To<WeaponBuyer>().AsSingle();
-      Container.Bind<IWeaponStatsUIRenderer>().To<WeaponStatsUIRenderer>().AsSingle();
       Container.Bind<IEnchantBuyer>().To<EnchantBuyer>().AsSingle();
-      Container.Bind<IEnchantStatsUIRenderer>().To<EnchantStatsUIRenderer>().AsSingle();
-      Container.Bind<IHeroUpgradeShopItemRenderer>().To<HeroUpgradeShopItemRenderer>().AsSingle();
       Container.Bind<IHeroUpgradeBuyer>().To<HeroUpgradeBuyer>().AsSingle();
       Container.Bind<IHeroUpgradeService>().To<HeroUpgradeService>().AsSingle();
-      Container.Bind<IWeaponUpgradeShopItemsUIRenderer>().To<WeaponUpgradeShopItemsUIRenderer>().AsSingle();
-      Container.Bind<IWeaponBuyFacade>().To<WeaponBuyFacade>().AsSingle();
-    }
+		}
 
 		private void BindSoundsServices()
 		{
