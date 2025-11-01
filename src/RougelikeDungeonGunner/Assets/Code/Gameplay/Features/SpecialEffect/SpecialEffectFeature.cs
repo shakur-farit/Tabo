@@ -12,6 +12,7 @@ namespace Code.Gameplay.Features.SpecialEffect
 			Add(systems.Create<CreateFreezeSpecialEffectSystem>());
 			Add(systems.Create<CreateFlameSpecialEffectSystem>());
 			Add(systems.Create<SpecialEffectTargetFollowSystem>());
+			Add(systems.Create<SetSpecialEffectRadiusSystem>());
 
 			Add(systems.Create<MarkSpecialEffectDestructedSystem>());
 		}

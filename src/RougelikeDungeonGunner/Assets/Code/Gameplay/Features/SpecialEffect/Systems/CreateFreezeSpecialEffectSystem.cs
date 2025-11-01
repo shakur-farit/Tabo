@@ -39,7 +39,8 @@ namespace Code.Gameplay.Features.SpecialEffect.Systems
 
 				effect
 					.AddTargetId(status.TargetId)
-					.With(x => x.isSpecialEffectApplied = true)
+          .AddProducerId(status.Id)
+          .With(x => x.isSpecialEffectApplied = true)
 					;
 			}
 		}

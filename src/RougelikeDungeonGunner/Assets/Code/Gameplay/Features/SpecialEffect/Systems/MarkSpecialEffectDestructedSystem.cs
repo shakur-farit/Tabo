@@ -16,19 +16,24 @@ namespace Code.Gameplay.Features.SpecialEffect.Systems
 				.AllOf(
 					GameMatcher.Status,
 					GameMatcher.Unapplied,
+					GameMatcher.Id,
 					GameMatcher.SpecialEffectApplied));
 
 			_specialEffects = game.GetGroup(GameMatcher
 				.AllOf(
 					GameMatcher.SpecialEffect,
+					GameMatcher.ProducerId,
 					GameMatcher.SpecialEffectApplied));
 		}
 
 		public void Execute()
 		{
 			foreach (GameEntity status in _statuses)
-			foreach (GameEntity specialEffect in _specialEffects.GetEntities(_buffer))
-				specialEffect.isDestructed = status.isUnapplied;
-		}
+      foreach (GameEntity specialEffect in _specialEffects.GetEntities(_buffer))
+      {
+				if(status.Id == specialEffect.ProducerId)
+         specialEffect.isDestructed = true;
+      }
+    }
 	}
 }

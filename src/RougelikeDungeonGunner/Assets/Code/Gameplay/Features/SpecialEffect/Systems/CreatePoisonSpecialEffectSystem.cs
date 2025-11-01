@@ -38,8 +38,9 @@ namespace Code.Gameplay.Features.SpecialEffect.Systems
 	      GameEntity effect = _factory.CreateSpecialEffect(SpecialEffectTypeId.Poison, target.WorldPosition);
 
 	      effect
+          .AddProducerId(status.Id)
 		      .AddTargetId(status.TargetId)
-		      .With(x => x.isSpecialEffectApplied = true)
+          .With(x => x.isSpecialEffectApplied = true)
 		      ;
       }
     }

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: WeaponBuyWindowConfig
   m_EditorClassIdentifier: 
   TypeId: 8
-  ViewPrefab: {fileID: 4945148918330690640, guid: c88f1d1359328814997d98cba622a1c4, type: 3}
+  ViewPrefab: {fileID: 4945148918330690640, guid: caf7fcbfe4674b84a8cfa5d9b346384f, type: 3}

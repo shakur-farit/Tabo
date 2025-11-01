@@ -22,8 +22,9 @@ namespace Code.Gameplay.Features.SpecialEffect.Systems
 				.AllOf(
 					GameMatcher.Status,
 					GameMatcher.Flame,
-					GameMatcher.Applied,
-					GameMatcher.TargetId)
+					GameMatcher.WorldPosition,
+					GameMatcher.Radius,
+					GameMatcher.Applied)
 				.NoneOf(GameMatcher.SpecialEffectApplied));
 		}
 
@@ -33,15 +34,15 @@ namespace Code.Gameplay.Features.SpecialEffect.Systems
 			{
 				status.isSpecialEffectApplied = true;
 
-				GameEntity target = _game.GetEntityWithId(status.TargetId);
-
-				GameEntity effect = _factory.CreateSpecialEffect(SpecialEffectTypeId.Flame, target.WorldPosition);
+				GameEntity effect = _factory.CreateSpecialEffect(SpecialEffectTypeId.Flame, status.WorldPosition);
 
 				Debug.Log(effect);
 
 				effect
+          .AddRadius(status.Radius)
+          .AddProducerId(status.Id)
 					.With(x => x.isSpecialEffectApplied = true)
-					;
+          ;
 			}
 		}
 	}
