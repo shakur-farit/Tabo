@@ -28,7 +28,7 @@ namespace Code.Gameplay.Features.SpecialEffect.Systems
 		{
 			foreach (GameEntity status in _statuses)
 			foreach (GameEntity specialEffect in _specialEffects.GetEntities(_buffer))
-				specialEffect.isDestructed = true;
+				specialEffect.isDestructed = status.isUnapplied;
 		}
 	}
 }

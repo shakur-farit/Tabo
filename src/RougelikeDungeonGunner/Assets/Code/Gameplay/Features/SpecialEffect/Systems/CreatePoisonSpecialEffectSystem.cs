@@ -37,12 +37,9 @@ namespace Code.Gameplay.Features.SpecialEffect.Systems
 
 	      GameEntity effect = _factory.CreateSpecialEffect(SpecialEffectTypeId.Poison, target.WorldPosition);
 
-        Debug.Log(effect);
-
 	      effect
 		      .AddTargetId(status.TargetId)
 		      .With(x => x.isSpecialEffectApplied = true)
-		      .With(x => x.isPoisonSpecialEffect = true)
 		      ;
       }
     }

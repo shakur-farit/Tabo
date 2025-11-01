@@ -212,7 +212,7 @@ public static class GameComponentsLookup {
     public const int Rotating = 201;
     public const int RotationAngle = 202;
     public const int RotationAvailable = 203;
-    public const int PoisonSpecialEffect = 204;
+    public const int FollowerSpecialEffect = 204;
     public const int SpecialEffect = 205;
     public const int SpecialEffectApplied = 206;
     public const int SpecialEffectPositionOffset = 207;
@@ -505,7 +505,7 @@ public static class GameComponentsLookup {
         "Rotating",
         "RotationAngle",
         "RotationAvailable",
-        "PoisonSpecialEffect",
+        "FollowerSpecialEffect",
         "SpecialEffect",
         "SpecialEffectApplied",
         "SpecialEffectPositionOffset",
@@ -797,7 +797,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Rotation.Rotating),
         typeof(Code.Gameplay.Features.Rotation.RotationAngle),
         typeof(Code.Gameplay.Features.Rotation.RotationAvailable),
-        typeof(Code.Gameplay.Features.SpecialEffect.PoisonSpecialEffect),
+        typeof(Code.Gameplay.Features.SpecialEffect.FollowerSpecialEffect),
         typeof(Code.Gameplay.Features.SpecialEffect.SpecialEffect),
         typeof(Code.Gameplay.Features.SpecialEffect.SpecialEffectApplied),
         typeof(Code.Gameplay.Features.SpecialEffect.SpecialEffectPositionOffset),

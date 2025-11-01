@@ -13,7 +13,9 @@
 		RedHit = 8,
 		PurpleHit = 9,
 		Explosion = 10,
-		NoSpecialEffect = 11,
-		Poison = 12
+		Freeze = 11,
+		Poison = 12,
+		Flame = 13,
+		NoSpecialEffect = 15
 	}
 }

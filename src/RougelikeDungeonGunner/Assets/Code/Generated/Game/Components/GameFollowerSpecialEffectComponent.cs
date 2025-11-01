@@ -8,17 +8,17 @@
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherPoisonSpecialEffect;
+    static Entitas.IMatcher<GameEntity> _matcherFollowerSpecialEffect;
 
-    public static Entitas.IMatcher<GameEntity> PoisonSpecialEffect {
+    public static Entitas.IMatcher<GameEntity> FollowerSpecialEffect {
         get {
-            if (_matcherPoisonSpecialEffect == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.PoisonSpecialEffect);
+            if (_matcherFollowerSpecialEffect == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.FollowerSpecialEffect);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherPoisonSpecialEffect = matcher;
+                _matcherFollowerSpecialEffect = matcher;
             }
 
-            return _matcherPoisonSpecialEffect;
+            return _matcherFollowerSpecialEffect;
         }
     }
 }
@@ -33,18 +33,18 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.SpecialEffect.PoisonSpecialEffect poisonSpecialEffectComponent = new Code.Gameplay.Features.SpecialEffect.PoisonSpecialEffect();
+    static readonly Code.Gameplay.Features.SpecialEffect.FollowerSpecialEffect followerSpecialEffectComponent = new Code.Gameplay.Features.SpecialEffect.FollowerSpecialEffect();
 
-    public bool isPoisonSpecialEffect {
-        get { return HasComponent(GameComponentsLookup.PoisonSpecialEffect); }
+    public bool isFollowerSpecialEffect {
+        get { return HasComponent(GameComponentsLookup.FollowerSpecialEffect); }
         set {
-            if (value != isPoisonSpecialEffect) {
-                var index = GameComponentsLookup.PoisonSpecialEffect;
+            if (value != isFollowerSpecialEffect) {
+                var index = GameComponentsLookup.FollowerSpecialEffect;
                 if (value) {
                     var componentPool = GetComponentPool(index);
                     var component = componentPool.Count > 0
                             ? componentPool.Pop()
-                            : poisonSpecialEffectComponent;
+                            : followerSpecialEffectComponent;
 
                     AddComponent(index, component);
                 } else {

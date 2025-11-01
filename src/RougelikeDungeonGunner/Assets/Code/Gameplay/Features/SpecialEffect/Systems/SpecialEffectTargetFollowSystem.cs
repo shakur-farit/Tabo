@@ -15,6 +15,7 @@ namespace Code.Gameplay.Features.SpecialEffect.Systems
 					GameMatcher.SpecialEffect,
 					GameMatcher.WorldPosition,
 					GameMatcher.SpecialEffectPositionOffset,
+					GameMatcher.FollowerSpecialEffect,
 					GameMatcher.TargetId));
 		}
 

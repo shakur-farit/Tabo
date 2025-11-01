@@ -48,11 +48,11 @@ MonoBehaviour:
   - EffectTypeId: 1
     Value: 1
   StatusSetups:
-  - StatusTypeId: 1
+  - StatusTypeId: 3
     Value: 0
     StatusDuration: 5
     Period: 1
-    Radius: 0
+    Radius: 2
   AvailableUpgrades:
   - UpgradeType: 8
   - UpgradeType: 2

@@ -152,6 +152,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - SpecialEffectConfig
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 17a9ba71dec938341b9016efac290705
+    m_Address: Assets/StaticData/SpecialEffect/FreezeSpecialEffectConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SpecialEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 17afb457c40697b4aa71daa220a84045
     m_Address: Assets/StaticData/Loot/ExplosionEnchantItemLootConfig.asset
     m_ReadOnly: 0
@@ -318,6 +324,12 @@ MonoBehaviour:
     m_Address: ObjectPoolConfig
     m_ReadOnly: 0
     m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4ecee81916f10954090c70ce818a76fe
+    m_Address: Assets/StaticData/SpecialEffect/FlameSpecialEffectConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SpecialEffectConfig
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 510a3ff03a5d48c44a9b595f8c11d399
     m_Address: OrcEnemyConfig
