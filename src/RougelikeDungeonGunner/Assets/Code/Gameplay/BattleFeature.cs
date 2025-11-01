@@ -23,7 +23,6 @@ using Code.Gameplay.Features.SpecialEffect;
 using Code.Gameplay.Features.Statuses;
 using Code.Gameplay.Features.Weapon;
 using Code.Gameplay.Input;
-using Code.Gameplay.Input.Systems;
 using Code.Infrastructure.Systems;
 using Code.Infrastructure.View;
 using Code.Sounds.Music;
@@ -53,7 +52,6 @@ namespace Code.Gameplay
 			Add(systems.Create<WeaponFeature>());
 			Add(systems.Create<AmmoPatternFeature>());
 			Add(systems.Create<AmmoFeature>());
-			Add(systems.Create<SpecialEffectFeature>());
 
 			Add(systems.Create<CollectFeature>());
 			Add(systems.Create<EffectApplicationFeature>());
@@ -63,6 +61,8 @@ namespace Code.Gameplay
 			Add(systems.Create<StatusFeature>());
 			Add(systems.Create<StatsFeature>());
 			Add(systems.Create<AuraFeature>());
+
+			Add(systems.Create<SpecialEffectFeature>());
 
 			Add(systems.Create<DestroyableFeature>());
 			Add(systems.Create<DoorFeature>());

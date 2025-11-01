@@ -212,90 +212,93 @@ public static class GameComponentsLookup {
     public const int Rotating = 201;
     public const int RotationAngle = 202;
     public const int RotationAvailable = 203;
-    public const int SpecialEffect = 204;
-    public const int SpecialEffectTypeId = 205;
-    public const int Affected = 206;
-    public const int Applied = 207;
-    public const int ApplierStatusLink = 208;
-    public const int Explosive = 209;
-    public const int Flame = 210;
-    public const int Freeze = 211;
-    public const int Period = 212;
-    public const int Poison = 213;
-    public const int Status = 214;
-    public const int StatusDuration = 215;
-    public const int StatusTimeLeft = 216;
-    public const int StatusTypeId = 217;
-    public const int TimeSinceLastTick = 218;
-    public const int Unapplied = 219;
-    public const int ClosestTarget = 220;
-    public const int ClosestTargetPosition = 221;
-    public const int CurrentAmmoCount = 222;
-    public const int CurrentAmmoCountInMagazine = 223;
-    public const int EffectSetups = 224;
-    public const int EnemyCircleSigil = 225;
-    public const int EnemyPistol = 226;
-    public const int EnemyStarSigil = 227;
-    public const int EnemyTriangleSigil = 228;
-    public const int EnemyWeapon = 229;
-    public const int FirePositionTransform = 230;
-    public const int HeroAutomaticPistol = 231;
-    public const int HeroCircleSigil = 232;
-    public const int HeroLaserBlaster = 233;
-    public const int HeroMachinegun = 234;
-    public const int HeroPistol = 235;
-    public const int HeroPlasmaGun = 236;
-    public const int HeroRevolver = 237;
-    public const int HeroRocketLauncher = 238;
-    public const int HeroShotgun = 239;
-    public const int HeroSniper = 240;
-    public const int HeroStarSigil = 241;
-    public const int HeroTriangleSigil = 242;
-    public const int HeroWeapon = 243;
-    public const int InfinityAmmo = 244;
-    public const int MagazineNotEmpty = 245;
-    public const int MagazineSize = 246;
-    public const int MaxAmmoCount = 247;
-    public const int MaxPelletsDeviation = 248;
-    public const int MaxWeaponEnchantsCount = 249;
-    public const int MinPelletsDeviation = 250;
-    public const int MultiPellet = 251;
-    public const int Pierce = 252;
-    public const int Precharged = 253;
-    public const int PrechargeTime = 254;
-    public const int PrechargeTimeLeft = 255;
-    public const int Precharging = 256;
-    public const int ReadyToShoot = 257;
-    public const int Reloading = 258;
-    public const int ReloadSoundEffectTypeId = 259;
-    public const int ReloadTime = 260;
-    public const int ReloadTimeLeft = 261;
-    public const int RotationPointTransform = 262;
-    public const int Shooting = 263;
-    public const int Shot = 264;
-    public const int ShotSoundEffectTypeId = 265;
-    public const int StatusSetups = 266;
-    public const int Weapon = 267;
-    public const int WeaponEnchants = 268;
-    public const int WeaponNotEmpty = 269;
-    public const int WeaponOwnerId = 270;
-    public const int WeaponOwnerTypeId = 271;
-    public const int WeaponRotationAngle = 272;
-    public const int WeaponTypeId = 273;
-    public const int AmmoHolder = 274;
-    public const int CoinsHolder = 275;
-    public const int EnchantHolder = 276;
-    public const int HeartHolder = 277;
-    public const int ReloadingAnimator = 278;
-    public const int TimerHolder = 279;
-    public const int WeaponHolder = 280;
-    public const int AudioClip = 281;
-    public const int AudioSource = 282;
-    public const int SoundEffect = 283;
-    public const int SoundEffectTypeId = 284;
-    public const int Volume = 285;
+    public const int PoisonSpecialEffect = 204;
+    public const int SpecialEffect = 205;
+    public const int SpecialEffectApplied = 206;
+    public const int SpecialEffectPositionOffset = 207;
+    public const int SpecialEffectTypeId = 208;
+    public const int Affected = 209;
+    public const int Applied = 210;
+    public const int ApplierStatusLink = 211;
+    public const int Explosive = 212;
+    public const int Flame = 213;
+    public const int Freeze = 214;
+    public const int Period = 215;
+    public const int Poison = 216;
+    public const int Status = 217;
+    public const int StatusDuration = 218;
+    public const int StatusTimeLeft = 219;
+    public const int StatusTypeId = 220;
+    public const int TimeSinceLastTick = 221;
+    public const int Unapplied = 222;
+    public const int ClosestTarget = 223;
+    public const int ClosestTargetPosition = 224;
+    public const int CurrentAmmoCount = 225;
+    public const int CurrentAmmoCountInMagazine = 226;
+    public const int EffectSetups = 227;
+    public const int EnemyCircleSigil = 228;
+    public const int EnemyPistol = 229;
+    public const int EnemyStarSigil = 230;
+    public const int EnemyTriangleSigil = 231;
+    public const int EnemyWeapon = 232;
+    public const int FirePositionTransform = 233;
+    public const int HeroAutomaticPistol = 234;
+    public const int HeroCircleSigil = 235;
+    public const int HeroLaserBlaster = 236;
+    public const int HeroMachinegun = 237;
+    public const int HeroPistol = 238;
+    public const int HeroPlasmaGun = 239;
+    public const int HeroRevolver = 240;
+    public const int HeroRocketLauncher = 241;
+    public const int HeroShotgun = 242;
+    public const int HeroSniper = 243;
+    public const int HeroStarSigil = 244;
+    public const int HeroTriangleSigil = 245;
+    public const int HeroWeapon = 246;
+    public const int InfinityAmmo = 247;
+    public const int MagazineNotEmpty = 248;
+    public const int MagazineSize = 249;
+    public const int MaxAmmoCount = 250;
+    public const int MaxPelletsDeviation = 251;
+    public const int MaxWeaponEnchantsCount = 252;
+    public const int MinPelletsDeviation = 253;
+    public const int MultiPellet = 254;
+    public const int Pierce = 255;
+    public const int Precharged = 256;
+    public const int PrechargeTime = 257;
+    public const int PrechargeTimeLeft = 258;
+    public const int Precharging = 259;
+    public const int ReadyToShoot = 260;
+    public const int Reloading = 261;
+    public const int ReloadSoundEffectTypeId = 262;
+    public const int ReloadTime = 263;
+    public const int ReloadTimeLeft = 264;
+    public const int RotationPointTransform = 265;
+    public const int Shooting = 266;
+    public const int Shot = 267;
+    public const int ShotSoundEffectTypeId = 268;
+    public const int StatusSetups = 269;
+    public const int Weapon = 270;
+    public const int WeaponEnchants = 271;
+    public const int WeaponNotEmpty = 272;
+    public const int WeaponOwnerId = 273;
+    public const int WeaponOwnerTypeId = 274;
+    public const int WeaponRotationAngle = 275;
+    public const int WeaponTypeId = 276;
+    public const int AmmoHolder = 277;
+    public const int CoinsHolder = 278;
+    public const int EnchantHolder = 279;
+    public const int HeartHolder = 280;
+    public const int ReloadingAnimator = 281;
+    public const int TimerHolder = 282;
+    public const int WeaponHolder = 283;
+    public const int AudioClip = 284;
+    public const int AudioSource = 285;
+    public const int SoundEffect = 286;
+    public const int SoundEffectTypeId = 287;
+    public const int Volume = 288;
 
-    public const int TotalComponents = 286;
+    public const int TotalComponents = 289;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -502,7 +505,10 @@ public static class GameComponentsLookup {
         "Rotating",
         "RotationAngle",
         "RotationAvailable",
+        "PoisonSpecialEffect",
         "SpecialEffect",
+        "SpecialEffectApplied",
+        "SpecialEffectPositionOffset",
         "SpecialEffectTypeId",
         "Affected",
         "Applied",
@@ -791,7 +797,10 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Rotation.Rotating),
         typeof(Code.Gameplay.Features.Rotation.RotationAngle),
         typeof(Code.Gameplay.Features.Rotation.RotationAvailable),
+        typeof(Code.Gameplay.Features.SpecialEffect.PoisonSpecialEffect),
         typeof(Code.Gameplay.Features.SpecialEffect.SpecialEffect),
+        typeof(Code.Gameplay.Features.SpecialEffect.SpecialEffectApplied),
+        typeof(Code.Gameplay.Features.SpecialEffect.SpecialEffectPositionOffset),
         typeof(Code.Gameplay.Features.SpecialEffect.SpecialEffectTypeIdComponent),
         typeof(Code.Gameplay.Features.Statuses.StatusComponents.Affected),
         typeof(Code.Gameplay.Features.Statuses.StatusComponents.Applied),

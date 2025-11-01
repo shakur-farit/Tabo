@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: PoisonSpecialEffectConfig
   m_EditorClassIdentifier: 
   TypeId: 12
-  ViewPrefab: {fileID: 6244926618751341932, guid: 298d819fa25b3f048b73a0e02569d49a, type: 3}
+  ViewPrefab: {fileID: 6244926618751341932, guid: cc3396cc27aa0444aaaf6b2225429e7e, type: 3}
   IsSelfDestructable: 0
   Lifetime: 0.1
+  PositionOffset: {x: 0, y: 0.5, z: 0}

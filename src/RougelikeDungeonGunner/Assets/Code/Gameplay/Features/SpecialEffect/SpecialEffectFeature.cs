@@ -8,6 +8,10 @@ namespace Code.Gameplay.Features.SpecialEffect
 		public SpecialEffectFeature(ISystemsFactory systems)
 		{
 			Add(systems.Create<CreateSpecialEffectOnShotSystem>());
+			Add(systems.Create<CreatePoisonSpecialEffectSystem>());
+			Add(systems.Create<SpecialEffectTargetFollowSystem>());
+
+			Add(systems.Create<MarkSpecialEffectDestructedSystem>());
 		}
 	}
 }
