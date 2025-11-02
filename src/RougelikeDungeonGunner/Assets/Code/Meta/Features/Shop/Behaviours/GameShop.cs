@@ -1,4 +1,7 @@
-﻿using Code.Meta.UI.Windows.Service;
+﻿using System;
+using Code.Gameplay.Features.Hero.Services;
+using Code.Gameplay.StaticData;
+using Code.Meta.UI.Windows.Service;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
@@ -11,12 +14,22 @@ namespace Code.Meta.UI.Windows.Behaviours
     [SerializeField] private Button _weaponBuyButton;
     [SerializeField] private Button _enchantBuyButton;
     [SerializeField] private Button _heroUpgradeBuyButton;
+    [SerializeField] private Image _heroUpgradeShopIcon;
 
     private IWindowService _windowService;
+    private IStaticDataService _staticDataService;
+    private ICurrentHeroTypeIdProvider _heroType;
 
     [Inject]
-    public void Constructor(IWindowService windowService) => 
-      _windowService = windowService;
+    public void Constructor(
+	    IWindowService windowService, 
+	    IStaticDataService staticDataService, 
+	    ICurrentHeroTypeIdProvider heroType)
+    {
+	    _windowService = windowService;
+	    _staticDataService = staticDataService;
+	    _heroType = heroType;
+    }
 
     private void OnEnable()
     {
@@ -25,6 +38,11 @@ namespace Code.Meta.UI.Windows.Behaviours
       _enchantBuyButton.onClick.AddListener(OpenEnchantShop);
       _heroUpgradeBuyButton.onClick.AddListener(OpenHeroUpgradeShop);
     }
+
+    private void Start() =>
+	    _heroUpgradeShopIcon.sprite = 
+		    _staticDataService.GetHeroConfig(_heroType.CurrentHeroTypeId)
+			    .ShopIcon;
 
     public void OpenWeaponUpgradeShop() =>
       _windowService.Open(WindowId.WeaponUpgradeWindow);

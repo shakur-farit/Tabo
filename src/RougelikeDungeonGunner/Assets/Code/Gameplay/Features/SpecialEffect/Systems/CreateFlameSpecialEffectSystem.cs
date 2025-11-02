@@ -36,8 +36,6 @@ namespace Code.Gameplay.Features.SpecialEffect.Systems
 
 				GameEntity effect = _factory.CreateSpecialEffect(SpecialEffectTypeId.Flame, status.WorldPosition);
 
-				Debug.Log(effect);
-
 				effect
           .AddRadius(status.Radius)
           .AddProducerId(status.Id)

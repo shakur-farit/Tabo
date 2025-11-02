@@ -13,6 +13,7 @@ namespace Code.Gameplay.Features.Hero.Configs
 		public EntityBehaviour ViewPrefab;
 		public RuntimeAnimatorController AnimatorController;
 		public Sprite HandSprite;
+		public Sprite ShopIcon;
 		public WeaponTypeId StartWeapon;
 		public AuraTypeId StartAura;
 		[Range(1, 100)] public int CurrentHp;

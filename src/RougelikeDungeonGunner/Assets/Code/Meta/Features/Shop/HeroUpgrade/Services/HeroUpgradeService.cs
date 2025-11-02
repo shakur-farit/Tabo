@@ -8,11 +8,16 @@ namespace Code.Meta.UI.Windows.Behaviours
   {
     private readonly IHeroHpProvider _heroHp;
     private readonly ICurrentHeroTypeIdProvider _hero;
+    private readonly IShieldRequestProvider _shieldRequest;
 
-    public HeroUpgradeService(IHeroHpProvider heroHp, ICurrentHeroTypeIdProvider hero)
+    public HeroUpgradeService(
+	    IHeroHpProvider heroHp, 
+	    ICurrentHeroTypeIdProvider hero,
+	    IShieldRequestProvider shieldRequest)
     {
       _heroHp = heroHp;
       _hero = hero;
+      _shieldRequest = shieldRequest;
     }
 
     public bool TryUpgrade(HeroUpgradeTypeId typeId, float value)
@@ -23,6 +28,8 @@ namespace Code.Meta.UI.Windows.Behaviours
           return IncreaseCurrentHp(value);
         case HeroUpgradeTypeId.MaxHp:
           return IncreaseMaxHp(value);
+        case HeroUpgradeTypeId.Shield:
+	        return RequestShield();
       }
 
       throw new Exception($"Have no upgrades for {typeId} type");
@@ -46,6 +53,14 @@ namespace Code.Meta.UI.Windows.Behaviours
       float newCount = currentCount + value;
       _heroHp.SetMaxHp(newCount);
       return true;
+    }
+
+    private bool RequestShield()
+    {
+      if(_shieldRequest.IsRequiested)
+        return false;
+
+	    return _shieldRequest.IsRequiested = true;
     }
   }
 }

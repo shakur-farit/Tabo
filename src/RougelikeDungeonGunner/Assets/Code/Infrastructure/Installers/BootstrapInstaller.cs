@@ -175,6 +175,7 @@ namespace Code.Infrastructure.Installers
 			Container.Bind<IAmmoPatternFactory>().To<AmmoPatternFactory>().AsSingle();
 			Container.Bind<IDestroyableItemFactory>().To<DestroyableItemFactory>().AsSingle();
 			Container.Bind<IDoorFactory>().To<DoorFactory>().AsSingle();
+			Container.Bind<IShieldRequestProvider>().To<ShieldRequestProvider>().AsSingle();
 		}
 
 		private void BindUIFactories()

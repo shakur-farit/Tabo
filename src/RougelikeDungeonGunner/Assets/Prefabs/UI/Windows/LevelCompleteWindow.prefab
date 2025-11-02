@@ -633,6 +633,7 @@ MonoBehaviour:
   _weaponBuyButton: {fileID: 2514447146863434449}
   _enchantBuyButton: {fileID: 8875456848377572236}
   _heroUpgradeBuyButton: {fileID: 26042107799144228}
+  _heroUpgradeShopIcon: {fileID: 318984495227611884}
 --- !u!114 &1013279148437755716
 MonoBehaviour:
   m_ObjectHideFlags: 0
