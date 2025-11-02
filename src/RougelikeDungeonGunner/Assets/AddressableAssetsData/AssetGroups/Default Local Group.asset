@@ -422,6 +422,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - WeaponShopItemConfig
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 656b7b2f74210e84ea89dfaf495b59f5
+    m_Address: Assets/StaticData/Window/EnchantBuyWindowConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WindowConfig
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 6fc60c7741de7e842ba6649aa6734a23
     m_Address: Assets/StaticData/Music/DungeonMelancholyMusicConfig.asset
     m_ReadOnly: 0
@@ -728,12 +734,6 @@ MonoBehaviour:
     m_SerializedLabels:
     - WeaponUpgradeShopItemConfig
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: a9d1eafde73b1cc42b2bd7b98d3b385f
-    m_Address: Assets/StaticData/Window/EnchantBuyWindowConfig.asset
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - WindowConfig
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: af9b416a80159f1419d7455ae91f6cec
     m_Address: Assets/StaticData/Shop/Upgrade/CooldownWeaponUpgradeItemConfig 6.asset
     m_ReadOnly: 0
@@ -802,12 +802,6 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c5da1bb32a357af4495a18eaebe3adcc
     m_Address: Assets/StaticData/Window/EnchantAlreadyAppliedWindowConfig.asset
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - WindowConfig
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: c6a4b9a90c5526243b544c298c8fc62f
-    m_Address: Assets/StaticData/Window/WeaponBuyWindowConfig.asset
     m_ReadOnly: 0
     m_SerializedLabels:
     - WindowConfig
@@ -986,6 +980,12 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - WeaponUpgradeShopItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: efe9c25c2bac05d4db1b2f9fa7954aab
+    m_Address: Assets/StaticData/Window/WeaponBuyWindowConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WindowConfig
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f197b0a0ce1b3e443aa4f6aa8852ab98
     m_Address: Assets/StaticData/SoundEffect/GlassBreakingSoundEffectConfig.asset
