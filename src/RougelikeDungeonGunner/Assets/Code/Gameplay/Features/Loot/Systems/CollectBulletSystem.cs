@@ -50,7 +50,8 @@ namespace Code.Gameplay.Features.Loot.Systems
 
 				_currentAmmo.SetCurrentAmmoCount(weapon.CurrentAmmoCount);
 
-				holder.AmmoHolder.UpdateAmmoUICount(weapon.CurrentAmmoCount);
+        if (weapon.isReloading == false)
+          holder.AmmoHolder.UpdateAmmoUICount(weapon.CurrentAmmoCount);
 
 				if (collected.hasSoundEffectTypeId)
 					_soundEffectFactory.CreateSoundEffect(collected.SoundEffectTypeId);
