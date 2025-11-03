@@ -41,6 +41,7 @@ using Code.Infrastructure.States.GameStates;
 using Code.Infrastructure.States.StateMachine;
 using Code.Infrastructure.Systems;
 using Code.Infrastructure.View.Factory;
+using Code.Meta;
 using Code.Meta.Features.Hud.AmmoHolder.Factory;
 using Code.Meta.Features.Hud.EnchantHolder.Factory;
 using Code.Meta.Features.Hud.HeroHeartHolder.Factory;
@@ -55,6 +56,7 @@ using Code.Meta.Features.Shop.WeaponStatUIEntry.Factory;
 using Code.Meta.UI.Windows.Behaviours;
 using Code.Meta.UI.Windows.Factory;
 using Code.Meta.UI.Windows.Service;
+using Code.Progress.Data.Progress;
 using Code.Progress.Provider;
 using Code.Sounds.Music.Services;
 using Code.Sounds.Services;
@@ -246,6 +248,8 @@ namespace Code.Infrastructure.Installers
 			Container.Bind<IPhysicsService>().To<PhysicsService>().AsSingle();
 			Container.Bind<ITimeService>().To<UnityTimeService>().AsSingle();
 			Container.Bind<ISceneLoader>().To<SceneLoader>().AsSingle();
+			Container.BindInterfacesAndSelfTo<SaveLoadSystem>().AsSingle();
+			Container.BindInterfacesAndSelfTo<LeaderboardService>().AsSingle();
 		}
 
 		private void BindInputService()

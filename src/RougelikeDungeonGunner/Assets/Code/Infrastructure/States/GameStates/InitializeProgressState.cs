@@ -9,12 +9,14 @@ namespace Code.Infrastructure.States.GameStates
 	{
 		private readonly IGameStateMachine _stateMachine;
 		private readonly IProgressProvider _progressProvider;
+    private readonly ILoadSystem _load;
 
-		public InitializeProgressState(IGameStateMachine stateMachine, IProgressProvider progressProvider)
+    public InitializeProgressState(IGameStateMachine stateMachine, IProgressProvider progressProvider, ILoadSystem load)
 		{
 			_stateMachine = stateMachine;
 			_progressProvider = progressProvider;
-		}
+      _load = load;
+    }
 
 		public override void Enter()
 		{
@@ -23,12 +25,12 @@ namespace Code.Infrastructure.States.GameStates
 		}
 
 		private void InitializeProgress() => 
-			CreateNewProgress();
+			LoadOrCreateNewProgress();
 
-		private void CreateNewProgress() => 
-			_progressProvider.SetProgressData(new ProgressData());
+    private void LoadOrCreateNewProgress() => 
+      _progressProvider.SetProgressData(_load.Load() ?? new ProgressData());
 
-		private void EnterToLoadStaticDataState() => 
+    private void EnterToLoadStaticDataState() => 
 			_stateMachine.Enter<LoadStaticDataState>();
 	}
 }

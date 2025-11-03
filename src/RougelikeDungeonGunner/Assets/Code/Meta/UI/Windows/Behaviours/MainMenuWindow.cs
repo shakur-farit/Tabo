@@ -18,11 +18,13 @@ namespace Code.Meta.UI.Windows.Behaviours
 		private IGameStateMachine _stateMachine;
 		private IWindowService _windowService;
 		private IQuitGameService _quit;
+    private ILeaderboardGetter _leaderboard;
 
-		[Inject]
+    [Inject]
 		public void Constructor(
 			IGameStateMachine stateMachine,
 			IWindowService windowService,
+			ILeaderboardGetter leaderboard,
 			IQuitGameService quit)
 		{
 			Id = WindowId.MainMenuWindow;
@@ -30,22 +32,30 @@ namespace Code.Meta.UI.Windows.Behaviours
 			_stateMachine = stateMachine;
 			_windowService = windowService;
 			_quit = quit;
-		}
+      _leaderboard = leaderboard;
+    }
 
 		protected override void Initialize()
     {
       _startGameButton.onClick.AddListener(StartGame);
       _settingsButton.onClick.AddListener(OpenSettings);
       _quitButton.onClick.AddListener(QuitGame);
+
+			LB();
     }
 
-		private void StartGame()
+    private void StartGame()
     {
-	    _stateMachine.Enter<LoadingBattleState, string>(Scenes.Gameplay);
+	     _stateMachine.Enter<LoadingBattleState, string>(Scenes.Gameplay);
 	    _windowService.Close(WindowId.MainMenuWindow);
     }
 
-		private void OpenSettings() => 
+    private async void LB()
+    {
+      await _leaderboard.GetLeaderboard();
+    }
+
+    private void OpenSettings() => 
 			_windowService.Open(WindowId.SettingsWindow);
 
 		private void QuitGame()

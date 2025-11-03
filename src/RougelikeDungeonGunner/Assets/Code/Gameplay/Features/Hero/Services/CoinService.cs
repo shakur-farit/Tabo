@@ -1,4 +1,5 @@
 ﻿using System;
+using Code.Progress.Data.Progress;
 
 namespace Code.Gameplay.Features.Hero.Services
 {

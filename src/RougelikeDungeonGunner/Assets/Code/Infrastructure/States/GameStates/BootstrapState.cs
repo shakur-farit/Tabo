@@ -1,6 +1,7 @@
 using Code.Infrastructure.AssetManagement;
 using Code.Infrastructure.States.StateInfrastructure;
 using Code.Infrastructure.States.StateMachine;
+using Code.Meta;
 using Cysharp.Threading.Tasks;
 
 namespace Code.Infrastructure.States.GameStates
@@ -9,16 +10,19 @@ namespace Code.Infrastructure.States.GameStates
 	{
 		private readonly IGameStateMachine _stateMachine;
 		private readonly IAssetProvider _assetProvider;
+    private readonly ILeaderboardInitializer _leaderboardInitializer;
 
-		public BootstrapState(IGameStateMachine stateMachine, IAssetProvider assetProvider)
+    public BootstrapState(IGameStateMachine stateMachine, IAssetProvider assetProvider, ILeaderboardInitializer leaderboardInitializer)
 		{
 			_stateMachine = stateMachine;
 			_assetProvider = assetProvider;
-		}
+      _leaderboardInitializer = leaderboardInitializer;
+    }
 
 		public override async void Enter()
 		{
 			await InitAddressables();
+      await _leaderboardInitializer.Initialize();
 			EnterToInitializeProgressState();
 		}
 
