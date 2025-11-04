@@ -54,16 +54,10 @@ namespace Code.Meta.UI.Windows.Behaviours
     private void CloseWindow() =>
       _windowService.Close(WindowId.HeroUpgradeBuyWindow);
 
-    private void OpenNotEnoughCoinsDialogue()
-    {
-      _dialogueService.SetDialogueText(Dialogues.NotEnoughCoins);
-      _windowService.Open(WindowId.DialogueWindow);
-    }
+    private void OpenNotEnoughCoinsDialogue() => 
+      _dialogueService.OpenNotEnoughCoinsDialogue();
 
-    private void OpenMaxDialogue()
-    {
-      _dialogueService.SetDialogueText(Dialogues.MaxValue);
-      _windowService.Open(WindowId.DialogueWindow);
-    }
+    private void OpenMaxDialogue() => 
+      _dialogueService.OpenMaxValueDialogue();
   }
 }

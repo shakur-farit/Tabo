@@ -11,18 +11,26 @@ namespace Code.Infrastructure.States.GameStates
 		private readonly IGameStateMachine _stateMachine;
 		private readonly IAssetProvider _assetProvider;
     private readonly ILeaderboardInitializer _leaderboardInitializer;
+    private readonly IPlayerAuthenticationService _authenticationService;
 
-    public BootstrapState(IGameStateMachine stateMachine, IAssetProvider assetProvider, ILeaderboardInitializer leaderboardInitializer)
+    public BootstrapState(
+      IGameStateMachine stateMachine,
+      IAssetProvider assetProvider, 
+      ILeaderboardInitializer leaderboardInitializer,
+      IPlayerAuthenticationService authenticationService)
 		{
 			_stateMachine = stateMachine;
 			_assetProvider = assetProvider;
       _leaderboardInitializer = leaderboardInitializer;
+      _authenticationService = authenticationService;
     }
 
 		public override async void Enter()
 		{
 			await InitAddressables();
       await _leaderboardInitializer.Initialize();
+      await _authenticationService.Initialize();
+      await _authenticationService.SignIn();
 			EnterToInitializeProgressState();
 		}
 

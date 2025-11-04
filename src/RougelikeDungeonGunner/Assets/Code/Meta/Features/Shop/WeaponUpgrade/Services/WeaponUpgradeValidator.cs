@@ -28,7 +28,7 @@ namespace Code.Meta.Features.Shop.Upgrade.Services
 
 		public bool CanUpgrade(WeaponUpgradeShopItemConfig config)
 		{
-			WeaponBalance weaponBalance = _staticDataService.GetBalance().WeaponBalance;
+			WeaponBalance weaponBalance = _staticDataService.GetGameBalance().WeaponBalance;
 
 			WeaponTypeId currentWeapon = _heroWeapon.CurrentWeaponTypeId;
 			WeaponConfig weaponConfig = _staticDataService.GetWeaponConfig(currentWeapon);

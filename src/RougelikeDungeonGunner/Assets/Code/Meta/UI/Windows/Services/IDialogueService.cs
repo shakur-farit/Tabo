@@ -3,6 +3,8 @@
   public interface IDialogueService
   {
     string GetDialogueText();
-    void SetDialogueText(string text);
+    void OpenNotEnoughCoinsDialogue();
+    void OpenAppliedEnchantDialogue();
+    void OpenMaxValueDialogue();
   }
 }

@@ -44,10 +44,7 @@ namespace Code.Meta.UI.Windows.Behaviours
 		private void CloseWindow() =>
 			_windowService.Close(WindowId.EnchantBuyWindow);
 
-		public void OpenNotEnoughCoinsWindow()
-		{
-			_dialogueService.SetDialogueText(Dialogues.NotEnoughCoins);
-			_windowService.Open(WindowId.DialogueWindow);
-		}
-	}
+		public void OpenNotEnoughCoinsWindow() => 
+      _dialogueService.OpenNotEnoughCoinsDialogue();
+  }
 }

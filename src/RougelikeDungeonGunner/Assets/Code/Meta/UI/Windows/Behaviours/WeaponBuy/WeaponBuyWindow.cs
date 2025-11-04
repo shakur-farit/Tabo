@@ -39,11 +39,8 @@ namespace Code.Meta.UI.Windows.Behaviours
 			if (_buyer.TryBuyWeapon())
 				_windowService.Close(WindowId.WeaponBuyWindow);
 			else
-			{
-				_dialogueService.SetDialogueText(Dialogues.NotEnoughCoins);
-				_windowService.Open(WindowId.DialogueWindow);
-			}
-		}
+        _dialogueService.OpenNotEnoughCoinsDialogue();
+    }
 
 		private void CloseWindow() =>
 			_windowService.Close(WindowId.WeaponBuyWindow);

@@ -25,6 +25,7 @@ using Code.Gameplay.Features.SpecialEffect.Configs;
 using Code.Gameplay.Features.Weapon;
 using Code.Gameplay.Features.Weapon.Configs;
 using Code.Infrastructure.ObjectPool.Config;
+using Code.Meta;
 using Code.Meta.Features.Shop.Enchant;
 using Code.Meta.Features.Shop.Enchant.Configs;
 using Code.Meta.Features.Shop.EnchantUIEntry;
@@ -53,7 +54,7 @@ namespace Code.Gameplay.StaticData
 
     UniTask Load();
 
-    BalanceConfig GetBalance();
+    GameBalanceConfig GetGameBalance();
     DungeonConfig GetDungeonConfig(DungeonTypeId id);
     AmmoConfig GetAmmoConfig(AmmoTypeId ammoTypeId);
     WeaponConfig GetWeaponConfig(WeaponTypeId weaponTypeId);
@@ -77,5 +78,8 @@ namespace Code.Gameplay.StaticData
     MusicConfig GetMusicConfig(MusicTypeId typeId);
     SoundEffectConfig GetSoundEffectConfig(SoundEffectTypeId id);
     ObjectPoolConfig GetObjectPoolConfig();
+    HudConfig GetHudConfig();
+    DialogueConfig GetDialogueConfig();
+    LeaderboardConfig GetLeaderboard();
   }
 }

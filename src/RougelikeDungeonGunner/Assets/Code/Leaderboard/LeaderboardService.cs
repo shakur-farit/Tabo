@@ -1,4 +1,5 @@
-﻿using Code.Progress.Provider;
+﻿using Code.Gameplay.Features.Hero.Services;
+using Code.Gameplay.StaticData;
 using Cysharp.Threading.Tasks;
 using Unity.Services.Authentication;
 using Unity.Services.Core;
@@ -10,10 +11,14 @@ namespace Code.Meta
 {
   public class LeaderboardService : ILeaderboardInitializer, ILeaderboardUpdater, ILeaderboardGetter
   {
-    private readonly IProgressProvider _progressProvider;
+    private readonly ICoinService _coinService;
+    private readonly IStaticDataService _staticDataService;
 
-    public LeaderboardService(IProgressProvider progressProvider) => 
-      _progressProvider = progressProvider;
+    public LeaderboardService(ICoinService coinService, IStaticDataService staticDataService)
+    {
+      _coinService = coinService;
+      _staticDataService = staticDataService;
+    }
 
     public async UniTask Initialize()
     {
@@ -33,11 +38,12 @@ namespace Code.Meta
 
     public async UniTask UpdateLeaderboard()
     {
-      int score = _progressProvider.ProgressData.ScoreData.Score;
+      int score = _coinService.GetCurrentCoinCount();
+      string id = GetConfig().LeaderboardID;
 
       try
       {
-        await LeaderboardsService.Instance.AddPlayerScoreAsync("TaboLeaderboard", score);
+        await LeaderboardsService.Instance.AddPlayerScoreAsync(id, score);
         Debug.Log($"Очки {score} отправлены на Leaderboard!");
       }
       catch (System.Exception e)
@@ -46,12 +52,15 @@ namespace Code.Meta
       }
     }
 
-    public async UniTask GetLeaderboard(int topCount = 10)
+    public async UniTask GetLeaderboard()
     {
+      int topCount = GetConfig().MaxLeaderCount;
+      string id = GetConfig().LeaderboardID;
+
       try
       {
         LeaderboardScoresPage scoresResponse = await LeaderboardsService.Instance.GetScoresAsync(
-          "TaboLeaderboard",
+          id,
           new GetScoresOptions { Limit = topCount }
         );
 
@@ -65,5 +74,8 @@ namespace Code.Meta
         Debug.LogError($"Ошибка получения лидеров: {e.Message}");
       }
     }
+
+    private LeaderboardConfig GetConfig() => 
+      _staticDataService.GetLeaderboard();
   }
 }

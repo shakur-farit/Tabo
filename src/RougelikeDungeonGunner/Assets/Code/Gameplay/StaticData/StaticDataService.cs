@@ -41,16 +41,21 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Code.Infrastructure.ObjectPool.Config;
+using Code.Meta;
 using Code.Sounds.Music;
 using Code.Sounds.Music.Configs;
 using Code.Sounds.SoundEffects;
 using Code.Sounds.SoundEffects.Config;
+using UnityEngine;
 
 namespace Code.Gameplay.StaticData
 {
 	public class StaticDataService : IStaticDataService
 	{
-		private const string BalanceConfigPath = "BalanceConfig";
+		private const string GameBalanceConfigPath = "GameBalanceConfig";
+		private const string LeaderboardConfigPath = "LeaderboardConfig";
+		private const string HudConfigPath = "HudConfig";
+		private const string DialogueConfigPath = "DialogueConfig";
 		private const string ObjectPoolConfigPath = "ObjectPoolConfig";
 		private const string AmmoConfigLabel = "AmmoConfig";
 		private const string WeaponConfigLabel = "WeaponConfig";
@@ -75,7 +80,10 @@ namespace Code.Gameplay.StaticData
     private const string MusicConfigLabel = "MusicConfig";
     private const string SoundEffectConfigLabel = "SoundEffectConfig";
 
-    private BalanceConfig _balance;
+    private GameBalanceConfig _gameBalance;
+    private LeaderboardConfig _leaderboard;
+    private HudConfig _hud;
+    private DialogueConfig _dialogue;
     private ObjectPoolConfig _objectPool;
     private Dictionary<AmmoTypeId, AmmoConfig> _ammoById;
     private Dictionary<WeaponTypeId, WeaponConfig> _weaponById;
@@ -114,7 +122,10 @@ namespace Code.Gameplay.StaticData
 
 		public async UniTask Load()
 		{
-			await LoadBalance();
+			await LoadGameBalance();
+			await LoadLeaderboard();
+			await LoadHud();
+			await LoadDialogues();
       await LoadObjectPool();
 			await LoadAbilities();
 			await LoadWeapons();
@@ -317,8 +328,17 @@ namespace Code.Gameplay.StaticData
       throw new Exception($"Sound effect config for {id} was not found");
     }
 
-		public BalanceConfig GetBalance() =>
-			_balance;
+		public GameBalanceConfig GetGameBalance() =>
+			_gameBalance;
+
+    public LeaderboardConfig GetLeaderboard() => 
+      _leaderboard;
+
+    public HudConfig GetHudConfig() =>
+      _hud;
+
+    public DialogueConfig GetDialogueConfig() =>
+      _dialogue;
 
     public ObjectPoolConfig GetObjectPoolConfig() => 
       _objectPool;
@@ -416,8 +436,17 @@ namespace Code.Gameplay.StaticData
       _soundEffectById = (await _assetProvider.LoadAll<SoundEffectConfig>(SoundEffectConfigLabel))
         .ToDictionary(x => x.TypeId, x => x);
 
-    private async UniTask LoadBalance() =>
-			_balance = await _assetProvider.Load<BalanceConfig>(BalanceConfigPath);
+    private async UniTask LoadGameBalance() =>
+			_gameBalance = await _assetProvider.Load<GameBalanceConfig>(GameBalanceConfigPath);
+
+    private async UniTask LoadLeaderboard() => 
+      _leaderboard = await _assetProvider.Load<LeaderboardConfig>(LeaderboardConfigPath);
+
+    private async UniTask LoadHud() =>
+      _hud = await _assetProvider.Load<HudConfig>(HudConfigPath);
+
+    private async UniTask LoadDialogues() =>
+      _dialogue = await _assetProvider.Load<DialogueConfig>(DialogueConfigPath);
 
     private async UniTask LoadObjectPool() =>
       _objectPool = await _assetProvider.Load<ObjectPoolConfig>(ObjectPoolConfigPath);

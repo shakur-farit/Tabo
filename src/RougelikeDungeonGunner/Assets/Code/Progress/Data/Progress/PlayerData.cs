@@ -3,8 +3,8 @@ using System;
 namespace Code.Progress.Data.Progress
 {
   [Serializable]
-  public class ScoreData
+  public class PlayerData
   {
-    public int Score;
+    public string Name;
   }
 }

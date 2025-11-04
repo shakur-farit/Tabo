@@ -248,6 +248,7 @@ namespace Code.Infrastructure.Installers
 			Container.Bind<IPhysicsService>().To<PhysicsService>().AsSingle();
 			Container.Bind<ITimeService>().To<UnityTimeService>().AsSingle();
 			Container.Bind<ISceneLoader>().To<SceneLoader>().AsSingle();
+			Container.Bind<IPlayerAuthenticationService>().To<PlayerAuthenticationService>().AsSingle();
 			Container.BindInterfacesAndSelfTo<SaveLoadSystem>().AsSingle();
 			Container.BindInterfacesAndSelfTo<LeaderboardService>().AsSingle();
 		}

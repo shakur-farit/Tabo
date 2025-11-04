@@ -10,18 +10,16 @@ namespace Code.Infrastructure.States.GameStates
 	{
 		private readonly IWindowService _windowService;
 		private readonly ILevelService _levelService;
-    private readonly ISaveSystem _save;
     private readonly IHudDependPlatformProvider _hudProvider;
 
     public GameOverState(
       IWindowService windowService, 
       ILevelService levelService, 
-      ISaveSystem save, 
       IHudDependPlatformProvider hudProvider)
 		{
 			_windowService = windowService;
 			_levelService = levelService;
-      _save = save;
+
       _hudProvider = hudProvider;
     }
 
@@ -30,8 +28,7 @@ namespace Code.Infrastructure.States.GameStates
 			RemoveProgress();
 			CloseHud();
 			OpenGameOverWindow();
-			SaveGame();
-		}
+    }
 
     private void CloseHud() =>
       _windowService.Close(_hudProvider.GetHud());
@@ -41,8 +38,5 @@ namespace Code.Infrastructure.States.GameStates
 
     private void RemoveProgress() =>
 			_levelService.SetFirstLevel();
-
-    private void SaveGame() => 
-      _save.Save();
   }
 }

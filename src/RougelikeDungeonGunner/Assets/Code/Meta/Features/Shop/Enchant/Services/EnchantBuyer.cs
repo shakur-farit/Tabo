@@ -16,7 +16,6 @@ namespace Code.Meta.UI.Windows.Behaviours
     private readonly ISelectedEnchantUIEntryProvider _enchantUIEntry;
     private readonly IWeaponStatusSetupProvider _weaponStatusSetupProvider;
     private readonly IDialogueService _dialogueService;
-    private readonly IWindowService _windowService;
     private readonly ICurrentHeroWeaponProvider _heroWeapon;
 
     public EnchantBuyer(
@@ -25,7 +24,6 @@ namespace Code.Meta.UI.Windows.Behaviours
       ISelectedEnchantUIEntryProvider enchantUIEntry, 
       IWeaponStatusSetupProvider weaponStatusSetupProvider,
       IDialogueService dialogueService,
-      IWindowService windowService,
       ICurrentHeroWeaponProvider heroWeapon)
     {
       _coinService = coinService;
@@ -33,7 +31,6 @@ namespace Code.Meta.UI.Windows.Behaviours
       _enchantUIEntry = enchantUIEntry;
       _weaponStatusSetupProvider = weaponStatusSetupProvider;
       _dialogueService = dialogueService;
-      _windowService = windowService;
       _heroWeapon = heroWeapon;
     }
 
@@ -64,8 +61,7 @@ namespace Code.Meta.UI.Windows.Behaviours
       if (_weaponStatusSetupProvider.GetStatusSetups(currentWeapon)
           .Any(e => e.StatusTypeId == selectedEnchant.StatusTypeId))
       {
-        _dialogueService.SetDialogueText(Dialogues.AppliedEnchant);
-        _windowService.Open(WindowId.DialogueWindow);
+        _dialogueService.OpenAppliedEnchantDialogue();
         return;
       }
 

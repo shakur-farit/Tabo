@@ -60,7 +60,7 @@ namespace Code.Meta.Features.Shop.Upgrade.Services
 		private float GetHalfSpread(float accuracy)
 		{
 			accuracy = Mathf.Clamp01(accuracy/100f);
-			float spread = _staticDataService.GetBalance().WeaponBalance.MaxSpreadAngle * (1f - accuracy);
+			float spread = _staticDataService.GetGameBalance().WeaponBalance.MaxSpreadAngle * (1f - accuracy);
 			return spread * 0.5f;
 		}
 	}

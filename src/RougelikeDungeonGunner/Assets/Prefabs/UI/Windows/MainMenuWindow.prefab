@@ -536,6 +536,7 @@ MonoBehaviour:
   _startGameButton: {fileID: 8933917849499426632}
   _settingsButton: {fileID: 7058237260353199186}
   _quitButton: {fileID: 4946043826937535086}
+  _inputField: {fileID: 1343097151976646329}
 --- !u!1 &2346908734776021132
 GameObject:
   m_ObjectHideFlags: 0

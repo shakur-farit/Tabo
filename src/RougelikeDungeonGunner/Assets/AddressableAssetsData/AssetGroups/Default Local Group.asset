@@ -291,7 +291,7 @@ MonoBehaviour:
     - WindowConfig
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 468966ebed3ced34caf1e38776b3ca22
-    m_Address: BalanceConfig
+    m_Address: GameBalanceConfig
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -427,6 +427,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - WindowConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6b103b90b5f47404786c242db626e26a
+    m_Address: HudConfig
+    m_ReadOnly: 0
+    m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 6fc60c7741de7e842ba6649aa6734a23
     m_Address: Assets/StaticData/Music/DungeonMelancholyMusicConfig.asset
@@ -969,6 +974,11 @@ MonoBehaviour:
     m_SerializedLabels:
     - SoundEffectConfig
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ec19f1729f35db744853735fcb04739e
+    m_Address: DialogueConfig
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ee45d58aeea483d409625185f0db19f2
     m_Address: Assets/StaticData/Window/PauseWindowConfig.asset
     m_ReadOnly: 0
@@ -992,6 +1002,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - SoundEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f2b0ca3446c962340a7de42d36c2dade
+    m_Address: LeaderboardConfig
+    m_ReadOnly: 0
+    m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f4c6d79a3245a464ebebcfc94b3d358f
     m_Address: Assets/StaticData/Weapon/LaserBlasterConfig.asset

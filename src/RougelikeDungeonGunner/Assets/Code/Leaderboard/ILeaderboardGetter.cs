@@ -4,6 +4,6 @@ namespace Code.Meta
 {
   public interface ILeaderboardGetter
   {
-    UniTask GetLeaderboard(int topCount = 10);
+    UniTask GetLeaderboard();
   }
 }

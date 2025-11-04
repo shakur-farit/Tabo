@@ -24,11 +24,11 @@ namespace Code.Infrastructure.States.GameStates
 			EnterToLoadStaticDataState();
 		}
 
-		private void InitializeProgress() => 
-			LoadOrCreateNewProgress();
+		private void InitializeProgress() =>
+      LoadOrCreateNewProgress();
 
     private void LoadOrCreateNewProgress() => 
-      _progressProvider.SetProgressData(_load.Load() ?? new ProgressData());
+      _progressProvider.SetProgressData(_load.Load() ?? new());
 
     private void EnterToLoadStaticDataState() => 
 			_stateMachine.Enter<LoadStaticDataState>();
