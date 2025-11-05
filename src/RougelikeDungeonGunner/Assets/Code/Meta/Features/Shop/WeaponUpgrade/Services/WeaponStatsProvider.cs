@@ -3,7 +3,7 @@ using Code.Gameplay.Features.Weapon.Services;
 using Code.Gameplay.StaticData;
 using UnityEngine;
 
-namespace Code.Meta.Features.Shop.Upgrade.Services
+namespace Code.Meta.Features.Shop.WeaponUpgrade.Services
 {
 	public class WeaponStatsProvider : IWeaponStatsProvider
 	{

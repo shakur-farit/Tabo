@@ -1,8 +1,7 @@
-﻿using Code.Meta.Features.Shop.Enchant.Behaviours;
-using Code.Meta.Features.Shop.Upgrade;
+﻿using Code.Meta.Features.Shop.HeroUpgrade.Behaviours;
 using UnityEngine;
 
-namespace Code.Meta.Features.Shop.Enchant.Factory
+namespace Code.Meta.Features.Shop.HeroUpgrade.Factory
 {
 	public interface IHeroUpgradeShopItemFactory
 	{

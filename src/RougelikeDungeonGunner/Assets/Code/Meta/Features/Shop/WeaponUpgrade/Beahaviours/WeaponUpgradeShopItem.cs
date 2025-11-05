@@ -7,14 +7,14 @@ using Code.Gameplay.Features.Hero.Services;
 using Code.Gameplay.Features.Weapon;
 using Code.Gameplay.Features.Weapon.Configs;
 using Code.Gameplay.StaticData;
-using Code.Meta.Features.Shop.Upgrade.Configs;
-using Code.Meta.Features.Shop.Upgrade.Services;
+using Code.Meta.Features.Shop.WeaponUpgrade.Configs;
+using Code.Meta.Features.Shop.WeaponUpgrade.Services;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
 
-namespace Code.Meta.Features.Shop.Upgrade.Beahaviours
+namespace Code.Meta.Features.Shop.WeaponUpgrade.Beahaviours
 {
 	public class WeaponUpgradeShopItem : MonoBehaviour
 	{

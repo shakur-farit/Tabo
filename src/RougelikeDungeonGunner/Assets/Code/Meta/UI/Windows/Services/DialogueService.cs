@@ -1,6 +1,6 @@
 ﻿using Code.Gameplay.StaticData;
 
-namespace Code.Meta.UI.Windows.Service
+namespace Code.Meta.UI.Windows.Services
 {
   public class DialogueService : IDialogueService
   {
@@ -18,21 +18,27 @@ namespace Code.Meta.UI.Windows.Service
     public string GetDialogueText() => 
       _dialogueText;
 
-    public void OpenNotEnoughCoinsDialogue()
-    {
-      _dialogueText = _staticDataService.GetDialogueConfig().NotEnoughCoins;
-      _windowService.Open(WindowId.DialogueWindow);
-    }
+    public void OpenNotEnoughCoinsDialogue() => 
+      OpenDialogue(_staticDataService.GetDialogueConfig().NotEnoughCoins);
 
-    public void OpenAppliedEnchantDialogue()
-    {
-      _dialogueText = _staticDataService.GetDialogueConfig().AppliedEnchant;
-      _windowService.Open(WindowId.DialogueWindow);
-    }
+    public void OpenAppliedEnchantDialogue() => 
+      OpenDialogue(_staticDataService.GetDialogueConfig().AppliedEnchant);
 
-    public void OpenMaxValueDialogue()
+    public void OpenMaxValueDialogue() => 
+      OpenDialogue(_staticDataService.GetDialogueConfig().MaxValue);
+
+    public void OpenInEmptyName() => 
+      OpenDialogue(_staticDataService.GetDialogueConfig().EmptyNameField);
+
+    public void OpenLongName() => 
+      OpenDialogue(_staticDataService.GetDialogueConfig().LongName);
+
+    public void ShortName() => 
+      OpenDialogue(_staticDataService.GetDialogueConfig().ShortName);
+
+    private void OpenDialogue(string message)
     {
-      _dialogueText = _staticDataService.GetDialogueConfig().MaxValue;
+      _dialogueText = message;
       _windowService.Open(WindowId.DialogueWindow);
     }
   }

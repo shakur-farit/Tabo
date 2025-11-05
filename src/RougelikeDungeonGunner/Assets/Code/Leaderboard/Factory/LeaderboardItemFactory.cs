@@ -1,8 +1,10 @@
 ﻿using Code.Gameplay.StaticData;
+using Code.Leaderboard.Behaviours;
+using Code.Leaderboard.Config;
 using UnityEngine;
 using Zenject;
 
-namespace Code.Meta.UI.Windows.Behaviours
+namespace Code.Leaderboard.Factory
 {
 	public class LeaderboardItemFactory : ILeaderboardItemFactory
 	{

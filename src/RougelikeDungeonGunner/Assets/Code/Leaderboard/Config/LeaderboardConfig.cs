@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Code.Meta
+namespace Code.Leaderboard.Config
 {
   [CreateAssetMenu(menuName = "Dungeon Gunner/Leaderboard Config", fileName = "LeaderboardConfig")]
   public class LeaderboardConfig : ScriptableObject

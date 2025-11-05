@@ -1,6 +1,6 @@
 ﻿using Cysharp.Threading.Tasks;
 
-namespace Code.Meta
+namespace Code.Authentication
 {
   public interface IPlayerAuthenticationService
   {

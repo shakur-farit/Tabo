@@ -1,8 +1,9 @@
 using System;
-using Code.Gameplay.Input.Systems;
+using Code.GamePlatform;
+using Code.GamePlatform.Services;
 using Code.Meta.UI.Windows;
 
-namespace Code.Infrastructure.States.GameStates
+namespace Code.Meta.Features.Hud.Services
 {
   public class HudDependPlatformProvider : IHudDependPlatformProvider
   {

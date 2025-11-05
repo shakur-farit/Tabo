@@ -15,3 +15,6 @@ MonoBehaviour:
   AppliedEnchant: This enchant already applied.
   NotEnoughCoins: You have not enough coins.
   MaxValue: This upgrade has reached its maximum leve.
+  EmptyNameField: Name field can't be empty.
+  LongName: Your chosed name is too long.
+  ShortName: Your chosed name is too short.

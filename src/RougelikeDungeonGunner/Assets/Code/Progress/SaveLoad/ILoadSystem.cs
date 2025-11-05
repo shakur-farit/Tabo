@@ -1,4 +1,6 @@
-namespace Code.Progress.Data.Progress
+using Code.Progress.Data.Progress;
+
+namespace Code.Progress.SaveLoad
 {
   public interface ILoadSystem
   {

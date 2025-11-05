@@ -1,8 +1,8 @@
 ﻿using System;
+using Code.Gameplay.Features.Aura.Services;
 using Code.Gameplay.Features.Hero.Services;
-using Code.Meta.Features.Shop.Upgrade;
 
-namespace Code.Meta.UI.Windows.Behaviours
+namespace Code.Meta.Features.Shop.HeroUpgrade.Services
 {
   public class HeroUpgradeService : IHeroUpgradeService
   {

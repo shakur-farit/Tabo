@@ -5,7 +5,7 @@ using Code.Meta.Features.Shop.WeaponStatUIEntry.Behaviours;
 using UnityEngine;
 using Zenject;
 
-namespace Code.Meta.UI.Windows.Behaviours
+namespace Code.Meta.UI.Windows.Behaviours.WeaponBuy
 {
 	public class WeaponStatsRenderer : MonoBehaviour
 	{

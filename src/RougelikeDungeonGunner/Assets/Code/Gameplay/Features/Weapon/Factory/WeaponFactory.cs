@@ -9,7 +9,7 @@ using Code.Gameplay.Features.Weapon.Configs;
 using Code.Gameplay.Features.Weapon.Services;
 using Code.Gameplay.StaticData;
 using Code.Infrastructure.Identifiers;
-using Code.Meta.Features.Shop.Upgrade.Services;
+using Code.Meta.Features.Shop.WeaponUpgrade.Services;
 using UnityEngine;
 
 namespace Code.Gameplay.Features.Weapon.Factory

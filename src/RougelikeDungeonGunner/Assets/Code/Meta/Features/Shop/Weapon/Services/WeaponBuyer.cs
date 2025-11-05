@@ -1,9 +1,10 @@
-﻿using Code.Gameplay.Features.Hero.Services;
+﻿using Code.Gameplay.Features.Coin.Services;
+using Code.Gameplay.Features.Hero.Services;
 using Code.Gameplay.Features.Weapon.Services;
 using Code.Meta.Features.Shop.Services;
-using Code.Meta.Features.Shop.Upgrade.Services;
+using Code.Meta.Features.Shop.WeaponUpgrade.Services;
 
-namespace Code.Meta.UI.Windows.Behaviours
+namespace Code.Meta.Features.Shop.Weapon.Services
 {
   public class WeaponBuyer : IWeaponBuyer
   {

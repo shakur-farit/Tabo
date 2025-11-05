@@ -1,6 +1,6 @@
 ﻿using Code.Gameplay.Features.Weapon;
 using Code.Meta.Features.Shop.Enchant;
-using Code.Meta.Features.Shop.Upgrade;
+using Code.Meta.Features.Shop.HeroUpgrade;
 using UnityEngine;
 
 namespace Code.Meta.Features.Shop.Services

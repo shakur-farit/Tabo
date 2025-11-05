@@ -1,11 +1,11 @@
-﻿using Code.Common.Balance;
+﻿using Code.Common.GameGlobal.Balance;
 using Code.Gameplay.Features.Hero.Services;
 using Code.Gameplay.Features.Weapon;
 using Code.Gameplay.Features.Weapon.Configs;
 using Code.Gameplay.StaticData;
-using Code.Meta.Features.Shop.Upgrade.Configs;
+using Code.Meta.Features.Shop.WeaponUpgrade.Configs;
 
-namespace Code.Meta.Features.Shop.Upgrade.Services
+namespace Code.Meta.Features.Shop.WeaponUpgrade.Services
 {
 	public class WeaponUpgradeValidator : IWeaponUpgradeValidator
 	{

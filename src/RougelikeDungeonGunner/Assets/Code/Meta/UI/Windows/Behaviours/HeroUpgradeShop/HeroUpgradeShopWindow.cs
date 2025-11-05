@@ -1,9 +1,9 @@
-﻿using Code.Meta.UI.Windows.Service;
+﻿using Code.Meta.UI.Windows.Services;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
 
-namespace Code.Meta.UI.Windows.Behaviours
+namespace Code.Meta.UI.Windows.Behaviours.HeroUpgradeShop
 {
 	public class HeroUpgradeShopWindow : BaseWindow
 	{

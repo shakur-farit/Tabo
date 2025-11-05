@@ -1,7 +1,7 @@
-﻿using Code.Gameplay.Features.Hero.Services;
+﻿using Code.Gameplay.Features.Coin.Services;
 using Code.Meta.Features.Shop.Services;
 
-namespace Code.Meta.UI.Windows.Behaviours
+namespace Code.Meta.Features.Shop.HeroUpgrade.Services
 {
   public class HeroUpgradeBuyer : IHeroUpgradeBuyer
   {

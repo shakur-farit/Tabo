@@ -1,4 +1,4 @@
-﻿namespace Code.Meta.UI.Windows.Behaviours
+﻿namespace Code.Meta.Features.Shop.Weapon.Services
 {
   public interface IWeaponBuyer
   {

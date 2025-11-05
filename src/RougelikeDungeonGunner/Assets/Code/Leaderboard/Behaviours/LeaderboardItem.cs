@@ -1,7 +1,7 @@
 ﻿using TMPro;
 using UnityEngine;
 
-namespace Code.Meta.UI.Windows.Behaviours
+namespace Code.Leaderboard.Behaviours
 {
 	public class LeaderboardItem : MonoBehaviour
 	{

@@ -2,7 +2,7 @@
 using Code.Gameplay.Features.Effects;
 using Code.Gameplay.Features.Weapon.Configs;
 
-namespace Code.Meta.Features.Shop.Upgrade.Services
+namespace Code.Meta.Features.Shop.WeaponUpgrade.Services
 {
 	public class WeaponEffectsProvider : IWeaponEffectsProvider
 	{

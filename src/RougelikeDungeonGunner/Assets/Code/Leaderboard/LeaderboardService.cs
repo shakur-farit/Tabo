@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
-using Code.Gameplay.Features.Hero.Services;
+using Code.Gameplay.Features.Score.Services;
 using Code.Gameplay.StaticData;
+using Code.Leaderboard.Config;
 using Cysharp.Threading.Tasks;
 using Unity.Services.Authentication;
 using Unity.Services.Core;
@@ -8,16 +9,16 @@ using Unity.Services.Leaderboards;
 using Unity.Services.Leaderboards.Models;
 using UnityEngine;
 
-namespace Code.Meta
+namespace Code.Leaderboard
 {
   public class LeaderboardService : ILeaderboardInitializer, ILeaderboardUpdater, ILeaderboardGetter
   {
-    private readonly ICoinService _coinService;
+    private readonly IScoreService _scoreService;
     private readonly IStaticDataService _staticDataService;
 
-    public LeaderboardService(ICoinService coinService, IStaticDataService staticDataService)
+    public LeaderboardService(IScoreService scoreService, IStaticDataService staticDataService)
     {
-      _coinService = coinService;
+      _scoreService = scoreService;
       _staticDataService = staticDataService;
     }
 
@@ -37,7 +38,7 @@ namespace Code.Meta
 
     public async UniTask UpdateLeaderboard()
     {
-      int score = _coinService.GetCurrentCoinCount();
+      int score = _scoreService.GetCurrentScoreCount();
       string id = GetConfig().LeaderboardID;
 
       try

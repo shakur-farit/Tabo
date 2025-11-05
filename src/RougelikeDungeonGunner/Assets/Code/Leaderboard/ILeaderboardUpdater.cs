@@ -1,6 +1,6 @@
 ﻿using Cysharp.Threading.Tasks;
 
-namespace Code.Meta
+namespace Code.Leaderboard
 {
   public interface ILeaderboardUpdater
   {

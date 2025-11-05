@@ -1,4 +1,4 @@
-﻿namespace Code.Meta.UI.Windows.Behaviours
+﻿namespace Code.Meta.Features.Shop.Enchant.Services
 {
   public interface IEnchantBuyer
   {

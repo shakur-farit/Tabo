@@ -1,4 +1,4 @@
-﻿namespace Code.Meta.Features.Shop.Upgrade
+﻿namespace Code.Meta.Features.Shop.HeroUpgrade
 {
 	public enum HeroUpgradeTypeId
 	{

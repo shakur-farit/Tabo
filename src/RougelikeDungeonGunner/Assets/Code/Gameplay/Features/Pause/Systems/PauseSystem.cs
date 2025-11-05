@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using Code.Gameplay.Common.Time;
 using Code.Meta.UI.Windows;
-using Code.Meta.UI.Windows.Service;
+using Code.Meta.UI.Windows.Services;
 using Entitas;
 
 namespace Code.Gameplay.Features.Pause.Systems

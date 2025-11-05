@@ -3,7 +3,7 @@ using Code.Gameplay.Features.Weapon;
 using Code.Meta.Features.Shop.Services;
 using Code.Meta.Features.Shop.Weapon.Configs;
 using Code.Meta.UI.Windows;
-using Code.Meta.UI.Windows.Service;
+using Code.Meta.UI.Windows.Services;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;

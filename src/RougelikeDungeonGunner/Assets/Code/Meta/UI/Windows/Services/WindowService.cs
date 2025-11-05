@@ -3,7 +3,7 @@ using Code.Meta.UI.Windows.Behaviours;
 using Code.Meta.UI.Windows.Factory;
 using UnityEngine;
 
-namespace Code.Meta.UI.Windows.Service
+namespace Code.Meta.UI.Windows.Services
 {
 	public class WindowService : IWindowService
 	{

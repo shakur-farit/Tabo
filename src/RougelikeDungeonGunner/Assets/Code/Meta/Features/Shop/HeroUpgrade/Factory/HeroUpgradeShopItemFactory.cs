@@ -1,10 +1,10 @@
 ﻿using Code.Gameplay.StaticData;
-using Code.Meta.Features.Shop.Enchant.Behaviours;
-using Code.Meta.Features.Shop.Upgrade;
+using Code.Meta.Features.Shop.HeroUpgrade.Behaviours;
+using Code.Meta.Features.Shop.HeroUpgrade.Configs;
 using UnityEngine;
 using Zenject;
 
-namespace Code.Meta.Features.Shop.Enchant.Factory
+namespace Code.Meta.Features.Shop.HeroUpgrade.Factory
 {
 	public class HeroUpgradeShopItemFactory : IHeroUpgradeShopItemFactory
 	{

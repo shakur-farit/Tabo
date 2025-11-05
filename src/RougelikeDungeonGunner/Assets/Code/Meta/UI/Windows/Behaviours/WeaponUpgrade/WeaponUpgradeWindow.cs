@@ -1,10 +1,9 @@
-﻿using System;
-using Code.Meta.UI.Windows.Service;
+﻿using Code.Meta.UI.Windows.Services;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
 
-namespace Code.Meta.UI.Windows.Behaviours
+namespace Code.Meta.UI.Windows.Behaviours.WeaponUpgrade
 {
 	public class WeaponUpgradeWindow : BaseWindow
 	{

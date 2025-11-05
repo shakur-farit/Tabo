@@ -1,8 +1,8 @@
-﻿using Code.Gameplay.Features.Hero.Services;
-using Code.Meta.Features.Shop.Upgrade.Configs;
-using Code.Meta.UI.Windows.Service;
+﻿using Code.Gameplay.Features.Coin.Services;
+using Code.Meta.Features.Shop.WeaponUpgrade.Configs;
+using Code.Meta.UI.Windows.Services;
 
-namespace Code.Meta.Features.Shop.Upgrade.Services
+namespace Code.Meta.Features.Shop.WeaponUpgrade.Services
 {
 	public class WeaponUpgrader : IWeaponUpgrader
 	{

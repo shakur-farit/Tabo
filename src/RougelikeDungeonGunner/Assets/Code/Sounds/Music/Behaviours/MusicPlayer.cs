@@ -1,9 +1,8 @@
-﻿using Code.Sounds.Music;
-using Code.Sounds.Music.Services;
+﻿using Code.Sounds.Music.Services;
 using UnityEngine;
 using Zenject;
 
-namespace Code.Meta.UI.Windows.Behaviours
+namespace Code.Sounds.Music.Behaviours
 {
 	public class MusicPlayer : MonoBehaviour
 	{

@@ -2,7 +2,6 @@
 using Code.Gameplay.Features.Hero.Services;
 using Code.Gameplay.Features.Weapon.Configs;
 using Code.Gameplay.StaticData;
-using Code.Meta.Features.Shop.Upgrade.Services;
 
 namespace Code.Gameplay.Features.Weapon.Services
 {

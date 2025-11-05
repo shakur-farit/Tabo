@@ -1,6 +1,6 @@
 ﻿using Code.Gameplay.Features.Weapon.Configs;
 
-namespace Code.Meta.UI.Windows.Behaviours
+namespace Code.Gameplay.Features.Weapon.Services
 {
   public interface ICurrentWeaponInfoProvider
   {

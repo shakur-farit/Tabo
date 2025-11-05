@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Code.Common.Balance
+namespace Code.Common.GameGlobal.Balance
 {
 	[CreateAssetMenu(menuName = "Dungeon Gunner/Game Balance Config", fileName = "GameBalanceConfig")]
 	public class GameBalanceConfig : ScriptableObject

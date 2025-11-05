@@ -1,8 +1,9 @@
-﻿using Code.Meta.Features.Shop.Services;
+﻿using Code.Meta.Features.Shop.HeroUpgrade.Behaviours;
+using Code.Meta.Features.Shop.Services;
 using UnityEngine;
 using Zenject;
 
-namespace Code.Meta.UI.Windows.Behaviours
+namespace Code.Meta.UI.Windows.Behaviours.HeroUpgradeBuy
 {
 	public class HeroUpgradePurchaseItemInitializer : MonoBehaviour
 	{

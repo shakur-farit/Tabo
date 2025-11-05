@@ -1,14 +1,14 @@
 ﻿using Code.Common.Extensions;
+using Code.Meta.Features.Shop.HeroUpgrade.Configs;
 using Code.Meta.Features.Shop.Services;
-using Code.Meta.Features.Shop.Upgrade;
 using Code.Meta.UI.Windows;
-using Code.Meta.UI.Windows.Service;
+using Code.Meta.UI.Windows.Services;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
 
-namespace Code.Meta.Features.Shop.Enchant.Behaviours
+namespace Code.Meta.Features.Shop.HeroUpgrade.Behaviours
 {
   public class HeroUpgradeShopItem : MonoBehaviour
   {

@@ -8,5 +8,8 @@ namespace Code.Meta.UI.Windows.Config
     public string AppliedEnchant;
     public string NotEnoughCoins;
     public string MaxValue;
+    public string EmptyNameField;
+    public string LongName;
+    public string ShortName;
   }
 }

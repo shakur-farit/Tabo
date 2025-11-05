@@ -1,6 +1,6 @@
 ﻿using Code.Gameplay.Common.Time;
 using Code.Infrastructure.Services;
-using Code.Meta.UI.Windows.Service;
+using Code.Meta.UI.Windows.Services;
 using Code.Sounds.Services;
 using TMPro;
 using UnityEngine;

@@ -1,12 +1,12 @@
-﻿using System;
-using Code.Gameplay.Features.Hero.Services;
+﻿using Code.Gameplay.Features.Hero.Services;
 using Code.Gameplay.StaticData;
-using Code.Meta.UI.Windows.Service;
+using Code.Meta.UI.Windows;
+using Code.Meta.UI.Windows.Services;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
 
-namespace Code.Meta.UI.Windows.Behaviours
+namespace Code.Meta.Features.Shop.Behaviours
 {
   public class GameShop : MonoBehaviour
   {

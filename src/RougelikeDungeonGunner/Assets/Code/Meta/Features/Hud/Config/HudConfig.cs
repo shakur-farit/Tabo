@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Code.Common.Balance
+namespace Code.Meta.Features.Hud.Config
 {
   [CreateAssetMenu(menuName = "Dungeon Gunner/Hud Config", fileName = "HudConfig")]
   public class HudConfig : ScriptableObject

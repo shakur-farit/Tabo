@@ -1,9 +1,10 @@
-﻿using Code.Meta.UI.Windows.Service;
+﻿using Code.Meta.Features.Shop.Weapon.Services;
+using Code.Meta.UI.Windows.Services;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
 
-namespace Code.Meta.UI.Windows.Behaviours
+namespace Code.Meta.UI.Windows.Behaviours.WeaponBuy
 {
 	public class WeaponBuyWindow : BaseWindow
 	{

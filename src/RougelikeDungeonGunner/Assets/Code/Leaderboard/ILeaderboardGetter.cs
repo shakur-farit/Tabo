@@ -2,7 +2,7 @@
 using Cysharp.Threading.Tasks;
 using Unity.Services.Leaderboards.Models;
 
-namespace Code.Meta
+namespace Code.Leaderboard
 {
   public interface ILeaderboardGetter
   {

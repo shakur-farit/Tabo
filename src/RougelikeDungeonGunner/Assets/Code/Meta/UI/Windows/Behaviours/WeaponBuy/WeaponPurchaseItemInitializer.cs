@@ -3,7 +3,7 @@ using Code.Meta.Features.Shop.Weapon.Behaviours;
 using UnityEngine;
 using Zenject;
 
-namespace Code.Meta.UI.Windows.Behaviours
+namespace Code.Meta.UI.Windows.Behaviours.WeaponBuy
 {
 	public class WeaponPurchaseItemInitializer : MonoBehaviour
 	{

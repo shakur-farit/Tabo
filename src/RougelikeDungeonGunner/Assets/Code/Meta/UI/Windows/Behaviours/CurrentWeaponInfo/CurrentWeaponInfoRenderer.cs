@@ -7,7 +7,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
 
-namespace Code.Meta.UI.Windows.Behaviours
+namespace Code.Meta.UI.Windows.Behaviours.CurrentWeaponInfo
 {
   public class CurrentWeaponInfoRenderer : MonoBehaviour
   {

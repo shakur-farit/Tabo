@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 using Code.Common.Utilities;
-using Code.Meta.Features.Shop.Enchant.Factory;
-using Code.Meta.Features.Shop.Upgrade;
+using Code.Meta.Features.Shop.HeroUpgrade;
+using Code.Meta.Features.Shop.HeroUpgrade.Factory;
 using UnityEngine;
 using Zenject;
 
-namespace Code.Meta.UI.Windows.Behaviours
+namespace Code.Meta.UI.Windows.Behaviours.HeroUpgradeShop
 {
 	public class HeroUpgradeShopItemRenderer : MonoBehaviour
 	{

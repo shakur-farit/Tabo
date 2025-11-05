@@ -1,11 +1,11 @@
-﻿using Code.Progress.Data.Progress;
-using Code.Progress.Provider;
+﻿using Code.Progress.Provider;
+using Code.Progress.SaveLoad;
 using Cysharp.Threading.Tasks;
 using Unity.Services.Authentication;
 using Unity.Services.Core;
 using UnityEngine;
 
-namespace Code.Meta
+namespace Code.Authentication
 {
   public class PlayerAuthenticationService : IPlayerAuthenticationService
   {

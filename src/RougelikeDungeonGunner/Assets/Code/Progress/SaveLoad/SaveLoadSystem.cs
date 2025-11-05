@@ -1,8 +1,9 @@
 using System.IO;
+using Code.Progress.Data.Progress;
 using Code.Progress.Provider;
 using UnityEngine;
 
-namespace Code.Progress.Data.Progress
+namespace Code.Progress.SaveLoad
 {
   public  class SaveLoadSystem : ISaveSystem, ILoadSystem
   {

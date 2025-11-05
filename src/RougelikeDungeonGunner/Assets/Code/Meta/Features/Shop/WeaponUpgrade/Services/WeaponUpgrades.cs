@@ -2,7 +2,7 @@
 using Code.Gameplay.Features.Hero.Services;
 using Code.Gameplay.Features.Weapon;
 
-namespace Code.Meta.Features.Shop.Upgrade.Services
+namespace Code.Meta.Features.Shop.WeaponUpgrade.Services
 {
 	public class WeaponUpgrades : IWeaponUpgradesProvider, IWeaponUpgradesCleaner
 	{

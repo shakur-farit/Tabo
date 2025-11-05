@@ -1,6 +1,7 @@
 ﻿using Code.Gameplay.Features.Hero.Services;
-using Code.Meta.UI.Windows.Service;
 using System.Collections.Generic;
+using Code.Meta.Features.Shop.Weapon.Behaviours;
+using Code.Meta.UI.Windows.Services;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;

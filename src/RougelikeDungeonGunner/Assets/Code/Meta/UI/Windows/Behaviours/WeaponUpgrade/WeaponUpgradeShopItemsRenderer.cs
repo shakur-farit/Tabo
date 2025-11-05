@@ -3,13 +3,13 @@ using Code.Gameplay.Features.Hero.Services;
 using Code.Gameplay.Features.Weapon;
 using Code.Gameplay.Features.Weapon.Configs;
 using Code.Gameplay.StaticData;
-using Code.Meta.Features.Shop.Upgrade.Beahaviours;
-using Code.Meta.Features.Shop.Upgrade.Configs;
-using Code.Meta.Features.Shop.Upgrade.Factory;
+using Code.Meta.Features.Shop.WeaponUpgrade.Beahaviours;
+using Code.Meta.Features.Shop.WeaponUpgrade.Configs;
+using Code.Meta.Features.Shop.WeaponUpgrade.Factory;
 using UnityEngine;
 using Zenject;
 
-namespace Code.Meta.UI.Windows.Behaviours
+namespace Code.Meta.UI.Windows.Behaviours.WeaponUpgrade
 {
 	public class WeaponUpgradeShopItemsRenderer : MonoBehaviour
 	{

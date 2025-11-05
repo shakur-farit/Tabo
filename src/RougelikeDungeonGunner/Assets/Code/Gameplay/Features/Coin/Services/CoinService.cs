@@ -1,7 +1,6 @@
 ﻿using System;
-using Code.Progress.Data.Progress;
 
-namespace Code.Gameplay.Features.Hero.Services
+namespace Code.Gameplay.Features.Coin.Services
 {
   public class CoinService : ICoinService
   {

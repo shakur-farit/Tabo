@@ -1,4 +1,4 @@
-namespace Code.Gameplay.Input.Systems
+namespace Code.GamePlatform.Services
 {
   public class GamePlatformProvider : IGamePlatformProvider
   {

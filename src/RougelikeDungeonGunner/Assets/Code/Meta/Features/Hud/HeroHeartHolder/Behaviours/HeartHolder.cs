@@ -1,7 +1,6 @@
 ﻿using Code.Meta.Features.Hud.HeroHeartHolder.Factory;
 using Cysharp.Threading.Tasks;
 using System.Collections.Generic;
-using Code.Common.Balance;
 using Code.Gameplay.Features.Hero.Services;
 using Code.Gameplay.StaticData;
 using TMPro;

@@ -1,8 +1,9 @@
-﻿using TMPro;
+﻿using Code.Gameplay.Features.Score.Services;
+using TMPro;
 using UnityEngine;
 using Zenject;
 
-namespace Code.Gameplay.Features.Hero.Services
+namespace Code.Gameplay.Features.Score.Behaviours
 {
 	public class ScoreTextUpdater : MonoBehaviour
 	{
@@ -24,6 +25,6 @@ namespace Code.Gameplay.Features.Hero.Services
 			UpdateScoreText();
 
 		private void UpdateScoreText() => 
-			_score.text = _scoreService.GetCurrentScoreCount().ToString();
+			_score.text = $"Score: {_scoreService.GetCurrentScoreCount()}";
 	}
 }

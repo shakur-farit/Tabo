@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using Code.Gameplay.Features.Effects;
 using Code.Gameplay.Features.Weapon.Configs;
-using Code.Meta.Features.Shop.Upgrade.Services;
 using Code.Meta.Features.Shop.WeaponStatUIEntry.Factory;
+using Code.Meta.Features.Shop.WeaponUpgrade.Services;
 using UnityEngine;
 using Zenject;
 

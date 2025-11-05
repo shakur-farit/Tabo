@@ -1,6 +1,6 @@
 ﻿using Code.Gameplay.Common.Time;
 using Code.Gameplay.Features.Weapon.Services;
-using Code.Meta.UI.Windows.Service;
+using Code.Meta.UI.Windows.Services;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;

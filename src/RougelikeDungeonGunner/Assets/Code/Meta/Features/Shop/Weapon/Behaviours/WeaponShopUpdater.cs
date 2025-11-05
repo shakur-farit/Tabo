@@ -1,13 +1,11 @@
 ﻿using System.Collections.Generic;
 using Code.Common.Utilities;
 using Code.Gameplay.Features.Hero.Services;
-using Code.Meta.Features.Shop.Weapon;
-using Code.Meta.Features.Shop.Weapon.Behaviours;
 using Code.Meta.Features.Shop.Weapon.Factory;
 using UnityEngine;
 using Zenject;
 
-namespace Code.Meta.UI.Windows.Behaviours
+namespace Code.Meta.Features.Shop.Weapon.Behaviours
 {
 	public class WeaponShopUpdater : MonoBehaviour
 	{

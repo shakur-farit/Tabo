@@ -1,4 +1,5 @@
 ﻿using Code.Gameplay.Features.Aura;
+using Code.Gameplay.Features.Aura.Services;
 using Code.Meta.UI.Windows.Behaviours;
 using Entitas;
 

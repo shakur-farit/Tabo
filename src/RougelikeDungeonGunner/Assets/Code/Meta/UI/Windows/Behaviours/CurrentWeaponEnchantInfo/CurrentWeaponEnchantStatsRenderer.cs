@@ -5,7 +5,7 @@ using Code.Meta.Features.Shop.EnchantUIEntry.Services;
 using UnityEngine;
 using Zenject;
 
-namespace Code.Meta.UI.Windows.Behaviours
+namespace Code.Meta.UI.Windows.Behaviours.CurrentWeaponEnchantInfo
 {
   public class CurrentWeaponEnchantStatsRenderer : MonoBehaviour
   {

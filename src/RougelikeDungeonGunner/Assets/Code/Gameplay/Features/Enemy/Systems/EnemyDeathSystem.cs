@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Code.Gameplay.Features.Collection;
 using Code.Gameplay.Features.Hero.Services;
+using Code.Gameplay.Features.Score.Services;
 using Code.Meta;
 using Entitas;
 

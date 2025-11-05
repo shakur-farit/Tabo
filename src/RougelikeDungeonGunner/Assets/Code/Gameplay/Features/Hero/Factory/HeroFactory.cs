@@ -4,6 +4,7 @@ using Code.Common.Entity;
 using Code.Common.Extensions;
 using Code.Gameplay.Features.Aura;
 using Code.Gameplay.Features.CharacterStats;
+using Code.Gameplay.Features.Coin.Services;
 using Code.Gameplay.Features.Collection;
 using Code.Gameplay.Features.Hero.Configs;
 using Code.Gameplay.Features.Hero.Services;

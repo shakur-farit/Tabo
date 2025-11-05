@@ -1,6 +1,7 @@
-﻿using UnityEngine;
+﻿using Code.Leaderboard.Behaviours;
+using UnityEngine;
 
-namespace Code.Meta.UI.Windows.Behaviours
+namespace Code.Leaderboard.Factory
 {
 	public interface ILeaderboardItemFactory
 	{

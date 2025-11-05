@@ -5,7 +5,7 @@ using Code.Meta.Features.Shop.Enchant.Factory;
 using UnityEngine;
 using Zenject;
 
-namespace Code.Meta.UI.Windows.Behaviours
+namespace Code.Meta.UI.Windows.Behaviours.EnchantShop
 {
 	public class EnchantShopItemRenderer : MonoBehaviour
 	{

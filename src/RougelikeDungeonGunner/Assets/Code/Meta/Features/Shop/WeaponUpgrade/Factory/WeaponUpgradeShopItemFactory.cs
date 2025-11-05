@@ -1,10 +1,10 @@
 ﻿using Code.Gameplay.StaticData;
-using Code.Meta.Features.Shop.Upgrade.Beahaviours;
-using Code.Meta.Features.Shop.Upgrade.Configs;
+using Code.Meta.Features.Shop.WeaponUpgrade.Beahaviours;
+using Code.Meta.Features.Shop.WeaponUpgrade.Configs;
 using UnityEngine;
 using Zenject;
 
-namespace Code.Meta.Features.Shop.Upgrade.Factory
+namespace Code.Meta.Features.Shop.WeaponUpgrade.Factory
 {
 	public class WeaponUpgradeShopItemFactory : IWeaponUpgradeShopItemFactory
 	{

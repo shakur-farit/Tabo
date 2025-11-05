@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Code.Meta.UI.Windows.Behaviours
+namespace Code.Meta.Features.Shop.HeroUpgrade.Behaviours
 {
   public class HeroUpgradePurchaseItemView : MonoBehaviour
 

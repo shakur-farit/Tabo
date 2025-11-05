@@ -1,4 +1,4 @@
-﻿namespace Code.Meta.UI.Windows.Behaviours
+﻿namespace Code.Gameplay.Features.Aura.Services
 {
 	public interface IShieldRequestProvider
 	{

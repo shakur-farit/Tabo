@@ -1,4 +1,4 @@
-﻿namespace Code.Meta.UI.Windows.Service
+﻿namespace Code.Meta.UI.Windows.Services
 {
   public interface IDialogueService
   {
@@ -6,5 +6,8 @@
     void OpenNotEnoughCoinsDialogue();
     void OpenAppliedEnchantDialogue();
     void OpenMaxValueDialogue();
+    void OpenInEmptyName();
+    void OpenLongName();
+    void ShortName();
   }
 }

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Code.Gameplay.Features.Hero.Services
+namespace Code.Gameplay.Features.Score.Services
 {
 	public interface IScoreService
 	{

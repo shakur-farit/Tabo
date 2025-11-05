@@ -1,6 +1,6 @@
 using Code.Meta.UI.Windows;
 
-namespace Code.Infrastructure.States.GameStates
+namespace Code.Meta.Features.Hud.Services
 {
   public interface IHudDependPlatformProvider
   {

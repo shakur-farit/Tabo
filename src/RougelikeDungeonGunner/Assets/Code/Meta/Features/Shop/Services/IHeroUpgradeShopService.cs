@@ -1,4 +1,4 @@
-﻿using Code.Meta.Features.Shop.Upgrade;
+﻿using Code.Meta.Features.Shop.HeroUpgrade;
 using UnityEngine;
 
 namespace Code.Meta.Features.Shop.Services

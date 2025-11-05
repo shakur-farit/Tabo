@@ -1,10 +1,9 @@
-﻿using System;
-using Code.Gameplay.Features.Hero.Services;
+﻿using Code.Gameplay.Features.Hero.Services;
 using TMPro;
 using UnityEngine;
 using Zenject;
 
-namespace Code.Meta.UI.Windows.Behaviours
+namespace Code.Meta.UI.Windows.Behaviours.LevelComplete
 {
 	public class HpInformation : MonoBehaviour
 	{
