@@ -12,6 +12,7 @@ namespace Code.Meta.UI.Windows.Behaviours
 	{
 		[SerializeField] private Button _quitButton;
 		[SerializeField] private Button _restartButton;
+		[SerializeField] private Button _leaderboardButton;
 
 		private IGameStateMachine _stateMachine;
 		private IQuitGameService _quit;
@@ -34,6 +35,7 @@ namespace Code.Meta.UI.Windows.Behaviours
     {
 	    _restartButton.onClick.AddListener(RestartGame);
 			_quitButton.onClick.AddListener(QuitGame);
+			_leaderboardButton.onClick.AddListener(OpenLeaderboard);
     }
 
     private void RestartGame()
@@ -47,5 +49,8 @@ namespace Code.Meta.UI.Windows.Behaviours
 			_windowService.Close(WindowId.GameOverWindow);
 			_quit.QuitGame();
 		}
+
+    private void OpenLeaderboard() => 
+      _windowService.Open(WindowId.LeaderboardWindow);
   }
 }
