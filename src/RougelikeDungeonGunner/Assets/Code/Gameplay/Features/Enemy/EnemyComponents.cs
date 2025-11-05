@@ -10,6 +10,8 @@ namespace Code.Gameplay.Features.Enemy
 	[Game] public class EnemyTargetSpriteRendererComponent : IComponent { public SpriteRenderer Value; }
 	[Game] public class EnemyHpBarComponent : IComponent { public EnemyHpBar Value; }
 
+	[Game] public class ScoreValue : IComponent { public int Value; }
+
 	[Game] public class LastTargetPosition : IComponent { public Vector3 Value; }
 
   [Game] public class Orc : IComponent { }

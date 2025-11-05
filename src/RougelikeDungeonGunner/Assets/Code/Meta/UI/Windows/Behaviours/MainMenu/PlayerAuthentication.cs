@@ -1,5 +1,4 @@
-﻿using Code.Gameplay.StaticData;
-using Code.Progress.Data.Progress;
+﻿using Code.Progress.Data.Progress;
 using Code.Progress.Provider;
 using Cysharp.Threading.Tasks;
 using TMPro;

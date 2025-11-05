@@ -193,6 +193,7 @@ namespace Code.Infrastructure.Installers
 			Container.Bind<IWeaponStatUIEntryItemFactory>().To<WeaponStatUIEntryItemFactory>().AsSingle();
 			Container.Bind<IEnchantUIEntryFactory>().To<EnchantUIEntryFactory>().AsSingle();
 			Container.Bind<IWeaponEnchantStatUIEntryFactory>().To<WeaponEnchantStatUIEntryFactory>().AsSingle();
+			Container.Bind<ILeaderboardItemFactory>().To<LeaderboardItemFactory>().AsSingle();
 		}
 
 		private void BindUIServices()

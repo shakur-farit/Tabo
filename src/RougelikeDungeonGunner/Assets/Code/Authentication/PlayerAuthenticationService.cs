@@ -42,7 +42,6 @@ namespace Code.Meta
       try
       {
         await AuthenticationService.Instance.SignInAnonymouslyAsync();
-        Debug.Log($"Signed in! Player ID: {PlayerId}");
 
         await AuthenticationService.Instance.UpdatePlayerNameAsync(PlayerName);
       }

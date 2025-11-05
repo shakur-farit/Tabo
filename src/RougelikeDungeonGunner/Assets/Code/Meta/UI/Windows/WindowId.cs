@@ -19,6 +19,7 @@
     SettingsWindow = 14,
 		StandaloneHud = 15,
 		HeroUpgradeShopWindow = 16,
-		HeroUpgradeBuyWindow = 17
+		HeroUpgradeBuyWindow = 17,
+		LeaderboardWindow = 18
 	}
 }

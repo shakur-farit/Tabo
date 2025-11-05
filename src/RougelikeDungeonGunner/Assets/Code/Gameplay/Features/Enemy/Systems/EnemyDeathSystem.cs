@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
 using Code.Gameplay.Features.Collection;
+using Code.Gameplay.Features.Hero.Services;
+using Code.Meta;
 using Entitas;
 
 namespace Code.Gameplay.Features.Enemy.Systems
@@ -8,16 +10,20 @@ namespace Code.Gameplay.Features.Enemy.Systems
 	{
 		private readonly List<GameEntity> _buffer = new(128);
 
+		private readonly IScoreService _scoreService;
+
 		private readonly IGroup<GameEntity> _enemies;
 		private readonly IGroup<GameEntity> _levels;
 
-		public EnemyDeathSystem(GameContext game)
+		public EnemyDeathSystem(GameContext game, IScoreService scoreService)
 		{
+			_scoreService = scoreService;
 			_enemies = game.GetGroup(GameMatcher
 				.AllOf(
 					GameMatcher.Enemy,
 					GameMatcher.Dead,
 					GameMatcher.ProcessingDeath,
+					GameMatcher.ScoreValue,
 					GameMatcher.EnemyAnimator));
 
 			_levels = game.GetGroup(GameMatcher
@@ -34,6 +40,8 @@ namespace Code.Gameplay.Features.Enemy.Systems
 				enemy.RemoveTargetCollectionComponents();
 				enemy.EnemyAnimator.PlayDied();
         enemy.isDestructed = true;
+
+				_scoreService.IncreaseScore(enemy.ScoreValue);
 
 				level.ReplaceEnemiesInLevelCount(level.EnemiesInLevelCount - 1);
 			}

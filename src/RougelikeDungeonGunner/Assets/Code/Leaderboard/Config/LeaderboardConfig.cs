@@ -7,5 +7,6 @@ namespace Code.Meta
   {
     public string LeaderboardID;
     public int MaxLeaderCount;
+    public GameObject ItemViewPrefab;
   }
 }

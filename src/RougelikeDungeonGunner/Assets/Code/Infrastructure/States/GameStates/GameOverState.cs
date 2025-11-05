@@ -1,5 +1,6 @@
 using Code.Gameplay.Features.Level.Services;
 using Code.Infrastructure.States.StateInfrastructure;
+using Code.Meta;
 using Code.Meta.UI.Windows;
 using Code.Meta.UI.Windows.Service;
 using Code.Progress.Data.Progress;
@@ -11,23 +12,27 @@ namespace Code.Infrastructure.States.GameStates
 		private readonly IWindowService _windowService;
 		private readonly ILevelService _levelService;
     private readonly IHudDependPlatformProvider _hudProvider;
+    private readonly ILeaderboardUpdater _leaderboardUpdater;
 
     public GameOverState(
       IWindowService windowService, 
       ILevelService levelService, 
-      IHudDependPlatformProvider hudProvider)
+      IHudDependPlatformProvider hudProvider,
+      ILeaderboardUpdater leaderboardUpdater)
 		{
 			_windowService = windowService;
 			_levelService = levelService;
 
       _hudProvider = hudProvider;
-    }
+      _leaderboardUpdater = leaderboardUpdater;
+		}
 
 		public override void Enter()
 		{
 			RemoveProgress();
 			CloseHud();
 			OpenGameOverWindow();
+			UpdateLeaderboard();
     }
 
     private void CloseHud() =>
@@ -38,5 +43,8 @@ namespace Code.Infrastructure.States.GameStates
 
     private void RemoveProgress() =>
 			_levelService.SetFirstLevel();
-  }
+
+    private void UpdateLeaderboard() =>
+	    _leaderboardUpdater.UpdateLeaderboard();
+	}
 }

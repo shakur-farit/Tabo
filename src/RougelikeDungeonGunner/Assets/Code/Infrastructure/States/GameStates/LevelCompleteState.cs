@@ -30,7 +30,7 @@ namespace Code.Infrastructure.States.GameStates
 			CloseHud();
 			OpenLevelCompleteWindow();
 			MarkNextLevel();
-      _leaderboardUpdater.UpdateLeaderboard();
+      UpdateLeaderboard();
     }
 
 		protected override void Exit() => 
@@ -39,13 +39,16 @@ namespace Code.Infrastructure.States.GameStates
 		private void CloseHud() =>
       _windowService.Close(_hudProvider.GetHud());
 
-    private void OpenLevelCompleteWindow() => 
+		private void OpenLevelCompleteWindow() => 
 			_windowService.Open(WindowId.LevelCompleteWindow);
 
 		private void MarkNextLevel() =>
 			_levelService.SetNextLevel();
 
-    private void CloseLevelCompleteWindow() => 
+		private void CloseLevelCompleteWindow() => 
 			_windowService.Close(WindowId.LevelCompleteWindow);
+
+		private void UpdateLeaderboard() => 
+			_leaderboardUpdater.UpdateLeaderboard();
 	}
 }

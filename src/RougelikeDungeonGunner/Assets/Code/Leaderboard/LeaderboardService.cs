@@ -1,4 +1,5 @@
-﻿using Code.Gameplay.Features.Hero.Services;
+﻿using System.Collections.Generic;
+using Code.Gameplay.Features.Hero.Services;
 using Code.Gameplay.StaticData;
 using Cysharp.Threading.Tasks;
 using Unity.Services.Authentication;
@@ -27,12 +28,10 @@ namespace Code.Meta
         await UnityServices.InitializeAsync();
 
         await AuthenticationService.Instance.SignInAnonymouslyAsync();
-
-        Debug.Log("UGS и аутентификация завершены!");
       }
       catch (System.Exception e)
       {
-        Debug.LogError($"Ошибка инициализации UGS: {e.Message}");
+        Debug.LogError($"Initialization UGS: {e.Message}");
       }
     }
 
@@ -44,35 +43,35 @@ namespace Code.Meta
       try
       {
         await LeaderboardsService.Instance.AddPlayerScoreAsync(id, score);
-        Debug.Log($"Очки {score} отправлены на Leaderboard!");
       }
       catch (System.Exception e)
       {
-        Debug.LogError($"Ошибка отправки очков: {e.Message}");
+        Debug.LogError($"Setting error: {e.Message}");
       }
     }
 
-    public async UniTask GetLeaderboard()
+    public async UniTask<List<LeaderboardEntry>> GetLeaderboard()
     {
       int topCount = GetConfig().MaxLeaderCount;
       string id = GetConfig().LeaderboardID;
 
-      try
+      List<LeaderboardEntry> results = new();
+
+			try
       {
-        LeaderboardScoresPage scoresResponse = await LeaderboardsService.Instance.GetScoresAsync(
+	      LeaderboardScoresPage scoresResponse = await LeaderboardsService.Instance.GetScoresAsync(
           id,
           new GetScoresOptions { Limit = topCount }
         );
 
-        foreach (LeaderboardEntry entry in scoresResponse.Results)
-        {
-          Debug.Log($"Rank {entry.Rank} - Player {entry.PlayerId} - Score {entry.Score}");
-        }
+        results = scoresResponse.Results;
       }
       catch (System.Exception e)
       {
-        Debug.LogError($"Ошибка получения лидеров: {e.Message}");
+        Debug.LogError($"Getting error: {e.Message}");
       }
+
+			return results;
     }
 
     private LeaderboardConfig GetConfig() => 

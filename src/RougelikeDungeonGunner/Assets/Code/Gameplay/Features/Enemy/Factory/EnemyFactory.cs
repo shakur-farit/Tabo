@@ -105,6 +105,7 @@ namespace Code.Gameplay.Features.Enemy.Factory
 					.AddViewPrefab(config.ViewPrefab)
 					.AddAuraRequest(config.StartAura)
           .AddExcludedLoot(config.ExcludedLoot)
+					.AddScoreValue(config.ScoreValue)
           .With(x => x.AddLootDropChance(config.LootDropChance), when: config.LootDropChance > 0)
           .With(x => x.AddCurrentWeaponTypeId(config.StartWeapon),
 						when: config.StartWeapon != WeaponTypeId.NoWeapon)

@@ -433,6 +433,12 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6d4502b44346274479a1c2bae5d6b036
+    m_Address: Assets/StaticData/Window/LeaderboardWindowConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WindowConfig
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 6fc60c7741de7e842ba6649aa6734a23
     m_Address: Assets/StaticData/Music/DungeonMelancholyMusicConfig.asset
     m_ReadOnly: 0
