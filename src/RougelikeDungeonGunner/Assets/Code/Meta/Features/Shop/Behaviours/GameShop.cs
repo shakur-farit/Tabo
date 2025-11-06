@@ -14,6 +14,7 @@ namespace Code.Meta.Features.Shop.Behaviours
     [SerializeField] private Button _weaponBuyButton;
     [SerializeField] private Button _enchantBuyButton;
     [SerializeField] private Button _heroUpgradeBuyButton;
+    [SerializeField] private Image _weaponUpgradeShopIcon;
     [SerializeField] private Image _heroUpgradeShopIcon;
 
     private IWindowService _windowService;
@@ -39,12 +40,19 @@ namespace Code.Meta.Features.Shop.Behaviours
       _heroUpgradeBuyButton.onClick.AddListener(OpenHeroUpgradeShop);
     }
 
-    private void Start() =>
-	    _heroUpgradeShopIcon.sprite = 
+    private void Start()
+    {
+	    _weaponUpgradeShopIcon.sprite =
 		    _staticDataService.GetHeroConfig(_heroType.CurrentHeroTypeId)
 			    .ShopIcon;
 
-    public void OpenWeaponUpgradeShop() =>
+	    _heroUpgradeShopIcon.sprite =
+		    _staticDataService.GetHeroConfig(_heroType.CurrentHeroTypeId)
+			    .ShopIcon;
+
+		}
+
+		public void OpenWeaponUpgradeShop() =>
       _windowService.Open(WindowId.WeaponUpgradeWindow);
 
     public void OpenWeaponShop() =>
