@@ -56,7 +56,7 @@ namespace Code.Gameplay.Features.Statuses.Factory
 				.AddWorldPosition(target.WorldPosition)
 				.AddTargetsBuffer(new List<int>(TargetsBufferSize))
 				.AddProcessedTargets(new List<int>(TargetsBufferSize))
-				.AddTargetLayerMask(CollisionLayer.Enemy.AsMask())
+				.AddTargetLayerMask(CollisionLayer.Enemy.AsMask() | CollisionLayer.Hero.AsMask())
 				.With(x => x.isFlame = true)
 				.With(x => x.isReadyToCollectTargets = true)
 				.With(x => x.isCollectTargetsContinuously = true);
@@ -70,7 +70,7 @@ namespace Code.Gameplay.Features.Statuses.Factory
 				.AddWorldPosition(target.WorldPosition)
 				.AddTargetsBuffer(new List<int>(TargetsBufferSize))
 				.AddProcessedTargets(new List<int>(TargetsBufferSize))
-				.AddTargetLayerMask(CollisionLayer.Enemy.AsMask())
+				.AddTargetLayerMask(CollisionLayer.Enemy.AsMask() | CollisionLayer.Hero.AsMask())
 				.With(x => x.isExplosive = true)
 				.With(x => x.isReadyToCollectTargets = true)
 				.With(x => x.isCollectTargetsContinuously = true);

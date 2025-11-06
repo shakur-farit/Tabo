@@ -94,7 +94,7 @@ namespace Code.Gameplay.Features.Ammo.Factory
 					.AddTargetsBuffer(new List<int>(BufferSize))
           .AddProcessedTargets(new List<int>(BufferSize))
 					.AddDestroyableCollectRadius(config.ContactRadius)
-					.AddDestroyableTargetLayerMask(CollisionLayer.Destroyable.AsMask())
+					//.AddDestroyableTargetLayerMask(CollisionLayer.Destroyable.AsMask())
 					.AddDestroyableTargetsBuffer(new(BufferSize))
 					.With(x => x.AddSpecialEffectTypeId(config.CollideSpecialEffectTypeId),
 						when: config.CollideSpecialEffectTypeId != SpecialEffectTypeId.NoSpecialEffect)
