@@ -11,9 +11,7 @@ namespace Code.Infrastructure.States.GameStates
 		private readonly ISystemsFactory _systems;
 		private readonly GameContext _gameContext;
 
-		public HomeScreenState(
-			ISystemsFactory systems,
-			GameContext gameContext)
+		public HomeScreenState(ISystemsFactory systems, GameContext gameContext)
 		{
 			_systems = systems;
 			_gameContext = gameContext;

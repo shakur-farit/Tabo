@@ -4,5 +4,6 @@
   {
     public const string HomeScreen = "HomeScreen";
     public const string Gameplay = "Gameplay";
+    public const string GameLoading = "GameLoading";
   }
 }

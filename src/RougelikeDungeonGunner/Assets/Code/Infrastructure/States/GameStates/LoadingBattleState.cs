@@ -15,8 +15,11 @@ namespace Code.Infrastructure.States.GameStates
 			_sceneLoader = sceneLoader;
 		}
 
-		public override void Enter(string sceneName) => 
+		public override void Enter(string sceneName)
+		{
 			LoadGameplayScene(sceneName);
+			_sceneLoader.UnloadScene(Scenes.GameLoading);
+		}
 
 		private void LoadGameplayScene(string sceneName) => 
 			_sceneLoader.LoadScene(sceneName, EnterBattleLoopState);

@@ -113,6 +113,8 @@ namespace Code.Infrastructure.Installers
 		private void BindGameStates()
 		{
 			Container.BindInterfacesAndSelfTo<BootstrapState>().AsSingle();
+			Container.BindInterfacesAndSelfTo<InitializeLeaderboardState>().AsSingle();
+			Container.BindInterfacesAndSelfTo<InitializeAuthenticationState>().AsSingle();
 			Container.BindInterfacesAndSelfTo<InitializeProgressState>().AsSingle();
 			Container.BindInterfacesAndSelfTo<LoadStaticDataState>().AsSingle();
 			Container.BindInterfacesAndSelfTo<ObjectPoolWarmupState>().AsSingle();

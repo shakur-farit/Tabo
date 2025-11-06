@@ -1,9 +1,9 @@
 using Code.Authentication;
 using Code.Infrastructure.AssetManagement;
+using Code.Infrastructure.Loading;
 using Code.Infrastructure.States.StateInfrastructure;
 using Code.Infrastructure.States.StateMachine;
 using Code.Leaderboard;
-using Code.Meta;
 using Cysharp.Threading.Tasks;
 
 namespace Code.Infrastructure.States.GameStates
@@ -12,34 +12,29 @@ namespace Code.Infrastructure.States.GameStates
 	{
 		private readonly IGameStateMachine _stateMachine;
 		private readonly IAssetProvider _assetProvider;
-    private readonly ILeaderboardInitializer _leaderboardInitializer;
-    private readonly IPlayerAuthenticationService _authenticationService;
+		private readonly ISceneLoader _sceneLoader;
 
-    public BootstrapState(
-      IGameStateMachine stateMachine,
-      IAssetProvider assetProvider, 
-      ILeaderboardInitializer leaderboardInitializer,
-      IPlayerAuthenticationService authenticationService)
+		public BootstrapState(IGameStateMachine stateMachine, IAssetProvider assetProvider, ISceneLoader sceneLoader)
 		{
 			_stateMachine = stateMachine;
 			_assetProvider = assetProvider;
-      _leaderboardInitializer = leaderboardInitializer;
-      _authenticationService = authenticationService;
-    }
+			_sceneLoader = sceneLoader;
+		}
 
 		public override async void Enter()
 		{
+			LoadGameLoadingScene();
 			await InitAddressables();
-      await _leaderboardInitializer.Initialize();
-      await _authenticationService.Initialize();
-      await _authenticationService.SignIn();
-			EnterToInitializeProgressState();
+			EnterToInitializeLeaderboardState();
 		}
+
+		private void LoadGameLoadingScene() => 
+			_sceneLoader.LoadSceneAdditive(Scenes.GameLoading);
 
 		private async UniTask InitAddressables() => 
 			await _assetProvider.Initialize();
 
-		private void EnterToInitializeProgressState() => 
-			_stateMachine.Enter<InitializeProgressState>();
+		private void EnterToInitializeLeaderboardState() => 
+			_stateMachine.Enter<InitializeLeaderboardState>();
 	}
 }

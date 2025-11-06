@@ -20,11 +20,13 @@ namespace Code.Meta.UI.Windows.Behaviours.MainMenu
     private IGameStateMachine _stateMachine;
 		private IWindowService _windowService;
 		private IQuitGameService _quit;
+		private ISceneLoader _sceneLoader;
 
-    [Inject]
+		[Inject]
 		public void Constructor(
 			IGameStateMachine stateMachine,
 			IWindowService windowService,
+			ISceneLoader sceneLoader,
 			IQuitGameService quit)
 		{
 			Id = WindowId.MainMenuWindow;
@@ -32,7 +34,8 @@ namespace Code.Meta.UI.Windows.Behaviours.MainMenu
 			_stateMachine = stateMachine;
 			_windowService = windowService;
 			_quit = quit;
-    }
+			_sceneLoader = sceneLoader;
+		}
 
 		protected override void Initialize()
     {
@@ -47,6 +50,7 @@ namespace Code.Meta.UI.Windows.Behaviours.MainMenu
       if(await _authentication.IsNameValid() == false)
         return;
 
+			_sceneLoader.LoadSceneAdditive(Scenes.GameLoading);
       await _stateMachine.Enter<LoadingBattleState, string>(Scenes.Gameplay);
 	    _windowService.Close(WindowId.MainMenuWindow);
     }

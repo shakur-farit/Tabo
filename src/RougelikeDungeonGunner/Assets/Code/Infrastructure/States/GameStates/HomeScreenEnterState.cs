@@ -1,3 +1,4 @@
+using Code.Infrastructure.Loading;
 using Code.Infrastructure.States.StateInfrastructure;
 using Code.Infrastructure.States.StateMachine;
 using Code.Meta.UI.Windows;
@@ -12,16 +13,19 @@ namespace Code.Infrastructure.States.GameStates
 		private readonly IWindowService _windowService;
 		private readonly IGameStateMachine _stateMachine;
 		private readonly IMusicClipSetter _clipSetter;
+		private readonly ISceneLoader _sceneLoader;
 
-    public HomeScreenEnterState(
+		public HomeScreenEnterState(
 			IWindowService windowService, 
 			IGameStateMachine stateMachine,
-			IMusicClipSetter clipSetter)
+			IMusicClipSetter clipSetter,
+			ISceneLoader sceneLoader)
 		{
 			_windowService = windowService;
 			_stateMachine = stateMachine;
 			_clipSetter = clipSetter;
-    }
+			_sceneLoader = sceneLoader;
+		}
 
 
 		public override void Enter()
@@ -29,6 +33,7 @@ namespace Code.Infrastructure.States.GameStates
 			OpenMainMenuWindow();
       PlayMainMenuMusic();
       EnterToHomeScreenState();
+			_sceneLoader.UnloadScene(Scenes.GameLoading);
     }
 
 		private async void EnterToHomeScreenState() => 
