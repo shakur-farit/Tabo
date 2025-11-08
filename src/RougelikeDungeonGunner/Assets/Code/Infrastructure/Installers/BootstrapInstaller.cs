@@ -63,6 +63,7 @@ using Code.Meta.Features.Shop.Weapon.Services;
 using Code.Meta.Features.Shop.WeaponStatUIEntry.Factory;
 using Code.Meta.Features.Shop.WeaponUpgrade.Factory;
 using Code.Meta.Features.Shop.WeaponUpgrade.Services;
+using Code.Meta.UI.Windows;
 using Code.Meta.UI.Windows.Factory;
 using Code.Meta.UI.Windows.Services;
 using Code.Progress.Provider;
@@ -70,6 +71,7 @@ using Code.Progress.SaveLoad;
 using Code.Sounds.Music.Services;
 using Code.Sounds.Services;
 using Code.Sounds.SoundEffects.Factory;
+using Code.Sounds.SoundEffects.Systems;
 using Zenject;
 
 namespace Code.Infrastructure.Installers
@@ -113,6 +115,7 @@ namespace Code.Infrastructure.Installers
 		private void BindGameStates()
 		{
 			Container.BindInterfacesAndSelfTo<BootstrapState>().AsSingle();
+			Container.BindInterfacesAndSelfTo<GameLoadingUIState>().AsSingle();
 			Container.BindInterfacesAndSelfTo<InitializeLeaderboardState>().AsSingle();
 			Container.BindInterfacesAndSelfTo<InitializeAuthenticationState>().AsSingle();
 			Container.BindInterfacesAndSelfTo<InitializeProgressState>().AsSingle();
@@ -206,6 +209,7 @@ namespace Code.Infrastructure.Installers
 			Container.Bind<IEnchantUIEntryFactory>().To<EnchantUIEntryFactory>().AsSingle();
 			Container.Bind<IWeaponEnchantStatUIEntryFactory>().To<WeaponEnchantStatUIEntryFactory>().AsSingle();
 			Container.Bind<ILeaderboardItemFactory>().To<LeaderboardItemFactory>().AsSingle();
+			Container.Bind<IGameLoadingUIFactory>().To<GameLoadingUIFactory>().AsSingle();
 		}
 
 		private void BindUIServices()
@@ -213,6 +217,7 @@ namespace Code.Infrastructure.Installers
 			Container.Bind<IWindowService>().To<WindowService>().AsSingle();
       Container.Bind<IHudDependPlatformProvider>().To<HudDependPlatformProvider>().AsSingle();
       Container.Bind<IDialogueService>().To<DialogueService>().AsSingle();
+      Container.Bind<IGameLoadingUIService>().To<GameLoadingUIService>().AsSingle();
     }
 
 		private void BindShopServices()
@@ -230,9 +235,10 @@ namespace Code.Infrastructure.Installers
 		{
 			Container.BindInterfacesAndSelfTo<MusicProvider>().AsSingle();
 			Container.BindInterfacesAndSelfTo<SoundsVolumeService>().AsSingle();
+      Container.Bind<ISoundEffectPitchCalculator>().To<SoundEffectPitchCalculator>().AsSingle();
 		}
 
-    private void BindSoundsFactories() => 
+		private void BindSoundsFactories() => 
       Container.Bind<ISoundEffectFactory>().To<SoundEffectFactory>().AsSingle();
 
     private void BindSystemFactory()

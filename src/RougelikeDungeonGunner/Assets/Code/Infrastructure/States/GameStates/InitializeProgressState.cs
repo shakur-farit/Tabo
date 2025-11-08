@@ -1,6 +1,5 @@
 using Code.Infrastructure.States.StateInfrastructure;
 using Code.Infrastructure.States.StateMachine;
-using Code.Progress.Data.Progress;
 using Code.Progress.Provider;
 using Code.Progress.SaveLoad;
 
@@ -12,7 +11,10 @@ namespace Code.Infrastructure.States.GameStates
 		private readonly IProgressProvider _progressProvider;
     private readonly ILoadSystem _load;
 
-    public InitializeProgressState(IGameStateMachine stateMachine, IProgressProvider progressProvider, ILoadSystem load)
+    public InitializeProgressState(
+	    IGameStateMachine stateMachine, 
+	    IProgressProvider progressProvider, 
+	    ILoadSystem load)
 		{
 			_stateMachine = stateMachine;
 			_progressProvider = progressProvider;

@@ -1,40 +1,31 @@
-using Code.Authentication;
 using Code.Infrastructure.AssetManagement;
-using Code.Infrastructure.Loading;
-using Code.Infrastructure.States.StateInfrastructure;
-using Code.Infrastructure.States.StateMachine;
-using Code.Leaderboard;
+	using Code.Infrastructure.States.StateInfrastructure;
+	using Code.Infrastructure.States.StateMachine;
 using Cysharp.Threading.Tasks;
 
-namespace Code.Infrastructure.States.GameStates
-{
-	public class BootstrapState : SimpleState
+	namespace Code.Infrastructure.States.GameStates
 	{
-		private readonly IGameStateMachine _stateMachine;
-		private readonly IAssetProvider _assetProvider;
-		private readonly ISceneLoader _sceneLoader;
-
-		public BootstrapState(IGameStateMachine stateMachine, IAssetProvider assetProvider, ISceneLoader sceneLoader)
+		public class BootstrapState : SimpleState
 		{
-			_stateMachine = stateMachine;
-			_assetProvider = assetProvider;
-			_sceneLoader = sceneLoader;
+			private readonly IGameStateMachine _stateMachine;
+			private readonly IAssetProvider _assetProvider;
+
+			public BootstrapState(IGameStateMachine stateMachine, IAssetProvider assetProvider)
+			{
+				_stateMachine = stateMachine;
+				_assetProvider = assetProvider;
+			}
+
+			public override async void Enter()
+			{
+				await InitAddressables();
+				EnterGameLoadingUIState();
+			}
+
+			private async UniTask InitAddressables() => 
+				await _assetProvider.Initialize();
+
+			private void EnterGameLoadingUIState() => 
+				_stateMachine.Enter<GameLoadingUIState>();
 		}
-
-		public override async void Enter()
-		{
-			LoadGameLoadingScene();
-			await InitAddressables();
-			EnterToInitializeLeaderboardState();
-		}
-
-		private void LoadGameLoadingScene() => 
-			_sceneLoader.LoadSceneAdditive(Scenes.GameLoading);
-
-		private async UniTask InitAddressables() => 
-			await _assetProvider.Initialize();
-
-		private void EnterToInitializeLeaderboardState() => 
-			_stateMachine.Enter<InitializeLeaderboardState>();
 	}
-}

@@ -67,8 +67,6 @@ namespace Code.Authentication
           Debug.LogError($"Failed to update UGS name: {e.Message}");
         }
       }
-
-      Debug.Log($"Player name now: {name}");
     }
   }
 }

@@ -10,7 +10,9 @@ namespace Code.Infrastructure.States.GameStates
 		private readonly IGameStateMachine _stateMachine;
 		private readonly IPlayerAuthenticationService _authenticationService;
 
-		public InitializeAuthenticationState(IGameStateMachine stateMachine, IPlayerAuthenticationService authenticationService)
+		public InitializeAuthenticationState(
+			IGameStateMachine stateMachine, 
+			IPlayerAuthenticationService authenticationService)
 		{
 			_stateMachine = stateMachine;
 			_authenticationService = authenticationService;

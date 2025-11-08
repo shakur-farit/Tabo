@@ -16,9 +16,15 @@ namespace Code.Infrastructure.States.GameStates
     }
 
     public override void Enter()
-    { 
-      _objectPoolWarmUpper.WarmupObjects();
-      _stateMachine.Enter<LoadingHomeScreenState>();
+    {
+	    WarmupReusableObjects();
+	    EnterLoadingHomeScreenState();
     }
+
+    private void WarmupReusableObjects() => 
+	    _objectPoolWarmUpper.WarmupObjects();
+
+    private void EnterLoadingHomeScreenState() => 
+	    _stateMachine.Enter<LoadingHomeScreenState>();
   }
 }

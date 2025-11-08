@@ -7,6 +7,8 @@ namespace Code.Sounds.SoundEffects
 	{
 		public SoundEffectFeature(ISystemsFactory systems)
 		{
+			Add(systems.Create<SetSoundEffectPitchDependReloadingTimeSystem>());
+			Add(systems.Create<SetSoundEffectPitchDependPrechargeTimeSystem>());
 			Add(systems.Create<PlaySoundEffectReactiveSystem>());
 		}
 	}

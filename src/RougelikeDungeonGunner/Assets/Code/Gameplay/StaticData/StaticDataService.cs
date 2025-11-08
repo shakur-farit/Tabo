@@ -40,7 +40,6 @@ using System.Linq;
 using Code.Common.GameGlobal.Balance;
 using Code.Infrastructure.ObjectPool.Config;
 using Code.Leaderboard.Config;
-using Code.Meta;
 using Code.Meta.Features.Hud.Config;
 using Code.Meta.Features.Shop.HeroUpgrade;
 using Code.Meta.Features.Shop.HeroUpgrade.Configs;
@@ -50,7 +49,6 @@ using Code.Sounds.Music;
 using Code.Sounds.Music.Configs;
 using Code.Sounds.SoundEffects;
 using Code.Sounds.SoundEffects.Config;
-using UnityEngine;
 
 namespace Code.Gameplay.StaticData
 {
@@ -61,6 +59,7 @@ namespace Code.Gameplay.StaticData
 		private const string HudConfigPath = "HudConfig";
 		private const string DialogueConfigPath = "DialogueConfig";
 		private const string ObjectPoolConfigPath = "ObjectPoolConfig";
+		private const string GameLoadingUIConfigPath = "GameLoadingUIConfig";
 		private const string AmmoConfigLabel = "AmmoConfig";
 		private const string WeaponConfigLabel = "WeaponConfig";
 		private const string EnemyConfigLabel = "EnemyConfig";
@@ -85,10 +84,11 @@ namespace Code.Gameplay.StaticData
     private const string SoundEffectConfigLabel = "SoundEffectConfig";
 
     private GameBalanceConfig _gameBalance;
-    private LeaderboardConfig _leaderboard;
-    private HudConfig _hud;
-    private DialogueConfig _dialogue;
-    private ObjectPoolConfig _objectPool;
+    private LeaderboardConfig _leaderboardConfig;
+    private HudConfig _hudConfig;
+    private DialogueConfig _dialogueConfig;
+    private ObjectPoolConfig _objectPoolConfig;
+    private GameLoadingUIConfig _gameLoadingUIConfig;
     private Dictionary<AmmoTypeId, AmmoConfig> _ammoById;
     private Dictionary<WeaponTypeId, WeaponConfig> _weaponById;
     private Dictionary<EnemyTypeId, EnemyConfig> _enemyById;
@@ -123,6 +123,11 @@ namespace Code.Gameplay.StaticData
 
 		public StaticDataService(IAssetProvider assetProvider) =>
 			_assetProvider = assetProvider;
+
+		public async UniTask PreLoad()
+		{
+			await LoadGameLoadingUI();
+		}
 
 		public async UniTask Load()
 		{
@@ -336,18 +341,21 @@ namespace Code.Gameplay.StaticData
 			_gameBalance;
 
     public LeaderboardConfig GetLeaderboard() => 
-      _leaderboard;
+      _leaderboardConfig;
 
     public HudConfig GetHudConfig() =>
-      _hud;
+      _hudConfig;
 
     public DialogueConfig GetDialogueConfig() =>
-      _dialogue;
+      _dialogueConfig;
 
     public ObjectPoolConfig GetObjectPoolConfig() => 
-      _objectPool;
+      _objectPoolConfig;
 
-    private async UniTask LoadAbilities() =>
+    public GameLoadingUIConfig GetGameLoadingUIConfig() =>
+	    _gameLoadingUIConfig;
+
+		private async UniTask LoadAbilities() =>
 			_ammoById = (await _assetProvider.LoadAll<AmmoConfig>(AmmoConfigLabel))
 				.ToDictionary(x => x.TypeId, x => x);
 
@@ -444,15 +452,19 @@ namespace Code.Gameplay.StaticData
 			_gameBalance = await _assetProvider.Load<GameBalanceConfig>(GameBalanceConfigPath);
 
     private async UniTask LoadLeaderboard() => 
-      _leaderboard = await _assetProvider.Load<LeaderboardConfig>(LeaderboardConfigPath);
+      _leaderboardConfig = await _assetProvider.Load<LeaderboardConfig>(LeaderboardConfigPath);
 
     private async UniTask LoadHud() =>
-      _hud = await _assetProvider.Load<HudConfig>(HudConfigPath);
+      _hudConfig = await _assetProvider.Load<HudConfig>(HudConfigPath);
 
     private async UniTask LoadDialogues() =>
-      _dialogue = await _assetProvider.Load<DialogueConfig>(DialogueConfigPath);
+      _dialogueConfig = await _assetProvider.Load<DialogueConfig>(DialogueConfigPath);
 
     private async UniTask LoadObjectPool() =>
-      _objectPool = await _assetProvider.Load<ObjectPoolConfig>(ObjectPoolConfigPath);
-  }
+      _objectPoolConfig = await _assetProvider.Load<ObjectPoolConfig>(ObjectPoolConfigPath);
+
+    private async UniTask LoadGameLoadingUI() =>
+	    _gameLoadingUIConfig = await _assetProvider.Load<GameLoadingUIConfig>(GameLoadingUIConfigPath);
+
+	}
 }

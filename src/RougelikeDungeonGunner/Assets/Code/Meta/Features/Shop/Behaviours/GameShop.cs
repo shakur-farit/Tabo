@@ -20,16 +20,19 @@ namespace Code.Meta.Features.Shop.Behaviours
     private IWindowService _windowService;
     private IStaticDataService _staticDataService;
     private ICurrentHeroTypeIdProvider _heroType;
+    private ICurrentHeroWeaponProvider _currentWeapon;
 
     [Inject]
     public void Constructor(
 	    IWindowService windowService, 
 	    IStaticDataService staticDataService, 
+	    ICurrentHeroWeaponProvider currentWeapon, 
 	    ICurrentHeroTypeIdProvider heroType)
     {
 	    _windowService = windowService;
 	    _staticDataService = staticDataService;
 	    _heroType = heroType;
+	    _currentWeapon = currentWeapon;
     }
 
     private void OnEnable()
@@ -43,8 +46,8 @@ namespace Code.Meta.Features.Shop.Behaviours
     private void Start()
     {
 	    _weaponUpgradeShopIcon.sprite =
-		    _staticDataService.GetHeroConfig(_heroType.CurrentHeroTypeId)
-			    .ShopIcon;
+		    _staticDataService.GetWeaponConfig(_currentWeapon.CurrentWeaponTypeId)
+			    .Sprite;
 
 	    _heroUpgradeShopIcon.sprite =
 		    _staticDataService.GetHeroConfig(_heroType.CurrentHeroTypeId)

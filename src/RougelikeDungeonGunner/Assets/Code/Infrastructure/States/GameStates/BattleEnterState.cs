@@ -1,12 +1,8 @@
-using Code.GamePlatform.Services;
-using Code.Gameplay.Features.Level;
 using Code.Gameplay.Features.Level.Factory;
 using Code.Gameplay.Features.Level.Services;
-using Code.Gameplay.Input.Systems;
 using Code.Infrastructure.States.StateInfrastructure;
 using Code.Infrastructure.States.StateMachine;
 using Code.Meta.Features.Hud.Services;
-using Code.Meta.UI.Windows;
 using Code.Meta.UI.Windows.Services;
 using Code.Sounds.Music;
 using Code.Sounds.Music.Services;
@@ -19,7 +15,6 @@ namespace Code.Infrastructure.States.GameStates
 		private readonly ILevelFactory _levelFactory;
 		private readonly IWindowService _windowService;
 		private readonly IMusicClipSetter _clipSetter;
-    private readonly IGamePlatformProvider _platformProvider;
     private readonly IHudDependPlatformProvider _hudProvider;
     private readonly ILevelService _levelService;
 
@@ -28,7 +23,6 @@ namespace Code.Infrastructure.States.GameStates
 			ILevelFactory levelFactory,
 			IWindowService windowService,
 			IMusicClipSetter clipSetter,
-			IGamePlatformProvider platformProvider,
 			IHudDependPlatformProvider hudProvider,
 			ILevelService levelService)
 		{
@@ -36,7 +30,6 @@ namespace Code.Infrastructure.States.GameStates
 			_levelFactory = levelFactory;
 			_windowService = windowService;
 			_clipSetter = clipSetter;
-      _platformProvider = platformProvider;
       _hudProvider = hudProvider;
       _levelService = levelService;
     }

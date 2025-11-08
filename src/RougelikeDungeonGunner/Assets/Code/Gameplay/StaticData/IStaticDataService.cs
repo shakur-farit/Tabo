@@ -85,5 +85,7 @@ namespace Code.Gameplay.StaticData
     HudConfig GetHudConfig();
     DialogueConfig GetDialogueConfig();
     LeaderboardConfig GetLeaderboard();
+    GameLoadingUIConfig GetGameLoadingUIConfig();
+    UniTask PreLoad();
   }
 }

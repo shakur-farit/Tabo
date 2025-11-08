@@ -487,6 +487,11 @@ MonoBehaviour:
     m_SerializedLabels:
     - EnchantUIEntryConfig
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7765854b479d7bd4da4b03ec753f647c
+    m_Address: GameLoadingUIConfig
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 7808c299dd60a564da154db0b0e24b53
     m_Address: Assets/StaticData/SoundEffect/PistolReloadSoundEffectConfig.asset
     m_ReadOnly: 0
