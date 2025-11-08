@@ -31,10 +31,10 @@ namespace Code.Infrastructure.States.GameStates
 			_battleFeature = _systemsFactory.Create<BattleFeature>();
 			_battleFeature.Initialize();
 
-			_gameLoadingUIService.Close();
-		}
+      _gameLoadingUIService.Close();
+    }
 
-		protected override void OnUpdate()
+    protected override void OnUpdate()
 		{
 			_battleFeature.Execute();
 			_battleFeature.Cleanup();

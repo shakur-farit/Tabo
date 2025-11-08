@@ -32,7 +32,7 @@ MonoBehaviour:
     FireRange: 10
     Cooldown: 0
     ReloadTime: 0
-    PrechargingTime: 5
+    PrechargingTime: 3
     MagazineSize: 0
     MaxAmmoCount: 0
     Pierce: 0

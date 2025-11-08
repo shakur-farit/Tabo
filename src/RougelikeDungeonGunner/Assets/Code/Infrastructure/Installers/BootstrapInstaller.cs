@@ -235,7 +235,6 @@ namespace Code.Infrastructure.Installers
 		{
 			Container.BindInterfacesAndSelfTo<MusicProvider>().AsSingle();
 			Container.BindInterfacesAndSelfTo<SoundsVolumeService>().AsSingle();
-      Container.Bind<ISoundEffectPitchCalculator>().To<SoundEffectPitchCalculator>().AsSingle();
 		}
 
 		private void BindSoundsFactories() => 

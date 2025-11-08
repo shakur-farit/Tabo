@@ -11,10 +11,17 @@ namespace Code.Meta.UI.Windows
 		public GameLoadingUIService(IGameLoadingUIFactory factory) => 
 			_factory = factory;
 
-		public void Open() => 
-			_gameLoadingUI = _factory.CreateGameLoadingUI();
+		public void Open()
+    {
+      _gameLoadingUI = _factory.CreateGameLoadingUI();
+			Debug.Log("open");
+    }
 
-		public void Close() =>
-			Object.Destroy(_gameLoadingUI.gameObject);
-	}
+    public void Close()
+    {
+      Object.Destroy(_gameLoadingUI.gameObject);
+      Debug.Log("close");
+
+    }
+  }
 }

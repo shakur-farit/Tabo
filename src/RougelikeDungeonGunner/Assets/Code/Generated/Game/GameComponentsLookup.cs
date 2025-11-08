@@ -296,12 +296,11 @@ public static class GameComponentsLookup {
     public const int WeaponHolder = 285;
     public const int AudioClip = 286;
     public const int AudioSource = 287;
-    public const int Pitch = 288;
-    public const int SoundEffect = 289;
-    public const int SoundEffectTypeId = 290;
-    public const int Volume = 291;
+    public const int SoundEffect = 288;
+    public const int SoundEffectTypeId = 289;
+    public const int Volume = 290;
 
-    public const int TotalComponents = 292;
+    public const int TotalComponents = 291;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -592,7 +591,6 @@ public static class GameComponentsLookup {
         "WeaponHolder",
         "AudioClip",
         "AudioSource",
-        "Pitch",
         "SoundEffect",
         "SoundEffectTypeId",
         "Volume"
@@ -887,7 +885,6 @@ public static class GameComponentsLookup {
         typeof(Code.Meta.Features.Hud.WeaponHolderComponent),
         typeof(Code.Sounds.SoundEffects.AudioClipComponent),
         typeof(Code.Sounds.SoundEffects.AudioSourceComponent),
-        typeof(Code.Sounds.SoundEffects.Pitch),
         typeof(Code.Sounds.SoundEffects.SoundEffect),
         typeof(Code.Sounds.SoundEffects.SoundEffectTypeIdComponent),
         typeof(Code.Sounds.SoundEffects.Volume)
