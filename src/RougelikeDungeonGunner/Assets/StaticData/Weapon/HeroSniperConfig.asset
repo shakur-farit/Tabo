@@ -62,6 +62,7 @@ MonoBehaviour:
   - UpgradeType: 7
   - UpgradeType: 9
   - UpgradeType: 10
+  - UpgradeType: 11
   StatsUIEntry:
   - StatUIEntryType: 8
   - StatUIEntryType: 2

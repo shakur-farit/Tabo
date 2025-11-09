@@ -25,6 +25,7 @@ using Code.Gameplay.Features.Weapon;
 using Code.Gameplay.Input;
 using Code.Infrastructure.Systems;
 using Code.Infrastructure.View;
+using Code.Meta.UI.GameLoading;
 using Code.Sounds.Music;
 using Code.Sounds.SoundEffects;
 
@@ -71,6 +72,8 @@ namespace Code.Gameplay
 			Add(systems.Create<SoundEffectFeature>());
 
 			Add(systems.Create<PauseFeature>());
+
+			Add(systems.Create<LoadingUIFeature>());
 
 			Add(systems.Create<ProcessGameDestructedFeature>());
 			Add(systems.Create<ProcessInputDestructedFeature>());

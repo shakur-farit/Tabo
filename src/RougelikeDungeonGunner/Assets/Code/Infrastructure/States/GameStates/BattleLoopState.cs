@@ -1,7 +1,6 @@
 using Code.Gameplay;
 using Code.Infrastructure.States.StateInfrastructure;
 using Code.Infrastructure.Systems;
-using Code.Meta.UI.Windows;
 
 namespace Code.Infrastructure.States.GameStates
 {
@@ -12,26 +11,21 @@ namespace Code.Infrastructure.States.GameStates
 		private readonly ISystemsFactory _systemsFactory;
 		private readonly GameContext _gameContext;
 		private readonly InputContext _inputContext;
-		private readonly IGameLoadingUIService _gameLoadingUIService;
 
 		public BattleLoopState(
 			ISystemsFactory systemsFactory, 
 			GameContext gameContext, 
-			InputContext inputContext,
-			IGameLoadingUIService gameLoadingUIService)
+			InputContext inputContext)
 		{
 			_systemsFactory = systemsFactory;
 			_gameContext = gameContext;
 			_inputContext = inputContext;
-			_gameLoadingUIService = gameLoadingUIService;
 		}
 
 		public override void Enter()
 		{
 			_battleFeature = _systemsFactory.Create<BattleFeature>();
 			_battleFeature.Initialize();
-
-      _gameLoadingUIService.Close();
     }
 
     protected override void OnUpdate()
