@@ -78,6 +78,7 @@ namespace Code.Gameplay.StaticData
 		private const string WeaponUpgradeShopItemConfigLabel = "WeaponUpgradeShopItemConfig";
 		private const string HeroUpgradeShopItemConfigLabel = "HeroUpgradeShopItemConfig";
 		private const string WeaponStatUIEntryConfigLabel = "WeaponStatUIEntryConfig";
+		private const string HeroStatUIEntryConfigLabel = "HeroStatUIEntryConfig";
     private const string EnchantUIEntryConfigLabel = "EnchantUIEntryConfig";
     private const string EnchantStatUIEntryConfigLabel = "EnchantStatUIEntryConfig";
     private const string MusicConfigLabel = "MusicConfig";
@@ -101,6 +102,7 @@ namespace Code.Gameplay.StaticData
     private Dictionary<DestroyableItemTypeId, DestroyableItemConfig> _destroyableItemById;
     private Dictionary<DoorTypeId, DoorConfig> _doorById;
     private Dictionary<WindowId, WindowConfig> _windowById;
+    private Dictionary<HeroStatUIEntryTypeId, HeroStatUIEntryConfig> _heroStatUIEntryItemById;
     private Dictionary<WeaponShopItemTypeId, WeaponShopItemConfig> _weaponShopItemById;
     private Dictionary<WeaponUpgradeTypeId, WeaponUpgradeShopItemConfig> _weaponUpgradeShopItemById;
     private Dictionary<WeaponStatUIEntryTypeId, WeaponStatUIEntryConfig> _weaponStatUIEntryItemById;
@@ -153,6 +155,7 @@ namespace Code.Gameplay.StaticData
 			await LoadEnchantShopItem();
 			await LoadWeaponUpgradeShopItem();
 			await LoadHeroUpgradeShopItem();
+			await LoadHeroStatUIEntryItem();
 			await LoadWeaponStatUIEntryItem();
 			await LoadEnchantUIEntryItem();
 			await LoadEnchantStatUIEntryItem();
@@ -288,15 +291,23 @@ namespace Code.Gameplay.StaticData
 			throw new Exception($"Enchant shop item config for {id} was not found");
 		}
 
-		public WeaponStatUIEntryConfig GetWeaponStatUIEntryItemConfig(WeaponStatUIEntryTypeId id)
+		public HeroStatUIEntryConfig GetHeroStatUIEntryItemConfig(HeroStatUIEntryTypeId id)
 		{
-			if (_weaponStatUIEntryItemById.TryGetValue(id, out WeaponStatUIEntryConfig config))
+			if (_heroStatUIEntryItemById.TryGetValue(id, out HeroStatUIEntryConfig config))
 				return config;
 
-			throw new Exception($"Weapon stat ui entry item config for {id} was not found");
+			throw new Exception($"Hero stat ui entry item config for {id} was not found");
 		}
 
-		public EnchantUIEntryConfig GetEnchantUIEntryItemConfig(EnchantUIEntryTypeId id)
+    public WeaponStatUIEntryConfig GetWeaponStatUIEntryItemConfig(WeaponStatUIEntryTypeId id)
+    {
+      if (_weaponStatUIEntryItemById.TryGetValue(id, out WeaponStatUIEntryConfig config))
+        return config;
+
+      throw new Exception($"Weapon stat ui entry item config for {id} was not found");
+    }
+
+    public EnchantUIEntryConfig GetEnchantUIEntryItemConfig(EnchantUIEntryTypeId id)
 		{
 			if (_enchantUIEntryItemById.TryGetValue(id, out EnchantUIEntryConfig config))
 				return config;
@@ -426,11 +437,15 @@ namespace Code.Gameplay.StaticData
 			_enchantShopItemById = (await _assetProvider.LoadAll<EnchantShopItemConfig>(EnchantShopItemConfigLabel))
 				.ToDictionary(x => x.TypeId, x => x);
 
-		private async UniTask LoadWeaponStatUIEntryItem() =>
-			_weaponStatUIEntryItemById = (await _assetProvider.LoadAll<WeaponStatUIEntryConfig>(WeaponStatUIEntryConfigLabel))
+		private async UniTask LoadHeroStatUIEntryItem() =>
+			_heroStatUIEntryItemById = (await _assetProvider.LoadAll<HeroStatUIEntryConfig>(HeroStatUIEntryConfigLabel))
 				.ToDictionary(x => x.TypeId, x => x);
 
-		private async UniTask LoadEnchantUIEntryItem() =>
+    private async UniTask LoadWeaponStatUIEntryItem() =>
+      _weaponStatUIEntryItemById = (await _assetProvider.LoadAll<WeaponStatUIEntryConfig>(WeaponStatUIEntryConfigLabel))
+        .ToDictionary(x => x.TypeId, x => x);
+
+    private async UniTask LoadEnchantUIEntryItem() =>
 			_enchantUIEntryItemById = 
 				(await _assetProvider.LoadAll<EnchantUIEntryConfig>(EnchantUIEntryConfigLabel))
 				.ToDictionary(x => x.TypeId, x => x);

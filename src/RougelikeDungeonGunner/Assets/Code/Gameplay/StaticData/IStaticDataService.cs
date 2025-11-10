@@ -75,6 +75,7 @@ namespace Code.Gameplay.StaticData
     WeaponUpgradeShopItemConfig GetWeaponUpgradeShopItemConfig(WeaponUpgradeTypeId id);
     WeaponShopItemConfig GetWeaponShopItemConfig(WeaponShopItemTypeId id);
     WeaponStatUIEntryConfig GetWeaponStatUIEntryItemConfig(WeaponStatUIEntryTypeId id);
+    HeroStatUIEntryConfig GetHeroStatUIEntryItemConfig(HeroStatUIEntryTypeId id);
     EnchantUIEntryConfig GetEnchantUIEntryItemConfig(EnchantUIEntryTypeId id);
     EnchantStatUIEntryConfig GetEnchantStatUIEntryItemConfig(EnchantStatUIEntryTypeId id);
     EnchantShopItemConfig GetEnchantShopItemConfig(EnchantShopItemTypeId id);

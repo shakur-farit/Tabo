@@ -60,6 +60,7 @@ using Code.Meta.Features.Shop.HeroUpgrade.Services;
 using Code.Meta.Features.Shop.Services;
 using Code.Meta.Features.Shop.Weapon.Factory;
 using Code.Meta.Features.Shop.Weapon.Services;
+using Code.Meta.Features.Shop.WeaponStatUIEntry;
 using Code.Meta.Features.Shop.WeaponStatUIEntry.Factory;
 using Code.Meta.Features.Shop.WeaponUpgrade.Factory;
 using Code.Meta.Features.Shop.WeaponUpgrade.Services;
@@ -71,7 +72,6 @@ using Code.Progress.SaveLoad;
 using Code.Sounds.Music.Services;
 using Code.Sounds.Services;
 using Code.Sounds.SoundEffects.Factory;
-using Code.Sounds.SoundEffects.Systems;
 using Zenject;
 
 namespace Code.Infrastructure.Installers
@@ -205,6 +205,7 @@ namespace Code.Infrastructure.Installers
 			Container.Bind<IEnchantShopItemFactory>().To<EnchantShopItemFactory>().AsSingle();
 			Container.Bind<IWeaponUpgradeShopItemFactory>().To<WeaponUpgradeShopItemFactory>().AsSingle();
 			Container.Bind<IHeroUpgradeShopItemFactory>().To<HeroUpgradeShopItemFactory>().AsSingle();
+			Container.Bind<IHeroStatUIEntryFactory>().To<HeroStatUIEntryFactory>().AsSingle();
 			Container.Bind<IWeaponStatUIEntryItemFactory>().To<WeaponStatUIEntryItemFactory>().AsSingle();
 			Container.Bind<IEnchantUIEntryFactory>().To<EnchantUIEntryFactory>().AsSingle();
 			Container.Bind<IWeaponEnchantStatUIEntryFactory>().To<WeaponEnchantStatUIEntryFactory>().AsSingle();

@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Code.Meta.Features.Shop.EnchantUIEntry.Configs
 {
-	[CreateAssetMenu(menuName = "Dungeon Gunner/Weapon Information/Enchant UI Entry Config", fileName = "EnchantUIEntryConfig")]
+	[CreateAssetMenu(menuName = "Dungeon Gunner/Information/Enchant UI Entry Config", fileName = "EnchantUIEntryConfig")]
 	public class EnchantUIEntryConfig : ScriptableObject
 	{
 		public EnchantUIEntryTypeId TypeId;
