@@ -22,13 +22,18 @@ namespace Code.Meta.Features.HeroSelector.Behaviours
 
 		private IStaticDataService _staticDataService;
 		private ICurrentHeroTypeIdProvider _heroType;
+    private ICurrentHeroWeaponProvider _currentWeapon;
 
-		[Inject]
-		public void Constructor(IStaticDataService staticDataService, ICurrentHeroTypeIdProvider heroType)
+    [Inject]
+		public void Constructor(
+      IStaticDataService staticDataService, 
+      ICurrentHeroTypeIdProvider heroType,
+      ICurrentHeroWeaponProvider currentWeapon)
 		{
 			_staticDataService = staticDataService;
 			_heroType = heroType;
-		}
+      _currentWeapon = currentWeapon;
+    }
 
 		private void OnEnable()
 		{
@@ -40,8 +45,9 @@ namespace Code.Meta.Features.HeroSelector.Behaviours
 			_heroConfigs = _staticDataService.GetAllHeroConfigs().ToList();
 			UpdateHeroUI(_heroConfigs[_currentIndex]);
 			UpdateNavigationButtons();
-			UpdateCurrentHero(_heroConfigs[_currentIndex].TypeId);
-		}
+      UpdateCurrentHero(_heroConfigs[_currentIndex].TypeId);
+      UpdateCurrentHeroWeapon(_heroConfigs[_currentIndex]);
+    }
 
 		private void SwitchToNextHero()
 		{
@@ -50,6 +56,7 @@ namespace Code.Meta.Features.HeroSelector.Behaviours
 
 			UpdateHeroUI(_heroConfigs[_currentIndex]);
 			UpdateCurrentHero(_heroConfigs[_currentIndex].TypeId);
+			UpdateCurrentHeroWeapon(_heroConfigs[_currentIndex]);
 			UpdateNavigationButtons();
 		}
 
@@ -60,6 +67,7 @@ namespace Code.Meta.Features.HeroSelector.Behaviours
 
 			UpdateHeroUI(_heroConfigs[_currentIndex]);
 			UpdateCurrentHero(_heroConfigs[_currentIndex].TypeId);
+			UpdateCurrentHeroWeapon(_heroConfigs[_currentIndex]);
 			UpdateNavigationButtons();
 		}
 
@@ -69,7 +77,10 @@ namespace Code.Meta.Features.HeroSelector.Behaviours
 		private void UpdateCurrentHero(HeroTypeId typeId) => 
 			_heroType.CurrentHeroTypeId = typeId;
 
-		private void UpdateNavigationButtons()
+    private void UpdateCurrentHeroWeapon(HeroConfig config) =>
+      _currentWeapon.SetCurrentHeroWeapon(config.StartWeapon);
+
+    private void UpdateNavigationButtons()
 		{
 			if (_heroConfigs.Count <= 1)
 			{

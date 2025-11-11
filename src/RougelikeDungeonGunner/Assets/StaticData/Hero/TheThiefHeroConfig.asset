@@ -29,3 +29,7 @@ MonoBehaviour:
     ForwardCastDistance: 0.2
     Width: 1
     Height: 1
+  StatsUIEntry:
+  - StatUIEntryType: 1
+  - StatUIEntryType: 2
+  - StatUIEntryType: 3

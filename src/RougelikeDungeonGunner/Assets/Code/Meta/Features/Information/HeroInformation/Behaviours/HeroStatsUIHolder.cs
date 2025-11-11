@@ -25,17 +25,15 @@ namespace Code.Meta.Features.Information.HeroInformation.Behaviours
 				[HeroStatUIEntryTypeId.CurrentHp] = config =>
 					CreateCurrentHpUiEntry(HeroStatUIEntryTypeId.CurrentHp, _holder, config),
 				[HeroStatUIEntryTypeId.MaxHp] = config =>
-					CreateMaxHpUiEntry(HeroStatUIEntryTypeId.CurrentHp, _holder, config),
+					CreateMaxHpUiEntry(HeroStatUIEntryTypeId.MaxHp, _holder, config),
 				[HeroStatUIEntryTypeId.MovementSpeed] = config =>
-					CreateMovementSpeedUiEntry(HeroStatUIEntryTypeId.CurrentHp, _holder, config)
+					CreateMovementSpeedUiEntry(HeroStatUIEntryTypeId.MovementSpeed, _holder, config)
 			};
 		}
 
 		public void CreateStatUIEntryItem(HeroStatUIEntryTypeId id, HeroConfig heroConfig)
 		{
-			Debug.Log(id);
-
-			if (_createActions.TryGetValue(id, out Action<HeroConfig> action))
+      if (_createActions.TryGetValue(id, out Action<HeroConfig> action))
 				action.Invoke(heroConfig);
 			else
 				throw new Exception($"UI entry with type id {id} does not exist");
