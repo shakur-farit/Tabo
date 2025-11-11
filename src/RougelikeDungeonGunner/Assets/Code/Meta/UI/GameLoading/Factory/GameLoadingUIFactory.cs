@@ -1,7 +1,9 @@
 ﻿using Code.Gameplay.StaticData;
+using Code.Meta.UI.GameLoading.Behaviours;
+using Code.Meta.UI.GameLoading.Config;
 using Zenject;
 
-namespace Code.Meta.UI.Windows
+namespace Code.Meta.UI.GameLoading.Factory
 {
 	public class GameLoadingUIFactory : IGameLoadingUIFactory
 	{

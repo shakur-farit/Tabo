@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-
-namespace Code.Meta.UI.Windows
+﻿namespace Code.Meta.UI.GameLoading.Services
 {
 	public interface IGameLoadingUIService
 	{

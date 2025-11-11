@@ -1,0 +1,19 @@
+﻿namespace Code.Meta.Features.Information.WeaponInformation
+{
+	public enum WeaponStatUIEntryTypeId
+	{
+		Unknown = 0,
+		FireRange = 1,
+		Cooldown = 2,
+		ReloadTime = 3,
+		PrechargingTime = 4,
+		MagazineSize = 5,
+		Accuracy = 6,
+		EnchantSlots = 7,
+		Damage = 8,
+		Pierce = 9,
+		InfinityAmmo = 10,
+		PelletCount = 11,
+		MaxAmmoCount = 12
+	}
+}

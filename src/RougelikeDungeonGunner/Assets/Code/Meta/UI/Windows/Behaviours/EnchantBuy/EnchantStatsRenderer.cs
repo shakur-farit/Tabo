@@ -1,6 +1,6 @@
 ﻿using Code.Gameplay.StaticData;
+using Code.Meta.Features.Information.EnchantInformation.Behaviours;
 using Code.Meta.Features.Shop.Enchant.Configs;
-using Code.Meta.Features.Shop.EnchantUIEntry.Behaviours;
 using Code.Meta.Features.Shop.EnchantUIEntry.Configs;
 using Code.Meta.Features.Shop.EnchantUIEntry.Services;
 using Code.Meta.Features.Shop.Services;

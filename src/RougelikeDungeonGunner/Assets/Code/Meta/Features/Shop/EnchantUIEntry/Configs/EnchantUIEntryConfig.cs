@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Code.Meta.Features.Information.EnchantInformation;
 using UnityEngine;
 
 namespace Code.Meta.Features.Shop.EnchantUIEntry.Configs

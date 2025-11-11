@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Code.Meta.UI.Windows
+namespace Code.Meta.UI.GameLoading.Behaviours
 {
 	public class GameLoadingUI : MonoBehaviour
 	{

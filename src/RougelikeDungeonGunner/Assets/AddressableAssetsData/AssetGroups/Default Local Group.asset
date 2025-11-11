@@ -588,6 +588,12 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8e4a4eea7690901439056fcb457644ca
+    m_Address: Assets/StaticData/Information/HeroStatUIEntry/CurrentHpStatUIEntryConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroStatUIEntryConfig
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 8ed21c78f2aa56849ac7cce6b77be104
     m_Address: Assets/StaticData/Hero/TheScientisHeroConfig.asset
     m_ReadOnly: 0
@@ -662,6 +668,12 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 9cac8341406b37b4bbf1a0c42bb3a121
     m_Address: Assets/StaticData/Window/MainMenuWindowConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WindowConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9dc0363290304354cb287bbc608e2091
+    m_Address: Assets/StaticData/Window/HeroInfoWindowConfig.asset
     m_ReadOnly: 0
     m_SerializedLabels:
     - WindowConfig
@@ -810,6 +822,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - SoundEffectConfig
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c27a12b6ea0343d45bdb029c7041502c
+    m_Address: Assets/StaticData/Information/HeroStatUIEntry/MovementSpeedStatUIEntryConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroStatUIEntryConfig
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c5208cd2ff1908f409549b528d722a71
     m_Address: Assets/StaticData/WeaponInformation/WeaponEnchantUIEntry/FlameUIEntryConfig.asset
     m_ReadOnly: 0
@@ -833,6 +851,12 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - WeaponShopItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c83e15e036624434c9fa83380fb2149d
+    m_Address: Assets/StaticData/Information/HeroStatUIEntry/MaxHpStatUIEntryConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroStatUIEntryConfig
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c85398ef5b89eb24da9514e6cd4f75a8
     m_Address: Assets/StaticData/WeaponInformation/WeaponStatUIEntry/MAxAmmoCountWeaponStatUIEntryConfig.asset

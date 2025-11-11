@@ -1,6 +1,6 @@
-﻿using UnityEngine;
+﻿using Code.Meta.UI.GameLoading.Behaviours;
 
-namespace Code.Meta.UI.Windows
+namespace Code.Meta.UI.GameLoading.Factory
 {
 	public interface IGameLoadingUIFactory
 	{

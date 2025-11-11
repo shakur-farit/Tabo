@@ -1,7 +1,10 @@
-﻿using Code.Gameplay.Features.Aura;
+﻿using System;
+using System.Collections.Generic;
+using Code.Gameplay.Features.Aura;
 using Code.Gameplay.Features.Collection;
 using Code.Gameplay.Features.Weapon;
 using Code.Infrastructure.View;
+using Code.Meta.Features.Information.HeroInformation;
 using UnityEngine;
 
 namespace Code.Gameplay.Features.Hero.Configs
@@ -23,11 +26,18 @@ namespace Code.Gameplay.Features.Hero.Configs
 		[Range(0, 100)] public float DestroyableCollidingRadius;
 
 		public CollisionCastSetup CastSetup;
+		public List<HeroStatUIEntry> StatsUIEntry;
 
 		private void OnValidate()
 		{
 			if (CurrentHp > MaxHp)
 				MaxHp = CurrentHp;
 		}
+	}
+
+	[Serializable]
+	public class HeroStatUIEntry
+	{
+		public HeroStatUIEntryTypeId StatUIEntryType;
 	}
 }

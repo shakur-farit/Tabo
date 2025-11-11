@@ -1,7 +1,7 @@
 ﻿using Code.Gameplay.Features.Weapon.Configs;
 using Code.Gameplay.StaticData;
+using Code.Meta.Features.Information.WeaponInformation.Behaviours;
 using Code.Meta.Features.Shop.Services;
-using Code.Meta.Features.Shop.WeaponStatUIEntry.Behaviours;
 using UnityEngine;
 using Zenject;
 

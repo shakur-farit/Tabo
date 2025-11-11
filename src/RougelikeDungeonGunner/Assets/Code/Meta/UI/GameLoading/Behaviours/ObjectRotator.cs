@@ -1,7 +1,7 @@
 ﻿using DG.Tweening;
 using UnityEngine;
 
-namespace Code.Meta.UI.Windows.Behaviours
+namespace Code.Meta.UI.GameLoading.Behaviours
 {
 	public class ObjectRotator : MonoBehaviour
 	{

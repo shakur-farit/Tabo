@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using Code.Meta.UI.Windows;
+using Code.Meta.UI.GameLoading.Services;
 using Entitas;
 
-namespace Code.Meta.UI.GameLoading
+namespace Code.Meta.UI.GameLoading.Systems
 {
   public class CloseLoadingUISystem : IExecuteSystem
   {

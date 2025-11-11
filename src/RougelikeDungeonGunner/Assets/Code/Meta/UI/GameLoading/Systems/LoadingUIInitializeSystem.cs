@@ -2,7 +2,7 @@
 using Code.Common.Extensions;
 using Entitas;
 
-namespace Code.Meta.UI.GameLoading
+namespace Code.Meta.UI.GameLoading.Systems
 {
   public class LoadingUIInitializeSystem :IInitializeSystem
   {
