@@ -38,6 +38,7 @@ using System.Linq;
 using Code.Common.GameGlobal.Balance;
 using Code.Infrastructure.ObjectPool.Config;
 using Code.Leaderboard.Config;
+using Code.Meta.Features.HeroSelector.Behaviours;
 using Code.Meta.Features.Hud.Config;
 using Code.Meta.Features.Information.EnchantInformation;
 using Code.Meta.Features.Information.EnchantInformation.Configs;
@@ -65,6 +66,7 @@ namespace Code.Gameplay.StaticData
 		private const string DialogueConfigPath = "DialogueConfig";
 		private const string ObjectPoolConfigPath = "ObjectPoolConfig";
 		private const string GameLoadingUIConfigPath = "GameLoadingUIConfig";
+		private const string HeroSelectorConfigPath = "HeroSelectorConfig";
 		private const string AmmoConfigLabel = "AmmoConfig";
 		private const string WeaponConfigLabel = "WeaponConfig";
 		private const string EnemyConfigLabel = "EnemyConfig";
@@ -95,6 +97,7 @@ namespace Code.Gameplay.StaticData
     private DialogueConfig _dialogueConfig;
     private ObjectPoolConfig _objectPoolConfig;
     private GameLoadingUIConfig _gameLoadingUIConfig;
+    private HeroSelectorConfig _heroSelectorConfig;
     private Dictionary<AmmoTypeId, AmmoConfig> _ammoById;
     private Dictionary<WeaponTypeId, WeaponConfig> _weaponById;
     private Dictionary<EnemyTypeId, EnemyConfig> _enemyById;
@@ -143,6 +146,7 @@ namespace Code.Gameplay.StaticData
 			await LoadHud();
 			await LoadDialogues();
       await LoadObjectPool();
+      await LoadHeroSelector();
 			await LoadAbilities();
 			await LoadWeapons();
 			await LoadEnemies();
@@ -356,7 +360,7 @@ namespace Code.Gameplay.StaticData
 		public GameBalanceConfig GetGameBalance() =>
 			_gameBalance;
 
-    public LeaderboardConfig GetLeaderboard() => 
+    public LeaderboardConfig GetLeaderboardConfig() => 
       _leaderboardConfig;
 
     public HudConfig GetHudConfig() =>
@@ -371,7 +375,10 @@ namespace Code.Gameplay.StaticData
     public GameLoadingUIConfig GetGameLoadingUIConfig() =>
 	    _gameLoadingUIConfig;
 
-		private async UniTask LoadAbilities() =>
+    public HeroSelectorConfig GetHeroSelectorConfig() =>
+      _heroSelectorConfig;
+
+    private async UniTask LoadAbilities() =>
 			_ammoById = (await _assetProvider.LoadAll<AmmoConfig>(AmmoConfigLabel))
 				.ToDictionary(x => x.TypeId, x => x);
 
@@ -486,5 +493,8 @@ namespace Code.Gameplay.StaticData
     private async UniTask LoadGameLoadingUI() =>
 	    _gameLoadingUIConfig = await _assetProvider.Load<GameLoadingUIConfig>(GameLoadingUIConfigPath);
 
-	}
+    private async UniTask LoadHeroSelector() =>
+      _heroSelectorConfig = await _assetProvider.Load<HeroSelectorConfig>(HeroSelectorConfigPath);
+
+  }
 }

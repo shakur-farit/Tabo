@@ -11,25 +11,20 @@ namespace Code.Meta.UI.GameLoading.Behaviours
 
 		private Tween _rotationTween;
 
-		private void Start()
-		{
-			if (_rotatingTransform != null) 
-				Rotate();
-		}
-
 		private void OnDestroy()
 		{
 			if (_rotationTween != null && _rotationTween.IsActive()) 
 				_rotationTween.Kill();
 		}
 
-		private void Rotate()
+		public void Rotate()
 		{
-			_rotationTween = _rotatingTransform
-				.DORotate(_endValue, _duration, RotateMode.FastBeyond360)
-				.SetRelative(true)
-				.SetEase(Ease.Linear)
-				.SetLoops(-1, LoopType.Restart);
-		}
+      _rotationTween = _rotatingTransform
+        .DORotate(_endValue, _duration, RotateMode.FastBeyond360)
+        .SetRelative(true)
+        .SetEase(Ease.Linear)
+        .SetLoops(-1, LoopType.Restart)
+        .SetUpdate(true);
+    }
 	}
 }

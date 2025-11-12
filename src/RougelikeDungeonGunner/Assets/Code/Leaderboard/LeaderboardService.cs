@@ -76,6 +76,6 @@ namespace Code.Leaderboard
     }
 
     private LeaderboardConfig GetConfig() => 
-      _staticDataService.GetLeaderboard();
+      _staticDataService.GetLeaderboardConfig();
   }
 }

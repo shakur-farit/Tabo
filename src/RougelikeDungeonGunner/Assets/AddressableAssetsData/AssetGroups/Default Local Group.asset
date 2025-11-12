@@ -398,6 +398,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - AmmoConfig
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6149e6e0837acb449b889c21c866ce6e
+    m_Address: Assets/StaticData/HeroSelector/HeroSelectorConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroSelectorConfig
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 6257e7911f03beb4a8614dfb3cfc8fca
     m_Address: Assets/StaticData/DestroyableItem/WoodenBarrelConfig.asset
     m_ReadOnly: 0

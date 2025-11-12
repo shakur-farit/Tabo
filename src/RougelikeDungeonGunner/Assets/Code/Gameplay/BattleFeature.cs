@@ -73,7 +73,7 @@ namespace Code.Gameplay
 
 			Add(systems.Create<PauseFeature>());
 
-			Add(systems.Create<LoadingUIFeature>());
+			//Add(systems.Create<LoadingUIFeature>());
 
 			Add(systems.Create<ProcessGameDestructedFeature>());
 			Add(systems.Create<ProcessInputDestructedFeature>());

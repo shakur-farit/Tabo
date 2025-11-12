@@ -2,6 +2,7 @@
 using Code.Infrastructure.Services;
 using Code.Infrastructure.States.GameStates;
 using Code.Infrastructure.States.StateMachine;
+using Code.Meta.Features.HeroSelector.Behaviours;
 using Code.Meta.UI.Windows.Services;
 using UnityEngine;
 using UnityEngine.UI;
@@ -16,6 +17,7 @@ namespace Code.Meta.UI.Windows.Behaviours.MainMenu
 		[SerializeField] private Button _quitButton;
 		[SerializeField] private Button _leadersButton;
 		[SerializeField] private PlayerAuthentication _authentication;
+		[SerializeField] private HeroSelectorDestroyer _heroSelectorDestroyer;
 
     private IGameStateMachine _stateMachine;
 		private IWindowService _windowService;
@@ -47,8 +49,11 @@ namespace Code.Meta.UI.Windows.Behaviours.MainMenu
       if(await _authentication.IsNameValid() == false)
         return;
 
+			_heroSelectorDestroyer.Destroy();
+
+      _windowService.Close(WindowId.MainMenuWindow);
+
       await _stateMachine.Enter<LoadingBattleState, string>(Scenes.Gameplay);
-	    _windowService.Close(WindowId.MainMenuWindow);
     }
 
 		private void OpenSettings() => 

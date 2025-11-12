@@ -19,7 +19,7 @@ namespace Code.Leaderboard.Factory
 
 		public LeaderboardItem Create(Transform parent)
 		{
-			LeaderboardConfig config = _staticDataService.GetLeaderboard();
+			LeaderboardConfig config = _staticDataService.GetLeaderboardConfig();
 
 			return _instantiator.InstantiatePrefabForComponent<LeaderboardItem>(config.ItemViewPrefab, parent);
 		}

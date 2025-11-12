@@ -8,6 +8,7 @@ namespace Code.Gameplay.Features.Level
 		public LevelFeature(ISystemsFactory systems)
 		{
 			Add(systems.Create<CalculateTimeToSpawnEnemiesSystem>());
+			Add(systems.Create<UpdateTimerTextSystem>());
 			Add(systems.Create<CalculateEnemiesInLevelSystem>());
 			Add(systems.Create<AddEnemyWaveWithCooldownSystem>());
 			Add(systems.Create<FinalizeProcessedLevelSystem>());

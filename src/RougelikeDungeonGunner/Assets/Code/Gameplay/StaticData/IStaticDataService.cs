@@ -27,6 +27,7 @@ using Code.Gameplay.Features.Weapon.Configs;
 using Code.Infrastructure.ObjectPool.Config;
 using Code.Leaderboard.Config;
 using Code.Meta;
+using Code.Meta.Features.HeroSelector.Behaviours;
 using Code.Meta.Features.Hud.Config;
 using Code.Meta.Features.Information.EnchantInformation;
 using Code.Meta.Features.Information.EnchantInformation.Configs;
@@ -57,10 +58,11 @@ namespace Code.Gameplay.StaticData
 {
   public interface IStaticDataService
   {
-	  IEnumerable<LootConfig> GetAllLootConfigs();
-	  IEnumerable<HeroConfig> GetAllHeroConfigs();
+    IEnumerable<LootConfig> GetAllLootConfigs();
+    IEnumerable<HeroConfig> GetAllHeroConfigs();
     IEnumerable<DestroyableItemConfig> GetAllDestroyableItemConfigs();
 
+    UniTask PreLoad();
     UniTask Load();
 
     GameBalanceConfig GetGameBalance();
@@ -90,8 +92,8 @@ namespace Code.Gameplay.StaticData
     ObjectPoolConfig GetObjectPoolConfig();
     HudConfig GetHudConfig();
     DialogueConfig GetDialogueConfig();
-    LeaderboardConfig GetLeaderboard();
+    LeaderboardConfig GetLeaderboardConfig();
+    HeroSelectorConfig GetHeroSelectorConfig();
     GameLoadingUIConfig GetGameLoadingUIConfig();
-    UniTask PreLoad();
   }
 }

@@ -1,12 +1,16 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Code.Meta.UI.GameLoading.Behaviours
 {
 	public class GameLoadingUI : MonoBehaviour
-	{
-		private void Start()
+  {
+    [SerializeField] private ObjectRotator _rotator;
+
+    public void StartLoading()
 		{
 			transform.SetParent(null);
+			_rotator.Rotate();
 			DontDestroyOnLoad(gameObject);
 		}
 	}

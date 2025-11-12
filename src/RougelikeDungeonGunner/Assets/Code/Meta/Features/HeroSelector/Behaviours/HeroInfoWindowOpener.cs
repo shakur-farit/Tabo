@@ -19,10 +19,7 @@ namespace Code.Meta.Features.HeroSelector.Behaviours
 		private void OnEnable() => 
 			_infoOpepButton.onClick.AddListener(OpenHeroInfoWindow);
 
-		private void OpenHeroInfoWindow()
-		{
-			Debug.Log("Click");
-			_windowService.Open(WindowId.HeroInfoWindow);
-		}
-	}
+		private void OpenHeroInfoWindow() => 
+      _windowService.Open(WindowId.HeroInfoWindow);
+  }
 }

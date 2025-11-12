@@ -37,7 +37,7 @@ namespace Code.Infrastructure.States.GameStates
 		public override void Enter()
 		{
 			CreateNewLevel();
-			OpenHud();
+			//OpenHud();
 			PlayClearedRoomMusic(MusicTypeId.ClearedRoom);
 			EnterToBattleLoop();
 		}

@@ -492,6 +492,7 @@ GameObject:
   - component: {fileID: 7328612932446488058}
   - component: {fileID: 5224835772695328956}
   - component: {fileID: 3403876560569628493}
+  - component: {fileID: 1864032753632543195}
   m_Layer: 5
   m_Name: MainMenuWindow
   m_TagString: Untagged
@@ -540,6 +541,7 @@ MonoBehaviour:
   _quitButton: {fileID: 4946043826937535086}
   _leadersButton: {fileID: 6748510817874348673}
   _authentication: {fileID: 3403876560569628493}
+  _heroSelectorDestroyer: {fileID: 1864032753632543195}
 --- !u!114 &3403876560569628493
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -553,6 +555,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _inputField: {fileID: 1343097151976646329}
+--- !u!114 &1864032753632543195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 731944184819309819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c477a04de78421649b452e43846df596, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2190381373108909887
 GameObject:
   m_ObjectHideFlags: 0

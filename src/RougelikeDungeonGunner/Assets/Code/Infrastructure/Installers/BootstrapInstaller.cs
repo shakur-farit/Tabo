@@ -47,6 +47,7 @@ using Code.Infrastructure.Systems;
 using Code.Infrastructure.View.Factory;
 using Code.Leaderboard;
 using Code.Leaderboard.Factory;
+using Code.Meta.Features.HeroSelector.Behaviours;
 using Code.Meta.Features.Hud.AmmoHolder.Factory;
 using Code.Meta.Features.Hud.EnchantHolder.Factory;
 using Code.Meta.Features.Hud.HeroHeartHolder.Factory;
@@ -67,7 +68,6 @@ using Code.Meta.Features.Shop.WeaponUpgrade.Factory;
 using Code.Meta.Features.Shop.WeaponUpgrade.Services;
 using Code.Meta.UI.GameLoading.Factory;
 using Code.Meta.UI.GameLoading.Services;
-using Code.Meta.UI.Windows;
 using Code.Meta.UI.Windows.Factory;
 using Code.Meta.UI.Windows.Services;
 using Code.Progress.Provider;
@@ -214,6 +214,7 @@ namespace Code.Infrastructure.Installers
 			Container.Bind<IEnchantStatUIEntryFactory>().To<EnchantStatUIEntryFactory>().AsSingle();
 			Container.Bind<ILeaderboardItemFactory>().To<LeaderboardItemFactory>().AsSingle();
 			Container.Bind<IGameLoadingUIFactory>().To<GameLoadingUIFactory>().AsSingle();
+			Container.Bind<IHeroSelectorFactory>().To<HeroSelectorFactory>().AsSingle();
 		}
 
 		private void BindUIServices()
@@ -222,6 +223,7 @@ namespace Code.Infrastructure.Installers
       Container.Bind<IHudDependPlatformProvider>().To<HudDependPlatformProvider>().AsSingle();
       Container.Bind<IDialogueService>().To<DialogueService>().AsSingle();
       Container.Bind<IGameLoadingUIService>().To<GameLoadingUIService>().AsSingle();
+      Container.Bind<IHeroSelectorProvider>().To<HeroSelectorProvider>().AsSingle();
     }
 
 		private void BindShopServices()
