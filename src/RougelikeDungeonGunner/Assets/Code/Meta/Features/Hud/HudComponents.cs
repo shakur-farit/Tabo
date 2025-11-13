@@ -15,4 +15,6 @@ namespace Code.Meta.Features.Hud
 	[Game] public class WeaponHolderComponent : IComponent { public WeaponHolderBehaviour Value; }
 	[Game] public class ReloadingAnimatorComponent : IComponent { public ReloadingAnimator Value; }
 	[Game] public class TimerHolderComponent : IComponent { public TimerHolder Value; }
+
+	[Game] public class HudAvailable : IComponent { }
 }

@@ -1,7 +1,6 @@
 using Code.Gameplay.Features.Level.Services;
 using Code.Infrastructure.States.StateInfrastructure;
 using Code.Leaderboard;
-using Code.Meta.Features.Hud.Services;
 using Code.Meta.UI.Windows;
 using Code.Meta.UI.Windows.Services;
 
@@ -11,24 +10,20 @@ namespace Code.Infrastructure.States.GameStates
 	{
 		private readonly ILevelService _levelService;
 		private readonly IWindowService _windowService;
-    private readonly IHudDependPlatformProvider _hudProvider;
     private readonly ILeaderboardUpdater _leaderboardUpdater;
 
     public LevelCompleteState(
       ILevelService levelService, 
       IWindowService windowService, 
-      IHudDependPlatformProvider hudProvider,
       ILeaderboardUpdater leaderboardUpdater)
 		{
 			_levelService = levelService;
 			_windowService = windowService;
-      _hudProvider = hudProvider;
       _leaderboardUpdater = leaderboardUpdater;
     }
 
 		public override void Enter()
 		{
-			CloseHud();
 			OpenLevelCompleteWindow();
 			MarkNextLevel();
       UpdateLeaderboard();
@@ -36,9 +31,6 @@ namespace Code.Infrastructure.States.GameStates
 
 		protected override void Exit() => 
 			CloseLevelCompleteWindow();
-
-		private void CloseHud() =>
-      _windowService.Close(_hudProvider.GetHud());
 
 		private void OpenLevelCompleteWindow() => 
 			_windowService.Open(WindowId.LevelCompleteWindow);

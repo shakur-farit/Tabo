@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: HudConfig
   m_EditorClassIdentifier: 
   MaxHeartSpritesCount: 5
+  HeathViewPrefab: {fileID: 5510254603126773863, guid: 59096cb5e43950644b670f5b0f92f29d, type: 3}

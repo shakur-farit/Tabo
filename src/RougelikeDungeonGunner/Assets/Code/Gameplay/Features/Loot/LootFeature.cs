@@ -1,6 +1,5 @@
 ﻿using Code.Gameplay.Features.Loot.Systems;
 using Code.Infrastructure.Systems;
-using Code.Meta.Features.Hud.CoinsHolder.Systems;
 
 namespace Code.Gameplay.Features.Loot
 {
@@ -21,8 +20,6 @@ namespace Code.Gameplay.Features.Loot
 			Add(systems.Create<CollectEnchantItemSystem>());
 			Add(systems.Create<CollectEffectItemSystem>());
 			Add(systems.Create<CollectShieldItemSystem>());
-
-			Add(systems.Create<UpdateCoinsTextInHolderSystem>());
 
 			Add(systems.Create<CleanupCollectedSystem>());
 		}

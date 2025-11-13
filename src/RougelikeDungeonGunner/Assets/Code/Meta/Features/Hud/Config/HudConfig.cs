@@ -6,5 +6,6 @@ namespace Code.Meta.Features.Hud.Config
   public class HudConfig : ScriptableObject
   {
     public int MaxHeartSpritesCount;
+    public GameObject HeathViewPrefab;
   }
 }

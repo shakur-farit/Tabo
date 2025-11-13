@@ -1,5 +1,4 @@
 ﻿using Code.Meta.Features.Hud.HeroHeartHolder.Factory;
-using Cysharp.Threading.Tasks;
 using System.Collections.Generic;
 using Code.Gameplay.Features.Hero.Services;
 using Code.Gameplay.StaticData;
@@ -32,12 +31,12 @@ namespace Code.Meta.Features.Hud.HeroHeartHolder.Behaviours
       _maxHeartSprite = _staticDataService.GetHudConfig().MaxHeartSpritesCount;
     }
 
-		public async void UpdateHeartUICount(float currentHp, float maxHp)
+		public void UpdateHeartUICount(float currentHp, float maxHp)
 		{
 			int heartsToShow = Mathf.CeilToInt((currentHp / maxHp) * _maxHeartSprite);
 			heartsToShow = Mathf.Clamp(heartsToShow, 0, _maxHeartSprite);
 
-			await CreateHeartUI();
+			CreateHeartUI();
 
 			for (int i = 0; i < _heartIconsBuffer.Count; i++)
 				_heartIconsBuffer[i].SetActive(i < heartsToShow);
@@ -45,11 +44,11 @@ namespace Code.Meta.Features.Hud.HeroHeartHolder.Behaviours
 			UpdateHpText();
 		}
 
-		private async UniTask CreateHeartUI()
+		private void CreateHeartUI()
 		{
 			while (_heartIconsBuffer.Count < _maxHeartSprite)
 			{
-				GameObject icon = await _factory.CreateHeartUI(_holder);
+				GameObject icon = _factory.CreateHeartUI(_holder);
 				icon.SetActive(false);
 				_heartIconsBuffer.Add(icon);
 			}

@@ -291,16 +291,17 @@ public static class GameComponentsLookup {
     public const int CoinsHolder = 280;
     public const int EnchantHolder = 281;
     public const int HeartHolder = 282;
-    public const int ReloadingAnimator = 283;
-    public const int TimerHolder = 284;
-    public const int WeaponHolder = 285;
-    public const int AudioClip = 286;
-    public const int AudioSource = 287;
-    public const int SoundEffect = 288;
-    public const int SoundEffectTypeId = 289;
-    public const int Volume = 290;
+    public const int HudAvailable = 283;
+    public const int ReloadingAnimator = 284;
+    public const int TimerHolder = 285;
+    public const int WeaponHolder = 286;
+    public const int AudioClip = 287;
+    public const int AudioSource = 288;
+    public const int SoundEffect = 289;
+    public const int SoundEffectTypeId = 290;
+    public const int Volume = 291;
 
-    public const int TotalComponents = 291;
+    public const int TotalComponents = 292;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -586,6 +587,7 @@ public static class GameComponentsLookup {
         "CoinsHolder",
         "EnchantHolder",
         "HeartHolder",
+        "HudAvailable",
         "ReloadingAnimator",
         "TimerHolder",
         "WeaponHolder",
@@ -880,6 +882,7 @@ public static class GameComponentsLookup {
         typeof(Code.Meta.Features.Hud.CoinsHolderComponent),
         typeof(Code.Meta.Features.Hud.EnchantHolderComponent),
         typeof(Code.Meta.Features.Hud.HeartHolderComponent),
+        typeof(Code.Meta.Features.Hud.HudAvailable),
         typeof(Code.Meta.Features.Hud.ReloadingAnimatorComponent),
         typeof(Code.Meta.Features.Hud.TimerHolderComponent),
         typeof(Code.Meta.Features.Hud.WeaponHolderComponent),

@@ -1,5 +1,5 @@
-﻿using Code.Infrastructure.AssetManagement;
-using Cysharp.Threading.Tasks;
+﻿using Code.Gameplay.StaticData;
+using Code.Meta.Features.Hud.Config;
 using UnityEngine;
 using Zenject;
 
@@ -7,22 +7,20 @@ namespace Code.Meta.Features.Hud.HeroHeartHolder.Factory
 {
 	public class HeartUIFactory : IHeartUIFactory
 	{
-		public const string HeartUIAddress = "HeartUI";
-
 		private readonly IInstantiator _instantiator;
-		private readonly IAssetProvider _assetProvider;
+		private readonly IStaticDataService _staticDataService;
 
-		public HeartUIFactory(IInstantiator instantiator, IAssetProvider assetProvider)
+		public HeartUIFactory(IInstantiator instantiator, IStaticDataService staticDataService)
 		{
 			_instantiator = instantiator;
-			_assetProvider = assetProvider;
+			_staticDataService = staticDataService;
 		}
 
-		public async UniTask<GameObject> CreateHeartUI(Transform parent)
+		public GameObject CreateHeartUI(Transform parent)
 		{
-			GameObject prefab = await _assetProvider.Load<GameObject>(HeartUIAddress);
+			HudConfig config = _staticDataService.GetHudConfig();
 
-			return _instantiator.InstantiatePrefab(prefab, parent);
+			return _instantiator.InstantiatePrefab(config.HeathViewPrefab, parent);
 		}
 	}
 }
