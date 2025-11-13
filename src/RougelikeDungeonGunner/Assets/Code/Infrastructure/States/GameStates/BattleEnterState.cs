@@ -2,8 +2,6 @@ using Code.Gameplay.Features.Level.Factory;
 using Code.Gameplay.Features.Level.Services;
 using Code.Infrastructure.States.StateInfrastructure;
 using Code.Infrastructure.States.StateMachine;
-using Code.Meta.Features.Hud.Services;
-using Code.Meta.UI.Windows.Services;
 using Code.Sounds.Music;
 using Code.Sounds.Music.Services;
 
@@ -29,7 +27,7 @@ namespace Code.Infrastructure.States.GameStates
     }
 
 		public override void Enter()
-		{
+    {
 			CreateNewLevel();
 			PlayClearedRoomMusic(MusicTypeId.ClearedRoom);
 			EnterToBattleLoop();

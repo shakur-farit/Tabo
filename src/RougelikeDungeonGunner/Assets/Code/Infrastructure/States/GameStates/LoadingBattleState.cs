@@ -1,6 +1,7 @@
 using Code.Infrastructure.Loading;
 using Code.Infrastructure.States.StateInfrastructure;
 using Code.Infrastructure.States.StateMachine;
+using Code.Meta.UI.GameLoading.Services;
 
 namespace Code.Infrastructure.States.GameStates
 {
@@ -8,15 +9,20 @@ namespace Code.Infrastructure.States.GameStates
 	{
 		private readonly IGameStateMachine _stateMachine;
 		private readonly ISceneLoader _sceneLoader;
+    private readonly IGameLoadingUIService _gameLoadingUIService;
 
-		public LoadingBattleState(IGameStateMachine stateMachine, ISceneLoader sceneLoader)
+    public LoadingBattleState(IGameStateMachine stateMachine, ISceneLoader sceneLoader, IGameLoadingUIService gameLoadingUIService)
 		{
 			_stateMachine = stateMachine;
 			_sceneLoader = sceneLoader;
-		}
+      _gameLoadingUIService = gameLoadingUIService;
+    }
 
-		public override void Enter(string sceneName) => 
+		public override void Enter(string sceneName)
+    {
+			_gameLoadingUIService.Open();
       LoadGameplayScene(sceneName);
+    }
 
     private void LoadGameplayScene(string sceneName) => 
 			_sceneLoader.LoadScene(sceneName, EnterBattleLoopState);

@@ -1,4 +1,5 @@
-﻿using Code.Infrastructure.States.GameStates;
+﻿using Code.Infrastructure.Loading;
+using Code.Infrastructure.States.GameStates;
 using Code.Infrastructure.States.StateMachine;
 using UnityEngine;
 using UnityEngine.UI;
@@ -24,6 +25,6 @@ namespace Code.Meta.UI.Windows.Behaviours.LevelComplete
 	    _nextLevelButton.onClick.AddListener(EnterNextLevel);
 
     private void EnterNextLevel() =>
-      _stateMachine.Enter<BattleEnterState>();
+      _stateMachine.Enter<LoadingBattleState, string>(Scenes.Gameplay);
 	}
 }

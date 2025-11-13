@@ -12,7 +12,7 @@ namespace Code.Infrastructure.States.GameStates
 		private readonly GameContext _gameContext;
 		private readonly InputContext _inputContext;
 
-		public BattleLoopState(
+    public BattleLoopState(
 			ISystemsFactory systemsFactory, 
 			GameContext gameContext, 
 			InputContext inputContext)
@@ -20,17 +20,17 @@ namespace Code.Infrastructure.States.GameStates
 			_systemsFactory = systemsFactory;
 			_gameContext = gameContext;
 			_inputContext = inputContext;
-		}
+    }
 
 		public override void Enter()
 		{
-			_battleFeature = _systemsFactory.Create<BattleFeature>();
-			_battleFeature.Initialize();
+      _battleFeature = _systemsFactory.Create<BattleFeature>();
+      _battleFeature.Initialize();
     }
 
     protected override void OnUpdate()
 		{
-			_battleFeature.Execute();
+      _battleFeature.Execute();
 			_battleFeature.Cleanup();
 		}
 
@@ -54,5 +54,5 @@ namespace Code.Infrastructure.States.GameStates
 			foreach (InputEntity entity in _inputContext.GetEntities())
 				entity.isDestructed = true;
 		}
-	}
+  }
 }

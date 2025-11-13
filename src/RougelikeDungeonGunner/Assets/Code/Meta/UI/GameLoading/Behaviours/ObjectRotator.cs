@@ -17,7 +17,12 @@ namespace Code.Meta.UI.GameLoading.Behaviours
 				_rotationTween.Kill();
 		}
 
-		public void Rotate()
+    private void Update()
+    {
+      Debug.Log(Time.timeScale);
+    }
+
+    public void Rotate()
 		{
       _rotationTween = _rotatingTransform
         .DORotate(_endValue, _duration, RotateMode.FastBeyond360)
