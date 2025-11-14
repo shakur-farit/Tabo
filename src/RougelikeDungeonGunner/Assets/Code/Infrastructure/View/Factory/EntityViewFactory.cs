@@ -33,13 +33,7 @@ namespace Code.Infrastructure.View.Factory
 				_loadingInProgress[entity] = true;
 
 				EntityBehaviour viewPrefab = await _assetProvider.LoadComponent<EntityBehaviour>(entity.ViewPath);
-
-				EntityBehaviour view = _instantiator.InstantiatePrefabForComponent<EntityBehaviour>(
-					viewPrefab,
-					position: _farAway,
-					Quaternion.identity,
-					parentTransform: null);
-
+				EntityBehaviour view = _objectPool.Get(viewPrefab, _farAway);
 				view.SetEntity(entity);
 
 				return view;
@@ -52,17 +46,7 @@ namespace Code.Infrastructure.View.Factory
 
 		public EntityBehaviour CreateViewForEntityFromPrefab(GameEntity entity)
     {
-      EntityBehaviour view;
-
-        view = _objectPool.Get(entity.ViewPrefab, _farAway);
-
-        //view = _instantiator.InstantiatePrefabForComponent<EntityBehaviour>(
-        //  entity.ViewPrefab,
-        //  position: _farAway,
-        //  Quaternion.identity,
-        //  parentTransform: null);
-      
-
+			EntityBehaviour view = _objectPool.Get(entity.ViewPrefab, _farAway);
       view.SetEntity(entity);
 
 			return view;

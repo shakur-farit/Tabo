@@ -1,6 +1,7 @@
 using Code.Gameplay;
 using Code.Infrastructure.States.StateInfrastructure;
 using Code.Infrastructure.Systems;
+using Cysharp.Threading.Tasks;
 
 namespace Code.Infrastructure.States.GameStates
 {
@@ -22,14 +23,17 @@ namespace Code.Infrastructure.States.GameStates
 			_inputContext = inputContext;
     }
 
-		public override void Enter()
+		public override async void Enter()
 		{
-      _battleFeature = _systemsFactory.Create<BattleFeature>();
-      _battleFeature.Initialize();
+			_battleFeature = _systemsFactory.Create<BattleFeature>();
+			_battleFeature.Initialize();
     }
 
     protected override void OnUpdate()
 		{
+			if(_battleFeature ==  null) 
+				return;
+
       _battleFeature.Execute();
 			_battleFeature.Cleanup();
 		}
