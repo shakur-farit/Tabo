@@ -1,8 +1,6 @@
 ﻿using System.Collections.Generic;
 using Code.Gameplay.Features.Collection;
-using Code.Gameplay.Features.Hero.Services;
 using Code.Gameplay.Features.Score.Services;
-using Code.Meta;
 using Entitas;
 
 namespace Code.Gameplay.Features.Enemy.Systems
@@ -29,7 +27,7 @@ namespace Code.Gameplay.Features.Enemy.Systems
 
 			_levels = game.GetGroup(GameMatcher
 				.AllOf(
-					GameMatcher.EnemiesInLevelCount));
+					GameMatcher.Level));
 		}
 
 		public void Execute()
@@ -40,11 +38,14 @@ namespace Code.Gameplay.Features.Enemy.Systems
 				enemy.isMovementAvailable = false;
 				enemy.RemoveTargetCollectionComponents();
 				enemy.EnemyAnimator.PlayDied();
-        enemy.isDestructed = true;
+				enemy.isDestructed = true;
 
 				_scoreService.IncreaseScore(enemy.ScoreValue);
 
-				level.ReplaceEnemiesInLevelCount(level.EnemiesInLevelCount - 1);
+				if (enemy.isBoss)
+					level.ReplaceBossCount(level.BossCount - 1);
+				else
+					level.ReplaceEnemiesInLevelCount(level.EnemiesInLevelCount - 1);
 			}
 		}
 	}

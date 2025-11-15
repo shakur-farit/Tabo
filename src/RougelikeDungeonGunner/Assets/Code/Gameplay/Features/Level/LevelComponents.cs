@@ -15,6 +15,10 @@ namespace Code.Gameplay.Features.Level
 
 	[Game] public class EnemyWaves : IComponent { public List<EnemyWave> Value; }
 	[Game] public class EnemyWaveComponent : IComponent { public EnemyWave Value; }
+	[Game] public class EnemiesDefeated : IComponent { }
+	[Game] public class BossWaveComponent : IComponent { public BossWave Value; }
+	[Game] public class BossCount : IComponent { public int Value; }
+	[Game] public class BossesDefeated : IComponent { }
 	[Game] public class SpawnedEnemyWaves : IComponent { public int Value; }
 	[Game] public class EnemiesInLevelCount : IComponent { public int Value; }
 	[Game] public class EnemiesInLevelCountCalculated : IComponent { }

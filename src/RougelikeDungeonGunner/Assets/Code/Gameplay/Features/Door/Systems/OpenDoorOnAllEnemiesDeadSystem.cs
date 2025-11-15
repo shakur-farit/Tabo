@@ -15,7 +15,7 @@ namespace Code.Gameplay.Features.Door.Systems
 		{
 			_levels = game.GetGroup(GameMatcher
 				.AllOf(
-					GameMatcher.EnemiesInLevelCount));
+					GameMatcher.BossesDefeated));
 
 			_doors = game.GetGroup(GameMatcher
 				.AllOf(
@@ -26,7 +26,6 @@ namespace Code.Gameplay.Features.Door.Systems
 		{
 			foreach (GameEntity level in _levels)
 			foreach (GameEntity door in _doors.GetEntities(_buffer))
-				if (level.EnemiesInLevelCount <= 0)
           door.isOpened = true;
     }
 	}

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SlizzardEnemyConfig
   m_EditorClassIdentifier: 
   TypeId: 6
-  StartWeapon: 17
+  StartWeapon: 18
   StartAura: 1
   ViewPrefab: {fileID: 8166552356577901019, guid: 9dc33cf00c86b7440a425de8b022c28a, type: 3}
   AnimatorController: {fileID: 9100000, guid: 34e8d9a39874e5e4dafae7864069e02b, type: 2}
@@ -25,6 +25,7 @@ MonoBehaviour:
   AttackRaduis: 1
   AttackInterlal: 3
   LootDropChance: 50
+  ScoreValue: 0
   ExcludedLoot: 
   CastSetup:
     CastStartPosiotion: {x: 0, y: 0.6}

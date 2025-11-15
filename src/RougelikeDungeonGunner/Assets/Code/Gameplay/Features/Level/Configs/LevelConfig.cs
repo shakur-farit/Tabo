@@ -13,5 +13,6 @@ namespace Code.Gameplay.Features.Level.Configs
 		[Range(0, 100)] public int TimeBetweenSpawnWaves;
 		[Range(0, 100)] public float HeroSaveZoneRadius;
 		public List<EnemyWave> EnemyWaves;
+		public BossWave BossWave;
 	}
 }

@@ -8,17 +8,17 @@
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherHedusa;
+    static Entitas.IMatcher<GameEntity> _matcherBossesDefeated;
 
-    public static Entitas.IMatcher<GameEntity> Hedusa {
+    public static Entitas.IMatcher<GameEntity> BossesDefeated {
         get {
-            if (_matcherHedusa == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.Hedusa);
+            if (_matcherBossesDefeated == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.BossesDefeated);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherHedusa = matcher;
+                _matcherBossesDefeated = matcher;
             }
 
-            return _matcherHedusa;
+            return _matcherBossesDefeated;
         }
     }
 }
@@ -33,18 +33,18 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Enemy.Hedusa hedusaComponent = new Code.Gameplay.Features.Enemy.Hedusa();
+    static readonly Code.Gameplay.Features.Level.BossesDefeated bossesDefeatedComponent = new Code.Gameplay.Features.Level.BossesDefeated();
 
-    public bool isHedusa {
-        get { return HasComponent(GameComponentsLookup.Hedusa); }
+    public bool isBossesDefeated {
+        get { return HasComponent(GameComponentsLookup.BossesDefeated); }
         set {
-            if (value != isHedusa) {
-                var index = GameComponentsLookup.Hedusa;
+            if (value != isBossesDefeated) {
+                var index = GameComponentsLookup.BossesDefeated;
                 if (value) {
                     var componentPool = GetComponentPool(index);
                     var component = componentPool.Count > 0
                             ? componentPool.Pop()
-                            : hedusaComponent;
+                            : bossesDefeatedComponent;
 
                     AddComponent(index, component);
                 } else {

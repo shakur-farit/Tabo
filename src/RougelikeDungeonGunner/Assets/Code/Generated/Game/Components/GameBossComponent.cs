@@ -8,17 +8,17 @@
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherSlime;
+    static Entitas.IMatcher<GameEntity> _matcherBoss;
 
-    public static Entitas.IMatcher<GameEntity> Slime {
+    public static Entitas.IMatcher<GameEntity> Boss {
         get {
-            if (_matcherSlime == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.Slime);
+            if (_matcherBoss == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.Boss);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherSlime = matcher;
+                _matcherBoss = matcher;
             }
 
-            return _matcherSlime;
+            return _matcherBoss;
         }
     }
 }
@@ -33,18 +33,18 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Enemy.Slime slimeComponent = new Code.Gameplay.Features.Enemy.Slime();
+    static readonly Code.Gameplay.Features.Enemy.Boss bossComponent = new Code.Gameplay.Features.Enemy.Boss();
 
-    public bool isSlime {
-        get { return HasComponent(GameComponentsLookup.Slime); }
+    public bool isBoss {
+        get { return HasComponent(GameComponentsLookup.Boss); }
         set {
-            if (value != isSlime) {
-                var index = GameComponentsLookup.Slime;
+            if (value != isBoss) {
+                var index = GameComponentsLookup.Boss;
                 if (value) {
                     var componentPool = GetComponentPool(index);
                     var component = componentPool.Count > 0
                             ? componentPool.Pop()
-                            : slimeComponent;
+                            : bossComponent;
 
                     AddComponent(index, component);
                 } else {

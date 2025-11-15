@@ -8,6 +8,16 @@
     Grimonk = 3,
     MudRock = 4,
     Slime = 5,
-    Slizzard = 6
-  }
+    Slizzard = 6,
+    HedusaWithWeapon = 7,
+    OrcWithWeapon = 8,
+    GrimonkWithWeapon = 9,
+    MudRockWithWeapon = 10,
+    SlimeWithWeapon = 11,
+    SlizzardWithWeapon = 12,
+    SlizzardHealer = 13,
+    SlizzardHealerWithWeapon = 14,
+    SlizzardBoss = 15,
+    SkeletonBoss = 16
+	}
 }

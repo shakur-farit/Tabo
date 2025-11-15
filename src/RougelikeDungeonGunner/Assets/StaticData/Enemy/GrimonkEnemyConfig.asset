@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: GrimonkEnemyConfig
   m_EditorClassIdentifier: 
   TypeId: 3
-  StartWeapon: 10
+  StartWeapon: 18
   StartAura: 3
   ViewPrefab: {fileID: 8166552356577901019, guid: 9dc33cf00c86b7440a425de8b022c28a, type: 3}
   AnimatorController: {fileID: 9100000, guid: 944ecbb1810696b4a8a6781ac1e002a5, type: 2}
@@ -25,6 +25,7 @@ MonoBehaviour:
   AttackRaduis: 1
   AttackInterlal: 3
   LootDropChance: 70
+  ScoreValue: 0
   ExcludedLoot: 
   CastSetup:
     CastStartPosiotion: {x: 0, y: 0.6}

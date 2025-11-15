@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Code.Gameplay.Features.Level.Configs;
 using Entitas;
+using UnityEngine;
 
 namespace Code.Gameplay.Features.Level.Systems
 {
@@ -25,6 +26,9 @@ namespace Code.Gameplay.Features.Level.Systems
 				foreach (EnemyWave enemyWave in level.EnemyWaves)
 				foreach (EnemiesInWave enemiesInWave in enemyWave.EnemiesInWave)
 					level.ReplaceEnemiesInLevelCount(level.EnemiesInLevelCount + enemiesInWave.Amount);
+
+				foreach (BossesInWave boss in level.BossWave.Bosses) 
+					level.ReplaceBossCount(level.BossCount + boss.Amount);
 
 				level.isEnemiesInLevelCountCalculated = true;
 			}

@@ -1,5 +1,4 @@
 ﻿using Code.Gameplay.Features.Enemy.Systems;
-using Code.Gameplay.Features.Weapon.Systems;
 using Code.Infrastructure.Systems;
 
 namespace Code.Gameplay.Features.Enemy
@@ -9,6 +8,7 @@ namespace Code.Gameplay.Features.Enemy
 		public EnemyFeature(ISystemsFactory systems)
 		{
 			Add(systems.Create<SpawnEnemiesSystem>());
+			Add(systems.Create<SpawnBossesSystem>());
 
 			Add(systems.Create<SetEnemyRuntimeAnimatorControllerSystem>());
 			Add(systems.Create<SetEnemyCastStartLocalPositionSystem>());

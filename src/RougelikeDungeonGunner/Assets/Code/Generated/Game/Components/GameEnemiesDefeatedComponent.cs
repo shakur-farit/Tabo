@@ -8,17 +8,17 @@
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherSlizzard;
+    static Entitas.IMatcher<GameEntity> _matcherEnemiesDefeated;
 
-    public static Entitas.IMatcher<GameEntity> Slizzard {
+    public static Entitas.IMatcher<GameEntity> EnemiesDefeated {
         get {
-            if (_matcherSlizzard == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.Slizzard);
+            if (_matcherEnemiesDefeated == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.EnemiesDefeated);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherSlizzard = matcher;
+                _matcherEnemiesDefeated = matcher;
             }
 
-            return _matcherSlizzard;
+            return _matcherEnemiesDefeated;
         }
     }
 }
@@ -33,18 +33,18 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Enemy.Slizzard slizzardComponent = new Code.Gameplay.Features.Enemy.Slizzard();
+    static readonly Code.Gameplay.Features.Level.EnemiesDefeated enemiesDefeatedComponent = new Code.Gameplay.Features.Level.EnemiesDefeated();
 
-    public bool isSlizzard {
-        get { return HasComponent(GameComponentsLookup.Slizzard); }
+    public bool isEnemiesDefeated {
+        get { return HasComponent(GameComponentsLookup.EnemiesDefeated); }
         set {
-            if (value != isSlizzard) {
-                var index = GameComponentsLookup.Slizzard;
+            if (value != isEnemiesDefeated) {
+                var index = GameComponentsLookup.EnemiesDefeated;
                 if (value) {
                     var componentPool = GetComponentPool(index);
                     var component = componentPool.Count > 0
                             ? componentPool.Pop()
-                            : slizzardComponent;
+                            : enemiesDefeatedComponent;
 
                     AddComponent(index, component);
                 } else {

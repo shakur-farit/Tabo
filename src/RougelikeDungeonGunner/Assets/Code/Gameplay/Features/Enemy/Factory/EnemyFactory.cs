@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Code.Common.Entity;
 using Code.Common.Extensions;
 using Code.Gameplay.Features.Aura;
@@ -28,51 +27,6 @@ namespace Code.Gameplay.Features.Enemy.Factory
 		}
 
 		public GameEntity CreateEnemy(EnemyTypeId typeId, Vector3 at)
-		{
-			switch (typeId)
-			{
-				case EnemyTypeId.Orc:
-					return CreateOrc(typeId, at);
-				case EnemyTypeId.Hedusa:
-					return CreateHedusa(typeId, at);
-				case EnemyTypeId.Grimonk:
-					return CreateGrimonk(typeId, at);
-				case EnemyTypeId.MudRock:
-					return CreateMudRock(typeId, at);
-				case EnemyTypeId.Slime:
-					return CreateSlime(typeId, at);
-				case EnemyTypeId.Slizzard:
-					return CreateSlizzard(typeId, at);
-			}
-
-			throw new Exception($"Enemy with type id {typeId} does not exist");
-		}
-
-		private GameEntity CreateGrimonk(EnemyTypeId typeId, Vector3 at) => 
-			CreateEnemyEntity(typeId, at)
-				.With(x => x.isGrimonk = true);
-
-		private GameEntity CreateMudRock(EnemyTypeId typeId, Vector3 at) => 
-			CreateEnemyEntity(typeId, at)
-				.With(x => x.isMudRock = true);
-
-		private GameEntity CreateSlime(EnemyTypeId typeId, Vector3 at) => 
-			CreateEnemyEntity(typeId, at)
-				.With(x => x.isSlime = true);
-
-		private GameEntity CreateSlizzard(EnemyTypeId typeId, Vector3 at) => 
-			CreateEnemyEntity(typeId, at)
-				.With(x => x.isSlizzard = true);
-
-		private GameEntity CreateOrc(EnemyTypeId typeId, Vector3 at) =>
-			CreateEnemyEntity(typeId, at)
-				.With(x => x.isOrc = true);
-
-		private GameEntity CreateHedusa(EnemyTypeId typeId, Vector3 at) =>
-			CreateEnemyEntity(typeId, at)
-				.With(x => x.isHedusa = true);
-
-		private GameEntity CreateEnemyEntity(EnemyTypeId typeId, Vector3 at)
 		{
 			EnemyConfig config = _staticDataService.GetEnemyConfig(typeId);
 			CollisionCastSetup castSetup = config.CastSetup;

@@ -35,6 +35,7 @@ namespace Code.Gameplay.Features.Level.Factory
 						.AddDungeonTypeOnLevel(config.DungeonTypeOnLevel)
 						.AddEnemyWaves(config.EnemyWaves)
 						.AddSpawnedEnemyWaves(StartingEnemyWavesCount)
+						.AddBossWave(config.BossWave)
 						.AddStartingTime(config.StartingTime)
 						.AddStartingTimeLeft(config.StartingTime)
 						.AddCooldown(config.TimeBetweenSpawnWaves)
