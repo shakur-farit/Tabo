@@ -23,7 +23,7 @@ namespace Code.Infrastructure.States.GameStates
 			_inputContext = inputContext;
     }
 
-		public override async void Enter()
+		public override void Enter()
 		{
 			_battleFeature = _systemsFactory.Create<BattleFeature>();
 			_battleFeature.Initialize();

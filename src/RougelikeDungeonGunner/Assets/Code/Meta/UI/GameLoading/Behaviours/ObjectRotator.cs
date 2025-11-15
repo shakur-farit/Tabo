@@ -17,11 +17,6 @@ namespace Code.Meta.UI.GameLoading.Behaviours
 				_rotationTween.Kill();
 		}
 
-    private void Update()
-    {
-      Debug.Log(Time.timeScale);
-    }
-
     public void Rotate()
 		{
       _rotationTween = _rotatingTransform

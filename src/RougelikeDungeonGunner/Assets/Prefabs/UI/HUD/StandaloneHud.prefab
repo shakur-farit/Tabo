@@ -62,10 +62,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3826416149994768986}
     m_Modifications:
-    - target: {fileID: 1929302601251549017, guid: dbf68d24194b6234abe608f2b8701948, type: 3}
-      propertyPath: m_ChildAlignment
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 2206785697293330298, guid: dbf68d24194b6234abe608f2b8701948, type: 3}
       propertyPath: m_Name
       value: EnchantHolder
@@ -168,50 +164,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3826416149994768986}
     m_Modifications:
-    - target: {fileID: 4374888833150377760, guid: 60eebace5b2b92d498cba24eeb24c7f8, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4374888833150377760, guid: 60eebace5b2b92d498cba24eeb24c7f8, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4374888833150377760, guid: 60eebace5b2b92d498cba24eeb24c7f8, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 184
-      objectReference: {fileID: 0}
-    - target: {fileID: 4374888833150377760, guid: 60eebace5b2b92d498cba24eeb24c7f8, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5328132792708023063, guid: 60eebace5b2b92d498cba24eeb24c7f8, type: 3}
-      propertyPath: m_Pivot.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5328132792708023063, guid: 60eebace5b2b92d498cba24eeb24c7f8, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5328132792708023063, guid: 60eebace5b2b92d498cba24eeb24c7f8, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5328132792708023063, guid: 60eebace5b2b92d498cba24eeb24c7f8, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5328132792708023063, guid: 60eebace5b2b92d498cba24eeb24c7f8, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5328132792708023063, guid: 60eebace5b2b92d498cba24eeb24c7f8, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5328132792708023063, guid: 60eebace5b2b92d498cba24eeb24c7f8, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5411737213310093978, guid: 60eebace5b2b92d498cba24eeb24c7f8, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -602,12 +554,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: WeaponStatus
       objectReference: {fileID: 0}
-    - target: {fileID: 7121446220024650329, guid: 057099a1f870a55428c0d182c7b854c7, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 25
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 5879054010917262512, guid: 057099a1f870a55428c0d182c7b854c7, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -625,10 +572,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3826416149994768986}
     m_Modifications:
-    - target: {fileID: 2102366273821931879, guid: f56ff04b9522bc540bd30f88e3ffb2d0, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2495523587629629187, guid: f56ff04b9522bc540bd30f88e3ffb2d0, type: 3}
       propertyPath: m_Name
       value: CoinsHolder
