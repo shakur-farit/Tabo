@@ -20,6 +20,8 @@
 		EnemyCircleSigil = 15,
 		EnemyTriangleSigil = 16,
 		EnemyStarSigil = 17,
-		NoWeapon = 18
+		NoWeapon = 18,
+		BossPistol = 19,
+		BossMachinegun = 20
 	}
 }

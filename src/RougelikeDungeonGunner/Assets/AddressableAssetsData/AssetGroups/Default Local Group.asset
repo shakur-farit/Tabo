@@ -224,6 +224,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - AuraConfig
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2cd7f4e60de5a9443be24c05ee58cabb
+    m_Address: Assets/StaticData/Enemy/SlizzardWithWeaponEnemyConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EnemyConfig
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 2e7c132b761f3e74e8b35792acf55f9a
     m_Address: Assets/StaticData/SoundEffect/PickupOneSoundEffectConfig.asset
     m_ReadOnly: 0
@@ -314,6 +320,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - DestroyableItemConfig
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4b112f2815e16b64f8c9142dd038d575
+    m_Address: Assets/StaticData/Enemy/SkeletonBossEnemyConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EnemyConfig
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 4dd6ed5a8ee0ced478ab47fe77597445
     m_Address: Assets/StaticData/Level/LevelConfig.asset
     m_ReadOnly: 0
@@ -324,6 +336,12 @@ MonoBehaviour:
     m_Address: ObjectPoolConfig
     m_ReadOnly: 0
     m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4e8ca865517325c47a880a6ba3e71820
+    m_Address: Assets/StaticData/Enemy/SlizzardHealerEnemyConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EnemyConfig
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 4ecee81916f10954090c70ce818a76fe
     m_Address: Assets/StaticData/SpecialEffect/FlameSpecialEffectConfig.asset
@@ -342,6 +360,12 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - EnchantStatUIEntryConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 56437cb3aeff25e489c6d3810f29e0f5
+    m_Address: Assets/StaticData/Enemy/HedusaWithWeaponEnemyConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EnemyConfig
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 56bd3cbdb71dd2e45955d4c71763245d
     m_Address: Assets/StaticData/Shop/WeaponStatUIEntry/FireRangeWeaponStatUIEntryConfig
@@ -457,6 +481,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - DungeonConfig
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 71749b1fa67aa2542ba667712fef8378
+    m_Address: Assets/StaticData/Enemy/SlizzardHealerWithWeaponEnemyConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EnemyConfig
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 724711abc5df9bc42b2ead94ae4d6883
     m_Address: Assets/StaticData/SoundEffect/RiffleReloadSoundEffectConfig.asset
     m_ReadOnly: 0
@@ -521,6 +551,12 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - SoundEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7fbe4f51de4784945b17a319ffcbd0aa
+    m_Address: Assets/StaticData/Enemy/OrcWithWeaponEnemyConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EnemyConfig
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 7fbfd3fde618ccd4991e5c32283c67dc
     m_Address: Assets/StaticData/Weapon/RocketLauncherConfig.asset
@@ -828,6 +864,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - SoundEffectConfig
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c19edab8a8e05f6458b313e2f030046d
+    m_Address: Assets/StaticData/Enemy/SlimeWithWeaponEnemyConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EnemyConfig
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c27a12b6ea0343d45bdb029c7041502c
     m_Address: Assets/StaticData/Information/HeroStatUIEntry/MovementSpeedStatUIEntryConfig.asset
     m_ReadOnly: 0
@@ -1109,6 +1151,12 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - SoundEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fd1384e7c1ad79a4abfae7af98883d4e
+    m_Address: Assets/StaticData/Enemy/SlimeBossEnemyConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EnemyConfig
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: fe162be36f6908343bcd63fcd7df688d
     m_Address: Assets/StaticData/Loot/HealLootConfig.asset

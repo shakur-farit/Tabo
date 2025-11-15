@@ -1,7 +1,6 @@
 ﻿using System;
 using Code.Common.Entity;
 using Code.Common.Extensions;
-using Code.Gameplay.Common.Random;
 using Code.Gameplay.Features.Level.Configs;
 using Code.Gameplay.StaticData;
 using Code.Infrastructure.Identifiers;
@@ -41,6 +40,7 @@ namespace Code.Gameplay.Features.Level.Factory
 						.AddCooldown(config.TimeBetweenSpawnWaves)
 						.AddCooldownLeft(config.TimeBetweenSpawnWaves)
 						.AddEnemiesInLevelCount(StartingEnemiesCount)
+            .AddBossCount(StartingEnemiesCount)
 						.AddHeroSafeZoneRadius(config.HeroSaveZoneRadius)
 						.With(x => x.isLevel = true)
 						.With(x => x.isCooldownUp = true)
