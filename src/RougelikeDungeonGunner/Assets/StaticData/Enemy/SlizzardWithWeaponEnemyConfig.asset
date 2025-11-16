@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4918d858ae4269f4eb851105c3fd703d, type: 3}
   m_Name: SlizzardWithWeaponEnemyConfig
   m_EditorClassIdentifier: 
-  TypeId: 11
+  TypeId: 12
   StartWeapon: 17
   StartAura: 3
   ViewPrefab: {fileID: 8166552356577901019, guid: 9dc33cf00c86b7440a425de8b022c28a, type: 3}

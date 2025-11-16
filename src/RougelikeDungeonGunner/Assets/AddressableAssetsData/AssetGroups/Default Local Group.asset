@@ -404,6 +404,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - DestroyableItemConfig
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5b5b294efbcd79d42b63cb28635ee11a
+    m_Address: Assets/StaticData/Weapon/BossPistolConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponConfig
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 5c205d82a4414c04e8b65d4f77a311a6
     m_Address: Assets/StaticData/DestroyableItem/LimeBottleConfig.asset
     m_ReadOnly: 0
@@ -587,6 +593,12 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - WeaponUpgradeShopItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 88510536ed7351345bcc7a7c030da8f5
+    m_Address: Assets/StaticData/Enemy/SlimeGreenKingBossConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EnemyConfig
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 8937bf93906a33c4bbd9c4201dfee679
     m_Address: Assets/StaticData/Shop/Upgrade/MaxAmmoCountUpgradeItemConfig.asset
@@ -1151,12 +1163,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - SoundEffectConfig
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: fd1384e7c1ad79a4abfae7af98883d4e
-    m_Address: Assets/StaticData/Enemy/SlimeBossEnemyConfig.asset
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - EnemyConfig
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: fe162be36f6908343bcd63fcd7df688d
     m_Address: Assets/StaticData/Loot/HealLootConfig.asset

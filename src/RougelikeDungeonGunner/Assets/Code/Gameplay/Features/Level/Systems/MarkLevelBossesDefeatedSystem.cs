@@ -13,6 +13,7 @@ namespace Code.Gameplay.Features.Level.Systems
 			_levels = game.GetGroup(GameMatcher
 				.AllOf(
 					GameMatcher.Level,
+					GameMatcher.EnemiesDefeated,
 					GameMatcher.BossCount));
 		}
 

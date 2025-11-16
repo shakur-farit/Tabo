@@ -17,7 +17,9 @@
     SlizzardWithWeapon = 12,
     SlizzardHealer = 13,
     SlizzardHealerWithWeapon = 14,
-    SlimeBoss = 15,
-    SkeletonBoss = 16
+    SlimeGreenKingBoss = 15,
+    SlimeBlueKingBoss = 16,
+    SlimeRedKingBoss = 17,
+    SkeletonBoss = 18
 	}
 }

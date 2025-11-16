@@ -232,75 +232,77 @@ public static class GameComponentsLookup {
     public const int StatusTypeId = 221;
     public const int TimeSinceLastTick = 222;
     public const int Unapplied = 223;
-    public const int ClosestTarget = 224;
-    public const int ClosestTargetPosition = 225;
-    public const int CurrentAmmoCount = 226;
-    public const int CurrentAmmoCountInMagazine = 227;
-    public const int EffectSetups = 228;
-    public const int EnemyCircleSigil = 229;
-    public const int EnemyPistol = 230;
-    public const int EnemyStarSigil = 231;
-    public const int EnemyTriangleSigil = 232;
-    public const int EnemyWeapon = 233;
-    public const int FirePositionTransform = 234;
-    public const int HeroAutomaticPistol = 235;
-    public const int HeroCircleSigil = 236;
-    public const int HeroLaserBlaster = 237;
-    public const int HeroMachinegun = 238;
-    public const int HeroPistol = 239;
-    public const int HeroPlasmaGun = 240;
-    public const int HeroRevolver = 241;
-    public const int HeroRocketLauncher = 242;
-    public const int HeroShotgun = 243;
-    public const int HeroSniper = 244;
-    public const int HeroStarSigil = 245;
-    public const int HeroTriangleSigil = 246;
-    public const int HeroWeapon = 247;
-    public const int InfinityAmmo = 248;
-    public const int MagazineNotEmpty = 249;
-    public const int MagazineSize = 250;
-    public const int MaxAmmoCount = 251;
-    public const int MaxPelletsDeviation = 252;
-    public const int MaxWeaponEnchantsCount = 253;
-    public const int MinPelletsDeviation = 254;
-    public const int MultiPellet = 255;
-    public const int Pierce = 256;
-    public const int Precharged = 257;
-    public const int PrechargeTime = 258;
-    public const int PrechargeTimeLeft = 259;
-    public const int Precharging = 260;
-    public const int ReadyToShoot = 261;
-    public const int Reloading = 262;
-    public const int ReloadSoundEffectTypeId = 263;
-    public const int ReloadTime = 264;
-    public const int ReloadTimeLeft = 265;
-    public const int RotationPointTransform = 266;
-    public const int Shooting = 267;
-    public const int Shot = 268;
-    public const int ShotSoundEffectTypeId = 269;
-    public const int StatusSetups = 270;
-    public const int Weapon = 271;
-    public const int WeaponEnchants = 272;
-    public const int WeaponNotEmpty = 273;
-    public const int WeaponOwnerId = 274;
-    public const int WeaponOwnerTypeId = 275;
-    public const int WeaponRotationAngle = 276;
-    public const int WeaponTypeId = 277;
-    public const int AmmoHolder = 278;
-    public const int CoinsHolder = 279;
-    public const int EnchantHolder = 280;
-    public const int HeartHolder = 281;
-    public const int HudAvailable = 282;
-    public const int ReloadingAnimator = 283;
-    public const int TimerHolder = 284;
-    public const int WeaponHolder = 285;
-    public const int AudioClip = 286;
-    public const int AudioSource = 287;
-    public const int SoundEffect = 288;
-    public const int SoundEffectTypeId = 289;
-    public const int Volume = 290;
+    public const int BossMachinegun = 224;
+    public const int BossPistol = 225;
+    public const int ClosestTarget = 226;
+    public const int ClosestTargetPosition = 227;
+    public const int CurrentAmmoCount = 228;
+    public const int CurrentAmmoCountInMagazine = 229;
+    public const int EffectSetups = 230;
+    public const int EnemyCircleSigil = 231;
+    public const int EnemyPistol = 232;
+    public const int EnemyStarSigil = 233;
+    public const int EnemyTriangleSigil = 234;
+    public const int EnemyWeapon = 235;
+    public const int FirePositionTransform = 236;
+    public const int HeroAutomaticPistol = 237;
+    public const int HeroCircleSigil = 238;
+    public const int HeroLaserBlaster = 239;
+    public const int HeroMachinegun = 240;
+    public const int HeroPistol = 241;
+    public const int HeroPlasmaGun = 242;
+    public const int HeroRevolver = 243;
+    public const int HeroRocketLauncher = 244;
+    public const int HeroShotgun = 245;
+    public const int HeroSniper = 246;
+    public const int HeroStarSigil = 247;
+    public const int HeroTriangleSigil = 248;
+    public const int HeroWeapon = 249;
+    public const int InfinityAmmo = 250;
+    public const int MagazineNotEmpty = 251;
+    public const int MagazineSize = 252;
+    public const int MaxAmmoCount = 253;
+    public const int MaxPelletsDeviation = 254;
+    public const int MaxWeaponEnchantsCount = 255;
+    public const int MinPelletsDeviation = 256;
+    public const int MultiPellet = 257;
+    public const int Pierce = 258;
+    public const int Precharged = 259;
+    public const int PrechargeTime = 260;
+    public const int PrechargeTimeLeft = 261;
+    public const int Precharging = 262;
+    public const int ReadyToShoot = 263;
+    public const int Reloading = 264;
+    public const int ReloadSoundEffectTypeId = 265;
+    public const int ReloadTime = 266;
+    public const int ReloadTimeLeft = 267;
+    public const int RotationPointTransform = 268;
+    public const int Shooting = 269;
+    public const int Shot = 270;
+    public const int ShotSoundEffectTypeId = 271;
+    public const int StatusSetups = 272;
+    public const int Weapon = 273;
+    public const int WeaponEnchants = 274;
+    public const int WeaponNotEmpty = 275;
+    public const int WeaponOwnerId = 276;
+    public const int WeaponOwnerTypeId = 277;
+    public const int WeaponRotationAngle = 278;
+    public const int WeaponTypeId = 279;
+    public const int AmmoHolder = 280;
+    public const int CoinsHolder = 281;
+    public const int EnchantHolder = 282;
+    public const int HeartHolder = 283;
+    public const int HudAvailable = 284;
+    public const int ReloadingAnimator = 285;
+    public const int TimerHolder = 286;
+    public const int WeaponHolder = 287;
+    public const int AudioClip = 288;
+    public const int AudioSource = 289;
+    public const int SoundEffect = 290;
+    public const int SoundEffectTypeId = 291;
+    public const int Volume = 292;
 
-    public const int TotalComponents = 291;
+    public const int TotalComponents = 293;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -527,6 +529,8 @@ public static class GameComponentsLookup {
         "StatusTypeId",
         "TimeSinceLastTick",
         "Unapplied",
+        "BossMachinegun",
+        "BossPistol",
         "ClosestTarget",
         "ClosestTargetPosition",
         "CurrentAmmoCount",
@@ -821,6 +825,8 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Statuses.StatusComponents.StatusTypeIdComponent),
         typeof(Code.Gameplay.Features.Statuses.StatusComponents.TimeSinceLastTick),
         typeof(Code.Gameplay.Features.Statuses.StatusComponents.Unapplied),
+        typeof(Code.Gameplay.Features.Weapon.BossMachinegun),
+        typeof(Code.Gameplay.Features.Weapon.BossPistol),
         typeof(Code.Gameplay.Features.Weapon.ClosestTarget),
         typeof(Code.Gameplay.Features.Weapon.ClosestTargetPosition),
         typeof(Code.Gameplay.Features.Weapon.CurrentAmmoCount),
