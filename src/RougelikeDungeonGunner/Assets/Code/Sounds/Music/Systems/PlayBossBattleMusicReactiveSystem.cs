@@ -4,24 +4,24 @@ using Entitas;
 
 namespace Code.Sounds.Music.Systems
 {
-  public class PlayClearRoomMusicReactiveSystem : ReactiveSystem<GameEntity>
+  public class PlayBossBattleMusicReactiveSystem : ReactiveSystem<GameEntity>
   {
     private readonly IMusicClipSetter _clipSetter;
 
-    public PlayClearRoomMusicReactiveSystem(GameContext game, IMusicClipSetter clipSetter) : base(game) =>
+    public PlayBossBattleMusicReactiveSystem(GameContext game, IMusicClipSetter clipSetter) : base(game) =>
       _clipSetter = clipSetter;
 
     protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context) =>
       context.CreateCollector(GameMatcher.AllOf(
         GameMatcher.Level,
-        GameMatcher.BossesDefeated).Added());
+        GameMatcher.EnemiesDefeated).Added());
 
-    protected override bool Filter(GameEntity level) => level.isLevel && level.isBossesDefeated;
+    protected override bool Filter(GameEntity level) => level.isLevel && level.isEnemiesDefeated;
 
     protected override void Execute(List<GameEntity> levels)
     {
       foreach (GameEntity level in levels)
-        _clipSetter.SetClip(MusicTypeId.ClearedRoom);
+        _clipSetter.SetClip(MusicTypeId.BossBattleMusic);
     }
   }
 }

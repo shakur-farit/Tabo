@@ -320,12 +320,6 @@ MonoBehaviour:
     m_SerializedLabels:
     - DestroyableItemConfig
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 4b112f2815e16b64f8c9142dd038d575
-    m_Address: Assets/StaticData/Enemy/SkeletonBossEnemyConfig.asset
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - EnemyConfig
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 4dd6ed5a8ee0ced478ab47fe77597445
     m_Address: Assets/StaticData/Level/LevelConfig.asset
     m_ReadOnly: 0
@@ -731,6 +725,12 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - WindowConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9e27d891c5050ac4da0354cc957af5bd
+    m_Address: Assets/StaticData/Music/BossBattleMusicConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - MusicConfig
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 9e9a5c95bf08c2149a13e69adcafc994
     m_Address: Assets/StaticData/Shop/WeaponStatUIEntry/FireRangeWeaponStatUIEntryConfig

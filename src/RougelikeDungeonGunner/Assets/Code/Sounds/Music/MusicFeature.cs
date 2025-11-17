@@ -7,7 +7,8 @@ namespace Code.Sounds.Music
   {
     public MusicFeature(ISystemsFactory systems)
     {
-      Add(systems.Create<PlayClearedRoomMusicOnOpenedDoorReactiveSystem>());
+      Add(systems.Create<PlayBossBattleMusicReactiveSystem>());
+      Add(systems.Create<PlayClearRoomMusicReactiveSystem>());
     }
   }
 }

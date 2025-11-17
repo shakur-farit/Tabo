@@ -20,6 +20,7 @@ namespace Code.Gameplay.Features.AmmoPattern
 			Add(systems.Create<CreatePatternForEnemyCircleSigilSystem>());
 			Add(systems.Create<CreatePatternForEnemyTriangleSigilSystem>());
 			Add(systems.Create<CreatePatternForEnemyStarSigilSystem>());
+			Add(systems.Create<CreatePatternForBossPistolSystem>());
 		}
 	}
 }
