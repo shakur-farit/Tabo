@@ -61,7 +61,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: -564624649
-  m_SortingOrder: 10
+  m_SortingOrder: 1000
   m_TargetDisplay: 0
 --- !u!114 &7103472801542208332
 MonoBehaviour:
@@ -425,7 +425,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.04498148, y: 2.4744956}
+  m_Offset: {x: -0.08795583, y: 1.6472439}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -436,7 +436,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.9051037, y: 4.9480968}
+  m_Size: {x: 1.8307498, y: 3.2935932}
   m_EdgeRadius: 0
 --- !u!210 &3863941066625023163
 SortingGroup:
