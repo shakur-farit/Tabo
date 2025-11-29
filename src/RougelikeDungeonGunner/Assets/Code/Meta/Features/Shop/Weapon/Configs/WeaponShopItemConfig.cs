@@ -10,6 +10,6 @@ namespace Code.Meta.Features.Shop.Weapon.Configs
 		public WeaponTypeId WeaponTypeId;
 		public GameObject ViewPrefab;
 		public Sprite Sprite;
-		[Range(0, 1000)] public int Price;
+		[Range(0, 10000)] public int Price;
 	}
 }

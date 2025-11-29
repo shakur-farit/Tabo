@@ -7,7 +7,7 @@ namespace Code.Meta.Features.Shop.WeaponUpgrade.Configs
 	{
 		public WeaponUpgradeTypeId TypeId;
 		public GameObject ViewPrefab;
-		[Range(0, 1000)] public int Price;
+		[Range(0, 10000)] public int Price;
 		[Range(0, 1000)] public float UpgradeValue;
 	}
 }

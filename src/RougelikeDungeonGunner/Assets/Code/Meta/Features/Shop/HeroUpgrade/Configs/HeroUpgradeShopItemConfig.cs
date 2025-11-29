@@ -8,7 +8,7 @@ namespace Code.Meta.Features.Shop.HeroUpgrade.Configs
 		public HeroUpgradeTypeId TypeId;
 		public GameObject ViewPrefab;
 		public Sprite Sprite;
-		[Range(0, 1000)] public int Price;
+		[Range(0, 10000)] public int Price;
 		[Range(0, 1000)] public float UpgradeValue;
 	}
 }

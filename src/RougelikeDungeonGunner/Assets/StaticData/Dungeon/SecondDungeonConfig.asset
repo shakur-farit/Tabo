@@ -14,17 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TypeId: 2
   EnvironmentSetups:
-  - ViewPrefab: {fileID: -743074746319577026, guid: 0631e6e6f0194a34ba1c738c26dfbd18, type: 3}
+  - ViewPrefab: {fileID: 848439221579891500, guid: 6bfe2c2127b5193499108a4ca26371a8, type: 3}
     HeroStartPosition: {x: 26.02, y: 0.36}
     DoorSetup:
       TypeId: 1
       DoorPosition: {x: -38, y: -20}
-  - ViewPrefab: {fileID: -288942039315954583, guid: 1d03ccc2f7105014ab96544340713d61, type: 3}
+  - ViewPrefab: {fileID: 5137369688049682931, guid: 3f796d55a17672848948c21bb6c277d8, type: 3}
     HeroStartPosition: {x: -42.28, y: -10.69}
     DoorSetup:
       TypeId: 1
       DoorPosition: {x: 47.5, y: -49}
-  - ViewPrefab: {fileID: 935917641888412009, guid: 39bdf850364284a4dbbea4506bf048a9, type: 3}
+  - ViewPrefab: {fileID: 8777926421592482802, guid: 4a118a78d75917a40aad0ad95ef64eba, type: 3}
     HeroStartPosition: {x: -42.83, y: -12.12}
     DoorSetup:
       TypeId: 1

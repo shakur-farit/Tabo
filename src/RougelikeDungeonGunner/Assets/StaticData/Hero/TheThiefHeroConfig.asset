@@ -19,9 +19,9 @@ MonoBehaviour:
   ShopIcon: {fileID: 21300000, guid: 7ddda55715e2f44b7ad6db3b8b4e424e, type: 3}
   StartWeapon: 1
   StartAura: 0
-  CurrentHp: 25
-  MaxHp: 100
-  MovementSpeed: 4
+  CurrentHp: 50
+  MaxHp: 50
+  MovementSpeed: 5
   LootPickupRadius: 2
   DestroyableCollidingRadius: 1
   CastSetup:
