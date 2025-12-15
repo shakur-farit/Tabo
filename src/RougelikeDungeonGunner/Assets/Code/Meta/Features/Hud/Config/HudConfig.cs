@@ -7,5 +7,6 @@ namespace Code.Meta.Features.Hud.Config
   {
     public int MaxHeartSpritesCount;
     public GameObject HeathViewPrefab;
+    public GameObject AmmoUIViewPrefab;
   }
 }

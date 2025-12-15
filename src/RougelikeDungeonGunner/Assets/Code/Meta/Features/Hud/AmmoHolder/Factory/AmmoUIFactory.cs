@@ -1,4 +1,6 @@
-﻿using Code.Infrastructure.AssetManagement;
+﻿using Code.Gameplay.StaticData;
+using Code.Infrastructure.AssetManagement;
+using Code.Meta.Features.Hud.Config;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 using Zenject;
@@ -7,22 +9,20 @@ namespace Code.Meta.Features.Hud.AmmoHolder.Factory
 {
 	public class AmmoUIFactory : IAmmoUIFactory
 	{
-		public const string AmmoUIAddress = "AmmoUI";
-
 		private readonly IInstantiator _instantiator;
-		private readonly IAssetProvider _assetProvider;
+		private readonly IStaticDataService _staticDataService;
 
-		public AmmoUIFactory(IInstantiator instantiator, IAssetProvider assetProvider)
+		public AmmoUIFactory(IInstantiator instantiator, IStaticDataService staticDataService)
 		{
 			_instantiator = instantiator;
-			_assetProvider = assetProvider;
+			_staticDataService = staticDataService;
 		}
 
-		public async UniTask<GameObject> CreateAmmoUI(Transform parent)
+		public GameObject CreateAmmoUI(Transform parent)
 		{
-			GameObject prefab = await _assetProvider.Load<GameObject>(AmmoUIAddress);
+			HudConfig config = _staticDataService.GetHudConfig();
 
-			return _instantiator.InstantiatePrefab(prefab, parent);
+			return _instantiator.InstantiatePrefab(config.AmmoUIViewPrefab, parent);
 		}
 	}
 }

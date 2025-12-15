@@ -36,6 +36,9 @@ namespace Code.Infrastructure.AssetManagement
 			try
 			{
 				T result = await handle.ToUniTask();
+
+				Debug.Log($"Loaded asset '{addressReference}' from: {handle.DebugName}");
+
 				_completedCache[addressReference] = handle;
 				return result;
 			}

@@ -18,19 +18,19 @@ namespace Code.Meta.Features.Hud.AmmoHolder.Behaviours
 		public void Constructor(IAmmoUIFactory factory) =>
 			_factory = factory;
 
-		public async void UpdateAmmoUICount(int currentCount)
+		public void UpdateAmmoUICount(int currentCount)
 		{
-			await CreateAmmoUI(currentCount);
+			CreateAmmoUI(currentCount);
 
 			for (int i = 0; i < _bulletIconsBuffer.Count; i++)
 				_bulletIconsBuffer[i].SetActive(i < currentCount);
 		}
 
-		private async UniTask CreateAmmoUI(int requiredCount)
+		private void CreateAmmoUI(int requiredCount)
 		{
 			while (_bulletIconsBuffer.Count < requiredCount)
 			{
-				GameObject icon = await _factory.CreateAmmoUI(_holder);
+				GameObject icon = _factory.CreateAmmoUI(_holder);
 				icon.SetActive(false);
 				_bulletIconsBuffer.Add(icon);
 			}

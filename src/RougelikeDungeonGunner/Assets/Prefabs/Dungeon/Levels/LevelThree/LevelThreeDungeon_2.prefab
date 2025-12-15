@@ -50,7 +50,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6074234368104448766, guid: 5d7f3468fc4def245941167756b203d9, type: 3}
       propertyPath: m_Name
-      value: Dungeon
+      value: LevelThreeDungeon_2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -1,0 +1,1163 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Remote_Configs
+  m_EditorClassIdentifier: 
+  m_GroupName: Remote_Configs
+  m_GUID: 8bc803133664bfa40b3365c27cbc5ac3
+  m_SerializeEntries:
+  - m_GUID: 0331b5e39840b60408c703459431d9db
+    m_Address: ForceConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 05c12c5dc410e2c40b18a22c00927963
+    m_Address: InfinityAmmoWeaponStatUIEntryConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponStatUIEntryConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 06e7a74b7791f2e4c91ef3cc1c9214f4
+    m_Address: PlasmaGunItemConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponShopItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 072e112ac3cbb0248b551fc3d205e2b4
+    m_Address: PoisonItemLootConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - LootConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 092ffeb3b696ab549b6d3d9312536817
+    m_Address: MachinegunItemConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponShopItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 09cf82f2d3e5a9f49a23835d79f9f131
+    m_Address: PelletCountWeaponStatUIEntryConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponStatUIEntryConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0a4c32d5e61c67241913dbd669159c1a
+    m_Address: LaserBoltConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AmmoConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0a678af8a87f49f4bb9dceda2aefe7d3
+    m_Address: ExplosiveEnchantToBuyItemConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EnchantShopItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0b1b3ed9d6664da4a91705e4d1b6cdd5
+    m_Address: EnchantStatsWindowConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WindowConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0b48c2f69e921be4ba7e0738e79f1ec6
+    m_Address: PistolConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0b9fd3b2861b6ea458f6b280e05671e4
+    m_Address: MissileLootConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - LootConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0c65797b660e5c54c9848396564f8906
+    m_Address: GrimonkEnemyConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EnemyConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0d44cca60ab4ef247bace4116b744831
+    m_Address: AmmoLootConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - LootConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0f270c5496b7dbc4ca3c8075b432cb74
+    m_Address: PickupThreeSoundEffectConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SoundEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 10fc081cb1c79c84ab89bca12b918660
+    m_Address: CooldownWeaponUpgradeItemConfig 4
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponUpgradeShopItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1184a1357b1952a49b39ef7fb9c9f862
+    m_Address: ShotgunItemConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponShopItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 12b31d8c90e80394d8cc18b6b5837068
+    m_Address: CurrentHpUpgradeItemConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroUpgradeShopItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 13456b3ea103a124f841b1b7507128cf
+    m_Address: RoomClearedMusicConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - MusicConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 13855138ccf5a664a8993caee9dcef18
+    m_Address: RevolverFireSoundEffectConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SoundEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 157335dbbe7b6f64ba9baab694a96c10
+    m_Address: PoisonUIEntryConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EnchantUIEntryConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1610237afa8961649b290ed7f8b110bb
+    m_Address: PeriodStatUIEntryConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EnchantStatUIEntryConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 168644b3b737f3047b0a8efd71241698
+    m_Address: BlueFlashSpecialEffectConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SpecialEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 17a9ba71dec938341b9016efac290705
+    m_Address: FreezeSpecialEffectConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SpecialEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 17afb457c40697b4aa71daa220a84045
+    m_Address: ExplosionEnchantItemLootConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - LootConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 18b656a26093e844091eac1ed1695a71
+    m_Address: HudConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WindowConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 195156dc76a97634099e8ec0f6ea612d
+    m_Address: HighBreakingSoundEffectConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SoundEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1b373091f469e9e4fba58205cc1f68f9
+    m_Address: ShotgunFireSoundEffectConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SoundEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1e5929efc2987414b8ea3673c3e9d1f5
+    m_Address: DoorSoundEffectConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SoundEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1f61dfbee185d8c4587f6dfc5b70cf0f
+    m_Address: GeneralHeroConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1f628d8c57e545a428ba9c46ec858dc1
+    m_Address: HeroUpgradeBuyWindowConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WindowConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2070fde95a5b563429e9f23c4c89ce29
+    m_Address: HedusaEnemyConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EnemyConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 213aea623c3d1324abb728997dfa301f
+    m_Address: MachinegunBulletConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AmmoConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2164322903b740c4aa6ae5f6fc92f114
+    m_Address: GreenBottleConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - DestroyableItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 26d9769fe704f704ab041fec3ecb3609
+    m_Address: HealingAuraConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AuraConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2cd7f4e60de5a9443be24c05ee58cabb
+    m_Address: SlizzardWithWeaponEnemyConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EnemyConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2e7c132b761f3e74e8b35792acf55f9a
+    m_Address: PickupOneSoundEffectConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SoundEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3017acc3792be404682d75fb7b7a3d4b
+    m_Address: MaxHpUpgradeItemConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroUpgradeShopItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 312bcb5fd1b96fe408fa0332d485d46a
+    m_Address: DamageUpgradeItemConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponUpgradeShopItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 34588a5349225694794381d8a5b41d8a
+    m_Address: SettingsWindowConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WindowConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 346214ea5f84ae44993670ebd403d15d
+    m_Address: FlashSpecialEffectConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SpecialEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3551050427b065b46ae64c80830780d0
+    m_Address: HitSpecialEffectConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SpecialEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 394843bdf9cf3214094ef91365f5f42f
+    m_Address: RevolverReloadSoundEffectConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SoundEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3c204fea80d85cf4b9ee13275f13c5f4
+    m_Address: LowBreakingSoundEffectConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SoundEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3d7b10246e491a34b98dd3f9fb8c3981
+    m_Address: MachinegunConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3e8d3ae8acd36d24f9520aad1b65e794
+    m_Address: RocketLaunchertemConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponShopItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 41d0ded759127af488b6cfcd5daac570
+    m_Address: HeroUpgradeShopWindowConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WindowConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 468966ebed3ced34caf1e38776b3ca22
+    m_Address: GameBalanceConfig
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4691b37493b46ef42a3fd7a9986f2937
+    m_Address: FireRangeWeaponStatUIEntryConfig 7
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponStatUIEntryConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 47ff4ca5950d81a4fb42c89baf4dca52
+    m_Address: MainMenuMusicConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - MusicConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 48fe99f63a2387541b431e3db612fa95
+    m_Address: ShelfConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - DestroyableItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4dd6ed5a8ee0ced478ab47fe77597445
+    m_Address: LevelConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - LevelConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4e8843c95165ace458baf8dbe0d119f1
+    m_Address: ObjectPoolConfig
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4e8ca865517325c47a880a6ba3e71820
+    m_Address: SlizzardHealerEnemyConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EnemyConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4ecee81916f10954090c70ce818a76fe
+    m_Address: FlameSpecialEffectConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SpecialEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 510a3ff03a5d48c44a9b595f8c11d399
+    m_Address: OrcEnemyConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EnemyConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5198daad3a9960e4ebbcda3875a20f03
+    m_Address: FreezeStatUIEntryConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EnchantStatUIEntryConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 56437cb3aeff25e489c6d3810f29e0f5
+    m_Address: HedusaWithWeaponEnemyConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EnemyConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 56bd3cbdb71dd2e45955d4c71763245d
+    m_Address: FireRangeWeaponStatUIEntryConfig 6
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponStatUIEntryConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5802e3c5436790f4084542f8f877fee9
+    m_Address: PistolBulletConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AmmoConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 58a6dad192979f4439c6a556c5049e4a
+    m_Address: ShotgunConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 59243be24faeff8438f6583ab5b4a145
+    m_Address: FireRangeWeaponStatUIEntryConfig 1
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponStatUIEntryConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5973578728b51c64d83f54bc97069519
+    m_Address: GoldenBarrelConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - DestroyableItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5b5b294efbcd79d42b63cb28635ee11a
+    m_Address: BossPistolConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5c205d82a4414c04e8b65d4f77a311a6
+    m_Address: LimeBottleConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - DestroyableItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5d3bed0ff5d1791409984ebb1c20e162
+    m_Address: PoisonSpecialEffectConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SpecialEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5e568a4610103ee498aad52ae2908772
+    m_Address: EnemyBulletConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AmmoConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6149e6e0837acb449b889c21c866ce6e
+    m_Address: HeroSelectorConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroSelectorConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6257e7911f03beb4a8614dfb3cfc8fca
+    m_Address: WoodenBarrelConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - DestroyableItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 62dc63872ab02f348b68997a727f3b16
+    m_Address: PinkBottleConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - DestroyableItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 62f9fa358eb7cba4aac058d10c4aed92
+    m_Address: AutomaticPistolItemConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponShopItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6306e093a4e755f4580fc39d95a99059
+    m_Address: PistolItemConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponShopItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 656b7b2f74210e84ea89dfaf495b59f5
+    m_Address: EnchantBuyWindowConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WindowConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6b103b90b5f47404786c242db626e26a
+    m_Address: HudConfig
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6d4502b44346274479a1c2bae5d6b036
+    m_Address: LeaderboardWindowConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WindowConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6fc60c7741de7e842ba6649aa6734a23
+    m_Address: DungeonMelancholyMusicConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - MusicConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6fe228a0575349f46b755e980d23efc7
+    m_Address: FirstDungeonConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - DungeonConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 71749b1fa67aa2542ba667712fef8378
+    m_Address: SlizzardHealerWithWeaponEnemyConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EnemyConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 724711abc5df9bc42b2ead94ae4d6883
+    m_Address: RiffleReloadSoundEffectConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SoundEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 72eff5acdc5f9634495a00734c14617a
+    m_Address: SecondLevelConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - LevelConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 731b743460f07da45b01aea2dfff4585
+    m_Address: WeaponShopWindowConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WindowConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 73780e297bda6ba44a724a988e7ad470
+    m_Address: PistolFireSoundEffectConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SoundEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7444911f8c0304b46b96cd017b8815ba
+    m_Address: FreezeEnchantItemLootConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - LootConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 773b54fd5388fab408025a1e95b87dc9
+    m_Address: ExplosiveUIEntryConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EnchantUIEntryConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7765854b479d7bd4da4b03ec753f647c
+    m_Address: GameLoadingUIConfig
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7808c299dd60a564da154db0b0e24b53
+    m_Address: PistolReloadSoundEffectConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SoundEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7993d4a8896a5c342bf032cb07e112ad
+    m_Address: PoisonEnchantConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EnchantConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7ed525e23257d044697f2b91b420f778
+    m_Address: FreezeUIEntryConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EnchantUIEntryConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7f1a6766baadd9140a1ddff01ac744dc
+    m_Address: LaserBlasterFireSoundEffectConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SoundEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7fbe4f51de4784945b17a319ffcbd0aa
+    m_Address: OrcWithWeaponEnemyConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EnemyConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7fbfd3fde618ccd4991e5c32283c67dc
+    m_Address: RocketLauncherConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7fd15072080592b458005d240e6fb2a2
+    m_Address: EnergyFireSoundEffectConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SoundEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8178800550e00594282d6fcde4733096
+    m_Address: PurpleHitSpecialEffectConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SpecialEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 855d936df80b0f2409e12e37f5dfd9a3
+    m_Address: SmokeWeaponSpecialEffectConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SpecialEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 85ca8616071b4cd499969ace316fa7ff
+    m_Address: CooldownWeaponUpgradeItemConfig 3
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponUpgradeShopItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 88510536ed7351345bcc7a7c030da8f5
+    m_Address: SlimeGreenKingBossConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EnemyConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8937bf93906a33c4bbd9c4201dfee679
+    m_Address: MaxAmmoCountUpgradeItemConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponUpgradeShopItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 89758b79be18d76489a50685468220f3
+    m_Address: FireRangeWeaponStatUIEntryConfig 4
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponStatUIEntryConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 89e09d9c87ea23646b211e300669998d
+    m_Address: EnchantShopWindowConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WindowConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8b6f1a3b05a02224b933aabf70452b05
+    m_Address: PoidonStatUIEntryConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EnchantStatUIEntryConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8c1d35139c943f34d816396d022dde47
+    m_Address: FireRangeWeaponUpgradeItemConfig 1
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponUpgradeShopItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8c4dc0797b0124345b7ca04b43b86608
+    m_Address: RedHitSpecialEffectConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SpecialEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8e4a4eea7690901439056fcb457644ca
+    m_Address: CurrentHpStatUIEntryConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroStatUIEntryConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8ed21c78f2aa56849ac7cce6b77be104
+    m_Address: TheScientisHeroConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9013bc64c784f1c4cb380fadd883f85c
+    m_Address: TheThiefHeroConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9108f5aa9c92a0f43802ddba430cd68f
+    m_Address: ExplosiveEnchantItemLootConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - LootConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9397051d04596b14b91990264e16bdc7
+    m_Address: ExplosionSpecialEffectConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SpecialEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 95a87126b57d7ac4ab5d124fb20a6f02
+    m_Address: SkeletonConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - DestroyableItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 961760fdfc1250249b0c36224bfb7b64
+    m_Address: PlasmaGunConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 96dffef92a293904292e6ceff92634c6
+    m_Address: ShieldConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AuraConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 979af7e13378f434c9f575c90a2cc71c
+    m_Address: SniperFireSoundEffectConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SoundEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 98b6f329838e8d54c95361b5f9f2a751
+    m_Address: SniperConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 993da6dd8ad4bcd4abe4011a8d1a0f7a
+    m_Address: VaseConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - DestroyableItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 998dc478c704c28458a5f9312e496844
+    m_Address: BlueBottleConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - DestroyableItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9bc893af4b9df2241987011a2e5226b9
+    m_Address: RocketMissleConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AmmoConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9cac8341406b37b4bbf1a0c42bb3a121
+    m_Address: MainMenuWindowConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WindowConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9dc0363290304354cb287bbc608e2091
+    m_Address: HeroInfoWindowConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WindowConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9e27d891c5050ac4da0354cc957af5bd
+    m_Address: BossBattleMusicConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - MusicConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9e9a5c95bf08c2149a13e69adcafc994
+    m_Address: FireRangeWeaponStatUIEntryConfig 3
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponStatUIEntryConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9ff87f4fa64026643871c601526d80f8
+    m_Address: StarSigilConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a0286cfb9cc8edb4cba5e4c75967aaef
+    m_Address: SlimeEnemyConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EnemyConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a029c8a99d115a44dac63df587287414
+    m_Address: RedFlashSpecialEffectConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SpecialEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a08839efaf4c2e44abd714cbdcc8c5ff
+    m_Address: SniperReloadSoundEffectConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SoundEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a0b4841403061ff41b7bcb7af75503e8
+    m_Address: AutomaticPistolConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a11088f558fa98d4b877d9c393a1e285
+    m_Address: FreezeEnchantToBuyItemConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EnchantShopItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a18360923c8dae340ac0ae7ae021c76f
+    m_Address: RedBottleConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - DestroyableItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a3d504e08ebc2fc4ab2cdde80de78f4f
+    m_Address: BazukaReloadSoundEffectConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SoundEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a3f95b58579c2be419b32bbd0e1a45db
+    m_Address: ExplosionEnchantConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EnchantConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a5ba4970e72058944a1088837187839a
+    m_Address: CurrentMissilesCountUpgradeItemConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponUpgradeShopItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a7be0d4a1bdfeaa4ab161e34acd5db70
+    m_Address: MudRockEnemyConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EnemyConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a970a6c062934104eb97cf0122be3f04
+    m_Address: CurrentBulletsCountUpgradeItemConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponUpgradeShopItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: af9b416a80159f1419d7455ae91f6cec
+    m_Address: CooldownWeaponUpgradeItemConfig 6
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponUpgradeShopItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: afebd89ca167b054a83d739f87533a98
+    m_Address: BossMachinegunConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b0de8d702a1440745bf012bff13a4491
+    m_Address: EnergyPulseSoundEffectConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SoundEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b36bcb66a4d27a94a982e18c3fac5f2a
+    m_Address: ShotgunBulletConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AmmoConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b3cae28d607078846afeaaf999092661
+    m_Address: SigilConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AmmoConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b494d92ccda5d984a95d6ecdf4d04e54
+    m_Address: DoorConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - DoorConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b7c7bb017fbfaac448036e4d7e6b963d
+    m_Address: RiffleFireSoundEffectConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SoundEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b90b96e52f1d07746abd2347f11d45be
+    m_Address: ShiledLootConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - LootConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ba6f7193f65ce01449ef3954de34356f
+    m_Address: UpgradeItemConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponUpgradeShopItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: be0f4fd53792a584e87c989c6eb9a049
+    m_Address: PCHudConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WindowConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c03eb46bb6aee0f47a081212e26ce6fd
+    m_Address: EnergyReloadSoundEffectConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SoundEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c19edab8a8e05f6458b313e2f030046d
+    m_Address: SlimeWithWeaponEnemyConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EnemyConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c27a12b6ea0343d45bdb029c7041502c
+    m_Address: MovementSpeedStatUIEntryConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroStatUIEntryConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c5208cd2ff1908f409549b528d722a71
+    m_Address: FlameUIEntryConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EnchantUIEntryConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c5da1bb32a357af4495a18eaebe3adcc
+    m_Address: EnchantAlreadyAppliedWindowConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WindowConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c6e72e95ee26f17459648ff4ecfc95e9
+    m_Address: GameOverWindowConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WindowConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c815bbc413724e348acebcd05cc05189
+    m_Address: SniperItemConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponShopItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c83e15e036624434c9fa83380fb2149d
+    m_Address: MaxHpStatUIEntryConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroStatUIEntryConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c85398ef5b89eb24da9514e6cd4f75a8
+    m_Address: MAxAmmoCountWeaponStatUIEntryConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponStatUIEntryConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c96b3ed6067df4548979f138e4099016
+    m_Address: RevolverItemConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponShopItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cb2dfc2551c746641b7a9abc95d36433
+    m_Address: LevelCompleteWindowConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WindowConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ccd04f42387118041b5424e5910c2d58
+    m_Address: PoisonEnchantToBuyItemConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EnchantShopItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ce933f3e8f7a0f049a341ad5fef29f24
+    m_Address: SniperBulletConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AmmoConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cfc1f08a5fc41b04b8a215150c78d3d1
+    m_Address: FireRangeWeaponStatUIEntryConfig 2
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponStatUIEntryConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d4f5e8134b394694c9528ef3c85ca28c
+    m_Address: PickupTwoSoundEffectConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SoundEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d62e29931b5cccc45bacbe1a1be6ab3c
+    m_Address: PierceUpgradeItemConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponUpgradeShopItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d7b14f0459868ab4094b91d2a01e23d0
+    m_Address: LaserBlasterItemConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponShopItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d8d6952c2c82dac42aa806fc64daceda
+    m_Address: ExplosiveEnchantConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EnchantConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d982089271f54114ab094fc8a99af95b
+    m_Address: FlameEnchantToBuyItemConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EnchantShopItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: db4a55f200ee97f45aac81fea1c76395
+    m_Address: FreezeEnchantConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EnchantConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dec76516840187b459e2c80f97faf64e
+    m_Address: LaserBlacterReloadSoundEffectConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SoundEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: df993b55cc67cf949a99f312d5723854
+    m_Address: BazukaFireSoundEffectConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SoundEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e16f461f277603f439b4b42204d75fdc
+    m_Address: EnemyPistolConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e19b5d23f916ab04985875c2ae2f461d
+    m_Address: SlizzardEnemyConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EnemyConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e1d7da7e71c63da49a48f4906eb40c6f
+    m_Address: CoinLootConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - LootConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e5e28de55772379428cba7fcb75d8800
+    m_Address: FireRangeWeaponStatUIEntryConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponStatUIEntryConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e5e550c41d5985a41bb42ff521cc8781
+    m_Address: ShieldItemConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroUpgradeShopItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e69a30b632eb7ae4ab02e65973d32831
+    m_Address: WeaponUpgradeWindowConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WindowConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e77409e7de887aa4ca49caacd84ed068
+    m_Address: TriangleSigilConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e8f4911a760b7cb44b8d4c1646735728
+    m_Address: BlueHitSpecialEffectConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SpecialEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e90590364b9a31d4894c85db7f986b26
+    m_Address: RevolverConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ead580afef4afd94dbc500a46a31711e
+    m_Address: MachinegunReloadSoundEffectConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SoundEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: eb2de925656abe94494a18769526fc0e
+    m_Address: ShotgunReloadSoundEffectConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SoundEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ec19f1729f35db744853735fcb04739e
+    m_Address: DialogueConfig
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ee45d58aeea483d409625185f0db19f2
+    m_Address: PauseWindowConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WindowConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: eebf926802b2c364db7d1d4e5e1400e0
+    m_Address: CooldownWeaponUpgradeItemConfig 5
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponUpgradeShopItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: efe9c25c2bac05d4db1b2f9fa7954aab
+    m_Address: WeaponBuyWindowConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WindowConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f197b0a0ce1b3e443aa4f6aa8852ab98
+    m_Address: GlassBreakingSoundEffectConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SoundEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f2b0ca3446c962340a7de42d36c2dade
+    m_Address: LeaderboardConfig
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f4c6d79a3245a464ebebcfc94b3d358f
+    m_Address: LaserBlasterConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f532051e96453b349b6039a08b2df88d
+    m_Address: FireRangeWeaponStatUIEntryConfig 8
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponStatUIEntryConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f6d9bbe6bdbc18548aa1764bc2ea20ee
+    m_Address: SmokeTrailSpecialEffectConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SpecialEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f7bb8d664e0479a41973d310aefb5561
+    m_Address: CurrentWeaponInfoWindowConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WindowConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f7e20afeeb0f1c54c8c0b158815cb2e2
+    m_Address: SecondDungeonConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - DungeonConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f894bc48639ad80448d7506cd574a98c
+    m_Address: BattleLoopMusicConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - MusicConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f8a4ee29daa4dc44481c0fe8ca09bbed
+    m_Address: CooldownWeaponUpgradeItemConfig 2
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponUpgradeShopItemConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fa139cd7df8b1e44abf2422de4ad2bde
+    m_Address: DurationStatUIEntryConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EnchantStatUIEntryConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fa34edc05daa7404eb5bd33ec644b643
+    m_Address: DoorEWConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - DoorConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fa385c1e90554264f911ca8742d4a81f
+    m_Address: MachinegunFireSoundEffectConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SoundEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fe162be36f6908343bcd63fcd7df688d
+    m_Address: HealLootConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - LootConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fff8984789533fb46bdf3b7589297a2d
+    m_Address: FireRangeWeaponStatUIEntryConfig 5
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponStatUIEntryConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 7128017d563554245a79368046c75e1a, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: fe33cc279a2d63a479ee6eb082f5b08c, type: 2}
+    - {fileID: 11400000, guid: 26529d31645083b4aa44d86d6de16125, type: 2}
