@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7fe7e2d4760bd87448aa1180b8484dd6, type: 3}
-  m_Name: SecondLevelConfig
+  m_Name: ThirdLevelConfig
   m_EditorClassIdentifier: 
-  TypeId: 2
-  DungeonTypeOnLevel: 2
+  TypeId: 3
+  DungeonTypeOnLevel: 3
   StartingTime: 2
   TimeBetweenSpawnWaves: 5
   HeroSaveZoneRadius: 5
@@ -25,14 +25,14 @@ MonoBehaviour:
       Amount: 5
   - EnemiesInWave:
     - EnemyTypeId: 1
-      Amount: 10
+      Amount: 5
     - EnemyTypeId: 5
       Amount: 5
     - EnemyTypeId: 7
       Amount: 5
   - EnemiesInWave:
     - EnemyTypeId: 8
-      Amount: 10
+      Amount: 3
     - EnemyTypeId: 11
       Amount: 5
     - EnemyTypeId: 7

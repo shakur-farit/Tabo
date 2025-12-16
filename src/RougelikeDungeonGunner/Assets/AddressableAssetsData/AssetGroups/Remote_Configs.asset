@@ -809,6 +809,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - SoundEffectConfig
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b18bc6102f8dee94aa195c8b1959c5d1
+    m_Address: ThirdLevelConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - LevelConfig
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: b36bcb66a4d27a94a982e18c3fac5f2a
     m_Address: ShotgunBulletConfig
     m_ReadOnly: 0

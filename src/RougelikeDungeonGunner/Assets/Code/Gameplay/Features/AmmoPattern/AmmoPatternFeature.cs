@@ -17,6 +17,7 @@ namespace Code.Gameplay.Features.AmmoPattern
 			Add(systems.Create<CreatePatternForHeroBazukaSystem>());
 			Add(systems.Create<CreatePatternForHeroSniperSystem>());
 			Add(systems.Create<CreatePatternForEnemyPistolSystem>());
+			Add(systems.Create<CreatePatternForEnemyMachinegunSystem>());
 			Add(systems.Create<CreatePatternForEnemyCircleSigilSystem>());
 			Add(systems.Create<CreatePatternForEnemyTriangleSigilSystem>());
 			Add(systems.Create<CreatePatternForEnemyStarSigilSystem>());

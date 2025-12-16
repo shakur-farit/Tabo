@@ -90,7 +90,9 @@ namespace Code.Gameplay.Features.Weapon.Factory
 			{
 				case WeaponTypeId.EnemyPistol:
 					return CreateEnemyPistol(weaponTypeId, parent, at, ownerId);
-				case WeaponTypeId.EnemyCircleSigil:
+        case WeaponTypeId.EnemyMachinegun:
+          return CreateEnemyMachinegun(weaponTypeId, parent, at, ownerId);
+        case WeaponTypeId.EnemyCircleSigil:
 					return EnemyCircleSigil(weaponTypeId, parent, at, ownerId);
 				case WeaponTypeId.EnemyTriangleSigil:
 					return EnemyTriangleSigil(weaponTypeId, parent, at, ownerId);
@@ -153,7 +155,12 @@ namespace Code.Gameplay.Features.Weapon.Factory
 			CreateWeaponEntity(weaponTypeId, parent, at, ownerId)
 				.With(x => x.isEnemyPistol = true);
 
-		private GameEntity EnemyCircleSigil(WeaponTypeId weaponTypeId, Transform parent, Vector2 at, int ownerId) =>
+    private GameEntity CreateEnemyMachinegun(WeaponTypeId weaponTypeId, Transform parent, Vector2 at,
+      int ownerId) =>
+      CreateWeaponEntity(weaponTypeId, parent, at, ownerId)
+        .With(x => x.isEnemyMachinegun = true);
+
+    private GameEntity EnemyCircleSigil(WeaponTypeId weaponTypeId, Transform parent, Vector2 at, int ownerId) =>
 			CreateWeaponEntity(weaponTypeId, parent, at, ownerId)
 				.With(x => x.isEnemyCircleSigil = true);
 

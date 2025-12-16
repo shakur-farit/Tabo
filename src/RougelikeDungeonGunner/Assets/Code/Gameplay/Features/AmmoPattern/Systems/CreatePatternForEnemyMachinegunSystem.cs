@@ -9,16 +9,16 @@ using UnityEngine;
 
 namespace Code.Gameplay.Features.AmmoPattern.Systems
 {
-  public class CreatePatternForBossPistolSystem : IExecuteSystem
+  public class CreatePatternForEnemyMachinegunSystem : IExecuteSystem
   {
-    private readonly List<GameEntity> _buffer = new(8);
+    private readonly List<GameEntity> _buffer = new(16);
 
     private readonly IAmmoPatternFactory _patternFactory;
     private readonly IAmmoDirectionProvider _ammoDirectionProvider;
     private readonly ISoundEffectFactory _soundEffectFactory;
     private readonly IGroup<GameEntity> _weapons;
 
-    public CreatePatternForBossPistolSystem(
+    public CreatePatternForEnemyMachinegunSystem(
       GameContext game,
       IAmmoPatternFactory patternFactory,
       IAmmoDirectionProvider ammoDirectionProvider,
@@ -31,7 +31,7 @@ namespace Code.Gameplay.Features.AmmoPattern.Systems
 
       _weapons = game.GetGroup(GameMatcher
         .AllOf(
-          GameMatcher.BossPistol,
+          GameMatcher.EnemyMachinegun,
           GameMatcher.AmmoTypeId,
           GameMatcher.MinPelletsDeviation,
           GameMatcher.MaxPelletsDeviation,

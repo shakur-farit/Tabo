@@ -66,6 +66,7 @@ namespace Code.Gameplay.Features.Weapon
 	[Game] public class HeroTriangleSigil : IComponent { }
 	[Game] public class HeroStarSigil : IComponent { }
 	[Game] public class EnemyPistol : IComponent { }
+	[Game] public class EnemyMachinegun : IComponent { }
 	[Game] public class EnemyCircleSigil : IComponent { }
 	[Game] public class EnemyTriangleSigil : IComponent { }
 	[Game] public class EnemyStarSigil : IComponent { }

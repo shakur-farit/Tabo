@@ -11,7 +11,7 @@ namespace Code.Gameplay.Features.AmmoPattern.Systems
 {
 	public class CreatePatternForEnemyPistolSystem : IExecuteSystem
 	{
-		private readonly List<GameEntity> _buffer = new(1);
+		private readonly List<GameEntity> _buffer = new(16);
 
 		private readonly IAmmoPatternFactory _patternFactory;
 		private readonly IAmmoDirectionProvider _ammoDirectionProvider;

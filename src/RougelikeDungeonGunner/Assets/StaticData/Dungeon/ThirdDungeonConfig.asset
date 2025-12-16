@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dab77dcf273384641aa468d6f3f89602, type: 3}
+  m_Name: ThirdDungeonConfig
+  m_EditorClassIdentifier: 
+  TypeId: 3
+  EnvironmentSetups:
+  - ViewPrefab: {fileID: 8127720259732050729, guid: c34b2a37e2debe74b8bba79a382363b7, type: 3}
+    HeroStartPosition: {x: 38, y: -36}
+    DoorSetup:
+      TypeId: 2
+      DoorPosition: {x: -68.5, y: -11}
+  - ViewPrefab: {fileID: 8127720259732050729, guid: 4a6c98f15bfe3364791cb808d74b913f, type: 3}
+    HeroStartPosition: {x: -19, y: -20}
+    DoorSetup:
+      TypeId: 1
+      DoorPosition: {x: 27.5, y: -53}

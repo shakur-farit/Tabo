@@ -100,6 +100,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4a6c98f15bfe3364791cb808d74b913f
+    m_Address: LevelThreeDungeon_2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 59096cb5e43950644b670f5b0f92f29d
     m_Address: HeartUI
     m_ReadOnly: 0
@@ -142,11 +147,6 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 6e60df6474c4f804c90c7cbbe25b5e36
     m_Address: MainMenuWindow
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 70fbae0a385d64448bac812bb9088ed4
-    m_Address: LevelThreeDungeon_2
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -342,11 +342,6 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e7c19ffa2dd20734e9ee238e819d539c
     m_Address: CurrentWeaponEnchantInfoWindow
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: ea36fbff00b6e2d40befa1d762918d49
-    m_Address: LevelThreeDungeon_3
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
