@@ -56,6 +56,7 @@ namespace Code.Gameplay.Features.Enemy.Factory
 					.AddCollectTargetsInterval(config.AttackInterlal)
 					.AddCollectTargetsTimer(AttackTimerStartValue)
 					.AddTargetLayerMask(CollisionLayer.Hero.AsMask())
+          .AddTargetDetectingRadius(config.TargetDetectingRadius)
 					.AddViewPrefab(config.ViewPrefab)
 					.AddAuraRequest(config.StartAura)
           .AddExcludedLoot(config.ExcludedLoot)

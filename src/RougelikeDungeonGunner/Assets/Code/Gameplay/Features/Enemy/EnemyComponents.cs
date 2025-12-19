@@ -12,6 +12,8 @@ namespace Code.Gameplay.Features.Enemy
 
 	[Game] public class ScoreValue : IComponent { public int Value; }
 
+	[Game] public class TargetDetectingRadius : IComponent { public float Value; }
+	[Game] public class TargetDetected : IComponent { }
 	[Game] public class LastTargetPosition : IComponent { public Vector3 Value; }
 
 	[Game] public class Boss : IComponent { }

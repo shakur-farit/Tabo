@@ -14,6 +14,7 @@ namespace Code.Gameplay.Features.Enemy
 			Add(systems.Create<SetEnemyCastStartLocalPositionSystem>());
 			Add(systems.Create<ShowEnemyTargetSpriteSystem>());
 
+			Add(systems.Create<TargetDetectingSystem>());
 			Add(systems.Create<EnemyMoveSystem>());
 			Add(systems.Create<AnimateEnemyMovementSystem>());
 		

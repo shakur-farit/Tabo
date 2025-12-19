@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Code.Gameplay.Features.Hero;
 using Entitas;
 using UnityEngine;
 
@@ -12,15 +13,17 @@ namespace Code.Gameplay.Features.Enemy.Systems
 
 		private readonly IGroup<GameEntity> _enemies;
 
-		public EnemyMoveSystem(GameContext game)
+    public EnemyMoveSystem(GameContext game)
 		{
 			_enemies = game.GetGroup(GameMatcher
 				.AllOf(
 					GameMatcher.Enemy,
+					GameMatcher.WorldPosition,
+					GameMatcher.TargetDetected,
 					GameMatcher.Path));
 		}
 
-		public void Execute()
+    public void Execute()
 		{
 			foreach (GameEntity enemy in _enemies.GetEntities(_buffer))
 			{
@@ -42,6 +45,6 @@ namespace Code.Gameplay.Features.Enemy.Systems
 				if (Vector2.Distance(chaserPosition, enemy.Path[0]) < MinDistance) 
 					enemy.Path.RemoveAt(0);
 			}
-		}
+    }
 	}
 }
