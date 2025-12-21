@@ -22,7 +22,7 @@ MonoBehaviour:
   Damage: 1
   MovementSpeed: 3
   TargetAmount: 1
-  TargetDetectingRadius: 20
+  TargetDetectingRadius: 100
   AttackRaduis: 1
   AttackInterlal: 2
   LootDropChance: 80
