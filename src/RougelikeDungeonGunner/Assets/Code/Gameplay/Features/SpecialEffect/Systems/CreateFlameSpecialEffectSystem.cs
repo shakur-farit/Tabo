@@ -10,13 +10,11 @@ namespace Code.Gameplay.Features.SpecialEffect.Systems
 	{
 		private readonly List<GameEntity> _buffer = new(32);
 
-		private readonly GameContext _game;
 		private readonly ISpecialEffectsFactory _factory;
 		private readonly IGroup<GameEntity> _statuses;
 
 		public CreateFlameSpecialEffectSystem(GameContext game, ISpecialEffectsFactory factory)
 		{
-			_game = game;
 			_factory = factory;
 			_statuses = game.GetGroup(GameMatcher
 				.AllOf(

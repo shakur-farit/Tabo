@@ -5,7 +5,7 @@ namespace Code.GamePlatform.Services
     public GamePlatformTypeId GetGamePlatform()
     {
 #if UNITY_EDITOR
-      return GamePlatformTypeId.Standalone;
+      return GamePlatformTypeId.Mobile;
 #elif UNITY_STANDALONE
             return GamePlatformTypeId.Standalone;
 #elif UNITY_ANDROID || UNITY_IOS

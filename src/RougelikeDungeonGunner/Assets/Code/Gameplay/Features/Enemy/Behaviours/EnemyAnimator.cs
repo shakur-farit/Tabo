@@ -16,11 +16,11 @@ namespace Code.Gameplay.Features.Enemy.Behaviours
 
 		private FacingDirection _currentDirection = FacingDirection.Unknown;
 
-    private void OnDisable()
-    {
+    private void OnEnable() => 
       RebindAnimation();
+
+    private void OnDisable() => 
       DOTween.Kill(_spriteRenderer);
-    }
 
     public void StartIdling() => _animator.SetBool(_isMoving, false);
 
