@@ -9,7 +9,9 @@ namespace Code.Gameplay.Features.SpecialEffect
 		{
 			Add(systems.Create<CreateSpecialEffectOnShotSystem>());
 			Add(systems.Create<CreatePoisonSpecialEffectSystem>());
+			Add(systems.Create<CreatePoisonBossSpecialEffectSystem>());
 			Add(systems.Create<CreateFreezeSpecialEffectSystem>());
+			Add(systems.Create<CreateFreezeBossSpecialEffectSystem>());
 			Add(systems.Create<CreateFlameSpecialEffectSystem>());
 			Add(systems.Create<SpecialEffectTargetFollowSystem>());
 			Add(systems.Create<SetSpecialEffectRadiusSystem>());

@@ -604,7 +604,7 @@ ParticleSystem:
         m_RotationOrder: 4
     randomizeRotationDirection: 0
     gravitySource: 0
-    maxNumParticles: 5
+    maxNumParticles: 10
     customEmitterVelocity: {x: 0, y: 0, z: 0}
     size3D: 0
     rotation3D: 0
@@ -751,7 +751,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 1
+      value: 1.5
       mode: 0
       spread: 0
       speed:
@@ -870,7 +870,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 10
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -4901,7 +4901,7 @@ GameObject:
   - component: {fileID: 6244926618751341932}
   - component: {fileID: 4357107457385046931}
   m_Layer: 0
-  m_Name: Freeze
+  m_Name: FreezeBoss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -21,6 +21,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - WeaponConfig
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 03e57caf14d412e42b54f86e0ce51f74
+    m_Address: FreezeBossSpecialEffectConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SpecialEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 05c12c5dc410e2c40b18a22c00927963
     m_Address: InfinityAmmoWeaponStatUIEntryConfig
     m_ReadOnly: 0
@@ -766,6 +772,12 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - SoundEffectConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a3f86662efc907f4e8ea1d6fdaca1f39
+    m_Address: Assets/StaticData/SpecialEffect/PoisonBossSpecialEffectConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SpecialEffectConfig
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a3f95b58579c2be419b32bbd0e1a45db
     m_Address: ExplosionEnchantConfig

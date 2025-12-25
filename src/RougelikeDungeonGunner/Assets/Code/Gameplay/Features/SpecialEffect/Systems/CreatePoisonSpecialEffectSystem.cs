@@ -41,6 +41,7 @@ namespace Code.Gameplay.Features.SpecialEffect.Systems
           .AddProducerId(status.Id)
 		      .AddTargetId(status.TargetId)
           .With(x => x.isSpecialEffectApplied = true)
+          .With(x => x.isFollowerSpecialEffect = true)
 		      ;
       }
     }

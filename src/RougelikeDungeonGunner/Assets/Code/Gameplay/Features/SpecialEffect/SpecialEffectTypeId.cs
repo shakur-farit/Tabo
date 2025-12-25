@@ -16,6 +16,8 @@
 		Freeze = 11,
 		Poison = 12,
 		Flame = 13,
-		NoSpecialEffect = 15
+		NoSpecialEffect = 15,
+		FreezeBoss = 16,
+		PoisonBoss = 17
 	}
 }

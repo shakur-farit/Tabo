@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b6e6f5ca1cc54bc4da457a73056372d7, type: 3}
-  m_Name: PoisonSpecialEffectConfig
+  m_Name: FreezeBossSpecialEffectConfig
   m_EditorClassIdentifier: 
-  TypeId: 12
-  ViewPrefab: {fileID: 6244926618751341932, guid: cc3396cc27aa0444aaaf6b2225429e7e, type: 3}
+  TypeId: 16
+  ViewPrefab: {fileID: 6244926618751341932, guid: 75c7e1e1dc68f504cb73dab020672b0b, type: 3}
   IsSelfDestructable: 0
   Lifetime: 0.1
-  PositionOffset: {x: 0, y: 0.6, z: 0}
+  PositionOffset: {x: 0, y: 1.5, z: 0}

@@ -169,8 +169,8 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.5
-      minScalar: 0.1
+      scalar: 1
+      minScalar: 0.2
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -604,7 +604,7 @@ ParticleSystem:
         m_RotationOrder: 4
     randomizeRotationDirection: 0
     gravitySource: 0
-    maxNumParticles: 5
+    maxNumParticles: 10
     customEmitterVelocity: {x: 0, y: 0, z: 0}
     size3D: 0
     rotation3D: 0
@@ -751,7 +751,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 1
+      value: 1.5
       mode: 0
       spread: 0
       speed:
@@ -870,7 +870,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 10
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -1366,34 +1366,34 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.0039215744, g: 0.592012, b: 0.9254902, a: 1}
-        key1: {r: 0.0052331034, g: 0.6956474, b: 0.9245283, a: 1}
-        key2: {r: 1, g: 1, b: 1, a: 0.22352941}
-        key3: {r: 1, g: 1, b: 1, a: 0}
-        key4: {r: 0, g: 0, b: 0, a: 0}
+        key0: {r: 0.3304112, g: 0.9339623, b: 0.43447176, a: 0.25882354}
+        key1: {r: 0.029236369, g: 0.6886792, b: 0.08576747, a: 0.7490196}
+        key2: {r: 0.01842292, g: 0.4339623, b: 0.087201886, a: 0.91106904}
+        key3: {r: 0.025453899, g: 0.49056602, b: 0.09960219, a: 0.1882353}
+        key4: {r: 0.23389105, g: 0.6792453, b: 0.31297266, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
-        ctime0: 0
-        ctime1: 65535
-        ctime2: 65535
-        ctime3: 65535
-        ctime4: 0
+        ctime0: 386
+        ctime1: 16769
+        ctime2: 36623
+        ctime3: 51272
+        ctime4: 65535
         ctime5: 0
         ctime6: 0
         ctime7: 0
         atime0: 0
-        atime1: 65535
-        atime2: 65535
-        atime3: 0
+        atime1: 16577
+        atime2: 53199
+        atime3: 65535
         atime4: 0
         atime5: 0
         atime6: 0
         atime7: 0
         m_Mode: 0
         m_ColorSpace: 0
-        m_NumColorKeys: 2
-        m_NumAlphaKeys: 2
+        m_NumColorKeys: 5
+        m_NumAlphaKeys: 4
       minGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -1545,7 +1545,7 @@ ParticleSystem:
     uvChannelMask: -1
     rowMode: 1
     sprites:
-    - sprite: {fileID: 21300000, guid: 28ee6d70b81716248957a26097ea8167, type: 3}
+    - sprite: {fileID: 21300000, guid: 1232cfe7a9b3cfd47a905a82e1952ed1, type: 3}
     flipU: 0
     flipV: 0
   VelocityModule:
@@ -1553,8 +1553,8 @@ ParticleSystem:
     x:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.1
-      minScalar: -0.1
+      scalar: 0.5
+      minScalar: -0.5
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -4901,7 +4901,7 @@ GameObject:
   - component: {fileID: 6244926618751341932}
   - component: {fileID: 4357107457385046931}
   m_Layer: 0
-  m_Name: Freeze
+  m_Name: PoisonBoss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
