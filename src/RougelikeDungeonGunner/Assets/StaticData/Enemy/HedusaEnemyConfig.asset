@@ -20,7 +20,7 @@ MonoBehaviour:
   CurrentHp: 2
   MaxHp: 5
   Damage: 1
-  MovementSpeed: 3
+  MovementSpeed: 0
   TargetAmount: 1
   TargetDetectingRadius: 20
   AttackRaduis: 1
