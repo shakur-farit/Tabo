@@ -15,6 +15,12 @@ MonoBehaviour:
   m_GroupName: Default Local Group
   m_GUID: f40428f047dc54a46b8184ab91599836
   m_SerializeEntries:
+  - m_GUID: 5823986c2b34f8d45bfef0ce7e5b39e8
+    m_Address: FourLevelConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - LevelConfig
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 804ee31130a3d9e439bab0419945c9be
     m_Address: EnemyMachinegunConfig
     m_ReadOnly: 0
