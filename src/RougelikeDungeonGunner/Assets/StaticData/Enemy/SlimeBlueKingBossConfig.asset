@@ -10,27 +10,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4918d858ae4269f4eb851105c3fd703d, type: 3}
-  m_Name: HedusaEnemyConfig
+  m_Name: SlimeBlueKingBossConfig
   m_EditorClassIdentifier: 
-  TypeId: 1
-  StartWeapon: 18
+  TypeId: 16
+  StartWeapon: 19
   StartAura: 3
-  ViewPrefab: {fileID: 8166552356577901019, guid: 9dc33cf00c86b7440a425de8b022c28a, type: 3}
-  AnimatorController: {fileID: 9100000, guid: 19b6ff9fbadc74e479b63068d33eb245, type: 2}
-  CurrentHp: 2
-  MaxHp: 5
-  Damage: 1
-  MovementSpeed: 3
+  ViewPrefab: {fileID: 8166552356577901019, guid: 067f0ecf63625cd43b3c32842994657e, type: 3}
+  AnimatorController: {fileID: 9100000, guid: c584c390b9e9e4e4faab37cd1bfce8b3, type: 2}
+  CurrentHp: 10
+  MaxHp: 20
+  Damage: 0
+  MovementSpeed: 1
   TargetAmount: 1
   TargetDetectingRadius: 50
   AttackRaduis: 1
-  AttackInterlal: 2
-  LootDropChance: 80
-  ScoreValue: 50
+  AttackInterlal: 3
+  LootDropChance: 50
+  ScoreValue: 0
   ExcludedLoot: 
   CastSetup:
-    CastStartPosiotion: {x: 0, y: 0.6}
+    CastStartPosiotion: {x: 0, y: 1.75}
     ForwardCastDistance: 0
-    Width: 1
-    Height: 1
+    Width: 3
+    Height: 3.5
   StatusSetups: []

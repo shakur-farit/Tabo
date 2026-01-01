@@ -30,7 +30,7 @@ MonoBehaviour:
   Stats:
     isInfinityAmmo: 0
     FireRange: 13
-    Cooldown: 1.5
+    Cooldown: 1
     ReloadTime: 3
     PrechargingTime: 0
     MagazineSize: 5

@@ -869,6 +869,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - WindowConfig
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c01150343ac46324d80bb017bad68a4b
+    m_Address: SkeletonBossConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EnemyConfig
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c03eb46bb6aee0f47a081212e26ce6fd
     m_Address: EnergyReloadSoundEffectConfig
     m_ReadOnly: 0
@@ -922,6 +928,12 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - WeaponStatUIEntryConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c878e8ca697ed3b4784411b5c20510c5
+    m_Address: SlimeRedKingBossConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EnemyConfig
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c96b3ed6067df4548979f138e4099016
     m_Address: RevolverItemConfig
@@ -1006,6 +1018,12 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - WeaponConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e175480885c299c408125f6b6681f1a1
+    m_Address: SlimeBlueKingBossConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EnemyConfig
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e19b5d23f916ab04985875c2ae2f461d
     m_Address: SlizzardEnemyConfig

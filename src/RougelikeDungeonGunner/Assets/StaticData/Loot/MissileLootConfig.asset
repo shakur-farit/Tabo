@@ -16,7 +16,7 @@ MonoBehaviour:
   PickupSoundEffectTypeId: 23
   ViewPrefab: {fileID: 4494103209788103135, guid: c97df207954ad734eaf0eab1d27c9f42, type: 3}
   Sprite: {fileID: 21300000, guid: 903a95884ae4a6441b6c6c32252e8bd6, type: 3}
-  DropChanceWeight: 0
+  DropChanceWeight: 10
   Value: 1
   EffectSetups: []
   StatusSetups: []
