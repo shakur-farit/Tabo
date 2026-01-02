@@ -14,31 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_GroupName: Default Local Group
   m_GUID: f40428f047dc54a46b8184ab91599836
-  m_SerializeEntries:
-  - m_GUID: 5823986c2b34f8d45bfef0ce7e5b39e8
-    m_Address: FourLevelConfig
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - LevelConfig
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 804ee31130a3d9e439bab0419945c9be
-    m_Address: EnemyMachinegunConfig
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - WeaponConfig
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: e9a22cbea0632f042b54c8f551c68069
-    m_Address: ThirdDungeonConfig
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - DungeonConfig
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: ffddb766c53c2d74994526fdd520db0a
-    m_Address: FourDungeonConfig
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - DungeonConfig
-    FlaggedDuringContentUpdateRestriction: 0
+  m_SerializeEntries: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 7128017d563554245a79368046c75e1a, type: 2}
   m_SchemaSet:
