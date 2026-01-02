@@ -151,9 +151,9 @@
     <type fullname="Code.Gameplay.Features.Level.Configs.EnemiesInWave" preserve="nothing" serialized="true" />
     <type fullname="Code.Gameplay.Features.Level.Configs.EnemyWave" preserve="nothing" serialized="true" />
     <type fullname="Code.Infrastructure.ObjectPool.Config.WarmupObject" preserve="nothing" serialized="true" />
+    <type fullname="Code.Gameplay.Features.Level.Configs.BossesInWave" preserve="nothing" serialized="true" />
     <type fullname="Code.Gameplay.Features.Dungeon.Configs.DoorSetup" preserve="nothing" serialized="true" />
     <type fullname="Code.Gameplay.Features.Dungeon.Configs.EnvironmentSetup" preserve="nothing" serialized="true" />
-    <type fullname="Code.Gameplay.Features.Level.Configs.BossesInWave" preserve="nothing" serialized="true" />
   </assembly>
   <assembly fullname="Unity.Addressables, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" preserve="all">
     <type fullname="UnityEngine.AddressableAssets.Addressables" preserve="all" />
@@ -240,6 +240,8 @@
     <type fullname="UnityEngine.Tilemaps.TilemapRenderer" preserve="all" />
   </assembly>
   <assembly fullname="UnityEngine.UI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.EventSystems.EventSystem" preserve="all" />
+    <type fullname="UnityEngine.EventSystems.StandaloneInputModule" preserve="all" />
     <type fullname="UnityEngine.UI.Button" preserve="all" />
     <type fullname="UnityEngine.UI.CanvasScaler" preserve="all" />
     <type fullname="UnityEngine.UI.ContentSizeFitter" preserve="all" />

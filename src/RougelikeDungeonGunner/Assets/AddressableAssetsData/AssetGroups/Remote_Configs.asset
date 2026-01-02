@@ -303,7 +303,7 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 4691b37493b46ef42a3fd7a9986f2937
-    m_Address: FireRangeWeaponStatUIEntryConfig 7
+    m_Address: DamageWeaponStatUIEntryConfig
     m_ReadOnly: 0
     m_SerializedLabels:
     - WeaponStatUIEntryConfig
@@ -362,7 +362,7 @@ MonoBehaviour:
     - EnemyConfig
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 56bd3cbdb71dd2e45955d4c71763245d
-    m_Address: FireRangeWeaponStatUIEntryConfig 6
+    m_Address: EnchatnSlotsWeaponStatUIEntryConfig
     m_ReadOnly: 0
     m_SerializedLabels:
     - WeaponStatUIEntryConfig
@@ -386,7 +386,7 @@ MonoBehaviour:
     - WeaponConfig
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 59243be24faeff8438f6583ab5b4a145
-    m_Address: FireRangeWeaponStatUIEntryConfig 1
+    m_Address: CooldownWeaponStatUIEntryConfig
     m_ReadOnly: 0
     m_SerializedLabels:
     - WeaponStatUIEntryConfig
@@ -606,7 +606,7 @@ MonoBehaviour:
     - WeaponUpgradeShopItemConfig
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 89758b79be18d76489a50685468220f3
-    m_Address: FireRangeWeaponStatUIEntryConfig 4
+    m_Address: MagazineSizeWeaponStatUIEntryConfig
     m_ReadOnly: 0
     m_SerializedLabels:
     - WeaponStatUIEntryConfig
@@ -732,7 +732,7 @@ MonoBehaviour:
     - MusicConfig
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 9e9a5c95bf08c2149a13e69adcafc994
-    m_Address: FireRangeWeaponStatUIEntryConfig 3
+    m_Address: PrechargingTimeWeaponStatUIEntryConfig
     m_ReadOnly: 0
     m_SerializedLabels:
     - WeaponStatUIEntryConfig
@@ -852,7 +852,7 @@ MonoBehaviour:
     - AmmoConfig
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: b494d92ccda5d984a95d6ecdf4d04e54
-    m_Address: DoorConfig
+    m_Address: DoorNSConfig
     m_ReadOnly: 0
     m_SerializedLabels:
     - DoorConfig
@@ -936,7 +936,7 @@ MonoBehaviour:
     - HeroStatUIEntryConfig
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c85398ef5b89eb24da9514e6cd4f75a8
-    m_Address: MAxAmmoCountWeaponStatUIEntryConfig
+    m_Address: MaxAmmoCountWeaponStatUIEntryConfig
     m_ReadOnly: 0
     m_SerializedLabels:
     - WeaponStatUIEntryConfig
@@ -972,7 +972,7 @@ MonoBehaviour:
     - AmmoConfig
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: cfc1f08a5fc41b04b8a215150c78d3d1
-    m_Address: FireRangeWeaponStatUIEntryConfig 2
+    m_Address: ReloadTimeWeaponStatUIEntryConfig
     m_ReadOnly: 0
     m_SerializedLabels:
     - WeaponStatUIEntryConfig
@@ -1144,7 +1144,7 @@ MonoBehaviour:
     - WeaponConfig
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f532051e96453b349b6039a08b2df88d
-    m_Address: FireRangeWeaponStatUIEntryConfig 8
+    m_Address: PierceWeaponStatUIEntryConfig
     m_ReadOnly: 0
     m_SerializedLabels:
     - WeaponStatUIEntryConfig
@@ -1210,7 +1210,7 @@ MonoBehaviour:
     - DungeonConfig
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: fff8984789533fb46bdf3b7589297a2d
-    m_Address: FireRangeWeaponStatUIEntryConfig 5
+    m_Address: AccuracyWeaponStatUIEntryConfig
     m_ReadOnly: 0
     m_SerializedLabels:
     - WeaponStatUIEntryConfig
