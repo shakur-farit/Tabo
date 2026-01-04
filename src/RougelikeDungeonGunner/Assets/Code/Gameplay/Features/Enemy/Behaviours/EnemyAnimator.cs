@@ -19,8 +19,11 @@ namespace Code.Gameplay.Features.Enemy.Behaviours
     private void OnEnable() => 
       RebindAnimation();
 
-    private void OnDisable() => 
+    private void OnDisable()
+    {
+      _spriteRenderer.flipX = false;
       DOTween.Kill(_spriteRenderer);
+    }
 
     public void StartIdling() => _animator.SetBool(_isMoving, false);
 
@@ -47,7 +50,6 @@ namespace Code.Gameplay.Features.Enemy.Behaviours
     private void RebindAnimation()
     {
       _currentDirection = FacingDirection.Unknown;
-      _spriteRenderer.flipX = false;
       _animator.Rebind();
       _animator.Update(0f);
       _spriteRenderer.color = Color.white;

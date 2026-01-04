@@ -20,11 +20,8 @@ namespace Code.Gameplay.Features.Destroyable.Systems
     {
       foreach (GameEntity destroyable in _destroyables.GetEntities(_buffer))
       {
-        if (destroyable.DestroyableAnimator.IsDestroyed())
-        {
+        if (destroyable.DestroyableAnimator.IsDestroyed()) 
           destroyable.isDestroyed = true;
-          destroyable.DestroyableAnimator.ResetAnimator();
-        }
       }
     }
   }

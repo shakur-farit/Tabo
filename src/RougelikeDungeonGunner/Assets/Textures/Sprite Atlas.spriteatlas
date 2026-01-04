@@ -45,9 +45,9 @@ SpriteAtlas:
     secondaryTextureSettings: {}
     variantMultiplier: 1
     packables:
-    - {fileID: 102900000, guid: 577c6323e42dd5f41af745df1248793f, type: 3}
-    - {fileID: 102900000, guid: 1283f4208c0ed1e4080ec006add155c3, type: 3}
     - {fileID: 102900000, guid: 4d1fa41941a19fe4e9176fbd922ad610, type: 3}
+    - {fileID: 102900000, guid: 1283f4208c0ed1e4080ec006add155c3, type: 3}
+    - {fileID: 102900000, guid: 577c6323e42dd5f41af745df1248793f, type: 3}
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
@@ -1243,6 +1243,7 @@ SpriteAtlas:
     - d13258a336ed83a4ea828b896fa60bcb: -1117801492290980863
     - d13258a336ed83a4ea828b896fa60bcb: -1579148726727121426
     - d13258a336ed83a4ea828b896fa60bcb: 2224488150628401339
+    - 7a9e19a345d4d52489c722c5b9fb3d71: 21300000
     - 00aacaa33631d2b4c920de6811003628: -509227976403704434
     - 00aacaa33631d2b4c920de6811003628: 1756190065135868644
     - 00aacaa33631d2b4c920de6811003628: -4053065316670145911
@@ -4311,7 +4312,6 @@ SpriteAtlas:
     - 43ed172d758d8d345897c97010046d3a: 4775553399280574322
     - 43ed172d758d8d345897c97010046d3a: 2934186655757209998
     - 43ed172d758d8d345897c97010046d3a: -2080385730028950667
-    - 737efa2dc4b0c7b45acb1105b94ecd15: 21300000
     - 43d9b13de8bd65d4a84858701ef91c90: 3727492390337193509
     - 43d9b13de8bd65d4a84858701ef91c90: -1534850109183730934
     - 43d9b13de8bd65d4a84858701ef91c90: -4826010235392241171
@@ -6332,6 +6332,7 @@ SpriteAtlas:
   - {fileID: -1117801492290980863, guid: d13258a336ed83a4ea828b896fa60bcb, type: 3}
   - {fileID: -1579148726727121426, guid: d13258a336ed83a4ea828b896fa60bcb, type: 3}
   - {fileID: 2224488150628401339, guid: d13258a336ed83a4ea828b896fa60bcb, type: 3}
+  - {fileID: 21300000, guid: 7a9e19a345d4d52489c722c5b9fb3d71, type: 3}
   - {fileID: -509227976403704434, guid: 00aacaa33631d2b4c920de6811003628, type: 3}
   - {fileID: 1756190065135868644, guid: 00aacaa33631d2b4c920de6811003628, type: 3}
   - {fileID: -4053065316670145911, guid: 00aacaa33631d2b4c920de6811003628, type: 3}
@@ -9400,7 +9401,6 @@ SpriteAtlas:
   - {fileID: 4775553399280574322, guid: 43ed172d758d8d345897c97010046d3a, type: 3}
   - {fileID: 2934186655757209998, guid: 43ed172d758d8d345897c97010046d3a, type: 3}
   - {fileID: -2080385730028950667, guid: 43ed172d758d8d345897c97010046d3a, type: 3}
-  - {fileID: 21300000, guid: 737efa2dc4b0c7b45acb1105b94ecd15, type: 3}
   - {fileID: 3727492390337193509, guid: 43d9b13de8bd65d4a84858701ef91c90, type: 3}
   - {fileID: -1534850109183730934, guid: 43d9b13de8bd65d4a84858701ef91c90, type: 3}
   - {fileID: -4826010235392241171, guid: 43d9b13de8bd65d4a84858701ef91c90, type: 3}
@@ -11420,6 +11420,7 @@ SpriteAtlas:
   - SlimeBlockKingMoveDown_Red_0
   - SlimeBlockKingMoveDown_Red_5
   - SlimeBlockKingMoveDown_Red_4
+  - Aura
   - mud0_0
   - mud0_1
   - mud0_2
@@ -14488,7 +14489,6 @@ SpriteAtlas:
   - mosaic10_0
   - mosaic10_3
   - mosaic10_2
-  - Aura
   - pedestal_sw_3
   - pedestal_sw_2
   - pedestal_sw_1

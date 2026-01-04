@@ -22,7 +22,7 @@ namespace Code.Gameplay.Features.Enchants.Systems
 
 			_weapons = game.GetGroup(GameMatcher
 				.AllOf(
-					GameMatcher.Weapon));
+					GameMatcher.HeroWeapon));
 		}
 
 		public void Execute()

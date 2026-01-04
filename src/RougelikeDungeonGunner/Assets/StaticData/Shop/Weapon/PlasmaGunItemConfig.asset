@@ -16,4 +16,4 @@ MonoBehaviour:
   WeaponTypeId: 7
   ViewPrefab: {fileID: 2577542548309263996, guid: fccb6f1e3e269bf4a9b875979e47a8a3, type: 3}
   Sprite: {fileID: 21300000, guid: a9d9372b640a67a4dae1cdbb59e3b919, type: 3}
-  Price: 3200
+  Price: 1000

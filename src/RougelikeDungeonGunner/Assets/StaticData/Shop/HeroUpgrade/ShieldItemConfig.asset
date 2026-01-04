@@ -15,5 +15,5 @@ MonoBehaviour:
   TypeId: 3
   ViewPrefab: {fileID: 2528533552097802068, guid: 0f52371a3d2f8534e8f5c7dbddaee36e, type: 3}
   Sprite: {fileID: 21300000, guid: 737efa2dc4b0c7b45acb1105b94ecd15, type: 3}
-  Price: 1500
+  Price: 1000
   UpgradeValue: 0

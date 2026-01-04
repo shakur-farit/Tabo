@@ -1,6 +1,6 @@
-﻿using Code.Gameplay.Features.Level;
-using Entitas;
+﻿using Entitas;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace Code.Gameplay.Features.Door.Systems
 {
@@ -25,8 +25,11 @@ namespace Code.Gameplay.Features.Door.Systems
 		public void Execute()
 		{
 			foreach (GameEntity level in _levels)
-			foreach (GameEntity door in _doors.GetEntities(_buffer))
-          door.isOpened = true;
+      foreach (GameEntity door in _doors.GetEntities(_buffer))
+      {
+        door.isOpened = true;
+				Debug.Log(door.isOpened);
+      }
     }
 	}
 }

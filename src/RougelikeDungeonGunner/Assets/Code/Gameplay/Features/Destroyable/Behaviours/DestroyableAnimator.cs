@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Code.Gameplay.Features.Destroyable.Behaviours
 {
@@ -11,10 +10,8 @@ namespace Code.Gameplay.Features.Destroyable.Behaviours
 
     private readonly int _isDestroy = Animator.StringToHash("destroy");
 
-    private void OnDisable()
-    {
+    private void OnDisable() => 
       _animator.Rebind();
-    }
 
     public void PlayDestroy() => 
 	    _animator.SetBool(_isDestroy, true);
@@ -24,10 +21,5 @@ namespace Code.Gameplay.Features.Destroyable.Behaviours
 
     public void SetRuntimeAnimatorController(RuntimeAnimatorController controller) => 
       _animator.runtimeAnimatorController = controller;
-
-    public void ResetAnimator()
-    {
-      
-    }
   }
 }

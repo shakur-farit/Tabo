@@ -26,7 +26,7 @@ MonoBehaviour:
   AttackRaduis: 1
   AttackInterlal: 2
   LootDropChance: 80
-  ScoreValue: 50
+  ScoreValue: 100
   ExcludedLoot: 
   CastSetup:
     CastStartPosiotion: {x: 0, y: 0.6}
