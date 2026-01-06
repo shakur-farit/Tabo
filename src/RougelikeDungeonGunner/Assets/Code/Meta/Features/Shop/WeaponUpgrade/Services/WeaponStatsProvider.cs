@@ -30,13 +30,19 @@ namespace Code.Meta.Features.Shop.WeaponUpgrade.Services
 		public float GetPrechargingTime(WeaponConfig config) =>
 			config.Stats.PrechargingTime - _provider.GetUpgradeBonus(config.TypeId, WeaponUpgradeTypeId.PrechargingTime);
 
-		public int GetMagazineSize(WeaponConfig config) =>
-			config.Stats.MagazineSize + (int)_provider.GetUpgradeBonus(config.TypeId, WeaponUpgradeTypeId.MagazineSize);
+		public int GetMagazineSize(WeaponConfig config)
+    {
+      Debug.Log(
+        $"{config.Stats.MagazineSize} + {(int)_provider.GetUpgradeBonus(config.TypeId, WeaponUpgradeTypeId.MagazineSize)}");
 
-		public int GetMaxAmmoCount(WeaponConfig config) =>
+      return config.Stats.MagazineSize +
+             (int)_provider.GetUpgradeBonus(config.TypeId, WeaponUpgradeTypeId.MagazineSize);
+    }
+
+    public int GetMaxAmmoCount(WeaponConfig config) =>
 			config.Stats.MaxAmmoCount + (int)_provider.GetUpgradeBonus(config.TypeId, WeaponUpgradeTypeId.MaxAmmoCount);
 
-    public int GetCurrentBulletsCount(WeaponConfig config) => 
+    public int GetCurrentBulletsCount(WeaponConfig config) =>
       _ammoCount.GetCurrentAmmoCount(config) + (int)_provider.GetUpgradeBonus(config.TypeId, WeaponUpgradeTypeId.CurrentBullets);
 
     public int GetCurrentMissilesCount(WeaponConfig config) => 

@@ -18,7 +18,7 @@ MonoBehaviour:
     HeroStartPosition: {x: 26.02, y: 0.36}
     DoorSetup:
       TypeId: 1
-      DoorPosition: {x: -38, y: -20}
+      DoorPosition: {x: -38.5, y: -20}
   - ViewPrefab: {fileID: 5137369688049682931, guid: 3f796d55a17672848948c21bb6c277d8, type: 3}
     HeroStartPosition: {x: -42.28, y: -10.69}
     DoorSetup:

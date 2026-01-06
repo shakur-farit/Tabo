@@ -29,16 +29,16 @@ MonoBehaviour:
   FirePosition: {x: 1.03, y: 0.245}
   Stats:
     isInfinityAmmo: 1
-    FireRange: 6
+    FireRange: 8
     Cooldown: 0
     ReloadTime: 0
-    PrechargingTime: 2
+    PrechargingTime: 1.5
     MagazineSize: 0
     MaxAmmoCount: 0
     Pierce: 100
     PelletCount: 1
     Accuracy: 100
-    EnchantSlots: 0
+    EnchantSlots: 1
   CastSetup:
     CastStartPosiotion: {x: 0, y: 0.2}
     ForwardCastDistance: 1

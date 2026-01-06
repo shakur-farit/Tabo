@@ -47,12 +47,7 @@ MonoBehaviour:
   EffectSetups:
   - EffectTypeId: 1
     Value: 10
-  StatusSetups:
-  - StatusTypeId: 2
-    Value: -5
-    StatusDuration: 0
-    Period: 0
-    Radius: 0
+  StatusSetups: []
   AvailableUpgrades:
   - UpgradeType: 8
   - UpgradeType: 2

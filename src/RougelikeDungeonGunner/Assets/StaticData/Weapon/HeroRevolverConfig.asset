@@ -29,7 +29,7 @@ MonoBehaviour:
   FirePosition: {x: 0.95, y: 0.34}
   Stats:
     isInfinityAmmo: 0
-    FireRange: 6
+    FireRange: 8
     Cooldown: 0.9
     ReloadTime: 2
     PrechargingTime: 0
