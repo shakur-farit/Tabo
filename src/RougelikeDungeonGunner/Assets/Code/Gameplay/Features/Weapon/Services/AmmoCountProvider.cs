@@ -1,7 +1,5 @@
-﻿using System;
-using Code.Gameplay.Features.Hero.Services;
-using Code.Gameplay.Features.Weapon.Configs;
-using Code.Gameplay.StaticData;
+﻿using Code.Gameplay.Features.Weapon.Configs;
+using UnityEngine;
 
 namespace Code.Gameplay.Features.Weapon.Services
 {

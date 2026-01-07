@@ -79,9 +79,16 @@ namespace Code.Gameplay.Features.AStar.Services
 								new(-1, -1)
 						};
 
-			foreach (Vector2Int dir in directions)
-				yield return pos + dir;
-		}
+      foreach (Vector2Int dir in directions)
+      {
+        if (dir.x != 0 && dir.y != 0)
+          if (!_validPositions.Contains(pos + new Vector2Int(dir.x, 0)) ||
+              !_validPositions.Contains(pos + new Vector2Int(0, dir.y)))
+            continue;
+
+        yield return pos + dir;
+      }
+    }
 
 		private List<Vector2Int> ReconstructPath(Dictionary<Vector2Int, Vector2Int> cameFrom, Vector2Int current)
 		{
@@ -103,7 +110,10 @@ namespace Code.Gameplay.Features.AStar.Services
 				.Where(pos => _validPositions.Contains(pos))
 				.ToList();
 
-			Vector2Int bestNode = baseNode;
+      if (candidates.Count == 0)
+        return FindClosestValidPosition(baseNode);
+
+      Vector2Int bestNode = baseNode;
 			float bestDistance = float.MaxValue;
 
 			foreach (Vector2Int node in candidates)

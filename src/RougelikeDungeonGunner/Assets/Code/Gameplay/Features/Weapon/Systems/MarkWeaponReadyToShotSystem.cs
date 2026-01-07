@@ -20,9 +20,9 @@ namespace Code.Gameplay.Features.Weapon.Systems
 		{
 			foreach (GameEntity weapon in _weapons.GetEntities(_buffer))
 			{
-				weapon.isShot = false;
+        weapon.isShot = false;
 				weapon.isReadyToShoot = true;
-			}
+      }
 		}
 	}
 }

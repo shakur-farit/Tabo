@@ -1,6 +1,5 @@
-﻿using System.Collections.Generic;
-using Code.Gameplay.Features.Hero;
-using Entitas;
+﻿using Entitas;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Code.Gameplay.Features.Enemy.Systems
@@ -19,17 +18,22 @@ namespace Code.Gameplay.Features.Enemy.Systems
 				.AllOf(
 					GameMatcher.Enemy,
 					GameMatcher.WorldPosition,
-					GameMatcher.TargetDetected,
 					GameMatcher.Path));
-		}
+    }
 
     public void Execute()
 		{
-			foreach (GameEntity enemy in _enemies.GetEntities(_buffer))
+      foreach (GameEntity enemy in _enemies.GetEntities(_buffer))
 			{
-				Vector2 chaserPosition = enemy.WorldPosition;
+        if (enemy.isTargetDetected == false)
+        {
+          enemy.isMoving = false;
+					continue;
+        }
 
-				if (enemy.Path.Count == 0 || enemy.Path == null)
+        Vector2 chaserPosition = enemy.WorldPosition;
+
+				if (enemy.Path == null || enemy.Path.Count == 0)
 				{
 					enemy.isMoving = false;
 					continue;
@@ -39,12 +43,12 @@ namespace Code.Gameplay.Features.Enemy.Systems
 
 				Vector2 direction = (target - chaserPosition).normalized;
 
-				enemy.ReplaceDirection(direction);
+        enemy.ReplaceDirection(direction);
 				enemy.isMoving = true;
 
 				if (Vector2.Distance(chaserPosition, enemy.Path[0]) < MinDistance) 
 					enemy.Path.RemoveAt(0);
-			}
+      }
     }
 	}
 }

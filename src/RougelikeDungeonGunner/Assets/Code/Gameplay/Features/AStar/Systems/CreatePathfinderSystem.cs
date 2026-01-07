@@ -8,16 +8,14 @@ namespace Code.Gameplay.Features.AStar.Systems
 {
 	public class CreatePathfinderSystem : IExecuteSystem
 	{
-		private readonly IPathfinderInitializer _pathfinder;
 		private const float MinDistanceForRepath = 1f;
 
 		private readonly List<GameEntity> _buffer = new(1);
 
 		private readonly IGroup<GameEntity> _dungeons;
 
-		public CreatePathfinderSystem(GameContext game, IPathfinderInitializer pathfinder)
+		public CreatePathfinderSystem(GameContext game)
 		{
-			_pathfinder = pathfinder;
 			_dungeons = game.GetGroup(GameMatcher
 				.AllOf(
 					GameMatcher.Dungeon,

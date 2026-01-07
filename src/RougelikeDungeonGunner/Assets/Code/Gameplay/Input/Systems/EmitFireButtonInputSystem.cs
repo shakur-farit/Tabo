@@ -19,8 +19,8 @@ namespace Code.Gameplay.Input.Systems
 
 		public void Execute()
 		{
-			foreach (InputEntity input in _inputs) 
-				input.isFireButtonPressed = _inputService.GetFireButtonPressed();
-		}
+      foreach (InputEntity input in _inputs) 
+        input.isFireButtonPressed = _inputService.GetFireButtonPressed();
+    }
 	}
 }

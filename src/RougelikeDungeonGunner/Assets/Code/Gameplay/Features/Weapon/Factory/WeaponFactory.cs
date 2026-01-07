@@ -1,6 +1,4 @@
-﻿using System;
-using System.Linq;
-using Code.Common.Entity;
+﻿using Code.Common.Entity;
 using Code.Common.Extensions;
 using Code.Gameplay.Features.Collection;
 using Code.Gameplay.Features.Cooldowns;
@@ -10,6 +8,9 @@ using Code.Gameplay.Features.Weapon.Services;
 using Code.Gameplay.StaticData;
 using Code.Infrastructure.Identifiers;
 using Code.Meta.Features.Shop.WeaponUpgrade.Services;
+using System;
+using System.Linq;
+using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 
 namespace Code.Gameplay.Features.Weapon.Factory
@@ -59,7 +60,7 @@ namespace Code.Gameplay.Features.Weapon.Factory
 
 		private GameEntity CreateHeroWeapon(WeaponTypeId weaponTypeId, Transform parent, Vector2 at, int ownerId)
 		{
-			switch (weaponTypeId)
+      switch (weaponTypeId)
 			{
 				case WeaponTypeId.HeroPistol:
 					return CreateHeroPistol(weaponTypeId, parent, at, ownerId);
@@ -182,8 +183,7 @@ namespace Code.Gameplay.Features.Weapon.Factory
 			WeaponConfig config = _staticDataService.GetWeaponConfig(weaponTypeId);
 			CollisionCastSetup castSetup = config.CastSetup;
 
-
-			return CreateGameEntity.Empty()
+      return CreateGameEntity.Empty()
 					.AddId(_identifier.Next())
 					.AddWeaponTypeId(weaponTypeId)
 					.AddAmmoTypeId(config.AmmoTypeId)

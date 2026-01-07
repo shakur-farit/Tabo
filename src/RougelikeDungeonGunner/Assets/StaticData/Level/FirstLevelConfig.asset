@@ -20,12 +20,6 @@ MonoBehaviour:
   EnemyWaves:
   - EnemiesInWave:
     - EnemyTypeId: 1
-      Amount: 5
-  - EnemiesInWave:
-    - EnemyTypeId: 1
-      Amount: 10
-  - EnemiesInWave:
-    - EnemyTypeId: 1
-      Amount: 15
+      Amount: 1
   BossWave:
     Bosses: []
