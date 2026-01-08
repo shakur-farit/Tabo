@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using Code.Gameplay.Features.Weapon.Services;
 using Entitas;
-using UnityEngine;
 
 namespace Code.Gameplay.Features.Weapon.Systems
 {
@@ -30,10 +29,10 @@ namespace Code.Gameplay.Features.Weapon.Systems
       {
         if (_reloadService.IsReloading)
         {
+          _reloadService.StopReloading();
+
           weapon.isMagazineNotEmpty = false;
           weapon.isReloading = true;
-
-          _reloadService.StopReloading();
         }
       }
     }

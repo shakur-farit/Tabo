@@ -29,9 +29,7 @@ namespace Code.Gameplay.Features.Ammo.Systems
 		{
 			foreach (GameEntity weapon in _weapons.GetEntities(_buffer))
 			{
-				Debug.Log(weapon.CurrentAmmoCountInMagazine);
-
-				weapon.ReplaceCurrentAmmoCountInMagazine(weapon.CurrentAmmoCountInMagazine - 1);
+        weapon.ReplaceCurrentAmmoCountInMagazine(weapon.CurrentAmmoCountInMagazine - 1);
 				weapon.ReplaceCurrentAmmoCount(weapon.CurrentAmmoCount - 1);
 
 				_ammoCountProvider.SetCurrentAmmoCount(weapon.CurrentAmmoCount);

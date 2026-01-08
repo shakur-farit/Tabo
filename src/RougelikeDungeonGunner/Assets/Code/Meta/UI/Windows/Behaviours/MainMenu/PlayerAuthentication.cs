@@ -1,5 +1,4 @@
-﻿using System;
-using Code.Authentication;
+﻿using Code.Authentication;
 using Code.Progress.Provider;
 using Code.Progress.SaveLoad;
 using Cysharp.Threading.Tasks;
@@ -75,7 +74,6 @@ namespace Code.Meta.UI.Windows.Behaviours.MainMenu
 
       return true;
     }
-
     private void UseLastUsedName()
     {
       if(_progressProvider.ProgressData.PlayerData == null)
