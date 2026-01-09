@@ -28,10 +28,4 @@ MonoBehaviour:
     - EnemyTypeId: 1
       Amount: 25
   BossWave:
-    Bosses:
-    - EnemyTypeId: 16
-      Amount: 1
-    - EnemyTypeId: 17
-      Amount: 1
-    - EnemyTypeId: 14
-      Amount: 3
+    Bosses: []
