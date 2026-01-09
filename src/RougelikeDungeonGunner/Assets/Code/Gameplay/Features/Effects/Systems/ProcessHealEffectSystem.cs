@@ -32,7 +32,10 @@ namespace Code.Gameplay.Features.Effects.Systems
 				if(target.isShield)
 					continue;
 
-				if (target.hasMaxHp && target.hasCurrentHp)
+        if (target.hasCurrentHp == false)
+          continue;
+
+        if (target.hasMaxHp && target.hasCurrentHp)
 					target.ReplaceCurrentHp(
 						Mathf.Min(target.CurrentHp + effect.EffectValue, target.MaxHp));
 

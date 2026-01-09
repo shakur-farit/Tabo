@@ -662,7 +662,8 @@ MonoBehaviour:
   - m_GUID: 9049adf556312f34caff451c9bd0b7c3
     m_Address: MudRockWithWeaponEnemyConfig
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - EnemyConfig
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 9108f5aa9c92a0f43802ddba430cd68f
     m_Address: ExplosiveEnchantItemLootConfig

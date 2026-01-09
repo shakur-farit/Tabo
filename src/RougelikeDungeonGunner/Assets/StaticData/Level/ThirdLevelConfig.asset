@@ -20,22 +20,30 @@ MonoBehaviour:
   EnemyWaves:
   - EnemiesInWave:
     - EnemyTypeId: 1
-      Amount: 10
-    - EnemyTypeId: 2
+      Amount: 5
+    - EnemyTypeId: 7
+      Amount: 5
+    - EnemyTypeId: 8
       Amount: 5
   - EnemiesInWave:
     - EnemyTypeId: 1
       Amount: 5
-    - EnemyTypeId: 5
-      Amount: 5
     - EnemyTypeId: 7
+      Amount: 5
+    - EnemyTypeId: 8
+      Amount: 5
+    - EnemyTypeId: 10
       Amount: 5
   - EnemiesInWave:
-    - EnemyTypeId: 8
-      Amount: 3
-    - EnemyTypeId: 11
+    - EnemyTypeId: 13
       Amount: 5
     - EnemyTypeId: 7
       Amount: 5
+    - EnemyTypeId: 8
+      Amount: 5
+    - EnemyTypeId: 10
+      Amount: 5
   BossWave:
-    Bosses: []
+    Bosses:
+    - EnemyTypeId: 18
+      Amount: 1

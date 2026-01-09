@@ -105,6 +105,7 @@ GameObject:
   - component: {fileID: 656389613674188272}
   - component: {fileID: 7292077139812779403}
   - component: {fileID: 6896100319392774527}
+  - component: {fileID: 745791791232588521}
   m_Layer: 5
   m_Name: Circle
   m_TagString: Untagged
@@ -170,6 +171,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &745791791232588521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4043114365982594972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5019608}
+  m_EffectDistance: {x: 10, y: -10}
+  m_UseGraphicAlpha: 1
 --- !u!1 &6941133874322962471
 GameObject:
   m_ObjectHideFlags: 0
@@ -182,6 +198,7 @@ GameObject:
   - component: {fileID: 7193700784311748258}
   - component: {fileID: 2002350339451794315}
   - component: {fileID: 1167127989462089931}
+  - component: {fileID: 7408346435388486725}
   m_Layer: 5
   m_Name: Stick
   m_TagString: Untagged
@@ -281,6 +298,21 @@ MonoBehaviour:
     m_Interactions: 
     m_SingletonActionBindings: []
     m_Flags: 0
+--- !u!114 &7408346435388486725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6941133874322962471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5019608}
+  m_EffectDistance: {x: 10, y: -10}
+  m_UseGraphicAlpha: 1
 --- !u!1 &7473771089545874867
 GameObject:
   m_ObjectHideFlags: 0
@@ -293,6 +325,7 @@ GameObject:
   - component: {fileID: 8196042724803239998}
   - component: {fileID: 739988565893169065}
   - component: {fileID: 1719461855327125543}
+  - component: {fileID: 1350261995866530691}
   m_Layer: 5
   m_Name: PauseButton
   m_TagString: Untagged
@@ -401,6 +434,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1350261995866530691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7473771089545874867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5019608}
+  m_EffectDistance: {x: 10, y: -10}
+  m_UseGraphicAlpha: 1
 --- !u!1 &9168971852372217557
 GameObject:
   m_ObjectHideFlags: 0
@@ -534,8 +582,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.74509805}
-  m_EffectDistance: {x: 15, y: -15}
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5019608}
+  m_EffectDistance: {x: 10, y: -10}
   m_UseGraphicAlpha: 1
 --- !u!1001 &7616449688613508
 PrefabInstance:
@@ -966,6 +1014,10 @@ PrefabInstance:
     - target: {fileID: 3138335730178084915, guid: 057099a1f870a55428c0d182c7b854c7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3454745952525375502, guid: 057099a1f870a55428c0d182c7b854c7, type: 3}
+      propertyPath: m_EffectColor.a
+      value: 0.5019608
       objectReference: {fileID: 0}
     - target: {fileID: 4320237950560415897, guid: 057099a1f870a55428c0d182c7b854c7, type: 3}
       propertyPath: m_AnchoredPosition.y

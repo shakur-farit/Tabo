@@ -18,9 +18,9 @@ MonoBehaviour:
   ViewPrefab: {fileID: 8166552356577901019, guid: 9dc33cf00c86b7440a425de8b022c28a, type: 3}
   AnimatorController: {fileID: 9100000, guid: 34e8d9a39874e5e4dafae7864069e02b, type: 2}
   CurrentHp: 10
-  MaxHp: 20
+  MaxHp: 10
   Damage: 0
-  MovementSpeed: 1
+  MovementSpeed: 2
   TargetAmount: 1
   TargetDetectingRadius: 20
   AttackRaduis: 1

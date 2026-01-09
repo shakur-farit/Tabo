@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using Code.Common.Entity;
 using Code.Common.Extensions;
-using Code.Gameplay.Features.AStar.Services;
 using Entitas;
 
 namespace Code.Gameplay.Features.AStar.Systems

@@ -37,13 +37,8 @@ namespace Code.Meta.UI.Windows.Behaviours.MainMenu
     private void Awake() => 
       _inputField.onValueChanged.AddListener(FilterInput);
 
-    private void Start()
-    {
+    private void Start() => 
       UseLastUsedName();
-
-      _inputField.Select();
-      _inputField.ActivateInputField();
-    }
 
     public async UniTask<bool> IsNameValid()
     {

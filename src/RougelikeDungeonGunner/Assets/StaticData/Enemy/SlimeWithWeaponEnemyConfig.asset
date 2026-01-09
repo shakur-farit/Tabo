@@ -33,9 +33,4 @@ MonoBehaviour:
     ForwardCastDistance: 0
     Width: 1
     Height: 1
-  StatusSetups:
-  - StatusTypeId: 1
-    Value: 3
-    StatusDuration: 5
-    Period: 1
-    Radius: 0
+  StatusSetups: []

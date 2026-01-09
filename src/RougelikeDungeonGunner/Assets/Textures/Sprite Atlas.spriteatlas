@@ -4328,6 +4328,7 @@ SpriteAtlas:
     - f641154d19dead04099654f27b5c06f6: -2389562194016780414
     - f641154d19dead04099654f27b5c06f6: 7796256919886208089
     - f641154d19dead04099654f27b5c06f6: -5981330376809116303
+    - 63cef05d37d9d674fa6185f665c564d3: 21300000
     - e52c275dcfca4b14f9b5ec56a15d5fea: -4939367986304787139
     - e52c275dcfca4b14f9b5ec56a15d5fea: -6171344448884592226
     - e52c275dcfca4b14f9b5ec56a15d5fea: -4364216884300029666
@@ -9417,6 +9418,7 @@ SpriteAtlas:
   - {fileID: -2389562194016780414, guid: f641154d19dead04099654f27b5c06f6, type: 3}
   - {fileID: 7796256919886208089, guid: f641154d19dead04099654f27b5c06f6, type: 3}
   - {fileID: -5981330376809116303, guid: f641154d19dead04099654f27b5c06f6, type: 3}
+  - {fileID: 21300000, guid: 63cef05d37d9d674fa6185f665c564d3, type: 3}
   - {fileID: -4939367986304787139, guid: e52c275dcfca4b14f9b5ec56a15d5fea, type: 3}
   - {fileID: -6171344448884592226, guid: e52c275dcfca4b14f9b5ec56a15d5fea, type: 3}
   - {fileID: -4364216884300029666, guid: e52c275dcfca4b14f9b5ec56a15d5fea, type: 3}
@@ -14505,6 +14507,7 @@ SpriteAtlas:
   - blood_red11_3
   - blood_red11_0
   - blood_red11_1
+  - Free Flat Arrow 1 S Icon
   - black_cobalt04_3
   - black_cobalt04_2
   - black_cobalt04_1

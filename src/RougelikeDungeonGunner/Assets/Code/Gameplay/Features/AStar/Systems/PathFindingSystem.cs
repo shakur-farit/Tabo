@@ -44,30 +44,18 @@ namespace Code.Gameplay.Features.AStar.Systems
       foreach (GameEntity pathfinder in _pathfinders.GetEntities(_pathfindersBuffer))
       foreach (GameEntity chaser in _chasers.GetEntities(_chasersBuffer))
       {
-        if (IsHeroChangePosition(chaser.LastTargetPosition, hero.WorldPosition, pathfinder.MinDistanceForRepath))
+        if (IsHeroChangePosition(chaser.LastTargetPosition, hero.WorldPosition, 
+              pathfinder.MinDistanceForRepath))
         {
-          Vector2Int chaserGridPos = Vector2Int.FloorToInt(chaser.WorldPosition);
-
-          if (!pathfinder.EnemySpawnValidPositions.Contains(chaserGridPos))
-            continue;
-
-          if (!IsHeroChangePosition(
-                chaser.LastTargetPosition,
-                hero.WorldPosition,
-                pathfinder.MinDistanceForRepath))
-            continue;
-
           Vector2Int heroPosition = Vector2Int.FloorToInt(hero.WorldPosition);
+          List<Vector2Int> path = _pathfinding.FindPath(chaser.WorldPosition, heroPosition);
 
-          List<Vector2Int> path = _pathfinding.FindPath(
-            chaser.WorldPosition,
-            heroPosition);
-
-          if (path == null || path.Count < 2)
+          if (path == null) 
             continue;
 
           chaser.ReplacePath(path);
           chaser.ReplaceLastTargetPosition(hero.WorldPosition);
+
           pathfinder.isPathfindingTimerUp = false;
         }
       }

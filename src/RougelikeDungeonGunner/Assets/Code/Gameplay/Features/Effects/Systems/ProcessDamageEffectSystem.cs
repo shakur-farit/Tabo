@@ -31,6 +31,9 @@ namespace Code.Gameplay.Features.Effects.Systems
 				if(target.isShieldApplied)
 					continue;
 
+				if(target.hasCurrentHp == false)
+					continue;
+
 				target.ReplaceCurrentHp(target.CurrentHp - effect.EffectValue);
 
 				if(target.hasDamageTakenAnimator)

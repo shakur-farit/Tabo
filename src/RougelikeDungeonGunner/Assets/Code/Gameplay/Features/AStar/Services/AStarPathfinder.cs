@@ -80,14 +80,7 @@ namespace Code.Gameplay.Features.AStar.Services
 						};
 
       foreach (Vector2Int dir in directions)
-      {
-        if (dir.x != 0 && dir.y != 0)
-          if (!_validPositions.Contains(pos + new Vector2Int(dir.x, 0)) ||
-              !_validPositions.Contains(pos + new Vector2Int(0, dir.y)))
-            continue;
-
         yield return pos + dir;
-      }
     }
 
 		private List<Vector2Int> ReconstructPath(Dictionary<Vector2Int, Vector2Int> cameFrom, Vector2Int current)
