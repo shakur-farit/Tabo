@@ -17,8 +17,8 @@ MonoBehaviour:
   StartAura: 3
   ViewPrefab: {fileID: 8166552356577901019, guid: 067f0ecf63625cd43b3c32842994657e, type: 3}
   AnimatorController: {fileID: 9100000, guid: 248a7cd77ed020c4cb7119d96d4e2018, type: 2}
-  CurrentHp: 50
-  MaxHp: 50
+  CurrentHp: 100
+  MaxHp: 100
   Damage: 1
   MovementSpeed: 2
   TargetAmount: 1

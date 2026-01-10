@@ -17,8 +17,8 @@ namespace Code.Gameplay.Features.Enemy.Configs
 		public AuraTypeId StartAura;
 		public EntityBehaviour ViewPrefab;
 		public RuntimeAnimatorController AnimatorController;
-		[Range(1, 100)] public int CurrentHp;
-		[Range(1, 100)] public int MaxHp;
+		[Range(1, 500)] public int CurrentHp;
+		[Range(1, 500)] public int MaxHp;
 		[Range(0, 100)] public int Damage;
 		[Range(0, 100)] public int MovementSpeed;
 		[Range(0, 100)] public int TargetAmount;

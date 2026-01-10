@@ -25,8 +25,8 @@ MonoBehaviour:
     MovementSpeed: 8
     Branches: 0
   ViewPrefab: {fileID: 3867516666948492017, guid: 69172fbde18e101418b3b1f7089f9a29, type: 3}
-  Sprite: {fileID: 21300000, guid: 63ad0606bd6d665498cfcf954024039a, type: 3}
-  FirePosition: {x: 1.05, y: 0.3}
+  Sprite: {fileID: 21300000, guid: 275db547fedda054295b08f3897e1a97, type: 3}
+  FirePosition: {x: 0.5, y: 1.7}
   Stats:
     isInfinityAmmo: 1
     FireRange: 12

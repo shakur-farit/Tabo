@@ -16,32 +16,32 @@ MonoBehaviour:
   - ViewPrefab: {fileID: 8254426112849521288, guid: 8ce004de107d0ba4eba3d92948a32f93, type: 3}
     Count: 1
   - ViewPrefab: {fileID: 8166552356577901019, guid: 9dc33cf00c86b7440a425de8b022c28a, type: 3}
-    Count: 1
+    Count: 50
   - ViewPrefab: {fileID: 2243231872987813085, guid: a5967ca81ad889847ae902288d60c7a5, type: 3}
-    Count: 20
+    Count: 100
   - ViewPrefab: {fileID: 2243231872987813085, guid: 91a093a87f9e3e34f88473127302053e, type: 3}
-    Count: 5
-  - ViewPrefab: {fileID: 4494103209788103135, guid: c97df207954ad734eaf0eab1d27c9f42, type: 3}
     Count: 10
+  - ViewPrefab: {fileID: 4494103209788103135, guid: c97df207954ad734eaf0eab1d27c9f42, type: 3}
+    Count: 50
   - ViewPrefab: {fileID: 3867516666948492017, guid: 69172fbde18e101418b3b1f7089f9a29, type: 3}
     Count: 20
   - ViewPrefab: {fileID: 1539839927614816462, guid: a345a91caf7c34c4585c9d7610cba74d, type: 3}
-    Count: 10
+    Count: 50
   - ViewPrefab: {fileID: 5787494655573491850, guid: f2586d5cefc64a54eaeba48f18dbac65, type: 3}
     Count: 30
   - ViewPrefab: {fileID: 6244926618751341932, guid: b9750a9e14a15914b81df14bc2d48114, type: 3}
-    Count: 5
+    Count: 30
   - ViewPrefab: {fileID: 6244926618751341932, guid: d3229ab5d5e731c4cb5036e8f10a6e53, type: 3}
-    Count: 5
+    Count: 30
   - ViewPrefab: {fileID: 6244926618751341932, guid: 891378bf5d8e9764ca809aae1ae52ab1, type: 3}
-    Count: 5
+    Count: 30
   - ViewPrefab: {fileID: 6244926618751341932, guid: 0d4fcbd2e2095014b88ec349debc6f38, type: 3}
-    Count: 5
+    Count: 30
   - ViewPrefab: {fileID: 6244926618751341932, guid: f769209ab00fb414dbf29fe0e41a13c3, type: 3}
-    Count: 5
+    Count: 30
   - ViewPrefab: {fileID: 6244926618751341932, guid: 01b730a4342ada743b9ee8b55e1d120e, type: 3}
-    Count: 5
+    Count: 30
   - ViewPrefab: {fileID: 6244926618751341932, guid: e113f2f85233e224e8513cc22e7aa532, type: 3}
-    Count: 5
+    Count: 30
   - ViewPrefab: {fileID: 6244926618751341932, guid: cc3396cc27aa0444aaaf6b2225429e7e, type: 3}
-    Count: 5
+    Count: 30

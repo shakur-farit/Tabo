@@ -101,7 +101,9 @@ namespace Code.Gameplay.Features.Weapon.Factory
 					return EnemyStarSigil(weaponTypeId, parent, at, ownerId);
         case WeaponTypeId.BossPistol:
           return CreateBossPistol(weaponTypeId, parent, at, ownerId);
-      }
+				case WeaponTypeId.BossMachinegun:
+					return CreateBossMachinegun(weaponTypeId, parent, at, ownerId);
+			}
 
 			throw new Exception($"Weapon for {weaponTypeId} type was not found");
 		}
@@ -178,7 +180,12 @@ namespace Code.Gameplay.Features.Weapon.Factory
       CreateWeaponEntity(weaponTypeId, parent, at, ownerId)
         .With(x => x.isBossPistol = true);
 
-    private GameEntity CreateWeaponEntity(WeaponTypeId weaponTypeId, Transform parent, Vector2 at, int ownerId)
+    private GameEntity CreateBossMachinegun(WeaponTypeId weaponTypeId, Transform parent, Vector2 at,
+	    int ownerId) =>
+	    CreateWeaponEntity(weaponTypeId, parent, at, ownerId)
+		    .With(x => x.isBossMachinegun = true);
+
+		private GameEntity CreateWeaponEntity(WeaponTypeId weaponTypeId, Transform parent, Vector2 at, int ownerId)
 		{
 			WeaponConfig config = _staticDataService.GetWeaponConfig(weaponTypeId);
 			CollisionCastSetup castSetup = config.CastSetup;
