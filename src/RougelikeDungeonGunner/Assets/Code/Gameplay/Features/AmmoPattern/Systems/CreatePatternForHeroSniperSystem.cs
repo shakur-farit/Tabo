@@ -57,7 +57,7 @@ namespace Code.Gameplay.Features.AmmoPattern.Systems
 
 				if (weapon.hasShotSoundEffectTypeId)
 					_soundEffectFactory.CreateSoundEffect(weapon.ShotSoundEffectTypeId);
-			}
+      }
 		}
 
 		private Vector3 GetDirection(GameEntity weapon) =>

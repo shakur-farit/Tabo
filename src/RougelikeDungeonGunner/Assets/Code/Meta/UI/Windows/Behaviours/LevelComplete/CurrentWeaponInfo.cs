@@ -39,7 +39,10 @@ namespace Code.Meta.UI.Windows.Behaviours.LevelComplete
     private void OpenCurrentWeaponInfo() =>
       _windowService.Open(WindowId.CurrentWeaponInfoWindow);
 
-    private void UpdateIcon() => 
+    private void UpdateIcon()
+    {
       _icon.sprite = _weaponInfo.GetWeaponConfig().Sprite;
+      Debug.Log("changed");
+    }
   }
 }

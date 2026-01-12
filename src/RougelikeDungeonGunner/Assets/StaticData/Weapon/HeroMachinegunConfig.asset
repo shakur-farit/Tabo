@@ -33,8 +33,8 @@ MonoBehaviour:
     Cooldown: 0.5
     ReloadTime: 2
     PrechargingTime: 0
-    MagazineSize: 30
-    MaxAmmoCount: 180
+    MagazineSize: 15
+    MaxAmmoCount: 15
     Pierce: 1
     PelletCount: 1
     Accuracy: 75
@@ -46,7 +46,7 @@ MonoBehaviour:
     Height: 0
   EffectSetups:
   - EffectTypeId: 1
-    Value: 1
+    Value: 2
   StatusSetups: []
   AvailableUpgrades:
   - UpgradeType: 8

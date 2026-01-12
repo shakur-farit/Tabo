@@ -40,7 +40,7 @@ namespace Code.Gameplay.Features.AmmoPattern.Systems
 					GameMatcher.WeaponNotEmpty,
 					GameMatcher.Shooting,
 					GameMatcher.ReadyToShoot));
-		}
+    }
 
 		public void Execute()
 		{

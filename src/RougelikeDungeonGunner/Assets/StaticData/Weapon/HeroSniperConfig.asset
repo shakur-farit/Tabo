@@ -34,7 +34,7 @@ MonoBehaviour:
     ReloadTime: 3
     PrechargingTime: 0
     MagazineSize: 5
-    MaxAmmoCount: 45
+    MaxAmmoCount: 10
     Pierce: 3
     PelletCount: 1
     Accuracy: 100
@@ -46,7 +46,7 @@ MonoBehaviour:
     Height: 0
   EffectSetups:
   - EffectTypeId: 1
-    Value: 10
+    Value: 5
   StatusSetups: []
   AvailableUpgrades:
   - UpgradeType: 8

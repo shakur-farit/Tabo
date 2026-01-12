@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Code.Gameplay.Features.Weapon.Services;
 using Entitas;
+using UnityEngine;
 
 namespace Code.Gameplay.Features.Weapon.Systems
 {
@@ -27,13 +28,14 @@ namespace Code.Gameplay.Features.Weapon.Systems
     {
       foreach (GameEntity weapon in _weapons.GetEntities(_buffer))
       {
-        if (_reloadService.IsReloading)
-        {
-          _reloadService.StopReloading();
+        if (weapon.CurrentAmmoCount <= 0)
+          continue;
 
-          weapon.isMagazineNotEmpty = false;
-          weapon.isReloading = true;
-        }
+        if (_reloadService.IsReloading == false)
+          continue;
+
+        weapon.isMagazineNotEmpty = false;
+        weapon.isReloading = true;
       }
     }
   }

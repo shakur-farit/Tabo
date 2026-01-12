@@ -34,7 +34,7 @@ namespace Code.Gameplay.Features.Ammo
 
 			Add(systems.Create<ApplyEnchantVisualsToAmmoReactiveSystem>());
 
-			Add(systems.Create<CalculateCurrentAmmoCountSystem>());
+			Add(systems.Create<CalculateCurrentAmmoCountAfterShotSystem>());
 
 			Add(systems.Create<MarkAmmoProcessedOnWeaponFireRangeSystem>());
 			Add(systems.Create<MarkAmmoProcessedOnTargetLimitExceededSystem>());

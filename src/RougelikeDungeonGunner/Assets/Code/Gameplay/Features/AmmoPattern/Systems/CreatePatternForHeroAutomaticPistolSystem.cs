@@ -38,8 +38,8 @@ namespace Code.Gameplay.Features.AmmoPattern.Systems
 					GameMatcher.FirePositionTransform,
 					GameMatcher.WorldPosition,
 					GameMatcher.MagazineNotEmpty,
-					GameMatcher.CurrentAmmoCountInMagazine,
-					GameMatcher.Shooting,
+					GameMatcher.WeaponNotEmpty,
+          GameMatcher.Shooting,
 					GameMatcher.ReadyToShoot));
 		}
 

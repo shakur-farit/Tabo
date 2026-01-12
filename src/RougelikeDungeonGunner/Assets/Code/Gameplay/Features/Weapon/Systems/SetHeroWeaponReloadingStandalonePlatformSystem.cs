@@ -32,6 +32,9 @@ namespace Code.Gameplay.Features.Weapon.Systems
       foreach (GameEntity weapon in _weapons.GetEntities(_buffer))
       foreach (InputEntity input in _inputs.GetEntities(_inputsBuffer))
       {
+        if (weapon.CurrentAmmoCount <= 0)
+          continue;
+
         weapon.isMagazineNotEmpty = false;
         weapon.isReloading = true;
 

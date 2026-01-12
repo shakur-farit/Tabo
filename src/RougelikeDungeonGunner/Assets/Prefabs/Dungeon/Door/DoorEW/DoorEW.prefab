@@ -311,7 +311,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EntityView: {fileID: 6282441095508054087}
-  _doorAnimator: {fileID: 0}
+  _doorAnimator: {fileID: 8831952838978661447}
 --- !u!114 &8831952838978661447
 MonoBehaviour:
   m_ObjectHideFlags: 0
