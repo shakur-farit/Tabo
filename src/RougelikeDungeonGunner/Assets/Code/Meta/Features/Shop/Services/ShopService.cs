@@ -20,10 +20,14 @@ namespace Code.Meta.Features.Shop.Services
     public int HeroUpgradePrice { get; private set; }
     public float HeroUpgradeValue { get; private set; }
 
-    public void SetWeaponSprite(Sprite sprite) => 
-			WeaponSprite = sprite;
+    public void SetWeaponSprite(Sprite sprite)
+    {
+	    WeaponSprite = sprite;
 
-		public void SetWeaponPrice(int price) => 
+			Debug.Log(WeaponSprite);
+    }
+
+    public void SetWeaponPrice(int price) => 
 			WeaponPrice = price;
 
 		public void SetWeaponTypeId(WeaponTypeId weaponToBuy) => 
@@ -34,6 +38,8 @@ namespace Code.Meta.Features.Shop.Services
 			WeaponTypeId = WeaponTypeId.Unknown;
 			WeaponPrice = 0;
 			WeaponSprite = null;
+
+			Debug.Log(WeaponSprite);
 		}
 
 		public void SetEnchantSprite(Sprite sprite) =>

@@ -41,8 +41,8 @@ namespace Code.Meta.UI.Windows.Behaviours.LevelComplete
 
     private void UpdateIcon()
     {
+
       _icon.sprite = _weaponInfo.GetWeaponConfig().Sprite;
-      Debug.Log("changed");
     }
   }
 }
