@@ -34,8 +34,6 @@ namespace Code.Gameplay.Features.Ammo.Systems
 
 				_ammoCountProvider.SetCurrentAmmoCount(weapon.CurrentAmmoCount);
 
-				Debug.Log(weapon.CurrentAmmoCount);
-
         if (weapon.CurrentAmmoCount <= 0)
         {
           weapon.isWeaponNotEmpty = false;

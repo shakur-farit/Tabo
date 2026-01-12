@@ -19,6 +19,6 @@ namespace Code.Gameplay.Features.Hero.Services
 			_currentWeaponTypeId = typeId;
 
 			WeaponChanged?.Invoke();
-		}
-	}
+    }
+  }
 }

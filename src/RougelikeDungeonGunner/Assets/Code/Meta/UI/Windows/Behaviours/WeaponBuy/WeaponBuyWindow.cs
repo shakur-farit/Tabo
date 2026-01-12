@@ -37,12 +37,9 @@ namespace Code.Meta.UI.Windows.Behaviours.WeaponBuy
 
 		private void TryBuyWeapon()
 		{
-			if (_buyer.TryBuyWeapon())
-			{
-				_windowService.Close(WindowId.WeaponBuyWindow);
-				Debug.Log("Buy");
-			}
-			else
+      if (_buyer.TryBuyWeapon())
+        _windowService.Close(WindowId.WeaponBuyWindow);
+      else
         _dialogueService.OpenNotEnoughCoinsDialogue();
     }
 

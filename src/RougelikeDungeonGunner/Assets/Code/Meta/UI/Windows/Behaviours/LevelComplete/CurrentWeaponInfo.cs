@@ -33,16 +33,16 @@ namespace Code.Meta.UI.Windows.Behaviours.LevelComplete
       _weaponProvider.WeaponChanged += UpdateIcon;
     }
 
+    private void OnDisable() => 
+      _weaponProvider.WeaponChanged -= UpdateIcon;
+
     private void Start() => 
       UpdateIcon();
 
     private void OpenCurrentWeaponInfo() =>
       _windowService.Open(WindowId.CurrentWeaponInfoWindow);
 
-    private void UpdateIcon()
-    {
-
+    private void UpdateIcon() => 
       _icon.sprite = _weaponInfo.GetWeaponConfig().Sprite;
-    }
   }
 }
