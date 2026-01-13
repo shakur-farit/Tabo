@@ -34,7 +34,7 @@ MonoBehaviour:
     ReloadTime: 3
     PrechargingTime: 0
     MagazineSize: 5
-    MaxAmmoCount: 10
+    MaxAmmoCount: 30
     Pierce: 3
     PelletCount: 1
     Accuracy: 100

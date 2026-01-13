@@ -37,7 +37,8 @@ namespace Code.Meta.Features.Shop.WeaponUpgrade.Services
 			config.Stats.MaxAmmoCount + (int)_provider.GetUpgradeBonus(config.TypeId, WeaponUpgradeTypeId.MaxAmmoCount);
 
     public int GetCurrentBulletsCount(WeaponConfig config) =>
-      _ammoCount.GetCurrentAmmoCount(config) + (int)_provider.GetUpgradeBonus(config.TypeId, WeaponUpgradeTypeId.CurrentBullets);
+	    _ammoCount.GetCurrentAmmoCount(config) +
+	    (int)_provider.GetUpgradeBonus(config.TypeId, WeaponUpgradeTypeId.CurrentBullets);
 
     public int GetCurrentMissilesCount(WeaponConfig config) => 
       _ammoCount.GetCurrentAmmoCount(config) + (int)_provider.GetUpgradeBonus(config.TypeId, WeaponUpgradeTypeId.CurrentMissiles);

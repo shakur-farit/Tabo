@@ -20,9 +20,12 @@ namespace Code.Gameplay.Features.Weapon.Services
     }
 
     public void SetCurrentAmmoCount(int currentAmmoCount) => 
-      _currentAmmoCount = currentAmmoCount;
+	    _currentAmmoCount = currentAmmoCount;
 
-    public void Clean() =>
-      _currentAmmoCount = 0;
-  }
+    public void Clean()
+		{
+			_currentAmmoCount = 0;
+			_weaponTypeId = WeaponTypeId.Unknown;
+		}
+	}
 }

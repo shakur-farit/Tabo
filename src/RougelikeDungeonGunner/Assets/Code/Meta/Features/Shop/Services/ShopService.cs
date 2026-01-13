@@ -34,8 +34,6 @@ namespace Code.Meta.Features.Shop.Services
 			WeaponTypeId = WeaponTypeId.Unknown;
 			WeaponPrice = 0;
 			WeaponSprite = null;
-
-			Debug.Log(WeaponSprite);
 		}
 
 		public void SetEnchantSprite(Sprite sprite) =>

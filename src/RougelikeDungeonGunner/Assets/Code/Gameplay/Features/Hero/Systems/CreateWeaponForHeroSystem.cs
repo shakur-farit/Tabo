@@ -10,14 +10,14 @@ namespace Code.Gameplay.Features.Hero.Systems
 	public class CreateWeaponForHeroSystem : IExecuteSystem
 	{
 		private readonly IWeaponFactory _weaponFactory;
-    private readonly IGroup<GameEntity> _heroes;
+		private readonly IGroup<GameEntity> _heroes;
 		private readonly List<GameEntity> _buffer = new(32);
 
 		public CreateWeaponForHeroSystem(GameContext game, IWeaponFactory weaponFactory)
 		{
 			_weaponFactory = weaponFactory;
 
-      _heroes = game.GetGroup(GameMatcher
+			_heroes = game.GetGroup(GameMatcher
 				.AllOf(
 					GameMatcher.Hero,
 					GameMatcher.ParentTransform,
@@ -28,12 +28,12 @@ namespace Code.Gameplay.Features.Hero.Systems
 		{
 			foreach (GameEntity hero in _heroes.GetEntities(_buffer))
 			{
-        _weaponFactory.CreateWeapon(hero.CurrentWeaponTypeId, hero.ParentTransform, 
+				_weaponFactory.CreateWeapon(hero.CurrentWeaponTypeId, hero.ParentTransform,
 					Vector2.zero, hero.Id, WeaponOwnerTypeId.Hero);
 
 				hero.isUnweaponed = false;
-        hero.isWeaponed = true;
-      }
+				hero.isWeaponed = true;
+			}
 		}
 	}
 }
