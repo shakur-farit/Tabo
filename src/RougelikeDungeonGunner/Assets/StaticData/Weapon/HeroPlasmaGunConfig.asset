@@ -38,7 +38,7 @@ MonoBehaviour:
     Pierce: 100
     PelletCount: 1
     Accuracy: 100
-    EnchantSlots: 1
+    EnchantSlots: 0
   CastSetup:
     CastStartPosiotion: {x: 0, y: 0.2}
     ForwardCastDistance: 1

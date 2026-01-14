@@ -1,11 +1,9 @@
 ﻿using Code.Gameplay.Features.Weapon.Configs;
-using UnityEngine;
 
 namespace Code.Gameplay.Features.Weapon.Services
 {
   public class AmmoCountProvider : IAmmoCountProvider
   {
-
     private WeaponTypeId _weaponTypeId = WeaponTypeId.Unknown;
     private int _currentAmmoCount;
 
@@ -16,7 +14,9 @@ namespace Code.Gameplay.Features.Weapon.Services
 
       _weaponTypeId = config.TypeId;
 
-      return config.Stats.MaxAmmoCount;
+      _currentAmmoCount = config.Stats.MaxAmmoCount;
+
+      return _currentAmmoCount;
     }
 
     public void SetCurrentAmmoCount(int currentAmmoCount) => 

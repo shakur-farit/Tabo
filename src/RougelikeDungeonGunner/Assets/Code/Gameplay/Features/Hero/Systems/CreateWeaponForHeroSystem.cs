@@ -28,8 +28,11 @@ namespace Code.Gameplay.Features.Hero.Systems
 		{
 			foreach (GameEntity hero in _heroes.GetEntities(_buffer))
 			{
-				_weaponFactory.CreateWeapon(hero.CurrentWeaponTypeId, hero.ParentTransform,
+				var wp = _weaponFactory.CreateWeapon(hero.CurrentWeaponTypeId, hero.ParentTransform,
 					Vector2.zero, hero.Id, WeaponOwnerTypeId.Hero);
+
+				if(wp.hasCurrentAmmoCount)
+					Debug.Log(wp.CurrentAmmoCount);
 
 				hero.isUnweaponed = false;
 				hero.isWeaponed = true;

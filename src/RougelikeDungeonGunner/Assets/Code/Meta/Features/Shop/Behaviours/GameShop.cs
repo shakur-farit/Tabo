@@ -1,4 +1,5 @@
 ﻿using Code.Gameplay.Features.Hero.Services;
+using Code.Gameplay.Features.Weapon.Services;
 using Code.Gameplay.StaticData;
 using Code.Meta.UI.Windows;
 using Code.Meta.UI.Windows.Services;
@@ -21,18 +22,21 @@ namespace Code.Meta.Features.Shop.Behaviours
     private IStaticDataService _staticDataService;
     private ICurrentHeroTypeIdProvider _heroType;
     private ICurrentHeroWeaponProvider _currentWeapon;
+    private ICurrentWeaponInfoProvider _weaponInfo;
 
     [Inject]
     public void Constructor(
 	    IWindowService windowService, 
 	    IStaticDataService staticDataService, 
 	    ICurrentHeroWeaponProvider currentWeapon, 
-	    ICurrentHeroTypeIdProvider heroType)
+	    ICurrentHeroTypeIdProvider heroType,
+      ICurrentWeaponInfoProvider weaponInfo)
     {
 	    _windowService = windowService;
 	    _staticDataService = staticDataService;
 	    _heroType = heroType;
 	    _currentWeapon = currentWeapon;
+      _weaponInfo = weaponInfo;
     }
 
     private void OnEnable()
@@ -41,21 +45,21 @@ namespace Code.Meta.Features.Shop.Behaviours
       _weaponBuyButton.onClick.AddListener(OpenWeaponShop);
       _enchantBuyButton.onClick.AddListener(OpenEnchantShop);
       _heroUpgradeBuyButton.onClick.AddListener(OpenHeroUpgradeShop);
+
+      _currentWeapon.WeaponChanged += UpdateWeaponUpgradeShopIcon;
     }
+
+    private void OnDisable() =>
+      _currentWeapon.WeaponChanged -= UpdateWeaponUpgradeShopIcon;
 
     private void Start()
     {
-	    _weaponUpgradeShopIcon.sprite =
-		    _staticDataService.GetWeaponConfig(_currentWeapon.CurrentWeaponTypeId)
-			    .Sprite;
+      UpdateWeaponUpgradeShopIcon();
 
-	    _heroUpgradeShopIcon.sprite =
-		    _staticDataService.GetHeroConfig(_heroType.CurrentHeroTypeId)
-			    .ShopIcon;
+      UpdateHeroUpgradeShopIcon();
+    }
 
-		}
-
-		public void OpenWeaponUpgradeShop() =>
+    public void OpenWeaponUpgradeShop() =>
       _windowService.Open(WindowId.WeaponUpgradeWindow);
 
     public void OpenWeaponShop() =>
@@ -66,5 +70,13 @@ namespace Code.Meta.Features.Shop.Behaviours
 
     public void OpenHeroUpgradeShop() =>
       _windowService.Open(WindowId.HeroUpgradeShopWindow);
+
+    private void UpdateWeaponUpgradeShopIcon() => 
+      _weaponUpgradeShopIcon.sprite = _weaponInfo.GetWeaponConfig().Sprite;
+
+    private void UpdateHeroUpgradeShopIcon() =>
+      _heroUpgradeShopIcon.sprite =
+        _staticDataService.GetHeroConfig(_heroType.CurrentHeroTypeId)
+          .ShopIcon;
   }
 }
