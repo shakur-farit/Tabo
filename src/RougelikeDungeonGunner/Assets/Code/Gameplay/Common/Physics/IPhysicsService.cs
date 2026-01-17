@@ -13,5 +13,6 @@ namespace Code.Gameplay.Common.Physics
     int OverlapCircle(Vector3 worldPos, float radius, Collider2D[] hits, int layerMask);
     int CircleCastNonAlloc(Vector3 position, float radius, int layerMask, GameEntity[] hitBuffer);
     GameEntity BoxCast(Vector2 origin, Vector2 size, Vector2 direction, float distance, int layerMask);
+    GameEntity RaycastSegment(Vector2 from, Vector2 to, int layerMask);
   }
 }

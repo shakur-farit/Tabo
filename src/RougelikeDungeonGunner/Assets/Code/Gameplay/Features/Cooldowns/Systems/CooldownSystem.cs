@@ -6,7 +6,7 @@ namespace Code.Gameplay.Features.Cooldowns.Systems
 {
 	public class CooldownSystem : IExecuteSystem
 	{
-		private readonly List<GameEntity> _buffer = new(32);
+		private readonly List<GameEntity> _buffer = new(256);
 
 		private readonly ITimeService _time;
 		private readonly IGroup<GameEntity> _cooldownables;

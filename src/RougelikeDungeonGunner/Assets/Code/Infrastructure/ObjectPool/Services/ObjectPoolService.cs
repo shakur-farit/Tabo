@@ -9,11 +9,13 @@ namespace Code.Infrastructure.ObjectPool.Services
   {
     private readonly Dictionary<EntityBehaviour, Queue<EntityBehaviour>> _pools = new();
     private readonly IInstantiator _instantiator;
+    private readonly ISpawnActivationQueue _spawnActivationQueue;
     private readonly Transform _rootContainer;
 
-    public ObjectPoolService(IInstantiator instantiator)
+    public ObjectPoolService(IInstantiator instantiator, ISpawnActivationQueue spawnActivationQueue)
     {
       _instantiator = instantiator;
+      _spawnActivationQueue = spawnActivationQueue;
 
       GameObject rootGameObject = new GameObject("ObjectPool");
       Object.DontDestroyOnLoad(rootGameObject);
@@ -34,15 +36,19 @@ namespace Code.Infrastructure.ObjectPool.Services
 
     public EntityBehaviour Get(EntityBehaviour prefab, Vector3 at)
     {
-      if (_pools.TryGetValue(prefab, out Queue<EntityBehaviour> queue) && queue.Count > 0)
-      {
-        EntityBehaviour instance = queue.Dequeue();
-        instance.gameObject.SetActive(true);
-        instance.transform.position = at;
-        return instance;
-      }
+      EntityBehaviour instance;
 
-      return CreateInstance(prefab, at);
+      if (_pools.TryGetValue(prefab, out Queue<EntityBehaviour> queue) && queue.Count > 0)
+        instance = queue.Dequeue();
+      else
+        instance = CreateInstance(prefab, at);
+
+      instance.transform.position = at;
+      instance.gameObject.SetActive(true);
+
+      _spawnActivationQueue.Enqueue(instance);
+
+      return instance;
     }
 
     public void Return(EntityBehaviour prefab, EntityBehaviour instance)

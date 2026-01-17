@@ -75,6 +75,7 @@ using Code.Progress.SaveLoad;
 using Code.Sounds.Music.Services;
 using Code.Sounds.Services;
 using Code.Sounds.SoundEffects.Factory;
+using UnityEngine;
 using Zenject;
 
 namespace Code.Infrastructure.Installers
@@ -258,6 +259,7 @@ namespace Code.Infrastructure.Installers
 			Container.Bind<IQuitGameService>().To<QuitGameService>().AsSingle();
 			Container.Bind<IObjectPoolService>().To<ObjectPoolService>().AsSingle();
 			Container.Bind<IObjectPoolWarmUpper>().To<ObjectPoolWarmUpper>().AsSingle();
+			Container.BindInterfacesAndSelfTo<SpawnActivationQueue>().AsSingle();
 		}
 
 		private void BindAssetManagementServices()
@@ -290,7 +292,10 @@ namespace Code.Infrastructure.Installers
     public void BindGamePlatformServices() =>
       Container.Bind<IGamePlatformProvider>().To<GamePlatformProvider>().AsSingle();
 
-    public void Initialize() => 
-			Container.Resolve<IGameStateMachine>().Enter<BootstrapState>();
+    public void Initialize()
+    {
+      Container.Resolve<IGameStateMachine>().Enter<BootstrapState>();
+      Physics2D.simulationMode = SimulationMode2D.Script;
+    }
   }
 }

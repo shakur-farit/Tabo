@@ -2,13 +2,12 @@
 using Code.Common.Extensions;
 using Code.Gameplay.Features.Ammo.Factory;
 using Entitas;
-using UnityEngine;
 
 namespace Code.Gameplay.Features.Ammo.Systems
 {
 	public class CreateAmmoFromSinglePatternSystem : IExecuteSystem
 	{
-		private readonly List<GameEntity> _buffer = new(64);
+		private readonly List<GameEntity> _buffer = new(256);
 		private readonly IAmmoFactory _ammoFactory;
 		private readonly IGroup<GameEntity> _patterns;
 
@@ -32,7 +31,7 @@ namespace Code.Gameplay.Features.Ammo.Systems
 		{
 			foreach (GameEntity pattern in _patterns.GetEntities(_buffer))
 			{
-				GameEntity ammo = _ammoFactory.CreateAmmo(pattern.AmmoTypeId, pattern.WorldPosition);
+        GameEntity ammo = _ammoFactory.CreateAmmo(pattern.AmmoTypeId, pattern.WorldPosition);
 				ammo
 					.AddProducerId(pattern.ProducerId)
 					.AddAmmoPatternId(pattern.Id)

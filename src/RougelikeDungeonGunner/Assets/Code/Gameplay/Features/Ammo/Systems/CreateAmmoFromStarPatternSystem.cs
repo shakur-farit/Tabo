@@ -8,7 +8,7 @@ namespace Code.Gameplay.Features.Ammo.Systems
 {
 	public class CreateAmmoFromStarPatternSystem : IExecuteSystem
 	{
-		private readonly List<GameEntity> _buffer = new(64);
+		private readonly List<GameEntity> _buffer = new(256);
 		private readonly IAmmoFactory _ammoFactory;
 		private readonly IGroup<GameEntity> _patterns;
 
@@ -35,7 +35,7 @@ namespace Code.Gameplay.Features.Ammo.Systems
 		{
 			foreach (GameEntity pattern in _patterns.GetEntities(_buffer))
 			{
-				for (int b = 0; b < pattern.PatternBranches; b++)
+        for (int b = 0; b < pattern.PatternBranches; b++)
 				{
 					float baseAngle = (360f / pattern.PatternBranches) * b;
 					Vector3 branchDir = Quaternion.Euler(0, 0, baseAngle) * Vector3.right;

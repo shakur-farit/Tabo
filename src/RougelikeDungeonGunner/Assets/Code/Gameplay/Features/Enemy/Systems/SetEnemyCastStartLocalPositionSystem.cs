@@ -33,24 +33,4 @@ namespace Code.Gameplay.Features.Enemy.Systems
 
 		}
 	}
-
-	public class ShowTargetSpriteSystem : IExecuteSystem
-	{
-		private readonly IGroup<GameEntity> _enemies;
-
-		public ShowTargetSpriteSystem(GameContext game)
-		{
-			_enemies = game.GetGroup(GameMatcher
-				.AllOf(
-					GameMatcher.Enemy));
-		}
-
-		public void Execute()
-		{
-			foreach (GameEntity enemy in _enemies)
-			{
-				
-			}
-		}
-	}
 }

@@ -1,4 +1,5 @@
-﻿using Code.Common.Destruct;
+﻿using System;
+using Code.Common.Destruct;
 using Code.Gameplay.Features.Ammo;
 using Code.Gameplay.Features.AmmoPattern;
 using Code.Gameplay.Features.AStar;
@@ -29,6 +30,7 @@ using Code.Meta.Features.Hud;
 using Code.Meta.UI.GameLoading;
 using Code.Sounds.Music;
 using Code.Sounds.SoundEffects;
+using UnityEngine;
 
 namespace Code.Gameplay
 {
@@ -79,6 +81,6 @@ namespace Code.Gameplay
 
 			Add(systems.Create<ProcessGameDestructedFeature>());
 			Add(systems.Create<ProcessInputDestructedFeature>());
-		}
+    }
 	}
 }

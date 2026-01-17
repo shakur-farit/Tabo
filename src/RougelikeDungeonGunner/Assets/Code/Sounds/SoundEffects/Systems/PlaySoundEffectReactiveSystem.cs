@@ -13,10 +13,11 @@ namespace Code.Sounds.SoundEffects.Systems
       context.CreateCollector(GameMatcher.AllOf(
         GameMatcher.SoundEffect,
         GameMatcher.AudioClip,
-        GameMatcher.AudioSource).Added());
+        GameMatcher.AudioSource,
+        GameMatcher.Active).Added());
 
     protected override bool Filter(GameEntity soundEffect) =>
-      soundEffect.isSoundEffect && soundEffect.hasAudioSource && soundEffect.hasAudioClip;
+      soundEffect.isSoundEffect && soundEffect.hasAudioSource && soundEffect.hasAudioClip && soundEffect.isActive;
 
     protected override void Execute(List<GameEntity> soundEffects)
     {

@@ -40,12 +40,16 @@ namespace Code.Gameplay.Features.Weapon.Factory
 		public GameEntity CreateWeapon(WeaponTypeId weaponTypeId, Transform parent,
 			Vector2 at, int ownerId, WeaponOwnerTypeId ownerTypeId)
 		{
-			switch (ownerTypeId)
+      WeaponConfig config = _staticDataService.GetWeaponConfig(weaponTypeId);
+      CollisionCastSetup castSetup = config.CastSetup;
+
+      switch (ownerTypeId)
 			{
 				case WeaponOwnerTypeId.Hero:
 					return CreateHeroWeapon(weaponTypeId, parent, at, ownerId)
 						.AddWeaponOwnerTypeId(WeaponOwnerTypeId.Hero)
-						.With(x => x.isHeroWeapon = true)
+            .AddForwardCastDistance(castSetup.ForwardCastDistance)
+            .With(x => x.isHeroWeapon = true)
 						;
 				case WeaponOwnerTypeId.Enemy:
 					return CreateEnemyWeapon(weaponTypeId, parent, at, ownerId)
@@ -201,7 +205,7 @@ namespace Code.Gameplay.Features.Weapon.Factory
 					.AddWorldPosition(at)
 					.AddDirection(default)
 					.AddRadius(_statsProvider.GetFireRange(config))
-					.AddForwardCastDistance(castSetup.ForwardCastDistance)
+					//.AddForwardCastDistance(castSetup.ForwardCastDistance)
 					.AddMinPelletsDeviation(_statsProvider.GetMinDeviation(config))
 					.AddMaxPelletsDeviation(_statsProvider.GetMaxDeviation(config))
 					.AddCooldown(_statsProvider.GetCooldown(config))

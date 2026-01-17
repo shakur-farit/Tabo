@@ -26,9 +26,10 @@ namespace Code.Common.Destruct.Systems
 			{
 				IEntityView view = entity.View;
 
-				entity.View.ReleaseEntity();
-				
-				_objectPool.Return(entity.ViewPrefab, view.EntityBehaviourObject);
+        entity.isActive = false;
+        view.ReleaseEntity();
+
+        _objectPool.Return(entity.ViewPrefab, view.EntityBehaviourObject);
 			}
 		}
 	}

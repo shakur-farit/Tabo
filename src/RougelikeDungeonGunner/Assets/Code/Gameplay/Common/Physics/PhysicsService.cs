@@ -57,25 +57,25 @@ namespace Code.Gameplay.Common.Physics
 
     public GameEntity LineCast(Vector2 start, Vector2 end, int layerMask)
     {
-			int hitCount = Physics2D.LinecastNonAlloc(start, end, Hits, layerMask);
+      int hitCount = Physics2D.LinecastNonAlloc(start, end, Hits, layerMask);
 
-			for (int i = 0; i < hitCount; i++)
-			{
-				RaycastHit2D hit = Hits[i];
-				if (hit.collider == null)
-					continue;
+      for (int i = 0; i < hitCount; i++)
+      {
+        RaycastHit2D hit = Hits[i];
+        if (hit.collider == null)
+          continue;
 
-				if (!hit.collider.Matches(layerMask))
-					continue;
+        if (!hit.collider.Matches(layerMask))
+          continue;
 
-				GameEntity entity = _collisionRegistry.Get<GameEntity>(hit.collider.GetInstanceID());
-				if (entity == null)
-					continue;
+        GameEntity entity = _collisionRegistry.Get<GameEntity>(hit.collider.GetInstanceID());
+        if (entity == null)
+          continue;
 
-				return entity;
-			}
+        return entity;
+      }
 
-			return null;
+      return null;
 }
     
     public IEnumerable<GameEntity> CircleCast(Vector3 position, float radius, int layerMask) 
@@ -83,7 +83,7 @@ namespace Code.Gameplay.Common.Physics
       int hitCount = OverlapCircle(position, radius, OverlapHits, layerMask);
 
       DrawDebug(position, radius, 1f, Color.red);
-      
+
       for (int i = 0; i < hitCount; i++)
       {
         GameEntity entity = _collisionRegistry.Get<GameEntity>(OverlapHits[i].GetInstanceID());
@@ -99,7 +99,7 @@ namespace Code.Gameplay.Common.Physics
       int hitCount = OverlapCircle(position, radius, OverlapHits, layerMask);
 
       DrawDebug(position, radius, 1f, Color.green);
-      
+
       for (int i = 0; i < hitCount; i++)
       {
         GameEntity entity = _collisionRegistry.Get<GameEntity>(OverlapHits[i].GetInstanceID());
@@ -156,7 +156,41 @@ namespace Code.Gameplay.Common.Physics
 	    return null;
     }
 
-private static void DrawDebug(Vector2 worldPos, float radius, float seconds, Color color)
+    public GameEntity RaycastSegment(Vector2 from, Vector2 to, int layerMask)
+    {
+      Vector2 delta = to - from;
+      float distance = delta.magnitude;
+
+      if (distance <= 0.0001f)
+        return null;
+
+      int hitCount = Physics2D.RaycastNonAlloc(
+        from,
+        delta / distance,
+        Hits,
+        distance,
+        layerMask
+      );
+
+      for (int i = 0; i < hitCount; i++)
+      {
+        RaycastHit2D hit = Hits[i];
+         
+        if (hit.collider == null)
+          continue;
+
+        GameEntity entity = _collisionRegistry.Get<GameEntity>(hit.collider.GetInstanceID());
+
+        if (entity == null)
+          continue;
+
+        return entity;
+      }
+
+      return null;
+    }
+
+    private static void DrawDebug(Vector2 worldPos, float radius, float seconds, Color color)
     {
       Debug.DrawRay(worldPos, radius * Vector3.up, color, seconds);
       Debug.DrawRay(worldPos, radius * Vector3.down, color, seconds);

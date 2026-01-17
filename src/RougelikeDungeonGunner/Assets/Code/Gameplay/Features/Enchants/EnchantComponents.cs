@@ -1,5 +1,4 @@
-﻿using Code.Gameplay.Features.Enchants.Behaviours;
-using Entitas;
+﻿using Entitas;
 
 namespace Code.Gameplay.Features.Enchants
 {
@@ -10,7 +9,6 @@ namespace Code.Gameplay.Features.Enchants
 	[Game] public class EnchantAlreadyHeld : IComponent { }
 	[Game] public class NewCollectedEnchant : IComponent { }
 
-	[Game] public class EnchantVisualEffectComponent : IComponent { public EnchantVisualEffect Value; }
 	[Game] public class EnchantUIComponent : IComponent { }
 
 	[Game] public class PoisonEnchant : IComponent { }

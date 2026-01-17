@@ -1,5 +1,4 @@
 ﻿using Code.Gameplay.Features.Ammo.Systems;
-using Code.Gameplay.Features.Ammo.Systems.Visuals;
 using Code.Gameplay.Features.Cooldowns.Systems;
 using Code.Infrastructure.Systems;
 
@@ -17,9 +16,6 @@ namespace Code.Gameplay.Features.Ammo
 			Add(systems.Create<CreateAmmoFromStarPatternSystem>());
 
 			Add(systems.Create<SetAmmoCastStartLocalPositionSystem>());
-			Add(systems.Create<SetAmmoSpriteSystem>());
-			Add(systems.Create<SetAmmoMaterialSystem>());
-			Add(systems.Create<SetAmmoTrailSystem>());
 
 			Add(systems.Create<AddAmmoTransformInListSystem>());
 
@@ -32,9 +28,7 @@ namespace Code.Gameplay.Features.Ammo
 			Add(systems.Create<ApplyEffectsToAmmoSystem>());
 			Add(systems.Create<ApplyStatusesToAmmoSystem>());
 
-			Add(systems.Create<ApplyEnchantVisualsToAmmoReactiveSystem>());
-
-			Add(systems.Create<CalculateCurrentAmmoCountAfterShotSystem>());
+      Add(systems.Create<CalculateCurrentAmmoCountAfterShotSystem>());
 
 			Add(systems.Create<MarkAmmoProcessedOnWeaponFireRangeSystem>());
 			Add(systems.Create<MarkAmmoProcessedOnTargetLimitExceededSystem>());

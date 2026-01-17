@@ -8,7 +8,7 @@ namespace Code.Gameplay.Features.Ammo.Systems
 {
 	public class CreateAmmoFromCirclePatternSystem : IExecuteSystem
 	{
-		private readonly List<GameEntity> _buffer = new(64);
+		private readonly List<GameEntity> _buffer = new(256);
 		private readonly IAmmoFactory _ammoFactory;
 		private readonly IGroup<GameEntity> _patterns;
 

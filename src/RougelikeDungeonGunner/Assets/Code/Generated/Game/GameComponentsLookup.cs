@@ -8,138 +8,138 @@
 //------------------------------------------------------------------------------
 public static class GameComponentsLookup {
 
-    public const int Destructed = 0;
-    public const int Parented = 1;
-    public const int Reusable = 2;
-    public const int SelfDestructedTimer = 3;
-    public const int Unparented = 4;
-    public const int View = 5;
-    public const int ViewParent = 6;
-    public const int ViewPath = 7;
-    public const int ViewPrefab = 8;
-    public const int Color = 9;
-    public const int Damage = 10;
-    public const int DamageTakenAnimator = 11;
-    public const int Id = 12;
-    public const int ParentTransform = 13;
-    public const int ParticleSystem = 14;
-    public const int Processed = 15;
-    public const int SpriteRenderer = 16;
-    public const int StatusVisuals = 17;
-    public const int Stunned = 18;
-    public const int TrailRenderer = 19;
-    public const int Transform = 20;
-    public const int WorldPosition = 21;
-    public const int Ammo = 22;
-    public const int AmmoTypeId = 23;
-    public const int EnemyBullet = 24;
-    public const int LaserBolt = 25;
-    public const int LightBullet = 26;
-    public const int LongRangeBullet = 27;
-    public const int RifleBullet = 28;
-    public const int RocketMissile = 29;
-    public const int ShotgunShell = 30;
-    public const int SigilAmmo = 31;
-    public const int TargetLimit = 32;
-    public const int AddedInList = 33;
-    public const int AmmoPattern = 34;
-    public const int AmmoPatternId = 35;
-    public const int AmmoPatternSetup = 36;
-    public const int AmmoTransformsList = 37;
-    public const int CirclePattern = 38;
-    public const int PatternAmmoCount = 39;
-    public const int PatternBranches = 40;
-    public const int PatternCurrentAngle = 41;
-    public const int PatternEmpty = 42;
-    public const int PatternRadius = 43;
-    public const int PatternRotateSpeed = 44;
-    public const int SinglePattern = 45;
-    public const int StarPattern = 46;
-    public const int TrianglePattern = 47;
-    public const int MinDistanceForRepath = 48;
-    public const int Path = 49;
-    public const int Pathfinder = 50;
-    public const int PathfinderAvailable = 51;
-    public const int PathfinderInitialized = 52;
-    public const int PathfindingIntervalTimer = 53;
-    public const int PathfindingTimerLeft = 54;
-    public const int PathfindingTimerUp = 55;
-    public const int Aura = 56;
-    public const int AuraDuration = 57;
-    public const int AuraDurationTimeLeft = 58;
-    public const int AuraLayer = 59;
-    public const int AuraLayerMask = 60;
-    public const int AuraPeriod = 61;
-    public const int AuraPeriodTimeLeft = 62;
-    public const int AuraPeriodTimeUp = 63;
-    public const int AuraRadius = 64;
-    public const int AuraTypeId = 65;
-    public const int HealingAura = 66;
-    public const int HealingAuraApplied = 67;
-    public const int RequestHealingAura = 68;
-    public const int RequestShield = 69;
-    public const int Shield = 70;
-    public const int ShieldApplied = 71;
-    public const int BaseStats = 72;
-    public const int StatChange = 73;
-    public const int StatModifiers = 74;
-    public const int BoxCastHeight = 75;
-    public const int BoxCastWidth = 76;
-    public const int CastStartPositionTransform = 77;
-    public const int CollectTargetsContinuously = 78;
-    public const int CollectTargetsInterval = 79;
-    public const int CollectTargetsTimer = 80;
-    public const int CollisionInFront = 81;
-    public const int CollisionNormal = 82;
-    public const int DestroyableCollectRadius = 83;
-    public const int DestroyableTargetLayerMask = 84;
-    public const int DestroyableTargetsBuffer = 85;
-    public const int ForwardCastDistance = 86;
-    public const int ProcessedTargets = 87;
-    public const int Radius = 88;
-    public const int Reached = 89;
-    public const int ReadyToCollectTargets = 90;
-    public const int TargetLayerMask = 91;
-    public const int TargetsBuffer = 92;
-    public const int Cooldown = 93;
-    public const int CooldownLeft = 94;
-    public const int CooldownUp = 95;
-    public const int DestroyableAnimator = 96;
-    public const int DestroyableItem = 97;
-    public const int DestroyableItemTypeId = 98;
-    public const int Destroyed = 99;
-    public const int Destroying = 100;
-    public const int Door = 101;
-    public const int DoorAnimator = 102;
-    public const int DoorPosition = 103;
-    public const int DoorTypeId = 104;
-    public const int Opened = 105;
-    public const int CollisionTilemap = 106;
-    public const int Dungeon = 107;
-    public const int DungeonAvailable = 108;
-    public const int DungeonTypeId = 109;
-    public const int EnemySpawnValidPositions = 110;
-    public const int EnemySpawnValidSprite = 111;
-    public const int FloorDestroyableDecorationSprite = 112;
-    public const int FloorDestroyableDecorationTilemap = 113;
-    public const int FloorDestroyableItemValidPositions = 114;
-    public const int HeroStartPosition = 115;
-    public const int WallDestroyableDecorationSprite = 116;
-    public const int WallDestroyableDecorationTilemap = 117;
-    public const int WallDestroyableItemValidPositions = 118;
-    public const int DamageEffect = 119;
-    public const int Effect = 120;
-    public const int EffectValue = 121;
-    public const int HealEffect = 122;
-    public const int ProducerId = 123;
-    public const int TargetId = 124;
-    public const int Enchant = 125;
-    public const int EnchantAlreadyHeld = 126;
-    public const int EnchantDuration = 127;
-    public const int EnchantTimeLeft = 128;
-    public const int EnchantTypeId = 129;
-    public const int EnchantUI = 130;
-    public const int EnchantVisualEffect = 131;
+    public const int Active = 0;
+    public const int Destructed = 1;
+    public const int Parented = 2;
+    public const int Reusable = 3;
+    public const int SelfDestructedTimer = 4;
+    public const int Unparented = 5;
+    public const int View = 6;
+    public const int ViewParent = 7;
+    public const int ViewPath = 8;
+    public const int ViewPrefab = 9;
+    public const int Color = 10;
+    public const int Damage = 11;
+    public const int DamageTakenAnimator = 12;
+    public const int Id = 13;
+    public const int ParentTransform = 14;
+    public const int ParticleSystem = 15;
+    public const int Processed = 16;
+    public const int SpriteRenderer = 17;
+    public const int StatusVisuals = 18;
+    public const int Stunned = 19;
+    public const int TrailRenderer = 20;
+    public const int Transform = 21;
+    public const int WorldPosition = 22;
+    public const int Ammo = 23;
+    public const int AmmoTypeId = 24;
+    public const int EnemyBullet = 25;
+    public const int LaserBolt = 26;
+    public const int LightBullet = 27;
+    public const int LongRangeBullet = 28;
+    public const int RifleBullet = 29;
+    public const int RocketMissile = 30;
+    public const int ShotgunShell = 31;
+    public const int SigilAmmo = 32;
+    public const int TargetLimit = 33;
+    public const int AddedInList = 34;
+    public const int AmmoPattern = 35;
+    public const int AmmoPatternId = 36;
+    public const int AmmoPatternSetup = 37;
+    public const int AmmoTransformsList = 38;
+    public const int CirclePattern = 39;
+    public const int PatternAmmoCount = 40;
+    public const int PatternBranches = 41;
+    public const int PatternCurrentAngle = 42;
+    public const int PatternEmpty = 43;
+    public const int PatternRadius = 44;
+    public const int PatternRotateSpeed = 45;
+    public const int SinglePattern = 46;
+    public const int StarPattern = 47;
+    public const int TrianglePattern = 48;
+    public const int MinDistanceForRepath = 49;
+    public const int Path = 50;
+    public const int Pathfinder = 51;
+    public const int PathfinderAvailable = 52;
+    public const int PathfinderInitialized = 53;
+    public const int PathfindingIntervalTimer = 54;
+    public const int PathfindingTimerLeft = 55;
+    public const int PathfindingTimerUp = 56;
+    public const int Aura = 57;
+    public const int AuraDuration = 58;
+    public const int AuraDurationTimeLeft = 59;
+    public const int AuraLayer = 60;
+    public const int AuraLayerMask = 61;
+    public const int AuraPeriod = 62;
+    public const int AuraPeriodTimeLeft = 63;
+    public const int AuraPeriodTimeUp = 64;
+    public const int AuraRadius = 65;
+    public const int AuraTypeId = 66;
+    public const int HealingAura = 67;
+    public const int HealingAuraApplied = 68;
+    public const int RequestHealingAura = 69;
+    public const int RequestShield = 70;
+    public const int Shield = 71;
+    public const int ShieldApplied = 72;
+    public const int BaseStats = 73;
+    public const int StatChange = 74;
+    public const int StatModifiers = 75;
+    public const int BoxCastHeight = 76;
+    public const int BoxCastWidth = 77;
+    public const int CastStartPositionTransform = 78;
+    public const int CollectTargetsContinuously = 79;
+    public const int CollectTargetsInterval = 80;
+    public const int CollectTargetsTimer = 81;
+    public const int CollisionInFront = 82;
+    public const int CollisionNormal = 83;
+    public const int DestroyableCollectRadius = 84;
+    public const int DestroyableTargetLayerMask = 85;
+    public const int DestroyableTargetsBuffer = 86;
+    public const int ForwardCastDistance = 87;
+    public const int ProcessedTargets = 88;
+    public const int Radius = 89;
+    public const int Reached = 90;
+    public const int ReadyToCollectTargets = 91;
+    public const int TargetLayerMask = 92;
+    public const int TargetsBuffer = 93;
+    public const int Cooldown = 94;
+    public const int CooldownLeft = 95;
+    public const int CooldownUp = 96;
+    public const int DestroyableAnimator = 97;
+    public const int DestroyableItem = 98;
+    public const int DestroyableItemTypeId = 99;
+    public const int Destroyed = 100;
+    public const int Destroying = 101;
+    public const int Door = 102;
+    public const int DoorAnimator = 103;
+    public const int DoorPosition = 104;
+    public const int DoorTypeId = 105;
+    public const int Opened = 106;
+    public const int CollisionTilemap = 107;
+    public const int Dungeon = 108;
+    public const int DungeonAvailable = 109;
+    public const int DungeonTypeId = 110;
+    public const int EnemySpawnValidPositions = 111;
+    public const int EnemySpawnValidSprite = 112;
+    public const int FloorDestroyableDecorationSprite = 113;
+    public const int FloorDestroyableDecorationTilemap = 114;
+    public const int FloorDestroyableItemValidPositions = 115;
+    public const int HeroStartPosition = 116;
+    public const int WallDestroyableDecorationSprite = 117;
+    public const int WallDestroyableDecorationTilemap = 118;
+    public const int WallDestroyableItemValidPositions = 119;
+    public const int DamageEffect = 120;
+    public const int Effect = 121;
+    public const int EffectValue = 122;
+    public const int HealEffect = 123;
+    public const int ProducerId = 124;
+    public const int TargetId = 125;
+    public const int Enchant = 126;
+    public const int EnchantAlreadyHeld = 127;
+    public const int EnchantDuration = 128;
+    public const int EnchantTimeLeft = 129;
+    public const int EnchantTypeId = 130;
+    public const int EnchantUI = 131;
     public const int ExplosiveEnchant = 132;
     public const int FlameEnchant = 133;
     public const int FreezeEnchant = 134;
@@ -308,6 +308,7 @@ public static class GameComponentsLookup {
     public const int TotalComponents = 296;
 
     public static readonly string[] componentNames = {
+        "Active",
         "Destructed",
         "Parented",
         "Reusable",
@@ -439,7 +440,6 @@ public static class GameComponentsLookup {
         "EnchantTimeLeft",
         "EnchantTypeId",
         "EnchantUI",
-        "EnchantVisualEffect",
         "ExplosiveEnchant",
         "FlameEnchant",
         "FreezeEnchant",
@@ -607,6 +607,7 @@ public static class GameComponentsLookup {
     };
 
     public static readonly System.Type[] componentTypes = {
+        typeof(Code.Common.Active),
         typeof(Code.Common.Destructed),
         typeof(Code.Common.Parented),
         typeof(Code.Common.Reusable),
@@ -738,7 +739,6 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Enchants.EnchantTimeLeft),
         typeof(Code.Gameplay.Features.Enchants.EnchantTypeIdComponent),
         typeof(Code.Gameplay.Features.Enchants.EnchantUIComponent),
-        typeof(Code.Gameplay.Features.Enchants.EnchantVisualEffectComponent),
         typeof(Code.Gameplay.Features.Enchants.ExplosiveEnchant),
         typeof(Code.Gameplay.Features.Enchants.FlameEnchant),
         typeof(Code.Gameplay.Features.Enchants.FreezeEnchant),

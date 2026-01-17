@@ -1,5 +1,4 @@
-﻿using Code.Gameplay.Features.Enchants.Behaviours;
-using Code.Gameplay.Features.Enemy.Behaviours;
+﻿using Code.Gameplay.Features.Enemy.Behaviours;
 using Code.Infrastructure.View.Registrars;
 using UnityEngine;
 
