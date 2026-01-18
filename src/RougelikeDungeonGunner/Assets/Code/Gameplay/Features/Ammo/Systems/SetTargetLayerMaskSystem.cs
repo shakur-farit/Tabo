@@ -29,9 +29,9 @@ namespace Code.Gameplay.Features.Ammo.Systems
 			foreach (GameEntity ammo in _ammo)
 			{
 				if (weapon.Id == ammo.ProducerId && weapon.WeaponOwnerTypeId == WeaponOwnerTypeId.Hero)
-					ammo.ReplaceTargetLayerMask(CollisionLayer.Enemy.AsMask());
+					ammo.ReplaceTargetLayerMask(CollisionLayer.Enemy.AsMask() | CollisionLayer.Destroyable.AsMask());
 				else if (weapon.Id == ammo.ProducerId && weapon.WeaponOwnerTypeId == WeaponOwnerTypeId.Enemy)
-					ammo.ReplaceTargetLayerMask(CollisionLayer.Hero.AsMask());
+					ammo.ReplaceTargetLayerMask(CollisionLayer.Hero.AsMask() | CollisionLayer.Destroyable.AsMask());
 			}
 		}
 	}

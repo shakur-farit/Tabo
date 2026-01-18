@@ -16,6 +16,7 @@ namespace Code.Gameplay.Features.Destroyable.Configs
     public Sprite Sprite;
     public RuntimeAnimatorController AnimatorController;
     [Range(0, 100)] public int LootDropChance;
+    [Range(1, 100)] public int CurrentHd;
     public List<LootTypeId> ExcludedLoot;
   }
 }

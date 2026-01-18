@@ -1,39 +1,37 @@
-﻿using Code.Sounds.SoundEffects.Factory;
+﻿using System.Collections.Generic;
+using Code.Sounds.SoundEffects.Factory;
 using Entitas;
+using UnityEngine;
 
 namespace Code.Gameplay.Features.Destroyable.Systems
 {
 	public class DestroyableItemDestroyAnimationPlaySystem : IExecuteSystem
 	{
-		private readonly GameContext _game;
-		private readonly ISoundEffectFactory _soundEffectFactory;
-		private readonly IGroup<GameEntity> _collectors;
+    private readonly List<GameEntity> _buffer = new(64);
+    private readonly ISoundEffectFactory _soundEffectFactory;
+    private readonly IGroup<GameEntity> _destroyableItems;
 
-		public DestroyableItemDestroyAnimationPlaySystem(GameContext game, ISoundEffectFactory soundEffectFactory)
+    public DestroyableItemDestroyAnimationPlaySystem(GameContext game, ISoundEffectFactory soundEffectFactory)
 		{
-			_game = game;
 			_soundEffectFactory = soundEffectFactory;
-			_collectors = game.GetGroup(GameMatcher
-				.AllOf(GameMatcher.DestroyableTargetsBuffer));
+			_destroyableItems = game.GetGroup(GameMatcher
+				.AllOf(
+          GameMatcher.DestroyableItem,
+          GameMatcher.Dead,
+          GameMatcher.DestroyableAnimator)
+        .NoneOf(GameMatcher.Destroying));
 		}
 
 		public void Execute()
 		{
-			foreach (GameEntity collector in _collectors)
-      foreach (int id in collector.DestroyableTargetsBuffer)
+			foreach (GameEntity item in _destroyableItems.GetEntities(_buffer))
       {
-        GameEntity destroyable = _game.GetEntityWithId(id);
+        item.DestroyableAnimator.PlayDestroy();
 
-				if(destroyable.isDestroying)
-					continue;
+        if (item.hasSoundEffectTypeId)
+	        _soundEffectFactory.CreateSoundEffect(item.SoundEffectTypeId);
 
-        if(destroyable.hasDestroyableAnimator)
-          destroyable.DestroyableAnimator.PlayDestroy();
-
-        if (destroyable.hasSoundEffectTypeId)
-	        _soundEffectFactory.CreateSoundEffect(destroyable.SoundEffectTypeId);
-
-        destroyable.isDestroying = true;
+        item.isDestroying = true;
       }
     }
   }

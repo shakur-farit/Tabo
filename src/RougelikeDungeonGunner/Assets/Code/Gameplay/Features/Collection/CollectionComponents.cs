@@ -18,11 +18,7 @@ namespace Code.Gameplay.Features.Collection
 	[Game] public class BoxCastWidth : IComponent { public float Value; }
 	[Game] public class BoxCastHeight : IComponent { public float Value; }
 
-	[Game] public class DestroyableTargetsBuffer : IComponent { public List<int> Value; }
-	[Game] public class DestroyableTargetLayerMask : IComponent { public int Value; }
-	[Game] public class DestroyableCollectRadius : IComponent { public float Value; }
-
-	[Game] public class ReadyToCollectTargets : IComponent { }
+  [Game] public class ReadyToCollectTargets : IComponent { }
 	[Game] public class CollectTargetsContinuously : IComponent { }
 	[Game] public class Reached : IComponent { }
 

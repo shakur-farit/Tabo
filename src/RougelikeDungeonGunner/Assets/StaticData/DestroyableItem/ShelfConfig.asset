@@ -19,4 +19,5 @@ MonoBehaviour:
   Sprite: {fileID: -8847511328382704733, guid: 0ce7585d1e566b744ba4d9d5233ce0d9, type: 3}
   AnimatorController: {fileID: 9100000, guid: b20dea91eb47b0145bf2b73fbcfe33fd, type: 2}
   LootDropChance: 30
+  CurrentHd: 1
   ExcludedLoot: 010000000200000003000000

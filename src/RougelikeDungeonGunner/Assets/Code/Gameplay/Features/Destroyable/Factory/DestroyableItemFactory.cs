@@ -38,6 +38,8 @@ namespace Code.Gameplay.Features.Destroyable.Factory
           .AddViewPrefab(config.ViewPrefab)
           .AddLootDropChance(config.LootDropChance)
           .AddExcludedLoot(config.ExcludedLoot)
+          .AddCurrentHp(config.CurrentHd)
+          .AddMaxHp(config.CurrentHd)
           .AddSoundEffectTypeId(config.DestroyingSoundEffectTypeId)
           .With(x => x.isDestroyableItem = true)
           .With(x => x.isReusable = true)

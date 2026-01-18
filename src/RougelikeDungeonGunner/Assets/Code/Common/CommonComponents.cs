@@ -16,6 +16,4 @@ namespace Code.Common
 
 	[Game] public class Parented : IComponent { }
 	[Game] public class Unparented : IComponent { }
-  [Game] public class Active : IComponent { }
-
 }

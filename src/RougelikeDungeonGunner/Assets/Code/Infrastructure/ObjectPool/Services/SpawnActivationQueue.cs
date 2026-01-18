@@ -21,9 +21,6 @@ namespace Code.Infrastructure.ObjectPool.Services
       {
         EntityBehaviour view = _activationQueue.Dequeue();
         view.gameObject.SetActive(true);
-
-        if (view.Entity != null)
-          view.Entity.isActive = true;
       }
     }
 

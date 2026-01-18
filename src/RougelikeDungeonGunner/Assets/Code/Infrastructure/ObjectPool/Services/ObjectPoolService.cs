@@ -46,7 +46,7 @@ namespace Code.Infrastructure.ObjectPool.Services
       instance.transform.position = at;
       instance.gameObject.SetActive(true);
 
-      _spawnActivationQueue.Enqueue(instance);
+      //_spawnActivationQueue.Enqueue(instance);
 
       return instance;
     }

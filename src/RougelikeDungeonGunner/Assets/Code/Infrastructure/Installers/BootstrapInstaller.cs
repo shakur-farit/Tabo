@@ -295,7 +295,7 @@ namespace Code.Infrastructure.Installers
     public void Initialize()
     {
       Container.Resolve<IGameStateMachine>().Enter<BootstrapState>();
-      Physics2D.simulationMode = SimulationMode2D.Script;
+      Physics2D.simulationMode = SimulationMode2D.Update;
     }
   }
 }
