@@ -3,7 +3,6 @@ using Code.Common.Entity;
 using Code.Common.Extensions;
 using Code.Gameplay.Features.Aura;
 using Code.Gameplay.Features.CharacterStats;
-using Code.Gameplay.Features.Collection;
 using Code.Gameplay.Features.Effects;
 using Code.Gameplay.Features.Enemy.Configs;
 using Code.Gameplay.Features.Weapon;
@@ -29,7 +28,6 @@ namespace Code.Gameplay.Features.Enemy.Factory
 		public GameEntity CreateEnemy(EnemyTypeId typeId, Vector3 at)
 		{
 			EnemyConfig config = _staticDataService.GetEnemyConfig(typeId);
-			CollisionCastSetup castSetup = config.CastSetup;
 
 			Dictionary<Stats, float> baseStats = InitStats.EmptyStatDictionary()
 					.With(x => x[Stats.Speed] = config.MovementSpeed)
@@ -49,8 +47,6 @@ namespace Code.Gameplay.Features.Enemy.Factory
 					.AddMaxHp(baseStats[Stats.MaxHp])
 					.AddEffectSetups(new List<EffectSetup> { EffectSetup.FormId(EffectTypeId.Damage, baseStats[Stats.Damage]) })
 					.AddSpeed(baseStats[Stats.Speed])
-					.AddBoxCastWidth(castSetup.Width)
-					.AddBoxCastHeight(castSetup.Height)
 					.AddTargetsBuffer(new List<int>(config.TargetAmount))
 					.AddRadius(config.AttackRaduis)
 					.AddCollectTargetsInterval(config.AttackInterlal)

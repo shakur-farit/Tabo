@@ -11,7 +11,6 @@ namespace Code.Gameplay.Features.Enemy
 			Add(systems.Create<SpawnBossesSystem>());
 
 			Add(systems.Create<SetEnemyRuntimeAnimatorControllerSystem>());
-			Add(systems.Create<SetEnemyCastStartLocalPositionSystem>());
 			Add(systems.Create<ShowEnemyTargetSpriteSystem>());
 
 			Add(systems.Create<TargetDetectingSystem>());

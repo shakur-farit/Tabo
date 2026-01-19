@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Code.Gameplay.Features.Aura;
 using Code.Gameplay.Features.Collection;
+using Code.Gameplay.Features.Effects;
 using Code.Gameplay.Features.Weapon;
 using Code.Infrastructure.View;
 using Code.Meta.Features.Information.HeroInformation;
@@ -23,7 +24,9 @@ namespace Code.Gameplay.Features.Hero.Configs
 		[Range(1, 100)] public int MaxHp;
 		[Range(1, 100)] public int MovementSpeed;
 		[Range(0, 100)] public float LootPickupRadius;
-		[Range(0, 100)] public float DestroyableCollidingRadius;
+		[Range(0, 100)] public float AttackRadius;
+
+		public EffectSetup EffectSetup;
 
 		public CollisionCastSetup CastSetup;
 		public List<HeroStatUIEntry> StatsUIEntry;

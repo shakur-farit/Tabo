@@ -6,6 +6,7 @@ using Code.Gameplay.Features.Aura;
 using Code.Gameplay.Features.CharacterStats;
 using Code.Gameplay.Features.Coin.Services;
 using Code.Gameplay.Features.Collection;
+using Code.Gameplay.Features.Effects;
 using Code.Gameplay.Features.Hero.Configs;
 using Code.Gameplay.Features.Hero.Services;
 using Code.Gameplay.Features.Weapon;
@@ -92,6 +93,11 @@ namespace Code.Gameplay.Features.Hero.Factory
 					.AddPickupRadius(config.LootPickupRadius)
 					.AddCurrentWeaponTypeId(CurrentWeapon(config))
 					.AddAuraRequest(config.StartAura)
+					.AddRadius(config.AttackRadius)
+					.AddTargetsBuffer(new List<int>(BufferSize))
+					.AddTargetLayerMask(CollisionLayer.Destroyable.AsMask())
+					.AddEffectSetups(new List<EffectSetup> { EffectSetup.FormId(
+						config.EffectSetup.EffectTypeId, config.EffectSetup.Value)})
 					.With(x => x.isHero = true)
 					.With(x => x.isMovementAvailable = true)
 					.With(x => x.isLinerMovement = true)

@@ -10,7 +10,6 @@ using Code.Infrastructure.Identifiers;
 using Code.Meta.Features.Shop.WeaponUpgrade.Services;
 using System;
 using System.Linq;
-using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 
 namespace Code.Gameplay.Features.Weapon.Factory
@@ -46,13 +45,13 @@ namespace Code.Gameplay.Features.Weapon.Factory
       switch (ownerTypeId)
 			{
 				case WeaponOwnerTypeId.Hero:
-					return CreateHeroWeapon(weaponTypeId, parent, at, ownerId)
+					return CreateHeroWeapon(config, parent, at, ownerId)
 						.AddWeaponOwnerTypeId(WeaponOwnerTypeId.Hero)
             .AddForwardCastDistance(castSetup.ForwardCastDistance)
             .With(x => x.isHeroWeapon = true)
 						;
 				case WeaponOwnerTypeId.Enemy:
-					return CreateEnemyWeapon(weaponTypeId, parent, at, ownerId)
+					return CreateEnemyWeapon(config, parent, at, ownerId)
 						.AddWeaponOwnerTypeId(WeaponOwnerTypeId.Enemy)
 						.With(x => x.isEnemyWeapon= true)
 						.With(x => x.isShooting= true)
@@ -62,141 +61,139 @@ namespace Code.Gameplay.Features.Weapon.Factory
 			}
 		}
 
-		private GameEntity CreateHeroWeapon(WeaponTypeId weaponTypeId, Transform parent, Vector2 at, int ownerId)
+		private GameEntity CreateHeroWeapon(WeaponConfig config, Transform parent, Vector2 at, int ownerId)
 		{
-      switch (weaponTypeId)
+      switch (config.TypeId)
 			{
 				case WeaponTypeId.HeroPistol:
-					return CreateHeroPistol(weaponTypeId, parent, at, ownerId);
+					return CreateHeroPistol(config, parent, at, ownerId);
 				case WeaponTypeId.HeroRevolver:
-					return CreateHeroRevolver(weaponTypeId, parent, at, ownerId);
+					return CreateHeroRevolver(config, parent, at, ownerId);
 				case WeaponTypeId.HeroMachinegun:
-					return CreateHeroMachinegun(weaponTypeId, parent, at, ownerId);
+					return CreateHeroMachinegun(config, parent, at, ownerId);
 				case WeaponTypeId.HeroSniper:
-					return CreateHeroSniper(weaponTypeId, parent, at, ownerId);
+					return CreateHeroSniper(config, parent, at, ownerId);
 				case WeaponTypeId.HeroShotgun:
-					return CreateHeroShotgun(weaponTypeId, parent, at, ownerId);
+					return CreateHeroShotgun(config, parent, at, ownerId);
 				case WeaponTypeId.HeroLaserBlaster:
-					return CreateHeroLaserBlaster(weaponTypeId, parent, at, ownerId);
+					return CreateHeroLaserBlaster(config, parent, at, ownerId);
 				case WeaponTypeId.HeroAutoPistol:
-					return CreateHeroAutomaticPistol(weaponTypeId, parent, at, ownerId);
+					return CreateHeroAutomaticPistol(config, parent, at, ownerId);
 				case WeaponTypeId.HeroPlasmaGun:
-					return CreateHeroPlasmaGun(weaponTypeId, parent, at, ownerId);
+					return CreateHeroPlasmaGun(config, parent, at, ownerId);
 				case WeaponTypeId.HeroBazuka:
-					return CreateHeroRocketLauncher(weaponTypeId, parent, at, ownerId);
+					return CreateHeroRocketLauncher(config, parent, at, ownerId);
 			}
 
-			throw new Exception($"Weapon for {weaponTypeId} type was not found");
+			throw new Exception($"Weapon for {config.TypeId} type was not found");
 		}
 
-		private GameEntity CreateEnemyWeapon(WeaponTypeId weaponTypeId, Transform parent, Vector2 at, int ownerId)
+		private GameEntity CreateEnemyWeapon(WeaponConfig config, Transform parent, Vector2 at, int ownerId)
 		{
-			switch (weaponTypeId)
+			switch (config.TypeId)
 			{
 				case WeaponTypeId.EnemyPistol:
-					return CreateEnemyPistol(weaponTypeId, parent, at, ownerId);
+					return CreateEnemyPistol(config, parent, at, ownerId);
         case WeaponTypeId.EnemyMachinegun:
-          return CreateEnemyMachinegun(weaponTypeId, parent, at, ownerId);
+          return CreateEnemyMachinegun(config, parent, at, ownerId);
         case WeaponTypeId.EnemyCircleSigil:
-					return EnemyCircleSigil(weaponTypeId, parent, at, ownerId);
+					return EnemyCircleSigil(config, parent, at, ownerId);
 				case WeaponTypeId.EnemyTriangleSigil:
-					return EnemyTriangleSigil(weaponTypeId, parent, at, ownerId);
+					return EnemyTriangleSigil(config, parent, at, ownerId);
 				case WeaponTypeId.EnemyStarSigil:
-					return EnemyStarSigil(weaponTypeId, parent, at, ownerId);
+					return EnemyStarSigil(config, parent, at, ownerId);
         case WeaponTypeId.BossPistol:
-          return CreateBossPistol(weaponTypeId, parent, at, ownerId);
+          return CreateBossPistol(config, parent, at, ownerId);
 				case WeaponTypeId.BossMachinegun:
-					return CreateBossMachinegun(weaponTypeId, parent, at, ownerId);
+					return CreateBossMachinegun(config, parent, at, ownerId);
 			}
 
-			throw new Exception($"Weapon for {weaponTypeId} type was not found");
+			throw new Exception($"Weapon for {config.TypeId} type was not found");
 		}
 
-		private GameEntity CreateHeroPistol(WeaponTypeId weaponTypeId, Transform parent, Vector2 at, 
+		private GameEntity CreateHeroPistol(WeaponConfig config, Transform parent, Vector2 at, 
 			int ownerId) =>
-			CreateWeaponEntity(weaponTypeId, parent, at, ownerId)
+			CreateWeaponEntity(config, parent, at, ownerId)
 				.With(x => x.isHeroPistol = true);
 
-		private GameEntity CreateHeroRevolver(WeaponTypeId weaponTypeId, Transform parent, Vector2 at,
+		private GameEntity CreateHeroRevolver(WeaponConfig config, Transform parent, Vector2 at,
 			int ownerId) =>
-			CreateWeaponEntity(weaponTypeId, parent, at, ownerId)
+			CreateWeaponEntity(config, parent, at, ownerId)
 				.With(x => x.isHeroRevolver = true);
 
-		private GameEntity CreateHeroShotgun(WeaponTypeId weaponTypeId, Transform parent, Vector2 at, 
+		private GameEntity CreateHeroShotgun(WeaponConfig config, Transform parent, Vector2 at, 
 			int ownerId) =>
-			CreateWeaponEntity(weaponTypeId, parent, at, ownerId)
+			CreateWeaponEntity(config, parent, at, ownerId)
 				.With(x => x.isHeroShotgun = true);
 
-		private GameEntity CreateHeroAutomaticPistol(WeaponTypeId weaponTypeId, Transform parent, Vector2 at,
+		private GameEntity CreateHeroAutomaticPistol(WeaponConfig config, Transform parent, Vector2 at,
 			int ownerId) =>
-			CreateWeaponEntity(weaponTypeId, parent, at, ownerId)
+			CreateWeaponEntity(config, parent, at, ownerId)
 				.With(x => x.isHeroAutomaticPistol = true);
 
-		private GameEntity CreateHeroMachinegun(WeaponTypeId weaponTypeId, Transform parent, Vector2 at,
+		private GameEntity CreateHeroMachinegun(WeaponConfig config, Transform parent, Vector2 at,
 			int ownerId) =>
-			CreateWeaponEntity(weaponTypeId, parent, at, ownerId)
+			CreateWeaponEntity(config, parent, at, ownerId)
 				.With(x => x.isHeroMachinegun = true);
 
-		private GameEntity CreateHeroSniper(WeaponTypeId weaponTypeId, Transform parent, Vector2 at, 
+		private GameEntity CreateHeroSniper(WeaponConfig config, Transform parent, Vector2 at, 
 			int ownerId) =>
-			CreateWeaponEntity(weaponTypeId, parent, at, ownerId)
+			CreateWeaponEntity(config, parent, at, ownerId)
 				.With(x => x.isHeroSniper = true);
 
-		private GameEntity CreateHeroPlasmaGun(WeaponTypeId weaponTypeId, Transform parent, Vector2 at,
+		private GameEntity CreateHeroPlasmaGun(WeaponConfig config, Transform parent, Vector2 at,
 			int ownerId) =>
-			CreateWeaponEntity(weaponTypeId, parent, at, ownerId)
+			CreateWeaponEntity(config, parent, at, ownerId)
 				.With(x => x.isHeroPlasmaGun = true);
 
-		private GameEntity CreateHeroLaserBlaster(WeaponTypeId weaponTypeId, Transform parent, Vector2 at,
+		private GameEntity CreateHeroLaserBlaster(WeaponConfig config, Transform parent, Vector2 at,
 			int ownerId) =>
-			CreateWeaponEntity(weaponTypeId, parent, at, ownerId)
+			CreateWeaponEntity(config, parent, at, ownerId)
 				.With(x => x.isHeroLaserBlaster = true);
 
-		private GameEntity CreateHeroRocketLauncher(WeaponTypeId weaponTypeId, Transform parent, Vector2 at, 
+		private GameEntity CreateHeroRocketLauncher(WeaponConfig config, Transform parent, Vector2 at, 
 			int ownerId) =>
-			CreateWeaponEntity(weaponTypeId, parent, at, ownerId)
+			CreateWeaponEntity(config, parent, at, ownerId)
 				.With(x => x.isHeroRocketLauncher = true);
 
-		private GameEntity CreateEnemyPistol(WeaponTypeId weaponTypeId, Transform parent, Vector2 at, 
+		private GameEntity CreateEnemyPistol(WeaponConfig config, Transform parent, Vector2 at, 
 			int ownerId) =>
-			CreateWeaponEntity(weaponTypeId, parent, at, ownerId)
+			CreateWeaponEntity(config, parent, at, ownerId)
 				.With(x => x.isEnemyPistol = true);
 
-    private GameEntity CreateEnemyMachinegun(WeaponTypeId weaponTypeId, Transform parent, Vector2 at,
+    private GameEntity CreateEnemyMachinegun(WeaponConfig config, Transform parent, Vector2 at,
       int ownerId) =>
-      CreateWeaponEntity(weaponTypeId, parent, at, ownerId)
+      CreateWeaponEntity(config, parent, at, ownerId)
         .With(x => x.isEnemyMachinegun = true);
 
-    private GameEntity EnemyCircleSigil(WeaponTypeId weaponTypeId, Transform parent, Vector2 at, int ownerId) =>
-			CreateWeaponEntity(weaponTypeId, parent, at, ownerId)
+    private GameEntity EnemyCircleSigil(WeaponConfig config, Transform parent, Vector2 at, int ownerId) =>
+			CreateWeaponEntity(config, parent, at, ownerId)
 				.With(x => x.isEnemyCircleSigil = true);
 
-		private GameEntity EnemyTriangleSigil(WeaponTypeId weaponTypeId, Transform parent, Vector2 at, int ownerId) =>
-			CreateWeaponEntity(weaponTypeId, parent, at, ownerId)
+		private GameEntity EnemyTriangleSigil(WeaponConfig config, Transform parent, Vector2 at, int ownerId) =>
+			CreateWeaponEntity(config, parent, at, ownerId)
 				.With(x => x.isEnemyTriangleSigil = true);
 
-		private GameEntity EnemyStarSigil(WeaponTypeId weaponTypeId, Transform parent, Vector2 at, int ownerId) =>
-			CreateWeaponEntity(weaponTypeId, parent, at, ownerId)
+		private GameEntity EnemyStarSigil(WeaponConfig config, Transform parent, Vector2 at, int ownerId) =>
+			CreateWeaponEntity(config, parent, at, ownerId)
 				.With(x => x.isEnemyStarSigil = true);
 
-    private GameEntity CreateBossPistol(WeaponTypeId weaponTypeId, Transform parent, Vector2 at,
+    private GameEntity CreateBossPistol(WeaponConfig config, Transform parent, Vector2 at,
       int ownerId) =>
-      CreateWeaponEntity(weaponTypeId, parent, at, ownerId)
+      CreateWeaponEntity(config, parent, at, ownerId)
         .With(x => x.isBossPistol = true);
 
-    private GameEntity CreateBossMachinegun(WeaponTypeId weaponTypeId, Transform parent, Vector2 at,
+    private GameEntity CreateBossMachinegun(WeaponConfig config, Transform parent, Vector2 at,
 	    int ownerId) =>
-	    CreateWeaponEntity(weaponTypeId, parent, at, ownerId)
+	    CreateWeaponEntity(config, parent, at, ownerId)
 		    .With(x => x.isBossMachinegun = true);
 
-		private GameEntity CreateWeaponEntity(WeaponTypeId weaponTypeId, Transform parent, Vector2 at, int ownerId)
+		private GameEntity CreateWeaponEntity(WeaponConfig config, Transform parent, Vector2 at, int ownerId)
 		{
-			WeaponConfig config = _staticDataService.GetWeaponConfig(weaponTypeId);
-			CollisionCastSetup castSetup = config.CastSetup;
 
       return CreateGameEntity.Empty()
 					.AddId(_identifier.Next())
-					.AddWeaponTypeId(weaponTypeId)
+					.AddWeaponTypeId(config.TypeId)
 					.AddAmmoTypeId(config.AmmoTypeId)
 					.AddAmmoPatternSetup(config.AmmoPatternSetup)
 					.AddViewPrefab(config.ViewPrefab)
@@ -205,7 +202,6 @@ namespace Code.Gameplay.Features.Weapon.Factory
 					.AddWorldPosition(at)
 					.AddDirection(default)
 					.AddRadius(_statsProvider.GetFireRange(config))
-					//.AddForwardCastDistance(castSetup.ForwardCastDistance)
 					.AddMinPelletsDeviation(_statsProvider.GetMinDeviation(config))
 					.AddMaxPelletsDeviation(_statsProvider.GetMaxDeviation(config))
 					.AddCooldown(_statsProvider.GetCooldown(config))
@@ -243,8 +239,8 @@ namespace Code.Gameplay.Features.Weapon.Factory
 						when: _effectsProvider.GetEffects(config).IsNullOrEmpty() == false)
 					.With(x => x.AddMaxWeaponEnchantsCount(_statsProvider.GetEnchantSlots(config)),
 						when: _statsProvider.GetEnchantSlots(config) > 0)
-					.With(x => x.AddStatusSetups(_setupProvider.GetStatusSetups(weaponTypeId).ToList()),
-						when: _setupProvider.GetStatusSetups(weaponTypeId).IsNullOrEmpty() == false)
+					.With(x => x.AddStatusSetups(_setupProvider.GetStatusSetups(config.TypeId).ToList()),
+						when: _setupProvider.GetStatusSetups(config.TypeId).IsNullOrEmpty() == false)
 					.With(x => x.AddSpecialEffectTypeId(config.SpecialEffectTypeId), 
 						when: config.SpecialEffectTypeId != SpecialEffectTypeId.NoSpecialEffect)
 					.PutOnCooldown()

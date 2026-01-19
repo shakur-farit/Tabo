@@ -28,7 +28,6 @@ namespace Code.Gameplay.Features.Enemy.Configs
 		[Range(0, 100)] public int LootDropChance;
 		[Range(0, 1000)] public int ScoreValue;
     public List<LootTypeId> ExcludedLoot;
-    public CollisionCastSetup CastSetup;
 		public List<StatusSetup> StatusSetups;
 
 		private void OnValidate()
