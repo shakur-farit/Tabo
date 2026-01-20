@@ -12,14 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f01b56a954813454bb70517f7e26b4f5, type: 3}
   m_Name: ObjectPoolConfig
   m_EditorClassIdentifier: Assembly-CSharp::Code.Infrastructure.View.ObjectPoolConfig
-  MaxActivationsPerFrame: 20
   WarmupObjects:
   - ViewPrefab: {fileID: 8254426112849521288, guid: 8ce004de107d0ba4eba3d92948a32f93, type: 3}
     Count: 1
   - ViewPrefab: {fileID: 8166552356577901019, guid: 9dc33cf00c86b7440a425de8b022c28a, type: 3}
-    Count: 20
+    Count: 50
   - ViewPrefab: {fileID: 2243231872987813085, guid: a5967ca81ad889847ae902288d60c7a5, type: 3}
-    Count: 10
+    Count: 100
   - ViewPrefab: {fileID: 2243231872987813085, guid: 91a093a87f9e3e34f88473127302053e, type: 3}
     Count: 10
   - ViewPrefab: {fileID: 4494103209788103135, guid: c97df207954ad734eaf0eab1d27c9f42, type: 3}

@@ -9,13 +9,11 @@ namespace Code.Infrastructure.ObjectPool.Services
   {
     private readonly Dictionary<EntityBehaviour, Queue<EntityBehaviour>> _pools = new();
     private readonly IInstantiator _instantiator;
-    private readonly ISpawnActivationQueue _spawnActivationQueue;
     private readonly Transform _rootContainer;
 
-    public ObjectPoolService(IInstantiator instantiator, ISpawnActivationQueue spawnActivationQueue)
+    public ObjectPoolService(IInstantiator instantiator)
     {
       _instantiator = instantiator;
-      _spawnActivationQueue = spawnActivationQueue;
 
       GameObject rootGameObject = new GameObject("ObjectPool");
       Object.DontDestroyOnLoad(rootGameObject);
@@ -45,8 +43,6 @@ namespace Code.Infrastructure.ObjectPool.Services
 
       instance.transform.position = at;
       instance.gameObject.SetActive(true);
-
-      //_spawnActivationQueue.Enqueue(instance);
 
       return instance;
     }

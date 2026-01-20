@@ -14,6 +14,7 @@ using Code.Gameplay.Features.Enchants;
 using Code.Gameplay.Features.Enchants.Configs;
 using Code.Gameplay.Features.Enemy;
 using Code.Gameplay.Features.Enemy.Configs;
+using Code.Gameplay.Features.Enemy.Systems;
 using Code.Gameplay.Features.Hero;
 using Code.Gameplay.Features.Hero.Configs;
 using Code.Gameplay.Features.Level;
@@ -66,6 +67,7 @@ namespace Code.Gameplay.StaticData
     UniTask Load();
 
     GameBalanceConfig GetGameBalance();
+    SpawnRequestSettingConfig GetSpawnRequestSettingConfig();
     DungeonConfig GetDungeonConfig(DungeonTypeId id);
     AmmoConfig GetAmmoConfig(AmmoTypeId ammoTypeId);
     WeaponConfig GetWeaponConfig(WeaponTypeId weaponTypeId);

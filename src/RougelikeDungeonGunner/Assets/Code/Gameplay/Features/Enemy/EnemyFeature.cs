@@ -7,7 +7,7 @@ namespace Code.Gameplay.Features.Enemy
 	{
 		public EnemyFeature(ISystemsFactory systems)
 		{
-			Add(systems.Create<SpawnEnemiesSystem>());
+			Add(systems.Create<CreateEnemiesSpawnRequestSystem>());
 			Add(systems.Create<SpawnBossesSystem>());
 
 			Add(systems.Create<SetEnemyRuntimeAnimatorControllerSystem>());

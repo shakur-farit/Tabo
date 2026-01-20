@@ -21,6 +21,7 @@ using Code.Gameplay.Features.Effects.Factory;
 using Code.Gameplay.Features.Enchants.Factory;
 using Code.Gameplay.Features.Enemy.Factory;
 using Code.Gameplay.Features.Enemy.Services;
+using Code.Gameplay.Features.Enemy.Systems;
 using Code.Gameplay.Features.Hero.Factory;
 using Code.Gameplay.Features.Hero.Services;
 using Code.Gameplay.Features.Level.Factory;
@@ -197,6 +198,7 @@ namespace Code.Infrastructure.Installers
 			Container.Bind<IDestroyableItemFactory>().To<DestroyableItemFactory>().AsSingle();
 			Container.Bind<IDoorFactory>().To<DoorFactory>().AsSingle();
 			Container.Bind<IShieldRequestProvider>().To<ShieldRequestProvider>().AsSingle();
+			Container.Bind<ISpawnRequestSettingFactory>().To<SpawnRequestSettingFactory>().AsSingle();
 		}
 
 		private void BindUIFactories()
@@ -259,7 +261,6 @@ namespace Code.Infrastructure.Installers
 			Container.Bind<IQuitGameService>().To<QuitGameService>().AsSingle();
 			Container.Bind<IObjectPoolService>().To<ObjectPoolService>().AsSingle();
 			Container.Bind<IObjectPoolWarmUpper>().To<ObjectPoolWarmUpper>().AsSingle();
-			Container.BindInterfacesAndSelfTo<SpawnActivationQueue>().AsSingle();
 		}
 
 		private void BindAssetManagementServices()

@@ -13,6 +13,7 @@ using Code.Gameplay.Features.EffectApplication;
 using Code.Gameplay.Features.Effects;
 using Code.Gameplay.Features.Enchants;
 using Code.Gameplay.Features.Enemy;
+using Code.Gameplay.Features.Enemy.Systems;
 using Code.Gameplay.Features.Hero;
 using Code.Gameplay.Features.Level;
 using Code.Gameplay.Features.Lifetime;
@@ -74,7 +75,9 @@ namespace Code.Gameplay
 			Add(systems.Create<MusicFeature>());
 			Add(systems.Create<SoundEffectFeature>());
 
-			Add(systems.Create<PauseFeature>());
+			Add(systems.Create<SpawnRequestFeature>());
+
+      Add(systems.Create<PauseFeature>());
 
 			Add(systems.Create<LoadingUIFeature>());
 			Add(systems.Create<HudFeature>());

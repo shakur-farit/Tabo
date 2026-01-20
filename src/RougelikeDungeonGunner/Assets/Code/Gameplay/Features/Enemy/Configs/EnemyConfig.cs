@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using Code.Gameplay.Features.Aura;
-using Code.Gameplay.Features.Collection;
 using Code.Gameplay.Features.Loot;
 using Code.Gameplay.Features.Statuses;
 using Code.Gameplay.Features.Weapon;

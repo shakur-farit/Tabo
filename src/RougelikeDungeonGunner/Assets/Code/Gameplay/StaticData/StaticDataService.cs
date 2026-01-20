@@ -36,6 +36,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Code.Common.GameGlobal.Balance;
+using Code.Gameplay.Features.Enemy.Systems;
 using Code.Infrastructure.ObjectPool.Config;
 using Code.Leaderboard.Config;
 using Code.Meta.Features.HeroSelector.Behaviours;
@@ -61,6 +62,7 @@ namespace Code.Gameplay.StaticData
 	public class StaticDataService : IStaticDataService
 	{
 		private const string GameBalanceConfigPath = "GameBalanceConfig";
+		private const string SpawnRequestSettingConfigPath = "SpawnRequestSettingConfig";
 		private const string LeaderboardConfigPath = "LeaderboardConfig";
 		private const string HudConfigPath = "HudConfig";
 		private const string DialogueConfigPath = "DialogueConfig";
@@ -92,6 +94,7 @@ namespace Code.Gameplay.StaticData
     private const string SoundEffectConfigLabel = "SoundEffectConfig";
 
     private GameBalanceConfig _gameBalance;
+    private SpawnRequestSettingConfig _spawnRequestSettingConfig;
     private LeaderboardConfig _leaderboardConfig;
     private HudConfig _hudConfig;
     private DialogueConfig _dialogueConfig;
@@ -142,6 +145,7 @@ namespace Code.Gameplay.StaticData
 		public async UniTask Load()
 		{
 			await LoadGameBalance();
+			await LoadSpawnRequestSetting();
 			await LoadLeaderboard();
 			await LoadHud();
 			await LoadDialogues();
@@ -360,6 +364,9 @@ namespace Code.Gameplay.StaticData
 		public GameBalanceConfig GetGameBalance() =>
 			_gameBalance;
 
+    public SpawnRequestSettingConfig GetSpawnRequestSettingConfig() =>
+      _spawnRequestSettingConfig;
+
     public LeaderboardConfig GetLeaderboardConfig() => 
       _leaderboardConfig;
 
@@ -477,6 +484,9 @@ namespace Code.Gameplay.StaticData
 
     private async UniTask LoadGameBalance() =>
 			_gameBalance = await _assetProvider.Load<GameBalanceConfig>(GameBalanceConfigPath);
+
+    private async UniTask LoadSpawnRequestSetting() => 
+			_spawnRequestSettingConfig = await _assetProvider.Load<SpawnRequestSettingConfig>(SpawnRequestSettingConfigPath);
 
     private async UniTask LoadLeaderboard() => 
       _leaderboardConfig = await _assetProvider.Load<LeaderboardConfig>(LeaderboardConfigPath);
