@@ -56,13 +56,13 @@ using Code.Sounds.Music;
 using Code.Sounds.Music.Configs;
 using Code.Sounds.SoundEffects;
 using Code.Sounds.SoundEffects.Config;
+using Code.Gameplay.Common;
 
 namespace Code.Gameplay.StaticData
 {
 	public class StaticDataService : IStaticDataService
 	{
 		private const string GameBalanceConfigPath = "GameBalanceConfig";
-		private const string SpawnRequestSettingConfigPath = "SpawnRequestSettingConfig";
 		private const string LeaderboardConfigPath = "LeaderboardConfig";
 		private const string HudConfigPath = "HudConfig";
 		private const string DialogueConfigPath = "DialogueConfig";
@@ -79,55 +79,56 @@ namespace Code.Gameplay.StaticData
 		private const string EnchantConfigLabel = "EnchantConfig";
 		private const string AuraConfigLabel = "AuraConfig";
 		private const string SpecialEffectConfigLabel = "SpecialEffectConfig";
-    private const string DestroyableItemConfigLabel = "DestroyableItemConfig";
-    private const string DoorConfigLabel = "DoorConfig";
-    private const string WindowConfigLabel = "WindowConfig";
-    private const string WeaponShopItemConfigLabel = "WeaponShopItemConfig";
+		private const string DestroyableItemConfigLabel = "DestroyableItemConfig";
+		private const string DoorConfigLabel = "DoorConfig";
+		private const string WindowConfigLabel = "WindowConfig";
+		private const string WeaponShopItemConfigLabel = "WeaponShopItemConfig";
 		private const string EnchantShopItemConfigLabel = "EnchantShopItemConfig";
 		private const string WeaponUpgradeShopItemConfigLabel = "WeaponUpgradeShopItemConfig";
 		private const string HeroUpgradeShopItemConfigLabel = "HeroUpgradeShopItemConfig";
 		private const string WeaponStatUIEntryConfigLabel = "WeaponStatUIEntryConfig";
 		private const string HeroStatUIEntryConfigLabel = "HeroStatUIEntryConfig";
-    private const string EnchantUIEntryConfigLabel = "EnchantUIEntryConfig";
-    private const string EnchantStatUIEntryConfigLabel = "EnchantStatUIEntryConfig";
-    private const string MusicConfigLabel = "MusicConfig";
-    private const string SoundEffectConfigLabel = "SoundEffectConfig";
+		private const string EnchantUIEntryConfigLabel = "EnchantUIEntryConfig";
+		private const string EnchantStatUIEntryConfigLabel = "EnchantStatUIEntryConfig";
+		private const string MusicConfigLabel = "MusicConfig";
+		private const string SoundEffectConfigLabel = "SoundEffectConfig";
+		private const string SpawnRequestSettingConfigLabel = "SpawnRequestSettingsConfig";
 
-    private GameBalanceConfig _gameBalance;
-    private SpawnRequestSettingConfig _spawnRequestSettingConfig;
-    private LeaderboardConfig _leaderboardConfig;
-    private HudConfig _hudConfig;
-    private DialogueConfig _dialogueConfig;
-    private ObjectPoolConfig _objectPoolConfig;
-    private GameLoadingUIConfig _gameLoadingUIConfig;
-    private HeroSelectorConfig _heroSelectorConfig;
-    private Dictionary<AmmoTypeId, AmmoConfig> _ammoById;
-    private Dictionary<WeaponTypeId, WeaponConfig> _weaponById;
-    private Dictionary<EnemyTypeId, EnemyConfig> _enemyById;
-    private Dictionary<HeroTypeId, HeroConfig> _heroById;
-    private Dictionary<LevelTypeId, LevelConfig> _levelById;
-    private Dictionary<DungeonTypeId, DungeonConfig> _dungeonById;
-    private Dictionary<LootTypeId, LootConfig> _lootById;
-    private Dictionary<EnchantTypeId, EnchantConfig> _enchantById;
-    private Dictionary<AuraTypeId, AuraConfig> _auraById;
-    private Dictionary<DestroyableItemTypeId, DestroyableItemConfig> _destroyableItemById;
-    private Dictionary<DoorTypeId, DoorConfig> _doorById;
-    private Dictionary<WindowId, WindowConfig> _windowById;
-    private Dictionary<HeroStatUIEntryTypeId, HeroStatUIEntryConfig> _heroStatUIEntryItemById;
-    private Dictionary<WeaponShopItemTypeId, WeaponShopItemConfig> _weaponShopItemById;
-    private Dictionary<WeaponUpgradeTypeId, WeaponUpgradeShopItemConfig> _weaponUpgradeShopItemById;
-    private Dictionary<WeaponStatUIEntryTypeId, WeaponStatUIEntryConfig> _weaponStatUIEntryItemById;
-    private Dictionary<EnchantShopItemTypeId, EnchantShopItemConfig> _enchantShopItemById;
-    private Dictionary<EnchantUIEntryTypeId, EnchantUIEntryConfig> _enchantUIEntryItemById;
-    private Dictionary<SpecialEffectTypeId, SpecialEffectConfig> _specialEffectById;
-    private Dictionary<EnchantStatUIEntryTypeId, EnchantStatUIEntryConfig>
+		private GameBalanceConfig _gameBalance;
+		private LeaderboardConfig _leaderboardConfig;
+		private HudConfig _hudConfig;
+		private DialogueConfig _dialogueConfig;
+		private ObjectPoolConfig _objectPoolConfig;
+		private GameLoadingUIConfig _gameLoadingUIConfig;
+		private HeroSelectorConfig _heroSelectorConfig;
+		private Dictionary<AmmoTypeId, AmmoConfig> _ammoById;
+		private Dictionary<WeaponTypeId, WeaponConfig> _weaponById;
+		private Dictionary<EnemyTypeId, EnemyConfig> _enemyById;
+		private Dictionary<HeroTypeId, HeroConfig> _heroById;
+		private Dictionary<LevelTypeId, LevelConfig> _levelById;
+		private Dictionary<DungeonTypeId, DungeonConfig> _dungeonById;
+		private Dictionary<LootTypeId, LootConfig> _lootById;
+		private Dictionary<EnchantTypeId, EnchantConfig> _enchantById;
+		private Dictionary<AuraTypeId, AuraConfig> _auraById;
+		private Dictionary<DestroyableItemTypeId, DestroyableItemConfig> _destroyableItemById;
+		private Dictionary<DoorTypeId, DoorConfig> _doorById;
+		private Dictionary<WindowId, WindowConfig> _windowById;
+		private Dictionary<HeroStatUIEntryTypeId, HeroStatUIEntryConfig> _heroStatUIEntryItemById;
+		private Dictionary<WeaponShopItemTypeId, WeaponShopItemConfig> _weaponShopItemById;
+		private Dictionary<WeaponUpgradeTypeId, WeaponUpgradeShopItemConfig> _weaponUpgradeShopItemById;
+		private Dictionary<WeaponStatUIEntryTypeId, WeaponStatUIEntryConfig> _weaponStatUIEntryItemById;
+		private Dictionary<EnchantShopItemTypeId, EnchantShopItemConfig> _enchantShopItemById;
+		private Dictionary<EnchantUIEntryTypeId, EnchantUIEntryConfig> _enchantUIEntryItemById;
+		private Dictionary<SpecialEffectTypeId, SpecialEffectConfig> _specialEffectById;
+		private Dictionary<EnchantStatUIEntryTypeId, EnchantStatUIEntryConfig>
 			_weaponEnchantStatUIEntryItemById;
-    private Dictionary<HeroUpgradeTypeId, HeroUpgradeShopItemConfig> _heroUpgradeShopItemById;
-    private Dictionary<MusicTypeId, MusicConfig> _musicById;
-    private Dictionary<SoundEffectTypeId, SoundEffectConfig> _soundEffectById;
+		private Dictionary<HeroUpgradeTypeId, HeroUpgradeShopItemConfig> _heroUpgradeShopItemById;
+		private Dictionary<MusicTypeId, MusicConfig> _musicById;
+		private Dictionary<SoundEffectTypeId, SoundEffectConfig> _soundEffectById;
+		private Dictionary<SpawnRequestSettingTypeId, SpawnRequestSettingConfig> _spawnRequestById;
 
 
-    private readonly IAssetProvider _assetProvider;
+		private readonly IAssetProvider _assetProvider;
 
     public IEnumerable<LootConfig> GetAllLootConfigs() => _lootById.Values;
 		public IEnumerable<HeroConfig> GetAllHeroConfigs() => _heroById.Values;
@@ -145,7 +146,7 @@ namespace Code.Gameplay.StaticData
 		public async UniTask Load()
 		{
 			await LoadGameBalance();
-			await LoadSpawnRequestSetting();
+			await LoadSpawnRequestSettings();
 			await LoadLeaderboard();
 			await LoadHud();
 			await LoadDialogues();
@@ -361,13 +362,18 @@ namespace Code.Gameplay.StaticData
       throw new Exception($"Sound effect config for {id} was not found");
     }
 
+		public SpawnRequestSettingConfig GetSpawnRequestSettingConfig(SpawnRequestSettingTypeId id)
+		{
+			if (_spawnRequestById.TryGetValue(id, out SpawnRequestSettingConfig config))
+				return config;
+
+			throw new Exception($"Spawn request config for {id} was not found");
+		}
+
 		public GameBalanceConfig GetGameBalance() =>
 			_gameBalance;
 
-    public SpawnRequestSettingConfig GetSpawnRequestSettingConfig() =>
-      _spawnRequestSettingConfig;
-
-    public LeaderboardConfig GetLeaderboardConfig() => 
+		public LeaderboardConfig GetLeaderboardConfig() => 
       _leaderboardConfig;
 
     public HudConfig GetHudConfig() =>
@@ -482,11 +488,12 @@ namespace Code.Gameplay.StaticData
       _soundEffectById = (await _assetProvider.LoadAll<SoundEffectConfig>(SoundEffectConfigLabel))
         .ToDictionary(x => x.TypeId, x => x);
 
+    private async UniTask LoadSpawnRequestSettings() =>
+	    _spawnRequestById = (await _assetProvider.LoadAll<SpawnRequestSettingConfig>(SpawnRequestSettingConfigLabel))
+		    .ToDictionary(x => x.TypeId, x => x);
+
     private async UniTask LoadGameBalance() =>
 			_gameBalance = await _assetProvider.Load<GameBalanceConfig>(GameBalanceConfigPath);
-
-    private async UniTask LoadSpawnRequestSetting() => 
-			_spawnRequestSettingConfig = await _assetProvider.Load<SpawnRequestSettingConfig>(SpawnRequestSettingConfigPath);
 
     private async UniTask LoadLeaderboard() => 
       _leaderboardConfig = await _assetProvider.Load<LeaderboardConfig>(LeaderboardConfigPath);

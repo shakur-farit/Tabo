@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Code.Common.Entity;
 using Code.Common.Extensions;
 using Code.Gameplay.Features.Ammo.Services;
 using Code.Gameplay.Features.AmmoPattern.Factory;
@@ -11,20 +12,17 @@ namespace Code.Gameplay.Features.AmmoPattern.Systems
 {
   public class CreatePatternForEnemyMachinegunSystem : IExecuteSystem
   {
-    private readonly List<GameEntity> _buffer = new(16);
+    private readonly List<GameEntity> _buffer = new(64);
 
-    private readonly IAmmoPatternFactory _patternFactory;
     private readonly IAmmoDirectionProvider _ammoDirectionProvider;
     private readonly ISoundEffectFactory _soundEffectFactory;
     private readonly IGroup<GameEntity> _weapons;
 
     public CreatePatternForEnemyMachinegunSystem(
       GameContext game,
-      IAmmoPatternFactory patternFactory,
       IAmmoDirectionProvider ammoDirectionProvider,
       ISoundEffectFactory soundEffectFactory)
     {
-      _patternFactory = patternFactory;
       _ammoDirectionProvider = ammoDirectionProvider;
       _soundEffectFactory = soundEffectFactory;
       _ammoDirectionProvider = ammoDirectionProvider;
@@ -49,15 +47,16 @@ namespace Code.Gameplay.Features.AmmoPattern.Systems
     {
       foreach (GameEntity weapon in _weapons.GetEntities(_buffer))
       {
-        GameEntity pattern = _patternFactory.CreatePattern(weapon.AmmoPatternSetup, weapon.AmmoTypeId,
-          weapon.FirePositionTransform.position, GetDirection(weapon));
+				CreateGameEntity.Empty()
+					.AddAmmoPatternSetup(weapon.AmmoPatternSetup)
+					.AddAmmoTypeId(weapon.AmmoTypeId)
+					.AddFirePositionTransform(weapon.FirePositionTransform)
+					.AddDirection(GetDirection(weapon))
+					.AddProducerId(weapon.Id)
+					.With(x => x.isSpawnRequest = true);
 
-        pattern
-          .AddProducerId(weapon.Id);
-
-
-        weapon
-          .With(x => x.isShot = true)
+				weapon
+					.With(x => x.isShot = true)
           .PutOnCooldown(weapon.Cooldown);
 
         if (weapon.hasShotSoundEffectTypeId)

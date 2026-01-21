@@ -21,6 +21,7 @@ namespace Code.Gameplay.Features.Enemy.Systems
       _requestSettings = game.GetGroup(GameMatcher
         .AllOf(
           GameMatcher.SpawnRequestSetting,
+          GameMatcher.EnemySpawnRequestSetting,
           GameMatcher.MaxSpawnPerFrame));
     }
 

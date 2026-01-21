@@ -2,6 +2,6 @@
 {
   public interface ISpawnRequestSettingFactory
   {
-    GameEntity CreateSpawnRequestSetting();
+    GameEntity CreateSpawnRequestSetting(SpawnRequestSettingTypeId settingTypeId);
   }
 }

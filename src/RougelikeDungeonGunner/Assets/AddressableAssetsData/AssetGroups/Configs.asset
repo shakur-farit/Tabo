@@ -623,6 +623,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - WindowConfig
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8a22b77ad775cef459e692c465496521
+    m_Address: EnemySpawnRequestSettingConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SpawnRequestSettingsConfig
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 8b6f1a3b05a02224b933aabf70452b05
     m_Address: ValueStatUIEntryConfig
     m_ReadOnly: 0
@@ -1060,6 +1066,12 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - LootConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e2ab8e5f4a4e36247b940638eab85b82
+    m_Address: AmmoPatternSpawnRequestSettingConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SpawnRequestSettingsConfig
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e5e28de55772379428cba7fcb75d8800
     m_Address: FireRangeWeaponStatUIEntryConfig

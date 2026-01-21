@@ -67,7 +67,7 @@ namespace Code.Gameplay.StaticData
     UniTask Load();
 
     GameBalanceConfig GetGameBalance();
-    SpawnRequestSettingConfig GetSpawnRequestSettingConfig();
+    SpawnRequestSettingConfig GetSpawnRequestSettingConfig(SpawnRequestSettingTypeId id);
     DungeonConfig GetDungeonConfig(DungeonTypeId id);
     AmmoConfig GetAmmoConfig(AmmoTypeId ammoTypeId);
     WeaponConfig GetWeaponConfig(WeaponTypeId weaponTypeId);

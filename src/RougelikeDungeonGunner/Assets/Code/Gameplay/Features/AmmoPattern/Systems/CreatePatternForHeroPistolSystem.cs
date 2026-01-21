@@ -2,7 +2,6 @@
 using Code.Common.Entity;
 using Code.Common.Extensions;
 using Code.Gameplay.Features.Ammo.Services;
-using Code.Gameplay.Features.AmmoPattern.Factory;
 using Code.Gameplay.Features.Cooldowns;
 using Code.Sounds.SoundEffects.Factory;
 using Entitas;
@@ -12,7 +11,6 @@ namespace Code.Gameplay.Features.AmmoPattern.Systems
 {
 	public class CreatePatternForHeroPistolSystem : IExecuteSystem
 	{
-		private readonly IAmmoPatternFactory _patternFactory;
 		private readonly List<GameEntity> _buffer = new(1);
 
 		private readonly IAmmoDirectionProvider _ammoDirectionProvider;
@@ -21,11 +19,9 @@ namespace Code.Gameplay.Features.AmmoPattern.Systems
 
 		public CreatePatternForHeroPistolSystem(
 			GameContext game,
-			IAmmoPatternFactory patternFactory,
 			IAmmoDirectionProvider ammoDirectionProvider,
 			ISoundEffectFactory soundEffectFactory)
 		{
-			_patternFactory = patternFactory;
 			_ammoDirectionProvider = ammoDirectionProvider;
 			_soundEffectFactory = soundEffectFactory;
 

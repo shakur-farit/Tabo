@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Code.Common.Entity;
 using Code.Common.Extensions;
 using Code.Gameplay.Features.Ammo.Services;
 using Code.Gameplay.Features.AmmoPattern.Factory;
@@ -11,20 +12,17 @@ namespace Code.Gameplay.Features.AmmoPattern.Systems
 {
 	public class CreatePatternForEnemyPistolSystem : IExecuteSystem
 	{
-		private readonly List<GameEntity> _buffer = new(16);
+		private readonly List<GameEntity> _buffer = new(64);
 
-		private readonly IAmmoPatternFactory _patternFactory;
 		private readonly IAmmoDirectionProvider _ammoDirectionProvider;
 		private readonly ISoundEffectFactory _soundEffectFactory;
 		private readonly IGroup<GameEntity> _weapons;
 
 		public CreatePatternForEnemyPistolSystem(
-			GameContext game,
-			IAmmoPatternFactory patternFactory,
-			IAmmoDirectionProvider ammoDirectionProvider, 
+			GameContext game, 
+			IAmmoDirectionProvider ammoDirectionProvider,
 			ISoundEffectFactory soundEffectFactory)
 		{
-			_patternFactory = patternFactory;
 			_ammoDirectionProvider = ammoDirectionProvider;
 			_soundEffectFactory = soundEffectFactory;
 			_ammoDirectionProvider = ammoDirectionProvider;
@@ -49,19 +47,20 @@ namespace Code.Gameplay.Features.AmmoPattern.Systems
 		{
 			foreach (GameEntity weapon in _weapons.GetEntities(_buffer))
 			{
-				GameEntity pattern = _patternFactory.CreatePattern(weapon.AmmoPatternSetup, weapon.AmmoTypeId,
-					weapon.FirePositionTransform.position, GetDirection(weapon));
-
-				pattern
-					.AddProducerId(weapon.Id);
-
+				var request = CreateGameEntity.Empty()
+					.AddAmmoPatternSetup(weapon.AmmoPatternSetup)
+					.AddAmmoTypeId(weapon.AmmoTypeId)
+					.AddFirePositionTransform(weapon.FirePositionTransform)
+					.AddDirection(GetDirection(weapon))
+					.AddProducerId(weapon.Id)
+					.With(x => x.isSpawnRequest = true);
 
 				weapon
 					.With(x => x.isShot = true)
 					.PutOnCooldown(weapon.Cooldown);
 
 				if (weapon.hasShotSoundEffectTypeId)
-					_soundEffectFactory.CreateSoundEffect(weapon.ShotSoundEffectTypeId);
+						_soundEffectFactory.CreateSoundEffect(request.ShotSoundEffectTypeId);
 			}
 		}
 

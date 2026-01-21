@@ -8,7 +8,7 @@ namespace Code.Gameplay.Features.Enemy.Systems
     {
       Add(systems.Create<InitializeSpawnRequestSettingSystem>());
 
-      Add(systems.Create<ProcessAmmoSpawnRequestSystem>());
+      Add(systems.Create<ProcessAmmoPatternSpawnRequestSystem>());
       Add(systems.Create<ProcessEnemySpawnRequestSystem>());
 
       Add(systems.Create<MarkDestructedProcessedSpawnRequestsSystem>());

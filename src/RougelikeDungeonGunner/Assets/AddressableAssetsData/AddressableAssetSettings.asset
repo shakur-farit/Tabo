@@ -15,7 +15,7 @@ MonoBehaviour:
   m_DefaultGroup: 2fed5508be124474fb99a5d7f3cfcf2a
   m_currentHash:
     serializedVersion: 2
-    Hash: c2aa1bdc589cd4d491fa19bddbfd894a
+    Hash: 13c011c1b0164436565ceae1ed640d15
   m_OptimizeCatalogSize: 0
   m_BuildRemoteCatalog: 1
   m_BundleLocalCatalog: 0
@@ -133,6 +133,7 @@ MonoBehaviour:
     - WeaponShopItemConfig
     - WeaponUpgradeShopItemConfig
     - WindowConfig
+    - SpawnRequestSettingsConfig
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: 85357d346e02ee54ab80d633e7b0c1cf, type: 2}

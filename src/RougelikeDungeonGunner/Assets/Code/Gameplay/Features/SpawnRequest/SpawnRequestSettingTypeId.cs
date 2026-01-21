@@ -1,9 +1,9 @@
 ﻿namespace Code.Gameplay.Features.Enemy.Systems
 {
-  public enum SpawnRequestTypeId
+  public enum SpawnRequestSettingTypeId
   {
     Unknown = 0,
-    Ammo = 1,
+    AmmoPattern = 1,
     Enemy = 2
   }
 }

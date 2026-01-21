@@ -10,7 +10,8 @@ namespace Code.Gameplay.Features.Enemy.Systems
     {
       _requests = game.GetGroup(GameMatcher
         .AllOf(
-          GameMatcher.SpawnRequest, GameMatcher.Processed));
+          GameMatcher.SpawnRequest, 
+          GameMatcher.Processed));
     }
 
     public void Execute()

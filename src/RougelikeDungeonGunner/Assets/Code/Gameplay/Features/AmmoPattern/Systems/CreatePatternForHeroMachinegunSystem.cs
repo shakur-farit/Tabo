@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
+using Code.Common.Entity;
 using Code.Common.Extensions;
 using Code.Gameplay.Features.Ammo.Services;
-using Code.Gameplay.Features.AmmoPattern.Factory;
 using Code.Gameplay.Features.Cooldowns;
 using Code.Sounds.SoundEffects.Factory;
 using Entitas;
@@ -13,18 +13,15 @@ namespace Code.Gameplay.Features.AmmoPattern.Systems
 	{
 		private readonly List<GameEntity> _buffer = new(1);
 
-		private readonly IAmmoPatternFactory _patternFactory;
 		private readonly IAmmoDirectionProvider _ammoDirectionProvider;
 		private readonly ISoundEffectFactory _soundEffectFactory;
 		private readonly IGroup<GameEntity> _weapons;
 		
 		public CreatePatternForHeroMachinegunSystem(
 			GameContext game,
-			IAmmoPatternFactory patternFactory,
 			IAmmoDirectionProvider ammoDirectionProvider,
 			ISoundEffectFactory soundEffectFactory)
 		{
-			_patternFactory = patternFactory;
 			_ammoDirectionProvider = ammoDirectionProvider;
 			_soundEffectFactory = soundEffectFactory;
 
@@ -46,11 +43,13 @@ namespace Code.Gameplay.Features.AmmoPattern.Systems
 		{
 			foreach (GameEntity weapon in _weapons.GetEntities(_buffer))
 			{
-				GameEntity pattern = _patternFactory.CreatePattern(weapon.AmmoPatternSetup, weapon.AmmoTypeId,
-					weapon.FirePositionTransform.position, GetDirection(weapon));
-
-				pattern
-					.AddProducerId(weapon.Id);
+				CreateGameEntity.Empty()
+					.AddAmmoPatternSetup(weapon.AmmoPatternSetup)
+					.AddAmmoTypeId(weapon.AmmoTypeId)
+					.AddFirePositionTransform(weapon.FirePositionTransform)
+					.AddDirection(GetDirection(weapon))
+					.AddProducerId(weapon.Id)
+					.With(x => x.isSpawnRequest = true);
 
 				weapon
 					.With(x => x.isShot = true)
