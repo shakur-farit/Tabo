@@ -12,8 +12,6 @@ namespace Code.Gameplay.Features.Ammo.Configs
 		public AmmoTypeId TypeId;
     public SpecialEffectTypeId CollideSpecialEffectTypeId;
     public EntityBehaviour ViewPrefab;
-    public Sprite Sprite;
-		public Material Material;
 		[Range(0f, 100f)] public float ContactRadius;
 		public CollisionCastSetup CastSetup;
 		public TrailSetup TrailSetup;

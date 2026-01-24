@@ -14,11 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TypeId: 5
   CollideSpecialEffectTypeId: 7
-  ViewPrefab: {fileID: 2243231872987813085, guid: a5967ca81ad889847ae902288d60c7a5, type: 3}
-  Sprite: {fileID: 21300000, guid: c3be09077243891458bdbf46a57d2e8a, type: 3}
-  Material: {fileID: 2100000, guid: c64696a09f1cb1a4d9766d1fe9778ca5, type: 2}
-  Stats:
-    ContactRadius: 0.1
+  ViewPrefab: {fileID: 22451772439703301, guid: 2f847f413f4a76447a3a44d3888172bb, type: 3}
+  ContactRadius: 0
   CastSetup:
     CastStartPosiotion: {x: 0, y: 0}
     ForwardCastDistance: 0.1

@@ -47,7 +47,7 @@ namespace Code.Gameplay.Features.AmmoPattern.Systems
 		{
 			foreach (GameEntity weapon in _weapons.GetEntities(_buffer))
 			{
-				var request = CreateGameEntity.Empty()
+				GameEntity request = CreateGameEntity.Empty()
 					.AddAmmoPatternSetup(weapon.AmmoPatternSetup)
 					.AddAmmoTypeId(weapon.AmmoTypeId)
 					.AddFirePositionTransform(weapon.FirePositionTransform)
@@ -60,7 +60,7 @@ namespace Code.Gameplay.Features.AmmoPattern.Systems
 					.PutOnCooldown(weapon.Cooldown);
 
 				if (weapon.hasShotSoundEffectTypeId)
-						_soundEffectFactory.CreateSoundEffect(request.ShotSoundEffectTypeId);
+						_soundEffectFactory.CreateSoundEffect(weapon.ShotSoundEffectTypeId);
 			}
 		}
 
