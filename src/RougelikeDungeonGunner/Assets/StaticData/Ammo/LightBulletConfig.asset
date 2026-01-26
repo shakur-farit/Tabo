@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TypeId: 1
   CollideSpecialEffectTypeId: 6
-  ViewPrefab: {fileID: 22451772439703301, guid: 2f847f413f4a76447a3a44d3888172bb, type: 3}
+  ViewPrefab: {fileID: 6329115866555345058, guid: 4c74145f5553aa648811920993105706, type: 3}
   ContactRadius: 0
   CastSetup:
     CastStartPosiotion: {x: 0, y: 0}

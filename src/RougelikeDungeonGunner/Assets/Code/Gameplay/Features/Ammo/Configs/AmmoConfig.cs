@@ -1,5 +1,4 @@
-﻿using System;
-using Code.Gameplay.Features.Collection;
+﻿using Code.Gameplay.Features.Collection;
 using Code.Gameplay.Features.SpecialEffect;
 using Code.Infrastructure.View;
 using UnityEngine;
@@ -14,15 +13,5 @@ namespace Code.Gameplay.Features.Ammo.Configs
     public EntityBehaviour ViewPrefab;
 		[Range(0f, 100f)] public float ContactRadius;
 		public CollisionCastSetup CastSetup;
-		public TrailSetup TrailSetup;
-	}
-
-	[Serializable]
-	public class TrailSetup
-	{
-		public Material Material;
-		[Range(0f, 10f)] public float Time;
-		[Range(0f, 10f)] public float StartWidth;
-		[Range(0f, 10f)] public float EndWidth;
-	}
+  }
 }
