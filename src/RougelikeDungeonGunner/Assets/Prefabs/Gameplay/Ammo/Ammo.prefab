@@ -128,6 +128,9 @@ GameObject:
   - component: {fileID: 2243231872987813085}
   - component: {fileID: 2719461292396719340}
   - component: {fileID: 8780400788209961003}
+  - component: {fileID: 4029752174476618649}
+  - component: {fileID: 5535146724814980665}
+  - component: {fileID: 8272406145680650652}
   m_Layer: 8
   m_Name: Ammo
   m_TagString: Untagged
@@ -227,6 +230,47 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EntityView: {fileID: 2243231872987813085}
   _castStartPosiotion: {fileID: 1537330521457639526}
+--- !u!114 &4029752174476618649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6539570766999889727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4eee636bc49e97940b7239e9da120b4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EntityView: {fileID: 2243231872987813085}
+  _spriteRenderer: {fileID: 6390910501267623108}
+--- !u!114 &5535146724814980665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6539570766999889727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a5096ae4a3913e429b84579f0360c83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spriteRenderer: {fileID: 6390910501267623108}
+--- !u!114 &8272406145680650652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6539570766999889727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b3aa2591b05e645858581db2386e48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EntityView: {fileID: 2243231872987813085}
+  _visualizer: {fileID: 5535146724814980665}
 --- !u!1 &7498720975668772383
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,6 +4,6 @@ namespace Code.Infrastructure.ObjectPool.Services
 {
   public interface IObjectPoolWarmUpper
   {
-    void WarmupObjects();
+    UniTask WarmupObjects();
   }
 }

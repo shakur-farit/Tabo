@@ -1,10 +1,13 @@
-﻿using Entitas;
+﻿using Code.Gameplay.Features.Ammo.Systems;
+using Entitas;
 
 namespace Code.Gameplay.Features.Ammo
 {
 	[Game] public class Ammo : IComponent { }
 	[Game] public class AmmoTypeIdComponent : IComponent { public AmmoTypeId Value; }
 	[Game] public class TargetLimit : IComponent { public int Value; }
+
+	[Game] public class AmmoStatusVisualizerComponent : IComponent { public AmmoStatusVisualizer Value; }
 
 	[Game] public class LightBullet : IComponent { }
 	[Game] public class RifleBullet : IComponent { }

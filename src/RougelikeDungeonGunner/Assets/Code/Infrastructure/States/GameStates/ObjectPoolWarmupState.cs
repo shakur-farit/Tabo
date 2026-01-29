@@ -21,8 +21,8 @@ namespace Code.Infrastructure.States.GameStates
 	    EnterLoadingHomeScreenState();
     }
 
-    private void WarmupReusableObjects() => 
-	    _objectPoolWarmUpper.WarmupObjects();
+    private async void WarmupReusableObjects() => 
+	    await _objectPoolWarmUpper.WarmupObjects();
 
     private void EnterLoadingHomeScreenState() => 
 	    _stateMachine.Enter<LoadingHomeScreenState>();

@@ -28,6 +28,8 @@ namespace Code.Gameplay.Features.Ammo
 			Add(systems.Create<ApplyEffectsToAmmoSystem>());
 			Add(systems.Create<ApplyStatusesToAmmoSystem>());
 
+			Add(systems.Create<AmmoStatusVisualReactiveSystem>());
+
       Add(systems.Create<CalculateCurrentAmmoCountAfterShotSystem>());
 
 			Add(systems.Create<MarkAmmoProcessedOnWeaponFireRangeSystem>());

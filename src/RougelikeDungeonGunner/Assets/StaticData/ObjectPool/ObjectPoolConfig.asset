@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f01b56a954813454bb70517f7e26b4f5, type: 3}
   m_Name: ObjectPoolConfig
   m_EditorClassIdentifier: Assembly-CSharp::Code.Infrastructure.View.ObjectPoolConfig
+  WarmupObjectsPerFrameCount: 1
   WarmupObjects:
   - ViewPrefab: {fileID: 8254426112849521288, guid: 8ce004de107d0ba4eba3d92948a32f93, type: 3}
     Count: 1

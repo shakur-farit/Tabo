@@ -1,5 +1,6 @@
 using Code.Gameplay.StaticData;
 using Code.Infrastructure.ObjectPool.Config;
+using Cysharp.Threading.Tasks;
 
 namespace Code.Infrastructure.ObjectPool.Services
 {
@@ -12,15 +13,28 @@ namespace Code.Infrastructure.ObjectPool.Services
     {
       _staticDataService = staticDataService;
       _objectPool = objectPool;
-   
+
     }
 
-    public void WarmupObjects()
+    public async UniTask WarmupObjects()
     {
       ObjectPoolConfig config = _staticDataService.GetObjectPoolConfig();
+      int counter = 0;
 
-      foreach (WarmupObject prefabToWarm in config.WarmupObjects)
-        _objectPool.WarmUp(prefabToWarm.ViewPrefab, prefabToWarm.Count);
+      foreach (WarmupObject warmup in config.WarmupObjects)
+      {
+        for (int i = 0; i < warmup.Count; i++)
+        {
+          _objectPool.WarmUp(warmup.ViewPrefab, 1);
+          counter++;
+
+          if (counter >= config.WarmupObjectsPerFrameCount)
+          {
+            counter = 0;
+            await UniTask.Yield(PlayerLoopTiming.Update);
+          }
+        }
+      }
     }
   }
 }
