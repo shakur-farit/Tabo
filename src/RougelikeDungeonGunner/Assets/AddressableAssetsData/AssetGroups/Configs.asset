@@ -719,6 +719,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - DestroyableItemConfig
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 99631c1bc910a6e4c998a43d1a54b5a7
+    m_Address: Assets/StaticData/Window/GameCompletedWindowConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WindowConfig
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 998dc478c704c28458a5f9312e496844
     m_Address: BlueBottleConfig
     m_ReadOnly: 0

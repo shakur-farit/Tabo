@@ -22,5 +22,6 @@
 		HeroUpgradeBuyWindow = 17,
 		LeaderboardWindow = 18,
 		HeroInfoWindow = 19,
+    GameCompletedWindow = 20,
 	}
 }

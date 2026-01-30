@@ -8,4 +8,5 @@ namespace Code.Meta.UI.Windows.Config
 		public WindowId TypeId;
 		public GameObject ViewPrefab;
 	}
+
 }
